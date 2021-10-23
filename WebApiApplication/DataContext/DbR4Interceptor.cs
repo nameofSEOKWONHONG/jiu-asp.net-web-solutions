@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace WebApiApplication.DataContext
 {
-    public class DbNoL4Interceptor : DbCommandInterceptor
+    public class DbR4Interceptor : DbCommandInterceptor
     {
         public override InterceptionResult<DbCommand> CommandCreating(CommandCorrelatedEventData eventData, InterceptionResult<DbCommand> result)
         {

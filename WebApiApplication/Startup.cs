@@ -82,7 +82,9 @@ namespace WebApiApplication
             #region [database]
 
             services.AddDbContext<AccountDbContext>(ctx =>
-                ctx.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+                ctx.UseSqlServer(Configuration.GetConnectionString("SqlServer"))
+                    .AddInterceptors(new DbR4Interceptor()));
+                
 
             #endregion
 

@@ -1,5 +1,8 @@
 ﻿using System.Data;
 using System.Data.Common;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.Entities;
 
@@ -42,7 +45,7 @@ namespace WebApiApplication.DataContext
                 });
             }
         }
-
+        
         public DbSet<User> Users { get; set; }
     }
 }
