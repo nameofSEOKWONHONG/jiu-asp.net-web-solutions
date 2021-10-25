@@ -71,12 +71,14 @@ namespace WebApiApplication
             //services.AddSingleton<IUserService, UserService>();
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();
-            services.AddScoped<BoatCreatorService>();
-            services.AddScoped<CarCreatorService>();
-            services.AddScoped<BusCreatorService>();
-            services.AddScoped<VehicleCreatorServiceFactory>();
+            
+            services.AddTransient<BoatCreatorService>();
+            services.AddTransient<CarCreatorService>();
+            services.AddTransient<BusCreatorService>();
+            services.AddSingleton<VehicleCreatorServiceFactory>();
 
             services.AddTransient<SMSMessageService>();
             services.AddTransient<EmailMessageService>();

@@ -4,16 +4,7 @@
     <projectFile>WebApiApplication/WebApiApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/Services/IMessageServiceFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="add factory pattern use injection" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +23,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9C3E83BF-875C-4C46-8CEB-D7A710B6ABD9/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/WebApiApplication/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1047FADB-65A0-46AF-9BD9-2F9691847209/1A/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/9/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -57,7 +49,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35016835" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35014164" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -106,7 +98,7 @@
       <updated>1634893979444</updated>
       <workItem from="1634893982632" duration="58000" />
       <workItem from="1635128469931" duration="4898000" />
-      <workItem from="1635136539692" duration="3380000" />
+      <workItem from="1635136539692" duration="3840000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -122,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635135963086</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add factory pattern use injection">
+      <created>1635141302350</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1635141302350</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +145,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="first upload" />
     <MESSAGE value="add l4provider (read copyed table)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add l4provider (read copyed table)" />
+    <MESSAGE value="add factory pattern use injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add factory pattern use injection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -176,6 +176,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="33" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="1477" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1572" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>34</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="34" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="1585" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1679" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
