@@ -6,9 +6,9 @@ namespace WebApiApplication.Dtos
     public class UserRequest
     {
         [EmailAddress]
-        [NotNull]
+        [Required, MaxLength(200)]
         public string Email { get; set; }
-        [NotNull]
+        [Required, MaxLength(200)]
         public string Password { get; set; }
     }
 }

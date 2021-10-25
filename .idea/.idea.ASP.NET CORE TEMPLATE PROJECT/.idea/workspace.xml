@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Provider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/Services/IMessageServiceFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/DataContext/DbR4Interceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/DataContext/DbL4Interceptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,16 +31,24 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9C3E83BF-875C-4C46-8CEB-D7A710B6ABD9/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1047FADB-65A0-46AF-9BD9-2F9691847209/1A/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/9/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/TableAttributeLoader.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/L4Executor.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" />
       <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Provider.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/DataContext/DbL4Interceptor.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/IMessageServiceFactory.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zr6hgYoMJCaezBA3WFPKJU9cAM" />
@@ -94,7 +105,8 @@
       <option name="presentableId" value="Default" />
       <updated>1634893979444</updated>
       <workItem from="1634893982632" duration="58000" />
-      <workItem from="1635128469931" duration="4650000" />
+      <workItem from="1635128469931" duration="4898000" />
+      <workItem from="1635136539692" duration="3380000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -103,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634894026433</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add l4provider (read copyed table)">
+      <created>1635135963086</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1635135963086</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,9 +145,40 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="first upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="first upload" />
+    <MESSAGE value="add l4provider (read copyed table)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add l4provider (read copyed table)" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>19</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="17" containingFunctionPresentation="constructor 'IndexController'">
+            <startOffsets>
+              <option value="743" />
+            </startOffsets>
+            <endOffsets>
+              <option value="809" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="23" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="983" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1012" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="LaunchSettings">
         <watch expression="command.CommandText" language="C#" />

@@ -73,6 +73,15 @@ namespace WebApiApplication
             services.AddScoped<IAuthService, AuthService>();
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();
+            services.AddScoped<BoatCreatorService>();
+            services.AddScoped<CarCreatorService>();
+            services.AddScoped<BusCreatorService>();
+            services.AddScoped<VehicleCreatorServiceFactory>();
+
+            services.AddTransient<SMSMessageService>();
+            services.AddTransient<EmailMessageService>();
+            services.AddTransient<KakaoMessageService>();
+            services.AddSingleton<MessageServiceFactory>();
 
             #endregion
 
@@ -86,9 +95,12 @@ namespace WebApiApplication
 
             services.AddDbContext<AccountDbContext>((sp, options) =>
                 {
-                    options.UseSqlServer(Configuration.GetConnectionString("SqlServer"))
+                    options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), builder =>
+                        {
+                            builder.EnableRetryOnFailure();
+                            builder.CommandTimeout(5);
+                        })
                         .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
-
                 });
             #endregion
 
