@@ -17,6 +17,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using WebApiApplication.DataContext;
 using WebApiApplication.Entities;
+using WebApiApplication.Infrastructure;
 using WebApiApplication.Services;
 
 namespace WebApiApplication
@@ -70,6 +71,8 @@ namespace WebApiApplication
             //services.AddSingleton<IUserService, UserService>();
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddSingleton<DbL4Provider>();
+            services.AddSingleton<DbL4Interceptor>();
 
             #endregion
 
@@ -81,11 +84,12 @@ namespace WebApiApplication
 
             #region [database]
 
-            services.AddDbContext<AccountDbContext>(ctx =>
-                ctx.UseSqlServer(Configuration.GetConnectionString("SqlServer"))
-                    .AddInterceptors(new DbR4Interceptor()));
-                
+            services.AddDbContext<AccountDbContext>((sp, options) =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("SqlServer"))
+                        .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
 
+                });
             #endregion
 
             #region [add jwt]

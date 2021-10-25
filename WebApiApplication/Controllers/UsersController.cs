@@ -30,6 +30,12 @@ namespace WebApiApplication.Controllers
             return Ok(await this.userService.FindUserByIdAsync(userId));
         }
 
+        [HttpGet("{email}")]
+        public async Task<IActionResult> Get(string email)
+        {
+            return Ok(await this.userService.FindUserByEmailAsync(email));
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateUser(User userData)
         {
