@@ -2,11 +2,17 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using WebApiApplication.Infrastructure;
 
 namespace WebApiApplication.DataContext
 {
-    public class DbR4Interceptor : DbCommandInterceptor
+    public class DbL4Interceptor : DbCommandInterceptor
     {
+        private readonly DbL4Provider _dbL4Provider;
+        public DbL4Interceptor(DbL4Provider dbL4Provider)
+        {
+            _dbL4Provider = dbL4Provider;
+        }
         public override InterceptionResult<DbCommand> CommandCreating(CommandCorrelatedEventData eventData, InterceptionResult<DbCommand> result)
         {
             return base.CommandCreating(eventData, result);
@@ -29,6 +35,7 @@ namespace WebApiApplication.DataContext
 
         public override InterceptionResult<DbDataReader> ReaderExecuting(DbCommand command, CommandEventData eventData, InterceptionResult<DbDataReader> result)
         {
+            
             return base.ReaderExecuting(command, eventData, result);
         }
 
@@ -73,6 +80,7 @@ namespace WebApiApplication.DataContext
         public override ValueTask<InterceptionResult<DbDataReader>> ReaderExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<DbDataReader> result,
             CancellationToken cancellationToken = new CancellationToken())
         {
+            command.CommandText = _dbL4Provider.TableReplace(command.CommandText);
             return base.ReaderExecutingAsync(command, eventData, result, cancellationToken);
         }
 

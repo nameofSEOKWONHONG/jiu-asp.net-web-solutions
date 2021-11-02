@@ -18,6 +18,7 @@ using Microsoft.OpenApi.Models;
 using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Entities;
+using WebApiApplication.Infrastructure;
 using WebApiApplication.Services;
 
 namespace WebApiApplication
@@ -73,6 +74,19 @@ namespace WebApiApplication
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddTransient<IWeatherForcastService, WeatherForcastService>();
+            
+            services.AddSingleton<DbL4Provider>();
+            services.AddSingleton<DbL4Interceptor>();
+            
+            services.AddTransient<BoatCreatorService>();
+            services.AddTransient<CarCreatorService>();
+            services.AddTransient<BusCreatorService>();
+            services.AddSingleton<VehicleCreatorServiceFactory>();
+
+            services.AddTransient<SMSMessageService>();
+            services.AddTransient<EmailMessageService>();
+            services.AddTransient<KakaoMessageService>();
+            services.AddSingleton<MessageServiceFactory>();
 
             #endregion
 
@@ -84,11 +98,15 @@ namespace WebApiApplication
 
             #region [database]
 
-            services.AddDbContext<AccountDbContext>(ctx =>
-                ctx.UseSqlServer(Configuration.GetConnectionString("SqlServer"))
-                    .AddInterceptors(new DbR4Interceptor()));
-                
-
+            services.AddDbContext<AccountDbContext>((sp, options) =>
+                {
+                    options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), builder =>
+                        {
+                            builder.EnableRetryOnFailure();
+                            builder.CommandTimeout(5);
+                        })
+                        .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
+                });
             #endregion
 
             #region [add jwt]

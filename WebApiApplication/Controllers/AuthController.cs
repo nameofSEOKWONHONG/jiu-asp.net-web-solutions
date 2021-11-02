@@ -14,12 +14,15 @@ namespace WebApiApplication.Controllers
     {
         private readonly IUserService userService;
         private readonly IAuthService authService;
+        
         public AuthController(ILogger<AuthController> logger,
             IUserService userService,
-            IAuthService authService) : base(logger)
+            IAuthService authService
+            ) : base(logger)
         {
             this.userService = userService;
             this.authService = authService;
+
         }
         
         [AllowAnonymous]
