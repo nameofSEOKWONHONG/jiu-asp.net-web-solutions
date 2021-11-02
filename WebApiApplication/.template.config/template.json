@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "seokwon",
+    "classifications": [ "asp.net", "web api"],
+    "identity": "WebApiProject",
+    "name": "asp.net simple web api templates",
+    "shortName": "simplewebapi",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    }
+  }

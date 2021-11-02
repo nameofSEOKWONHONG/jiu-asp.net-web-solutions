@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Entities;
 using WebApiApplication.Services;
@@ -36,6 +37,7 @@ namespace WebApiApplication
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
+                c.CustomSchemaIds(type => type.ToString());
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApiApplication", Version = "v1"});
                 // To Enable authorization using Swagger (JWT)    
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()  
@@ -70,6 +72,7 @@ namespace WebApiApplication
             //services.AddSingleton<IUserService, UserService>();
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddTransient<IWeatherForcastService, WeatherForcastService>();
 
             #endregion
 
