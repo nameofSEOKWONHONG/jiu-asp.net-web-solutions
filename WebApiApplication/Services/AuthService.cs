@@ -46,7 +46,6 @@ namespace WebApiApplication.Services
             var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Birthdate, "2020-01-01"),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email)
             };
             

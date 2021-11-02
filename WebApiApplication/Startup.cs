@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -126,6 +127,23 @@ namespace WebApiApplication
                     };
                 });
 
+
+            #endregion
+            
+            #region [add oauth]
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            }).AddGitHub(options =>
+            {
+                options.ClientId = "";
+                options.ClientSecret = "";
+            }).AddKakaoTalk(options =>
+            {
+                options.ClientId = "6167cd42b6b2599d8a9d981389224cbc";
+                options.ClientSecret = "wATqhEdFme0CX6d3lR2g2hUhPRQ84DiF";
+            });
 
             #endregion
         }
