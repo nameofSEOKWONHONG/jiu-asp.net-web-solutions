@@ -13,7 +13,8 @@ public class SampleService
 
     public void SampleMethod()
     {
-        if (this._contextAccessor.HttpContext.User.Identity.IsAuthenticated)
+        HttpContext httpContext = this._contextAccessor.HttpContext;
+        if (httpContext.User.Identity.IsAuthenticated)
         {
             Console.WriteLine("logined");
         }

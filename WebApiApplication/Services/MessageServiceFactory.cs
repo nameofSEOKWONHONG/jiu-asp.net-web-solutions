@@ -47,6 +47,7 @@ namespace WebApiApplication.Services
     {
         public async Task<bool> SendMessageAsync(MessageRequestDto request)
         {
+            await Task.Delay(1);
             return false;
         }
     }
@@ -55,6 +56,7 @@ namespace WebApiApplication.Services
     {
         public async Task<bool> SendMessageAsync(MessageRequestDto request)
         {
+            await Task.Delay(1);
             return false;
         }
     }
@@ -63,6 +65,7 @@ namespace WebApiApplication.Services
     {
         public async Task<bool> SendMessageAsync(MessageRequestDto request)
         {
+            await Task.Delay(1);
             return false;
         }
     }

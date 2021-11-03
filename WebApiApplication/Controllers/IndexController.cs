@@ -26,16 +26,19 @@ namespace WebApiApplication.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var sb = new StringBuilder();
-            sb.AppendLine("Hello, The purpose of this project is to create a template similar to \"typescript-express-starter\"");
-            sb.AppendLine("(https://github.com/ljlm0402/typescript-express-starter)");
-            sb.AppendLine("git clone [project site] [your project name]");
-            sb.AppendLine("cd [your project name]");
-            sb.AppendLine("dotnet restore");
-            sb.AppendLine("dotnet run or dotnet watch run");
-            sb.AppendLine(this._vehicleCreatorServiceFactory.CreateService<BoatCreatorService>().Create());
-            sb.AppendLine(this._messageServiceFactory.CreateService<EmailMessageService>().SendMessageAsync(null).GetAwaiter().GetResult().ToString());
-            return Ok(sb.ToString());
+            return await Task.Run(() =>
+            {
+                var sb = new StringBuilder();
+                sb.AppendLine("Hello, The purpose of this project is to create a template similar to \"typescript-express-starter\"");
+                sb.AppendLine("(https://github.com/ljlm0402/typescript-express-starter)");
+                sb.AppendLine("git clone [project site] [your project name]");
+                sb.AppendLine("cd [your project name]");
+                sb.AppendLine("dotnet restore");
+                sb.AppendLine("dotnet run or dotnet watch run");
+                sb.AppendLine(this._vehicleCreatorServiceFactory.CreateService<BoatCreatorService>().Create());
+                sb.AppendLine(this._messageServiceFactory.CreateService<EmailMessageService>().SendMessageAsync(null).GetAwaiter().GetResult().ToString());
+                return Ok(sb.ToString());
+            });
         }
     }
 }
