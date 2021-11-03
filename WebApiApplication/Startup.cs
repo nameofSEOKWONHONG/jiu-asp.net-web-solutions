@@ -1,24 +1,19 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
+using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
-using WebApiApplication.Entities;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Services;
 
@@ -36,39 +31,50 @@ namespace WebApiApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+            #region [swagger setting]
+            services.AddSwaggerGen(options =>
             {
-                c.CustomSchemaIds(type => type.ToString());
+                options.DocumentFilter<SwaggerRemoveSchemasFilter>();
+                options.CustomSchemaIds(type => type.ToString());
+                options.DocInclusionPredicate((_, api) => !string.IsNullOrWhiteSpace(api.GroupName));
+
+                // add a custom operation filter which sets default values
+                options.OperationFilter<SwaggerDefaultValues>();
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
                 
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApiApplication", Version = "v1"});
-                
-                // To Enable authorization using Swagger (JWT)    
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()  
-                {  
-                    Name = "Authorization",  
-                    Type = SecuritySchemeType.ApiKey,  
-                    Scheme = "Bearer",  
-                    BearerFormat = "JWT",  
-                    In = ParameterLocation.Header,  
-                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",  
-                });  
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement  
-                {  
-                    {  
-                        new OpenApiSecurityScheme  
-                        {  
-                            Reference = new OpenApiReference  
-                            {  
-                                Type = ReferenceType.SecurityScheme,  
-                                Id = "Bearer"  
-                            }  
-                        },  
-                        new string[] {}  
-  
-                    }  
-                });  
-            });
+                //Authrozie
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer",
+                        BearerFormat = "JWT",
+                        In = ParameterLocation.Header,
+                        Description =
+                            "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\""
+                    });
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });                
+            });            
+            #endregion
+
+            services.AddControllers()
+                //.AddNewtonsoftJson(options => {
+                //    options.SerializerSettings.ContractResolver = new LowercaseContractResolver();
+                //})
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);            
 
             #region [service]
 
@@ -157,23 +163,65 @@ namespace WebApiApplication
             // });
 
             #endregion
+
+            #region [add cors]
+            // USE CORS
+            // ref : https://stackoverflow.com/questions/53675850/how-to-fix-the-cors-protocol-does-not-allow-specifying-a-wildcard-any-origin
+            // ********************
+            services.AddCors(options => {
+                //options.AddPolicy("AllowAll",
+                //    builder => {
+                //        builder
+                //        .AllowAnyOrigin()
+                //        .AllowAnyMethod()
+                //        .AllowAnyHeader()
+                //        .AllowCredentials();
+                //    });
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });            
+            #endregion      
+
+            #region [caching]      
+            // add service for allowing caching of responses
+            // ref : https://github.com/Cingulara/dotnet-core-web-api-caching-examples
+            services.AddResponseCaching();
+            //.AddNewtonsoftJson(o => o.SerializerSettings.Converters.Insert(0, new CustomConverter()));            
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                // Enable middleware to serve generated Swagger as a JSON endpoint.
                 app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    //hide schema
-                    c.DefaultModelsExpandDepth(-1);
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiApplication v1");
-                    c.RoutePrefix = string.Empty;
+
+                // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+                // specifying the Swagger JSON endpoint.
+                app.UseSwaggerUI(options => {                                
+                    // build a swagger endpoint for each discovered API version  
+                    foreach (var description in provider.ApiVersionDescriptions)  
+                    {  
+                        options.DefaultModelExpandDepth(-1);
+                        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());                        
+                    }  
+                    options.RoutePrefix = string.Empty;                
                 });
             }
+
+            #region [cors]
+            app.UseCors("CorsPolicy");            
+            #endregion
+
+            #region [caching]
+            // allow response caching directives in the API Controllers
+            app.UseResponseCaching();            
+            #endregion
 
             app.UseHttpsRedirection();
 

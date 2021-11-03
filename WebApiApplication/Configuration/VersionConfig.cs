@@ -1,4 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using System.Linq;
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace WebApiApplication
 {
@@ -8,6 +16,8 @@ namespace WebApiApplication
                 // opt.AssumeDefaultVersionWhenUnspecified = true;
                 // opt.DefaultApiVersion = ApiVersion.Default;
 
+                opt.DefaultApiVersion = new ApiVersion(1, 0);  
+                opt.AssumeDefaultVersionWhenUnspecified = true;  
                 // this is going to return all available api versions
                 opt.ReportApiVersions = true;
 
@@ -29,6 +39,9 @@ namespace WebApiApplication
                     // can also be used to control the format of the API version in route templates
                     options.SubstituteApiVersionInUrl = true;
                 } );
+
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();  
+            services.AddSwaggerGen(options => options.OperationFilter<SwaggerDefaultValues>());                  
         }
     }
 }
