@@ -5,12 +5,18 @@
       <LangVersion>9.0</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <DocumentationFile>D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\WebApiApplication.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="AspNet.Security.OAuth.GitHub" Version="5.0.18" />
         <PackageReference Include="AspNet.Security.OAuth.KakaoTalk" Version="5.0.18" />
         <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
         <PackageReference Include="Mapster" Version="7.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.11" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="5.0.11" />
@@ -29,7 +35,8 @@
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
         <PackageReference Include="Microsoft.OpenApi" Version="1.2.3" />
         <PackageReference Include="Realm" Version="10.6.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,4 +44,17 @@
       <Folder Include="Models" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="Realm, Version=10.6.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>bin\Debug\net5.0\Realm.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+        <ItemGroup>
+            <DocFile Include="bin\*\*\*.xml" />
+        </ItemGroup>
+        <Copy SourceFiles="@(DocFile)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="false" />
+    </Target>    
+    
 </Project>

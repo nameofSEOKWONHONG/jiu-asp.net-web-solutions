@@ -10,7 +10,7 @@ namespace WebApiApplication.Controllers {
             this._weatherForcastService = weatherForcastService;
         }
 
-        [HttpGet]
+        [HttpGet("{name}")]
         public WeatherForcast Get(string name) {
             return this._weatherForcastService.GetWeatherForcast(name);
         }

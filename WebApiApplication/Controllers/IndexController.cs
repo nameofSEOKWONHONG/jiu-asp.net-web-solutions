@@ -9,6 +9,8 @@ using WebApiApplication.Services;
 namespace WebApiApplication.Controllers
 {
     [AllowAnonymous]
+    [ApiVersion("2")]
+    [ApiExplorerSettings(GroupName = "v2")]
     public class IndexController : ApiControllerBase
     {
         private readonly VehicleCreatorServiceFactory _vehicleCreatorServiceFactory;
@@ -32,7 +34,7 @@ namespace WebApiApplication.Controllers
             sb.AppendLine("dotnet restore");
             sb.AppendLine("dotnet run or dotnet watch run");
             sb.AppendLine(this._vehicleCreatorServiceFactory.CreateService<BoatCreatorService>().Create());
-            sb.AppendLine(this._messageServiceFactory.CreateService<EmailMessageService>().SendMessage());
+            sb.AppendLine(this._messageServiceFactory.CreateService<EmailMessageService>().SendMessageAsync(null).GetAwaiter().GetResult().ToString());
             return Ok(sb.ToString());
         }
     }

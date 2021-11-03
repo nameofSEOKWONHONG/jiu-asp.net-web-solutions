@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 namespace WebApiApplication.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ApiControllerBase : ControllerBase
     {
         protected readonly ILogger logger;

@@ -6,50 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/App.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/AuthBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/KakaoAuthInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/SampleService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Counter.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Login.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Login.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Logout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Logout.cshtml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/_Host.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/_Layout.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/AcessControl.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/SurveyPrompt.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/_Imports.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/bootstrap/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/bootstrap/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/FONT-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/ICON-LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/site.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/Dtos/ResultDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForcastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForcastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,25 +35,29 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9C3E83BF-875C-4C46-8CEB-D7A710B6ABD9/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/715E705B-4C29-4B56-BD39-70A08D6C2815/87/83854785/AuthenticationProperties.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BC366D2-BA14-4BC5-A17E-08D4F35F238B/233/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B2A7E468-D122-4703-9C39-2A395B6FB4F4/3/AuthenticationOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/9d/924b43e2/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecast.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/3/KakaoTalkAuthenticationExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2BF37559-7836-4DB2-87AB-80CED63E93CC/1D/RemoteAuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/47/8a2e8698/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1047FADB-65A0-46AF-9BD9-2F9691847209/1A/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/c2/fbc738de/JsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/fc/d71f3665/JsonConverter`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/4/KakaoTalkAuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BC366D2-BA14-4BC5-A17E-08D4F35F238B/2C4/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/e7/9c3f29f5/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/WebApiApplication/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecast.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/47/8a2e8698/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/fc/d71f3665/JsonConverter`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1CAEA579-7BC0-4E55-ADEB-CC8011B21AB8/4/ConfigureNamedOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/2/KakaoTalkAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92153CAF-7CC7-4084-94B7-4873490AEF05/7/OAuthEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/e7/9c3f29f5/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/9/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2BF37559-7836-4DB2-87AB-80CED63E93CC/F/RemoteAuthenticationEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21690B23-5D4F-4F50-B87F-09375681DE18/a3/b74874f5/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
@@ -101,14 +71,11 @@
       <option value="$PROJECT_DIR$/WebApiApplication/DataContext/DbL4Interceptor.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Dtos/UserRequest.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/IMessageServiceFactory.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/appsettings.json" />
       <option value="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/AuthService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecast.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Authentication.cshtml" />
@@ -131,6 +98,15 @@
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Counter.razor" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/SampleService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Program.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForcastController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Dtos/ResultDto.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zr6hgYoMJCaezBA3WFPKJU9cAM" />
@@ -146,7 +122,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.BlazorServerApplication">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApiApplication">
     <configuration name="BlazorServerApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -288,23 +264,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="adf" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>19</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="17" containingFunctionPresentation="constructor 'IndexController'">
-            <startOffsets>
-              <option value="743" />
-            </startOffsets>
-            <endOffsets>
-              <option value="809" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="LaunchSettings">
         <watch expression="command.CommandText" language="C#" />

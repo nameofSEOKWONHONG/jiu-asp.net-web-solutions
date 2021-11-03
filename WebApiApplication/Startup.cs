@@ -40,7 +40,9 @@ namespace WebApiApplication
             services.AddSwaggerGen(c =>
             {
                 c.CustomSchemaIds(type => type.ToString());
+                
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "WebApiApplication", Version = "v1"});
+                
                 // To Enable authorization using Swagger (JWT)    
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()  
                 {  
@@ -91,6 +93,13 @@ namespace WebApiApplication
 
             #endregion
 
+            #region [api versioning]
+
+            services.AddVersionConfig();
+            
+
+            #endregion
+
             #region [memory cache]
 
             services.AddMemoryCache();
@@ -132,18 +141,20 @@ namespace WebApiApplication
             
             #region [add oauth]
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            }).AddGitHub(options =>
-            {
-                options.ClientId = "";
-                options.ClientSecret = "";
-            }).AddKakaoTalk(options =>
-            {
-                options.ClientId = "6167cd42b6b2599d8a9d981389224cbc";
-                options.ClientSecret = "wATqhEdFme0CX6d3lR2g2hUhPRQ84DiF";
-            });
+            // services.AddAuthentication(options =>
+            // {
+            //     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            // })
+            //     .AddGitHub(options =>
+            // {
+            //     options.ClientId = "";
+            //     options.ClientSecret = "";
+            // })
+            //     .AddKakaoTalk(options =>
+            // {
+            //     options.ClientId = "";
+            //     options.ClientSecret = "";
+            // });
 
             #endregion
         }
@@ -155,7 +166,13 @@ namespace WebApiApplication
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiApplication v1"));
+                app.UseSwaggerUI(c =>
+                {
+                    //hide schema
+                    c.DefaultModelsExpandDepth(-1);
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApiApplication v1");
+                    c.RoutePrefix = string.Empty;
+                });
             }
 
             app.UseHttpsRedirection();
