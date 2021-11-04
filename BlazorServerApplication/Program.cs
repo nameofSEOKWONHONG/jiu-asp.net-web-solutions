@@ -4,12 +4,12 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using BlazorServerApplication.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 using MudBlazor.Services;
 
 using BlazorServerApplication.Data;
@@ -17,18 +17,25 @@ using BlazorServerApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+#region [Add services to the container.]
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+#endregion
 
+#region [Add mud-blazor services to the container.]
 builder.Services.AddMudServices();
+#endregion
+
+#region [add http services to the container.]
 //builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient<WeatherForecastService>(client =>
 {
     client.BaseAddress = new Uri("https://localhost:5001");
 });
-builder.Services.AddSingleton<SampleService>();
+builder.Services.AddSingleton<LoginCheckService>();
+#endregion
 
+#region [add oauth services to the container.]
 //https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication/
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -45,8 +52,11 @@ builder.Services.AddAuthentication(options => {
     options.ClientSecret = "[secret]";
     options.Events = new KakaoOAuthEventService(provider);
 });
+#endregion
 
+#region [add httpcontext accessor to the container.]
 builder.Services.AddHttpContextAccessor();
+#endregion
 
 var app = builder.Build();
 

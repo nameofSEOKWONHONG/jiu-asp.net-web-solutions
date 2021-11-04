@@ -38,18 +38,24 @@ namespace WebApiApplication
             #region [swagger setting]
             services.AddSwaggerGen(options =>
             {
+                //do not display schema
                 options.DocumentFilter<SwaggerRemoveSchemasFilter>();
+
+                //disable realem object schema error
                 options.CustomSchemaIds(type => type.ToString());
+
+                //remove swagger api version error
                 options.DocInclusionPredicate((_, api) => !string.IsNullOrWhiteSpace(api.GroupName));
 
                 // add a custom operation filter which sets default values
                 options.OperationFilter<SwaggerDefaultValues>();
 
+                // integrate xml comments into swagger
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 options.IncludeXmlComments(xmlPath);
                 
-                //Authrozie
+                // add a custom operation filter which sets default values
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
                         Name = "Authorization",
                         Type = SecuritySchemeType.ApiKey,
@@ -59,6 +65,8 @@ namespace WebApiApplication
                         Description =
                             "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\""
                     });
+
+                // add a custom operation filter which sets default values
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
@@ -74,15 +82,12 @@ namespace WebApiApplication
             });            
             #endregion
 
-            services.AddControllers()
-                //.AddNewtonsoftJson(options => {
-                //    options.SerializerSettings.ContractResolver = new LowercaseContractResolver();
-                //})
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);            
+            #region [add controllers]
+            services.AddControllers();        
+            #endregion
 
-            #region [service]
+            #region [add service]
             
-            //services.AddSingleton<IUserService, UserService>();
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddTransient<IWeatherForcastService, WeatherForcastService>();
@@ -98,6 +103,7 @@ namespace WebApiApplication
             services.AddTransient<SMSMessageService>();
             services.AddTransient<EmailMessageService>();
             services.AddTransient<KakaoMessageService>();
+            // add factory for message service
             services.AddSingleton<MessageServiceFactory>();
 
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
@@ -106,8 +112,7 @@ namespace WebApiApplication
 
             #region [api versioning]
 
-            services.AddVersionConfig();
-            
+            services.AddVersionConfig();            
 
             #endregion
 
@@ -117,7 +122,7 @@ namespace WebApiApplication
 
             #endregion
 
-            #region [database]
+            #region [add database]
 
             services.AddDbContext<AccountDbContext>((sp, options) =>
                 {
@@ -176,7 +181,7 @@ namespace WebApiApplication
             });            
             #endregion      
 
-            #region [caching]      
+            #region [add response caching]      
             // add service for allowing caching of responses
             // ref : https://github.com/Cingulara/dotnet-core-web-api-caching-examples
             services.AddResponseCaching();

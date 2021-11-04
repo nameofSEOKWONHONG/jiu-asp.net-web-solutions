@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Http;
 
 namespace BlazorServerApplication.Data;
 
-public class SampleService
+public class LoginCheckService
 {
     private readonly IHttpContextAccessor _contextAccessor;
-    public SampleService(IHttpContextAccessor contextAccessor)
+    public LoginCheckService(IHttpContextAccessor contextAccessor)
     {
         this._contextAccessor = contextAccessor;
     }
