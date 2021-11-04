@@ -2,7 +2,10 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -77,8 +80,7 @@ namespace WebApiApplication
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);            
 
             #region [service]
-
-            //if use userservice manual implement
+            
             //services.AddSingleton<IUserService, UserService>();
             services.AddTransient<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
@@ -145,22 +147,9 @@ namespace WebApiApplication
 
             #endregion
             
-            #region [add oauth]
+            #region [add auth]
 
-            // services.AddAuthentication(options =>
-            // {
-            //     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-            // })
-            //     .AddGitHub(options =>
-            // {
-            //     options.ClientId = "";
-            //     options.ClientSecret = "";
-            // })
-            //     .AddKakaoTalk(options =>
-            // {
-            //     options.ClientId = "";
-            //     options.ClientSecret = "";
-            // });
+            services.AddAuthentication();
 
             #endregion
 

@@ -10,14 +10,4 @@ Welcome to your new app.
 <div>
     <MudButton Variant="Variant.Outlined" @onclick="(() => ClickEvent())">click</MudButton>    
 </div>
-<div>
-    <AuthorizeView>
-        <Authorized>
-            <a href="logout">Log out</a>
-        </Authorized>
-        <NotAuthorized>
-            <a href="login?redirectUri=/">Log in</a>
-        </NotAuthorized>
-    </AuthorizeView>    
-</div>
 <SurveyPrompt Title="How is Blazor working for you?" />

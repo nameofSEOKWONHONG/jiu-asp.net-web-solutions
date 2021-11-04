@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MudBlazor.Services;
 
+using BlazorServerApplication.Data;
+using BlazorServerApplication.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -26,7 +29,6 @@ builder.Services.AddHttpClient<WeatherForecastService>(client =>
 });
 builder.Services.AddSingleton<SampleService>();
 
-
 //https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication/
 builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -38,32 +40,10 @@ builder.Services.AddAuthentication(options => {
     options.LogoutPath = "/logout";
 }).AddKakaoTalk(options =>
 {
-    options.ClientId = "[client key]";
-    options.ClientSecret = "[client secret]";
-    options.Events = new OAuthEvents()
-    {
-        OnTicketReceived = (context) =>
-        {
-            return Task.CompletedTask;
-        },
-        OnAccessDenied = context =>
-        {
-            return Task.CompletedTask;
-        },
-        OnCreatingTicket = context =>
-        {
-            Console.WriteLine(context.AccessToken);
-            Console.WriteLine(context.RefreshToken);
-            Console.WriteLine(context.Identity.AuthenticationType);
-            Console.WriteLine(context.Identity.IsAuthenticated);
-            var kakaoValueKind = JsonSerializer.Deserialize<KakaoAuthInfo>(context.User.GetRawText());
-            Console.WriteLine(kakaoValueKind.Id);
-            
-            //convert ticket context to oauthinfo
-            //save db oauthinfo;
-            return Task.CompletedTask;
-        }
-    };
+    var provider = builder.Services.BuildServiceProvider();
+    options.ClientId = "[key]";
+    options.ClientSecret = "[secret]";
+    options.Events = new KakaoOAuthEventService(provider);
 });
 
 builder.Services.AddHttpContextAccessor();
