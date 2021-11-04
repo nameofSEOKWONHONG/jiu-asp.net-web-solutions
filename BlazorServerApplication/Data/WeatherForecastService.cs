@@ -1,23 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace BlazorServerApplication.Data;
 
 public class WeatherForecastService
 {
-    private static readonly string[] Summaries = new[]
+    private readonly HttpClient _httpClient;
+    public WeatherForecastService(HttpClient httpClient)
     {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    public Task<WeatherForecast[]> GetForecastAsync(DateTime startDate)
+        this._httpClient = httpClient;
+    }
+    
+    public async Task<WeatherForecast[]> GetForecastAsync()
     {
-        return Task.FromResult(Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        using (var client = new HttpClient())
         {
-            Date = startDate.AddDays(index),
-            TemperatureC = Random.Shared.Next(-20, 55),
-            Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        }).ToArray());
+            client.BaseAddress = new Uri("https://localhost:5001");
+            var response = await client.GetAsync("api/v1/WeatherForecast");
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+                return result;
+            }
+        }
+
+        return null;
+    }
+
+    public async Task<WeatherForecast[]> GetForecastUseByHttpClientFactoryAsync()
+    {
+        var response = await _httpClient.GetAsync("api/v1/WeatherForecast");
+        return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
     }
 }

@@ -19,8 +19,13 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.AddMudServices();
-builder.Services.AddSingleton<WeatherForecastService>();
+//builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddHttpClient<WeatherForecastService>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:5001");
+});
 builder.Services.AddSingleton<SampleService>();
+
 
 //https://auth0.com/blog/what-is-blazor-tutorial-on-building-webapp-with-authentication/
 builder.Services.AddAuthentication(options => {

@@ -5,11 +5,19 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <NoWarn>0169;8019;1591</NoWarn>
+    <TypeScriptESModuleInterop>True</TypeScriptESModuleInterop>
+    <TypeScriptAllowSyntheticDefaultImports>True</TypeScriptAllowSyntheticDefaultImports>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.KakaoTalk" Version="5.0.18" />
     <PackageReference Include="MudBlazor" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Index.razor.js">
+      <DependentUpon>Index.razor</DependentUpon>
+    </Content>
   </ItemGroup>
 
 </Project>

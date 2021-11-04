@@ -1,15 +1,25 @@
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using MongoDB.Bson;
 using Realms;
 
 namespace WebApiApplication.Entities {
     [ValidateNever]
-    public class WeatherForcast : RealmObject {
+    public class WeatherForecast {
         [PrimaryKey]
-        public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
+        public int Id { get; set; }
+        
         [Required]
-        public string Name {get;set;}
+        public DateTime Date { get; set; }
+        
         [Required]
-        public string Description { get; set; }
+        public int TemperatureC { get; set; }
+        
+        [NotMapped]
+        public int TemperatureF => (32 + (int)(TemperatureC / 0.5556));
+        
+        [Required]
+        public string Summary { get; set; }
     }
 }
