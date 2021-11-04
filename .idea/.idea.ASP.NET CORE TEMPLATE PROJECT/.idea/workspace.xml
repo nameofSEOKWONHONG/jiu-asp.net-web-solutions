@@ -5,19 +5,15 @@
     <projectFile>BlazorServerApplication/BlazorServerApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" afterDir="false" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Data/AuthBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/OAuthInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Data/KakaoAuthInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Data/KakaoAuthInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Services/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/AcessControl.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/AcessControl.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/FodyWeavers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/FodyWeavers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +61,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1CAEA579-7BC0-4E55-ADEB-CC8011B21AB8/4/ConfigureNamedOptions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/2/KakaoTalkAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/BlazorServerApplication/Shared/AcessControl.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92153CAF-7CC7-4084-94B7-4873490AEF05/7/OAuthEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/a9/16b8c232/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/9/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -74,11 +71,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/IMessageServiceFactory.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/appsettings.json" />
-      <option value="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/AuthService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecast.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Authentication.cshtml" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/_Layout.cshtml" />
@@ -110,14 +102,11 @@
       <option value="$PROJECT_DIR$/WebApiApplication/Entities/WeatherForcast.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/KakaoOAuthEventService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/KakaoOAuthEventService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Service.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Services/WeatherForecastService.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/OAuthInfo.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Program.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Shared/AcessControl.razor" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Logout.cshtml" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Login.cshtml" />
@@ -125,6 +114,14 @@
       <option value="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/KakaoAuthInfo.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.js" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Program.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zr6hgYoMJCaezBA3WFPKJU9cAM" />
@@ -218,7 +215,7 @@
       <workItem from="1635828605833" duration="160000" />
       <workItem from="1635828897058" duration="9901000" />
       <workItem from="1635986885084" duration="7159000" />
-      <workItem from="1636000907049" duration="4888000" />
+      <workItem from="1636000907049" duration="12524000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -262,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635997741634</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test">
+      <created>1636006108686</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1636006108686</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,49 +294,38 @@
     <MESSAGE value="change cs name" />
     <MESSAGE value="adf" />
     <MESSAGE value="update httpclient and httpclient factory" />
-    <option name="LAST_COMMIT_MESSAGE" value="update httpclient and httpclient factory" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs</url>
-          <line>25</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorServerApplication\Services\KakaoOAuthEventService.cs" initialLine="23" containingFunctionPresentation="method 'CreatingTicket'">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs</url>
+          <line>17</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\WeatherForecastController.cs" initialLine="17" containingFunctionPresentation="method 'GetAll'">
             <startOffsets>
-              <option value="885" />
+              <option value="685" />
             </startOffsets>
             <endOffsets>
-              <option value="1060" />
+              <option value="724" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="14" />
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs</url>
-          <line>33</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorServerApplication\Services\KakaoOAuthEventService.cs" initialLine="33" containingFunctionPresentation="method 'CreatingTicket'">
+          <url>file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor</url>
+          <line>46</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorServerApplication\Pages\FetchData.razor" initialLine="48" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
             <startOffsets>
-              <option value="1264" />
+              <option value="-1" />
             </startOffsets>
             <endOffsets>
-              <option value="1319" />
+              <option value="-1" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs</url>
-          <line>39</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorServerApplication\Services\KakaoOAuthEventService.cs" initialLine="39" containingFunctionPresentation="method 'CreatingTicket'">
-            <startOffsets>
-              <option value="1671" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1768" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="16" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

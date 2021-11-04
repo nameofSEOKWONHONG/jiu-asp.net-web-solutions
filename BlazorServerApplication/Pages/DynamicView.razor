@@ -1,0 +1,17 @@
+﻿@page "/DynamicView"
+@inject IJSRuntime JsRuntime
+
+<h3>DynamicView</h3>
+
+@((MarkupString)_button)
+
+@foreach (var component in _components)
+{
+    if (component.WigetType == typeof(MudButton))
+    {
+        <MudButton Variant="@((Variant)component.Properties["Variant"])" Color="@((Color)component.Properties["Color"])" OnClick=@component.Event>@component.Properties["Text"]</MudButton>
+        <MudDivider/>
+    }
+}
+
+<button onclick="@(()=> OnClick())"></button>

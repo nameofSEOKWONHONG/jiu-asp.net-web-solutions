@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Services;
@@ -98,6 +99,8 @@ namespace WebApiApplication
             services.AddTransient<EmailMessageService>();
             services.AddTransient<KakaoMessageService>();
             services.AddSingleton<MessageServiceFactory>();
+
+            services.AddSingleton<IGenerateViewService, GenerateViewService>();
 
             #endregion
 

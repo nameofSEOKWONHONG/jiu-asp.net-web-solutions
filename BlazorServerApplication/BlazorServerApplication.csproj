@@ -20,4 +20,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Pages\DynamicView.razor.js">
+      <DependentUpon>DynamicView.razor</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>
