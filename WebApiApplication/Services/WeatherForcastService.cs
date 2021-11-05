@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using LiteDB;
 using MongoDB.Bson;
 using Realms;
-using WebApiApplication.Entities;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Services {
     public interface IWeatherForcastService

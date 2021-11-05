@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using WebApiApplication.Entities;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.DataContext
 {

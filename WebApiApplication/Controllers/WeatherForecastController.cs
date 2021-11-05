@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
-using WebApiApplication.Entities;
 using WebApiApplication.Services;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Controllers {
     public class WeatherForecastController : ApiControllerBase{

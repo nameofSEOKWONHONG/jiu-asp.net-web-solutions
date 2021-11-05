@@ -39,7 +39,7 @@ namespace WebApiApplication
             services.AddSwaggerGen(options =>
             {
                 //do not display schema
-                options.DocumentFilter<SwaggerRemoveSchemasFilter>();
+                //options.DocumentFilter<SwaggerRemoveSchemasFilter>();
 
                 //disable realem object schema error
                 options.CustomSchemaIds(type => type.ToString());
@@ -200,7 +200,8 @@ namespace WebApiApplication
 
                 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
                 // specifying the Swagger JSON endpoint.
-                app.UseSwaggerUI(options => {                                
+                app.UseSwaggerUI(options => {
+                    options.DefaultModelExpandDepth(-1);
                     // build a swagger endpoint for each discovered API version  
                     foreach (var description in provider.ApiVersionDescriptions)  
                     {  

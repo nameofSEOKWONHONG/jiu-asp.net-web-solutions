@@ -53,6 +53,10 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\WebApiApplication.SharedLibrary\WebApiApplication.SharedLibrary.csproj" />
+    </ItemGroup>
+
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
         <ItemGroup>
             <DocFile Include="bin\*\*\*.xml" />

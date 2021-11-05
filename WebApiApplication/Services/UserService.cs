@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebApiApplication.Entities;
 using BCrypt.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.DataContext;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Services
 {

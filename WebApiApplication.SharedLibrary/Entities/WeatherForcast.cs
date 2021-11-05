@@ -1,13 +1,10 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
-using MongoDB.Bson;
-using Realms;
 
-namespace WebApiApplication.Entities {
-    [ValidateNever]
+namespace WebApiApplication.SharedLibrary.Entities {
     public class WeatherForecast {
-        [PrimaryKey]
+        [Key]
         public int Id { get; set; }
         
         [Required]

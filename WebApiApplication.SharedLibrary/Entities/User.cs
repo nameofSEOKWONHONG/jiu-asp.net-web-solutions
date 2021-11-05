@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic;
 
-namespace WebApiApplication.Entities
+namespace WebApiApplication.SharedLibrary.Entities
 {
     
     [Table("User")]

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebApiApplication.SharedLibrary.Dtos;
 
 namespace BlazorServerApplication.Services
 {
@@ -39,9 +40,26 @@ namespace BlazorServerApplication.Services
                 {
                     var kakaoAuthInfo = response.Content.ReadFromJsonAsync<KakaoAuthInfo>().GetAwaiter().GetResult();
                     oauthInfo.AuthEntity = kakaoAuthInfo;
-                    
-                    //save auth info
                 }
+            }
+
+            if (oauthInfo.IsAuthenticated)
+            {
+                //save auth info
+                using (var client = new HttpClient())
+                {
+                    var postData = new UserRequest()
+                    {
+                        Email = oauthInfo.AuthEntity.KakaoAccount.Email,
+                        Password = "[systemdefaultpassword]"
+                    };
+                    client.BaseAddress = new Uri("https://localhost:5001");
+                    var respoonse = client.PostAsync("/api/v1/Auth/SingUp", new StringContent(JsonSerializer.Serialize(postData))).GetAwaiter().GetResult();
+                    if (respoonse.IsSuccessStatusCode)
+                    {
+                        //write mail check
+                    }
+                }    
             }
             
             _logger.LogTrace(oauthInfo.ToString());

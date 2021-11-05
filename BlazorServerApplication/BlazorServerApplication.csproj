@@ -26,4 +26,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiApplication.SharedLibrary\WebApiApplication.SharedLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

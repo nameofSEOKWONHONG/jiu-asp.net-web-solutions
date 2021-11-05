@@ -1,4 +1,4 @@
-﻿namespace WebApiApplication.Dtos
+﻿namespace WebApiApplication.SharedLibrary.Dtos
 {
     public class ResultBase
     {

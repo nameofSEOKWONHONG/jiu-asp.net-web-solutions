@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.Extensions.Logging;
-using WebApiApplication.Dtos;
 using WebApiApplication.Services;
+using WebApiApplication.SharedLibrary.Dtos;
 
 namespace WebApiApplication.Controllers
 {

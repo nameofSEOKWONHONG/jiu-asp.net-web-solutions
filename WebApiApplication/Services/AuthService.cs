@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using WebApiApplication.Dtos;
-using WebApiApplication.Entities;
+using WebApiApplication.SharedLibrary.Dtos;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Services
 {

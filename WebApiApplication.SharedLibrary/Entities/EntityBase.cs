@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace WebApiApplication.Entities
+namespace WebApiApplication.SharedLibrary.Entities
 {
     public class EntityBase
     {

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiApplication", "WebApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerApplication", "BlazorServerApplication\BlazorServerApplication.csproj", "{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiApplication.SharedLibrary", "WebApiApplication.SharedLibrary\WebApiApplication.SharedLibrary.csproj", "{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

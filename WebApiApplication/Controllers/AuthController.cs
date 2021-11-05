@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApiApplication.Dtos;
-using WebApiApplication.Entities;
 using WebApiApplication.Services;
+using WebApiApplication.SharedLibrary.Dtos;
+using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Controllers
 {
