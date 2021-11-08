@@ -108,7 +108,7 @@ namespace WebApiApplication
 
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
 
-            services.AddSingleton<ISessionContextService, SessionContextService>();
+            //services.AddSingleton<ISessionContextService, SessionContextService>();
 
             #endregion
 

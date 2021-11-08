@@ -1,46 +1,45 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using WebApiApplication.SharedLibrary.Entities;
 
-namespace ClientApplication.Services;
-
-public class WeatherForecastService
+namespace ClientApplication.Services
 {
-    private readonly HttpClient _httpClient;
-    public WeatherForecastService(HttpClient httpClient)
+    public class WeatherForecastService
     {
-        this._httpClient = httpClient;
-    }
-    
-    /// <summary>
-    /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
-    /// </summary>
-    public async Task<WeatherForecast[]> GetForecastAsync()
-    {
-        using (var client = new HttpClient())
+        private readonly HttpClient _httpClient;
+        public WeatherForecastService(HttpClient httpClient)
         {
-            client.BaseAddress = new Uri("https://localhost:5001");
-            var response = await client.GetAsync("api/v1/WeatherForecast");
-            if (response.IsSuccessStatusCode)
+            this._httpClient = httpClient;
+        }
+    
+        /// <summary>
+        /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
+        /// </summary>
+        public async Task<WeatherForecast[]> GetForecastAsync()
+        {
+            using (var client = new HttpClient())
             {
-                var result = await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
-                return result;
+                client.BaseAddress = new Uri("https://localhost:5001");
+                var response = await client.GetAsync("api/v1/WeatherForecast");
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+                    return result;
+                }
             }
+
+            return null;
         }
 
-        return null;
-    }
-
-    /// <summary>
-    /// Gets the weather forecast. use by the http client factory.
-    /// </summary>
-    public async Task<WeatherForecast[]> GetForecastUseByHttpClientFactoryAsync()
-    {
-        var response = await _httpClient.GetAsync("api/v1/WeatherForecast");
-        return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+        /// <summary>
+        /// Gets the weather forecast. use by the http client factory.
+        /// </summary>
+        public async Task<WeatherForecast[]> GetForecastUseByHttpClientFactoryAsync()
+        {
+            var response = await _httpClient.GetAsync("api/v1/WeatherForecast");
+            return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+        }
     }
 }

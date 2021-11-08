@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
@@ -10,6 +12,7 @@ namespace WebApiApplication.Controllers {
         private readonly IWeatherForcastService _weatherForcastService;
         public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForcastService weatherForcastService) : base(logger) {
             this._weatherForcastService = weatherForcastService;
+            base.logger.LogInformation($"{nameof(WeatherForecastController)} created time {DateTime.Now.ToLongDateString()}");
         }
 
         [HttpGet]

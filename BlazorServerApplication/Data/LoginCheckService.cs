@@ -1,22 +1,24 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 
-namespace BlazorServerApplication.Data;
-
-public class LoginCheckService
+namespace BlazorServerApplication.Data
 {
-    private readonly IHttpContextAccessor _contextAccessor;
-    public LoginCheckService(IHttpContextAccessor contextAccessor)
+    public class LoginCheckService
     {
-        this._contextAccessor = contextAccessor;
-    }
-
-    public void SampleMethod()
-    {
-        HttpContext httpContext = this._contextAccessor.HttpContext;
-        if (httpContext.User.Identity.IsAuthenticated)
+        private readonly IHttpContextAccessor _contextAccessor;
+        public LoginCheckService(IHttpContextAccessor contextAccessor)
         {
-            Console.WriteLine("logined");
+            this._contextAccessor = contextAccessor;
         }
-    }
+
+        public void SampleMethod()
+        {
+            HttpContext httpContext = this._contextAccessor.HttpContext;
+            if (httpContext.User.Identity.IsAuthenticated)
+            {
+                Console.WriteLine("logined");
+            }
+        }
+    }    
 }
+
