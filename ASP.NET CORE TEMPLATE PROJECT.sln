@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerApplication", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiApplication.SharedLibrary", "WebApiApplication.SharedLibrary\WebApiApplication.SharedLibrary.csproj", "{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication.Service", "ClientApplication.Service\ClientApplication.Service.csproj", "{401234A6-C79F-49AC-8AFB-A5790D2A71C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{38B8C034-B5C2-4C12-B4DA-5EA2D528F580}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{0FF66333-6687-4EAE-BA9C-AD1BC26436D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +30,14 @@ Global
 		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401234A6-C79F-49AC-8AFB-A5790D2A71C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401234A6-C79F-49AC-8AFB-A5790D2A71C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401234A6-C79F-49AC-8AFB-A5790D2A71C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401234A6-C79F-49AC-8AFB-A5790D2A71C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99952483-50FD-41F3-8A6F-160F84C97E0B} = {38B8C034-B5C2-4C12-B4DA-5EA2D528F580}
+		{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
+		{401234A6-C79F-49AC-8AFB-A5790D2A71C5} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
 	EndGlobalSection
 EndGlobal

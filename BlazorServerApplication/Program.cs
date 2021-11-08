@@ -13,7 +13,8 @@ using Microsoft.Extensions.Hosting;
 using MudBlazor.Services;
 
 using BlazorServerApplication.Data;
-using BlazorServerApplication.Services;
+
+using ClientApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

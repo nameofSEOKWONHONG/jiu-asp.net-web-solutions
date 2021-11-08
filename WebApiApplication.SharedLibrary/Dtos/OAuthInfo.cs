@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace BlazorServerApplication.Data
+namespace WebApiApplication.Dtos
 {
     public record OAuthInfo<TAuthEntity>
     {

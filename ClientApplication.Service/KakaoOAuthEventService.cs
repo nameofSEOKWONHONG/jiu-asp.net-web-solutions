@@ -3,14 +3,16 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
-using BlazorServerApplication.Data;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebApiApplication.Dtos;
 using WebApiApplication.SharedLibrary.Dtos;
+using WebApiApplication.SharedLibrary.Entities;
 
-namespace BlazorServerApplication.Services
+namespace ClientApplication.Services
 {
     public class KakaoOAuthEventService : OAuthEvents
     {
@@ -45,21 +47,37 @@ namespace BlazorServerApplication.Services
 
             if (oauthInfo.IsAuthenticated)
             {
-                //save auth info
-                using (var client = new HttpClient())
+                //if login info exists
+                var user = new User();
+                if (user != null)
                 {
-                    var postData = new UserRequest()
+                    var httpContext = _serviceProvider.GetService<IHttpContextAccessor>();
+                    var cookieOptions = new CookieOptions()
                     {
-                        Email = oauthInfo.AuthEntity.KakaoAccount.Email,
-                        Password = "[systemdefaultpassword]"
+                        Expires = DateTime.Now.AddHours(12),
+                        SameSite = SameSiteMode.Strict,
+                        Secure = true,
                     };
-                    client.BaseAddress = new Uri("https://localhost:5001");
-                    var respoonse = client.PostAsync("/api/v1/Auth/SingUp", new StringContent(JsonSerializer.Serialize(postData))).GetAwaiter().GetResult();
-                    if (respoonse.IsSuccessStatusCode)
+                    httpContext.HttpContext.Response.Cookies.Append("user", JsonSerializer.Serialize(user), cookieOptions);                    
+                }
+                else
+                {
+                    //save auth info
+                    using (var client = new HttpClient())
                     {
-                        //write mail check
-                    }
-                }    
+                        var postData = new UserRequest()
+                        {
+                            Email = oauthInfo.AuthEntity.KakaoAccount.Email,
+                            Password = "[systemdefaultpassword]"
+                        };
+                        client.BaseAddress = new Uri("https://localhost:5001");
+                        var respoonse = client.PostAsync("/api/v1/Auth/SingUp", new StringContent(JsonSerializer.Serialize(postData))).GetAwaiter().GetResult();
+                        if (respoonse.IsSuccessStatusCode)
+                        {
+                            //write mail check
+                        }
+                    }                    
+                }
             }
             
             _logger.LogTrace(oauthInfo.ToString());

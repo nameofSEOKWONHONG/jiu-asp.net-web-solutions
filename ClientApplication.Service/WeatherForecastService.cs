@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using BlazorServerApplication.Data;
+using WebApiApplication.SharedLibrary.Entities;
 
-namespace BlazorServerApplication.Services;
+namespace ClientApplication.Services;
 
 public class WeatherForecastService
 {
