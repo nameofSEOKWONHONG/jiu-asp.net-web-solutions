@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using LiteDB;
 using MongoDB.Bson;
 using Realms;
+using WebApiApplication.Infrastructure;
 using WebApiApplication.SharedLibrary.Entities;
 
 namespace WebApiApplication.Services {
@@ -26,9 +27,11 @@ namespace WebApiApplication.Services {
 
         private readonly ILiteDatabase _database;
         private readonly ILiteCollection<WeatherForecast> _weatherForecastCollection;
-        
-        public WeatherForcastService()
+        private readonly CacheProvider _provider;
+        public WeatherForcastService(CacheProvider provider)
         {
+            _provider = provider;
+            
             DateTime startDate = DateTime.Now;
             _weatherForcasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -48,7 +51,17 @@ namespace WebApiApplication.Services {
 
         public IEnumerable<WeatherForecast> GetAll()
         {
-            return _weatherForecastCollection.FindAll();
+            var result = _provider.GetCache<IEnumerable<WeatherForecast>>("weatherforecast_all");
+            if (result == null)
+            {
+                result =_weatherForecastCollection.FindAll();
+                if (result != null)
+                {
+                    _provider.SetCache<IEnumerable<WeatherForecast>>("weatherforecast_all", result);
+                }                
+            }
+
+            return result;
         }
 
         public void CreateBaseData()
@@ -62,9 +75,9 @@ namespace WebApiApplication.Services {
             return _weatherForecastCollection.FindOne(m => m.Summary == summary);
         }
 
-        public void SaveWeatherForecast(WeatherForecast weatherForcast)
+        public void SaveWeatherForecast(WeatherForecast weatherForecast)
         {
-            _weatherForecastCollection.Insert(weatherForcast);
+            _weatherForecastCollection.Insert(weatherForecast);
         }
     }
 }

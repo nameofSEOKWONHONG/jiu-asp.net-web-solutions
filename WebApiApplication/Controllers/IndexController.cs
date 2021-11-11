@@ -35,8 +35,6 @@ namespace WebApiApplication.Controllers
                 sb.AppendLine("cd [your project name]");
                 sb.AppendLine("dotnet restore");
                 sb.AppendLine("dotnet run or dotnet watch run");
-                sb.AppendLine(this._vehicleCreatorServiceFactory.CreateService<BoatCreatorService>().Create());
-                sb.AppendLine(this._messageServiceFactory.CreateService<EmailMessageService>().SendMessageAsync(null).GetAwaiter().GetResult().ToString());
                 return Ok(sb.ToString());
             });
         }

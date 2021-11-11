@@ -9,10 +9,12 @@ namespace WebApiApplication.SharedLibrary.Entities
     {
         [Required, NotNull, MaxLength(200)]
         public string WriteId { get; set; }
+        
         [Required, NotNull]
         public DateTime WriteDt { get; set; }
         
         public string UpdateId { get; set; }
+        
         public DateTime? UpdateDt { get; set; }
     }
 }

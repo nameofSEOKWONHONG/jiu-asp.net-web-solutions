@@ -16,6 +16,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Infrastructure;
@@ -108,7 +109,8 @@ namespace WebApiApplication
 
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
 
-            //services.AddSingleton<ISessionContextService, SessionContextService>();
+            //services.AddScoped<ISessionContextService, SessionContextService>();
+            services.AddSingleton<CacheProvider>();            
 
             #endregion
 
@@ -203,11 +205,10 @@ namespace WebApiApplication
                 // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
                 // specifying the Swagger JSON endpoint.
                 app.UseSwaggerUI(options => {
-                    options.DefaultModelExpandDepth(-1);
+                    options.DocExpansion(DocExpansion.None);
                     // build a swagger endpoint for each discovered API version  
                     foreach (var description in provider.ApiVersionDescriptions)  
                     {  
-                        options.DefaultModelExpandDepth(-1);
                         options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());                        
                     }  
                     options.RoutePrefix = string.Empty;                

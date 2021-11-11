@@ -7,16 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Data/KakaoAuthInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/KakaoAuthInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Data/OAuthInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/OAuthInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication.Service/KakaoOAuthEventService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication.Service/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/WebApiApplication.SharedLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication.SharedLibrary/WebApiApplication.SharedLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/DataContext/DbL4Interceptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Interceptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Infrastructure/CacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Infrastructure/CacheProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F1D061AC-D27D-4E95-B449-30527EE3091F/11A/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/47/8a2e8698/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0095E902-412D-4DE8-9D23-A7EDC1747471/E/MemoryCacheExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/fc/d71f3665/JsonConverter`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1CAEA579-7BC0-4E55-ADEB-CC8011B21AB8/4/ConfigureNamedOptions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -70,14 +72,7 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.js.razor" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.js" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForcastController.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" />
       <option value="$PROJECT_DIR$/WebApiApplication/Entities/WeatherForcast.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Data/WeatherForecastService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/KakaoOAuthEventService.cs" />
@@ -96,11 +91,9 @@
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Class1.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/UserRequest.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/ResultDto.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/EntityBase.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/User.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/WeatherForcast.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" />
@@ -108,19 +101,28 @@
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/AuthService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/UserService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/DataContext/AccountDbContext.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/WebApiApplication.SharedLibrary.csproj" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
       <option value="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" />
       <option value="$PROJECT_DIR$/ClientApplication.Service/Class1.cs" />
       <option value="$PROJECT_DIR$/ClientApplication.Service/WeatherForecastService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/KakaoAuthInfo.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Dtos/OAuthInfo.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Program.cs" />
       <option value="$PROJECT_DIR$/ClientApplication.Service/KakaoOAuthEventService.cs" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" />
+      <option value="$PROJECT_DIR$/BlazorServerApplication/Program.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Entities/EntityBase.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/Utils.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/CacheProvider.cs" />
+      <option value="$PROJECT_DIR$/../eXtensionSharp/src/XFileWriter.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Interceptor.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication.SharedLibrary/WebApiApplication.SharedLibrary.csproj" />
+      <option value="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1zr6hgYoMJCaezBA3WFPKJU9cAM" />
@@ -216,7 +218,8 @@
       <workItem from="1635986885084" duration="7159000" />
       <workItem from="1636000907049" duration="12524000" />
       <workItem from="1636334852025" duration="1397000" />
-      <workItem from="1636355305012" duration="2087000" />
+      <workItem from="1636355305012" duration="3460000" />
+      <workItem from="1636601362553" duration="9204000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -274,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636101940351</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="asd">
+      <created>1636357643190</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1636357643190</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +303,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -316,24 +326,12 @@
     <MESSAGE value="update httpclient and httpclient factory" />
     <MESSAGE value="test" />
     <MESSAGE value="111" />
-    <option name="LAST_COMMIT_MESSAGE" value="111" />
+    <MESSAGE value="asd" />
+    <option name="LAST_COMMIT_MESSAGE" value="asd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs</url>
-          <line>17</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\WeatherForecastController.cs" initialLine="17" containingFunctionPresentation="method 'GetAll'">
-            <startOffsets>
-              <option value="699" />
-            </startOffsets>
-            <endOffsets>
-              <option value="738" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor</url>
           <line>46</line>

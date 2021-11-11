@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using WebApiApplication.Infrastructure;
 
-namespace WebApiApplication.DataContext
+namespace WebApiApplication.Infrastructure
 {
     public class DbL4Interceptor : DbCommandInterceptor
     {
