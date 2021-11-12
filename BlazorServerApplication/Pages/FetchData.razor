@@ -1,7 +1,7 @@
 ﻿@page "/fetchdata"
-@using ClientApplication.Services
 @using WebApiApplication.SharedLibrary.Entities
-@inject WeatherForecastService ForecastService
+@using ClientApplication.Service
+@inject WeatherForecastService _weatherForecastService
 
 <PageTitle>Weather forecast</PageTitle>
 
@@ -43,7 +43,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        //forecasts = await ForecastService.GetForecastAsync();
-        forecasts = await ForecastService.GetForecastUseByHttpClientFactoryAsync();
+        forecasts = await _weatherForecastService.GetForecastAsync();
+        //forecasts = await ForecastService.GetForecastUseByHttpClientFactoryAsync();
     }
 }

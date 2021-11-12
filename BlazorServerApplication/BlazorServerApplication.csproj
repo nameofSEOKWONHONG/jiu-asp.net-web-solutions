@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ClientApplication.Service\ClientApplication.Service.csproj" />
+    <ProjectReference Include="..\ClientApplication.ViewModel\ClientApplication.ViewModel.csproj" />
     <ProjectReference Include="..\WebApiApplication.SharedLibrary\WebApiApplication.SharedLibrary.csproj" />
   </ItemGroup>
 

@@ -12,7 +12,7 @@ using WebApiApplication.Dtos;
 using WebApiApplication.SharedLibrary.Dtos;
 using WebApiApplication.SharedLibrary.Entities;
 
-namespace ClientApplication.Services
+namespace BlazorServerApplication.Services
 {
     public class KakaoOAuthEventService : OAuthEvents
     {

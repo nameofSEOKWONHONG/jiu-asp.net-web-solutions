@@ -1,23 +1,15 @@
 ﻿@page "/counter"
 @using Microsoft.AspNetCore.Http
-@using BlazorServerApplication.Data
+@using ClientApplication.Service
+@using ClientApplication.ViewModel
 @inject LoginCheckService SampleService
-@attribute [Authorize]
+@inject CounterStateViewModel _counterStateViewModel;
+@* @attribute [Authorize] *@
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Current count: @_counterStateViewModel.Count</p>
 
-<MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="IncrementCount">Click me</MudButton>
-
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        SampleService.SampleMethod();
-        currentCount++;
-    }
-}
+<MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="(() => _counterStateViewModel.Count++)">Click me</MudButton>

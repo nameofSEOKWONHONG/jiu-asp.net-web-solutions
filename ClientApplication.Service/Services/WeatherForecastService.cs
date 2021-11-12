@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using WebApiApplication.SharedLibrary.Entities;
 
-namespace ClientApplication.Services
+namespace ClientApplication.Service
 {
     public class WeatherForecastService
     {

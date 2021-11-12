@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
 
-namespace BlazorServerApplication.Data
+namespace ClientApplication.Service
 {
     public class LoginCheckService
     {

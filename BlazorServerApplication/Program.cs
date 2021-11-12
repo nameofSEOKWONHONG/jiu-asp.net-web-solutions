@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -12,9 +13,10 @@ using Microsoft.Extensions.Hosting;
 
 using MudBlazor.Services;
 
-using BlazorServerApplication.Data;
-
-using ClientApplication.Services;
+using BlazorServerApplication.Services;
+using ClientApplication.Abstract;
+using ClientApplication.Service;
+using ClientApplication.ViewModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,12 +30,25 @@ builder.Services.AddMudServices();
 #endregion
 
 #region [add http services to the container.]
-//builder.Services.AddSingleton<WeatherForecastService>();
-builder.Services.AddHttpClient<WeatherForecastService>(client =>
+
+var injectors = new List<InjectorBase>()
 {
-    client.BaseAddress = new Uri("https://localhost:5001");
+    new ServiceInjector(),
+    new ViewModelInjector()
+};
+injectors.ForEach(injector =>
+{
+    injector.Inject(builder.Services);
 });
-builder.Services.AddSingleton<LoginCheckService>();
+
+//add local service
+builder.Services.AddTransient<KakaoOAuthEventService>(); 
+//builder.Services.AddSingleton<WeatherForecastService>();
+// builder.Services.AddHttpClient<WeatherForecastService>(client =>
+// {
+//     client.BaseAddress = new Uri("https://localhost:5001");
+// });
+//builder.Services.AddSingleton<LoginCheckService>();
 #endregion
 
 #region [add oauth services to the container.]
@@ -42,16 +57,17 @@ builder.Services.AddAuthentication(options => {
     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-}).AddCookie(options => {
+}).AddCookie(config => {
     //https://stackoverflow.com/questions/66311898/asp-net-core-3-1-httpcontext-signoutasync-does-not-redirect
-    options.LoginPath = "/login";
-    options.LogoutPath = "/logout";
-}).AddKakaoTalk(options =>
+    config.LoginPath = "/login";
+    config.LogoutPath = "/logout";
+}).AddKakaoTalk(config =>
 {
+#pragma warning disable ASP0000
     var provider = builder.Services.BuildServiceProvider();
-    options.ClientId = "[key]";
-    options.ClientSecret = "[secret]";
-    options.Events = new KakaoOAuthEventService(provider);
+    config.ClientId = "[key]";
+    config.ClientSecret = "[secret]";
+    config.Events = provider.GetService<KakaoOAuthEventService>();
 });
 #endregion
 
