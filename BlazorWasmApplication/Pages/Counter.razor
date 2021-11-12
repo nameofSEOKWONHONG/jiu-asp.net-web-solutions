@@ -1,0 +1,11 @@
+﻿@page "/counter"
+@using ClientApplication.ViewModel
+@inject CounterStateViewModel _counterStateViewModel
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @_counterStateViewModel.Count</p>
+
+<button class="btn btn-primary" @onclick="(() => _counterStateViewModel.Count++)">Click me</button>
