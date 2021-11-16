@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace WebApiApplication.Dtos
+namespace SharedLibrary.Dtos
 {
     public record OAuthInfo<TAuthEntity>
     {

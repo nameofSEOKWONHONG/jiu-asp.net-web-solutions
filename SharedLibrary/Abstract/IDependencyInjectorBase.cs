@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace ClientApplication.Abstract
+namespace SharedLibrary.Abstract
 {
-    public interface IInjectorBase
+    public interface IDependencyInjectorBase
     {
         void Inject(IServiceCollection services);
     }

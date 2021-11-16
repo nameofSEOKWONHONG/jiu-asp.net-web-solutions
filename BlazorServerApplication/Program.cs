@@ -14,9 +14,10 @@ using Microsoft.Extensions.Hosting;
 using MudBlazor.Services;
 
 using BlazorServerApplication.Services;
-using ClientApplication.Abstract;
+using ClientApplication.Injector;
 using ClientApplication.Service;
 using ClientApplication.ViewModel;
+using SharedLibrary.Abstract;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,18 +30,11 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddMudServices();
 #endregion
 
+#region [Add application injection]
+builder.Services.AddInjector();
+#endregion
+
 #region [add http services to the container.]
-
-var injectors = new List<InjectorBase>()
-{
-    new ServiceInjector(),
-    new ViewModelInjector()
-};
-injectors.ForEach(injector =>
-{
-    injector.Inject(builder.Services);
-});
-
 //add local service
 builder.Services.AddTransient<KakaoOAuthEventService>(); 
 //builder.Services.AddSingleton<WeatherForecastService>();

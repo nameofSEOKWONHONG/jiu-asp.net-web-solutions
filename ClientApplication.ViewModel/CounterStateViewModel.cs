@@ -1,5 +1,4 @@
-﻿
-using ClientApplication.Abstract;
+﻿using SharedLibrary.Abstract;
 
 namespace ClientApplication.ViewModel
 {

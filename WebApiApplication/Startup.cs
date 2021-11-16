@@ -21,6 +21,7 @@ using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Services;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication
 {

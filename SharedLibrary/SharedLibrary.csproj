@@ -2,11 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>disable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
       <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />

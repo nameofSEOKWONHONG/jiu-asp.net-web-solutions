@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Entities;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {

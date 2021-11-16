@@ -1,4 +1,4 @@
-﻿namespace ClientApplication.Abstract
+﻿namespace SharedLibrary.Abstract
 {
     public class IViewModelBase
     {

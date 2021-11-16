@@ -4,19 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using LiteDB;
 using MongoDB.Bson;
-using Realms;
 using WebApiApplication.Infrastructure;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Entities;
+using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Services {
-    public interface IWeatherForcastService
-    {
-        IEnumerable<WeatherForecast> GetAll();
-        void CreateBaseData();
-        WeatherForecast GetWeatherForecast(string summary);
-        void SaveWeatherForecast(WeatherForecast weatherForcast);
-    }
-
+namespace WebApiApplication.Services 
+{
     public class WeatherForcastService : IWeatherForcastService {
         private static readonly string[] Summaries = new[]
         {
@@ -72,7 +65,17 @@ namespace WebApiApplication.Services {
 
         public WeatherForecast GetWeatherForecast(string summary)
         {
-            return _weatherForecastCollection.FindOne(m => m.Summary == summary);
+            var result = _provider.GetCache<WeatherForecast>(summary);
+            if (result == null)
+            {
+                result = _weatherForecastCollection.FindOne(m => m.Summary == summary);
+                if (result != null)
+                {
+                    _provider.SetCache<WeatherForecast>(summary, result);
+                }
+            }
+
+            return result;
         }
 
         public void SaveWeatherForecast(WeatherForecast weatherForecast)

@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.Extensions.Logging;
+using SharedLibrary.Abstract;
 using WebApiApplication.Services;
-using WebApiApplication.SharedLibrary.Dtos;
+using SharedLibrary.Enums;
+using SharedLibrary.Request;
 
 namespace WebApiApplication.Controllers
 {
@@ -19,14 +21,14 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("{messagetype}")]
-        public async Task<ResultBase> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
+        public async Task<ResponseResultBase> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
         {
-            ResultBase result = new ResultBase();
+            ResponseResultBase responseResult = new ResponseResultBase();
             
             var service = this._messageServiceFactory.CreateService(messagetype);
-            result.Success = await service.SendMessageAsync(request);
+            responseResult.Success = await service.SendMessageAsync(request);
 
-            return result;
+            return responseResult;
         }
     }
 }

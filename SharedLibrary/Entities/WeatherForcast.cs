@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApiApplication.SharedLibrary.Entities {
+namespace SharedLibrary.Entities {
     public class WeatherForecast {
         [Key]
         public int Id { get; set; }

@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Entities;
 
 namespace ClientApplication.Service
 {

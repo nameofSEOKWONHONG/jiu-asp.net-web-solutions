@@ -7,20 +7,11 @@ using BCrypt.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.DataContext;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Entities;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
 {
-    public interface IUserService
-    {
-        Task<IEnumerable<User>> FindAllUserAsync();
-        Task<User> FindUserByIdAsync(int userId);
-        Task<User> FindUserByEmailAsync(string email);
-        Task<User> CreateUserAsync(User userData);
-        Task<User> UpdateUserAsync(User userData);
-        Task<User> DeleteUserAsync(int userId, string email);
-    }
-
     public class UserService : IUserService
     {
         private readonly AccountDbContext dbContext;

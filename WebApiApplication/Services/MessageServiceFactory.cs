@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using SharedLibrary.Enums;
+using SharedLibrary.Request;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
 {
-    public class MessageRequestDto
-    {
-        
-    }
-    public interface IMessageService
-    {
-        Task<bool> SendMessageAsync(MessageRequestDto request);
-    }
-
     public class MessageServiceFactory
     {
         private readonly IServiceProvider _serviceProvider;
@@ -36,12 +30,7 @@ namespace WebApiApplication.Services
         }
     }
 
-    public enum ENUM_MESSAGE_TYPE
-    {
-        SMS = 1,
-        EMAIL,
-        KAKAO,
-    }
+
     
     public class SMSMessageService : IMessageService
     {

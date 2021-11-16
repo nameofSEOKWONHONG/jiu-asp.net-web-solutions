@@ -5,12 +5,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
 using WebApiApplication.Services;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Entities;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers {
     public class WeatherForecastController : ApiControllerBase{
         private readonly IWeatherForcastService _weatherForcastService;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWeatherForcastService weatherForcastService) : base(logger) {
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, 
+            IWeatherForcastService weatherForcastService) : base(logger) {
             this._weatherForcastService = weatherForcastService;
             base.logger.LogInformation($"{nameof(WeatherForecastController)} created time {DateTime.Now.ToLongDateString()}");
         }

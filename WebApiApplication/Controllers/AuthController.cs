@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services;
-using WebApiApplication.SharedLibrary.Dtos;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Dtos;
+using SharedLibrary.Entities;
+using SharedLibrary.Request;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
@@ -29,27 +31,27 @@ namespace WebApiApplication.Controllers
         
         [AllowAnonymous]
         [HttpPost("SignIn")]
-        public async Task<IActionResult> SignIn(UserRequest userRequest)
+        public async Task<IActionResult> SignIn(RegisterRequest registerRequest)
         {
-            if (!this.TryValidate(userRequest, out ActionResult result))
+            if (!this.TryValidate(registerRequest, out ActionResult result))
             {
                 return result;
             }
-            var token = await authService.Login(userRequest);
+            var token = await authService.Login(registerRequest);
             if (!string.IsNullOrEmpty(token)) return Ok(token);
             return NotFound("not matched");
         }
 
         [AllowAnonymous]
         [HttpPost("SingUp")]
-        public async Task<IActionResult> SignUp(UserRequest userRequest)
+        public async Task<IActionResult> SignUp(RegisterRequest registerRequest)
         {
-            if (!this.TryValidate(userRequest, out ActionResult result))
+            if (!this.TryValidate(registerRequest, out ActionResult result))
             {
                 return result;
             }
 
-            return Ok(await this.userService.CreateUserAsync(userRequest.Adapt<User>()));
+            return Ok(await this.userService.CreateUserAsync(registerRequest.Adapt<User>()));
         }
     }
 }

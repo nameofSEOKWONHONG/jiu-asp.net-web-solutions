@@ -1,4 +1,5 @@
-﻿using WebApiApplication.SharedLibrary.Entities;
+﻿using SharedLibrary.Entities;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
 {
@@ -10,11 +11,6 @@ namespace WebApiApplication.Services
     public class SessionContext : ISessionContext
     {
         public User User { get; set; }
-    }
-    
-    public interface ISessionContextService
-    {
-        ISessionContext GetUser(int id);
     }
 
     public class SessionContextService : ISessionContextService

@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using WebApiApplication.SharedLibrary.Dtos;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Dtos;
+using SharedLibrary.Entities;
+using SharedLibrary.Request;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
 {
-    public interface IAuthService
-    {
-        Task<string> Login(UserRequest userRequest);
-    }
-    
     public class AuthService : IAuthService
     {
         private readonly IConfiguration configuration;
@@ -27,13 +24,13 @@ namespace WebApiApplication.Services
             this.userService = userService;
         }
         
-        public async Task<string> Login(UserRequest userRequest)
+        public async Task<string> Login(RegisterRequest registerRequest)
         {
-            var user = await userService.FindUserByEmailAsync(userRequest.Email);
+            var user = await userService.FindUserByEmailAsync(registerRequest.Email);
             if (user == null) throw new Exception("not found user.");
             
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(userRequest.Password);
-            if (BCrypt.Net.BCrypt.Verify(userRequest.Password, user.Password))
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password);
+            if (BCrypt.Net.BCrypt.Verify(registerRequest.Password, user.Password))
             {
                 return CreateToken(user);    
             }

@@ -1,6 +1,8 @@
-﻿namespace WebApiApplication.SharedLibrary.Dtos
+﻿using SharedLibrary.Enums;
+
+namespace SharedLibrary.Abstract
 {
-    public class ResultBase
+    public class ResponseResultBase
     {
         private bool _success;
         public bool Success
@@ -16,16 +18,5 @@
         }
         public string ResultCode { get; private set; }
         public string Message { get; set; }
-    }
-
-    public class ResultDto<TResult> : ResultBase
-    {
-        public TResult Result { get; set; } 
-    }
-
-    public class ENUM_RESULT_CODE
-    {
-        public static readonly string OK = "00";
-        public static readonly string FAIL = "-1";
     }
 }

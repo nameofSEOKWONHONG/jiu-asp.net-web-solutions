@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 
-namespace ClientApplication.Abstract
+namespace SharedLibrary.Abstract
 {
     public abstract class ViewModelBase : IViewModelBase
     {

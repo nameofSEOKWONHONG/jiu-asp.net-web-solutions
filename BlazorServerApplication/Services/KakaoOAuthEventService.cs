@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApiApplication.Dtos;
-using WebApiApplication.SharedLibrary.Dtos;
-using WebApiApplication.SharedLibrary.Entities;
+using SharedLibrary.Dtos;
+using SharedLibrary.Entities;
+using SharedLibrary.Request;
 
 namespace BlazorServerApplication.Services
 {
@@ -65,7 +65,7 @@ namespace BlazorServerApplication.Services
                     //save auth info
                     using (var client = new HttpClient())
                     {
-                        var postData = new UserRequest()
+                        var postData = new RegisterRequest()
                         {
                             Email = oauthInfo.AuthEntity.KakaoAccount.Email,
                             Password = "[systemdefaultpassword]"
