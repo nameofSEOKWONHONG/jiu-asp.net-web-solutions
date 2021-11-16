@@ -16,6 +16,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using SharedLibrary.Abstract;
+using SharedLibrary.Infrastructure;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
@@ -111,7 +113,9 @@ namespace WebApiApplication
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
 
             //services.AddScoped<ISessionContextService, SessionContextService>();
-            services.AddSingleton<CacheProvider>();            
+            services.AddSingleton<MemoryCacheProvider>();
+            services.AddSingleton<RedisCacheProvider>();
+            services.AddSingleton<CacheProviderFactory>();  
 
             #endregion
 

@@ -3,40 +3,27 @@ using System.Linq;
 using System.Text;
 using eXtensionSharp;
 using Microsoft.Extensions.Caching.Memory;
+using SharedLibrary.Abstract;
 
-namespace WebApiApplication.Infrastructure
-{
-    public interface ICacheProvider
-    {
-        T GetCache<T>(string key);
-        T GetCache<T>(MemoryCacheData<T> data);
-        void SetCache<T>(MemoryCacheData<T> data);
-        void SetCache<T>(string key, T value);
-        void SetCache<T>(string key, T value, DateTimeOffset? duration);
-        void ClearCache(string key);
-        void ClearCache<T>(MemoryCacheData<T> data);
-    }
-
-    public class MemoryCacheData<T>
-    {
-        public string[] Keys { get; set; }
-        public MemoryCacheEntryOptions Options { get; set; }
-        public T Data { get; set; }
-    }
-    
-    public class CacheProvider : ICacheProvider
+namespace SharedLibrary.Infrastructure
+{   
+    public class MemoryCacheProvider : ICacheProvider
     {
         private readonly int _expireSeconds = 10; // 10 Seconds
         
         private readonly IMemoryCache _cache;
 
-        public CacheProvider(IMemoryCache cache, int expireSeconds = 10)
+        public MemoryCacheProvider()
+        {
+        }
+
+        public MemoryCacheProvider(IMemoryCache cache, int expireSeconds = 10)
         {
             _cache = cache;
             _expireSeconds = expireSeconds;
         }
 
-        public CacheProvider(IMemoryCache cache)
+        public MemoryCacheProvider(IMemoryCache cache)
         {
             _cache = cache;
         }
