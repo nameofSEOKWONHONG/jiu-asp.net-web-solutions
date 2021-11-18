@@ -24,7 +24,7 @@ namespace WebApiApplication.Services
             return await dbContext.Users.ToListAsync();
         }
 
-        public async Task<User> FindUserByIdAsync(int userId)
+        public async Task<User> FindUserByIdAsync(Guid userId)
         {
             return await dbContext.Users.FirstOrDefaultAsync(m => m.Id == userId);
         }
@@ -66,7 +66,7 @@ namespace WebApiApplication.Services
             return exists;
         }
 
-        public async Task<User> DeleteUserAsync(int userId, string email)
+        public async Task<User> DeleteUserAsync(Guid userId, string email)
         {
             var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.Id == userId && m.Email == email);
             if (exists == null) throw new Exception("not found");

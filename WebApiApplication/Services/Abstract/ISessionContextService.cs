@@ -1,7 +1,9 @@
-﻿namespace WebApiApplication.Services.Abstract
+﻿using System;
+
+namespace WebApiApplication.Services.Abstract
 {
     public interface ISessionContextService
     {
-        ISessionContext GetUser(int id);
+        ISessionContext GetUser(Guid id);
     }
 }

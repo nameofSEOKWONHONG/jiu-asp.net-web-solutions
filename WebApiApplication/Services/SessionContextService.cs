@@ -1,4 +1,5 @@
-﻿using SharedLibrary.Entities;
+﻿using System;
+using SharedLibrary.Entities;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
@@ -20,7 +21,7 @@ namespace WebApiApplication.Services
         {
             this._userService = userService;
         }
-        public ISessionContext GetUser(int id)
+        public ISessionContext GetUser(Guid id)
         {
             var user = this._userService.FindUserByIdAsync(id).GetAwaiter().GetResult();
 

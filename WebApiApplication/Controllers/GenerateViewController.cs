@@ -4,14 +4,11 @@ using Microsoft.Extensions.Logging;
 
 namespace WebApiApplication.Controllers
 {
-    public class GenerateViewController : ApiControllerBase
+    public class GenerateViewController : ApiControllerBase<GenerateViewController>
     {
-        private readonly ILogger _logger;
         private readonly IGenerateViewService _generateViewService;
-        public GenerateViewController(ILogger<GenerateViewController> logger,
-            IGenerateViewService generateViewService) : base(logger)
+        public GenerateViewController(IGenerateViewService generateViewService)
         {
-            this._logger = logger;
             this._generateViewService = generateViewService;
         }
 

@@ -6,18 +6,18 @@ using SharedLibrary.Abstract;
 using WebApiApplication.Services;
 using SharedLibrary.Enums;
 using SharedLibrary.Request;
+using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
     [ApiVersion("1")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class MessageController : ApiControllerBase
+    public class MessageController : ApiControllerBase<MessageController>
     {
-        private readonly MessageServiceFactory _messageServiceFactory;
-        public MessageController(ILogger<MessageController> logger,
-            MessageServiceFactory messageServiceFactory) : base(logger)
+        private readonly IMessageService _messageService;
+        public MessageController(MessageServiceResolver messageServiceResolver)
         {
-            this._messageServiceFactory = messageServiceFactory;
+            this._messageService = messageServiceResolver(ENUM_MESSAGE_TYPE.SMS);
         }
 
         [HttpPost("{messagetype}")]
@@ -25,8 +25,7 @@ namespace WebApiApplication.Controllers
         {
             ResponseResultBase responseResult = new ResponseResultBase();
             
-            var service = this._messageServiceFactory.CreateService(messagetype);
-            responseResult.Success = await service.SendMessageAsync(request);
+            responseResult.Success = await _messageService.SendMessageAsync(request);
 
             return responseResult;
         }

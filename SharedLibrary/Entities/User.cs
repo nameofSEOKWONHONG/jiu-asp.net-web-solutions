@@ -8,15 +8,17 @@ namespace SharedLibrary.Entities
 {
     
     [Table("User")]
-    public class User
+    public class User : EntityBase
     {
-        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Required, Key]
+        public Guid Id { get; set; }
         
         [Required, EmailAddress, MaxLength(200), NotNull]
         public string Email { get; set; }
         
         [Required, MaxLength(200), NotNull]
         public string Password { get; set; }
+        
+        public string PhoneNumber { get; set; }
     }
 }

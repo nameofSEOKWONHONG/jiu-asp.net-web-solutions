@@ -14,15 +14,14 @@ namespace WebApiApplication.Controllers
 {
     [ApiVersion("1")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class AuthController : ApiControllerBase
+    public class AuthController : ApiControllerBase<AuthController>
     {
         private readonly IUserService userService;
         private readonly IAuthService authService;
         
-        public AuthController(ILogger<AuthController> logger,
-            IUserService userService,
+        public AuthController(IUserService userService,
             IAuthService authService
-            ) : base(logger)
+            )
         {
             this.userService = userService;
             this.authService = authService;

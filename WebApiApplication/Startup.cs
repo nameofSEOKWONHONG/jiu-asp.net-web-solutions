@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OAuth;
@@ -17,6 +19,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using SharedLibrary.Abstract;
+using SharedLibrary.Enums;
 using SharedLibrary.Infrastructure;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
@@ -98,26 +101,35 @@ namespace WebApiApplication
             
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();
-            
+
+            #region [factory anti pattern]
             services.AddTransient<BoatCreatorService>();
             services.AddTransient<CarCreatorService>();
             services.AddTransient<BusCreatorService>();
             services.AddSingleton<VehicleCreatorServiceFactory>();
+            #endregion
 
-            services.AddTransient<SMSMessageService>();
-            services.AddTransient<EmailMessageService>();
-            services.AddTransient<KakaoMessageService>();
-            // add factory for message service
-            services.AddSingleton<MessageServiceFactory>();
+            #region [factory correct pattern]
+            services.AddMessageServiceInject();
+            #endregion
 
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
 
             //services.AddScoped<ISessionContextService, SessionContextService>();
             services.AddSingleton<MemoryCacheProvider>();
             services.AddSingleton<RedisCacheProvider>();
-            services.AddSingleton<CacheProviderFactory>();  
+            services.AddSingleton<CacheProviderFactory>();
+            #endregion
+
+            #region [Add MediatR]
+
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             #endregion
+            
+            #region [add httpcontext accessor to the container.]
+            services.AddHttpContextAccessor();
+            #endregion            
 
             #region [api versioning]
 

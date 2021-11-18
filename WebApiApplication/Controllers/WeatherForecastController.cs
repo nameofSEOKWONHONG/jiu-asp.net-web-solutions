@@ -1,21 +1,23 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
 using WebApiApplication.Services;
 using SharedLibrary.Entities;
+using WebApiApplication.Features.WeatherForecasts.Queries.GetData;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers {
-    public class WeatherForecastController : ApiControllerBase{
+    public class WeatherForecastController : ApiControllerBase<WeatherForecastController> {
         private readonly IWeatherForcastService _weatherForcastService;
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, 
-            IWeatherForcastService weatherForcastService) : base(logger) {
-            this._weatherForcastService = weatherForcastService;
-            base.logger.LogInformation($"{nameof(WeatherForecastController)} created time {DateTime.Now.ToLongDateString()}");
-        }
+        // public WeatherForecastController(IWeatherForcastService weatherForcastService) {
+        //     this._weatherForcastService = weatherForcastService;
+        //     this._logger.LogInformation($"{nameof(WeatherForecastController)} created time {DateTime.Now.ToLongDateString()}");
+        // }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> GetAll()
@@ -24,8 +26,10 @@ namespace WebApiApplication.Controllers {
         }
         
         [HttpGet("{summary}")]
-        public WeatherForecast Get(string summary) {
-            return this._weatherForcastService.GetWeatherForecast(summary);
+        public async Task<IActionResult> Get(string summary)
+        {
+            var result = await this._mediator.Send(new GetWeatherForecastDataQuery(summary));
+            return Ok(result);
         }
 
         [HttpPost("CreateBaseData")]

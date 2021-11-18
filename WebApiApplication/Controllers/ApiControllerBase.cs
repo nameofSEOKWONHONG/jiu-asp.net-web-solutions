@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Security.Claims;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace WebApiApplication.Controllers
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
-    public class ApiControllerBase : ControllerBase
+    public abstract class ApiControllerBase<T> : ControllerBase
     {
-        protected readonly ILogger logger;
-        public ApiControllerBase(ILogger logger)
-        {
-            this.logger = logger;
-            this.logger.Log(LogLevel.Trace, $"controller start. {DateTime.Now}", null);
-        }
-
+        private ILogger<T> _loggerInstance;
+        private IMediator _mediatorInstance;
+        protected ILogger<T> _logger => _loggerInstance ??= HttpContext.RequestServices.GetService<ILogger<T>>();
+        protected IMediator _mediator => _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
+        
         protected bool TryValidate<T>(T model, out ActionResult result) where T : class
         {
             if (!this.TryValidateModel(model))

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,12 +10,11 @@ using WebApiApplication.Services.Abstract;
 namespace WebApiApplication.Controllers
 {
     [Authorize]
-    public class UsersController : ApiControllerBase
+    public class UsersController : ApiControllerBase<UsersController>
     {
         private readonly IUserService userService;
 
-        public UsersController(ILogger<UsersController> logger,
-            IUserService userService) : base(logger)
+        public UsersController(IUserService userService)
         {
             this.userService = userService;
         }
@@ -26,7 +26,7 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpGet("{userId}")]
-        public async Task<IActionResult> Get(int userId)
+        public async Task<IActionResult> Get(Guid userId)
         {
             return Ok(await this.userService.FindUserByIdAsync(userId));
         }
@@ -52,7 +52,7 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteUser(int userId, string email)
+        public async Task<IActionResult> DeleteUser(Guid userId, string email)
         {
             return Ok(await this.userService.DeleteUserAsync(userId, email));
         }
