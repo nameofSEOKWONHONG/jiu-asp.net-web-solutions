@@ -57,7 +57,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\BlazorWasmApplication\BlazorWasmApplication.csproj" />
-      <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
+      <ProjectReference Include="..\Application\Application.csproj" />
     </ItemGroup>
 
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">

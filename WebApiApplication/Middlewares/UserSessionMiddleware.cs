@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using SharedLibrary.Exceptions;
-using SharedLibrary.Response;
+using Application.Exceptions;
+using Application.Response;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Middlewares

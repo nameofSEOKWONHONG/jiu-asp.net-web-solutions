@@ -30,7 +30,7 @@
     <ProjectReference Include="..\ClientApplication.Injector\ClientApplication.Injector.csproj" />
     <ProjectReference Include="..\ClientApplication.Service\ClientApplication.Service.csproj" />
     <ProjectReference Include="..\ClientApplication.ViewModel\ClientApplication.ViewModel.csproj" />
-    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
+    <ProjectReference Include="..\Application\Application.csproj" />
   </ItemGroup>
 
 </Project>

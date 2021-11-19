@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SharedLibrary.Abstract;
+using Application.Abstract;
 
 namespace ClientApplication.Service
 {

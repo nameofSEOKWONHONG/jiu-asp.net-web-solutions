@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiApplication", "WebApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerApplication", "BlazorServerApplication\BlazorServerApplication.csproj", "{77D2EA15-D9AA-4C4A-A22D-EC558FA057A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{5FE07B1A-57F7-46FC-AAB7-5C4CAF43A36C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication.Service", "ClientApplication.Service\ClientApplication.Service.csproj", "{401234A6-C79F-49AC-8AFB-A5790D2A71C5}"
 EndProject
@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientLibrary", "ClientLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication.ViewModel", "ClientApplication.ViewModel\ClientApplication.ViewModel.csproj", "{936EB8E9-5A1B-482F-BA22-F9B16DE36381}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Library", "1.Library", "{058DDFEA-B1EB-43E4-9AB9-EB4E6BF93DA5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Share", "1.Share", "{058DDFEA-B1EB-43E4-9AB9-EB4E6BF93DA5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication.Injector", "ClientApplication.Injector\ClientApplication.Injector.csproj", "{11016825-F9F2-4CFA-9051-14EA1546DCD8}"
 EndProject

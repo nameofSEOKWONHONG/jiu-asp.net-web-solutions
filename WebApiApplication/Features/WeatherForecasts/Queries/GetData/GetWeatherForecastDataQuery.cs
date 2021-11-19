@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using SharedLibrary.Entities;
-using SharedLibrary.Response;
+using Application.Entities;
+using Application.Response;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Features.WeatherForecasts.Queries.GetData

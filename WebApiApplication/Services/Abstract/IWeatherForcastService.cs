@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using SharedLibrary.Entities;
+using Application.Entities;
 
 namespace WebApiApplication.Services.Abstract
 {

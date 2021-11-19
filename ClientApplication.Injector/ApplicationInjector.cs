@@ -2,7 +2,7 @@
 using ClientApplication.Service;
 using ClientApplication.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
-using SharedLibrary.Abstract;
+using Application.Abstract;
 
 namespace ClientApplication.Injector
 {

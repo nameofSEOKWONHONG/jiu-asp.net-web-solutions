@@ -17,7 +17,7 @@ using BlazorServerApplication.Services;
 using ClientApplication.Injector;
 using ClientApplication.Service;
 using ClientApplication.ViewModel;
-using SharedLibrary.Abstract;
+using Application.Abstract;
 
 var builder = WebApplication.CreateBuilder(args);
 

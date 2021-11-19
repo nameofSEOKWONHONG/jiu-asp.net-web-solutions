@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.Extensions.Logging;
-using SharedLibrary.Abstract;
+using Application.Abstract;
 using WebApiApplication.Services;
-using SharedLibrary.Enums;
-using SharedLibrary.Request;
+using Application.Enums;
+using Application.Request;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers

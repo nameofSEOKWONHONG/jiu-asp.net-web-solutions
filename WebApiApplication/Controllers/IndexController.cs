@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SharedLibrary.Enums;
+using Application.Enums;
 using WebApiApplication.Services;
 using WebApiApplication.Services.Abstract;
 

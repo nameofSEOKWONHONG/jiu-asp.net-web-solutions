@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
-using SharedLibrary.Entities;
+using Application.Entities;
 
 namespace ClientApplication.Service
 {

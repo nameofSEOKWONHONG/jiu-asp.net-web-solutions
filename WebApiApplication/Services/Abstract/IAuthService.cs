@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using SharedLibrary.Entities;
-using SharedLibrary.Request;
+using Application.Entities;
+using Application.Request;
 
 namespace WebApiApplication.Services.Abstract
 {

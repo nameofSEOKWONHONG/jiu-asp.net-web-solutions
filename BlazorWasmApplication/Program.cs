@@ -8,7 +8,7 @@ using ClientApplication.Injector;
 using ClientApplication.Service;
 using ClientApplication.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
-using SharedLibrary.Abstract;
+using Application.Abstract;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

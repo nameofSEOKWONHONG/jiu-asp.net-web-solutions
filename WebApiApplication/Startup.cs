@@ -20,9 +20,9 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using SharedLibrary.Abstract;
-using SharedLibrary.Enums;
-using SharedLibrary.Infrastructure;
+using Application.Abstract;
+using Application.Enums;
+using Application.Infrastructure;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
@@ -97,7 +97,7 @@ namespace WebApiApplication
             #endregion
 
             #region [add service]
-            services.AddWebApiService();
+            services.AddRegisterService();
             #endregion
 
             #region [Add MediatR]

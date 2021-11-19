@@ -5,9 +5,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services;
-using SharedLibrary.Dtos;
-using SharedLibrary.Entities;
-using SharedLibrary.Request;
+using Application.Dtos;
+using Application.Entities;
+using Application.Request;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
