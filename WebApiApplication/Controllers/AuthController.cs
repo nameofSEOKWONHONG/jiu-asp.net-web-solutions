@@ -16,15 +16,15 @@ namespace WebApiApplication.Controllers
     [ApiExplorerSettings(GroupName = "v1")]
     public class AuthController : ApiControllerBase<AuthController>
     {
-        private readonly IUserService userService;
-        private readonly IAuthService authService;
+        private readonly IUserService _userService;
+        private readonly IAuthService _authService;
         
         public AuthController(IUserService userService,
             IAuthService authService
             )
         {
-            this.userService = userService;
-            this.authService = authService;
+            this._userService = userService;
+            this._authService = authService;
 
         }
         
@@ -38,7 +38,7 @@ namespace WebApiApplication.Controllers
             }
 
             var user = signInRequest.Adapt<User>();
-            var token = await authService.Login(user);
+            var token = await _authService.Login(user);
             if (!string.IsNullOrEmpty(token)) return Ok(token);
             return NotFound("not matched");
         }
@@ -52,7 +52,7 @@ namespace WebApiApplication.Controllers
                 return result;
             }
 
-            return Ok(await this.userService.CreateUserAsync(registerRequest.Adapt<User>()));
+            return Ok(await this._userService.CreateUserAsync(registerRequest.Adapt<User>()));
         }
     }
 }

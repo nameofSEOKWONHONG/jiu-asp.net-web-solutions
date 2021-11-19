@@ -96,7 +96,7 @@ namespace WebApiApplication
 
             #region [add service]
             
-            services.AddTransient<IUserService, UserService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddTransient<IWeatherForcastService, WeatherForcastService>();
             
@@ -145,7 +145,6 @@ namespace WebApiApplication
             #endregion
 
             #region [add database]
-
             services.AddDbContext<AccountDbContext>((sp, options) =>
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), builder =>

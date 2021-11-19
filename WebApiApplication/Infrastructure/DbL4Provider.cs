@@ -30,7 +30,7 @@ namespace WebApiApplication.Infrastructure
             }
         }
 
-        public string TableReplace(string commandText)
+        public string ReplaceTable(string commandText)
         {
             var enableL4 = _configuration.GetValue<bool>("L4Enable");
             if (!enableL4) return commandText;

@@ -80,7 +80,7 @@ namespace WebApiApplication.Infrastructure
         public override ValueTask<InterceptionResult<DbDataReader>> ReaderExecutingAsync(DbCommand command, CommandEventData eventData, InterceptionResult<DbDataReader> result,
             CancellationToken cancellationToken = new CancellationToken())
         {
-            command.CommandText = _dbL4Provider.TableReplace(command.CommandText);
+            command.CommandText = _dbL4Provider.ReplaceTable(command.CommandText);
             return base.ReaderExecutingAsync(command, eventData, result, cancellationToken);
         }
 
