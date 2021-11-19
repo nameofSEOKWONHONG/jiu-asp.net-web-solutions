@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SharedLibrary.Abstract;
 using SharedLibrary.Enums;
 using SharedLibrary.Request;
+using SharedLibrary.Response;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services
@@ -46,29 +47,29 @@ namespace WebApiApplication.Services
 
     public class SMSMessageService : IMessageService
     {
-        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
+        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
         {
             
             await Task.Delay(1);
-            return new MessageResult() {Success = true, Name = nameof(SMSMessageService)};
+            return Result.Success(nameof(SMSMessageService));
         }
     }
     
     public class EmailMessageService : IMessageService
     {
-        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
+        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
         {
             await Task.Delay(1);
-            return new MessageResult() {Success = true, Name = nameof(EmailMessageService)};
+            return Result.Success(nameof(EmailMessageService));
         }
     }
     
     public class KakaoMessageService : IMessageService
     {
-        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
+        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
         {
             await Task.Delay(1);
-            return new MessageResult() {Success = true, Name = nameof(KakaoMessageService)};
+            return Result.Success(nameof(EmailMessageService));
         }
     }
 }

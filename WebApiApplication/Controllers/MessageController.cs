@@ -21,16 +21,11 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("{messagetype}")]
-        public async Task<ResponseResultBase> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
+        public async Task<IActionResult> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
         {
-            ResponseResultBase responseResult = new ResponseResultBase();
-
             var messageService = this._messageServiceResolver(messagetype);
             var result = await messageService.SendMessageAsync(request);
-            responseResult.Success = result.Success;
-            responseResult.Message = result.Name;
-
-            return responseResult;
+            return Ok(result);
         }
     }
 }

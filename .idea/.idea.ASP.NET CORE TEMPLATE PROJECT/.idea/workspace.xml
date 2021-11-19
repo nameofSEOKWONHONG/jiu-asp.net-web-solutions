@@ -8,28 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SharedLibrary/Response/IResult.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SharedLibrary/Response/Result.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/Features/WeatherForecasts/Queries/GetData/GetWeatherForecastDataQuery.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedLibrary/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/Infrastructure/CacheProviderFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SharedLibrary/Infrastructure/CacheProviderResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SharedLibrary/Response/ResponseResult.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/ISessionContextService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/ISessionContextService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorServiceFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorServiceFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IMessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IMessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceResolver.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,17 +40,21 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BDD6787E-F9D8-4182-85A1-BBA141319B97/1E/ServiceProviderEngineScope.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/63EE3847-6984-4530-BC73-C5391D8C6EE0/11/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2BF37559-7836-4DB2-87AB-80CED63E93CC/1D/RemoteAuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C5EB583D-6E96-49E8-9752-BC7D54539D56/93/ActionFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C5EB583D-6E96-49E8-9752-BC7D54539D56/68/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/4/KakaoTalkAuthenticationHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/BDD6787E-F9D8-4182-85A1-BBA141319B97/21/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/74/c97ca798/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/bb/eba5e988/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/35/5b31896d/Random.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Provider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/fc/d71f3665/JsonConverter`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/obj/Debug/net6.0/WebApiApplication.MvcApplicationPartsAssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/99/f6ae3eed/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D0145283-A6A0-4483-AE75-D497B0D6AC1F/2/KakaoTalkAuthenticationDefaults.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/d0/3af5d9a7/FieldInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92153CAF-7CC7-4084-94B7-4873490AEF05/7/OAuthEvents.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C5EB583D-6E96-49E8-9752-BC7D54539D56/DF/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BA52DC0-B103-422E-BA91-AD87A1AA9FE3/9/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2BF37559-7836-4DB2-87AB-80CED63E93CC/F/RemoteAuthenticationEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/715E705B-4C29-4B56-BD39-70A08D6C2815/2/AuthenticationHttpContextExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -78,6 +70,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F1D061AC-D27D-4E95-B449-30527EE3091F/153/ActionFilterAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/c2/fbc738de/JsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/67/66b8a91e/RuntimeHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BC366D2-BA14-4BC5-A17E-08D4F35F238B/2C4/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/2f/0234fd78/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -86,8 +79,10 @@
     <setting file="file://$PROJECT_DIR$/SharedLibrary/Infrastructure/MemoryCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SharedLibrary/Abstract/IDependencyInjectorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/84/2852b478/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/c7/4078b06e/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/e7/9c3f29f5/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/607C0E5D-1B60-41DF-AE37-42179BA330D4/8/JwtRegisteredClaimNames.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/DataContext/AccountDbContext.cs" root0="FORCE_HIGHLIGHTING" />
@@ -100,29 +95,13 @@
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1CAEA579-7BC0-4E55-ADEB-CC8011B21AB8/4/ConfigureNamedOptions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Interceptor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E5CCA3F0-812C-4CD5-B345-9BEFA246B346/9/JwtRegisteredClaimNames.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/a9/16b8c232/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/98/20d42742/MethodBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21690B23-5D4F-4F50-B87F-09375681DE18/a3/b74874f5/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/RegisterRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/PermissionRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/ResetPasswordRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/RoleClaimRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/RoleRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/ToggleUserStatusRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/TokenRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/UpdateProfilePictureRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/UpdateProfileRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Dtos/UserRoleModel.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/UpdateUserRolesRequest.cs" />
-      <option value="$PROJECT_DIR$/../eXtensionSharp/src/XSerializer.cs" />
-      <option value="$PROJECT_DIR$/../eXtensionSharp/src/XLinq.cs" />
-      <option value="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" />
-      <option value="$PROJECT_DIR$/../eXtensionSharp/src/XFile.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Abstract/ViewModelBase.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Request/UploadRequest.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/SharedLibrary.csproj" />
       <option value="$PROJECT_DIR$/../eXtensionSharp/src/eXtensionSharp.csproj" />
       <option value="$PROJECT_DIR$/../eXtensionSharp/src/XCryptAES256.cs" />
       <option value="$PROJECT_DIR$/../eXtensionSharp/src/XCryptFile.cs" />
@@ -132,29 +111,47 @@
       <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/CacheProvider.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/MemoryCacheData.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/RedisCacheProvider.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/CacheProviderFactory.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/MemoryCacheProvider.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Abstract/ICacheProvider.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" />
       <option value="$PROJECT_DIR$/WebApiApplication/appsettings.json" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" />
-      <option value="$PROJECT_DIR$/SharedLibrary/Entities/User.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/UserService.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IUserService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/ISessionContextService.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Response/Result.cs" />
       <option value="$PROJECT_DIR$/SharedLibrary/Response/IResult.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Features/WeatherForecasts/Queries/GetData/GetWeatherForecastDataQuery.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" />
-      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/VehicleCreatorServiceFactory.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Middlewares/SessionMiddleware.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IAuthService.cs" />
+      <option value="$PROJECT_DIR$/SharedLibrary/Exceptions/ApiException.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Middlewares/UserSessionMiddleware.cs" />
+      <option value="$PROJECT_DIR$/SharedLibrary/Request/Identity/RegisterRequest.cs" />
+      <option value="$PROJECT_DIR$/SharedLibrary/Entities/User.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/UserService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Middlewares/RequestCultureMiddleware.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/AuthService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/AuthController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Infrastructure/DbL4Interceptor.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/ISessionContextService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/SessionContextService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/ControllerBase/AuthorizedApiController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/ControllerBase/ApiControllerBase.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IGenerateViewService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/GenerateViewService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/WeatherForcastService.cs" />
+      <option value="$PROJECT_DIR$/SharedLibrary/Infrastructure/CacheProviderFactory.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/WebApiServiceInjector.cs" />
       <option value="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/Abstract/IMessageService.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Services/MessageServiceResolver.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" />
+      <option value="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" />
+      <option value="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" />
+      <option value="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" />
       <option value="$PROJECT_DIR$/WebApiApplication/Startup.cs" />
     </changedPaths>
   </component>
@@ -289,7 +286,12 @@
       <workItem from="1637043227095" duration="1152000" />
       <workItem from="1637044738723" duration="4135000" />
       <workItem from="1637114722922" duration="6167000" />
-      <workItem from="1637209707164" duration="4984000" />
+      <workItem from="1637209707164" duration="5675000" />
+      <workItem from="1637281008846" duration="6713000" />
+      <workItem from="1637288700534" duration="274000" />
+      <workItem from="1637291796651" duration="1053000" />
+      <workItem from="1637299107954" duration="3038000" />
+      <workItem from="1637303239656" duration="2120000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -389,7 +391,35 @@
       <option name="project" value="LOCAL" />
       <updated>1637050022883</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="remove factory anti pattern">
+      <created>1637216211934</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1637216211934</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update">
+      <created>1637288359657</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1637288359657</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update">
+      <created>1637292833772</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1637292833772</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update">
+      <created>1637302137794</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1637302137794</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,6 +463,7 @@
     <MESSAGE value="111" />
     <MESSAGE value="asd" />
     <MESSAGE value="add viewmodel, abstract, service dll" />
+    <MESSAGE value="remove factory anti pattern" />
     <MESSAGE value="update" />
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
@@ -454,88 +485,50 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/ApiControllerBase.cs</url>
-          <line>16</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\ApiControllerBase.cs" initialLine="15" containingFunctionPresentation="property '_logger'">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Services/UserService.cs</url>
+          <line>46</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Services\UserService.cs" initialLine="46" containingFunctionPresentation="method 'CreateUserAsync'">
             <startOffsets>
-              <option value="524" />
+              <option value="1539" />
             </startOffsets>
             <endOffsets>
-              <option value="596" />
+              <option value="1564" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="27" />
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs</url>
-          <line>25</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\MessageController.cs" initialLine="25" containingFunctionPresentation="method 'Send'">
+          <url>file://$PROJECT_DIR$/BlazorWasmApplication/Program.cs</url>
+          <line>17</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorWasmApplication\Program.cs" initialLine="17">
             <startOffsets>
-              <option value="913" />
+              <option value="576" />
             </startOffsets>
             <endOffsets>
-              <option value="974" />
+              <option value="607" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="31" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>22</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="22" containingFunctionPresentation="constructor 'IndexController'">
+          <url>file://$PROJECT_DIR$/BlazorWasmApplication/Program.cs</url>
+          <line>13</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\BlazorWasmApplication\Program.cs" initialLine="13">
             <startOffsets>
-              <option value="825" />
+              <option value="441" />
             </startOffsets>
             <endOffsets>
-              <option value="891" />
+              <option value="481" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs</url>
-          <line>64</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Services\MessageServiceFactory.cs" initialLine="43" containingFunctionPresentation="method 'SendMessageAsync'">
-            <startOffsets>
-              <option value="2464" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2484" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs</url>
-          <line>73</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Services\MessageServiceFactory.cs" initialLine="52" containingFunctionPresentation="method 'SendMessageAsync'">
-            <startOffsets>
-              <option value="2691" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2711" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Services/MessageServiceFactory.cs</url>
-          <line>82</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Services\MessageServiceFactory.cs" initialLine="61" containingFunctionPresentation="method 'SendMessageAsync'">
-            <startOffsets>
-              <option value="2918" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2938" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope" memberName="ServiceProvider" />
+        <PinnedItemInfo parentTag="Type#System.Security.Claims.Claim" memberName="CustomSerializationData" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
@@ -545,6 +538,8 @@
         <watch expression="response.Content.ReadAsStringAsync().GetAwaiter().GetResult()" language="C#" />
         <watch expression="_serviceProvider" language="C#" />
         <watch expression="this._messageService.SendMessageAsync(null)" language="C#" />
+        <watch expression="this.HttpContext" language="C#" />
+        <watch expression="context.User.Claims" language="C#" />
       </configuration>
     </watches-manager>
   </component>
