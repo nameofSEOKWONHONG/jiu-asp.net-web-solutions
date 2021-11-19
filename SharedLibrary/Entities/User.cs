@@ -20,5 +20,9 @@ namespace SharedLibrary.Entities
         public string Password { get; set; }
         
         public string PhoneNumber { get; set; }
+        
+        public bool ActivateUser { get; set; } = false;
+        
+        public bool AutoConfirmEmail { get; set; } = false;    
     }
 }

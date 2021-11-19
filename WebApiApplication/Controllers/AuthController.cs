@@ -30,13 +30,15 @@ namespace WebApiApplication.Controllers
         
         [AllowAnonymous]
         [HttpPost("SignIn")]
-        public async Task<IActionResult> SignIn(RegisterRequest registerRequest)
+        public async Task<IActionResult> SignIn(SignInRequest signInRequest)
         {
-            if (!this.TryValidate(registerRequest, out ActionResult result))
+            if (!this.TryValidate(signInRequest, out ActionResult result))
             {
                 return result;
             }
-            var token = await authService.Login(registerRequest);
+
+            var user = signInRequest.Adapt<User>();
+            var token = await authService.Login(user);
             if (!string.IsNullOrEmpty(token)) return Ok(token);
             return NotFound("not matched");
         }

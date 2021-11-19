@@ -3,6 +3,16 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace SharedLibrary.Request
 {
+    public class SignInRequest
+    {
+        [EmailAddress]
+        [Required, MaxLength(200)]
+        public string Email { get; set; }
+        
+        [Required, MaxLength(200)]
+        public string Password { get; set; }
+    }
+    
     public class RegisterRequest
     {
         [EmailAddress]
@@ -16,9 +26,5 @@ namespace SharedLibrary.Request
         public string ConfirmPassword { get; set; }
         
         public string PhoneNumber { get; set; }
-
-        public bool ActivateUser { get; set; } = false;
-        
-        public bool AutoConfirmEmail { get; set; } = false;
     }
 }

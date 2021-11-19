@@ -10,7 +10,7 @@ namespace WebApiApplication.Services.Abstract
         Task<IEnumerable<User>> FindAllUserAsync();
         Task<User> FindUserByIdAsync(Guid userId);
         Task<User> FindUserByEmailAsync(string email);
-        Task<User> CreateUserAsync(User userData);
+        Task<User> CreateUserAsync(User user);
         Task<User> UpdateUserAsync(User userData);
         Task<User> DeleteUserAsync(Guid userId, string email);
     }

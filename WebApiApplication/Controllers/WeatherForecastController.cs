@@ -14,14 +14,14 @@ using WebApiApplication.Services.Abstract;
 namespace WebApiApplication.Controllers {
     public class WeatherForecastController : ApiControllerBase<WeatherForecastController> {
         private readonly IWeatherForcastService _weatherForcastService;
-        // public WeatherForecastController(IWeatherForcastService weatherForcastService) {
-        //     this._weatherForcastService = weatherForcastService;
-        //     this._logger.LogInformation($"{nameof(WeatherForecastController)} created time {DateTime.Now.ToLongDateString()}");
-        // }
+        public WeatherForecastController(IWeatherForcastService weatherForcastService) {
+            this._weatherForcastService = weatherForcastService;
+        }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> GetAll()
         {
+            var user = this.SessionContext.User;
             return _weatherForcastService.GetAll();
         }
         

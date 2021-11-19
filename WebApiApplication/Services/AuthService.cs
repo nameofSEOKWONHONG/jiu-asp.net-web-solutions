@@ -24,15 +24,14 @@ namespace WebApiApplication.Services
             this.userService = userService;
         }
         
-        public async Task<string> Login(RegisterRequest registerRequest)
+        public async Task<string> Login(User user)
         {
-            var user = await userService.FindUserByEmailAsync(registerRequest.Email);
-            if (user == null) throw new Exception("not found user.");
+            var selectedUser = await userService.FindUserByEmailAsync(user.Email);
+            if (selectedUser == null) throw new Exception("not found user.");
             
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password);
-            if (BCrypt.Net.BCrypt.Verify(registerRequest.Password, user.Password))
+            if (BCrypt.Net.BCrypt.Verify(user.Password, selectedUser.Password))
             {
-                return CreateToken(user);    
+                return CreateToken(selectedUser);    
             }
 
             return string.Empty;
@@ -42,8 +41,8 @@ namespace WebApiApplication.Services
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email)
+                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
             };
             
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));

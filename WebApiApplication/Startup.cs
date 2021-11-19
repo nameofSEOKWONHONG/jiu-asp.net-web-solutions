@@ -25,6 +25,7 @@ using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
 using WebApiApplication.DataContext;
 using WebApiApplication.Infrastructure;
+using WebApiApplication.Middlewares;
 using WebApiApplication.Services;
 using WebApiApplication.Services.Abstract;
 
@@ -239,6 +240,11 @@ namespace WebApiApplication
             #region [caching]
             // allow response caching directives in the API Controllers
             app.UseResponseCaching();            
+            #endregion
+
+            #region [use middleware]
+            app.UseErrorHandler();
+            app.UseRequestCulture();
             #endregion
 
             app.UseHttpsRedirection();

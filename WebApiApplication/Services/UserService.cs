@@ -34,18 +34,20 @@ namespace WebApiApplication.Services
             return await dbContext.Users.FirstOrDefaultAsync(m => m.Email == email);
         }
 
-        public async Task<User> CreateUserAsync(User userData)
+        public async Task<User> CreateUserAsync(User user)
         {
-            var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.Email == userData.Email);
+            var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.Email == user.Email);
             if (exists != null) throw new Exception("already exists.");
 
-            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(userData.Password);
-            if (BCrypt.Net.BCrypt.Verify(userData.Password, hashedPassword))
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            if (BCrypt.Net.BCrypt.Verify(user.Password, hashedPassword))
             {
-                userData.Password = hashedPassword;
+                user.Password = hashedPassword;
             }
-
-            var result = await dbContext.Users.AddAsync(userData);
+            user.Id = Guid.NewGuid();
+            user.WriteId = user.Email;
+            user.WriteDt = DateTime.UtcNow;
+            var result = await dbContext.Users.AddAsync(user);
             await dbContext.SaveChangesAsync();
 
             return result.Entity;
