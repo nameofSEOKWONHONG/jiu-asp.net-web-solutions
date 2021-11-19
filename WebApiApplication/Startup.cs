@@ -95,31 +95,7 @@ namespace WebApiApplication
             #endregion
 
             #region [add service]
-            
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddTransient<IWeatherForcastService, WeatherForcastService>();
-            
-            services.AddSingleton<DbL4Provider>();
-            services.AddSingleton<DbL4Interceptor>();
-
-            #region [factory anti pattern]
-            services.AddTransient<BoatCreatorService>();
-            services.AddTransient<CarCreatorService>();
-            services.AddTransient<BusCreatorService>();
-            services.AddSingleton<VehicleCreatorServiceFactory>();
-            #endregion
-
-            #region [factory correct pattern]
-            services.AddMessageServiceInject();
-            #endregion
-
-            services.AddSingleton<IGenerateViewService, GenerateViewService>();
-
-            //services.AddScoped<ISessionContextService, SessionContextService>();
-            services.AddSingleton<MemoryCacheProvider>();
-            services.AddSingleton<RedisCacheProvider>();
-            services.AddSingleton<CacheProviderFactory>();
+            services.AddWebApiService();
             #endregion
 
             #region [Add MediatR]
@@ -241,17 +217,17 @@ namespace WebApiApplication
             app.UseResponseCaching();            
             #endregion
 
-            #region [use middleware]
-            app.UseErrorHandler();
-            app.UseRequestCulture();
-            #endregion
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+            
+            #region [use middleware]
+            app.UseErrorHandler();
+            app.UseRequestCulture();
+            #endregion            
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }

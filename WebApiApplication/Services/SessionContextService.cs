@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using SharedLibrary.Entities;
 using WebApiApplication.Services.Abstract;
 
@@ -16,14 +19,17 @@ namespace WebApiApplication.Services
 
     public class SessionContextService : ISessionContextService
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserService _userService;
-        public SessionContextService(IUserService userService)
+        public SessionContextService(IHttpContextAccessor httpContextAccessor, IUserService userService)
         {
+            this._httpContextAccessor = httpContextAccessor;
             this._userService = userService;
         }
-        public ISessionContext GetUser(Guid id)
+        public async Task<ISessionContext> GetSessionAsync()
         {
-            var user = this._userService.FindUserByIdAsync(id).GetAwaiter().GetResult();
+            var userId = this._httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = await this._userService.FindUserByIdAsync(Guid.Parse(userId));
 
             return new SessionContext()
             {

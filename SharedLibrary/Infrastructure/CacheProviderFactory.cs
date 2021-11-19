@@ -1,21 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Caching.Memory;
 using SharedLibrary.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SharedLibrary.Infrastructure
 {
-    public class CacheProviderFactory
+    public enum ENUM_CACHE_TYPE
     {
-        private readonly IServiceProvider _serviceProvider;
-        public CacheProviderFactory(IServiceProvider serviceProvider)
+        MEMORY,
+        REDIS,
+    }
+    
+    public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
+    public class CacheProviderInjector : DependencyInjectorBase
+    {
+        public override void Inject(IServiceCollection services)
         {
-            _serviceProvider = serviceProvider;
-        }
-
-        public ICacheProvider Create<T>() where T : ICacheProvider
-        {
-            return _serviceProvider.GetService<T>();
+            services.AddTransient<MemoryCacheProvider>();
+            services.AddTransient<RedisCacheProvider>();
+            services.AddTransient<CacheProviderResolver>(provider => key =>
+            {
+                switch (key)
+                {
+                    case ENUM_CACHE_TYPE.MEMORY : return provider.GetService<MemoryCacheProvider>();
+                    case ENUM_CACHE_TYPE.REDIS: return provider.GetService<RedisCacheProvider>();
+                    default: throw new KeyNotFoundException();
+                }
+            });
         }
     }
+
+    public static class CacheProviderInjectorExtension
+    {
+        public static void AddCacheProviderInject(this IServiceCollection services)
+        {
+            var injector = new CacheProviderInjector();
+            injector.Inject(services);
+        }
+    }
+ 
 }

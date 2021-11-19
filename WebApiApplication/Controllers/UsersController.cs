@@ -9,8 +9,7 @@ using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
-    [Authorize]
-    public class UsersController : ApiControllerBase<UsersController>
+    public class UsersController : AuthorizedApiController<UsersController>
     {
         private readonly IUserService userService;
 
@@ -22,6 +21,7 @@ namespace WebApiApplication.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            var user = await this._sessionContextService.GetSessionAsync();
             return Ok(await this.userService.FindAllUserAsync());
         }
 

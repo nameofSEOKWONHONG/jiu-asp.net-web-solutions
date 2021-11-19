@@ -1,9 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace WebApiApplication.Services.Abstract
 {
     public interface ISessionContextService
     {
-        ISessionContext GetUser(Guid id);
+        Task<ISessionContext> GetSessionAsync();
     }
 }

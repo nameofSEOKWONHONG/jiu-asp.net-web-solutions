@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using SharedLibrary.Abstract;
 using SharedLibrary.Enums;
 using SharedLibrary.Request;
 using WebApiApplication.Services.Abstract;
@@ -13,10 +14,10 @@ namespace WebApiApplication.Services
     /// Factory correct pattern
     /// </summary>
     public delegate IMessageService MessageServiceResolver(ENUM_MESSAGE_TYPE type);
-
-    public static class MessageServiceInjector
+    
+    public class MessageServiceInjector : DependencyInjectorBase
     {
-        public static void AddMessageServiceInject(this IServiceCollection services)
+        public override void Inject(IServiceCollection services)
         {
             services.AddTransient<SMSMessageService>();
             services.AddTransient<EmailMessageService>();
@@ -33,55 +34,41 @@ namespace WebApiApplication.Services
             });
         }
     }
-    // public class MessageServiceFactory
-    // {   
-    //     private readonly IServiceProvider _serviceProvider;
-    //     public MessageServiceFactory(MessageServiceResolver serviceProvider)
-    //     {
-    //         _serviceProvider = serviceProvider;
-    //     }
-    //
-    //     public IMessageService CreateService<T>() where T : IMessageService
-    //     {
-    //         return _serviceProvider.GetService<T>();
-    //     }
-    //
-    //     public IMessageService CreateService(ENUM_MESSAGE_TYPE type)
-    //     {
-    //         if (type == ENUM_MESSAGE_TYPE.SMS) return _serviceProvider.GetService<SMSMessageService>();
-    //         else if (type == ENUM_MESSAGE_TYPE.EMAIL) return _serviceProvider.GetService<EmailMessageService>();
-    //         else if (type == ENUM_MESSAGE_TYPE.KAKAO) return _serviceProvider.GetService<KakaoMessageService>();
-    //
-    //         throw new Exception("not create service instance.");
-    //     }
-    // }
 
+    public static class MessageServiceInjectorExtension
+    {
+        public static void AddMessageServiceInject(this IServiceCollection services)
+        {
+            var injector = new MessageServiceInjector();
+            injector.Inject(services);
+        }
+    }
 
-    
     public class SMSMessageService : IMessageService
     {
-        public async Task<bool> SendMessageAsync(MessageRequestDto request)
+        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
         {
+            
             await Task.Delay(1);
-            return false;
+            return new MessageResult() {Success = true, Name = nameof(SMSMessageService)};
         }
     }
     
     public class EmailMessageService : IMessageService
     {
-        public async Task<bool> SendMessageAsync(MessageRequestDto request)
+        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
         {
             await Task.Delay(1);
-            return false;
+            return new MessageResult() {Success = true, Name = nameof(EmailMessageService)};
         }
     }
     
     public class KakaoMessageService : IMessageService
     {
-        public async Task<bool> SendMessageAsync(MessageRequestDto request)
+        public async Task<MessageResult> SendMessageAsync(MessageRequestDto request)
         {
             await Task.Delay(1);
-            return false;
+            return new MessageResult() {Success = true, Name = nameof(KakaoMessageService)};
         }
     }
 }

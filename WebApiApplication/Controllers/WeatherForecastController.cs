@@ -19,9 +19,8 @@ namespace WebApiApplication.Controllers {
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> GetAll()
+        public async Task<IEnumerable<WeatherForecast>> GetAll()
         {
-            var user = this.SessionContext.User;
             return _weatherForcastService.GetAll();
         }
         

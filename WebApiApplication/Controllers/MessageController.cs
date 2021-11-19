@@ -14,18 +14,21 @@ namespace WebApiApplication.Controllers
     [ApiExplorerSettings(GroupName = "v1")]
     public class MessageController : ApiControllerBase<MessageController>
     {
-        private readonly IMessageService _messageService;
+        private readonly MessageServiceResolver _messageServiceResolver;
         public MessageController(MessageServiceResolver messageServiceResolver)
         {
-            this._messageService = messageServiceResolver(ENUM_MESSAGE_TYPE.SMS);
+            this._messageServiceResolver = messageServiceResolver;
         }
 
         [HttpPost("{messagetype}")]
         public async Task<ResponseResultBase> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
         {
             ResponseResultBase responseResult = new ResponseResultBase();
-            
-            responseResult.Success = await _messageService.SendMessageAsync(request);
+
+            var messageService = this._messageServiceResolver(messagetype);
+            var result = await messageService.SendMessageAsync(request);
+            responseResult.Success = result.Success;
+            responseResult.Message = result.Name;
 
             return responseResult;
         }

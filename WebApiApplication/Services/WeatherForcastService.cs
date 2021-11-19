@@ -22,10 +22,10 @@ namespace WebApiApplication.Services
 
         private readonly ILiteDatabase _database;
         private readonly ILiteCollection<WeatherForecast> _weatherForecastCollection;
-        private readonly ICacheProvider _memCacheProvider;
-        public WeatherForcastService(CacheProviderFactory cacheProviderFactory)
+        private readonly ICacheProvider _cacheProvider;
+        public WeatherForcastService(CacheProviderResolver cacheProviderResolver)
         {
-            _memCacheProvider = cacheProviderFactory.Create<MemoryCacheProvider>();
+            _cacheProvider = cacheProviderResolver(ENUM_CACHE_TYPE.MEMORY);
             
             DateTime startDate = DateTime.Now;
             _weatherForcasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -46,13 +46,13 @@ namespace WebApiApplication.Services
 
         public IEnumerable<WeatherForecast> GetAll()
         {
-            var result = _memCacheProvider.GetCache<IEnumerable<WeatherForecast>>("weatherforecast_all");
+            var result = _cacheProvider.GetCache<IEnumerable<WeatherForecast>>("weatherforecast_all");
             if (result == null)
             {
                 result =_weatherForecastCollection.FindAll();
                 if (result != null)
                 {
-                    _memCacheProvider.SetCache<IEnumerable<WeatherForecast>>("weatherforecast_all", result);
+                    _cacheProvider.SetCache<IEnumerable<WeatherForecast>>("weatherforecast_all", result);
                 }
             }
 
@@ -67,13 +67,13 @@ namespace WebApiApplication.Services
 
         public WeatherForecast GetWeatherForecast(string summary)
         {
-            var result = _memCacheProvider.GetCache<WeatherForecast>(summary);
+            var result = _cacheProvider.GetCache<WeatherForecast>(summary);
             if (result == null)
             {
                 result = _weatherForecastCollection.FindOne(m => m.Summary == summary);
                 if (result != null)
                 {
-                    _memCacheProvider.SetCache<WeatherForecast>(summary, result);
+                    _cacheProvider.SetCache<WeatherForecast>(summary, result);
                 }
             }
 

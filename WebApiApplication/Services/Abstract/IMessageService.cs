@@ -5,6 +5,12 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface IMessageService
     {
-        Task<bool> SendMessageAsync(MessageRequestDto request);
+        Task<MessageResult> SendMessageAsync(MessageRequestDto request);
+    }
+
+    public class MessageResult
+    {
+        public string Name { get; set; }
+        public bool Success { get; set; }
     }
 }
