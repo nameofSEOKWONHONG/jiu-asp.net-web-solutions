@@ -5,7 +5,7 @@ using eXtensionSharp;
 using Microsoft.Extensions.Caching.Memory;
 using Application.Abstract;
 
-namespace Application.Infrastructure
+namespace Application.Infrastructure.Cache
 {   
     public class MemoryCacheProvider : ICacheProvider
     {

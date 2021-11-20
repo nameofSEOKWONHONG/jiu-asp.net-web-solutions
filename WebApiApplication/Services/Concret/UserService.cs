@@ -7,7 +7,7 @@ using BCrypt.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.DataContext;
-using Application.Entities;
+using Domain.Entities;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services

@@ -1,7 +1,7 @@
 ﻿using System;
 using Application.Abstract;
 
-namespace Application.Infrastructure
+namespace Application.Infrastructure.Cache
 {
     public class RedisCacheProvider : ICacheProvider
     {

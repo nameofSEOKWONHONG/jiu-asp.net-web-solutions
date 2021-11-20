@@ -2,9 +2,9 @@
 using Application.Request;
 using Application.Response;
 
-namespace WebApiApplication.Services.Abstract
+namespace Application.Infrastructure.Message
 {
-    public interface IMessageService
+    public interface IMessageProvider
     {
         Task<IResult> SendMessageAsync(MessageRequestDto request);
     }

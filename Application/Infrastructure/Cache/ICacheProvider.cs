@@ -1,7 +1,7 @@
 ﻿using System;
 using Application.Infrastructure;
 
-namespace Application.Abstract
+namespace Application.Infrastructure.Cache
 {
     public interface ICacheProvider
     {

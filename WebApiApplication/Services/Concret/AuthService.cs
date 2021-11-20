@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Application.Dtos;
-using Application.Entities;
+using Domain.Entities;
 using Application.Request;
 using WebApiApplication.Services.Abstract;
 

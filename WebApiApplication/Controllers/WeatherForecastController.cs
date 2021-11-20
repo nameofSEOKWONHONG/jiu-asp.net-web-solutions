@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Bson;
 using WebApiApplication.Services;
-using Application.Entities;
+using Domain.Entities;
 using WebApiApplication.Features.WeatherForecasts.Queries.GetData;
 using WebApiApplication.Services.Abstract;
 

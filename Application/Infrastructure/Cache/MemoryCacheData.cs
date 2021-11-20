@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 
-namespace Application.Infrastructure
+namespace Application.Infrastructure.Cache
 {
     public class MemoryCacheData<T>
     {

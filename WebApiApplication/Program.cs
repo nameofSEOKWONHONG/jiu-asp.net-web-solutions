@@ -57,7 +57,9 @@ namespace WebApiApplication
                 .Enrich.WithMachineName()
                 .WriteTo.Debug()
                 .WriteTo.Console()
+#if Release
                 .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment))
+#endif
                 .Enrich.WithProperty("Environment", environment)
                 .ReadFrom.Configuration(configuration)
                 .CreateLogger();

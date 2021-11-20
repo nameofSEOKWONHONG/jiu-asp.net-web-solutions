@@ -1,4 +1,4 @@
-﻿namespace Application.Enums
+﻿namespace Domain.Enums
 {
     public enum ENUM_MESSAGE_TYPE
     {

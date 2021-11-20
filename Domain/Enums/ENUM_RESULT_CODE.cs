@@ -1,6 +1,6 @@
 ﻿using eXtensionSharp;
 
-namespace Application.Enums
+namespace Domain.Enums
 {
     public class ENUM_RESULT_CODE : XEnumBase<ENUM_RESULT_CODE>
     {

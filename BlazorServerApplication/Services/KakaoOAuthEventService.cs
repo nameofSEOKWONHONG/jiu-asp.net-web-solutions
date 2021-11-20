@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Application.Dtos;
-using Application.Entities;
+using Domain.Entities;
 using Application.Request;
 
 namespace BlazorServerApplication.Services

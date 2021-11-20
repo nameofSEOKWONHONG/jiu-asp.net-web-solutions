@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Application.Entities;
+using Domain.Entities;
 using Application.Request;
 
 namespace WebApiApplication.Services.Abstract

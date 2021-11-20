@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Entities;
+using Domain.Entities;
 
 namespace WebApiApplication.Services.Abstract
 {

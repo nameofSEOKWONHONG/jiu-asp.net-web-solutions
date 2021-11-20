@@ -1,4 +1,4 @@
-﻿using Application.Enums;
+﻿using Domain.Enums;
 
 namespace Application.Request
 {

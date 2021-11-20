@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services;
-using Application.Entities;
+using Domain.Entities;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
-    public class UsersController : AuthorizedApiController<UsersController>
+    public class UsersController : AuthorizedController<UsersController>
     {
         private readonly IUserService userService;
 

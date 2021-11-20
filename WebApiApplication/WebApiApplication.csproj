@@ -2,7 +2,6 @@
 
     <PropertyGroup>
       <TargetFramework>net6.0</TargetFramework>
-      <LangVersion>9.0</LangVersion>
       <Nullable>disable</Nullable>   
       <NoWarn>0169;8019;1591</NoWarn>
     </PropertyGroup>
@@ -58,6 +57,7 @@
       <ProjectReference Include="..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\BlazorWasmApplication\BlazorWasmApplication.csproj" />
       <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">

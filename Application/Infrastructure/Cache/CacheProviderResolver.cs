@@ -4,7 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Application.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Infrastructure
+namespace Application.Infrastructure.Cache
 {
     public enum ENUM_CACHE_TYPE
     {

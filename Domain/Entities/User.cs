@@ -4,13 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic;
 
-namespace Application.Entities
+namespace Domain.Entities
 {
     
     [Table("User")]
     public class User : EntityBase
     {
-        [Required, Key]
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         
         [Required, EmailAddress, MaxLength(200), NotNull]

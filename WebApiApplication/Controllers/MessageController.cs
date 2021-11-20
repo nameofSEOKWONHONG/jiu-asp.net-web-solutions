@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR.Protocol;
 using Microsoft.Extensions.Logging;
 using Application.Abstract;
+using Application.Infrastructure.Message;
 using WebApiApplication.Services;
-using Application.Enums;
+using Domain.Enums;
 using Application.Request;
 using WebApiApplication.Services.Abstract;
 
@@ -14,17 +15,17 @@ namespace WebApiApplication.Controllers
     [ApiExplorerSettings(GroupName = "v1")]
     public class MessageController : ApiControllerBase<MessageController>
     {
-        private readonly MessageServiceResolver _messageServiceResolver;
-        public MessageController(MessageServiceResolver messageServiceResolver)
+        private readonly MessageProviderResolver _messageProviderResolver;
+        public MessageController(MessageProviderResolver messageProviderResolver)
         {
-            this._messageServiceResolver = messageServiceResolver;
+            this._messageProviderResolver = messageProviderResolver;
         }
 
         [HttpPost("{messagetype}")]
         public async Task<IActionResult> Send([FromBody]MessageRequestDto request, ENUM_MESSAGE_TYPE messagetype)
         {
-            var messageService = this._messageServiceResolver(messagetype);
-            var result = await messageService.SendMessageAsync(request);
+            var messageProvider = this._messageProviderResolver(messagetype);
+            var result = await messageProvider.SendMessageAsync(request);
             return Ok(result);
         }
     }

@@ -21,7 +21,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Application.Abstract;
-using Application.Enums;
+using Domain.Enums;
 using Application.Infrastructure;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Controllers;
@@ -101,7 +101,12 @@ namespace WebApiApplication
             #endregion
 
             #region [Add MediatR]
-
+            //ref:https://github.com/jbogard/MediatR
+            //MediatR은 지미보카트가 만든 CQOS 패턴을 구현한 프레임워크이다.
+            //중계자 패턴으로 불리우는데 Command and Query Responsibility Segregation의 약자로
+            //MVVM, IoC와 같이 관심사 분리 기능이다.
+            //DDD에서 문자 그대로 Search와 그 이외의 기능으로 분리하는 것으로 DB까지 확장해 보면 
+            //Command는 RDBMS, Query는 NOSql로 구성하는 방식까지 확장 할 수 있겠다. (만드는 사람 맘이지만...)
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             #endregion
@@ -193,6 +198,8 @@ namespace WebApiApplication
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
+            #region [add development env]
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -212,6 +219,8 @@ namespace WebApiApplication
                 });
             }
 
+            #endregion
+            
             #region [cors]
             app.UseCors("CorsPolicy");            
             #endregion
@@ -235,10 +244,17 @@ namespace WebApiApplication
             app.UseAuthorization();
             
             #region [use middleware]
+            //만약 jwt 인증을 한다면 UseAuthentication, UseAuthorization 이전과 이후 배치에 따라 
+            //HttpContext.Claims에서 확인할 수 있는 설정이 다르다.
+            //따라서 Middleware를 등록할 경우 호출 순서가 중요한다.
             app.UseErrorHandler();
             app.UseRequestCulture();
-            #endregion            
-            
+            #endregion
+
+            #region [use blazor hosting same domain]
+
+            //blazor wasm은 정적파일이므로 Api와 같은 호스트(프로젝트)로 배포할 수 있다.
+            //물론 별도로 호스트할 수도 있고, 아래는 해당 방법을 설정하는 내용이다.
             //ref : https://stackoverflow.com/questions/61011880/how-can-i-host-asp-net-api-and-blazor-web-assembly-like-an-javascript-spa
             app.UseBlazorFrameworkFiles();
             
@@ -249,6 +265,8 @@ namespace WebApiApplication
                 endpoints.MapFallbackToFile("index.html");
                 //endpoints.MapControllers();
             });
+
+            #endregion
         }
     }
 }

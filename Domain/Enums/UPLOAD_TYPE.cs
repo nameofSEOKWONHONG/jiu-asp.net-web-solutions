@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection.Metadata;
 
-namespace Application.Enums
+namespace Domain.Enums
 {
     public enum UPLOAD_TYPE : byte
     {

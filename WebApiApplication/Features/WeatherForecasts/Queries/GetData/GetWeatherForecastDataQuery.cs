@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Application.Entities;
+using Domain.Entities;
 using Application.Response;
 using WebApiApplication.Services.Abstract;
 

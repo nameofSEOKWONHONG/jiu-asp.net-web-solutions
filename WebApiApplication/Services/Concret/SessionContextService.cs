@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Application.Entities;
+using Domain.Entities;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services

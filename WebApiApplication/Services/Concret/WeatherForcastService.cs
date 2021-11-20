@@ -6,8 +6,9 @@ using LiteDB;
 using MongoDB.Bson;
 using Application.Abstract;
 using WebApiApplication.Infrastructure;
-using Application.Entities;
+using Domain.Entities;
 using Application.Infrastructure;
+using Application.Infrastructure.Cache;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services 

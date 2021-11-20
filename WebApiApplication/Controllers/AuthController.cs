@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services;
 using Application.Dtos;
-using Application.Entities;
+using Domain.Entities;
 using Application.Request;
 using WebApiApplication.Services.Abstract;
 
