@@ -5,13 +5,8 @@ using Microsoft.AspNetCore.Http;
 using Domain.Entities;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Services
+namespace Infrastructure.Services.Identity
 {
-    public interface ISessionContext
-    {
-        User User { get; set; }
-    }
-
     public class SessionContext : ISessionContext
     {
         public User User { get; set; }

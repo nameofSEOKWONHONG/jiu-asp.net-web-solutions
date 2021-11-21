@@ -1,14 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using BlazorWasmApplication;
 using ClientApplication.Injector;
-using ClientApplication.Service;
-using ClientApplication.ViewModel;
 using Microsoft.Extensions.DependencyInjection;
-using Application.Abstract;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

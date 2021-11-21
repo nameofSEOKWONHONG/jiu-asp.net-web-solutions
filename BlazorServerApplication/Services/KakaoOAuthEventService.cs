@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Application.Dtos;
 using Domain.Entities;
 using Application.Request;
+using Domain.Dtos;
 
 namespace BlazorServerApplication.Services
 {

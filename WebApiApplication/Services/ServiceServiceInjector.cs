@@ -6,6 +6,7 @@ using Application.Abstract;
 using Application.Infrastructure;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Infrastructure.Services;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Services.Abstract;
 
@@ -27,11 +28,7 @@ namespace WebApiApplication.Services
     public class ServerServiceInjector : DependencyInjectorBase
     {
         public override void Inject(IServiceCollection services)
-        {
-            services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddTransient<IWeatherForcastService, WeatherForcastService>();
-            
+        {   
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();        
             
@@ -48,8 +45,6 @@ namespace WebApiApplication.Services
             #endregion
             
             services.AddSingleton<IGenerateViewService, GenerateViewService>();
-            
-            services.AddScoped<ISessionContextService, SessionContextService>();
         }
     }
 
@@ -59,6 +54,7 @@ namespace WebApiApplication.Services
         {
             var injectors = new List<DependencyInjectorBase>()
             {
+                new InfrastructureInjector(),
                 new ServerServiceInjector()
             };
             injectors.xForEach(item =>

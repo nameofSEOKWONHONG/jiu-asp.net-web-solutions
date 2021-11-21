@@ -1,12 +1,8 @@
-﻿using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Data.Common;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 
-namespace WebApiApplication.DataContext
+namespace Infrastructure.DataContext
 {
     public class AccountDbContext : DbContext
     {

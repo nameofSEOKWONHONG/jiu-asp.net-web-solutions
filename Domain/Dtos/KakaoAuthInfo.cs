@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Application.Dtos
+namespace Domain.Dtos
 {
     public class KakaoAuthInfo
     {

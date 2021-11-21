@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
       <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />
@@ -16,6 +17,10 @@
     <ItemGroup>
       <ProjectReference Include="..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Features\WeatherForecasts\Queries\Command" />
     </ItemGroup>
 
 </Project>

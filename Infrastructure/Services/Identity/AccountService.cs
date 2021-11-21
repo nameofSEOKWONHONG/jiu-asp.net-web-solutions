@@ -4,21 +4,18 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Application.Dtos;
-using Domain.Entities;
-using Application.Request;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Services
+namespace Infrastructure.Services.Identity
 {
-    public class AuthService : IAuthService
+    public class AccountService : IAccountService
     {
         private readonly IConfiguration configuration;
         private readonly IUserService userService;
-        public AuthService(IConfiguration configuration, IUserService userService)
+        public AccountService(IConfiguration configuration, IUserService userService)
         {
             this.configuration = configuration;
             this.userService = userService;

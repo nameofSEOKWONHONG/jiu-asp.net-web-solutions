@@ -1,35 +1,23 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using MediatR;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Application.Abstract;
-using Domain.Enums;
-using Application.Infrastructure;
+using Infrastructure.DataContext;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using WebApiApplication.Controllers;
-using WebApiApplication.DataContext;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Middlewares;
 using WebApiApplication.Services;
-using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication
 {

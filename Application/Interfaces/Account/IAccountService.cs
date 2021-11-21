@@ -4,7 +4,7 @@ using Application.Request;
 
 namespace WebApiApplication.Services.Abstract
 {
-    public interface IAuthService
+    public interface IAccountService
     {
         Task<string> Login(User user);
     }

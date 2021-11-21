@@ -1,17 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using LiteDB;
-using MongoDB.Bson;
-using Application.Abstract;
-using WebApiApplication.Infrastructure;
 using Domain.Entities;
-using Application.Infrastructure;
 using Application.Infrastructure.Cache;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Services 
+namespace WeatherForecastApplication.Services.Concrete
 {
     public class WeatherForcastService : IWeatherForcastService {
         private static readonly string[] Summaries = new[]

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Application.Dtos
+namespace Domain.Dtos
 {
     public record OAuthInfo<TAuthEntity>
     {
