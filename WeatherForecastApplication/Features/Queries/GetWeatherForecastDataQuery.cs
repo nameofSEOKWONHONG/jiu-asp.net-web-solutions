@@ -5,11 +5,11 @@ using Domain.Entities;
 using Application.Response;
 using WeatherForecastApplication.Services.Abstract;
 
-namespace WeatherForecastApplication.Features.Queries.GetData
+namespace WeatherForecastApplication.Features.Queries
 {
     public record GetWeatherForecastDataQuery(string Summary) : IRequest<Result<WeatherForecast>>;
 
-    internal class GetWeatherForecastDataHandler : IRequestHandler<GetWeatherForecastDataQuery, Result<WeatherForecast>>
+    public class GetWeatherForecastDataHandler : IRequestHandler<GetWeatherForecastDataQuery, Result<WeatherForecast>>
     {
         private readonly IWeatherForcastService _weatherForcastService;
         public GetWeatherForecastDataHandler(IWeatherForcastService weatherForcastService)
@@ -17,11 +17,11 @@ namespace WeatherForecastApplication.Features.Queries.GetData
             this._weatherForcastService = weatherForcastService;
         }
         
-        public async Task<Result<WeatherForecast>> Handle(GetWeatherForecastDataQuery request, CancellationToken cancellationToken)
+        public Task<Result<WeatherForecast>> Handle(GetWeatherForecastDataQuery request, CancellationToken cancellationToken)
         {
             var response = this._weatherForcastService.GetWeatherForecast(request.Summary);
 
-            return await Result<WeatherForecast>.SuccessAsync(response);
+            return Result<WeatherForecast>.SuccessAsync(response);
         }
     }
 }

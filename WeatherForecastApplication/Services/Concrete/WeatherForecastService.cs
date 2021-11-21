@@ -4,7 +4,7 @@ using System.Linq;
 using LiteDB;
 using Domain.Entities;
 using Application.Infrastructure.Cache;
-using WebApiApplication.Services.Abstract;
+using WeatherForecastApplication.Services.Abstract;
 
 namespace WeatherForecastApplication.Services.Concrete
 {
@@ -40,7 +40,7 @@ namespace WeatherForecastApplication.Services.Concrete
             _weatherForecastCollection = _database.GetCollection<WeatherForecast>();
         }
 
-        public IEnumerable<WeatherForecast> GetAll()
+        public IEnumerable<WeatherForecast> GetAllWeatherForecast()
         {
             var result = _cacheProvider.GetCache<IEnumerable<WeatherForecast>>("weatherforecast_all");
             if (result == null)

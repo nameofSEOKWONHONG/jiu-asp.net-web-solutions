@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Abstract;
-using Application.Infrastructure;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Infrastructure.Services;
+using MediatR;
+using WeatherForecastApplication;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Services.Abstract;
 
@@ -25,7 +26,7 @@ namespace WebApiApplication.Services
     /// 늘릴 필요는 없다고 생각된다.
     /// 일부 사람들은 너무 구식 방식이라고 하던데... 어떻게 해야 최신으로 하는 것인지는 의문이다.
     /// </summary>
-    public class ServerServiceInjector : DependencyInjectorBase
+    public class WebApiApplicationInjector : DependencyInjectorBase
     {
         public override void Inject(IServiceCollection services)
         {   
@@ -48,19 +49,38 @@ namespace WebApiApplication.Services
         }
     }
 
-    public static class ServiceInjectorExtensions
+    public static class InjectorExtensions
     {
         public static void AddRegisterService(this IServiceCollection services)
         {
             var injectors = new List<DependencyInjectorBase>()
             {
                 new InfrastructureInjector(),
-                new ServerServiceInjector()
+                new WeatherForecastDIInjector(),
+                new WebApiApplicationInjector()
             };
             injectors.xForEach(item =>
             {
                 item.Inject(services);
             });
+        }
+
+        public static void AddRegisterCQRS(this IServiceCollection services)
+        {
+            var injectors = new List<CQRSInjectorBase>()
+            {
+                new WeatherForecastCQRSInjector()
+            };
+
+            var assemblies = new List<Assembly>();
+            assemblies.Add(Assembly.GetExecutingAssembly());
+            
+            injectors.xForEach(item =>
+            {
+                assemblies.Add(item.GetAssembly());
+            });
+
+            services.AddMediatR(assemblies.ToArray());
         }
     }
 }

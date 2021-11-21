@@ -1,22 +1,17 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Infrastructure.Abstract;
-using WeatherForecastApplication.Features.Queries.GetData;
-using WebApiApplication.Services.Abstract;
+using WeatherForecastApplication.Features.Command;
+using WeatherForecastApplication.Features.Queries;
 
 namespace WebApiApplication.Controllers {
     public class WeatherForecastController : ApiControllerBase<WeatherForecastController> {
-        private readonly IWeatherForcastService _weatherForcastService;
-        public WeatherForecastController(IWeatherForcastService weatherForcastService) {
-            this._weatherForcastService = weatherForcastService;
-        }
-
         [HttpGet]
-        public async Task<IEnumerable<WeatherForecast>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return _weatherForcastService.GetAll();
+            var result = await this._mediator.Send(new GetAllWeatherForecastDataQuery());
+            return Ok(result);
         }
         
         [HttpGet("{summary}")]
@@ -27,13 +22,17 @@ namespace WebApiApplication.Controllers {
         }
 
         [HttpPost("CreateBaseData")]
-        public void CreateBaseData()
+        public async Task<IActionResult> CreateBaseData()
         {
-            this._weatherForcastService.CreateBaseData();
+            var result = await this._mediator.Send(new CreateWeatherForecastBaseDataCommand());
+            return Ok(result);
         }
+        
         [HttpPost]
-        public void Save(WeatherForecast weatherForecast) {
-            this._weatherForcastService.SaveWeatherForecast(weatherForecast);
+        public async Task<IActionResult> Save(WeatherForecast weatherForecast)
+        {
+            var result = await this._mediator.Send(new SaveWeatherForecastCommand(){WeatherForecast = weatherForecast});
+            return Ok(result);
         }
     }
 }

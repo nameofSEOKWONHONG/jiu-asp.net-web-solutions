@@ -95,7 +95,7 @@ namespace WebApiApplication
             //MVVM, IoC와 같이 관심사 분리 기능이다.
             //DDD에서 문자 그대로 Search와 그 이외의 기능으로 분리하는 것으로 DB까지 확장해 보면 
             //Command는 RDBMS, Query는 NOSql로 구성하는 방식까지 확장 할 수 있겠다. (만드는 사람 맘이지만...)
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddRegisterCQRS();
 
             #endregion
             
