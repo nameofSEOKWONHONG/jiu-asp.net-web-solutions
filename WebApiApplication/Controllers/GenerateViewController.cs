@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Infrastructure.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers

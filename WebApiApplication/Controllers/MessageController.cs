@@ -1,13 +1,9 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR.Protocol;
-using Microsoft.Extensions.Logging;
-using Application.Abstract;
 using Application.Infrastructure.Message;
-using WebApiApplication.Services;
 using Domain.Enums;
 using Application.Request;
-using WebApiApplication.Services.Abstract;
+using Infrastructure.Abstract;
 
 namespace WebApiApplication.Controllers
 {

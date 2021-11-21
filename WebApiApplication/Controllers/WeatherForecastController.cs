@@ -1,14 +1,9 @@
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Threading.Tasks;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using MongoDB.Bson;
-using WebApiApplication.Services;
 using Domain.Entities;
-using WebApiApplication.Features.WeatherForecasts.Queries.GetData;
+using Infrastructure.Abstract;
+using WeatherForecastApplication.Features.Queries.GetData;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers {

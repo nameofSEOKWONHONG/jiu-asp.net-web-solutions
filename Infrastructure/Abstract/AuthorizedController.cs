@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Controllers
+namespace Infrastructure.Abstract
 {
     [Authorize]
     public abstract class AuthorizedController<T> : ApiControllerBase<T>

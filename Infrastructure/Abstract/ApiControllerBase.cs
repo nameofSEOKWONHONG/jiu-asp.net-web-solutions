@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebApiApplication.Controllers
+namespace Infrastructure.Abstract
 {
     [ApiController]
     [Route("api/v{version:apiVersion}/[controller]")]
