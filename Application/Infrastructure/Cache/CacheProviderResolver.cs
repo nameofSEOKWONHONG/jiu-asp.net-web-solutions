@@ -17,6 +17,7 @@ namespace Application.Infrastructure.Cache
     {
         public override void Inject(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddTransient<MemoryCacheProvider>();
             services.AddTransient<RedisCacheProvider>();
             services.AddTransient<CacheProviderResolver>(provider => key =>

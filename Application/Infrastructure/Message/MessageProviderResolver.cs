@@ -41,9 +41,4 @@ namespace Application.Infrastructure.Message
             injector.Inject(services);
         }
     }
-
-
-    
-
-
 }

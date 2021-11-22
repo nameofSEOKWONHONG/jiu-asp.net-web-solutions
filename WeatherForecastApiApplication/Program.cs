@@ -1,10 +1,17 @@
+using Application.Infrastructure.Cache;
+using Application.Infrastructure.Message;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WeatherForecastApiApplication;
+using WeatherForecastApplication;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCacheProviderInject();
+builder.Services.AddMessageProviderInject();
+builder.Services.AddInject();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

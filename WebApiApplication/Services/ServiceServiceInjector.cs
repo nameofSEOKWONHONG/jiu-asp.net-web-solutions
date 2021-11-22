@@ -56,7 +56,7 @@ namespace WebApiApplication.Services
             var injectors = new List<DependencyInjectorBase>()
             {
                 new InfrastructureInjector(),
-                new WeatherForecastDIInjector(),
+                new WeatherForecastApplicationInjector(),
                 new WebApiApplicationInjector()
             };
             injectors.xForEach(item =>
