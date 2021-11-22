@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Interfaces.WeahterForecast;
 using Application.Response;
 using Domain.Entities;
 using MediatR;
-using WeatherForecastApplication.Services.Abstract;
 
 namespace WeatherForecastApplication.Features.Queries
 {

@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using Application.Interfaces.WeahterForecast;
 using MediatR;
 using Domain.Entities;
 using Application.Response;
-using WeatherForecastApplication.Services.Abstract;
 
 namespace WeatherForecastApplication.Features.Queries
 {

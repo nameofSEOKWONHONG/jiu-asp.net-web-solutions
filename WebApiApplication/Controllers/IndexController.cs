@@ -12,7 +12,7 @@ namespace WebApiApplication.Controllers
     [AllowAnonymous]
     [ApiVersion("2")]
     [ApiExplorerSettings(GroupName = "v2")]
-    public class IndexController : ApiControllerBase<IndexController>
+    public class IndexController : VersionApiController<IndexController>
     {
         private readonly VehicleCreatorServiceFactory _vehicleCreatorServiceFactory;
         private readonly IMessageProvider _messageProvider;

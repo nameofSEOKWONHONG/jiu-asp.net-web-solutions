@@ -4,10 +4,10 @@ using System.Linq;
 using LiteDB;
 using Domain.Entities;
 using Application.Infrastructure.Cache;
+using Application.Interfaces.WeahterForecast;
 using eXtensionSharp;
-using WeatherForecastApplication.Services.Abstract;
 
-namespace WeatherForecastApplication.Services.Concrete
+namespace WeatherForecastApplication.Services
 {
     public class WeatherForcastService : IWeatherForcastService {
         private static readonly string[] Summaries = new[]

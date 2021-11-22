@@ -9,7 +9,7 @@ namespace WebApiApplication.Controllers
 {
     [ApiVersion("1")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class MessageController : ApiControllerBase<MessageController>
+    public class MessageController : VersionApiController<MessageController>
     {
         private readonly MessageProviderResolver _messageProviderResolver;
         public MessageController(MessageProviderResolver messageProviderResolver)

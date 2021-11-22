@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Domain.Entities;
 
-namespace WeatherForecastApplication.Services.Abstract
+namespace Application.Interfaces.WeahterForecast
 {
     public interface IWeatherForcastService
     {

@@ -11,7 +11,7 @@ namespace WebApiApplication.Controllers
 {
     [ApiVersion("1")]
     [ApiExplorerSettings(GroupName = "v1")]
-    public class AccountController : ApiControllerBase<AccountController>
+    public class AccountController : VersionApiController<AccountController>
     {
         private readonly IUserService _userService;
         private readonly IAccountService _accountService;

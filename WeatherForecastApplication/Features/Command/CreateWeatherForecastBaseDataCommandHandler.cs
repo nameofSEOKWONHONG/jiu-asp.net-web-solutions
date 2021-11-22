@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
+using Application.Interfaces.WeahterForecast;
 using Application.Response;
 using eXtensionSharp;
 using MediatR;
-using WeatherForecastApplication.Services.Abstract;
 
 namespace WeatherForecastApplication.Features.Command
 {

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using Application.Abstract;
+using Application.Interfaces.WeahterForecast;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using WeatherForecastApplication.Services.Abstract;
-using WeatherForecastApplication.Services.Concrete;
+using WeatherForecastApplication.Services;
 
 namespace WeatherForecastApplication
 {
