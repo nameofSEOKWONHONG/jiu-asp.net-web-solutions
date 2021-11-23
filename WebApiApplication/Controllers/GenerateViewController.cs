@@ -14,7 +14,7 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
             return Ok(_generateViewService.GetForm(""));
         }

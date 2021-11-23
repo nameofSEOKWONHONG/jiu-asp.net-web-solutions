@@ -13,8 +13,7 @@ namespace ClientApplication.Service
 
         public void SampleMethod()
         {
-            HttpContext httpContext = this._contextAccessor.HttpContext;
-            if (httpContext.User.Identity.IsAuthenticated)
+            if (this._contextAccessor.HttpContext.User.Identity.IsAuthenticated)
             {
                 Console.WriteLine("logined");
             }

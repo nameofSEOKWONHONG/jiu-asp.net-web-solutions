@@ -48,7 +48,7 @@ namespace BlazorServerApplication.Pages
                 },
                 Event = (async () =>
                 {
-                    
+                    await Task.CompletedTask;
                 })
             });            
             
