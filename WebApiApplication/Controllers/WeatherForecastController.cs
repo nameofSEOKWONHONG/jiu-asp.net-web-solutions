@@ -31,7 +31,7 @@ namespace WebApiApplication.Controllers {
         [HttpPost]
         public async Task<IActionResult> Save(WeatherForecast weatherForecast)
         {
-            var result = await this._mediator.Send(new SaveWeatherForecastCommand(){WeatherForecast = weatherForecast});
+            var result = await this._mediator.Send(new SaveWeatherForecastCommand(weatherForecast));
             return Ok(result);
         }
     }

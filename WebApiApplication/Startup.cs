@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using MediatR;
+using Infrastructure.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,10 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Infrastructure.DataContext;
 using Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using WebApiApplication.Infrastructure;
 using WebApiApplication.Middlewares;
 using WebApiApplication.Services;
 
@@ -117,7 +115,7 @@ namespace WebApiApplication
             #endregion
 
             #region [add database]
-            services.AddDbContext<AccountDbContext>((sp, options) =>
+            services.AddDbContext<JUIDbContext>((sp, options) =>
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), builder =>
                         {

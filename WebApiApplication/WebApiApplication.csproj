@@ -57,6 +57,10 @@
       <ProjectReference Include="..\WeatherForecastApplication\WeatherForecastApplication.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Infrastructure" />
+    </ItemGroup>
+
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
         <ItemGroup>
             <DocFile Include="bin\*\*\*.xml" />

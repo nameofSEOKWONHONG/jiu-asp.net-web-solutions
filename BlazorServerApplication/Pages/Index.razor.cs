@@ -17,9 +17,9 @@ namespace BlazorServerApplication.Pages
             await js.InvokeVoidAsync("error");
         }        
 
-        public async ValueTask DisposeAsync()
+        public ValueTask DisposeAsync()
         {
-            
+            return ValueTask.CompletedTask;
         }
     }
 }

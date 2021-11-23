@@ -2,9 +2,8 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using WebApiApplication.Infrastructure;
 
-namespace WebApiApplication.Infrastructure
+namespace Infrastructure.Context
 {
     public class DbL4Interceptor : DbCommandInterceptor
     {

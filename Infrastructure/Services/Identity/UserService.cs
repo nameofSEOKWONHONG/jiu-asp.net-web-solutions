@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
-using Infrastructure.DataContext;
+using Infrastructure.Context;
 using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services.Identity
 {
     public class UserService : IUserService
     {
-        private readonly AccountDbContext dbContext;
-        public UserService(AccountDbContext dbContext)
+        private readonly JUIDbContext dbContext;
+        public UserService(JUIDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
@@ -41,7 +41,7 @@ namespace Infrastructure.Services.Identity
                 user.Password = hashedPassword;
             }
             user.Id = Guid.NewGuid();
-            user.WriteId = user.Email;
+            user.WriteId = user.Id;
             user.WriteDt = DateTime.UtcNow;
             var result = await dbContext.Users.AddAsync(user);
             await dbContext.SaveChangesAsync();

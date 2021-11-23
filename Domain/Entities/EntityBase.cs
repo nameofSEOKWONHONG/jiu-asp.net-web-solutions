@@ -7,13 +7,13 @@ namespace Domain.Entities
 {
     public class EntityBase
     {
-        [Required, NotNull, MaxLength(200)]
-        public string WriteId { get; set; }
+        [Required]
+        public Guid WriteId { get; set; }
         
-        [Required, NotNull]
+        [Required]
         public DateTime WriteDt { get; set; }
         
-        public string UpdateId { get; set; }
+        public Guid UpdateId { get; set; }
         
         public DateTime? UpdateDt { get; set; }
     }

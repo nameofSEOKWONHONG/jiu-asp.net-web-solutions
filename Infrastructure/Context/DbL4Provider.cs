@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 
-namespace WebApiApplication.Infrastructure
+namespace Infrastructure.Context
 {
-    public class DbL4Provider
+    public abstract class DbL4Provider
     {
         private readonly Dictionary<string, string> _tableAttributeKeyValues;
         private readonly IConfiguration _configuration;

@@ -7,10 +7,7 @@ using MediatR;
 
 namespace WeatherForecastApplication.Features.Command
 {
-    public class SaveWeatherForecastCommand : IRequest<Result<int>>
-    {
-        public WeatherForecast WeatherForecast { get; set; }
-    }
+    public record SaveWeatherForecastCommand(WeatherForecast weatherForecast) : IRequest<Result<int>>;
     
     public class SaveWeatherForecastDataHandler : IRequestHandler<SaveWeatherForecastCommand, Result<int>>
     {
@@ -21,7 +18,7 @@ namespace WeatherForecastApplication.Features.Command
         }
         public Task<Result<int>> Handle(SaveWeatherForecastCommand request, CancellationToken cancellationToken)
         {
-            _weatherForcastService.SaveWeatherForecast(request.WeatherForecast);
+            _weatherForcastService.SaveWeatherForecast(request.weatherForecast);
             return Result<int>.SuccessAsync(1);
         }
     }

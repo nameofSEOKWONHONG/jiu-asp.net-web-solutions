@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Infrastructure.Context;
 using Infrastructure.Services;
 using MediatR;
 using WeatherForecastApplication;
-using WebApiApplication.Infrastructure;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Services

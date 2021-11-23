@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 
-namespace Infrastructure.DataContext
+namespace Infrastructure.Context
 {
-    public class AccountDbContext : DbContext
+    public class JUIDbContext : DbContext
     {
         private readonly DbConnection connection;
         
@@ -12,7 +12,7 @@ namespace Infrastructure.DataContext
         /// init appsettings connection
         /// </summary>
         /// <param name="options"></param>
-        public AccountDbContext(DbContextOptions options) : base(options)
+        public JUIDbContext(DbContextOptions options) : base(options)
         {
             
         }
@@ -21,7 +21,7 @@ namespace Infrastructure.DataContext
         /// init manual connection
         /// </summary>
         /// <param name="connection"></param>
-        public AccountDbContext(DbConnection connection)
+        public JUIDbContext(DbConnection connection)
         {
             this.connection = connection;
         }
@@ -43,5 +43,6 @@ namespace Infrastructure.DataContext
         }
         
         public DbSet<User> Users { get; set; }
+        public DbSet<Todo> Todos { get; set; }
     }
 }
