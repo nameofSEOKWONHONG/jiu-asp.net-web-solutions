@@ -43,13 +43,13 @@ namespace WeatherForecastApplication.Services
 
         public IEnumerable<WeatherForecast> GetAllWeatherForecast()
         {
-            var result = _cacheProvider.GetCache<IEnumerable<WeatherForecast>>("weatherforecast_all");
+            var result = _cacheProvider.GetCache<IEnumerable<WeatherForecast>>();
             if (result.xIsEmpty())
             {
                 result =_weatherForecastCollection.FindAll();
-                if (result.xIsEmpty())
+                if (result.xIsNotEmpty())
                 {
-                    _cacheProvider.SetCache<IEnumerable<WeatherForecast>>("weatherforecast_all", result);
+                    _cacheProvider.SetCache<IEnumerable<WeatherForecast>>(result);
                 }
             }
 
@@ -64,13 +64,13 @@ namespace WeatherForecastApplication.Services
 
         public WeatherForecast GetWeatherForecast(string summary)
         {
-            var result = _cacheProvider.GetCache<WeatherForecast>(summary);
+            var result = _cacheProvider.GetCache<WeatherForecast>();
             if (result == null)
             {
                 result = _weatherForecastCollection.FindOne(m => m.Summary == summary);
                 if (result != null)
                 {
-                    _cacheProvider.SetCache<WeatherForecast>(summary, result);
+                    _cacheProvider.SetCache<WeatherForecast>(result);
                 }
             }
 

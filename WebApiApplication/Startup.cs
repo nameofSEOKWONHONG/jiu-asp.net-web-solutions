@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Infrastructure.DataContext;
+using Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Infrastructure;
 using WebApiApplication.Middlewares;
@@ -178,6 +179,10 @@ namespace WebApiApplication
             // ref : https://github.com/Cingulara/dotnet-core-web-api-caching-examples
             services.AddResponseCaching();
             //.AddNewtonsoftJson(o => o.SerializerSettings.Converters.Insert(0, new CustomConverter()));            
+            #endregion
+
+            #region [add background service]
+            services.AddHostedService<CacheResetBackgroundService>();
             #endregion
             
             services.AddRazorPages();

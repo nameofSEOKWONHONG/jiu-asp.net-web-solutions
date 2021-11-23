@@ -9,6 +9,8 @@
     <ItemGroup>
       <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
       <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="6.0.0" />
       <PackageReference Include="System.Runtime.Caching" Version="6.0.0" />

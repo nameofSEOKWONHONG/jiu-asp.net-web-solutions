@@ -10,6 +10,7 @@ namespace Application.Infrastructure.Cache
     {
         MEMORY,
         REDIS,
+        LITEDB,
     }
     
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
@@ -18,14 +19,16 @@ namespace Application.Infrastructure.Cache
         public override void Inject(IServiceCollection services)
         {
             services.AddMemoryCache();
-            services.AddTransient<MemoryCacheProvider>();
-            services.AddTransient<RedisCacheProvider>();
+            services.AddSingleton<MemoryCacheProvider>();
+            services.AddSingleton<RedisCacheProvider>();
+            services.AddSingleton<LiteDbCacheProvider>();
             services.AddTransient<CacheProviderResolver>(provider => key =>
             {
                 switch (key)
                 {
                     case ENUM_CACHE_TYPE.MEMORY : return provider.GetService<MemoryCacheProvider>();
                     case ENUM_CACHE_TYPE.REDIS: return provider.GetService<RedisCacheProvider>();
+                    case ENUM_CACHE_TYPE.LITEDB: return provider.GetService<LiteDbCacheProvider>();
                     default: throw new KeyNotFoundException();
                 }
             });

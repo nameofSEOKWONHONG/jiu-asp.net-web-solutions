@@ -1,12 +1,11 @@
 ﻿using System;
-using Application.Abstract;
 using Microsoft.AspNetCore.Http;
 
 namespace Application.Infrastructure.Cache
 {
-    public class RedisCacheProvider : CacheProviderBase, ICacheProvider
+    public class LiteDbCacheProvider : CacheProviderBase, ICacheProvider
     {
-        public RedisCacheProvider(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
+        public LiteDbCacheProvider(IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
         {
         }
 
