@@ -51,5 +51,11 @@ namespace WebApiApplication.Controllers
 
             return Ok(await this._userService.CreateUserAsync(registerRequest.Adapt<User>()));
         }
+
+        [HttpPost("RefreshToken")]
+        public async Task<IActionResult> RefreshToken(string token, string ipAddress)
+        {
+            return Ok();
+        }
     }
 }

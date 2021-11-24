@@ -28,7 +28,13 @@ namespace TodoApplication.Services
             return await _context.Todos.Where(m => m.WriteId == userId).ToListAsync();
         }
 
-        public async Task<IEnumerable<Todo>> GetAllDateTodoAsync(Guid userId, DateTime @from, DateTime @to)
+        public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime selectedDate)
+        {
+            return await _context.Todos.Where(m => m.WriteId == userId && m.NotifyDate == selectedDate)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime @from, DateTime @to)
         {
             return await _context.Todos.Where(m => m.WriteId == userId)
                 .Where(m => m.WriteDt >= @from && m.WriteDt <= @to)
@@ -51,7 +57,7 @@ namespace TodoApplication.Services
             return result.Entity;
         }
 
-        public async Task<bool> UpdateTodoAsync(Todo todo)
+        public async Task<Todo> UpdateTodoAsync(Todo todo)
         {
             var exists = await GetTodoAsync(todo.Id);
             if (exists.xIsEmpty()) throw new KeyNotFoundException();
@@ -60,8 +66,7 @@ namespace TodoApplication.Services
             exists.UpdateDt = todo.UpdateDt;
             var result = _context.Todos.Update(exists);
             await _context.SaveChangesAsync();
-            return result.State == EntityState.Modified;
-
+            return result.Entity;
         }
     }
 }

@@ -2,7 +2,10 @@
 
 `jiu-asp.net-web-solutions`는 asp.net core 6기준으로 제작하는 서버 및 Blazor Server / WASM 프로젝트 템플릿입니다.
 
-이 프로젝트의 "https://github.com/blazorhero/CleanArchitecture"에 기초하고 있습니다.
+이 프로젝트는  
+`https://github.com/blazorhero/CleanArchitecture`  
+`https://github.com/ljlm0402/typescript-express-starter`  
+에 기초하고 있습니다.
 
 프로젝트의 구조는 아래와 같습니다.
 
@@ -44,3 +47,7 @@
 실제 구현은 각각의 Application 프로젝트에서 담당합니다.
 3. Web Api Application에서 Blazor WASM을 호스팅 할 수 있습니다.  
 관련 코드는 `2.Server>WebApiApplication>Startup.cs`를 참고 합니다.
+
+** 히스토리 **  
+`commit history v1.0`까지는 모놀로식 개발 버전입니다.  
+이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.

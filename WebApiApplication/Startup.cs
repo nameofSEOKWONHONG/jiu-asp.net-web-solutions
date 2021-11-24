@@ -3,6 +3,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Infrastructure.Context;
+using Infrastructure.Middelware;
+using Infrastructure.Middlewares;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,7 +17,6 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using WebApiApplication.Middlewares;
 using WebApiApplication.Services;
 
 namespace WebApiApplication
@@ -89,7 +90,7 @@ namespace WebApiApplication
 
             #region [Add MediatR]
             //ref:https://github.com/jbogard/MediatR
-            //MediatR은 지미보카트가 만든 CQOS 패턴을 구현한 프레임워크이다.
+            //MediatR은 지미보가드가 만든 CQRS 패턴을 구현한 프레임워크이다.
             //중계자 패턴으로 불리우는데 Command and Query Responsibility Segregation의 약자로
             //MVVM, IoC와 같이 관심사 분리 기능이다.
             //DDD에서 문자 그대로 Search와 그 이외의 기능으로 분리하는 것으로 DB까지 확장해 보면 
@@ -119,6 +120,7 @@ namespace WebApiApplication
                 {
                     options.UseSqlServer(Configuration.GetConnectionString("SqlServer"), builder =>
                         {
+                            builder.MigrationsAssembly("Infrastructure");
                             builder.EnableRetryOnFailure();
                             builder.CommandTimeout(5);
                         })
@@ -240,6 +242,7 @@ namespace WebApiApplication
             //따라서 Middleware를 등록할 경우 호출 순서가 중요한다.
             app.UseErrorHandler();
             app.UseRequestCulture();
+            app.UseAntiXssMiddleware();
             #endregion
 
             #region [use blazor hosting same domain]

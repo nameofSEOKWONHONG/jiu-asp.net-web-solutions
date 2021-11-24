@@ -16,5 +16,6 @@ namespace Application.Infrastructure.Cache
         void RemoveCache(string key);
         void RemoveCache<T>(CacheOptions<T> options);
         void Reset();
+        void Flush();
     }
 }

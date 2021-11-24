@@ -61,5 +61,10 @@ namespace Application.Infrastructure.Cache
         {
             throw new NotImplementedException();
         }
+
+        public void Flush()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

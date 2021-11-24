@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
@@ -24,5 +25,7 @@ namespace Domain.Entities
         public bool ActivateUser { get; set; } = false;
         
         public bool AutoConfirmEmail { get; set; } = false;    
+        
+        //public List<RefreshToken> RefreshTokens { get; set; }
     }
 }

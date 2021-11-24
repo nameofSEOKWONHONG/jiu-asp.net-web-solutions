@@ -114,6 +114,11 @@ namespace Application.Infrastructure.Cache
             }
 
             _resetCacheToken = new CancellationTokenSource();
-        }        
+        }
+
+        public void Flush()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

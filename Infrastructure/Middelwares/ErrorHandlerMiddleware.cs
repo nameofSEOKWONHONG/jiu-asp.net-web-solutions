@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Exceptions;
 using Application.Response;
-using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Middlewares
+namespace Infrastructure.Middlewares
 {
     public class ErrorHandlerMiddleware
     {

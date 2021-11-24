@@ -48,7 +48,7 @@ namespace Infrastructure.Services.Identity
             var token = new JwtSecurityToken(configuration["Jwt:Issuer"],    
                 configuration["Jwt:Issuer"],    
                 claims,    
-                expires: DateTime.Now.AddMinutes(120),    
+                expires: DateTime.Now.AddMinutes(120),
                 signingCredentials: credentials);
             
             return new JwtSecurityTokenHandler().WriteToken(token); 

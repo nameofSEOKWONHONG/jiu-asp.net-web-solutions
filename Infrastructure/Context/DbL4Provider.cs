@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Context
 {
-    public abstract class DbL4Provider
+    public class DbL4Provider
     {
         private readonly Dictionary<string, string> _tableAttributeKeyValues;
         private readonly IConfiguration _configuration;

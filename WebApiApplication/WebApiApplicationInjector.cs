@@ -8,10 +8,12 @@ using Application.Infrastructure.Message;
 using Infrastructure.Context;
 using Infrastructure.Services;
 using MediatR;
+using TodoApplication;
 using WeatherForecastApplication;
+using WebApiApplication.Services;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication.Services
+namespace WebApiApplication
 {
     /// <summary>
     /// TODO : 서비스 프로젝트 분리, 인증 부분을 제외한 로직 부분은 모두 외부 프로젝트로 분리한다.
@@ -29,10 +31,7 @@ namespace WebApiApplication.Services
     public class WebApiApplicationInjector : DependencyInjectorBase
     {
         public override void Inject(IServiceCollection services)
-        {   
-            services.AddSingleton<DbL4Provider>();
-            services.AddSingleton<DbL4Interceptor>();        
-            
+        {
             #region [factory correct pattern]
             services.AddMessageProviderInject();
             services.AddCacheProviderInject();
@@ -49,7 +48,7 @@ namespace WebApiApplication.Services
         }
     }
 
-    public static class InjectorExtensions
+    public static class WebApiApplicationInjectorExtensions
     {
         public static void AddRegisterService(this IServiceCollection services)
         {
@@ -57,7 +56,8 @@ namespace WebApiApplication.Services
             {
                 new InfrastructureInjector(),
                 new WeatherForecastApplicationInjector(),
-                new WebApiApplicationInjector()
+                new WebApiApplicationInjector(),
+                new TodoApplicationInjector()
             };
             injectors.xForEach(item =>
             {
@@ -69,7 +69,9 @@ namespace WebApiApplication.Services
         {
             var injectors = new List<CQRSInjectorBase>()
             {
-                new WeatherForecastCQRSInjector()
+                new InfrastructureCQRSInjector(),
+                new WeatherForecastCQRSInjector(),
+                new TodoApplicationCQRSInjector(),
             };
 
             var assemblies = new List<Assembly>();

@@ -10,23 +10,12 @@ using WebApiApplication.Services;
 namespace WebApiApplication.Controllers
 {
     [AllowAnonymous]
-    [ApiVersion("2")]
-    [ApiExplorerSettings(GroupName = "v2")]
-    public class IndexController : VersionController<IndexController>
-    {
-        private readonly VehicleCreatorServiceFactory _vehicleCreatorServiceFactory;
-        private readonly IMessageProvider _messageProvider;
-        public IndexController(VehicleCreatorServiceFactory vehicleCreatorServiceFactory,
-            MessageProviderResolver messageServiceResolver)
-        {
-            this._vehicleCreatorServiceFactory = vehicleCreatorServiceFactory;
-            this._messageProvider = messageServiceResolver(ENUM_MESSAGE_TYPE.EMAIL);
-        }
-        
+    public class IndexController : ApiControllerBase<IndexController>
+    {   
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return await Task.Run(() =>
+            return await Task.Factory.StartNew(() =>
             {
                 var sb = new StringBuilder();
                 sb.AppendLine("Hello, The purpose of this project is to create a template similar to \"typescript-express-starter\"");

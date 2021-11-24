@@ -5,5 +5,6 @@
         SMS = 1,
         EMAIL,
         KAKAO,
+        ALL = 99
     }
 }
