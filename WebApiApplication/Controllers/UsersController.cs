@@ -16,43 +16,45 @@ namespace WebApiApplication.Controllers
             this.userService = userService;
         }
         
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
         {
-            var user = await this._sessionContextService.GetSessionAsync();
             return Ok(await this.userService.FindAllUserAsync());
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("Get/{userId}")]
         public async Task<IActionResult> Get(Guid userId)
         {
             return Ok(await this.userService.FindUserByIdAsync(userId));
         }
 
-        [HttpGet("{email}")]
-        public async Task<IActionResult> Get(string email)
+        [HttpGet("{userId}/Get/{email}")]
+        public async Task<IActionResult> Get(Guid userId, string email)
         {
-            return Ok(await this.userService.FindUserByEmailAsync(email));
+            var user = await this.userService.FindUserByIdAsync(userId);
+            if (user == null) return new NotFoundResult();
+            var result = await this.userService.FindUserByEmailAsync(email); 
+            return Ok(result);
         }
 
-        [HttpPost]
+        [HttpPost("CreateUser")]
         public async Task<IActionResult> CreateUser(User userData)
         {
             if (!this.TryValidate(userData, out ActionResult result)) return result;
             return Ok(await this.userService.CreateUserAsync(userData));
         }
 
-        [HttpPut]
+        [HttpPut("UpdateUser")]
         public async Task<IActionResult> UpdateUser(User userData)
         {
             if (!this.TryValidate(userData, out ActionResult result)) return result;
             return Ok(await this.userService.UpdateUserAsync(userData));
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteUser(Guid userId, string email)
+        [HttpDelete("RemoveUser")]
+        public async Task<IActionResult> RemoveUser(Guid userId, string email)
         {
-            return Ok(await this.userService.DeleteUserAsync(userId, email));
+            return Ok(await this.userService.RemoveUserAsync(userId, email));
         }
     }
 }

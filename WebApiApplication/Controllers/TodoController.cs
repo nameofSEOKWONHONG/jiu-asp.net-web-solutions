@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Domain.Enums;
+using Hangfire;
 using Infrastructure.Abstract;
 using Infrastructure.Notifies;
 using Microsoft.AspNetCore.Mvc;
@@ -60,6 +62,14 @@ namespace WebApiApplication.Controllers
             todo.WriteId = session.User.Id;
             todo.WriteDt = DateTime.UtcNow;
             var result = await _mediator.Send(new SaveTodoCommand(todo));
+            BackgroundJob.Enqueue(() => 
+                _mediator.Publish(
+                new MessageNotify()
+                    {
+                        MessageTypes = new[] {ENUM_MESSAGE_TYPE.EMAIL}
+                    }, CancellationToken.None
+                )
+            );
             return Ok(result);
         }
 

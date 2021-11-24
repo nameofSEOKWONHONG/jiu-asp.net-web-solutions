@@ -12,6 +12,6 @@ namespace WebApiApplication.Services.Abstract
         Task<User> FindUserByEmailAsync(string email);
         Task<User> CreateUserAsync(User user);
         Task<User> UpdateUserAsync(User userData);
-        Task<User> DeleteUserAsync(Guid userId, string email);
+        Task<User> RemoveUserAsync(Guid userId, string email);
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Hangfire;
 using Infrastructure.Context;
 using Infrastructure.Middelware;
 using Infrastructure.Middlewares;
@@ -17,7 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Infrastructure.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using WebApiApplication.Services;
+using WebApiApplication.Filters;
 
 namespace WebApiApplication
 {
@@ -184,6 +185,11 @@ namespace WebApiApplication
             #region [add background service]
             services.AddHostedService<CacheResetBackgroundService>();
             #endregion
+
+            #region [add hangfire]
+            services.AddHangfire(x => x.UseSqlServerStorage(Configuration.GetConnectionString("SqlServer")));
+            services.AddHangfireServer();
+            #endregion
             
             services.AddRazorPages();
         }
@@ -243,6 +249,20 @@ namespace WebApiApplication
             app.UseErrorHandler();
             app.UseRequestCulture();
             app.UseAntiXssMiddleware();
+            #endregion
+
+            #region [use hangfire]
+
+            //hangfire의 문제는 DB 부하에 있다. MessageQueue처럼 동작하지만 실제 분산 처리가 아닌 스케줄러에 가깝다.
+            //위 내용 자체가 틀린지도 모르지만 확실히 스케줄러다...
+            //일부는 Database 이슈가 있는 것처럼 보인다... 기본 SqlServer, pro에서 MSMQ 및 Redis를 지원한다.
+            //TODO : kafka로도 구축해 보자.
+            app.UseHangfireDashboard("/jobs", new DashboardOptions
+            {
+                DashboardTitle = "WebApiApplication Jobs",
+                Authorization = new[] { new HangfireAuthorizationFilter() }
+            });
+
             #endregion
 
             #region [use blazor hosting same domain]

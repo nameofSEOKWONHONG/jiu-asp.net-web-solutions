@@ -64,7 +64,7 @@ namespace Infrastructure.Services.Identity
             return exists;
         }
 
-        public async Task<User> DeleteUserAsync(Guid userId, string email)
+        public async Task<User> RemoveUserAsync(Guid userId, string email)
         {
             var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.Id == userId && m.Email == email);
             if (exists == null) throw new Exception("not found");

@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
-using Infrastructure.Context;
 using Infrastructure.Services;
 using MediatR;
 using TodoApplication;
