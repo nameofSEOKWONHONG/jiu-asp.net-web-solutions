@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Infrastructure.Message;
 using Domain.Entities;
 using Domain.Enums;
+using eXtensionSharp;
 using Hangfire;
 using Infrastructure.Abstract;
 using Infrastructure.Notifies;
@@ -20,7 +22,7 @@ namespace WebApiApplication.Controllers
             var session = await this._sessionContextService.GetSessionAsync();
             var result = await _mediator.Send(new GetAllTodoQuery(session.User.Id));
 
-            #region [publish usage demo]
+            #region [publish sample]
             await _mediator.Publish(new MessageNotify() { MessageTypes = new[]{ ENUM_MESSAGE_TYPE.SMS, ENUM_MESSAGE_TYPE.EMAIL }});
             #endregion
             
@@ -62,14 +64,24 @@ namespace WebApiApplication.Controllers
             todo.WriteId = session.User.Id;
             todo.WriteDt = DateTime.UtcNow;
             var result = await _mediator.Send(new SaveTodoCommand(todo));
-            BackgroundJob.Enqueue(() => 
-                _mediator.Publish(
-                new MessageNotify()
-                    {
-                        MessageTypes = new[] {ENUM_MESSAGE_TYPE.EMAIL}
-                    }, CancellationToken.None
-                )
-            );
+            if (result.Data.Id >= 0)
+            {
+                #region [hangfire sample]
+                BackgroundJob.Enqueue(() => 
+                    _mediator.Publish(
+                        new MessageNotify()
+                        {
+                            MessageTypes = new[] {ENUM_MESSAGE_TYPE.EMAIL},
+                            MessageRequest = new EmailMessageRequest(new[]
+                            {
+                                "test@gmail.com"
+                            }, "test", "hello", null)
+                        }, CancellationToken.None
+                    )
+                );
+                #endregion
+            }
+
             return Ok(result);
         }
 

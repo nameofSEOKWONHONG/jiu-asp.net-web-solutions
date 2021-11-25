@@ -18,7 +18,7 @@ namespace Infrastructure.Notifies
         public async Task Handle(MessageNotify notification, CancellationToken cancellationToken)
         {
             if(!notification.MessageTypes.Contains(ENUM_MESSAGE_TYPE.SMS)) return;
-            await _messageProvider.SendMessageAsync(new MessageRequestDto());
+            await _messageProvider.SendMessageAsync(notification.MessageRequest);
         }
     }
 }

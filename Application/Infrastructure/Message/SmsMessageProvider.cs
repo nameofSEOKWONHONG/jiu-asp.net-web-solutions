@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Message
 {
     public class SmsMessageProvider : IMessageProvider
     {
-        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
+        public async Task<IResult> SendMessageAsync(IMessageRequest request)
         {
             
             await Task.Delay(1);

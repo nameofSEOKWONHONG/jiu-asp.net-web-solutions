@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Message
 {
     public class KakaoMessageProvider : IMessageProvider
     {
-        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
+        public async Task<IResult> SendMessageAsync(IMessageRequest request)
         {
             await Task.Delay(1);
             return Result.Success(nameof(EmailMessageProvider));

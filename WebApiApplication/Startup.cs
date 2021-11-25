@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Domain.Configuration;
 using Hangfire;
 using Infrastructure.Context;
 using Infrastructure.Middelware;
@@ -131,9 +132,15 @@ namespace WebApiApplication
 
             #region [add jwt]
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
                 .AddJwtBearer(options =>
                 {
+                    options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
                     options.TokenValidationParameters = new TokenValidationParameters()
                     {
                         ValidateIssuer = true,
@@ -142,6 +149,7 @@ namespace WebApiApplication
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = Configuration["Jwt:Issuer"],
                         ValidAudience = Configuration["Jwt:Issuer"],
+                        SaveSigninToken = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
                 });
@@ -189,6 +197,10 @@ namespace WebApiApplication
             #region [add hangfire]
             services.AddHangfire(x => x.UseSqlServerStorage(Configuration.GetConnectionString("SqlServer")));
             services.AddHangfireServer();
+            #endregion
+            
+            #region [add config]
+            services.Configure<EMailSettings>(Configuration.GetSection("EMailSettings"));
             #endregion
             
             services.AddRazorPages();
@@ -260,7 +272,9 @@ namespace WebApiApplication
             app.UseHangfireDashboard("/jobs", new DashboardOptions
             {
                 DashboardTitle = "WebApiApplication Jobs",
-                Authorization = new[] { new HangfireAuthorizationFilter() }
+                Authorization = new[] { new HangfireAuthorizationFilter() },
+                
+                
             });
 
             #endregion

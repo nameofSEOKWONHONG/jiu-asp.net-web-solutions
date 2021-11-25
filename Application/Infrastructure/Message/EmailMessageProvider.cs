@@ -1,15 +1,75 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Application.Request;
 using Application.Response;
+using Domain.Configuration;
+using eXtensionSharp;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using MimeKit;
 
 namespace Application.Infrastructure.Message
 {
+    public record EmailMessageRequest(string[] toMails, string subject, string body, IEnumerable<IFormFile> attachments)
+        : IMessageRequest;
+    
     public class EmailMessageProvider : IMessageProvider
     {
-        public async Task<IResult> SendMessageAsync(MessageRequestDto request)
+        private readonly IOptions<EMailSettings> _options;
+        public EmailMessageProvider(IOptions<EMailSettings> options)
         {
-            await Task.Delay(1);
-            return Result.Success(nameof(EmailMessageProvider));
+            _options = options;
+        }
+        public async Task<IResult> SendMessageAsync(IMessageRequest request)
+        {
+            var emailSettings = _options.Value;
+            var mailRequest = request as EmailMessageRequest;
+
+            var email = new MimeMessage();
+            var sender = new MailboxAddress(emailSettings.DisplayName, emailSettings.FromMail);
+            email.Sender = sender;
+            mailRequest.toMails.xFor(item =>
+            {
+                email.To.Add(MailboxAddress.Parse(item));
+            });
+            email.Subject = mailRequest.subject;
+            var builder = new BodyBuilder();
+            if (mailRequest.attachments.xIsNotEmpty())
+            {
+                byte[] fileBytes;
+                mailRequest.attachments.xFor(item =>
+                {
+                    if (item.Length > 0)
+                    {
+                        using (var ms = new MemoryStream())
+                        {
+                            item.CopyTo(ms);
+                            fileBytes = ms.ToArray();
+                        }
+
+                        builder.Attachments.Add(item.FileName, fileBytes, ContentType.Parse(item.ContentType));
+                    }
+                });
+            }
+
+            builder.HtmlBody = mailRequest.body;
+            email.Body = builder.ToMessageBody();
+
+            using (var smtp = new SmtpClient())
+            {
+                await smtp.ConnectAsync(emailSettings.Host, emailSettings.Port, SecureSocketOptions.StartTls);
+                await smtp.AuthenticateAsync(emailSettings.FromMail, emailSettings.Password);
+                await smtp.SendAsync(email);
+                await smtp.DisconnectAsync(true);
+            }
+
+            return await Result.SuccessAsync($"send message done : {string.Join(",", email.To.Select(m => m.Name))}");
         }
     }
 }

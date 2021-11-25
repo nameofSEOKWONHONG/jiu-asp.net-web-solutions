@@ -1,6 +1,6 @@
 ﻿namespace Application.Request
 {
-    public class MessageRequestDto
+    public interface IMessageRequest
     {
         
     }

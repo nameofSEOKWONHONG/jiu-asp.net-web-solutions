@@ -6,6 +6,6 @@ namespace Application.Infrastructure.Message
 {
     public interface IMessageProvider
     {
-        Task<IResult> SendMessageAsync(MessageRequestDto request);
+        Task<IResult> SendMessageAsync(IMessageRequest request);
     }
 }
