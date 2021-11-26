@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+      <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
       <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
