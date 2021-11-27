@@ -3,6 +3,7 @@ using Application.Abstract;
 using Infrastructure.Context;
 using Infrastructure.Services.Identity;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiApplication.Services.Abstract;
 
@@ -10,7 +11,7 @@ namespace Infrastructure.Services
 {
     public class InfrastructureInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();
@@ -33,7 +34,7 @@ namespace Infrastructure.Services
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
             var injector = new InfrastructureInjector();
-            injector.Inject(services);
+            injector.Inject(services, null);
         }
 
         public static void AddInfrastructureCQRSInjector(this IServiceCollection services)

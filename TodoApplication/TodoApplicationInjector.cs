@@ -2,6 +2,7 @@
 using Application.Abstract;
 using Application.Interfaces.Todo;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TodoApplication.Services;
 
@@ -9,7 +10,7 @@ namespace TodoApplication
 {
     public class TodoApplicationInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<ITodoService, TodoService>();
         }
@@ -28,7 +29,7 @@ namespace TodoApplication
         public static void AddTodoApplicationInjector(this IServiceCollection services)
         {
             var injector = new TodoApplicationInjector();
-            injector.Inject(services);
+            injector.Inject(services, null);
         }
 
         public static void AddTodoApplicationCQRSInjector(this IServiceCollection services)

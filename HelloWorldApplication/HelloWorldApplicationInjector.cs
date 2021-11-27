@@ -3,13 +3,14 @@ using Application.Abstract;
 using Application.Interfaces.HelloWorld;
 using HelloWorldApplication.Services;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace HelloWorldApplication
 {
     public class HelloWorldApplicationInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IHelloWorldService, HelloWorldService>();
         }
@@ -28,7 +29,7 @@ namespace HelloWorldApplication
         public static void AddHelloWorldApplicationInjector(this IServiceCollection services)
         {
             var injector = new HelloWorldApplicationInjector();
-            injector.Inject(services);
+            injector.Inject(services, null);
         }
 
         public static void AddHelloWorldApplicationCQRSInjector(this IServiceCollection services)

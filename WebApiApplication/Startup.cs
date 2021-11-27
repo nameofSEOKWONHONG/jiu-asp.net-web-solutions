@@ -87,7 +87,7 @@ namespace WebApiApplication
             #endregion
 
             #region [add service]
-            services.AddRegisterService();
+            services.AddRegisterService(Configuration);
             #endregion
 
             #region [Add MediatR]
@@ -108,12 +108,6 @@ namespace WebApiApplication
             #region [api versioning]
 
             services.AddVersionConfig();            
-
-            #endregion
-
-            #region [memory cache]
-
-            services.AddMemoryCache();
 
             #endregion
 

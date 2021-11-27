@@ -18,7 +18,7 @@ namespace ClientApplication.Injector
             
             injectors.ForEach(injector =>
             {
-                injector.Inject(services);
+                injector.Inject(services, null);
             });
         }
     }    

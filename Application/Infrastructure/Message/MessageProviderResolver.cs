@@ -5,6 +5,7 @@ using Application.Abstract;
 using Domain.Enums;
 using Application.Request;
 using Application.Response;
+using Microsoft.Extensions.Configuration;
 
 namespace Application.Infrastructure.Message
 {
@@ -15,7 +16,7 @@ namespace Application.Infrastructure.Message
     
     public class MessageProviderInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<SmsMessageProvider>();
             services.AddTransient<EmailMessageProvider>();
@@ -38,7 +39,7 @@ namespace Application.Infrastructure.Message
         public static void AddMessageProviderInject(this IServiceCollection services)
         {
             var injector = new MessageProviderInjector();
-            injector.Inject(services);
+            injector.Inject(services, null);
         }
     }
 }

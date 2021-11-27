@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.Caching.Memory;
 using Application.Abstract;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Infrastructure.Cache
@@ -16,9 +17,13 @@ namespace Application.Infrastructure.Cache
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
     public class CacheProviderInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddMemoryCache();
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = configuration["RedisConfiguration:Uri"];
+            });
             services.AddSingleton<MemoryCacheProvider>();
             services.AddSingleton<RedisCacheProvider>();
             services.AddSingleton<LiteDbCacheProvider>();
@@ -37,10 +42,10 @@ namespace Application.Infrastructure.Cache
 
     public static class CacheProviderInjectorExtension
     {
-        public static void AddCacheProviderInject(this IServiceCollection services)
+        public static void AddCacheProviderInject(this IServiceCollection services, IConfiguration configuration)
         {
             var injector = new CacheProviderInjector();
-            injector.Inject(services);
+            injector.Inject(services, configuration);
         }
     }
  

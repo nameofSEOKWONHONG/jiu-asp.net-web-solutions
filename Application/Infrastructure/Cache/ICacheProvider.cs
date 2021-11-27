@@ -7,8 +7,8 @@ namespace Application.Infrastructure.Cache
     {
         int Count { get; }
         T GetCache<T>();
-        T GetCache<T>(string key);
         T GetCache<T>(CacheOptions<T> options);
+        T GetCache<T>(string key);
         void SetCache<T>(T value, int expireTimeout = 10);
         void SetCache<T>(string key, T value, int expireTimeout = 10);
         void SetCache<T>(string key, T value, DateTimeOffset? duration);        

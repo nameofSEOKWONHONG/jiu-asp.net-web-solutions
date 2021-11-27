@@ -7,6 +7,7 @@ using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Infrastructure.Services;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using TodoApplication;
 using WeatherForecastApplication;
 using WebApiApplication.Services;
@@ -29,11 +30,11 @@ namespace WebApiApplication
     /// </summary>
     public class WebApiApplicationInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             #region [factory correct pattern]
             services.AddMessageProviderInject();
-            services.AddCacheProviderInject();
+            services.AddCacheProviderInject(configuration);
             #endregion
             
             #region [factory anti pattern]
@@ -49,7 +50,7 @@ namespace WebApiApplication
 
     public static class WebApiApplicationInjectorExtensions
     {
-        public static void AddRegisterService(this IServiceCollection services)
+        public static void AddRegisterService(this IServiceCollection services, IConfiguration configuration)
         {
             var injectors = new List<DependencyInjectorBase>()
             {
@@ -60,7 +61,7 @@ namespace WebApiApplication
             };
             injectors.xForEach(item =>
             {
-                item.Inject(services);
+                item.Inject(services, configuration);
             });
         }
 

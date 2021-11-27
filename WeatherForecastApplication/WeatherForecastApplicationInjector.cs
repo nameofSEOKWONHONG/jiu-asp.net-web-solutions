@@ -3,6 +3,7 @@ using System.Reflection;
 using Application.Abstract;
 using Application.Interfaces.WeahterForecast;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WeatherForecastApplication.Services;
 
@@ -10,7 +11,7 @@ namespace WeatherForecastApplication
 {
     public class WeatherForecastApplicationInjector : DependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services)
+        public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<IWeatherForcastService, WeatherForcastService>();
         }
@@ -29,7 +30,7 @@ namespace WeatherForecastApplication
         public static void AddWeatherForecastApplicationInjector(this IServiceCollection services)
         {
             var injector = new WeatherForecastApplicationInjector();
-            injector.Inject(services);
+            injector.Inject(services, null);
         }
 
         public static void AddWeatherForecastApplicationCQRSInjector(this IServiceCollection services)
