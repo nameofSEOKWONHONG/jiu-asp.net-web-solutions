@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.Json;
 using Application.Abstract;
 using eXtensionSharp;
@@ -24,50 +25,65 @@ namespace Application.Infrastructure.Cache
 
         public T GetCache<T>()
         {
-            var key = CreateCacheKey();
-            return GetCache<T>(key);
+            return GetCacheImpl<T>(string.Empty);
         }
         
         public T GetCache<T>(CacheOptions<T> options)
         {
-            var hashedKey = this.CreateCacheKey(options.Keys);
-            return GetCache<T>(hashedKey);
+            var key = string.Join("", options.Keys);
+            return GetCacheImpl<T>(key);
         }
 
         public T GetCache<T>(string key)
         {
-            var value = _distributedCache.GetString(key);
-            return JsonSerializer.Deserialize<T>(value);
+            return GetCacheImpl<T>(key);
         }
 
+        private T GetCacheImpl<T>(string key)
+        {
+            var hashedKey = key.xIfEmpty(() => this.CreateCacheKey());
+            hashedKey = key.xIfNotEmpty(() => key.xToHash());
+            var value = _distributedCache.GetString(hashedKey);
+            if(value.xIsNotEmpty())
+                return JsonSerializer.Deserialize<T>(value);
+
+            return default;
+        }
+        
         public void SetCache<T>(T value, int expireTimeout = 10)
         {
-            
+            var hashedKey = this.CreateCacheKey();
+            _distributedCache.Set(hashedKey, value.xToBytes());
         }
 
         public void SetCache<T>(string key, T value, int expireTimeout = 10)
         {
-            throw new NotImplementedException();
+            var hashedKey = this.CreateCacheKey(key);
+            _distributedCache.Set(hashedKey, value.xToBytes());
         }
 
         public void SetCache<T>(string key, T value, DateTimeOffset? duration)
         {
-            throw new NotImplementedException();
+            var hashedKey = this.CreateCacheKey(key);
+            _distributedCache.Set(hashedKey, value.xToBytes());
         }
 
         public void SetCache<T>(CacheOptions<T> options)
         {
-            throw new NotImplementedException();
+            var hashedKey = this.CreateCacheKey(options.Keys);
+            _distributedCache.Set(hashedKey, options.Data.xToBytes());
         }
 
         public void RemoveCache(string key)
         {
-            throw new NotImplementedException();
+            var hashedKey = this.CreateCacheKey(key);
+            _distributedCache.Remove(hashedKey);
         }
 
         public void RemoveCache<T>(CacheOptions<T> options)
         {
-            throw new NotImplementedException();
+            var hashedKey = this.CreateCacheKey(options.Keys);
+            _distributedCache.Remove(hashedKey);
         }
 
         public void Reset()

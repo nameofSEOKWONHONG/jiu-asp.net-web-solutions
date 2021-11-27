@@ -10,11 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Infrastructure/KafakaConsumerBackgroundService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/RedisCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/RedisCacheProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +36,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/WebApiApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastApplication/Features/Queries/GetWeatherForecastDataQuery.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastApplication/Features/Queries/GetAllWeatherForecastDataHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/KafakaConsumerBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastApplication/WeatherForecastApplicationInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -47,17 +50,22 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/TodoApplicationInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Abstract/DependencyInjectorBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0095e902412d4de89d23a7edc17474716a80/8/IDistributedCache.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/Features/Query/GetAllTodoQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ac35b45ad4c54eda9b46f2ed59ceabac181a00/b1/703454ed/BackgroundJob.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/obj/Debug/net6.0/WebApiApplication.MvcApplicationPartsAssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/VersionController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/AuthorizedController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelloWorldApplication/HelloWorldApplicationInjector.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -291,6 +299,8 @@
       <workItem from="1637653988054" duration="348000" />
       <workItem from="1637714986183" duration="18847000" />
       <workItem from="1637837830462" duration="2872000" />
+      <workItem from="1637939005812" duration="724000" />
+      <workItem from="1638018028092" duration="3110000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -474,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637763931632</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="update">
+      <created>1637941510256</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1637941510256</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +511,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -521,10 +538,10 @@
     <MESSAGE value="add viewmodel, abstract, service dll" />
     <MESSAGE value="remove factory anti pattern" />
     <MESSAGE value="작업중" />
-    <MESSAGE value="update" />
     <MESSAGE value="update comment" />
     <MESSAGE value="update hangfire, next kafka" />
-    <option name="LAST_COMMIT_MESSAGE" value="update hangfire, next kafka" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -561,6 +578,19 @@
           <line>45</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WeatherForecastApplication\Services\Concrete\WeatherForecastService.cs" initialLine="44" containingFunctionPresentation="method 'GetAllWeatherForecast'" />
           <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>24</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="24" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="742" />
+            </startOffsets>
+            <endOffsets>
+              <option value="795" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

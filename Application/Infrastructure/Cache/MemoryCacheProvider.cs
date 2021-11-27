@@ -62,7 +62,13 @@ namespace Application.Infrastructure.Cache
 
         public void SetCache<T>(string key, T value, int expireTimeout = 10)
         {
-            SetCache<T>(key, value, DateTimeOffset.Now.AddSeconds(expireTimeout));
+            var options = new MemoryCacheEntryOptions()
+            {
+                Priority = CacheItemPriority.Normal,
+                AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(expireTimeout),
+                ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
+            };
+            _cache.Set<T>(key, value, options);
         }
 
         public void SetCache<T>(string key, T value, DateTimeOffset? duration = null)
@@ -78,14 +84,15 @@ namespace Application.Infrastructure.Cache
         
         public void SetCache<T>(CacheOptions<T> options)
         {
-            var sum = options.Keys.Select(m => m.Length).Sum();
-            var sb = new StringBuilder(sum);
-            options.Keys.xForEach(item =>
+            var hashedKey = this.CreateCacheKey(options.Keys);
+            var memoryCacheEntryOptions = new MemoryCacheEntryOptions()
             {
-                sb.Append(item);
-            });
-            var hashedKey = sb.ToString().xToHash();
-            SetCache<T>(hashedKey, options.Data, null);
+                Priority = CacheItemPriority.Normal,
+                AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(options.Options.ExpireTimeout),
+                ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
+            };            
+            
+            _cache.Set<T>(hashedKey, options.Data, memoryCacheEntryOptions);
         }        
 
         public void RemoveCache(string key)
@@ -95,13 +102,7 @@ namespace Application.Infrastructure.Cache
 
         public void RemoveCache<T>(CacheOptions<T> options)
         {
-            var sum = options.Keys.Select(m => m.Length).Sum();
-            var sb = new StringBuilder(sum);
-            options.Keys.xForEach(item =>
-            {
-                sb.Append(item);
-            });
-            var hashedKey = sb.ToString().xToHash();
+            var hashedKey = this.CreateCacheKey(options.Keys);
             RemoveCache(hashedKey);
         }
         

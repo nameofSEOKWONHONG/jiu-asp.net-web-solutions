@@ -27,6 +27,11 @@ namespace Application.Infrastructure.Cache
             return key.xToHash();
         }
 
+        protected string CreateCacheKey(string key)
+        {
+            return CreateCacheKey(new[] {key});
+        }
+
         protected string CreateCacheKey(string[] keys)
         {
             var sb = new XStringBuilder(keys.Length);
