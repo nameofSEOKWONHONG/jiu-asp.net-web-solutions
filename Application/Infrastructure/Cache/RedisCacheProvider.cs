@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Application.Infrastructure.Cache
 {
+    /// <summary>
+    /// TODO : 만료 구현되어야 함.
+    /// </summary>
     public class RedisCacheProvider : CacheProviderBase, ICacheProvider
     {
         private readonly IDistributedCache _distributedCache;

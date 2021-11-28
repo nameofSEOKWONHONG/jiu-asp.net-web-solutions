@@ -20,6 +20,7 @@ namespace WebApiApplication.Controllers
             _cacheProvider = resolver(ENUM_CACHE_TYPE.REDIS);
         }
         [HttpGet]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
         public async Task<IActionResult> Index()
         {
             var result = _cacheProvider.GetCache<string>("test");

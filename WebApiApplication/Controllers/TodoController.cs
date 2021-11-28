@@ -17,6 +17,7 @@ namespace WebApiApplication.Controllers
     public class TodoController : AuthorizedController<TodoController>
     {
         [HttpGet("GetAllTodo")]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
         public async Task<IActionResult> GetAllTodo()
         {
             var session = await this._sessionContextService.GetSessionAsync();
@@ -29,14 +30,16 @@ namespace WebApiApplication.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetTodo")]
+        [HttpGet("GetTodo/{id}")]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"id"})]
         public async Task<IActionResult> GetTodo(int id)
         {
             var result = await _mediator.Send(new GetTodoQuery(id));
             return Ok(result);
         }
 
-        [HttpGet("GetTodoByDate")]
+        [HttpGet("GetTodoByDate/{from}/{to}")]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"from", "to"})]
         public async Task<IActionResult> GetTodoByDate(DateTime from, DateTime to)
         {
             var session = await _sessionContextService.GetSessionAsync();
@@ -44,7 +47,8 @@ namespace WebApiApplication.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetTodoBySelectedDate")]
+        [HttpGet("GetTodoBySelectedDate/{selectedDate}")]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"selectedDate"})]        
         public async Task<IActionResult> GetTodoBySelectedDate(DateTime selectedDate)
         {
             var session = await _sessionContextService.GetSessionAsync();

@@ -180,7 +180,13 @@ namespace WebApiApplication
             #region [add response caching]      
             // add service for allowing caching of responses
             // ref : https://github.com/Cingulara/dotnet-core-web-api-caching-examples
-            services.AddResponseCaching();
+            services.AddResponseCaching(options =>
+            {
+                // //MaximumBodySize 같거나 작은 크기의 응답을 캐시
+                // options.MaximumBodySize = 1024;
+                // //경로 대소문자 구분하여 캐시
+                // options.UseCaseSensitivePaths = true;
+            });
             //.AddNewtonsoftJson(o => o.SerializerSettings.Converters.Insert(0, new CustomConverter()));            
             #endregion
 
@@ -203,7 +209,7 @@ namespace WebApiApplication
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
-            #region [add development env]
+            #region [use development env]
 
             if (env.IsDevelopment())
             {
@@ -226,7 +232,7 @@ namespace WebApiApplication
 
             #endregion
             
-            #region [cors]
+            #region [use cors]
             app.UseCors("CorsPolicy");            
             #endregion
             
@@ -236,9 +242,23 @@ namespace WebApiApplication
             //     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
             //     RequestPath = new PathString("/Files")
             // });
-            #region [caching]
+            #region [use response caching]
             // allow response caching directives in the API Controllers
-            app.UseResponseCaching();            
+            app.UseResponseCaching();    
+            // 캐시 미들웨어 등록
+            // app.Use(async (context, next) =>
+            // {
+            //     context.Response.GetTypedHeaders().CacheControl = 
+            //         new Microsoft.Net.Http.Headers.CacheControlHeaderValue()
+            //         {
+            //             Public = true,
+            //             MaxAge = TimeSpan.FromSeconds(10)
+            //         };
+            //     context.Response.Headers[Microsoft.Net.Http.Headers.HeaderNames.Vary] = 
+            //         new string[] { "Accept-Encoding" };
+            //
+            //     await next();
+            // });            
             #endregion
 
             app.UseHttpsRedirection();

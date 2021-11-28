@@ -11,12 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/RedisCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/RedisCacheProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/TodoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/TodoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
     <setting file="file://$PROJECT_DIR$/TodoApplication/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/Features/Query/GetAllTodoQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -300,7 +297,8 @@
       <workItem from="1637714986183" duration="18847000" />
       <workItem from="1637837830462" duration="2872000" />
       <workItem from="1637939005812" duration="724000" />
-      <workItem from="1638018028092" duration="3110000" />
+      <workItem from="1638018028092" duration="3919000" />
+      <workItem from="1638091376005" duration="1960000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -491,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637941510256</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="update RedisCacheProvider.cs">
+      <created>1638023314048</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1638023314048</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +546,8 @@
     <MESSAGE value="update comment" />
     <MESSAGE value="update hangfire, next kafka" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update RedisCacheProvider.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="update RedisCacheProvider.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,13 +587,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>24</line>
+          <line>25</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="24" containingFunctionPresentation="method 'Index'">
             <startOffsets>
-              <option value="742" />
+              <option value="835" />
             </startOffsets>
             <endOffsets>
-              <option value="795" />
+              <option value="888" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="50" />
