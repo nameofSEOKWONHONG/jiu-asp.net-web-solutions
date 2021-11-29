@@ -25,14 +25,14 @@ namespace Application.Infrastructure.Cache
                 options.Configuration = configuration["RedisConfiguration:Uri"];
             });
             services.AddSingleton<MemoryCacheProvider>();
-            services.AddSingleton<RedisCacheProvider>();
+            services.AddSingleton<DistributeCacheProvider>();
             services.AddSingleton<LiteDbCacheProvider>();
             services.AddTransient<CacheProviderResolver>(provider => key =>
             {
                 switch (key)
                 {
                     case ENUM_CACHE_TYPE.MEMORY : return provider.GetService<MemoryCacheProvider>();
-                    case ENUM_CACHE_TYPE.REDIS: return provider.GetService<RedisCacheProvider>();
+                    case ENUM_CACHE_TYPE.REDIS: return provider.GetService<DistributeCacheProvider>();
                     case ENUM_CACHE_TYPE.LITEDB: return provider.GetService<LiteDbCacheProvider>();
                     default: throw new KeyNotFoundException();
                 }

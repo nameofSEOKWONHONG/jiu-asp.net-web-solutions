@@ -55,17 +55,17 @@ namespace Application.Infrastructure.Cache
             return GetCache<T>(hashedKey);
         }
 
-        public void SetCache<T>(T value, int expireTimeout = 10)
+        public void SetCache<T>(T value, int? expireTimeout = null)
         {
             SetCache<T>(CreateCacheKey(), value, expireTimeout);
         }
 
-        public void SetCache<T>(string key, T value, int expireTimeout = 10)
+        public void SetCache<T>(string key, T value, int? expireTimeout = null)
         {
             var options = new MemoryCacheEntryOptions()
             {
                 Priority = CacheItemPriority.Normal,
-                AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(expireTimeout),
+                AbsoluteExpiration = expireTimeout.HasValue ? DateTimeOffset.Now.AddSeconds(expireTimeout.Value) : null,
                 ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
             };
             _cache.Set<T>(key, value, options);
@@ -88,7 +88,7 @@ namespace Application.Infrastructure.Cache
             var memoryCacheEntryOptions = new MemoryCacheEntryOptions()
             {
                 Priority = CacheItemPriority.Normal,
-                AbsoluteExpiration = DateTimeOffset.Now.AddSeconds(options.Options.ExpireTimeout),
+                AbsoluteExpiration = options.Options.ExpireTimeout.HasValue ? DateTimeOffset.Now.AddSeconds(options.Options.ExpireTimeout.Value) : null,
                 ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
             };            
             

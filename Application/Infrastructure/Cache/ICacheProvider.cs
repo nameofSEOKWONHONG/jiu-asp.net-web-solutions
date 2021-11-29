@@ -9,13 +9,12 @@ namespace Application.Infrastructure.Cache
         T GetCache<T>();
         T GetCache<T>(CacheOptions<T> options);
         T GetCache<T>(string key);
-        void SetCache<T>(T value, int expireTimeout = 10);
-        void SetCache<T>(string key, T value, int expireTimeout = 10);
+        void SetCache<T>(T value, int? expireTimeout = 10);
+        void SetCache<T>(string key, T value, int? expireTimeout = 10);
         void SetCache<T>(string key, T value, DateTimeOffset? duration);        
         void SetCache<T>(CacheOptions<T> options);
         void RemoveCache(string key);
         void RemoveCache<T>(CacheOptions<T> options);
         void Reset();
-        void Flush();
     }
 }
