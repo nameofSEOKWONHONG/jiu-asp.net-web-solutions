@@ -10,7 +10,7 @@ namespace ClientApplication.Injector
     {
         public static void AddInjector(this IServiceCollection services)
         {
-            var injectors = new List<DependencyInjectorBase>()
+            var injectors = new List<IDependencyInjectorBase>()
             {
                 new ServiceDependencyInjector(),
                 new ViewModelDependencyInjector()

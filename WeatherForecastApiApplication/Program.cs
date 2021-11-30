@@ -11,10 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddCacheProviderInject(null);
 builder.Services.AddMessageProviderInject();
-builder.Services.AddWeatherForecastApplicationInjector();
-builder.Services.AddWeatherForecastApplicationCQRSInjector();
-builder.Services.AddHelloWorldApplicationInjector();
-builder.Services.AddHelloWorldApplicationCQRSInjector();
+builder.Services.AddWeatherForecastInjector();
+builder.Services.AddHelloWorldInjector();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

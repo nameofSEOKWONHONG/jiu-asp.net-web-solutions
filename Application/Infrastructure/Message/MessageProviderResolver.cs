@@ -14,9 +14,9 @@ namespace Application.Infrastructure.Message
     /// </summary>
     public delegate IMessageProvider MessageProviderResolver(ENUM_MESSAGE_TYPE type);
     
-    public class MessageProviderInjector : DependencyInjectorBase
+    internal class MessageProviderInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<SmsMessageProvider>();
             services.AddTransient<EmailMessageProvider>();
@@ -38,8 +38,11 @@ namespace Application.Infrastructure.Message
     {
         public static void AddMessageProviderInject(this IServiceCollection services)
         {
-            var injector = new MessageProviderInjector();
-            injector.Inject(services, null);
+            var diCore = new DependencyInjectorImpl(new[]
+            {
+                new MessageProviderInjector()
+            }, services, null);
+            diCore.Inject();
         }
     }
 }

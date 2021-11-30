@@ -9,23 +9,16 @@ using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services
 {
-    public class InfrastructureInjector : DependencyInjectorBase
+    public class InfrastructureInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<DbL4Provider>();
             services.AddSingleton<DbL4Interceptor>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<ISessionContextService, SessionContextService>();
             services.AddScoped<IUserService, UserService>();
-        }
-    }
-    
-    public class InfrastructureCQRSInjector : CQRSInjectorBase
-    {
-        public override Assembly GetAssembly()
-        {
-            return Assembly.Load("Infrastructure");
+            services.AddMediatR(Assembly.Load("Infrastructure"));
         }
     }
 
@@ -33,14 +26,11 @@ namespace Infrastructure.Services
     {
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
-            var injector = new InfrastructureInjector();
-            injector.Inject(services, null);
-        }
-
-        public static void AddInfrastructureCQRSInjector(this IServiceCollection services)
-        {
-            var injector = new InfrastructureCQRSInjector();
-            services.AddMediatR(injector.GetAssembly());
+            var diCore = new DependencyInjectorImpl(new[]
+            {
+                new InfrastructureInjector()
+            }, services, null);
+            diCore.Inject();
         }
     }
 }

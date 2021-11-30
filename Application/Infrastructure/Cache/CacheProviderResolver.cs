@@ -15,9 +15,9 @@ namespace Application.Infrastructure.Cache
     }
     
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
-    public class CacheProviderInjector : DependencyInjectorBase
+    internal class CacheProviderInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddMemoryCache();
             services.AddStackExchangeRedisCache(options =>
@@ -44,8 +44,11 @@ namespace Application.Infrastructure.Cache
     {
         public static void AddCacheProviderInject(this IServiceCollection services, IConfiguration configuration)
         {
-            var injector = new CacheProviderInjector();
-            injector.Inject(services, configuration);
+            var diCore = new DependencyInjectorImpl(new[]
+            {
+                new CacheProviderInjector()
+            }, services, configuration);
+            diCore.Inject();
         }
     }
  

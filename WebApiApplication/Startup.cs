@@ -36,6 +36,8 @@ namespace WebApiApplication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddPluginFiles(Configuration);
+            
             #region [swagger setting]
             services.AddSwaggerGen(options =>
             {
@@ -97,7 +99,7 @@ namespace WebApiApplication
 
             #region [api versioning]
 
-            services.AddVersionConfig();            
+            services.AddVersionConfig();
 
             #endregion
 

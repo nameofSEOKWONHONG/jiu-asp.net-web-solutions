@@ -8,19 +8,12 @@ using TodoApplication.Services;
 
 namespace TodoApplication
 {
-    public class TodoApplicationInjector : DependencyInjectorBase
+    internal class TodoApplicationInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<ITodoService, TodoService>();
-        }
-    }
-    
-    public class TodoApplicationCQRSInjector : CQRSInjectorBase
-    {
-        public override Assembly GetAssembly()
-        {
-            return Assembly.Load("TodoApplication");
+            services.AddMediatR(Assembly.Load("TodoApplication"));
         }
     }
     
@@ -28,14 +21,10 @@ namespace TodoApplication
     {
         public static void AddTodoApplicationInjector(this IServiceCollection services)
         {
-            var injector = new TodoApplicationInjector();
-            injector.Inject(services, null);
-        }
-
-        public static void AddTodoApplicationCQRSInjector(this IServiceCollection services)
-        {
-            var injector = new TodoApplicationCQRSInjector();
-            services.AddMediatR(injector.GetAssembly());
+            var diCore = new DependencyInjectorImpl(new[]
+            {
+                new TodoApplicationInjector()
+            }, services, null);
         }
     }     
 }

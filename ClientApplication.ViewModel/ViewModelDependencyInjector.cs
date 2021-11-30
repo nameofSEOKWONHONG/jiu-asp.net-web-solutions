@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace ClientApplication.ViewModel
 {
-    public class ViewModelDependencyInjector : DependencyInjectorBase
+    public class ViewModelDependencyInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton<CounterStateViewModel>();
         }

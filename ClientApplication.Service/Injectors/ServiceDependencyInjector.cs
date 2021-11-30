@@ -4,9 +4,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace ClientApplication.Service
 {
-    public sealed class ServiceDependencyInjector : DependencyInjectorBase
+    public sealed class ServiceDependencyInjector : IDependencyInjectorBase
     {
-        public override void Inject(IServiceCollection services, IConfiguration configuration)
+        public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<LoginCheckService>();
             services.AddScoped<WeatherForecastService>();
