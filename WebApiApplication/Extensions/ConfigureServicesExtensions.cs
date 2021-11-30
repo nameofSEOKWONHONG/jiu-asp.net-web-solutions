@@ -13,7 +13,7 @@ using WeatherForecastApplication;
 using WebApiApplication.Services;
 using WebApiApplication.Services.Abstract;
 
-namespace WebApiApplication
+namespace WebApiApplication.Extensions
 {
     /// <summary>
     /// TODO : 서비스 프로젝트 분리, 인증 부분을 제외한 로직 부분은 모두 외부 프로젝트로 분리한다.
@@ -28,7 +28,7 @@ namespace WebApiApplication
     /// 늘릴 필요는 없다고 생각된다.
     /// 일부 사람들은 너무 구식 방식이라고 하던데... 어떻게 해야 최신으로 하는 것인지는 의문이다.
     /// </summary>
-    public class WebApiApplicationInjector : DependencyInjectorBase
+    internal class ServiceInjectorImpl : DependencyInjectorBase
     {
         public override void Inject(IServiceCollection services, IConfiguration configuration)
         {
@@ -36,36 +36,44 @@ namespace WebApiApplication
             services.AddMessageProviderInject();
             services.AddCacheProviderInject(configuration);
             #endregion
-            
-            #region [factory anti pattern]
-            services.AddTransient<BoatCreatorService>();
-            services.AddTransient<CarCreatorService>();
-            services.AddTransient<BusCreatorService>();
-            services.AddSingleton<VehicleCreatorServiceFactory>();
-            #endregion
-            
-            services.AddSingleton<IGenerateViewService, GenerateViewService>();
         }
     }
 
-    public static class WebApiApplicationInjectorExtensions
+    internal static class ConfigureServicesExtensions
     {
-        public static void AddRegisterService(this IServiceCollection services, IConfiguration configuration)
+        public static void AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            AddServices(services, configuration);
+            AddAssemblies(services, configuration);
+        }
+
+        internal static void AddServices(IServiceCollection services, IConfiguration configuration)
         {
             var injectors = new List<DependencyInjectorBase>()
             {
                 new InfrastructureInjector(),
                 new WeatherForecastApplicationInjector(),
-                new WebApiApplicationInjector(),
+                new ServiceInjectorImpl(),
                 new TodoApplicationInjector()
             };
+            
             injectors.xForEach(item =>
             {
                 item.Inject(services, configuration);
             });
         }
-
-        public static void AddRegisterCQRS(this IServiceCollection services)
+        
+        /// <summary>
+        /// MediatR은 지미보가드가 만든 CQRS 패턴을 구현한 프레임워크이다.
+        /// 중계자 패턴으로 불리우는데 Command and Query Responsibility Segregation의 약자로
+        /// MVVM, IoC와 같이 관심사 분리 기능이다.
+        /// DDD에서 문자 그대로 Search와 그 이외의 기능으로 분리하는 것으로 DB까지 확장해 보면 
+        /// Command는 RDBMS, Query는 NOSql로 구성하는 방식까지 확장 할 수 있겠다. (만드는 사람 맘이지만...)
+        /// <see cref="https://github.com/jbogard/MediatR"/>
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        internal static void AddAssemblies(IServiceCollection services, IConfiguration configuration)
         {
             var injectors = new List<CQRSInjectorBase>()
             {

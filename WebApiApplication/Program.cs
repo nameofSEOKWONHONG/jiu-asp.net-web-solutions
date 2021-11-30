@@ -17,8 +17,6 @@ namespace WebApiApplication
     {
         public static void Main(string[] args)
         {
-            //ref : https://www.humankode.com/asp-net-core/logging-with-elasticsearch-kibana-asp-net-core-and-docker
-            //configure logging first
             ConfigureLogging();
             
             try
@@ -47,6 +45,9 @@ namespace WebApiApplication
                 })
                 .UseSerilog();
 
+        /// <summary>
+        /// <see cref="https://www.humankode.com/asp-net-core/logging-with-elasticsearch-kibana-asp-net-core-and-docker"/>
+        /// </summary>
         private static void ConfigureLogging()
         {
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
