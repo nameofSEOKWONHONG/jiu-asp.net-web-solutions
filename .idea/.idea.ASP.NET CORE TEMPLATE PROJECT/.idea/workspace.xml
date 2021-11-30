@@ -11,17 +11,7 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/UserGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Context/JUIDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Context/JIUDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Identity/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Services/Identity/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoApplication/Services/TodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApplication/Services/TodoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,6 +94,7 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure/KafakaConsumerBackgroundService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -427,7 +418,7 @@
       <workItem from="1638091376005" duration="1960000" />
       <workItem from="1638162200912" duration="5925000" />
       <workItem from="1638234011403" duration="11321000" />
-      <workItem from="1638254137036" duration="2362000" />
+      <workItem from="1638254137036" duration="2859000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -653,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638253201784</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update configurations">
+      <created>1638256987426</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1638256987426</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +704,8 @@
     <MESSAGE value="v2 complete." />
     <MESSAGE value="v3 start" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="update configurations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -756,19 +755,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WeatherForecastApplication/WeatherForecastInjector.cs</url>
-          <line>23</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WeatherForecastApplication\WeatherForecastInjector.cs" initialLine="23" containingFunctionPresentation="method 'Inject'">
-            <startOffsets>
-              <option value="999" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1064" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

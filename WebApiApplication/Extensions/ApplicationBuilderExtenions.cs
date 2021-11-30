@@ -12,13 +12,48 @@ namespace WebApiApplication.Extensions
 {
     internal static class ApplicationBuilderExtenions
     {
+        internal static IApplicationBuilder UseConfigures(this IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
+        {
+            #region [use cors]
+            app.UseCors("CorsPolicy");            
+            #endregion
+            
+            app.UseDevelopmentHandling(env);
+            app.UseConfigureSwagger(env, provider);
+            app.UseStaticFiles();
+            // app.UseStaticFiles(new StaticFileOptions
+            // {
+            //     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
+            //     RequestPath = new PathString("/Files")
+            // });
+            
+            app.UseResponseCache();
+            app.UseHttpsRedirection();
+            app.UseRouting();
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseConfigureMiddleware();
+            app.UseHangfire();
+
+            #region [use blazor hosting same domain]
+            //blazor wasm은 정적파일이므로 Api와 같은 호스트(프로젝트)로 배포할 수 있다.
+            //물론 별도로 호스트할 수도 있고, 아래는 해당 방법을 설정하는 내용이다.
+            //ref : https://stackoverflow.com/questions/61011880/how-can-i-host-asp-net-api-and-blazor-web-assembly-like-an-javascript-spa
+            app.UseBlazorFrameworkFiles();
+            #endregion
+
+            app.UseConfigureEndPoints();
+            
+            return app;
+        }
+        
         /// <summary>
         /// 개발설정
         /// </summary>
         /// <param name="app"></param>
         /// <param name="env"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder UseDevelopmentHandling(this IApplicationBuilder app,
+        private static IApplicationBuilder UseDevelopmentHandling(this IApplicationBuilder app,
             IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -36,7 +71,7 @@ namespace WebApiApplication.Extensions
         /// <param name="env"></param>
         /// <param name="provider"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder ConfigureSwagger(this IApplicationBuilder app,
+        private static IApplicationBuilder UseConfigureSwagger(this IApplicationBuilder app,
             IWebHostEnvironment env, 
             IApiVersionDescriptionProvider provider)
         {
@@ -66,7 +101,7 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="app"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder UseResponseCache(this IApplicationBuilder app)
+        private static IApplicationBuilder UseResponseCache(this IApplicationBuilder app)
         {
             // allow response caching directives in the API Controllers
             app.UseResponseCaching();    
@@ -92,7 +127,7 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="app"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder UseEndPoints(this IApplicationBuilder app) => app.UseEndpoints(endpoints =>
+        private static IApplicationBuilder UseConfigureEndPoints(this IApplicationBuilder app) => app.UseEndpoints(endpoints =>
         {
             app.UseEndpoints(endpoints =>
             {
@@ -108,7 +143,7 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="app"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder UseCustomMiddleware(this IApplicationBuilder app)
+        private static IApplicationBuilder UseConfigureMiddleware(this IApplicationBuilder app)
         {
             //만약 jwt 인증을 한다면 UseAuthentication, UseAuthorization 이전과 이후 배치에 따라 
             //HttpContext.Claims에서 확인할 수 있는 설정이 다르다.
@@ -127,7 +162,7 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="app"></param>
         /// <returns></returns>
-        internal static IApplicationBuilder UseHangfire(this IApplicationBuilder app)
+        private static IApplicationBuilder UseHangfire(this IApplicationBuilder app)
         {
             //hangfire의 문제는 DB 부하에 있다. MessageQueue처럼 동작하지만 실제 분산 처리가 아닌 스케줄러에 가깝다.
             //위 내용 자체가 틀린지도 모르지만 확실히 스케줄러다...
