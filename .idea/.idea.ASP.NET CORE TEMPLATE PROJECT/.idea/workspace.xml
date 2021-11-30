@@ -11,14 +11,16 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="v3 start">
-      <change afterPath="$PROJECT_DIR$/YarpWebApplication/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YarpWebApplication/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YarpWebApplication/YarpWebApplication.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YarpWebApplication/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YarpWebApplication/appsettings.json" afterDir="false" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/UserGroup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Context/JUIDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Context/JIUDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Identity/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Services/Identity/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoApplication/Services/TodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApplication/Services/TodoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/84/2852b478/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/e7/9c3f29f5/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9fa7b14b82014ea3b920d172005eaec15c880/5/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/ClientApplication.Injector/ApplicationInjector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F1D061AC-D27D-4E95-B449-30527EE3091F/11A/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/607C0E5D-1B60-41DF-AE37-42179BA330D4/8/JwtRegisteredClaimNames.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/47/8a2e8698/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -230,7 +231,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.YarpWebApplication">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApiApplication">
     <configuration name="BlazorServerApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -425,7 +426,8 @@
       <workItem from="1638018028092" duration="3919000" />
       <workItem from="1638091376005" duration="1960000" />
       <workItem from="1638162200912" duration="5925000" />
-      <workItem from="1638234011403" duration="11222000" />
+      <workItem from="1638234011403" duration="11321000" />
+      <workItem from="1638254137036" duration="2362000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -644,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638245347072</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="update">
+      <created>1638253201784</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1638253201784</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,10 +703,10 @@
     <MESSAGE value="update comment" />
     <MESSAGE value="update hangfire, next kafka" />
     <MESSAGE value="update RedisCacheProvider.cs" />
-    <MESSAGE value="update" />
     <MESSAGE value="v2 complete." />
     <MESSAGE value="v3 start" />
-    <option name="LAST_COMMIT_MESSAGE" value="v3 start" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

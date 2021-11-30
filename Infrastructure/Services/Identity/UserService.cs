@@ -10,8 +10,8 @@ namespace Infrastructure.Services.Identity
 {
     public class UserService : IUserService
     {
-        private readonly JUIDbContext dbContext;
-        public UserService(JUIDbContext dbContext)
+        private readonly JIUDbContext dbContext;
+        public UserService(JIUDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

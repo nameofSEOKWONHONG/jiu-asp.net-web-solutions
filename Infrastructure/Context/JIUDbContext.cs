@@ -4,7 +4,7 @@ using Domain.Entities;
 
 namespace Infrastructure.Context
 {
-    public class JUIDbContext : DbContext
+    public class JIUDbContext : DbContext
     {
         private readonly DbConnection connection;
         
@@ -12,7 +12,7 @@ namespace Infrastructure.Context
         /// init appsettings connection
         /// </summary>
         /// <param name="options"></param>
-        public JUIDbContext(DbContextOptions options) : base(options)
+        public JIUDbContext(DbContextOptions options) : base(options)
         {
             
         }
@@ -21,7 +21,7 @@ namespace Infrastructure.Context
         /// init manual connection
         /// </summary>
         /// <param name="connection"></param>
-        public JUIDbContext(DbConnection connection)
+        public JIUDbContext(DbConnection connection)
         {
             this.connection = connection;
         }
@@ -44,5 +44,6 @@ namespace Infrastructure.Context
         
         public DbSet<User> Users { get; set; }
         public DbSet<Todo> Todos { get; set; }
+        public DbSet<Group> Groups { get; set; }
     }
 }

@@ -12,18 +12,30 @@ namespace WebApiApplication.Extensions
 {
     internal static class ApplicationBuilderExtenions
     {
-        internal static IApplicationBuilder UseExceptionHandling(this IApplicationBuilder app,
+        /// <summary>
+        /// 개발설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
+        /// <returns></returns>
+        internal static IApplicationBuilder UseDevelopmentHandling(this IApplicationBuilder app,
             IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
             }
 
             return app;
         }
 
+        /// <summary>
+        /// swagger 설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
+        /// <param name="provider"></param>
+        /// <returns></returns>
         internal static IApplicationBuilder ConfigureSwagger(this IApplicationBuilder app,
             IWebHostEnvironment env, 
             IApiVersionDescriptionProvider provider)
@@ -49,6 +61,11 @@ namespace WebApiApplication.Extensions
             return app;
         }
 
+        /// <summary>
+        /// 응답 캐시 설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         internal static IApplicationBuilder UseResponseCache(this IApplicationBuilder app)
         {
             // allow response caching directives in the API Controllers
@@ -69,6 +86,12 @@ namespace WebApiApplication.Extensions
             // });            
             return app;
         }
+        
+        /// <summary>
+        /// endpoint 설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         internal static IApplicationBuilder UseEndPoints(this IApplicationBuilder app) => app.UseEndpoints(endpoints =>
         {
             app.UseEndpoints(endpoints =>
@@ -80,17 +103,30 @@ namespace WebApiApplication.Extensions
             });
         });
 
+        /// <summary>
+        /// 미들웨어 설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         internal static IApplicationBuilder UseCustomMiddleware(this IApplicationBuilder app)
         {
             //만약 jwt 인증을 한다면 UseAuthentication, UseAuthorization 이전과 이후 배치에 따라 
             //HttpContext.Claims에서 확인할 수 있는 설정이 다르다.
             //따라서 Middleware를 등록할 경우 호출 순서가 중요한다.
+            // 예외설정
             app.UseErrorHandler();
+            // 문화권 설정
             app.UseRequestCulture();
+            // XSS 방어 설정
             app.UseAntiXssMiddleware();
             return app;
         }
 
+        /// <summary>
+        /// hangfire 설정
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
         internal static IApplicationBuilder UseHangfire(this IApplicationBuilder app)
         {
             //hangfire의 문제는 DB 부하에 있다. MessageQueue처럼 동작하지만 실제 분산 처리가 아닌 스케줄러에 가깝다.

@@ -12,8 +12,8 @@ namespace TodoApplication.Services
 {
     public class TodoService : ITodoService
     {
-        private readonly JUIDbContext _context;
-        public TodoService(JUIDbContext context)
+        private readonly JIUDbContext _context;
+        public TodoService(JIUDbContext context)
         {
             _context = context;
         }

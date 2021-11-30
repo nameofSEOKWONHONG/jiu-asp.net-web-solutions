@@ -1,14 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Reflection;
+using System.Text;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Domain.Configuration;
+using Hangfire;
 using HelloWorldApplication;
+using Infrastructure.Context;
 using Infrastructure.Services;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using TodoApplication;
 using WeatherForecastApplication;
 using WebApiApplication.Services;
@@ -16,11 +27,47 @@ using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Extensions
 {
+    /// <summary>
+    /// ConfigService에 등록될 Add Method들의 집합
+    /// </summary>
     internal static class ConfigureServicesExtensions
     {
+        /// <summary>
+        /// ServiceCollection에 등록, 등록 순서는 영향이 없다.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         internal static void AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
+            #region [add controllers]
+            services.AddControllers();        
+            #endregion
+            
+            #region [add httpcontext accessor to the container.]
+            services.AddHttpContextAccessor();
+            #endregion          
+            
+            #region [api versioning]
+            services.AddVersionConfig();
+            #endregion
+            
+            #region [add auth]
+            services.AddAuthentication();
+            #endregion
+            
             AddServices(services, configuration);
+            AddSwagger(services);
+            AddDatabase(services, configuration);
+            AddJwt(services, configuration);
+            AddCors(services);
+            AddResponseCache(services);
+            AddHangfire(services, configuration);
+            AddBackgroundService(services);
+            AddEmailSetting(services, configuration);
+            
+            services.AddRazorPages();
+            
+            services.AddPluginFiles(configuration);
         }
 
         /// <summary>
@@ -36,17 +83,180 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration"></param>
-        internal static void AddServices(IServiceCollection services, IConfiguration configuration)
+        private static void AddServices(IServiceCollection services, IConfiguration configuration)
         {
             #region [factory correct pattern]
+            // 메세지 제공자 설정
             services.AddMessageProviderInject();
+            // 캐시 제공자 설정
             services.AddCacheProviderInject(configuration);
             #endregion
             
+            // 각 Injector 구현체 등록
             services.AddWeatherForecastInjector();
             services.AddInfrastructureInjector();
             services.AddTodoApplicationInjector();
             services.AddHelloWorldInjector();
+
+            
+        }
+
+        private static void AddSwagger(IServiceCollection services)
+        {
+            #region [swagger setting]
+            services.AddSwaggerGen(options =>
+            {
+                //do not display schema
+                //options.DocumentFilter<SwaggerRemoveSchemasFilter>();
+
+                //disable realem object schema error
+                options.CustomSchemaIds(type => type.ToString());
+
+                //remove swagger api version error
+                options.DocInclusionPredicate((_, api) => !string.IsNullOrWhiteSpace(api.GroupName));
+
+                // add a custom operation filter which sets default values
+                options.OperationFilter<SwaggerDefaultValues>();
+
+                // integrate xml comments into swagger
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
+                
+                // add a custom operation filter which sets default values
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
+                        Name = "Authorization",
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer",
+                        BearerFormat = "JWT",
+                        In = ParameterLocation.Header,
+                        Description =
+                            "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\""
+                    });
+
+                // add a custom operation filter which sets default values
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme {
+                            Reference = new OpenApiReference {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
+                });                
+            });            
+            #endregion
+        }
+
+        private static void AddDatabase(IServiceCollection services, IConfiguration configuration)
+        {
+            #region [add database]
+            services.AddDbContext<JIUDbContext>((sp, options) =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
+                    {
+                        builder.MigrationsAssembly("Infrastructure");
+                        builder.EnableRetryOnFailure();
+                        builder.CommandTimeout(5);
+                    })
+                    .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
+            });
+            #endregion
+        }
+
+        private static void AddJwt(IServiceCollection services, IConfiguration configuration)
+        {
+            #region [add jwt]
+
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = configuration["Jwt:Issuer"],
+                        ValidAudience = configuration["Jwt:Issuer"],
+                        SaveSigninToken = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
+                    };
+                });
+
+
+            #endregion            
+        }
+
+        private static void AddCors(IServiceCollection services)
+        {
+            #region [add cors]
+            // USE CORS
+            // ref : https://stackoverflow.com/questions/53675850/how-to-fix-the-cors-protocol-does-not-allow-specifying-a-wildcard-any-origin
+            // ********************
+            services.AddCors(options => {
+                //options.AddPolicy("AllowAll",
+                //    builder => {
+                //        builder
+                //        .AllowAnyOrigin()
+                //        .AllowAnyMethod()
+                //        .AllowAnyHeader()
+                //        .AllowCredentials();
+                //    });
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });            
+            #endregion               
+        }
+
+        private static void AddResponseCache(IServiceCollection services)
+        {
+            #region [add response caching]      
+            // add service for allowing caching of responses
+            // ref : https://github.com/Cingulara/dotnet-core-web-api-caching-examples
+            services.AddResponseCaching(options =>
+            {
+                // //MaximumBodySize 같거나 작은 크기의 응답을 캐시
+                // options.MaximumBodySize = 1024;
+                // //경로 대소문자 구분하여 캐시
+                // options.UseCaseSensitivePaths = true;
+            });
+            //.AddNewtonsoftJson(o => o.SerializerSettings.Converters.Insert(0, new CustomConverter()));            
+            #endregion
+        }
+
+        private static void AddHangfire(IServiceCollection services, IConfiguration configuration)
+        {
+            #region [add hangfire]
+            services.AddHangfire(x => x.UseSqlServerStorage(configuration.GetConnectionString("SqlServer")));
+            services.AddHangfireServer();
+            #endregion
+        }
+
+        private static void AddBackgroundService(IServiceCollection services)
+        {
+            
+            #region [add background service]
+            services.AddHostedService<CacheResetBackgroundService>();
+            #endregion
+        }
+
+        private static void AddEmailSetting(IServiceCollection services, IConfiguration configuration)
+        {
+            #region [add config]
+            services.Configure<EMailSettings>(configuration.GetSection("EMailSettings"));
+            #endregion
         }
     }
 }
