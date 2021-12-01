@@ -51,3 +51,11 @@
 ** 히스토리 **  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
+
+### Acknowledgements
+
+[JetBrains](https://www.jetbrains.com/?from=Mapster) kindly provides Mapster with a free open-source licence for their Resharper and Rider.
+- **Resharper** makes Visual Studio a much better IDE
+- **Rider** is fast & powerful cross platform .NET IDE
+
+![image](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/121px-JetBrains_Logo_2016.svg.png)
