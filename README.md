@@ -54,7 +54,7 @@
 
 ### Acknowledgements
 
-[JetBrains](https://www.jetbrains.com/?from=Mapster) kindly provides Mapster with a free open-source licence for their Resharper and Rider.
+[JetBrains](https://www.jetbrains.com/) kindly provides `jiu-asp.net-web-solutions` with a free open-source licence for their Resharper and Rider.
 - **Resharper** makes Visual Studio a much better IDE
 - **Rider** is fast & powerful cross platform .NET IDE
 
