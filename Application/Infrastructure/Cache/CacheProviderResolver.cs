@@ -19,30 +19,30 @@ namespace Application.Infrastructure.Cache
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMemoryCache();
-            services.AddStackExchangeRedisCache(options =>
-            {
-                options.Configuration = configuration["RedisConfiguration:Uri"];
-            });
-            services.AddSingleton<MemoryCacheProvider>();
-            services.AddSingleton<DistributeCacheProvider>();
-            services.AddSingleton<LiteDbCacheProvider>();
-            services.AddTransient<CacheProviderResolver>(provider => key =>
-            {
-                switch (key)
+            services.AddMemoryCache()
+                .AddStackExchangeRedisCache(options =>
                 {
-                    case ENUM_CACHE_TYPE.MEMORY : return provider.GetService<MemoryCacheProvider>();
-                    case ENUM_CACHE_TYPE.REDIS: return provider.GetService<DistributeCacheProvider>();
-                    case ENUM_CACHE_TYPE.LITEDB: return provider.GetService<LiteDbCacheProvider>();
-                    default: throw new KeyNotFoundException();
-                }
-            });
+                    options.Configuration = configuration["RedisConfiguration:Uri"];
+                })
+                .AddSingleton<MemoryCacheProvider>()
+                .AddSingleton<DistributeCacheProvider>()
+                .AddSingleton<LiteDbCacheProvider>()
+                .AddSingleton<CacheProviderResolver>(provider => key =>
+                {
+                    switch (key)
+                    {
+                        case ENUM_CACHE_TYPE.MEMORY : return provider.GetRequiredService<MemoryCacheProvider>();
+                        case ENUM_CACHE_TYPE.REDIS: return provider.GetRequiredService<DistributeCacheProvider>();
+                        case ENUM_CACHE_TYPE.LITEDB: return provider.GetRequiredService<LiteDbCacheProvider>();
+                        default: throw new KeyNotFoundException();
+                    }
+                });
         }
     }
 
     public static class CacheProviderInjectorExtension
     {
-        public static void AddCacheProviderInject(this IServiceCollection services, IConfiguration configuration)
+        public static void AddCacheProviderInjector(this IServiceCollection services, IConfiguration configuration)
         {
             var diCore = new DependencyInjectorImpl(new[]
             {

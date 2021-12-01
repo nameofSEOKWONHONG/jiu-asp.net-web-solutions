@@ -18,6 +18,9 @@ namespace WebApiApplication.Extensions
         /// <param name="configuration"></param>
         internal static void AddPluginFiles(this IServiceCollection services, IConfiguration configuration)
         {
+            var enable = bool.Parse(configuration["PluginEnable"]);
+            if(!enable) return;
+            
             var mvcBuilder = services.AddMvc();
             var pluginPath = Path.Combine(AppContext.BaseDirectory, "plugins");
             if (!Directory.Exists(pluginPath)) Directory.CreateDirectory(pluginPath);

@@ -18,25 +18,25 @@ namespace Application.Infrastructure.Message
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<SmsMessageProvider>();
-            services.AddTransient<EmailMessageProvider>();
-            services.AddTransient<KakaoMessageProvider>();
-            services.AddTransient<MessageProviderResolver>(provider => key =>
-            {
-                switch (key)
+            services.AddSingleton<SmsMessageProvider>()
+                .AddSingleton<EmailMessageProvider>()
+                .AddSingleton<KakaoMessageProvider>()
+                .AddSingleton<MessageProviderResolver>(provider => key =>
                 {
-                    case ENUM_MESSAGE_TYPE.SMS : return provider.GetService<SmsMessageProvider>();
-                    case ENUM_MESSAGE_TYPE.EMAIL: return provider.GetService<EmailMessageProvider>();
-                    case ENUM_MESSAGE_TYPE.KAKAO : return provider.GetService<KakaoMessageProvider>();
-                    default: throw new KeyNotFoundException();
-                }
-            });
+                    switch (key)
+                    {
+                        case ENUM_MESSAGE_TYPE.SMS : return provider.GetRequiredService<SmsMessageProvider>();
+                        case ENUM_MESSAGE_TYPE.EMAIL: return provider.GetRequiredService<EmailMessageProvider>();
+                        case ENUM_MESSAGE_TYPE.KAKAO : return provider.GetRequiredService<KakaoMessageProvider>();
+                        default: throw new KeyNotFoundException();
+                    }
+                });
         }
     }
 
     public static class MessageProviderInjectorExtension
     {
-        public static void AddMessageProviderInject(this IServiceCollection services)
+        public static void AddMessageProviderInjector(this IServiceCollection services)
         {
             var diCore = new DependencyInjectorImpl(new[]
             {

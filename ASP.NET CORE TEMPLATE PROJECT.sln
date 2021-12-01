@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApplication", "TodoAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YarpWebApplication", "YarpWebApplication\YarpWebApplication.csproj", "{237B71DB-41FE-4E12-B2A0-1285C4B95C4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.BackgroundApplication", "4.BackgroundApplication", "{FD5FCD18-1210-4C08-AFE0-E69AD9D47D6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

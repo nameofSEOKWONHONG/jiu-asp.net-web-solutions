@@ -21,11 +21,11 @@ namespace Infrastructure.Abstract
         /// <summary>
         /// httpcontext로 의존성 주입
         /// </summary>
-        protected ILogger<TController> _logger => _loggerInstance ??= HttpContext.RequestServices.GetService<ILogger<TController>>();
+        protected ILogger<TController> _logger => _loggerInstance ??= HttpContext.RequestServices.GetRequiredService<ILogger<TController>>();
         /// <summary>
         /// httpcontext로 의존성 주입 (CQRS)
         /// </summary>
-        protected IMediator _mediator => _mediatorInstance ??= HttpContext.RequestServices.GetService<IMediator>();
+        protected IMediator _mediator => _mediatorInstance ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
 
         protected bool TryValidate<TEntity>(TEntity model, out ActionResult result) where TEntity : class
         {

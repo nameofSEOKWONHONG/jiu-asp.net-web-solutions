@@ -61,7 +61,7 @@ builder.Services.AddAuthentication(options => {
     var provider = builder.Services.BuildServiceProvider();
     config.ClientId = "[key]";
     config.ClientSecret = "[secret]";
-    config.Events = provider.GetService<KakaoOAuthEventService>();
+    config.Events = provider.GetRequiredService<KakaoOAuthEventService>();
 });
 #endregion
 

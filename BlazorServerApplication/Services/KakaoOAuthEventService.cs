@@ -20,7 +20,7 @@ namespace BlazorServerApplication.Services
         private readonly ILogger _logger;
         public KakaoOAuthEventService(IServiceProvider serviceProvider)
         {
-            this._logger = serviceProvider.GetService<ILogger<KakaoOAuthEventService>>();
+            this._logger = serviceProvider.GetRequiredService<ILogger<KakaoOAuthEventService>>();
             this._serviceProvider = serviceProvider;
         }
         
@@ -51,7 +51,7 @@ namespace BlazorServerApplication.Services
                 var user = new User();
                 if (user != null)
                 {
-                    var httpContext = _serviceProvider.GetService<IHttpContextAccessor>();
+                    var httpContext = _serviceProvider.GetRequiredService<IHttpContextAccessor>();
                     var cookieOptions = new CookieOptions()
                     {
                         Expires = DateTime.Now.AddHours(12),

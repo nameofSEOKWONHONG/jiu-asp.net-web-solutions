@@ -12,8 +12,8 @@ namespace TodoApplication
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<ITodoService, TodoService>();
-            services.AddMediatR(Assembly.Load("TodoApplication"));
+            services.AddTransient<ITodoService, TodoService>()
+                .AddMediatR(Assembly.Load("TodoApplication"));
         }
     }
     

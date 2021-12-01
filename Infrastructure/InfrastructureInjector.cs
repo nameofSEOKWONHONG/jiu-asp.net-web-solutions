@@ -13,12 +13,12 @@ namespace Infrastructure.Services
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<DbL4Provider>();
-            services.AddSingleton<DbL4Interceptor>();
-            services.AddScoped<IAccountService, AccountService>();
-            services.AddScoped<ISessionContextService, SessionContextService>();
-            services.AddScoped<IUserService, UserService>();
-            services.AddMediatR(Assembly.Load("Infrastructure"));
+            services.AddSingleton<DbL4Provider>()
+                .AddSingleton<DbL4Interceptor>()
+                .AddScoped<IAccountService, AccountService>()
+                .AddScoped<ISessionContextService, SessionContextService>()
+                .AddScoped<IUserService, UserService>()
+                .AddMediatR(Assembly.Load("Infrastructure"));
         }
     }
 

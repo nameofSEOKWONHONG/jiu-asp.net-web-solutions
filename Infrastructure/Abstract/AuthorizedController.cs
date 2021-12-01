@@ -9,6 +9,6 @@ namespace Infrastructure.Abstract
     {
         private ISessionContextService _sessionContextServiceInstance;
         protected ISessionContextService _sessionContextService => _sessionContextServiceInstance ??=
-            HttpContext.RequestServices.GetService<ISessionContextService>();
+            HttpContext.RequestServices.GetRequiredService<ISessionContextService>();
     }
 }

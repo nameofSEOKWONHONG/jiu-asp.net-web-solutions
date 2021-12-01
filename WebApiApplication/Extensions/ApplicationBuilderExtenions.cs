@@ -1,9 +1,12 @@
-﻿using Hangfire;
+﻿using System.IO;
+using Hangfire;
 using Infrastructure.Middelware;
 using Infrastructure.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using WebApiApplication.Filters;
@@ -21,11 +24,11 @@ namespace WebApiApplication.Extensions
             app.UseDevelopmentHandling(env);
             app.UseConfigureSwagger(env, provider);
             app.UseStaticFiles();
-            // app.UseStaticFiles(new StaticFileOptions
-            // {
-            //     FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
-            //     RequestPath = new PathString("/Files")
-            // });
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
+                RequestPath = new PathString("/Files")
+            });
             
             app.UseResponseCache();
             app.UseHttpsRedirection();
@@ -151,7 +154,7 @@ namespace WebApiApplication.Extensions
             // 예외설정
             app.UseErrorHandler();
             // 문화권 설정
-            app.UseRequestCulture();
+            app.UseRequestLocalizationByCulture();
             // XSS 방어 설정
             app.UseAntiXssMiddleware();
             return app;

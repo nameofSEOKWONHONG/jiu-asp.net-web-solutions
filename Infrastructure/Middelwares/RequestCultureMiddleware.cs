@@ -1,8 +1,10 @@
 ﻿using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Constants.Localization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Localization;
 
 namespace Infrastructure.Middlewares
 {
@@ -43,7 +45,19 @@ namespace Infrastructure.Middlewares
     
     public static class RequestCultureExtensions
     {
-        public static IApplicationBuilder UseRequestCulture(this IApplicationBuilder app) =>
+        public static IApplicationBuilder UseRequestLocalizationByCulture(this IApplicationBuilder app)
+        {
+            var supportedCultures = LocalizationConstants.SupportedLanguages.Select(l => new CultureInfo(l.Code)).ToArray();
+            app.UseRequestLocalization(options =>
+            {
+                options.SupportedUICultures = supportedCultures;
+                options.SupportedCultures = supportedCultures;
+                options.DefaultRequestCulture = new RequestCulture(supportedCultures.First());
+            });
+
             app.UseMiddleware<RequestCultureMiddleware>();
+
+            return app;
+        }
     }
 }

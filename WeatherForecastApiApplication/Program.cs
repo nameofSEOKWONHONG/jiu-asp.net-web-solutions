@@ -9,8 +9,8 @@ using WeatherForecastApplication;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCacheProviderInject(null);
-builder.Services.AddMessageProviderInject();
+builder.Services.AddCacheProviderInjector(null);
+builder.Services.AddMessageProviderInjector();
 builder.Services.AddWeatherForecastInjector();
 builder.Services.AddHelloWorldInjector();
 

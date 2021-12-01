@@ -10,18 +10,22 @@ using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Domain.Configuration;
+using Domain.Entities;
 using Hangfire;
 using HelloWorldApplication;
 using Infrastructure.Context;
 using Infrastructure.Services;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TodoApplication;
 using WeatherForecastApplication;
+using WebApiApplication.Permission;
 using WebApiApplication.Services;
 using WebApiApplication.Services.Abstract;
 
@@ -55,7 +59,7 @@ namespace WebApiApplication.Extensions
             services.AddAuthentication();
             #endregion
             
-            AddServices(services, configuration);
+            AddInjectors(services, configuration);
             AddSwagger(services);
             AddDatabase(services, configuration);
             AddJwt(services, configuration);
@@ -83,13 +87,13 @@ namespace WebApiApplication.Extensions
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration"></param>
-        private static void AddServices(IServiceCollection services, IConfiguration configuration)
+        private static void AddInjectors(IServiceCollection services, IConfiguration configuration)
         {
             #region [factory correct pattern]
             // 메세지 제공자 설정
-            services.AddMessageProviderInject();
+            services.AddMessageProviderInjector();
             // 캐시 제공자 설정
-            services.AddCacheProviderInject(configuration);
+            services.AddCacheProviderInjector(configuration);
             #endregion
             
             // 각 Injector 구현체 등록
@@ -97,8 +101,6 @@ namespace WebApiApplication.Extensions
             services.AddInfrastructureInjector();
             services.AddTodoApplicationInjector();
             services.AddHelloWorldInjector();
-
-            
         }
 
         private static void AddSwagger(IServiceCollection services)
@@ -257,6 +259,23 @@ namespace WebApiApplication.Extensions
             #region [add config]
             services.Configure<EMailSettings>(configuration.GetSection("EMailSettings"));
             #endregion
+        }
+
+        private static void AddIdentity(IServiceCollection services)
+        {
+            // services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>()
+            //     .AddScoped<IAuthorizationHandler, PermissionAuthorizationHandler>()
+            //     .AddIdentity<User, Role>(options =>
+            //     {
+            //         options.Password.RequiredLength = 6;
+            //         options.Password.RequireDigit = false;
+            //         options.Password.RequireLowercase = false;
+            //         options.Password.RequireNonAlphanumeric = false;
+            //         options.Password.RequireUppercase = false;
+            //         options.User.RequireUniqueEmail = true;
+            //     })
+            //     .AddEntityFrameworkStores<JIUDbContext>()
+            //     .AddDefaultTokenProviders();
         }
     }
 }
