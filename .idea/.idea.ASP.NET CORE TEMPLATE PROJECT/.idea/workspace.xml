@@ -11,9 +11,11 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update README.md">
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/YarpWebApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/YarpWebApplication/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,12 +150,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35016835" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.WebApiApplication">
@@ -355,6 +358,8 @@
       <workItem from="1638254137036" duration="2859000" />
       <workItem from="1638257176496" duration="441000" />
       <workItem from="1638320638119" duration="7169000" />
+      <workItem from="1638433255837" duration="89000" />
+      <workItem from="1638453578680" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -608,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638363377494</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="update">
+      <created>1638363833050</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1638363833050</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,9 +673,9 @@
     <MESSAGE value="v2 complete." />
     <MESSAGE value="v3 start" />
     <MESSAGE value="update configurations" />
-    <MESSAGE value="update" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -713,19 +725,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs</url>
-          <line>133</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Extensions\ApplicationBuilderExtenions.cs" initialLine="95" containingFunctionPresentation="lambda expression inside method 'UseEndPoints'">
-            <startOffsets>
-              <option value="5030" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5031" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

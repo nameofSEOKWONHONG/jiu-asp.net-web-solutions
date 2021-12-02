@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// TODO : 인증 및 로그 밸러스 구현하기
+// TODO : 인증 및 로드밸런스 구현하기
 // reference : https://microsoft.github.io/reverse-proxy/
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));

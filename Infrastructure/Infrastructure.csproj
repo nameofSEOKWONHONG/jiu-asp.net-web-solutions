@@ -38,8 +38,4 @@
       <None Remove="Context\BulkExtensions\Keys\EFCore.BulkExtensions.snk" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Context\BulkExtensions\Keys" />
-    </ItemGroup>
-
 </Project>
