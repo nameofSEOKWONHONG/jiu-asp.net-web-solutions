@@ -23,7 +23,7 @@ namespace WebApiApplication.Controllers
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
         public async Task<IActionResult> Index()
         {
-            var result = _cacheProvider.GetCache<string>("test");
+            var result = _cacheProvider.GetCache<string>("IndexMessage");
             if (result.xIsEmpty())
             {
                 result = await Task.Factory.StartNew(() =>

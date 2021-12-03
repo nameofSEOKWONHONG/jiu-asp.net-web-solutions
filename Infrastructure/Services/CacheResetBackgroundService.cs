@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Infrastructure.Cache;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -25,7 +26,10 @@ namespace Infrastructure.Services
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"reset start : {_cacheProvider.Count}");
-                _cacheProvider.Reset();
+                // if (bool.TryParse(_configuration["MemoryCacheReset"], out bool isReset))
+                // {
+                //     _cacheProvider.Reset();
+                // }
                 _logger.LogInformation($"reset end : {_cacheProvider.Count}");
                 await Task.Delay(_interval, stoppingToken);
             }

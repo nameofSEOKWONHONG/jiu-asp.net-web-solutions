@@ -22,7 +22,6 @@ namespace WebApiApplication.Controllers
         {
             this._userService = userService;
             this._accountService = accountService;
-
         }
         
         [AllowAnonymous]
@@ -52,6 +51,12 @@ namespace WebApiApplication.Controllers
             return Ok(await this._userService.CreateUserAsync(registerRequest.Adapt<User>()));
         }
 
+        /// <summary>
+        /// TODO : 미구현 상태
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="ipAddress"></param>
+        /// <returns></returns>
         [HttpPost("RefreshToken")]
         public async Task<IActionResult> 
             RefreshToken(string token, string ipAddress)

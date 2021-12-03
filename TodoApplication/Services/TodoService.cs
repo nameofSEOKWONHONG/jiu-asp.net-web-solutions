@@ -30,7 +30,9 @@ namespace TodoApplication.Services
 
         public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime selectedDate)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId && m.NotifyDate == selectedDate)
+            return await _context.Todos.Where(m => m.WriteId == userId && 
+                                                   (m.NotifyDate >= selectedDate.xToMin() && //2021-12-01 00:00:00
+                                                    m.NotifyDate < selectedDate.xToMax())) // 2021-12-02 00:00:00
                 .ToListAsync();
         }
 

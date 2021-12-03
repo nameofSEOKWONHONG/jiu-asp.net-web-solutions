@@ -25,6 +25,7 @@ namespace TodoApplication
             {
                 new TodoApplicationInjector()
             }, services, null);
+            diCore.Inject();
         }
     }     
 }

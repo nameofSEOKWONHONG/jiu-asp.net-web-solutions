@@ -26,8 +26,7 @@ namespace Application.Infrastructure.Cache
             _cache = cache;
             _httpContextAccessor = httpContextAccessor;
         }
-
-
+        
         public T GetCache<T>()
         {
             return GetCache<T>(CreateCacheKey());
@@ -108,13 +107,18 @@ namespace Application.Infrastructure.Cache
         
         public void Reset()
         {
+            ResetImpl();
+        }
+
+        private void ResetImpl()
+        {
             if (_resetCacheToken != null && !_resetCacheToken.IsCancellationRequested && _resetCacheToken.Token.CanBeCanceled)
             {
                 _resetCacheToken.Cancel();
                 _resetCacheToken.Dispose();
             }
 
-            _resetCacheToken = new CancellationTokenSource();
+            _resetCacheToken = new CancellationTokenSource();            
         }
 
         public void Flush()

@@ -16,15 +16,15 @@ namespace WebApiApplication.Controllers
 {
     public class TodoController : AuthorizedController<TodoController>
     {
-        [HttpGet("GetAllTodo")]
-        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
-        public async Task<IActionResult> GetAllTodo()
+        [HttpGet("GetAll")]
+        [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = false)]
+        public async Task<IActionResult> GetAll()
         {
             var session = await this._sessionContextService.GetSessionAsync();
             var result = await _mediator.Send(new GetAllTodoQuery(session.User.Id));
 
             #region [publish sample]
-            await _mediator.Publish(new MessageNotify() { MessageTypes = new[]{ ENUM_MESSAGE_TYPE.SMS, ENUM_MESSAGE_TYPE.EMAIL }});
+            //await _mediator.Publish(new MessageNotify() { MessageTypes = new[]{ ENUM_MESSAGE_TYPE.SMS, ENUM_MESSAGE_TYPE.EMAIL }});
             #endregion
             
             return Ok(result);
@@ -38,18 +38,18 @@ namespace WebApiApplication.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetTodoByDate/{from}/{to}")]
+        [HttpGet("GetTodoFromTo/{from}/{to}")]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"from", "to"})]
-        public async Task<IActionResult> GetTodoByDate(DateTime from, DateTime to)
+        public async Task<IActionResult> GetTodo(DateTime from, DateTime to)
         {
             var session = await _sessionContextService.GetSessionAsync();
             var result = await _mediator.Send(new GetTodoByDateQuery(session.User.Id, from, to));
             return Ok(result);
         }
 
-        [HttpGet("GetTodoBySelectedDate/{selectedDate}")]
+        [HttpGet("GetTodoFrom/{selectedDate}")]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"selectedDate"})]        
-        public async Task<IActionResult> GetTodoBySelectedDate(DateTime selectedDate)
+        public async Task<IActionResult> GetTodo(DateTime selectedDate)
         {
             var session = await _sessionContextService.GetSessionAsync();
             var result = await _mediator.Send(new GetTodoBySelectedDateQuery(session.User.Id, selectedDate));
