@@ -4,15 +4,19 @@ using System.Threading.Tasks;
 using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Services
+namespace Infrastructure.BackgroundServices
 {
     public class KafakaConsumerBackgroundService : BackgroundService
     {
+        private readonly ILogger _logger;
         private readonly IConfiguration _configuration;
         private readonly ConsumerConfig _consumerConfig;
-        public KafakaConsumerBackgroundService(IConfiguration configuration)
+        public KafakaConsumerBackgroundService(ILogger<KafakaConsumerBackgroundService> logger, 
+            IConfiguration configuration)
         {
+            _logger = logger;
             _configuration = configuration;
             _consumerConfig = new ConsumerConfig
             { 
@@ -53,6 +57,8 @@ namespace Infrastructure.Services
                     c.Close();
                 }
             }
+
+            await Task.Delay(Timeout.Infinite, stoppingToken);
         }
     }
 }
