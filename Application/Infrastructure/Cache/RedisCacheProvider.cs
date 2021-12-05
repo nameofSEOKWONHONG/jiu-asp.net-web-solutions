@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Text.Json;
-using Application.Abstract;
 using eXtensionSharp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.Configuration;
 
 namespace Application.Infrastructure.Cache
 {
@@ -51,13 +48,13 @@ namespace Application.Infrastructure.Cache
             return default;
         }
         
-        public void SetCache<T>(T value, int expireTimeout = 10)
+        public void SetCache<T>(T value, int? expireTimeout = 10)
         {
             var hashedKey = this.CreateCacheKey();
             _distributedCache.Set(hashedKey, value.xToBytes());
         }
 
-        public void SetCache<T>(string key, T value, int expireTimeout = 10)
+        public void SetCache<T>(string key, T value, int? expireTimeout = 10)
         {
             var hashedKey = this.CreateCacheKey(key);
             _distributedCache.Set(hashedKey, value.xToBytes());
@@ -88,11 +85,6 @@ namespace Application.Infrastructure.Cache
         }
 
         public void Reset()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Flush()
         {
             throw new NotImplementedException();
         }

@@ -41,7 +41,7 @@ namespace Infrastructure.Services.Identity
                 user.Password = hashedPassword;
             }
             user.Id = Guid.NewGuid();
-            user.WriteId = user.Id;
+            user.WriteId = user.Id.ToString();
             user.WriteDt = DateTime.UtcNow;
             var result = await dbContext.Users.AddAsync(user);
             await dbContext.SaveChangesAsync();

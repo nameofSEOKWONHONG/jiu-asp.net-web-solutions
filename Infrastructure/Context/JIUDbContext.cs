@@ -1,6 +1,10 @@
-﻿using System.Data.Common;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using eXtensionSharp;
 
 namespace Infrastructure.Context
 {
@@ -41,9 +45,47 @@ namespace Infrastructure.Context
                 });
             }
         }
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Role>()
+                .Property(e => e.RoleType)
+                .HasConversion(
+                    v => v.ToString(),
+                    v => XEnumBase<ENUM_ROLE_TYPE>.Parse(v, true));
+
+            Func<string, List<ENUM_ROLE_CLAIM_TYPE>> func;
+            func = (v) =>
+            {
+                var items = v.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                var result = new List<ENUM_ROLE_CLAIM_TYPE>();
+                items.xForEach(item =>
+                {
+                    result.Add(XEnumBase<ENUM_ROLE_CLAIM_TYPE>.Parse(item));
+                });
+                return result;
+            };
+            
+            modelBuilder.Entity<RoleClaim>()
+                .Property(e => e.RoleClaimTypes)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => func(v));
+        }
+
+        #region [account]
+
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<RoleClaim> RoleClaims { get; set; }
+
+        #endregion
+
+        #region [biz]
+
         public DbSet<Todo> Todos { get; set; }
-        public DbSet<Group> Groups { get; set; }
+        
+
+        #endregion
     }
 }

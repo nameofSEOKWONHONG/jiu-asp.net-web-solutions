@@ -8,7 +8,7 @@ using System.Dynamic;
 namespace Domain.Entities
 {
     
-    [Table("User")]
+    [Table("TB_USER")]
     public class User : EntityBase
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,5 +27,6 @@ namespace Domain.Entities
         public bool AutoConfirmEmail { get; set; } = false;    
         
         //public List<RefreshToken> RefreshTokens { get; set; }
+        public Role UserRole { get; set; }
     }
 }

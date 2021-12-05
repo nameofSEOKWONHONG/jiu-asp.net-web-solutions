@@ -25,12 +25,12 @@ namespace TodoApplication.Services
 
         public async Task<IEnumerable<Todo>> GetAllTodoAsync(Guid userId)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId).ToListAsync();
+            return await _context.Todos.Where(m => m.WriteId == userId.ToString()).ToListAsync();
         }
 
         public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime selectedDate)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId && 
+            return await _context.Todos.Where(m => m.WriteId == userId.ToString() && 
                                                    (m.NotifyDate >= selectedDate.xToMin() && //2021-12-01 00:00:00
                                                     m.NotifyDate < selectedDate.xToMax())) // 2021-12-02 00:00:00
                 .ToListAsync();
@@ -38,7 +38,7 @@ namespace TodoApplication.Services
 
         public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime @from, DateTime @to)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId)
+            return await _context.Todos.Where(m => m.WriteId == userId.ToString())
                 .Where(m => m.WriteDt >= @from && m.WriteDt <= @to)
                 .ToListAsync();
         }

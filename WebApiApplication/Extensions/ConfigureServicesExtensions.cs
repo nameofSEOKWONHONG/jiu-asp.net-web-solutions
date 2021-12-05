@@ -156,6 +156,7 @@ namespace WebApiApplication.Extensions
         private static void AddDatabase(IServiceCollection services, IConfiguration configuration)
         {
             #region [add database]
+
             services.AddDbContext<JIUDbContext>((sp, options) =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
@@ -165,7 +166,8 @@ namespace WebApiApplication.Extensions
                         builder.CommandTimeout(5);
                     })
                     .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
-            });
+            }).AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+
             #endregion
         }
 

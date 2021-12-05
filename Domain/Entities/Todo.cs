@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    [Table("Todo")]
+    [Table("TB_TODO")]
     public class Todo : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

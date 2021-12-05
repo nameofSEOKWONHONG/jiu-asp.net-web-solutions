@@ -2,10 +2,13 @@
 using Hangfire;
 using Infrastructure.Middelware;
 using Infrastructure.Middlewares;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Swashbuckle.AspNetCore.SwaggerUI;
@@ -15,7 +18,7 @@ namespace WebApiApplication.Extensions
 {
     internal static class ApplicationBuilderExtenions
     {
-        internal static IApplicationBuilder UseConfigures(this IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
+        internal static IApplicationBuilder UseConfigures(this IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider, IConfiguration configuration)
         {
             #region [use cors]
             app.UseCors("CorsPolicy");            
@@ -46,6 +49,8 @@ namespace WebApiApplication.Extensions
             #endregion
 
             app.UseConfigureEndPoints();
+
+            app.Initialize(configuration);
             
             return app;
         }
@@ -179,7 +184,20 @@ namespace WebApiApplication.Extensions
 
             return app;
         }
-        
+
+        private static IApplicationBuilder Initialize(this IApplicationBuilder app, IConfiguration configuration)
+        {
+            using var serviceScope = app.ApplicationServices.CreateScope();
+
+            var initializers = serviceScope.ServiceProvider.GetServices<IDatabaseSeeder>();
+
+            foreach (var initializer in initializers)
+            {
+                initializer.Initialize();
+            }
+
+            return app;
+        }
     }
     
 }

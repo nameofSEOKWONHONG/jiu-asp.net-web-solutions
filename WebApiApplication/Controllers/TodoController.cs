@@ -65,7 +65,7 @@ namespace WebApiApplication.Controllers
             }
             
             var session = await _sessionContextService.GetSessionAsync();
-            todo.WriteId = session.User.Id;
+            todo.WriteId = session.User.Id.ToString();
             todo.WriteDt = DateTime.UtcNow;
             var result = await _mediator.Send(new SaveTodoCommand(todo));
             if (result.Data.Id >= 0)
