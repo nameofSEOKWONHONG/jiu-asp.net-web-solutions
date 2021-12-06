@@ -1,6 +1,6 @@
 ﻿using System.IO;
 using Hangfire;
-using Infrastructure.Middelware;
+using Infrastructure.Middleware;
 using Infrastructure.Middlewares;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;

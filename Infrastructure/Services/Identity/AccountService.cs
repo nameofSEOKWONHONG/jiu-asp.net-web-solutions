@@ -13,17 +13,19 @@ namespace Infrastructure.Services.Identity
 {
     public class AccountService : IAccountService
     {
-        private readonly IConfiguration configuration;
-        private readonly IUserService userService;
-        public AccountService(IConfiguration configuration, IUserService userService)
+        private readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
+        private readonly IRoleService _roleService;
+        public AccountService(IConfiguration configuration, IUserService userService, IRoleService roleService)
         {
-            this.configuration = configuration;
-            this.userService = userService;
+            this._configuration = configuration;
+            this._userService = userService;
+            this._roleService = roleService;
         }
         
         public async Task<string> Login(User user)
         {
-            var selectedUser = await userService.FindUserByEmailAsync(user.Email);
+            var selectedUser = await _userService.FindUserByEmailAsync(user.Email);
             if (selectedUser == null) throw new Exception("not found user.");
             
             if (BCrypt.Net.BCrypt.Verify(user.Password, selectedUser.Password))
@@ -41,12 +43,15 @@ namespace Infrastructure.Services.Identity
                 new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
             };
+
+            var role = this._roleService.GetRole(user.UserRole.Id).GetAwaiter().GetResult();
+            claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.RoleType.ToString()));
             
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); 
             
-            var token = new JwtSecurityToken(configuration["Jwt:Issuer"],    
-                configuration["Jwt:Issuer"],    
+            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],    
+                _configuration["Jwt:Issuer"],    
                 claims,    
                 expires: DateTime.Now.AddMinutes(120),
                 signingCredentials: credentials);

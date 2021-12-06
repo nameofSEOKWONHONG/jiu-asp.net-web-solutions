@@ -10,7 +10,7 @@ using eXtensionSharp;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 
-namespace Infrastructure.Middelware
+namespace Infrastructure.Middleware
 {
     /// <summary>
     /// ref : https://www.loginradius.com/blog/async/anti-xss-middleware-asp-core/

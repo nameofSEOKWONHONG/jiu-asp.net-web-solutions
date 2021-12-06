@@ -34,7 +34,7 @@ namespace Infrastructure.Services
         
         public void Initialize()
         {
-            using (var scope = new TransactionScope())
+            using (var scope = new TransactionScope(TransactionScopeOption.Required))
             {
                 var roleClames = new List<RoleClaim>()
                 {
