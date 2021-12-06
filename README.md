@@ -9,6 +9,7 @@
 
 프로젝트의 구조는 아래와 같습니다.
 
+##프로젝트 구조
 1. Share  : 공유 가능한 클래스 라이브러리 집합니다.
     - Core : 프로젝트의 핵심 코드 집합입니다.
         - Application
@@ -40,7 +41,7 @@
     - BlazorServerApplication : Blazor Server Application 입니다.
     - BlazorWasmApplication : Blazor Wasm Application 입니다.
 
-** 중요사항 **
+##중요사항
 1. `1.Share>Core>Infrastructure`는 Web Api Server Application을 위한 구성입니다.  
 따라서 해당 프로젝트는 Web Api Server Application에서만 사용합니다.
 2. `Interface`의 정의는 `1.Share>Core>Application>Interfaces`에 작성합니다.  
@@ -48,9 +49,25 @@
 3. Web Api Application에서 Blazor WASM을 호스팅 할 수 있습니다.  
 관련 코드는 `2.Server>WebApiApplication>Startup.cs`를 참고 합니다.
 
-** 히스토리 **  
+## 히스토리  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
+
+## API 중요 개발 원칙
+1. 한번 배포된 API는 변경하지 않는다.
+   1. 당연한 이야기.
+2. 이전 버전과 호환성을 깨뜨리지 않는다.
+   1. API Versioning을 해야하는 이유
+3. 고객사례를 API개발에 반영한다.
+   1. `1`,`2`의 이야기인 동시에 사용자가 사용하기 편해야 효율적이라는 말.
+4. 자체 설명적이고 명확한 목적을 가진 API를 만든다.
+   1. `Controller`,`Action`등의 명칭에 명확하게 용도가 드러나도록 해야한다.
+5. 명시적이고 문서화되도록 오류를 발생시킨다.
+   1. 오류를 발생시킬때 어떻게 해야하는가?
+      1. 대부분 Http Connection이 연결된 상태를 바탕으로 오류 메세지를 작성한다.
+      2. Http Response 규칙을 따른다. 즉, 400, 500 메세지를 보낸다는 이야기
+      3. 또한 발생한 오류에 대하여 세부적인 메세지를 전달해야 한다.
+      4. 파일에서 발생하면 FileIOException, DB라면 DatabaseException등 세부 오류를 발생해야 한다.
 
 ### Acknowledgements
 

@@ -9,6 +9,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApplication.Service", "ClientApplication.Service\ClientApplication.Service.csproj", "{401234A6-C79F-49AC-8AFB-A5790D2A71C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Server", "2.Server", "{38B8C034-B5C2-4C12-B4DA-5EA2D528F580}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Client", "3.Client", "{0FF66333-6687-4EAE-BA9C-AD1BC26436D1}"
 EndProject
