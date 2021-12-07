@@ -5,13 +5,18 @@
     <projectFile>BlazorServerApplication/BlazorServerApplication.csproj</projectFile>
     <projectFile>WebApplication/WebApplication.csproj</projectFile>
     <projectFile>BlazorWasmApplication/BlazorWasmApplication.csproj</projectFile>
+    <projectFile>CsScriptApplication/CsScriptApplication.csproj</projectFile>
     <projectFile profileName="WeatherForecastApiApplication">WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="YarpWebApplication">YarpWebApplication/YarpWebApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CsScriptApplication/description.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,12 +112,12 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Infrastructure/Services/Identity/AccountService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/ICacheProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdcd94193be24cc6bb67caf2f963ed0620400/7/Evaluator.Roslyn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -251,7 +256,25 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.WebApiApplication">
+  <component name="RunManager" selected=".NET Project.CsScriptApplication">
+    <configuration name="CsScriptApplication" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CsScriptApplication/CsScriptApplication.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="BlazorServerApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -453,6 +476,8 @@
       <workItem from="1638433255837" duration="89000" />
       <workItem from="1638453578680" duration="668000" />
       <workItem from="1638683583258" duration="7471000" />
+      <workItem from="1638778575113" duration="1299000" />
+      <workItem from="1638861190658" duration="2130000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -720,7 +745,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638773198966</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="update readme.md">
+      <created>1638779249207</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1638779249207</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,7 +807,8 @@
     <MESSAGE value="update configurations" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update readme.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -838,6 +871,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CsScriptApplication/Program.cs</url>
+          <line>45</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\Program.cs" initialLine="43" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="968" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1032" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="66" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
