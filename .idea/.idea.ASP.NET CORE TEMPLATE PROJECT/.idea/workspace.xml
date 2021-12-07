@@ -12,10 +12,13 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CsScriptApplication/description.md" afterDir="false" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Todo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Todo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +45,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F1D061AC-D27D-4E95-B449-30527EE3091F/153/ActionFilterAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1047FADB-65A0-46AF-9BD9-2F9691847209/1A/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1002644F-5AD7-417C-B830-9301712F626B/c2/fbc738de/JsonDocument.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/BackgroundServices/RedisBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure/BackgroundServices/RedisBackgroundService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1BC366D2-BA14-4BC5-A17E-08D4F35F238B/2C4/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/67/66b8a91e/RuntimeHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -477,7 +480,7 @@
       <workItem from="1638453578680" duration="668000" />
       <workItem from="1638683583258" duration="7471000" />
       <workItem from="1638778575113" duration="1299000" />
-      <workItem from="1638861190658" duration="2130000" />
+      <workItem from="1638861190658" duration="4818000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -752,7 +755,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638779249207</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update">
+      <created>1638863759574</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1638863759574</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -806,9 +816,9 @@
     <MESSAGE value="v3 start" />
     <MESSAGE value="update configurations" />
     <MESSAGE value="update README.md" />
-    <MESSAGE value="update" />
     <MESSAGE value="update readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme.md" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

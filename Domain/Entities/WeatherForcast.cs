@@ -1,8 +1,11 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities {
+    [Table("TB_WEATHERFORECAST")]
+    [Index(nameof(Date), nameof(Summary))]
     public class WeatherForecast {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

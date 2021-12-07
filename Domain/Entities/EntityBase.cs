@@ -2,9 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
 {
+    [Index(nameof(WriteId), nameof(WriteDt), nameof(UpdateId), nameof(UpdateDt))]
     public class EntityBase
     {
         [Required]

@@ -4,11 +4,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Dynamic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
 {
     
     [Table("TB_USER")]
+    [Index(nameof(Email), nameof(ActivateUser), nameof(AutoConfirmEmail))]
     public class User : EntityBase
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
