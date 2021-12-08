@@ -17,7 +17,7 @@ namespace WebApiApplication.Controllers
         private readonly ICacheProvider _cacheProvider;
         public IndexController(CacheProviderResolver resolver)
         {
-            _cacheProvider = resolver(ENUM_CACHE_TYPE.REDIS);
+            _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
         }
         [HttpGet]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]

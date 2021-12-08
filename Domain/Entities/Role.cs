@@ -12,7 +12,7 @@ namespace Domain.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
-        [Required, MaxLength(20)]
+        [Required, MaxLength(10)]
         public ENUM_ROLE_TYPE RoleType { get; set; }
         
         public RoleClaim RoleClaim { get; set; }
@@ -24,7 +24,7 @@ namespace Domain.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
-        [Required, MaxLength(20)]
+        [Required, MaxLength(100)]
         public List<ENUM_ROLE_CLAIM_TYPE> RoleClaimTypes { get; set; }
     }
 

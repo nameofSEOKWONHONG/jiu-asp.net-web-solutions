@@ -12,13 +12,35 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update">
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFasterCacheProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Notifies/LineNotifyHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/IMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/INotifyMessageProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/KakaoMessageProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/SmsMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Request/MessageRequestDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Request/MessageRequestDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Role.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Domain/Entities/Todo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Todo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_MESSAGE_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/DatabaseSeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/DatabaseSeeder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/EMailNotifyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Notifies/EMailNotifyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/KakaoNotifyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Notifies/KakaoNotifyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/MessageNotify.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Notifies/NotifyMessage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/SmsNotifyHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Notifies/SmsNotifyHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Identity/RoleClaimService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Services/Identity/RoleClaimService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/TodoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/TodoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +58,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="c29f0d13-332d-4bbe-9e3d-7393181ec540" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6D27F96-1F36-4195-B186-A151C83DD18F/9d/924b43e2/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
@@ -65,13 +90,14 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795bf41b4e628161509eca0f58228200/14/IPublisher.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/98/3e4317ed/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7dfd6c96f5624d4eb0cef1c6f8423fb43a00/4/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1CAEA579-7BC0-4E55-ADEB-CC8011B21AB8/4/ConfigureNamedOptions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0095E902-412D-4DE8-9D23-A7EDC1747471/E/MemoryCacheExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E5CCA3F0-812C-4CD5-B345-9BEFA246B346/9/JwtRegisteredClaimNames.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/8e/44580a49/Task.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57C2D428-2221-452C-AD4D-F86BBD5D6FA0/98/20d42742/MethodBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cda6d798725246dd93dd4c8d46219ea55f5b0/34/LogSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/a9/16b8c232/AsyncTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/2c/ecdc23f0/TaskFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/9b/a858582d/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -116,12 +142,16 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cda6d798725246dd93dd4c8d46219ea55f5b0/60/9c382b1e/IFasterEqualityComparer`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/63ee384769844530bc73c5391d8c6ee014280/11/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/ICacheProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cda6d798725246dd93dd4c8d46219ea55f5b0/1B/ClientSession.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/ICacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdcd94193be24cc6bb67caf2f963ed0620400/7/Evaluator.Roslyn.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cda6d798725246dd93dd4c8d46219ea55f5b0/75/Utility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9363e75c515d46079b14247ed051bd58d9180/4a/86ceab47/TokenValidationParameters.cs" root0="SKIP_HIGHLIGHTING" />
@@ -256,10 +286,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.CsScriptApplication">
+  <component name="RunManager" selected=".NET Launch Settings Profile.WebApiApplication">
     <configuration name="CsScriptApplication" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -480,7 +510,8 @@
       <workItem from="1638453578680" duration="668000" />
       <workItem from="1638683583258" duration="7471000" />
       <workItem from="1638778575113" duration="1299000" />
-      <workItem from="1638861190658" duration="4818000" />
+      <workItem from="1638861190658" duration="4951000" />
+      <workItem from="1638921572210" duration="21238000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -762,7 +793,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638863759574</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="update">
+      <created>1638868304366</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1638868304366</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -883,17 +921,69 @@
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CsScriptApplication/Program.cs</url>
-          <line>45</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\Program.cs" initialLine="43" containingFunctionPresentation="method 'Main'">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="26" containingFunctionPresentation="method 'Index'">
             <startOffsets>
-              <option value="968" />
+              <option value="874" />
             </startOffsets>
             <endOffsets>
-              <option value="1032" />
+              <option value="924" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="66" />
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Program.cs</url>
+          <line>28</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Program.cs" initialLine="28" containingFunctionPresentation="method 'Main'">
+            <startOffsets>
+              <option value="857" />
+            </startOffsets>
+            <endOffsets>
+              <option value="863" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Services/Identity/RoleClaimService.cs</url>
+          <line>26</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\Services\Identity\RoleClaimService.cs" initialLine="25" containingFunctionPresentation="method 'GetRoleClaim'">
+            <startOffsets>
+              <option value="745" />
+            </startOffsets>
+            <endOffsets>
+              <option value="806" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/Services/Identity/RoleClaimService.cs</url>
+          <line>20</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\Services\Identity\RoleClaimService.cs" initialLine="20" containingFunctionPresentation="method 'GetRoleClaim'">
+            <startOffsets>
+              <option value="568" />
+            </startOffsets>
+            <endOffsets>
+              <option value="615" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/DatabaseSeeder.cs</url>
+          <line>73</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\DatabaseSeeder.cs" initialLine="73" containingFunctionPresentation="method 'Initialize'">
+            <startOffsets>
+              <option value="2476" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2499" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

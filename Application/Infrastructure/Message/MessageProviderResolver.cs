@@ -12,35 +12,35 @@ namespace Application.Infrastructure.Message
     /// <summary>
     /// Factory correct pattern
     /// </summary>
-    public delegate IMessageProvider MessageProviderResolver(ENUM_MESSAGE_TYPE type);
+    public delegate INotifyMessageProvider MessageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE type);
     
-    internal class MessageProviderInjector : IDependencyInjectorBase
+    internal class NotifyMessageProviderInjector : IDependencyInjectorBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<SmsMessageProvider>()
-                .AddSingleton<EmailMessageProvider>()
-                .AddSingleton<KakaoMessageProvider>()
+            services.AddSingleton<SmsNotifyMessageProvider>()
+                .AddSingleton<EmailNotifyMessageProvider>()
+                .AddSingleton<KakaoNotifyMessageProvider>()
                 .AddSingleton<MessageProviderResolver>(provider => key =>
                 {
                     switch (key)
                     {
-                        case ENUM_MESSAGE_TYPE.SMS : return provider.GetRequiredService<SmsMessageProvider>();
-                        case ENUM_MESSAGE_TYPE.EMAIL: return provider.GetRequiredService<EmailMessageProvider>();
-                        case ENUM_MESSAGE_TYPE.KAKAO : return provider.GetRequiredService<KakaoMessageProvider>();
+                        case ENUM_NOTIFY_MESSAGE_TYPE.SMS : return provider.GetRequiredService<SmsNotifyMessageProvider>();
+                        case ENUM_NOTIFY_MESSAGE_TYPE.EMAIL: return provider.GetRequiredService<EmailNotifyMessageProvider>();
+                        case ENUM_NOTIFY_MESSAGE_TYPE.KAKAO : return provider.GetRequiredService<KakaoNotifyMessageProvider>();
                         default: throw new KeyNotFoundException();
                     }
                 });
         }
     }
 
-    public static class MessageProviderInjectorExtension
+    public static class NotifyMessageProviderInjectorExtension
     {
         public static void AddMessageProviderInjector(this IServiceCollection services)
         {
             var diCore = new DependencyInjectorImpl(new[]
             {
-                new MessageProviderInjector()
+                new NotifyMessageProviderInjector()
             }, services, null);
             diCore.Inject();
         }

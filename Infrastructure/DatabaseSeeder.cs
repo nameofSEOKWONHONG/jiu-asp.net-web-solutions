@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Transactions;
 using Domain.Entities;
 using eXtensionSharp;
+using Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services.Abstract;
 
@@ -17,16 +18,19 @@ namespace Infrastructure.Services
     public class DatabaseSeeder : IDatabaseSeeder
     {
         private readonly ILogger _logger;
+        private readonly JIUDbContext _context;
         private readonly IUserService _userService;
         private readonly IRoleService _roleService;
         private readonly IRoleClaimService _roleClaimService;
         
         public DatabaseSeeder(ILogger<DatabaseSeeder> logger,
+            JIUDbContext context,
             IUserService userService,
             IRoleService roleService,
             IRoleClaimService roleClaimService)
         {
             _logger = logger;
+            _context = context;
             _userService = userService;
             _roleService = roleService;
             _roleClaimService = roleClaimService;
@@ -65,8 +69,9 @@ namespace Infrastructure.Services
             
                 roleClames.xForEach(item =>
                 {
-                    _roleClaimService.SaveRoleClaim(item).GetAwaiter().GetResult();
+                    _context.RoleClaims.Add(item);
                 });
+                _context.SaveChanges();
                 
                 var superRole = new Role()
                 {
@@ -75,8 +80,9 @@ namespace Infrastructure.Services
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
-                _roleService.SaveRole(superRole);
-
+                _context.Roles.Add(superRole);
+                _context.SaveChanges();
+                
                 var adminRole = new Role()
                 {
                     RoleType = ENUM_ROLE_TYPE.ADMIN,
@@ -84,7 +90,8 @@ namespace Infrastructure.Services
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
-                _roleService.SaveRole(adminRole);
+                _context.Roles.Add(adminRole);
+                _context.SaveChanges();
 
                 var userRole = new Role()
                 {
@@ -93,7 +100,8 @@ namespace Infrastructure.Services
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
-                _roleService.SaveRole(userRole);
+                _context.Roles.Add(userRole);
+                _context.SaveChanges();
 
                 var guestRole = new Role()
                 {
@@ -102,7 +110,8 @@ namespace Infrastructure.Services
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
-                _roleService.SaveRole(guestRole);
+                _context.Roles.Add(guestRole);
+                _context.SaveChanges();
             
                 var superUser = new User()
                 {
@@ -113,7 +122,8 @@ namespace Infrastructure.Services
                     WriteId = "system",
                     UserRole = superRole
                 };
-                _userService.CreateUserAsync(superUser);
+                _context.Users.Add(superUser);
+                _context.SaveChanges();
 
                 scope.Complete();
             }

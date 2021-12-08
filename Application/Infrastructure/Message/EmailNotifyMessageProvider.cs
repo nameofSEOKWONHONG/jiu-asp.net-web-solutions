@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,21 +17,23 @@ using MimeKit;
 
 namespace Application.Infrastructure.Message
 {
-    public record EmailMessageRequest(string[] toMails, string subject, string body, IEnumerable<IFormFile> attachments)
-        : IMessageRequest;
+    public record EmailNotifyMessageRequest(string[] toMails, string subject, string body, IEnumerable<IFormFile> attachments)
+        : INotifyMessageRequest;
     
-    public class EmailMessageProvider : IMessageProvider
+    public class EmailNotifyMessageProvider : NotifyMessageProviderBase
     {
         private readonly IOptions<EMailSettings> _options;
-        public EmailMessageProvider(IOptions<EMailSettings> options)
+        public EmailNotifyMessageProvider(IOptions<EMailSettings> options)
         {
             _options = options;
         }
-        public async Task<IResult> SendMessageAsync(IMessageRequest request)
+        public override async Task<IResult> SendMessageAsync(INotifyMessageRequest request)
         {
             var emailSettings = _options.Value;
-            var mailRequest = request as EmailMessageRequest;
-
+            var mailRequest = request as EmailNotifyMessageRequest;
+            if (mailRequest == null) mailRequest = (EmailNotifyMessageRequest)ConvertRequest(request);
+            if (mailRequest == null) throw new Exception("Mail request is null. Check request.");
+            
             var email = new MimeMessage();
             var sender = new MailboxAddress(emailSettings.DisplayName, emailSettings.FromMail);
             email.Sender = sender;
@@ -69,7 +72,18 @@ namespace Application.Infrastructure.Message
                 await smtp.DisconnectAsync(true);
             }
 
+            #region [TODO : SEND RESULT CODE (SAVE RESULT DATA)]
+
+            #endregion
+            
             return await Result.SuccessAsync($"send message done : {string.Join(",", email.To.Select(m => m.Name))}");
+        }
+
+        public override object ConvertRequest(INotifyMessageRequest request)
+        {
+            var commonRequest = request as CommonNotifyMessageReqeust;
+            if (commonRequest.xIsEmpty()) return null;
+            return new EmailNotifyMessageRequest(null, null, null, null);
         }
     }
 }

@@ -23,6 +23,7 @@ namespace Infrastructure.Services.Identity
 
         public async Task<RoleClaim> GetRoleClaim(int id)
         {
+            if (id <= 0) return null;
             return await _context.RoleClaims.FirstAsync(m => m.Id == id);
         }
 

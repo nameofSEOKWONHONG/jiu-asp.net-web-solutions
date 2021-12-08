@@ -8,17 +8,17 @@ using MediatR;
 
 namespace Infrastructure.Notifies
 {
-    public class EMailNotifyHandler : INotificationHandler<MessageNotify>
+    public class EMailNotifyHandler : INotificationHandler<NotifyMessage>
     {
-        private readonly IMessageProvider _messageProvider;
+        private readonly INotifyMessageProvider _notifyMessageProvider;
         public EMailNotifyHandler(MessageProviderResolver resolver)
         {
-            _messageProvider = resolver(ENUM_MESSAGE_TYPE.EMAIL);
+            _notifyMessageProvider = resolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
         }
-        public async Task Handle(MessageNotify notification, CancellationToken cancellationToken)
+        public async Task Handle(NotifyMessage notification, CancellationToken cancellationToken)
         {
-            if (!notification.MessageTypes.Contains(ENUM_MESSAGE_TYPE.EMAIL)) return;
-            await _messageProvider.SendMessageAsync(notification.MessageRequest);
+            if (!notification.MessageTypes.Contains(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL)) return;
+            await _notifyMessageProvider.SendMessageAsync(notification.NotifyMessageRequest);
         }
     }
 }

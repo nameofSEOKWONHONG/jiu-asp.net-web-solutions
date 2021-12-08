@@ -162,7 +162,7 @@ namespace WebApiApplication.Extensions
                 options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
                     {
                         builder.MigrationsAssembly("Infrastructure");
-                        builder.EnableRetryOnFailure();
+                        //builder.EnableRetryOnFailure();
                         builder.CommandTimeout(5);
                     })
                     .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());

@@ -12,6 +12,7 @@ namespace Application.Infrastructure.Cache
         MEMORY,
         REDIS,
         LITEDB,
+        FASTER
     }
     
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
@@ -27,6 +28,7 @@ namespace Application.Infrastructure.Cache
                 .AddSingleton<MemoryCacheProvider>()
                 .AddSingleton<DistributeCacheProvider>()
                 .AddSingleton<LiteDbCacheProvider>()
+                .AddSingleton<MSFasterCacheProvider>()
                 .AddSingleton<CacheProviderResolver>(provider => key =>
                 {
                     switch (key)
@@ -34,6 +36,7 @@ namespace Application.Infrastructure.Cache
                         case ENUM_CACHE_TYPE.MEMORY : return provider.GetRequiredService<MemoryCacheProvider>();
                         case ENUM_CACHE_TYPE.REDIS: return provider.GetRequiredService<DistributeCacheProvider>();
                         case ENUM_CACHE_TYPE.LITEDB: return provider.GetRequiredService<LiteDbCacheProvider>();
+                        case ENUM_CACHE_TYPE.FASTER: return provider.GetRequiredService<MSFasterCacheProvider>();
                         default: throw new KeyNotFoundException();
                     }
                 });

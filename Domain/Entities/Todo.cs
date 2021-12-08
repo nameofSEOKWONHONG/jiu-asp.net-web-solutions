@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 namespace Domain.Entities
 {
     [Table("TB_TODO")]
-    [Index(nameof(Contents))]
     public class Todo : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

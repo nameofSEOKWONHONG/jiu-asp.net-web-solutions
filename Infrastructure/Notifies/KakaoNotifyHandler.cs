@@ -9,17 +9,17 @@ using MediatR;
 
 namespace Infrastructure.Notifies
 {
-    public class KakaoNotifyHandler : INotificationHandler<MessageNotify>
+    public class KakaoNotifyHandler : INotificationHandler<NotifyMessage>
     {
-        private readonly IMessageProvider _messageProvider;
+        private readonly INotifyMessageProvider _notifyMessageProvider;
         public KakaoNotifyHandler(MessageProviderResolver resolver)
         {
-            _messageProvider = resolver(ENUM_MESSAGE_TYPE.KAKAO);
+            _notifyMessageProvider = resolver(ENUM_NOTIFY_MESSAGE_TYPE.KAKAO);
         }
-        public async Task Handle(MessageNotify notification, CancellationToken cancellationToken)
+        public async Task Handle(NotifyMessage notification, CancellationToken cancellationToken)
         {
-            if(!notification.MessageTypes.Contains(ENUM_MESSAGE_TYPE.KAKAO)) return;
-            await _messageProvider.SendMessageAsync(notification.MessageRequest);
+            if(!notification.MessageTypes.Contains(ENUM_NOTIFY_MESSAGE_TYPE.KAKAO)) return;
+            await _notifyMessageProvider.SendMessageAsync(notification.NotifyMessageRequest);
         }
     }
 }

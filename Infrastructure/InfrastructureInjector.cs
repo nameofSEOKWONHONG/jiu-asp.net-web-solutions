@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Application.Abstract;
+using Domain.Entities;
 using Infrastructure.Context;
 using Infrastructure.Services.Identity;
 using MediatR;
@@ -16,6 +17,8 @@ namespace Infrastructure.Services
             services.AddSingleton<DbL4Provider>()
                 .AddSingleton<DbL4Interceptor>()
                 .AddScoped<IAccountService, AccountService>()
+                .AddScoped<IRoleService, RoleService>()
+                .AddScoped<IRoleClaimService, RoleClaimService>()
                 .AddScoped<ISessionContextService, SessionContextService>()
                 .AddScoped<IUserService, UserService>()
                 .AddMediatR(Assembly.Load("Infrastructure"));

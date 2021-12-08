@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
 {
-    [Index(nameof(WriteId), nameof(WriteDt), nameof(UpdateId), nameof(UpdateDt))]
+    [Index(nameof(WriteId), nameof(WriteDt), nameof(UpdateId), nameof(UpdateDt), IsUnique = false)]
     public class EntityBase
     {
         [Required]

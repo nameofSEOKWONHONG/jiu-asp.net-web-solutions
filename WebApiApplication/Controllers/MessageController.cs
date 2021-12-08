@@ -18,25 +18,25 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("SendEMail")]
-        public async Task<IActionResult> SendEMail(EmailMessageRequest request)
+        public async Task<IActionResult> SendEMail(EmailNotifyMessageRequest request)
         {
-            var messageProvider = this._messageProviderResolver(ENUM_MESSAGE_TYPE.EMAIL);
+            var messageProvider = this._messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
             var result = await messageProvider.SendMessageAsync(request);
             return Ok(result);
         }
 
         [HttpPost("SendSms")]
-        public async Task<IActionResult> SendSms(IMessageRequest request)
+        public async Task<IActionResult> SendSms(INotifyMessageRequest request)
         {
-            var messageProvider = this._messageProviderResolver(ENUM_MESSAGE_TYPE.SMS);
+            var messageProvider = this._messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.SMS);
             var result = await messageProvider.SendMessageAsync(request);
             return Ok(result);
         }
 
         [HttpPost("SendKakao")]
-        public async Task<IActionResult> SendKakao(IMessageRequest request)
+        public async Task<IActionResult> SendKakao(INotifyMessageRequest request)
         {
-            var messageProvider = this._messageProviderResolver(ENUM_MESSAGE_TYPE.KAKAO);
+            var messageProvider = this._messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.KAKAO);
             var result = await messageProvider.SendMessageAsync(request);
             return Ok(result);
         }

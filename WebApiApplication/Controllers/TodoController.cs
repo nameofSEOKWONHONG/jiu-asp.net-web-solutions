@@ -73,13 +73,18 @@ namespace WebApiApplication.Controllers
                 #region [hangfire sample]
                 BackgroundJob.Enqueue(() => 
                     _mediator.Publish(
-                        new MessageNotify()
+                        new NotifyMessage()
                         {
-                            MessageTypes = new[] {ENUM_MESSAGE_TYPE.EMAIL},
-                            MessageRequest = new EmailMessageRequest(new[]
+                            // MessageTypes = new[] {ENUM_NOTIFY_MESSAGE_TYPE.EMAIL},
+                            // NotifyMessageRequest = new EmailNotifyMessageRequest(new[]
+                            // {
+                            //     "test@gmail.com"
+                            // }, "test", "hello", null)
+                            MessageTypes = new[] {ENUM_NOTIFY_MESSAGE_TYPE.EMAIL, ENUM_NOTIFY_MESSAGE_TYPE.LINE},
+                            NotifyMessageRequest = new EmailNotifyMessageRequest(new[]
                             {
                                 "test@gmail.com"
-                            }, "test", "hello", null)
+                            }, "test", "hello", null)                            
                         }, CancellationToken.None
                     )
                 );
