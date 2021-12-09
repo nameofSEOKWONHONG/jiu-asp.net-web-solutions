@@ -41,6 +41,27 @@
     - BlazorServerApplication : Blazor Server Application 입니다.
     - BlazorWasmApplication : Blazor Wasm Application 입니다.
 
+##프로젝트 설정
+1. 외부 프로젝트 clone
+   1. eXtensionSharp 프로젝트가 누락되어 있다면 아래의 repository를 clone합니다.
+   2. https://github.com/nameofSEOKWONHONG/eXtensionSharp.git
+   3. 누락된 프로젝트는 솔루션 폴더의 `1.Share>Core`에 추가합니다.
+2. migration 진행
+   1. 마이그레이션 진행전에 MSSQL LOCAL DB가 설치 되어 있어야 합니다.
+   2. visual studio가 설치되어 있다면 아래의 커맨드로 구동할 수 있습니다.
+      1. sqllocaldb start MSSQLLocalDB
+      2. MSSQLLocalDB는 기본으로 설치되는 local database 입니다.
+   3. 모두 설치 및 구동되고 있다면 아래의 커맨드를 실행합니다.
+      1. prompt> dotnet ef migrations add migration20211212 --project "../Infrastructure"
+      2. prompt> dotnet ef database update
+3. 솔루션을 빌드 합니다.
+4. 정상적으로 빌드 되었다면 blazor wasm 솔루션 페이지가 노출됩니다.
+5. swagger페이지는 아래와 같이 확인할 수 있습니다.
+   1. https://localhost:5001/swagger
+6. hangfire페이지는 아래와 같이 확인할 수 있습니다.
+   1. https://localhost:5001/jobs
+7. 로그 서버로 elk를 사용합니다. 릴리즈 구성에서 작동하지만 필요로 할 경우 `appsettings.Development.json`을 참고합니다. 
+
 ##중요사항
 1. `1.Share>Core>Infrastructure`는 Web Api Server Application을 위한 구성입니다.  
 따라서 해당 프로젝트는 Web Api Server Application에서만 사용합니다.

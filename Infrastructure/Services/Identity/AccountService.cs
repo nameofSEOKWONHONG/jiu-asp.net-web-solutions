@@ -47,7 +47,7 @@ namespace Infrastructure.Services.Identity
 
             var role = this._roleService.GetRole(user.Role.Id).GetAwaiter().GetResult();
             claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.RoleType.ToString()));
-            claims.Add(new Claim(role.RoleType.ToString(), user.Role.RolePermission.RolePermissionTypes.xToJoin()));
+            claims.Add(new Claim(role.RoleType.ToString(), user.Role.RolePermission.RolePermissionTypes.xJoin()));
             
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); 

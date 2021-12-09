@@ -1,33 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
 using System.IO;
 using System.Reflection;
 using System.Text;
-using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
-using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Domain.Configuration;
-using Domain.Entities;
 using Hangfire;
 using HelloWorldApplication;
 using Infrastructure.Context;
 using Infrastructure.Services;
-using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using TodoApplication;
 using WeatherForecastApplication;
-using WebApiApplication.Permission;
-using WebApiApplication.Services;
-using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Extensions
 {
@@ -70,6 +59,8 @@ namespace WebApiApplication.Extensions
             AddEmailSetting(services, configuration);
             
             services.AddRazorPages();
+
+            services.AddLogging();
             
             services.AddPluginFiles(configuration);
         }

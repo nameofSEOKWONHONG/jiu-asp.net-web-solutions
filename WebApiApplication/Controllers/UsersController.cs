@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Infrastructure.Abstract;
+using Microsoft.Extensions.Logging;
 using WebApiApplication.Filters;
 using WebApiApplication.Services.Abstract;
 
@@ -24,6 +25,7 @@ namespace WebApiApplication.Controllers
             var user = this.SessionContext.User;
             var user2 = this.SessionContext.User;
             var user3 = this.SessionContext.User;
+            _logger.LogInformation("test");
             return Ok(await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize));
         }
 
