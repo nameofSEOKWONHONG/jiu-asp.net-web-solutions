@@ -6,9 +6,9 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface IRoleClaimService
     {
-        Task<IEnumerable<RoleClaim>> GetRoleClaim();
-        Task<RoleClaim> GetRoleClaim(int id);
-        Task<RoleClaim> SaveRoleClaim(RoleClaim roleClaim);
-        Task<RoleClaim> RemoveRoleClaim(int id);
+        Task<IEnumerable<RolePermission>> GetRoleClaim();
+        Task<RolePermission> GetRoleClaim(int id);
+        Task<RolePermission> SaveRoleClaim(RolePermission rolePermission);
+        Task<RolePermission> RemoveRoleClaim(int id);
     }
 }

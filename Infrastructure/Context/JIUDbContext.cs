@@ -54,20 +54,20 @@ namespace Infrastructure.Context
                     v => v.ToString(),
                     v => XEnumBase<ENUM_ROLE_TYPE>.Parse(v, true));
 
-            Func<string, List<ENUM_ROLE_CLAIM_TYPE>> func;
+            Func<string, List<ENUM_ROLE_PERMISSION_TYPE>> func;
             func = (v) =>
             {
                 var items = v.Split(',', StringSplitOptions.RemoveEmptyEntries);
-                var result = new List<ENUM_ROLE_CLAIM_TYPE>();
+                var result = new List<ENUM_ROLE_PERMISSION_TYPE>();
                 items.xForEach(item =>
                 {
-                    result.Add(XEnumBase<ENUM_ROLE_CLAIM_TYPE>.Parse(item));
+                    result.Add(XEnumBase<ENUM_ROLE_PERMISSION_TYPE>.Parse(item));
                 });
                 return result;
             };
             
-            modelBuilder.Entity<RoleClaim>()
-                .Property(e => e.RoleClaimTypes)
+            modelBuilder.Entity<RolePermission>()
+                .Property(e => e.RolePermissionTypes)
                 .HasConversion(
                     v => string.Join(',', v),
                     v => func(v));
@@ -77,7 +77,7 @@ namespace Infrastructure.Context
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<RoleClaim> RoleClaims { get; set; }
+        public DbSet<RolePermission> RolePermissions { get; set; }
 
         #endregion
 

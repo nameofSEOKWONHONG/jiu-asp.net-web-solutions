@@ -19,48 +19,42 @@ namespace Infrastructure.Services
     {
         private readonly ILogger _logger;
         private readonly JIUDbContext _context;
-        private readonly IUserService _userService;
-        private readonly IRoleService _roleService;
-        private readonly IRoleClaimService _roleClaimService;
         
         public DatabaseSeeder(ILogger<DatabaseSeeder> logger,
-            JIUDbContext context,
-            IUserService userService,
-            IRoleService roleService,
-            IRoleClaimService roleClaimService)
+            JIUDbContext context)
         {
             _logger = logger;
             _context = context;
-            _userService = userService;
-            _roleService = roleService;
-            _roleClaimService = roleClaimService;
         }
         
         public void Initialize()
         {
+            var exists = _context.Users.FirstOrDefault(m => m.Email == "test@example.com");
+            if(exists.xIsNotEmpty()) return;
+            
             using (var scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                var roleClames = new List<RoleClaim>()
+                var roleClames = new List<RolePermission>()
                 {
                     //super, admin, user
-                    new RoleClaim()
+                    new RolePermission()
                     {
-                        RoleClaimTypes = new List<ENUM_ROLE_CLAIM_TYPE>()
+                        RolePermissionTypes = new List<ENUM_ROLE_PERMISSION_TYPE>()
                         {
-                            ENUM_ROLE_CLAIM_TYPE.V,
-                            ENUM_ROLE_CLAIM_TYPE.C,
-                            ENUM_ROLE_CLAIM_TYPE.U,
-                            ENUM_ROLE_CLAIM_TYPE.D,
+                            ENUM_ROLE_PERMISSION_TYPE.VIEW,
+                            ENUM_ROLE_PERMISSION_TYPE.CREATE,
+                            ENUM_ROLE_PERMISSION_TYPE.UPDATE,
+                            ENUM_ROLE_PERMISSION_TYPE.DELETE,
                         },
                         WriteDt = DateTime.Now,
                         WriteId = "system"
                     },
                     //guest
-                    new RoleClaim()
+                    new RolePermission()
                     {
-                        RoleClaimTypes = new List<ENUM_ROLE_CLAIM_TYPE>()
+                        RolePermissionTypes = new List<ENUM_ROLE_PERMISSION_TYPE>()
                         {
-                            ENUM_ROLE_CLAIM_TYPE.V
+                            ENUM_ROLE_PERMISSION_TYPE.VIEW
                         },
                         WriteDt = DateTime.Now,
                         WriteId = "system"
@@ -69,14 +63,14 @@ namespace Infrastructure.Services
             
                 roleClames.xForEach(item =>
                 {
-                    _context.RoleClaims.Add(item);
+                    _context.RolePermissions.Add(item);
                 });
                 _context.SaveChanges();
                 
                 var superRole = new Role()
                 {
                     RoleType = ENUM_ROLE_TYPE.SUPER,
-                    RoleClaim = roleClames[0],
+                    RolePermission = roleClames[0],
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
@@ -86,7 +80,7 @@ namespace Infrastructure.Services
                 var adminRole = new Role()
                 {
                     RoleType = ENUM_ROLE_TYPE.ADMIN,
-                    RoleClaim = roleClames[0],
+                    RolePermission = roleClames[0],
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
@@ -96,7 +90,7 @@ namespace Infrastructure.Services
                 var userRole = new Role()
                 {
                     RoleType = ENUM_ROLE_TYPE.USER,
-                    RoleClaim = roleClames[0],
+                    RolePermission = roleClames[0],
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
@@ -106,7 +100,7 @@ namespace Infrastructure.Services
                 var guestRole = new Role()
                 {
                     RoleType = ENUM_ROLE_TYPE.GUEST,
-                    RoleClaim = roleClames[1],
+                    RolePermission = roleClames[1],
                     WriteDt = DateTime.Now,
                     WriteId = "system"
                 };
@@ -120,8 +114,9 @@ namespace Infrastructure.Services
                     Password = "test",
                     WriteDt = DateTime.Now,
                     WriteId = "system",
-                    UserRole = superRole
+                    Role = superRole
                 };
+                superUser.Password = BCrypt.Net.BCrypt.HashPassword(superUser.Password);
                 _context.Users.Add(superUser);
                 _context.SaveChanges();
 

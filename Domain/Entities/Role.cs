@@ -15,32 +15,44 @@ namespace Domain.Entities
         [Required, MaxLength(10)]
         public ENUM_ROLE_TYPE RoleType { get; set; }
         
-        public RoleClaim RoleClaim { get; set; }
+        public RolePermission RolePermission { get; set; }
     }
 
-    [Table("TB_ROLE_CLAIM")]
-    public class RoleClaim : EntityBase
+    [Table("TB_ROLE_PERMISSION")]
+    public class RolePermission : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
         [Required, MaxLength(100)]
-        public List<ENUM_ROLE_CLAIM_TYPE> RoleClaimTypes { get; set; }
+        public List<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; set; }
     }
 
     public class ENUM_ROLE_TYPE : XEnumBase<ENUM_ROLE_TYPE>
     {
+        /// <summary>
+        /// 슈퍼 관리자 (슈퍼 관리자는 유일하게 존재해야 함)
+        /// </summary>
         public static readonly ENUM_ROLE_TYPE SUPER = Define("SUPER");
+        /// <summary>
+        /// 일반 관리자 (다수의 일반 관리자가 존재할 수 있음)
+        /// </summary>
         public static readonly ENUM_ROLE_TYPE ADMIN = Define("ADMIN");
+        /// <summary>
+        /// 사용자 (승인된 사용자 또는 정회원)
+        /// </summary>
         public static readonly ENUM_ROLE_TYPE USER = Define("USER");
+        /// <summary>
+        /// 손님 (회원가입을 했으나 승인되지 않은 상태 또는 정회원이 아닌 상태)
+        /// </summary>
         public static readonly ENUM_ROLE_TYPE GUEST = Define("GUEST");
     }
 
-    public class ENUM_ROLE_CLAIM_TYPE : XEnumBase<ENUM_ROLE_CLAIM_TYPE>
+    public class ENUM_ROLE_PERMISSION_TYPE : XEnumBase<ENUM_ROLE_PERMISSION_TYPE>
     {
-        public static readonly ENUM_ROLE_CLAIM_TYPE V = Define("VIEW"); //readonly
-        public static readonly ENUM_ROLE_CLAIM_TYPE C = Define("CREATE");
-        public static readonly ENUM_ROLE_CLAIM_TYPE U = Define("UPDATE");
-        public static readonly ENUM_ROLE_CLAIM_TYPE D = Define("DELETE");
+        public static readonly ENUM_ROLE_PERMISSION_TYPE VIEW = Define("VIEW"); //readonly
+        public static readonly ENUM_ROLE_PERMISSION_TYPE CREATE = Define("CREATE");
+        public static readonly ENUM_ROLE_PERMISSION_TYPE UPDATE = Define("UPDATE");
+        public static readonly ENUM_ROLE_PERMISSION_TYPE DELETE = Define("DELETE");
     }
 }

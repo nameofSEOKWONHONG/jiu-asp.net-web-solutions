@@ -20,8 +20,7 @@ namespace WebApiApplication.Controllers
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = false)]
         public async Task<IActionResult> GetAll()
         {
-            var session = await this._sessionContextService.GetSessionAsync();
-            var result = await _mediator.Send(new GetAllTodoQuery(session.User.Id));
+            var result = await _mediator.Send(new GetAllTodoQuery(this.SessionContext.UserId));
 
             #region [publish sample]
             //await _mediator.Publish(new MessageNotify() { MessageTypes = new[]{ ENUM_MESSAGE_TYPE.SMS, ENUM_MESSAGE_TYPE.EMAIL }});
@@ -42,8 +41,7 @@ namespace WebApiApplication.Controllers
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"from", "to"})]
         public async Task<IActionResult> GetTodo(DateTime from, DateTime to)
         {
-            var session = await _sessionContextService.GetSessionAsync();
-            var result = await _mediator.Send(new GetTodoByDateQuery(session.User.Id, from, to));
+            var result = await _mediator.Send(new GetTodoByDateQuery(this.SessionContext.UserId, from, to));
             return Ok(result);
         }
 
@@ -51,8 +49,7 @@ namespace WebApiApplication.Controllers
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"selectedDate"})]        
         public async Task<IActionResult> GetTodo(DateTime selectedDate)
         {
-            var session = await _sessionContextService.GetSessionAsync();
-            var result = await _mediator.Send(new GetTodoBySelectedDateQuery(session.User.Id, selectedDate));
+            var result = await _mediator.Send(new GetTodoBySelectedDateQuery(this.SessionContext.UserId, selectedDate));
             return Ok(result);
         }
 
@@ -63,9 +60,8 @@ namespace WebApiApplication.Controllers
             {
                 return validateResult;
             }
-            
-            var session = await _sessionContextService.GetSessionAsync();
-            todo.WriteId = session.User.Id.ToString();
+
+            todo.WriteId = this.SessionContext.UserId.ToString();
             todo.WriteDt = DateTime.UtcNow;
             var result = await _mediator.Send(new SaveTodoCommand(todo));
             if (result.Data.Id >= 0)

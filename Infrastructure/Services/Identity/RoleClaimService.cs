@@ -16,36 +16,36 @@ namespace Infrastructure.Services.Identity
             _context = context;
         }
 
-        public async Task<IEnumerable<RoleClaim>> GetRoleClaim()
+        public async Task<IEnumerable<RolePermission>> GetRoleClaim()
         {
-            return await _context.RoleClaims.ToListAsync();
+            return await _context.RolePermissions.ToListAsync();
         }
 
-        public async Task<RoleClaim> GetRoleClaim(int id)
+        public async Task<RolePermission> GetRoleClaim(int id)
         {
             if (id <= 0) return null;
-            return await _context.RoleClaims.FirstAsync(m => m.Id == id);
+            return await _context.RolePermissions.FirstAsync(m => m.Id == id);
         }
 
-        public async Task<RoleClaim> SaveRoleClaim(RoleClaim roleClaim)
+        public async Task<RolePermission> SaveRoleClaim(RolePermission rolePermission)
         {
-            var exists = await GetRoleClaim(roleClaim.Id);
+            var exists = await GetRoleClaim(rolePermission.Id);
             await exists.xIfEmptyAsync(() =>
             {
-                _context.RoleClaims.Add(roleClaim);
+                _context.RolePermissions.Add(rolePermission);
                 return _context.SaveChangesAsync();
             });
-            return roleClaim;
+            return rolePermission;
         }
 
-        public async Task<RoleClaim> RemoveRoleClaim(int id)
+        public async Task<RolePermission> RemoveRoleClaim(int id)
         {
             var exists = await GetRoleClaim(id);
             exists.xIfEmpty(() => throw new KeyNotFoundException());
             
             await exists.xIfNotEmptyAsync(async () =>
             {
-                _context.RoleClaims.Remove(exists);
+                _context.RolePermissions.Remove(exists);
                 await _context.SaveChangesAsync();
             });
 

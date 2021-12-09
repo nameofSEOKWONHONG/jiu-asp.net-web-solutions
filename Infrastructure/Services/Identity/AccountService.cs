@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
+using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using WebApiApplication.Services.Abstract;
@@ -44,8 +45,9 @@ namespace Infrastructure.Services.Identity
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
             };
 
-            var role = this._roleService.GetRole(user.UserRole.Id).GetAwaiter().GetResult();
+            var role = this._roleService.GetRole(user.Role.Id).GetAwaiter().GetResult();
             claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.RoleType.ToString()));
+            claims.Add(new Claim(role.RoleType.ToString(), user.Role.RolePermission.RolePermissionTypes.xToJoin()));
             
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); 

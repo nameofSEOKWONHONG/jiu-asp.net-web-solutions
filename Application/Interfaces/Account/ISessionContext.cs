@@ -1,9 +1,14 @@
-﻿using Domain.Entities;
+﻿using System;
+using System.Collections.Generic;
+using Domain.Entities;
 
 namespace WebApiApplication.Services.Abstract
 {
     public interface ISessionContext
     {
-        User User { get; set; }
+        Guid UserId { get; }
+        ENUM_ROLE_TYPE RoleType { get; }
+        User User { get; }
+        IEnumerable<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; }
     }
 }

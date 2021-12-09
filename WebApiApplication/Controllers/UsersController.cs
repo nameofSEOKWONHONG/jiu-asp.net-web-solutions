@@ -3,10 +3,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Infrastructure.Abstract;
+using WebApiApplication.Filters;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
+    [AuthorizeRole(RoleType = "SUPER,ADMIN", PermissionType = "VIEW,CREATE,UPDATE,DELETE")]
     public class UsersController : AuthorizedController<UsersController>
     {
         private readonly IUserService userService;
@@ -15,11 +17,14 @@ namespace WebApiApplication.Controllers
         {
             this.userService = userService;
         }
-        
-        [HttpGet("GetAll")]
-        public async Task<IActionResult> GetAll()
+
+        [HttpGet("GetAll/{pageIndex}/{pageSize}")]
+        public async Task<IActionResult> GetAll(string searchCol = "", string searchValue = "", int pageIndex = 1, int pageSize = 10)
         {
-            return Ok(await this.userService.FindAllUserAsync());
+            var user = this.SessionContext.User;
+            var user2 = this.SessionContext.User;
+            var user3 = this.SessionContext.User;
+            return Ok(await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize));
         }
 
         [HttpGet("Get/{userId}")]

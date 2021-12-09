@@ -29,6 +29,6 @@ namespace Domain.Entities
         public bool AutoConfirmEmail { get; set; } = false;    
         
         //public List<RefreshToken> RefreshTokens { get; set; }
-        public Role UserRole { get; set; }
+        public Role Role { get; set; }
     }
 }
