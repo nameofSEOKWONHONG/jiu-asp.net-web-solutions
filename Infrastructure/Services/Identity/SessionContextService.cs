@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Domain.Entities;
+using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiApplication.Services.Abstract;

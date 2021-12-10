@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities {
     [Table("TB_WEATHERFORECAST")]
-    [Index(nameof(Date), nameof(Summary))]
+    [Index(nameof(Date), nameof(Summary), IsUnique = false)]
     public class WeatherForecast {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 using Domain.Entities;
+using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Context;
 using Microsoft.Extensions.Logging;

@@ -7,10 +7,9 @@ using System.Dynamic;
 using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
-{
-    
+{   
     [Table("TB_USER")]
-    [Index(nameof(Email), nameof(ActivateUser), nameof(AutoConfirmEmail))]
+    [Index(nameof(Email), nameof(ActivateUser), nameof(AutoConfirmEmail), IsUnique = false)]
     public class User : EntityBase
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]

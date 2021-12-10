@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Domain.Configuration;
+using eXtensionSharp;
 using Hangfire;
 using HelloWorldApplication;
 using Infrastructure.Context;
@@ -33,7 +34,7 @@ namespace WebApiApplication.Extensions
         internal static void AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
             #region [add controllers]
-            services.AddControllers();        
+            services.AddControllers();
             #endregion
             
             #region [add httpcontext accessor to the container.]
@@ -59,8 +60,6 @@ namespace WebApiApplication.Extensions
             AddEmailSetting(services, configuration);
             
             services.AddRazorPages();
-
-            services.AddLogging();
             
             services.AddPluginFiles(configuration);
         }

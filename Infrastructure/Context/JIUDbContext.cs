@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Domain.Enums;
 using eXtensionSharp;
 
 namespace Infrastructure.Context

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Transactions;
 using CSScriptLib;
 using eXtensionSharp;
 
@@ -13,12 +14,23 @@ namespace CsScriptApplication
         bool ExecuteBefore();
         void Execute();
         void ExecuteAfter();
+        /// <summary>
+        /// throw exception
+        /// </summary>
+        /// <returns></returns>
+        bool BizValidator();
+        /// <summary>
+        /// throw exception
+        /// </summary>
+        /// <returns></returns>
+        bool ModelValidator();
     }
     
     public class Program
     {
         public static void Main(string[] args)
         {
+            var codeItems = new List<string>();
             var code = @"
 using System;
 using CsScriptApplication;
@@ -41,20 +53,45 @@ public class ExecutorA : IExecutor<string, string>
     {
         Console.WriteLine(""Executed"");
     }
+
+    public bool ModelValidator() {
+        return true;
+    }
+
+    public bool BizValidator() {
+        return true;
+    }
 }
 ";
             var codes = new Dictionary<string, IExecutor<string, string>>();
-            codes.Add(code.xToHash(), CSScript.Evaluator.LoadCode<IExecutor<string, string>>(code));
-
-            var executor = codes[code.xToHash()];
-
-            // IExecutor<string> executor = CSScript.Evaluator.LoadCode<IExecutor<string>>(code);
-            executor.Request = "Hello World";
-            if (executor.ExecuteBefore())
+            
+            codeItems.Add(code);
+            codeItems.ForEach(item =>
             {
-                executor.Execute();
-                executor.ExecuteAfter();
-                Console.WriteLine(executor.Result);
+                codes.Add(item.xToHash(), CSScript.Evaluator.LoadCode<IExecutor<string, string>>(item));    
+            });
+
+            using (var tran = new TransactionScope(TransactionScopeOption.Required))
+            {
+                codes.xForEach(item =>
+                {
+                    var executor = codes[code.xToHash()];
+
+                    // IExecutor<string> executor = CSScript.Evaluator.LoadCode<IExecutor<string>>(code);
+                    executor.Request = "Hello World";
+
+                    executor.ModelValidator();
+                    executor.BizValidator();
+            
+                    if (executor.ExecuteBefore())
+                    {
+                        executor.Execute();
+                        executor.ExecuteAfter();
+                        Console.WriteLine(executor.Result);
+                    }
+                });
+                
+                tran.Complete();
             }
         }
     }

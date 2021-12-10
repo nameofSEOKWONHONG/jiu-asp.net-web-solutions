@@ -26,7 +26,8 @@ namespace WebApiApplication.Controllers
             var user2 = this.SessionContext.User;
             var user3 = this.SessionContext.User;
             _logger.LogInformation("test");
-            return Ok(await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize));
+            var result = await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize); 
+            return Ok(result);
         }
 
         [HttpGet("Get/{userId}")]

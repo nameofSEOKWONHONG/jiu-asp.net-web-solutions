@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Context;
 using WebApiApplication.Services.Abstract;
