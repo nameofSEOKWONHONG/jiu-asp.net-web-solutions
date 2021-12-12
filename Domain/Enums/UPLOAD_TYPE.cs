@@ -1,17 +1,13 @@
-﻿using System.ComponentModel;
-using System.Reflection.Metadata;
+﻿using eXtensionSharp;
 
 namespace Domain.Enums
 {
-    public enum UPLOAD_TYPE : byte
+    public sealed class ENUM_UPLOAD_TYPE : XEnumBase<ENUM_UPLOAD_TYPE>
     {
-        [Description(@"Images\Products")]
-        Product,
+        public static readonly ENUM_UPLOAD_TYPE Product = Define("Images\\Products");
 
-        [Description(@"Images\ProfilePictures")]
-        ProfilePicture,
+        public static readonly ENUM_UPLOAD_TYPE ProfilePicture = Define("Images\\ProfilePictures");
 
-        [Description(@"Documents")]
-        Document
+        public static readonly ENUM_UPLOAD_TYPE Document = Define("Docuemnts");
     }
 }

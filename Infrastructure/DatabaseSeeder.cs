@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Transactions;
+﻿using System.Transactions;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Context;
 using Microsoft.Extensions.Logging;
-using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services
 {
@@ -30,8 +25,8 @@ namespace Infrastructure.Services
         
         public void Initialize()
         {
-            var exists = _context.Users.FirstOrDefault(m => m.Email == "test@example.com");
-            if(exists.xIsNotEmpty()) return;
+            var superUserExists = _context.Users.FirstOrDefault(m => m.Email == "test@example.com");
+            if(superUserExists.xIsNotEmpty()) return;
             
             using (var scope = new TransactionScope(TransactionScopeOption.Required))
             {

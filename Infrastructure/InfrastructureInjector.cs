@@ -17,10 +17,10 @@ namespace Infrastructure.Services
             services.AddSingleton<DbL4Provider>()
                 .AddSingleton<DbL4Interceptor>()
                 .AddScoped<IAccountService, AccountService>()
-                .AddScoped<IRoleService, RoleService>()
-                .AddScoped<IRoleClaimService, RoleClaimService>()
-                .AddScoped<ISessionContextService, SessionContextService>()
                 .AddScoped<IUserService, UserService>()
+                .AddScoped<IRoleService, RoleService>()
+                .AddScoped<IRolePermissionService, RolePermissionService>()
+                .AddScoped<ISessionContextService, SessionContextService>()
                 .AddMediatR(Assembly.Load("Infrastructure"));
         }
     }

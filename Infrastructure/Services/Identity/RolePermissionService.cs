@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain.Entities;
+using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -8,28 +9,28 @@ using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services.Identity
 {
-    public class RoleClaimService : IRoleClaimService
+    public class RolePermissionService : IRolePermissionService
     {
         private readonly JIUDbContext _context; 
-        public RoleClaimService(JIUDbContext context)
+        public RolePermissionService(JIUDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<RolePermission>> GetRoleClaim()
+        public async Task<IEnumerable<RolePermission>> GetRolePermissionsAsync()
         {
             return await _context.RolePermissions.ToListAsync();
         }
 
-        public async Task<RolePermission> GetRoleClaim(int id)
+        public async Task<RolePermission> GetRolePermissionAsync(int id)
         {
             if (id <= 0) return null;
             return await _context.RolePermissions.FirstAsync(m => m.Id == id);
         }
 
-        public async Task<RolePermission> SaveRoleClaim(RolePermission rolePermission)
+        public async Task<RolePermission> SavePermissionAsync(RolePermission rolePermission)
         {
-            var exists = await GetRoleClaim(rolePermission.Id);
+            var exists = await GetRolePermissionAsync(rolePermission.Id);
             await exists.xIfEmptyAsync(() =>
             {
                 _context.RolePermissions.Add(rolePermission);
@@ -38,9 +39,9 @@ namespace Infrastructure.Services.Identity
             return rolePermission;
         }
 
-        public async Task<RolePermission> RemoveRoleClaim(int id)
+        public async Task<RolePermission> RemovePermissionAsync(int id)
         {
-            var exists = await GetRoleClaim(id);
+            var exists = await GetRolePermissionAsync(id);
             exists.xIfEmpty(() => throw new KeyNotFoundException());
             
             await exists.xIfNotEmptyAsync(async () =>

@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Abstract;
 using Domain.Enums;
-using Application.Request;
-using Application.Response;
 using Microsoft.Extensions.Configuration;
 
 namespace Application.Infrastructure.Message
@@ -23,13 +20,11 @@ namespace Application.Infrastructure.Message
                 .AddSingleton<KakaoNotifyMessageProvider>()
                 .AddSingleton<MessageProviderResolver>(provider => key =>
                 {
-                    switch (key)
-                    {
-                        case ENUM_NOTIFY_MESSAGE_TYPE.SMS : return provider.GetRequiredService<SmsNotifyMessageProvider>();
-                        case ENUM_NOTIFY_MESSAGE_TYPE.EMAIL: return provider.GetRequiredService<EmailNotifyMessageProvider>();
-                        case ENUM_NOTIFY_MESSAGE_TYPE.KAKAO : return provider.GetRequiredService<KakaoNotifyMessageProvider>();
-                        default: throw new KeyNotFoundException();
-                    }
+                    if(key == ENUM_NOTIFY_MESSAGE_TYPE.SMS) return provider.GetRequiredService<SmsNotifyMessageProvider>();
+                    else if(key == ENUM_NOTIFY_MESSAGE_TYPE.EMAIL) return provider.GetRequiredService<EmailNotifyMessageProvider>();
+                    else if (key == ENUM_NOTIFY_MESSAGE_TYPE.KAKAO)
+                        return provider.GetRequiredService<KakaoNotifyMessageProvider>();
+                    else throw new NotImplementedException();
                 });
         }
     }
@@ -38,11 +33,11 @@ namespace Application.Infrastructure.Message
     {
         public static void AddMessageProviderInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectorImpl(new[]
+            var impl = new DependencyInjectorImpl(new[]
             {
                 new NotifyMessageProviderInjector()
             }, services, null);
-            diCore.Inject();
+            impl.Inject();
         }
     }
 }

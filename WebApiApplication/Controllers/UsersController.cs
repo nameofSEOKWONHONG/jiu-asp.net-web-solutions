@@ -9,7 +9,7 @@ using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
 {
-    [AuthorizeRole(RoleType = "SUPER,ADMIN", PermissionType = "VIEW,CREATE,UPDATE,DELETE")]
+    [RoleAuthorize(RoleType = "SUPER,ADMIN", PermissionType = "VIEW,CREATE,UPDATE,DELETE")]
     public class UsersController : AuthorizedController<UsersController>
     {
         private readonly IUserService userService;

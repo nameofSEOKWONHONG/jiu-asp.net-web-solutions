@@ -13,9 +13,9 @@ using Microsoft.AspNetCore.Http;
 namespace Infrastructure.Middleware
 {
     /// <summary>
-    /// ref : https://www.loginradius.com/blog/async/anti-xss-middleware-asp-core/
+    /// <see href="https://www.loginradius.com/blog/async/anti-xss-middleware-asp-core/"/>
     /// </summary>
-    public class AntiXssMiddleware
+    public sealed class AntiXssMiddleware
     {
         private readonly RequestDelegate _next;
         private ErrorResponse _error;

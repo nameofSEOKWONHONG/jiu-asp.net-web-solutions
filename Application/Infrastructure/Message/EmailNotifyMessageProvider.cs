@@ -37,7 +37,7 @@ namespace Application.Infrastructure.Message
             var email = new MimeMessage();
             var sender = new MailboxAddress(emailSettings.DisplayName, emailSettings.FromMail);
             email.Sender = sender;
-            mailRequest.toMails.xFor(item =>
+            mailRequest.toMails.xForEach(item =>
             {
                 email.To.Add(MailboxAddress.Parse(item));
             });
@@ -46,7 +46,7 @@ namespace Application.Infrastructure.Message
             if (mailRequest.attachments.xIsNotEmpty())
             {
                 byte[] fileBytes;
-                mailRequest.attachments.xFor(item =>
+                mailRequest.attachments.xForEach(item =>
                 {
                     if (item.Length > 0)
                     {

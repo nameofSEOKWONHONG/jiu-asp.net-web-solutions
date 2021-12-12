@@ -61,7 +61,7 @@ namespace Application.Infrastructure.Message
             clientRequest.Parameters.Clear();
             clientRequest.AddParameter("application/json", convertedRequest.kakaoTalkSendInfo.xToJson(),
                 ParameterType.RequestBody);
-            var response = client.Execute(clientRequest);
+            var response = await client.ExecuteAsync(clientRequest);
             var content = response.Content;            
 
             #endregion

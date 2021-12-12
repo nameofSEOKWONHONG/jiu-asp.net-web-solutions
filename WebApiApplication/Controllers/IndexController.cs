@@ -49,7 +49,7 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("sample")]
-        public async Task<IActionResult> Sample(SampleDto dto)
+        public IActionResult Sample(SampleDto dto)
         {
             return Ok(dto);
         } 
@@ -61,7 +61,7 @@ namespace WebApiApplication.Controllers
         /// <returns></returns>
         [HttpPost("sample2")]
         [Obsolete("don't use case")]
-        public async Task<IActionResult> Sample2([FromBody]ENUM_ROLE_TYPE str)
+        public IActionResult Sample2([FromBody]ENUM_ROLE_TYPE str)
         {
             return Ok(str);
         }

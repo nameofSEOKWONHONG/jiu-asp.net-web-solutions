@@ -58,7 +58,7 @@ namespace WebApiApplication.Controllers
         /// <param name="ipAddress"></param>
         /// <returns></returns>
         [HttpPost("RefreshToken")]
-        public async Task<IActionResult> 
+        public IActionResult 
             RefreshToken(string token, string ipAddress)
         {
             return Ok();

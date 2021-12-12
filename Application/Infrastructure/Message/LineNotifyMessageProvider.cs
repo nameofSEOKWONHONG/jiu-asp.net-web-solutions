@@ -23,20 +23,20 @@ namespace Application.Infrastructure.Message
         public string Text { get; set; }        
     }
     
-    public record LineNotifyMessageReqeust(string accessToken, string retryKey, LineMessageInfo lineMessageInfo) : INotifyMessageRequest;
+    public record LineNotifyMessageRequest(string AccessToken, string RetryKey, LineMessageInfo LineMessageInfo) : INotifyMessageRequest;
     
     public class LineNotifyMessageProvider : NotifyMessageProviderBase
     {
         public override async Task<IResult> SendMessageAsync(INotifyMessageRequest request)
         {
-            var lineMessageRequest = request as LineNotifyMessageReqeust;
+            var lineMessageRequest = request as LineNotifyMessageRequest;
             using (var httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri("https://api.line.me");
                 httpClient.DefaultRequestHeaders.Clear();
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {lineMessageRequest.accessToken}");
-                httpClient.DefaultRequestHeaders.Add("X-Line-Retry-Key", lineMessageRequest.retryKey);
-                var stringContent = new StringContent(lineMessageRequest.lineMessageInfo.xToJson(), Encoding.UTF8,
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {lineMessageRequest.AccessToken}");
+                httpClient.DefaultRequestHeaders.Add("X-Line-Retry-Key", lineMessageRequest.RetryKey);
+                var stringContent = new StringContent(lineMessageRequest.LineMessageInfo.xToJson(), Encoding.UTF8,
                     "application/json");
                 var response = await httpClient.PostAsync("", stringContent);
                 if (!response.IsSuccessStatusCode) return await Result.FailAsync(response.StatusCode.ToString());

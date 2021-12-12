@@ -11,7 +11,7 @@ using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Filters
 {
-    public class AuthorizeRole : AuthorizeAttribute, IAuthorizationFilter
+    public class RoleAuthorize : AuthorizeAttribute, IAuthorizationFilter
     {
         /// <summary>
         /// enable split
@@ -40,27 +40,7 @@ namespace WebApiApplication.Filters
                 context.Result = new UnauthorizedResult();
                 return;
             }
-
-            if (assignedUser.RoleType == ENUM_ROLE_TYPE.SUPER ||
-                assignedUser.RoleType == ENUM_ROLE_TYPE.ADMIN)
-            {
-                //role_permission 조회로 변경되어야 함.
-                var permissions = new[]
-                {
-                    ENUM_ROLE_PERMISSION_TYPE.CREATE,
-                    ENUM_ROLE_PERMISSION_TYPE.DELETE,
-                    ENUM_ROLE_PERMISSION_TYPE.UPDATE,
-                    ENUM_ROLE_PERMISSION_TYPE.VIEW
-                };
-
-                var exists = assignedUser.RolePermissionTypes.xContains(permissions);
-                if(!exists)
-                {
-                    context.Result = new UnauthorizedResult();
-                    return;
-                }
-            }
-
+            
             if (PermissionType.xIsNotEmpty())
             {
                 var permissionItems = PermissionType.xSplit(',');

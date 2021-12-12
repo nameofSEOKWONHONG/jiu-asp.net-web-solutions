@@ -46,7 +46,7 @@ namespace WebApiApplication
                 .UseSerilog();
 
         /// <summary>
-        /// <see cref="https://www.humankode.com/asp-net-core/logging-with-elasticsearch-kibana-asp-net-core-and-docker"/>
+        /// <see href="https://www.humankode.com/asp-net-core/logging-with-elasticsearch-kibana-asp-net-core-and-docker"/>
         /// </summary>
         private static void ConfigureLogging()
         {

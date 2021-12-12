@@ -11,7 +11,7 @@ using Application.Response;
 
 namespace Infrastructure.Middlewares
 {
-    public class ErrorHandlerMiddleware
+    public sealed class ErrorHandlerMiddleware
     {
         private readonly RequestDelegate _next;
 

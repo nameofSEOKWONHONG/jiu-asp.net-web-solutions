@@ -8,10 +8,10 @@ using MediatR;
 
 namespace Infrastructure.Notifies
 {
-    public class EMailNotifyHandler : INotificationHandler<NotifyMessage>
+    public class EmailNotifyHandler : INotificationHandler<NotifyMessage>
     {
         private readonly INotifyMessageProvider _notifyMessageProvider;
-        public EMailNotifyHandler(MessageProviderResolver resolver)
+        public EmailNotifyHandler(MessageProviderResolver resolver)
         {
             _notifyMessageProvider = resolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
         }

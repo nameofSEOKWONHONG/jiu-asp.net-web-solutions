@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Localization;
 
 namespace Infrastructure.Middlewares
 {
-    public class RequestCultureMiddleware
+    public sealed class RequestCultureMiddleware
     {
         private readonly RequestDelegate _next;
 
