@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace JUIControls;
 
-public class JUIControl
+/// <summary>
+/// 개별 컨트롤
+/// </summary>
+public class WidgetBase
 {
     /// <summary>
     /// 컨트롤 인덱스 (순번)
@@ -11,15 +15,11 @@ public class JUIControl
     /// <summary>
     /// 컨트롤명
     /// </summary>
-    public string ControlName { get; set; }
-    /// <summary>
-    /// Bind명
-    /// </summary>
-    public string BinderName { get; set; }
+    public string WigetName { get; set; }
     /// <summary>
     /// 컨트롤 타입
     /// </summary>
-    public ENUM_CONTROL_TYPE ControlType { get; set; }
+    public ENUM_WIDGET_TYPE WidgetType { get; set; }
     /// <summary>
     /// 값
     /// </summary>
@@ -29,4 +29,6 @@ public class JUIControl
     /// 리스트 및 autocomplete에 사용
     /// </summary>
     public Dictionary<string, string> ValueOptions { get; set; }
+
+    public bool NewLine { get; set; } = false;
 }
