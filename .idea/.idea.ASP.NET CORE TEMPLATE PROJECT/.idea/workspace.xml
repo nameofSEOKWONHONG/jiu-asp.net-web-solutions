@@ -12,29 +12,7 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JUIControls/Forms/IFormMaker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JUIControls/Forms/Sale/SaleSelectBoxWidget.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JUIControls/Widget/Form.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSecion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSectionGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/DashBoardSection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Enums/ENUM_SECTION_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Enums/ENUM_FORM_TYPE.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/ISectionMaker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/SectionProviderInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/FormProviderInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Services/ISaleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Services/ISaleService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Services/SaleService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Services/SaleService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/IWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/IWidgetBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Sale/SaleSelectBoxWidget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Sale/SaleSelectBoxWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Forms/Sale/SaleSelectBoxWidgetBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Sale/WidgetTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Forms/Sale/WidgetTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Section.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Widget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" afterDir="false" />
-    </list>
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +78,7 @@
     <setting file="file://$PROJECT_DIR$/JUIControls/Enums/ENUM_FORM_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BA3DFCB4-8FDC-4402-AAFA-0731419F5901/2f/0234fd78/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/JUIControls/Services/SaleService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JUIControls/Services/SaleWidgetBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/954b64bc4e87439dbdccacd21a67d66216b578/6d/be835bb7/SingleQueryingEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -189,7 +167,7 @@
     <setting file="file://$PROJECT_DIR$/JUIControls/Forms/Sale/SaleSelectBoxWidgetBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Forms/Sale/WidgetTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/9b/a858582d/Task`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/JUIControls/Services/ISaleService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JUIControls/Services/ISaleWidgetBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/21690B23-5D4F-4F50-B87F-09375681DE18/a3/b74874f5/PageModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9C3E83BF-875C-4C46-8CEB-D7A710B6ABD9/6/AuthenticationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/715E705B-4C29-4B56-BD39-70A08D6C2815/87/83854785/AuthenticationProperties.cs" root0="SKIP_HIGHLIGHTING" />
@@ -562,7 +540,7 @@
       <workItem from="1639322905649" duration="1135000" />
       <workItem from="1639356077149" duration="18036000" />
       <workItem from="1639441333787" duration="3169000" />
-      <workItem from="1639444513444" duration="772000" />
+      <workItem from="1639444513444" duration="1429000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -858,7 +836,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639383704060</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="update JUIControls&#10;no more update next year...">
+      <created>1639446840350</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1639446840350</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -923,7 +908,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="update readme.md" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update JUIControls&#10;no more update next year..." />
+    <option name="LAST_COMMIT_MESSAGE" value="update JUIControls&#10;no more update next year..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
