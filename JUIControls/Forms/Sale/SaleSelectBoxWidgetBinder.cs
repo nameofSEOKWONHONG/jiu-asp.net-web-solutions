@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using JUIControls.Services;
+using JUIControls.Binders;
 using JUIControls.Widget;
 
 namespace JUIControls.Forms.Sale;

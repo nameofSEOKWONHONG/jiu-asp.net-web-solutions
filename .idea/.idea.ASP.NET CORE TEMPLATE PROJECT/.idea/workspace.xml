@@ -12,14 +12,8 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update document">
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/Form.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSecion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSectionGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSectionGroup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -548,7 +542,8 @@
       <workItem from="1639356077149" duration="18036000" />
       <workItem from="1639441333787" duration="3169000" />
       <workItem from="1639444513444" duration="1429000" />
-      <workItem from="1639447243868" duration="568000" />
+      <workItem from="1639447243868" duration="582000" />
+      <workItem from="1639452815433" duration="1710000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -858,7 +853,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639447312328</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="update">
+      <created>1639447821466</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1639447821466</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -922,10 +924,10 @@
     <MESSAGE value="update configurations" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="update readme.md" />
-    <MESSAGE value="update" />
     <MESSAGE value="update JUIControls&#10;no more update next year..." />
     <MESSAGE value="update document" />
-    <option name="LAST_COMMIT_MESSAGE" value="update document" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,7 +2,7 @@
 using Application.Interfaces.Todo;
 using JUIControls.Widget;
 
-namespace JUIControls.Services;
+namespace JUIControls.Binders;
 
 /// <summary>
 /// dummy interface
