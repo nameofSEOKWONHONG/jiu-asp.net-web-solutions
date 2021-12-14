@@ -7,7 +7,7 @@ public class Form
     public string MenuCode { get; set; }
     public string MenuName { get; set; }
     /// <summary>
-    /// 섹션 타입
+    /// 폼 타입
     /// </summary>
     public ENUM_FORM_TYPE FormType { get; set; }
     public FormHeader Header { get; set; }

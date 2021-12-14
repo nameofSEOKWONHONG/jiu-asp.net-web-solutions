@@ -4,5 +4,5 @@ namespace JUIControls.Widget;
 
 public class WidgetSectionGroup
 {
-    public List<WidgetSecion> WidgetSections { get; set; }
+    public List<WidgetSection> WidgetSections { get; set; }
 }

@@ -15,8 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace JUIControls.Forms;
 
 /// <summary>
-/// Jennifersoft User Interface Framework Server Controller
-/// Not Recommended Project. (Personal Project)
+/// Jennifersoft User Interface Framework Form Controller
+/// Not Recommended Project. (.Personal Project)
 /// </summary>
 public class DashBoardForm : IFormMaker
 {
@@ -49,9 +49,9 @@ public class DashBoardForm : IFormMaker
         {
             new WidgetSectionGroup()
             {
-                WidgetSections = new List<WidgetSecion>()
+                WidgetSections = new List<WidgetSection>()
                 {
-                    new WidgetSecion()
+                    new WidgetSection()
                     {
                         WidgetGroups = new List<WidgetGroup>()
                         {

@@ -2,22 +2,14 @@
 
 namespace JUIControls.Widget;
 
-/// <summary>
-/// 폼 전체 구성
-/// </summary>
 public class WidgetSection
 {
+    /// <summary>
+    /// 마스터 유뮤, 마스터는 무조건 왼쪽에 배치한다.
+    /// </summary>
+    public bool IsMaster { get; set; } = false;
     
-    /// <summary>
-    /// 메뉴명, 검색창 등을 표시한다. 
-    /// </summary>
-    public List<WidgetGroup> Header { get; set; }
-    /// <summary>
-    /// 입력 항목, View 항목, 그리드 등을 표시한다.
-    /// </summary>
-    public List<WidgetGroup> Body { get; set; }
-    /// <summary>
-    /// 하단 기능, 버튼등을 표시한다.
-    /// </summary>
-    public List<WidgetGroup> Footer { get; set; }
+    public bool NewLine { get; set; } = false;
+    
+    public List<WidgetGroup> WidgetGroups { get; set; }
 }

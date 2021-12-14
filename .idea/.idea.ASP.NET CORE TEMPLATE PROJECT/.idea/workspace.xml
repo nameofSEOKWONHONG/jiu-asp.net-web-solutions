@@ -12,7 +12,15 @@
     <projectFile profileName="IIS Express">YarpWebApplication/YarpWebApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update document">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/Form.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/Form.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSecion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/Widget/WidgetSectionGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/Widget/WidgetSectionGroup.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,7 +165,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3834795bf41b4e628161509eca0f58228200/3/Mediator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2BF37559-7836-4DB2-87AB-80CED63E93CC/F/RemoteAuthenticationEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/2c/ecdc23f0/TaskFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/JUIControls/Widget/WidgetSecion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Widget/Form.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Widget/IWidgetBinder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Widget/WidgetBase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -223,7 +231,6 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/63ee384769844530bc73c5391d8c6ee014280/11/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/JUIControls/Widget/WidgetSection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cda6d798725246dd93dd4c8d46219ea55f5b0/1B/ClientSession.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Forms/DashBoardForm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fdcd94193be24cc6bb67caf2f963ed0620400/7/Evaluator.Roslyn.cs" root0="SKIP_HIGHLIGHTING" />
@@ -541,6 +548,7 @@
       <workItem from="1639356077149" duration="18036000" />
       <workItem from="1639441333787" duration="3169000" />
       <workItem from="1639444513444" duration="1429000" />
+      <workItem from="1639447243868" duration="568000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -843,7 +851,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639446840350</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="update document">
+      <created>1639447312327</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1639447312328</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -909,7 +924,8 @@
     <MESSAGE value="update readme.md" />
     <MESSAGE value="update" />
     <MESSAGE value="update JUIControls&#10;no more update next year..." />
-    <option name="LAST_COMMIT_MESSAGE" value="update JUIControls&#10;no more update next year..." />
+    <MESSAGE value="update document" />
+    <option name="LAST_COMMIT_MESSAGE" value="update document" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
