@@ -1,18 +1,13 @@
 ﻿using System.Collections.Generic;
 
-namespace JUIControls;
+namespace JUIControls.Widget;
 
 /// <summary>
 /// 폼 전체 구성
 /// </summary>
-public class Section
+public class WidgetSection
 {
-    public string MenuCode { get; set; }
-    public string MenuName { get; set; }
-    /// <summary>
-    /// 섹션 타입
-    /// </summary>
-    public ENUM_SECTION_TYPE SectionType { get; set; }
+    
     /// <summary>
     /// 메뉴명, 검색창 등을 표시한다. 
     /// </summary>

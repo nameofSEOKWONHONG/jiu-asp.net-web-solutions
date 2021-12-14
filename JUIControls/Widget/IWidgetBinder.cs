@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace JUIControls;
+namespace JUIControls.Widget;
 
 /// <summary>
 /// Widget Binder Interface
@@ -12,5 +13,5 @@ public interface IWidgetBinder
     /// </summary>
     /// <param name="options"></param>
     /// <returns></returns>
-    (string value, Dictionary<string, string> valueOptions) Bind(Dictionary<string, string> options);
+    (string value, Dictionary<string, Object> valueOptions) Bind(Dictionary<string, string> options);
 }

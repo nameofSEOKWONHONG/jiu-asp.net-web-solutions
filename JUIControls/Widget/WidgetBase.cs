@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace JUIControls;
+namespace JUIControls.Widget;
 
 /// <summary>
-/// 개별 컨트롤
+/// 
 /// </summary>
-public class WidgetBase
+public class WidgetBase 
 {
     /// <summary>
     /// 컨트롤 인덱스 (순번)
@@ -28,7 +27,7 @@ public class WidgetBase
     /// 값 리스트 옵션 (Key 디스플레이, Value 값)
     /// 리스트 및 autocomplete에 사용
     /// </summary>
-    public Dictionary<string, string> ValueOptions { get; set; }
+    public Dictionary<string, object> ValueOptions { get; set; }
 
     public bool NewLine { get; set; } = false;
 }

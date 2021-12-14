@@ -1,32 +1,33 @@
 ﻿using System;
 using Application.Abstract;
+using JUIControls.Forms;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JUIControls;
 
-public delegate ISectionMaker SectionProviderResolver(string manuCode);
+public delegate IFormMaker FormProviderResolver(string manuCode);
 
-internal class SectionProviderInjector : IDependencyInjectorBase
+internal class FormProviderInjector : IDependencyInjectorBase
 {
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
-        services.AddScoped<DashBoardSection>()
-            .AddSingleton<SectionProviderResolver>(provider => key =>
+        services.AddScoped<DashBoardForm>()
+            .AddSingleton<FormProviderResolver>(provider => key =>
             {
-                if (key == "DashBoard") return provider.GetService<DashBoardSection>();
+                if (key == "DashBoard") return provider.GetService<DashBoardForm>();
                 else throw new NotImplementedException();
             });
     }
 }
 
-public static class SectionProviderInjectorExtension
+public static class FormProviderInjectorExtension
 {
     public static void AddSectionProviderInjector(this IServiceCollection services)
     {
         var impl = new DependencyInjectorImpl(new[]
         {
-            new SectionProviderInjector()
+            new FormProviderInjector()
         }, services, null);
         impl.Inject();
     }

@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using eXtensionSharp;
 
-namespace JUIControls;
+namespace JUIControls.Widget;
 
 /// <summary>
 /// 컨트롤 그룹
@@ -25,40 +25,5 @@ public class WidgetGroup
     /// </summary>
     public bool NewLine { get; set; } = false;
 
-    public List<WidgetBase> Widgets { get; private set; } = new List<WidgetBase>();
-
-    public WidgetGroup(List<WidgetBase> widgets)
-    {
-        widgets.xForEach(item =>
-        {
-            var exists = Widgets.FirstOrDefault(m => m.WigetName == item.WigetName);
-            exists.xIfNotEmpty(() => throw new DuplicateNameException("Widget is exists"));
-            Widgets.Add(item);
-        });
-    }
-
-    public WidgetGroup AddControl(int index, WidgetBase widgetBase)
-    {
-        var exists = Widgets.FirstOrDefault(m => m.WigetName == widgetBase.WigetName);
-        exists.xIfNotEmpty(() => throw new DuplicateNameException("Widget is exists"));
-        this.Widgets.Add(widgetBase);
-        return this;
-    }
-
-    public WidgetGroup InsertControl(int index, WidgetBase widgetBase)
-    {
-        var exists = Widgets.FirstOrDefault(m => m.WigetName == widgetBase.WigetName);
-        exists.xIfNotEmpty(() => throw new DuplicateNameException("Widget is exists"));
-        this.Widgets.Insert(index, widgetBase);
-        return this;
-    }
-
-    public WidgetGroup RemoveControl(WidgetBase widgetBase)
-    {
-        var exists = Widgets.FirstOrDefault(m => m.WigetName == widgetBase.WigetName);
-        exists.xIfEmpty(() => throw new KeyNotFoundException("Widget not exists"));
-        this.Widgets.Remove(exists);
-
-        return this;
-    }
+    public List<WidgetBase> Widgets { get; set; }
 }
