@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Primitives;
 
 namespace Application.Infrastructure.Cache
-{   
+{
     public class MemoryCacheProvider : CacheProviderBase, ICacheProvider
     {
         private static CancellationTokenSource _resetCacheToken = new CancellationTokenSource();
@@ -20,21 +20,22 @@ namespace Application.Infrastructure.Cache
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public int Count => (_cache as MemoryCache).Count;
-        
-        public MemoryCacheProvider(IMemoryCache cache, IHttpContextAccessor httpContextAccessor) : base(httpContextAccessor)
+
+        public MemoryCacheProvider(IMemoryCache cache, IHttpContextAccessor httpContextAccessor) : base(
+            httpContextAccessor)
         {
             _cache = cache;
             _httpContextAccessor = httpContextAccessor;
         }
-        
+
         public T GetCache<T>()
         {
             return GetCache<T>(CreateCacheKey());
         }
-        
+
         public T GetCache<T>(string key)
         {
-            if(_cache.TryGetValue<T>(key, out T value))
+            if (_cache.TryGetValue<T>(key, out T value))
             {
                 return value;
             }
@@ -46,10 +47,7 @@ namespace Application.Infrastructure.Cache
         {
             var sum = options.Keys.Select(m => m.Length).Sum();
             var sb = new StringBuilder(sum);
-            options.Keys.xForEach(item =>
-            {
-                sb.Append(item);
-            });
+            options.Keys.xForEach(item => { sb.Append(item); });
             var hashedKey = sb.ToString().xToHash();
             return GetCache<T>(hashedKey);
         }
@@ -70,29 +68,31 @@ namespace Application.Infrastructure.Cache
             _cache.Set<T>(key, value, options);
         }
 
-        public void SetCache<T>(string key, T value, DateTimeOffset? duration = null)
+        public void SetCache<T>(string key, T value, DateTimeOffset? expireTimeout = null)
         {
             var options = new MemoryCacheEntryOptions()
             {
                 Priority = CacheItemPriority.Normal,
-                AbsoluteExpiration = duration,
+                AbsoluteExpiration = expireTimeout,
                 ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
             };
             _cache.Set<T>(key, value, options);
         }
-        
+
         public void SetCache<T>(CacheOptions<T> options)
         {
             var hashedKey = this.CreateCacheKey(options.Keys);
             var memoryCacheEntryOptions = new MemoryCacheEntryOptions()
             {
                 Priority = CacheItemPriority.Normal,
-                AbsoluteExpiration = options.Options.ExpireTimeout.HasValue ? DateTimeOffset.Now.AddSeconds(options.Options.ExpireTimeout.Value) : null,
+                AbsoluteExpiration = options.Options.ExpireTimeout.HasValue
+                    ? DateTimeOffset.Now.AddSeconds(options.Options.ExpireTimeout.Value)
+                    : null,
                 ExpirationTokens = { new CancellationChangeToken(_resetCacheToken.Token) }
-            };            
-            
+            };
+
             _cache.Set<T>(hashedKey, options.Data, memoryCacheEntryOptions);
-        }        
+        }
 
         public void RemoveCache(string key)
         {
@@ -104,13 +104,18 @@ namespace Application.Infrastructure.Cache
             var hashedKey = this.CreateCacheKey(options.Keys);
             RemoveCache(hashedKey);
         }
-        
+
         public void Reset()
         {
             ResetImpl();
         }
 
-        private void ResetImpl()
+        public void Reset<T>()
+        {
+            throw new NotImplementedException();
+        }
+
+    private void ResetImpl()
         {
             if (_resetCacheToken != null && !_resetCacheToken.IsCancellationRequested && _resetCacheToken.Token.CanBeCanceled)
             {
@@ -119,11 +124,6 @@ namespace Application.Infrastructure.Cache
             }
 
             _resetCacheToken = new CancellationTokenSource();            
-        }
-
-        public void Flush()
-        {
-            throw new NotImplementedException();
         }
     }
 }

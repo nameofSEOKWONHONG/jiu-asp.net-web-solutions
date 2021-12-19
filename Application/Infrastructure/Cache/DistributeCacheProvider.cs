@@ -66,9 +66,9 @@ namespace Application.Infrastructure.Cache
             SetCacheImpl<T>(key, value, expireTimeout);
         }
 
-        public void SetCache<T>(string key, T value, DateTimeOffset? duration)
+        public void SetCache<T>(string key, T value, DateTimeOffset? expireTimeout)
         {
-            SetCacheImpl<T>(key, value, duration.HasValue ? duration.Value.Second : null);
+            SetCacheImpl<T>(key, value, expireTimeout.HasValue ? expireTimeout.Value.Second : null);
         }
 
         public void SetCache<T>(CacheOptions<T> options)
@@ -117,7 +117,7 @@ namespace Application.Infrastructure.Cache
             throw new NotImplementedException();
         }
 
-        public void Flush()
+        public void Reset<T>()
         {
             throw new NotImplementedException();
         }

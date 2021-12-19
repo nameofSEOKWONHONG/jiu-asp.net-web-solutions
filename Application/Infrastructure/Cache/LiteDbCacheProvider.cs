@@ -54,7 +54,7 @@ namespace Application.Infrastructure.Cache
             throw new NotImplementedException();
         }
 
-        public void SetCache<T>(string key, T value, DateTimeOffset? duration)
+        public void SetCache<T>(string key, T value, DateTimeOffset? expireTimeout)
         {
             throw new NotImplementedException();
         }
@@ -79,9 +79,10 @@ namespace Application.Infrastructure.Cache
             throw new NotImplementedException();
         }
 
-        public void Flush()
+        public void Reset<T>()
         {
-            throw new NotImplementedException();
+            var collection = _liteDatabase.GetCollection<T>();
+            collection.DeleteAll();
         }
     }
 }

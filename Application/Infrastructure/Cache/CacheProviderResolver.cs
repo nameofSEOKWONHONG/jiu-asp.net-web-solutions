@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Extensions.Caching.Memory;
 using Application.Abstract;
+using Application.Infrastructure.Cache.MSFaster;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,7 +21,10 @@ namespace Application.Infrastructure.Cache
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
+            
+            //AddMemoryCache 선언에 의해 MemoryCache 사용
             services.AddMemoryCache()
+                //아래 선언에 의해 DistributeCache가 Redis로 지정됨.
                 .AddStackExchangeRedisCache(options =>
                 {
                     options.Configuration = configuration["RedisConfiguration:Uri"];
