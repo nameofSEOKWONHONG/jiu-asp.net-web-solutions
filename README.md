@@ -74,6 +74,24 @@
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
 
+##이 프로젝트에 포함된 내역
+* SwaggerUI
+* Entity Framework Core
+* BCrypt.Net-Next
+* Hangfire
+* LiteDB
+* Mapster
+* McMaster.NETCore.Plugins (사용하지 않을 수 있습니다.)
+* MediatR
+* ASP.NET CORE Dependency Injection
+* Serilog
+* CS-Script (사용하지 않을 수 있습니다.)
+* Confluent.Kafka
+* Npgsql
+* JWT
+* MimeKit
+* RestSharp (사용하지 않을 수 있습니다.)
+
 ## API 중요 개발 원칙
 1. 한번 배포된 API는 변경하지 않는다.
    1. 당연한 이야기.
