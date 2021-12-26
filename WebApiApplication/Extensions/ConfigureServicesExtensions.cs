@@ -2,14 +2,14 @@
 using System.IO;
 using System.Reflection;
 using System.Text;
+using Application;
+using Application.Context;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Domain.Configuration;
-using eXtensionSharp;
 using Hangfire;
 using HelloWorldApplication;
-using Infrastructure.Context;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -146,18 +146,7 @@ namespace WebApiApplication.Extensions
         private static void AddDatabase(IServiceCollection services, IConfiguration configuration)
         {
             #region [add database]
-
-            services.AddDbContext<JIUDbContext>((sp, options) =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
-                    {
-                        builder.MigrationsAssembly("Infrastructure");
-                        //builder.EnableRetryOnFailure();
-                        builder.CommandTimeout(5);
-                    })
-                    .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
-            }).AddTransient<IDatabaseSeeder, DatabaseSeeder>();
-
+            services.AddApplicationInjector(configuration);
             #endregion
         }
 

@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using Application.Context;
 using Domain.Entities;
-using Domain.Enums;
 using eXtensionSharp;
-using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.Services.Abstract;
 

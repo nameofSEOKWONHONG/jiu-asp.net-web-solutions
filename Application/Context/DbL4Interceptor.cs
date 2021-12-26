@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
-namespace Infrastructure.Context
+namespace Application.Context
 {
     public class DbL4Interceptor : DbCommandInterceptor
     {

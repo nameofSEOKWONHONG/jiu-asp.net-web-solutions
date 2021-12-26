@@ -7,7 +7,7 @@ using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
 
-namespace Infrastructure.Context
+namespace Application.Context
 {
     public class JIUDbContext : DbContext
     {

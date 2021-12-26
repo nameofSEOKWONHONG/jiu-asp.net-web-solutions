@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Application.Context;
 using Application.Interfaces.Todo;
 using Domain.Entities;
 using eXtensionSharp;
-using Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace TodoApplication.Services
@@ -40,6 +40,12 @@ namespace TodoApplication.Services
         {
             return await _context.Todos.Where(m => m.WriteId == userId.ToString())
                 .Where(m => m.WriteDt >= @from && m.WriteDt <= @to)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Todo>> GetAllTodoByDateAsync(DateTime selectDate)
+        {
+            return await _context.Todos.Where(m => m.WriteDt < DateTime.Parse(selectDate.ToShortDateString()).AddDays(1))
                 .ToListAsync();
         }
 

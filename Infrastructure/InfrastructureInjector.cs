@@ -1,7 +1,5 @@
 ﻿using System.Reflection;
 using Application.Abstract;
-using Domain.Entities;
-using Infrastructure.Context;
 using Infrastructure.Services.Identity;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +12,7 @@ namespace Infrastructure.Services
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<DbL4Provider>()
-                .AddSingleton<DbL4Interceptor>()
+            services
                 .AddScoped<IAccountService, AccountService>()
                 .AddScoped<IUserService, UserService>()
                 .AddScoped<IRoleService, RoleService>()
@@ -29,11 +26,11 @@ namespace Infrastructure.Services
     {
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectorImpl(new[]
+            var injectorImpl = new DependencyInjectorImpl(new[]
             {
                 new InfrastructureInjector()
             }, services, null);
-            diCore.Inject();
+            injectorImpl.Inject();
         }
     }
 }

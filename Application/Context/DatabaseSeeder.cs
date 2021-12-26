@@ -5,10 +5,9 @@ using System.Linq;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
-using Infrastructure.Context;
 using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Services
+namespace Application.Context
 {
     public interface IDatabaseSeeder
     {

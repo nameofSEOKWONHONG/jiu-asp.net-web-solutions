@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Reflection;
+using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 
-namespace Infrastructure.Context
+namespace Application.Context
 {
     public class DbL4Provider
     {
@@ -31,7 +32,7 @@ namespace Infrastructure.Context
 
         public string ReplaceTable(string commandText)
         {
-            var enableL4 = _configuration.GetValue<bool>("L4Enable");
+            var enableL4 = _configuration["L4Enable"].xValue<bool>(false);
             if (!enableL4) return commandText;
             
             foreach (var tableAttributeKeyValue in _tableAttributeKeyValues)

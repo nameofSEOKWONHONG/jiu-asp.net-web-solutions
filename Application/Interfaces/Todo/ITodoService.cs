@@ -10,6 +10,7 @@ namespace Application.Interfaces.Todo
         Task<IEnumerable<Domain.Entities.Todo>> GetAllTodoAsync(Guid userId);
         Task<IEnumerable<Domain.Entities.Todo>> GetTodoByDateAsync(Guid userId, DateTime selectedDate);
         Task<IEnumerable<Domain.Entities.Todo>> GetTodoByDateAsync(Guid userId, DateTime @from, DateTime @to);
+        Task<IEnumerable<Domain.Entities.Todo>> GetAllTodoByDateAsync(DateTime selectDate);
         Task<Domain.Entities.Todo> InsertTodoAsync(Domain.Entities.Todo todo);
         Task<Domain.Entities.Todo> UpdateTodoAsync(Domain.Entities.Todo todo);
         Task<bool> RemoveTodoAsync(int id);

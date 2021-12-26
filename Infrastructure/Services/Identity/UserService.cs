@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
+using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
-using Infrastructure.Context;
 using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services.Identity
