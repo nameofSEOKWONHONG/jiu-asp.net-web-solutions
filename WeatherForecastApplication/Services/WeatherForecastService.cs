@@ -9,6 +9,9 @@ using eXtensionSharp;
 
 namespace WeatherForecastApplication.Services
 {
+    /// <summary>
+    /// Litedb example
+    /// </summary>
     public class WeatherForcastService : IWeatherForcastService {
         private static readonly string[] Summaries = new[]
         {

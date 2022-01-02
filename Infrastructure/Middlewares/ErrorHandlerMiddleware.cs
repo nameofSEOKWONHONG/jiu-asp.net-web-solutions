@@ -36,7 +36,14 @@ namespace Infrastructure.Middlewares
                 {
                     case ApiException e:
                         // custom application error
-                        response.StatusCode = (int) HttpStatusCode.BadRequest;
+                        if (e.Status.HasValue)
+                        {
+                            response.StatusCode = e.Status.Value;
+                        }
+                        else
+                        {
+                            response.StatusCode = (int) HttpStatusCode.BadRequest;    
+                        }
                         break;
 
                     case KeyNotFoundException e:

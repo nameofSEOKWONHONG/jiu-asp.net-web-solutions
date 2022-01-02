@@ -17,7 +17,7 @@ public class ApplicationInjector : IDependencyInjectorBase
         {
             options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
                 {
-                    builder.MigrationsAssembly("Infrastructure");
+                    builder.MigrationsAssembly("Application");
                     //builder.EnableRetryOnFailure();
                     builder.CommandTimeout(5);
                 })

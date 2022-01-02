@@ -12,8 +12,9 @@ namespace HelloWorldApplication
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
+            var @namespace = this.GetType().Namespace;
             services.AddScoped<IHelloWorldService, HelloWorldService>()
-                .AddMediatR(Assembly.Load("HelloWorldApplication"));
+                .AddMediatR(Assembly.Load(@namespace));
         }
     }
 

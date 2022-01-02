@@ -7,6 +7,8 @@ using Application.Interfaces.Todo;
 using Domain.Entities;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
+using SqlKata.Compilers;
+using SqlKata.Execution;
 
 namespace TodoApplication.Services
 {
@@ -20,7 +22,21 @@ namespace TodoApplication.Services
         
         public async Task<Todo> GetTodoAsync(int id)
         {
-            return await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
+            #region [sqlsugar sample]
+
+            //var client = _context.GetSqlSugarClient();
+            //return await client.Queryable<Todo>().Where(m => m.Id == id).FirstAsync();
+
+            #endregion
+
+            #region [sqlkata]
+
+            var db = _context.GetSqlKataQueryFactory();
+            return await db.Query("TB_TODO").Where("Id", id).FirstAsync<Todo>();
+
+            #endregion
+            
+            //return await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
         }
 
         public async Task<IEnumerable<Todo>> GetAllTodoAsync(Guid userId)
