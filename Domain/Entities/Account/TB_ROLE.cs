@@ -9,14 +9,14 @@ using eXtensionSharp;
 namespace Domain.Entities
 {
     [Table("TB_ROLE")]
-    public class Role : EntityBase
+    public class TB_ROLE : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int ID { get; set; }
         
         [Required, MaxLength(10)]
-        public ENUM_ROLE_TYPE RoleType { get; set; }
+        public ENUM_ROLE_TYPE ROLE_TYPE { get; set; }
         
-        public RolePermission RolePermission { get; set; }
+        public TB_ROLE_PERMISSION ROLE_PERMISSION { get; set; }
     }
 }

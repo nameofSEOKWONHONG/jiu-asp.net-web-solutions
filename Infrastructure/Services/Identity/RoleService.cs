@@ -13,24 +13,24 @@ namespace Infrastructure.Services.Identity
         {
             _dbContext = context;
         }
-        public async Task<Role> GetRole(int roleId)
+        public async Task<TB_ROLE> GetRole(int roleId)
         {
-            return await _dbContext.Roles.FirstAsync(m => m.Id == roleId);
+            return await _dbContext.Roles.FirstAsync(m => m.ID == roleId);
         }
 
-        public async Task<IEnumerable<Role>> GetRole()
+        public async Task<IEnumerable<TB_ROLE>> GetRole()
         {
             return await _dbContext.Roles.ToListAsync();
         }
 
-        public async Task<Role> SaveRole(Role role)
+        public async Task<TB_ROLE> SaveRole(TB_ROLE tbRole)
         {
-            Role result = null;
-            var exists = await _dbContext.Roles.FirstAsync(m => m.RoleType == role.RoleType);
+            TB_ROLE result = null;
+            var exists = await _dbContext.Roles.FirstAsync(m => m.ROLE_TYPE == tbRole.ROLE_TYPE);
             if (exists.xIsEmpty())
             {
                 //save
-                var entityEntry = _dbContext.Roles.Add(role);
+                var entityEntry = _dbContext.Roles.Add(tbRole);
                 result = entityEntry.Entity;
             }
             else
@@ -44,9 +44,9 @@ namespace Infrastructure.Services.Identity
             return result;
         }
 
-        public async Task<Role> RemoveRole(int id)
+        public async Task<TB_ROLE> RemoveRole(int id)
         {
-            var exists = await _dbContext.Roles.FirstAsync(m => m.Id == id);
+            var exists = await _dbContext.Roles.FirstAsync(m => m.ID == id);
             if (exists.xIsEmpty()) throw new Exception("Not found role");
 
             var resultEntity = _dbContext.Roles.Remove(exists);

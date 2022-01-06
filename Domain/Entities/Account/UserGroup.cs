@@ -5,16 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
-    [Table("Group")]
-    public class Group : EntityBase
+    [Table("TB_GROUP")]
+    public class TB_GROUP : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), ForeignKey("User")]
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
         
         [Required, MaxLength(200)]
-        public string GroupName { get; set; }
+        public string GROUP_NM { get; set; }
         
         [Required]
-        public virtual User User { get; set; }
+        public virtual TB_USER USER { get; set; }
     }
 }

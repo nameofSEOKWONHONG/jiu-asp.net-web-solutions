@@ -22,9 +22,9 @@ namespace WebApiApplication.Controllers
         [HttpGet("GetAll/{pageIndex}/{pageSize}")]
         public async Task<IActionResult> GetAll(string searchCol = "", string searchValue = "", int pageIndex = 1, int pageSize = 10)
         {
-            var user = this.SessionContext.User;
-            var user2 = this.SessionContext.User;
-            var user3 = this.SessionContext.User;
+            var user = this.SessionContext.TbUser;
+            var user2 = this.SessionContext.TbUser;
+            var user3 = this.SessionContext.TbUser;
             _logger.LogInformation("test");
             var result = await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize); 
             return Ok(result);
@@ -46,17 +46,17 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> CreateUser(User userData)
+        public async Task<IActionResult> CreateUser(TB_USER tbUserData)
         {
-            if (!this.TryValidate(userData, out ActionResult result)) return result;
-            return Ok(await this.userService.CreateUserAsync(userData));
+            if (!this.TryValidate(tbUserData, out ActionResult result)) return result;
+            return Ok(await this.userService.CreateUserAsync(tbUserData));
         }
 
         [HttpPut("UpdateUser")]
-        public async Task<IActionResult> UpdateUser(User userData)
+        public async Task<IActionResult> UpdateUser(TB_USER tbUserData)
         {
-            if (!this.TryValidate(userData, out ActionResult result)) return result;
-            return Ok(await this.userService.UpdateUserAsync(userData));
+            if (!this.TryValidate(tbUserData, out ActionResult result)) return result;
+            return Ok(await this.userService.UpdateUserAsync(tbUserData));
         }
 
         [HttpDelete("RemoveUser")]

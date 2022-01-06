@@ -23,11 +23,11 @@ public class SaleWidgetBinder : ISaleWidgetBinder
     }
     public (string value, Dictionary<string, Object> valueOptions) Bind(Dictionary<string, string> options)
     {
-        var v = _todoService.GetTodoAsync(int.Parse(options["id"])).GetAwaiter().GetResult().Contents;
+        var v = _todoService.GetTodoAsync(int.Parse(options["id"])).GetAwaiter().GetResult().CONTENTS;
         var result = _todoService.GetAllTodoAsync(Guid.Parse(options["guid"])).GetAwaiter().GetResult().Select(m => new
         {
-            Key = m.NotifyDate.Value.ToShortDateString(),
-            Value = m.Contents
+            Key = m.NOTIFY_DT.Value.ToShortDateString(),
+            Value = m.CONTENTS
         });
         var vo = new Dictionary<string, object>();
         result.xForEach(item =>

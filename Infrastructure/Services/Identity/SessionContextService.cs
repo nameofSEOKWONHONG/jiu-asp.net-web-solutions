@@ -29,18 +29,18 @@ namespace Infrastructure.Services.Identity
         public ENUM_ROLE_TYPE RoleType { get; }
         public IEnumerable<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; }
 
-        private User _user;
-        public User User
+        private TB_USER _tbUser;
+        public TB_USER TbUser
         {
             get
             {
-                if (_user.xIsEmpty())
+                if (_tbUser.xIsEmpty())
                 {
                     var svc = _httpContextAccessor.HttpContext.RequestServices.GetService<IUserService>();
-                    _user = svc.FindUserByIdAsync(this.UserId).GetAwaiter().GetResult();    
+                    _tbUser = svc.FindUserByIdAsync(this.UserId).GetAwaiter().GetResult();    
                 }
                 
-                return _user;
+                return _tbUser;
             }
         }
     }

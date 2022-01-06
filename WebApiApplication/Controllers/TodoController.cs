@@ -54,17 +54,17 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpPost("SaveTodo")]
-        public async Task<IActionResult> SaveTodo(Todo todo)
+        public async Task<IActionResult> SaveTodo(TB_TODO tbTodo)
         {
-            if (!this.TryValidate(todo, out ActionResult validateResult))
+            if (!this.TryValidate(tbTodo, out ActionResult validateResult))
             {
                 return validateResult;
             }
 
-            todo.WriteId = this.SessionContext.UserId.ToString();
-            todo.WriteDt = DateTime.UtcNow;
-            var result = await _mediator.Send(new SaveTodoCommand(todo));
-            if (result.Data.Id >= 0)
+            tbTodo.WRITE_ID = this.SessionContext.UserId.ToString();
+            tbTodo.WRITE_DT = DateTime.UtcNow;
+            var result = await _mediator.Send(new SaveTodoCommand(tbTodo));
+            if (result.Data.ID >= 0)
             {
                 #region [hangfire sample]
                 BackgroundJob.Enqueue(() => 

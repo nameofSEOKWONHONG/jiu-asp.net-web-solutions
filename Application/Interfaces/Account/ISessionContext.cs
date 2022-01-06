@@ -9,7 +9,7 @@ namespace WebApiApplication.Services.Abstract
     {
         Guid UserId { get; }
         ENUM_ROLE_TYPE RoleType { get; }
-        User User { get; }
+        TB_USER TbUser { get; }
         IEnumerable<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; }
     }
 }

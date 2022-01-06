@@ -20,7 +20,7 @@ namespace TodoApplication.Services
             _context = context;
         }
         
-        public async Task<Todo> GetTodoAsync(int id)
+        public async Task<TB_TODO> GetTodoAsync(int id)
         {
             #region [sqlsugar sample]
 
@@ -32,36 +32,36 @@ namespace TodoApplication.Services
             #region [sqlkata]
 
             var db = _context.GetSqlKataQueryFactory();
-            return await db.Query("TB_TODO").Where("Id", id).FirstAsync<Todo>();
+            return await db.Query("TB_TODO").Where("Id", id).FirstAsync<TB_TODO>();
 
             #endregion
             
             //return await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
         }
 
-        public async Task<IEnumerable<Todo>> GetAllTodoAsync(Guid userId)
+        public async Task<IEnumerable<TB_TODO>> GetAllTodoAsync(Guid userId)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId.ToString()).ToListAsync();
+            return await _context.Todos.Where(m => m.WRITE_ID == userId.ToString()).ToListAsync();
         }
 
-        public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime selectedDate)
+        public async Task<IEnumerable<TB_TODO>> GetTodoByDateAsync(Guid userId, DateTime selectedDate)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId.ToString() && 
-                                                   (m.NotifyDate >= selectedDate.xToMin() && //2021-12-01 00:00:00
-                                                    m.NotifyDate < selectedDate.xToMax())) // 2021-12-02 00:00:00
+            return await _context.Todos.Where(m => m.WRITE_ID == userId.ToString() && 
+                                                   (m.NOTIFY_DT >= selectedDate.xToMin() && //2021-12-01 00:00:00
+                                                    m.NOTIFY_DT < selectedDate.xToMax())) // 2021-12-02 00:00:00
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Todo>> GetTodoByDateAsync(Guid userId, DateTime @from, DateTime @to)
+        public async Task<IEnumerable<TB_TODO>> GetTodoByDateAsync(Guid userId, DateTime @from, DateTime @to)
         {
-            return await _context.Todos.Where(m => m.WriteId == userId.ToString())
-                .Where(m => m.WriteDt >= @from && m.WriteDt <= @to)
+            return await _context.Todos.Where(m => m.WRITE_ID == userId.ToString())
+                .Where(m => m.WRITE_DT >= @from && m.WRITE_DT <= @to)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Todo>> GetAllTodoByDateAsync(DateTime selectDate)
+        public async Task<IEnumerable<TB_TODO>> GetAllTodoByDateAsync(DateTime selectDate)
         {
-            return await _context.Todos.Where(m => m.WriteDt < DateTime.Parse(selectDate.ToShortDateString()).AddDays(1))
+            return await _context.Todos.Where(m => m.WRITE_DT < DateTime.Parse(selectDate.ToShortDateString()).AddDays(1))
                 .ToListAsync();
         }
 
@@ -74,20 +74,20 @@ namespace TodoApplication.Services
             return result.State == EntityState.Deleted;
         }
 
-        public async Task<Todo> InsertTodoAsync(Todo todo)
+        public async Task<TB_TODO> InsertTodoAsync(TB_TODO tbTodo)
         {
-            var result = await _context.Todos.AddAsync(todo);
+            var result = await _context.Todos.AddAsync(tbTodo);
             await _context.SaveChangesAsync();
             return result.Entity;
         }
 
-        public async Task<Todo> UpdateTodoAsync(Todo todo)
+        public async Task<TB_TODO> UpdateTodoAsync(TB_TODO tbTodo)
         {
-            var exists = await GetTodoAsync(todo.Id);
+            var exists = await GetTodoAsync(tbTodo.ID);
             if (exists.xIsEmpty()) throw new KeyNotFoundException();
-            exists.Contents = todo.Contents;
-            exists.UpdateId = todo.UpdateId;
-            exists.UpdateDt = todo.UpdateDt;
+            exists.CONTENTS = tbTodo.CONTENTS;
+            exists.UPDATE_ID = tbTodo.UPDATE_ID;
+            exists.UPDATE_DT = tbTodo.UPDATE_DT;
             var result = _context.Todos.Update(exists);
             await _context.SaveChangesAsync();
             return result.Entity;

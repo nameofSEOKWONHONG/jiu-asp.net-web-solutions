@@ -4,6 +4,7 @@ using System.Data.Common;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
 using SqlKata.Compilers;
@@ -134,8 +135,8 @@ namespace Application.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>()
-                .Property(e => e.RoleType)
+            modelBuilder.Entity<TB_ROLE>()
+                .Property(e => e.ROLE_TYPE)
                 .HasConversion(
                     v => v.ToString(),
                     v => XEnumBase<ENUM_ROLE_TYPE>.Parse(v, true));
@@ -152,8 +153,8 @@ namespace Application.Context
                 return result;
             };
             
-            modelBuilder.Entity<RolePermission>()
-                .Property(e => e.RolePermissionTypes)
+            modelBuilder.Entity<TB_ROLE_PERMISSION>()
+                .Property(e => e.ROLE_PERMISSION_TYPES)
                 .HasConversion(
                     v => string.Join(',', v),
                     v => func(v));
@@ -161,17 +162,21 @@ namespace Application.Context
 
         #region [account]
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<RolePermission> RolePermissions { get; set; }
+        public DbSet<TB_USER> Users { get; set; }
+        public DbSet<TB_ROLE> Roles { get; set; }
+        public DbSet<TB_ROLE_PERMISSION> RolePermissions { get; set; }
 
         #endregion
 
         #region [biz]
 
-        public DbSet<Todo> Todos { get; set; }
+        public DbSet<TB_TODO> Todos { get; set; }
         
 
+        #endregion
+
+        #region [config]
+        public DbSet<TB_MIGRAION> Migrations { get; set; }
         #endregion
     }
 }

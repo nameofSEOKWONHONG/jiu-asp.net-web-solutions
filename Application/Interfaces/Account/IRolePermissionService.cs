@@ -6,9 +6,9 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface IRolePermissionService
     {
-        Task<IEnumerable<RolePermission>> GetRolePermissionsAsync();
-        Task<RolePermission> GetRolePermissionAsync(int id);
-        Task<RolePermission> SavePermissionAsync(RolePermission rolePermission);
-        Task<RolePermission> RemovePermissionAsync(int id);
+        Task<IEnumerable<TB_ROLE_PERMISSION>> GetRolePermissionsAsync();
+        Task<TB_ROLE_PERMISSION> GetRolePermissionAsync(int id);
+        Task<TB_ROLE_PERMISSION> SavePermissionAsync(TB_ROLE_PERMISSION tbRolePermission);
+        Task<TB_ROLE_PERMISSION> RemovePermissionAsync(int id);
     }
 }

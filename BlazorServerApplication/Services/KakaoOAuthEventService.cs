@@ -48,7 +48,7 @@ namespace BlazorServerApplication.Services
             if (oauthInfo.IsAuthenticated)
             {
                 //if login info exists
-                var user = new User();
+                var user = new TB_USER();
                 if (user != null)
                 {
                     var httpContext = _serviceProvider.GetRequiredService<IHttpContextAccessor>();

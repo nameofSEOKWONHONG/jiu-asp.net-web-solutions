@@ -6,6 +6,6 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface IAccountService
     {
-        Task<string> Login(User user);
+        Task<string> Login(TB_USER tbUser);
     }
 }

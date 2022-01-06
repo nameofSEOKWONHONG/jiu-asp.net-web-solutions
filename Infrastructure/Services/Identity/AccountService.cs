@@ -24,12 +24,12 @@ namespace Infrastructure.Services.Identity
             this._roleService = roleService;
         }
         
-        public async Task<string> Login(User user)
+        public async Task<string> Login(TB_USER tbUser)
         {
-            var selectedUser = await _userService.FindUserByEmailAsync(user.Email);
+            var selectedUser = await _userService.FindUserByEmailAsync(tbUser.EMAIL);
             if (selectedUser == null) throw new Exception("not found user.");
             
-            if (BCrypt.Net.BCrypt.Verify(user.Password, selectedUser.Password))
+            if (BCrypt.Net.BCrypt.Verify(tbUser.PASSWORD, selectedUser.PASSWORD))
             {
                 return CreateToken(selectedUser);    
             }
@@ -37,17 +37,17 @@ namespace Infrastructure.Services.Identity
             return string.Empty;
         }
 
-        private string CreateToken(User user)
+        private string CreateToken(TB_USER tbUser)
         {
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.NameId, tbUser.ID.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, tbUser.EMAIL),
             };
 
-            var role = this._roleService.GetRole(user.Role.Id).GetAwaiter().GetResult();
-            claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.RoleType.ToString()));
-            claims.Add(new Claim(role.RoleType.ToString(), user.Role.RolePermission.RolePermissionTypes.xJoin()));
+            var role = this._roleService.GetRole(tbUser.ROLE.ID).GetAwaiter().GetResult();
+            claims.Add(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.ROLE_TYPE.ToString()));
+            claims.Add(new Claim(role.ROLE_TYPE.ToString(), tbUser.ROLE.ROLE_PERMISSION.ROLE_PERMISSION_TYPES.xJoin()));
             
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); 

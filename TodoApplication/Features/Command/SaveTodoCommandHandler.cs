@@ -7,20 +7,20 @@ using MediatR;
 
 namespace TodoApplication.Features.Command
 {
-    public record SaveTodoCommand(Todo todo) : IRequest<Result<Todo>>;
-    public class SaveTodoCommandHandler : IRequestHandler<SaveTodoCommand, Result<Todo>>
+    public record SaveTodoCommand(TB_TODO TbTodo) : IRequest<Result<TB_TODO>>;
+    public class SaveTodoCommandHandler : IRequestHandler<SaveTodoCommand, Result<TB_TODO>>
     {
         private readonly ITodoService _todoService;
         public SaveTodoCommandHandler(ITodoService todoService)
         {
             _todoService = todoService;
         }
-        public async Task<Result<Todo>> Handle(SaveTodoCommand request, CancellationToken cancellationToken)
+        public async Task<Result<TB_TODO>> Handle(SaveTodoCommand request, CancellationToken cancellationToken)
         {
-            Todo todo = null;
-            if (request.todo.Id <= 0) todo = await _todoService.InsertTodoAsync(request.todo);
-            else todo = await _todoService.UpdateTodoAsync(request.todo);
-            return await Result<Todo>.SuccessAsync(todo);
+            TB_TODO tbTodo = null;
+            if (request.TbTodo.ID <= 0) tbTodo = await _todoService.InsertTodoAsync(request.TbTodo);
+            else tbTodo = await _todoService.UpdateTodoAsync(request.TbTodo);
+            return await Result<TB_TODO>.SuccessAsync(tbTodo);
         }
     }
 }

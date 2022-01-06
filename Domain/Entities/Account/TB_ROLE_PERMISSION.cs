@@ -5,13 +5,13 @@ using Domain.Enums;
 
 namespace Domain.Entities
 {
-    [Table("TB_ROLE_PERMISSION")]
-    public class RolePermission : EntityBase
+    [Table(nameof(TB_ROLE_PERMISSION))]
+    public class TB_ROLE_PERMISSION : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int ID { get; set; }
         
         [Required, MaxLength(100)]
-        public List<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; set; }
+        public List<ENUM_ROLE_PERMISSION_TYPE> ROLE_PERMISSION_TYPES { get; set; }
     }
 }

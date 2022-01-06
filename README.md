@@ -78,7 +78,7 @@
 3. Web Api Application에서 Blazor WASM을 호스팅 할 수 있습니다.  
 관련 코드는 `2.Server>WebApiApplication>Startup.cs`를 참고 합니다.
 
-## 히스토리  
+##히스토리  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
 
@@ -102,6 +102,27 @@
 * SqlKata
 * SqlSugar
 * ELK
+
+##이 프로젝트에 포함된 내역
+* SwaggerUI
+* EntityFramework Core
+* Dapper
+* Serilog with ELK
+* .Net Dependency Injection
+* Hangfire
+* LiteDB
+* Mapster
+* McMaster.NETCore.Plugins
+* MediatR
+* CS-Script
+* BCrypt.Net-Next
+* Confluent.Kafka
+* MailKit
+* JetBrains.Annotations
+* RestSharp
+* Redis
+* Blzor-Server
+* Blazor-WASM
 
 ## API 중요 개발 원칙
 1. 한번 배포된 API는 변경하지 않는다.

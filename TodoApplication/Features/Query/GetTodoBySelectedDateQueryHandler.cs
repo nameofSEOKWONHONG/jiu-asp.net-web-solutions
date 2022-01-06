@@ -10,17 +10,17 @@ using MediatR;
 
 namespace TodoApplication.Features.Query
 {
-    public record GetTodoBySelectedDateQuery(Guid userId, DateTime selectedDate) : IRequest<Result<IEnumerable<Todo>>>;
-    public class GetTodoBySelectedDataQueryHandler : IRequestHandler<GetTodoBySelectedDateQuery, Result<IEnumerable<Todo>>>
+    public record GetTodoBySelectedDateQuery(Guid userId, DateTime selectedDate) : IRequest<Result<IEnumerable<TB_TODO>>>;
+    public class GetTodoBySelectedDataQueryHandler : IRequestHandler<GetTodoBySelectedDateQuery, Result<IEnumerable<TB_TODO>>>
     {
         private readonly ITodoService _todoService;
         public GetTodoBySelectedDataQueryHandler(ITodoService todoService)
         {
             _todoService = todoService;
         }
-        public async Task<Result<IEnumerable<Todo>>> Handle(GetTodoBySelectedDateQuery request, CancellationToken cancellationToken)
+        public async Task<Result<IEnumerable<TB_TODO>>> Handle(GetTodoBySelectedDateQuery request, CancellationToken cancellationToken)
         {
-            return await Result<IEnumerable<Todo>>.SuccessAsync(
+            return await Result<IEnumerable<TB_TODO>>.SuccessAsync(
                 await _todoService.GetTodoByDateAsync(request.userId, request.selectedDate));
         }
     }

@@ -33,7 +33,7 @@ namespace WebApiApplication.Controllers
                 return result;
             }
 
-            var user = signInRequest.Adapt<User>();
+            var user = signInRequest.Adapt<TB_USER>();
             var token = await _accountService.Login(user);
             if (!string.IsNullOrEmpty(token)) return Ok(token);
             return NotFound("not matched");
@@ -48,7 +48,7 @@ namespace WebApiApplication.Controllers
                 return result;
             }
 
-            return Ok(await this._userService.CreateUserAsync(registerRequest.Adapt<User>()));
+            return Ok(await this._userService.CreateUserAsync(registerRequest.Adapt<TB_USER>()));
         }
 
         /// <summary>

@@ -14,29 +14,29 @@ namespace Infrastructure.Services.Identity
             _context = context;
         }
 
-        public async Task<IEnumerable<RolePermission>> GetRolePermissionsAsync()
+        public async Task<IEnumerable<TB_ROLE_PERMISSION>> GetRolePermissionsAsync()
         {
             return await _context.RolePermissions.ToListAsync();
         }
 
-        public async Task<RolePermission> GetRolePermissionAsync(int id)
+        public async Task<TB_ROLE_PERMISSION> GetRolePermissionAsync(int id)
         {
             if (id <= 0) return null;
-            return await _context.RolePermissions.FirstAsync(m => m.Id == id);
+            return await _context.RolePermissions.FirstAsync(m => m.ID == id);
         }
 
-        public async Task<RolePermission> SavePermissionAsync(RolePermission rolePermission)
+        public async Task<TB_ROLE_PERMISSION> SavePermissionAsync(TB_ROLE_PERMISSION tbRolePermission)
         {
-            var exists = await GetRolePermissionAsync(rolePermission.Id);
+            var exists = await GetRolePermissionAsync(tbRolePermission.ID);
             await exists.xIfEmptyAsync(() =>
             {
-                _context.RolePermissions.Add(rolePermission);
+                _context.RolePermissions.Add(tbRolePermission);
                 return _context.SaveChangesAsync();
             });
-            return rolePermission;
+            return tbRolePermission;
         }
 
-        public async Task<RolePermission> RemovePermissionAsync(int id)
+        public async Task<TB_ROLE_PERMISSION> RemovePermissionAsync(int id)
         {
             var exists = await GetRolePermissionAsync(id);
             exists.xIfEmpty(() => throw new KeyNotFoundException());

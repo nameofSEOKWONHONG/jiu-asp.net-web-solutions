@@ -7,12 +7,12 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface IUserService
     {
-        Task<IEnumerable<User>> FindAllUserAsync(string searchCol = "", string searchVal = "", int pageIndex = 1, int pageSize = 10);
-        Task<User> FindUserByIdAsync(Guid userId);
-        Task<User> FindUserByEmailAsync(string email);
+        Task<IEnumerable<TB_USER>> FindAllUserAsync(string searchCol = "", string searchVal = "", int pageIndex = 1, int pageSize = 10);
+        Task<TB_USER> FindUserByIdAsync(Guid userId);
+        Task<TB_USER> FindUserByEmailAsync(string email);
         Task<bool> ExistsSuperUserAsync();
-        Task<User> CreateUserAsync(User user);
-        Task<User> UpdateUserAsync(User userData);
-        Task<User> RemoveUserAsync(Guid userId, string email);
+        Task<TB_USER> CreateUserAsync(TB_USER tbUser);
+        Task<TB_USER> UpdateUserAsync(TB_USER tbUserData);
+        Task<TB_USER> RemoveUserAsync(Guid userId, string email);
     }
 }

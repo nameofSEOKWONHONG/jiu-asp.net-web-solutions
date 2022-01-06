@@ -6,17 +6,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
 {
-    [Index(nameof(WriteId), nameof(WriteDt), nameof(UpdateId), nameof(UpdateDt), IsUnique = false)]
+    [Index(nameof(WRITE_ID), nameof(WRITE_DT), nameof(UPDATE_ID), nameof(UPDATE_DT), IsUnique = false)]
     public class EntityBase
     {
         [Required]
-        public string WriteId { get; set; }
+        public string WRITE_ID { get; set; }
         
         [Required]
-        public DateTime WriteDt { get; set; }
+        public DateTime WRITE_DT { get; set; }
         
-        public string UpdateId { get; set; }
+        public string UPDATE_ID { get; set; }
         
-        public DateTime? UpdateDt { get; set; }
+        public DateTime? UPDATE_DT { get; set; }
     }
 }

@@ -9,25 +9,25 @@ using Microsoft.EntityFrameworkCore;
 namespace Domain.Entities
 {   
     [Table("TB_USER")]
-    [Index(nameof(Email), nameof(ActivateUser), nameof(AutoConfirmEmail), IsUnique = false)]
-    public class User : EntityBase
+    [Index(nameof(EMAIL), nameof(ACTIVE_USER_YN), nameof(AUTO_CONFIRM_EMAIL_YN), IsUnique = false)]
+    public class TB_USER : EntityBase
     {
         [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public Guid ID { get; set; }
         
         [Required, EmailAddress, MaxLength(200), NotNull]
-        public string Email { get; set; }
+        public string EMAIL { get; set; }
         
         [Required, MaxLength(200), NotNull]
-        public string Password { get; set; }
+        public string PASSWORD { get; set; }
         
-        public string PhoneNumber { get; set; }
+        public string PHONE_NUM { get; set; }
         
-        public bool ActivateUser { get; set; } = false;
+        public bool ACTIVE_USER_YN { get; set; } = false;
         
-        public bool AutoConfirmEmail { get; set; } = false;    
+        public bool AUTO_CONFIRM_EMAIL_YN { get; set; } = false;    
         
         //public List<RefreshToken> RefreshTokens { get; set; }
-        public Role Role { get; set; }
+        public TB_ROLE ROLE { get; set; }
     }
 }

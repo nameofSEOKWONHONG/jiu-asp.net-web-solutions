@@ -5,6 +5,7 @@ using System.Linq;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Application.Context
@@ -13,11 +14,11 @@ namespace Application.Context
     {
         void Initialize();
     }
+    
     public class DatabaseSeeder : IDatabaseSeeder
     {
         private readonly ILogger _logger;
         private readonly JIUDbContext _context;
-        
         public DatabaseSeeder(ILogger<DatabaseSeeder> logger,
             JIUDbContext context)
         {
@@ -27,35 +28,56 @@ namespace Application.Context
         
         public void Initialize()
         {
-            var superUserExists = _context.Users.FirstOrDefault(m => m.Email == "test@example.com");
+            #region [migration setting]
+
+            var migrationExists = _context.Migrations.Where(m => m.MIGRATION_YN == true)
+                .OrderByDescending(m => m.ID)
+                .FirstOrDefault();
+
+            if (migrationExists.xIsNotEmpty())
+            {
+                _context.Database.Migrate();
+                migrationExists.MIGRATION_YN = true;
+                migrationExists.COMPLETE_YN = true;
+                migrationExists.UPDATE_DT = DateTime.UtcNow;
+                migrationExists.UPDATE_ID = "SYSTEM";
+                _context.Migrations.Update(migrationExists);
+                _context.SaveChanges();
+            }
+
+            #endregion
+
+            #region [init data]
+
+            var superUserExists = _context.Users.FirstOrDefault(m => m.EMAIL == "test@example.com");
             if(superUserExists.xIsNotEmpty()) return;
             
             using (var scope = new TransactionScope(TransactionScopeOption.Required))
             {
-                var roleClames = new List<RolePermission>()
+                var roleClames = new List<TB_ROLE_PERMISSION>()
                 {
                     //super, admin, user
-                    new RolePermission()
+                    new TB_ROLE_PERMISSION()
                     {
-                        RolePermissionTypes = new List<ENUM_ROLE_PERMISSION_TYPE>()
+                        ROLE_PERMISSION_TYPES = new List<ENUM_ROLE_PERMISSION_TYPE>()
                         {
                             ENUM_ROLE_PERMISSION_TYPE.VIEW,
                             ENUM_ROLE_PERMISSION_TYPE.CREATE,
                             ENUM_ROLE_PERMISSION_TYPE.UPDATE,
                             ENUM_ROLE_PERMISSION_TYPE.DELETE,
                         },
-                        WriteDt = DateTime.Now,
-                        WriteId = "system"
+                        WRITE_DT = DateTime.Now,
+                        WRITE_ID = "system"
                     },
                     //guest
-                    new RolePermission()
+                    new TB_ROLE_PERMISSION()
                     {
-                        RolePermissionTypes = new List<ENUM_ROLE_PERMISSION_TYPE>()
+                        ROLE_PERMISSION_TYPES = new List<ENUM_ROLE_PERMISSION_TYPE>()
                         {
                             ENUM_ROLE_PERMISSION_TYPE.VIEW
                         },
-                        WriteDt = DateTime.Now,
-                        WriteId = "system"
+                        WRITE_DT = DateTime.Now,
+                        WRITE_ID = "system"
                     },
                 };
             
@@ -65,61 +87,63 @@ namespace Application.Context
                 });
                 _context.SaveChanges();
                 
-                var superRole = new Role()
+                var superRole = new TB_ROLE()
                 {
-                    RoleType = ENUM_ROLE_TYPE.SUPER,
-                    RolePermission = roleClames[0],
-                    WriteDt = DateTime.Now,
-                    WriteId = "system"
+                    ROLE_TYPE = ENUM_ROLE_TYPE.SUPER,
+                    ROLE_PERMISSION = roleClames[0],
+                    WRITE_DT = DateTime.Now,
+                    WRITE_ID = "system"
                 };
                 _context.Roles.Add(superRole);
                 _context.SaveChanges();
                 
-                var adminRole = new Role()
+                var adminRole = new TB_ROLE()
                 {
-                    RoleType = ENUM_ROLE_TYPE.ADMIN,
-                    RolePermission = roleClames[0],
-                    WriteDt = DateTime.Now,
-                    WriteId = "system"
+                    ROLE_TYPE = ENUM_ROLE_TYPE.ADMIN,
+                    ROLE_PERMISSION = roleClames[0],
+                    WRITE_DT = DateTime.Now,
+                    WRITE_ID = "system"
                 };
                 _context.Roles.Add(adminRole);
                 _context.SaveChanges();
 
-                var userRole = new Role()
+                var userRole = new TB_ROLE()
                 {
-                    RoleType = ENUM_ROLE_TYPE.USER,
-                    RolePermission = roleClames[0],
-                    WriteDt = DateTime.Now,
-                    WriteId = "system"
+                    ROLE_TYPE = ENUM_ROLE_TYPE.USER,
+                    ROLE_PERMISSION = roleClames[0],
+                    WRITE_DT = DateTime.Now,
+                    WRITE_ID = "system"
                 };
                 _context.Roles.Add(userRole);
                 _context.SaveChanges();
 
-                var guestRole = new Role()
+                var guestRole = new TB_ROLE()
                 {
-                    RoleType = ENUM_ROLE_TYPE.GUEST,
-                    RolePermission = roleClames[1],
-                    WriteDt = DateTime.Now,
-                    WriteId = "system"
+                    ROLE_TYPE = ENUM_ROLE_TYPE.GUEST,
+                    ROLE_PERMISSION = roleClames[1],
+                    WRITE_DT = DateTime.Now,
+                    WRITE_ID = "system"
                 };
                 _context.Roles.Add(guestRole);
                 _context.SaveChanges();
             
-                var superUser = new User()
+                var superUser = new TB_USER()
                 {
-                    ActivateUser = true,
-                    Email = "test@example.com",
-                    Password = "test",
-                    WriteDt = DateTime.Now,
-                    WriteId = "system",
-                    Role = superRole
+                    ACTIVE_USER_YN = true,
+                    EMAIL = "test@example.com",
+                    PASSWORD = "test",
+                    WRITE_DT = DateTime.Now,
+                    WRITE_ID = "system",
+                    ROLE = superRole
                 };
-                superUser.Password = BCrypt.Net.BCrypt.HashPassword(superUser.Password);
+                superUser.PASSWORD = BCrypt.Net.BCrypt.HashPassword(superUser.PASSWORD);
                 _context.Users.Add(superUser);
                 _context.SaveChanges();
 
                 scope.Complete();
-            }
+            }            
+
+            #endregion
         }
     }
 }

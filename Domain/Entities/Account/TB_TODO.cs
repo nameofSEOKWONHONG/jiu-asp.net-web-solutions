@@ -5,16 +5,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Entities
 {
-    [Table("TB_TODO")]
-    [Index(nameof(Contents), IsUnique = false)]
-    public class Todo : EntityBase
+    [Table(nameof(TB_TODO))]
+    [Index(nameof(CONTENTS), IsUnique = false)]
+    public class TB_TODO : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int ID { get; set; }
         
         [Required]
-        public string Contents { get; set; }
+        public string CONTENTS { get; set; }
         
-        public DateTime? NotifyDate { get; set; }
+        public DateTime? NOTIFY_DT { get; set; }
     }
 }
