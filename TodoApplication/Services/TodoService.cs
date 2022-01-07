@@ -9,6 +9,7 @@ using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
 using SqlKata.Compilers;
 using SqlKata.Execution;
+using SqlSugar;
 
 namespace TodoApplication.Services
 {
@@ -24,19 +25,34 @@ namespace TodoApplication.Services
         {
             #region [sqlsugar sample]
 
-            //var client = _context.GetSqlSugarClient();
-            //return await client.Queryable<Todo>().Where(m => m.Id == id).FirstAsync();
+            // var context = new SqlSugarDbContext(this._context.Database.GetConnectionString(), DbType.SqlServer);
+            // var client = context.GetSqlSugarClient();
+            //return await client.Queryable<Todo>().Where(m => m.ID == id).FirstAsync();
 
             #endregion
 
             #region [sqlkata]
 
-            var db = _context.GetSqlKataQueryFactory();
-            return await db.Query("TB_TODO").Where("Id", id).FirstAsync<TB_TODO>();
+            // var context = new SqlKataDbContext(this._context.Database.GetConnectionString(), ENUM_DATABASE_TYPE.MSSQL);
+            // var db = context.GetSqlKataQueryFactory();
+            // var tran = db.connection.BeginTransaction();
+            // try
+            // {
+            //     var result = await db.queryFactory.Query("TB_TODO").Where("ID", id).FirstAsync<TB_TODO>();
+            //     tran.Commit();
+            // }
+            // finally
+            // {
+            //     tran.Rollback();
+            // }
 
             #endregion
-            
-            //return await _context.Todos.FirstOrDefaultAsync(m => m.Id == id);
+
+            #region [ef core]
+
+            return await _context.Todos.FirstOrDefaultAsync(m => m.ID == id);
+
+            #endregion
         }
 
         public async Task<IEnumerable<TB_TODO>> GetAllTodoAsync(Guid userId)
