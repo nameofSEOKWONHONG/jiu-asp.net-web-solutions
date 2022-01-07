@@ -9,7 +9,7 @@
 
 프로젝트의 구조는 아래와 같습니다.
 
-##프로젝트 구조
+## 프로젝트 구조
 1. Share  : 공유 가능한 클래스 라이브러리 집합니다.
     - Core : 프로젝트의 핵심 코드 집합입니다.
         - Application
@@ -49,7 +49,7 @@
     - BlazorServerApplication : Blazor Server Application 입니다.
     - BlazorWasmApplication : Blazor Wasm Application 입니다.
 
-##프로젝트 설정
+## 프로젝트 설정
 1. 외부 프로젝트 clone
    1. eXtensionSharp 프로젝트가 누락되어 있다면 아래의 repository를 clone합니다.
    2. https://github.com/nameofSEOKWONHONG/eXtensionSharp.git
@@ -60,7 +60,7 @@
       1. sqllocaldb start MSSQLLocalDB
       2. MSSQLLocalDB는 기본으로 설치되는 local database 입니다.
    3. 모두 설치 및 구동되고 있다면 아래의 커맨드를 실행합니다.
-      1. prompt> dotnet ef migrations add migration20211212 --project "../Infrastructure"
+      1. prompt> dotnet ef migrations add migration20211212 --project "../Application"
       2. prompt> dotnet ef database update
 3. 솔루션을 빌드 합니다.
 4. 정상적으로 빌드 되었다면 blazor wasm 솔루션 페이지가 노출됩니다.
@@ -70,19 +70,21 @@
    1. https://localhost:5001/jobs
 7. 로그 서버로 elk를 사용합니다. 릴리즈 구성에서 작동하지만 필요로 할 경우 `appsettings.Development.json`을 참고합니다. 
 
-##중요사항
+## 중요사항
 1. `1.Share>Core>Infrastructure`는 Web Api Server Application을 위한 구성입니다.  
 따라서 해당 프로젝트는 Web Api Server Application에서만 사용합니다.
 2. `Interface`의 정의는 `1.Share>Core>Application>Interfaces`에 작성합니다.  
 실제 구현은 각각의 Application 프로젝트에서 담당합니다.
 3. Web Api Application에서 Blazor WASM을 호스팅 할 수 있습니다.  
 관련 코드는 `2.Server>WebApiApplication>Startup.cs`를 참고 합니다.
+4. 현재 구조에는 Blazor Server 및 WASM에서 `1.Core>Application`을 참조하고 있습니다.  
+WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 사용될 라이브러리 프로젝트는 별도 생성 예정입니다.
 
-##히스토리  
+## 히스토리  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
 
-##이 프로젝트에 포함된 내역
+## 이 프로젝트에 포함된 내역
 * SwaggerUI
 * Entity Framework Core
 * BCrypt.Net-Next
@@ -102,27 +104,6 @@
 * SqlKata
 * SqlSugar
 * ELK
-
-##이 프로젝트에 포함된 내역
-* SwaggerUI
-* EntityFramework Core
-* Dapper
-* Serilog with ELK
-* .Net Dependency Injection
-* Hangfire
-* LiteDB
-* Mapster
-* McMaster.NETCore.Plugins
-* MediatR
-* CS-Script
-* BCrypt.Net-Next
-* Confluent.Kafka
-* MailKit
-* JetBrains.Annotations
-* RestSharp
-* Redis
-* Blzor-Server
-* Blazor-WASM
 
 ## API 중요 개발 원칙
 1. 한번 배포된 API는 변경하지 않는다.
