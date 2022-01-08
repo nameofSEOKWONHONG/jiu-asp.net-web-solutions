@@ -78,7 +78,8 @@
 3. Web Api Application에서 Blazor WASM을 호스팅 할 수 있습니다.  
 관련 코드는 `2.Server>WebApiApplication>Startup.cs`를 참고 합니다.
 4. 현재 구조에는 Blazor Server 및 WASM에서 `1.Core>Application`을 참조하고 있습니다.  
-WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 사용될 라이브러리 프로젝트는 별도 생성 예정입니다.
+WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 사용될 라이브러리 프로젝트는 별도 생성 예정입니다.  4)항목은 진행되어 더 이상 WASM 프로젝트에서 `Application`프로젝트를 참조하지 않습니다.
+
 
 ## 히스토리  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
@@ -104,6 +105,18 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
 * SqlKata
 * SqlSugar
 * ELK
+
+## 프로젝트 규칙
+* 상수형 자료형은 대문자 표기
+* Entity 타입은 대문자 표기
+* ENUM 형은 대문자 표기
+* 멤버변수는 "_" 표기
+* 멤버변수는 "_"이후 소문자 표기
+* 표현이 달라지는 시점에서 대소문자 표기
+* Sql 관련 표현식은 모두 대문자 표기
+* DB 관련 사항은 모두 대문자 표기며 축약형 문자 표기  
+Sql 컬럼 및 프로시저는 길이 제한이 있다.
+* 함수명은 대문자 표기로 시작
 
 ## API 중요 개발 원칙
 1. 한번 배포된 API는 변경하지 않는다.

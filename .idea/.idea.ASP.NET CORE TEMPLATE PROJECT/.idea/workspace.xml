@@ -16,703 +16,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Context/DbContexts/CustomDbContextBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Migrations/20220108053011_20220108_01.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Migrations/20220108053011_20220108_01.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApplication/Services/LoginCheckService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/Chloe.Extension.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/DbActionBag.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/DbContextExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/DbContextExtension_NETCORE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/DbHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/FieldsResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/MappingExtentions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/ParameterTwoExpressionReplacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/QueryExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Extension/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/Chloe.MySql.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/DDL/MySqlTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MySqlContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MySqlContextExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MySqlDbDeleteExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MySqlDbUpdateExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/MySqlSqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.MySql/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/Chloe.Oracle.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DDL/OracleTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DbExpressionHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/DbValueExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/NextValueForSequence_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/OracleContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/OracleContext_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/OracleSemantics.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator_ConvertToUppercase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.Oracle/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/Chloe.PostgreSQL.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DDL/PostgreSQLTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/DbValueExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/NextValueForSequence_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Subtract_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/PostgreSQLContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/PostgreSQLContext_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator_ConvertToLowercase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.PostgreSQL/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/Chloe.SQLite.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ChloeSQLiteCommand.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ChloeSQLiteConcurrentConnection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ChloeSQLiteDataReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ChloeSQLiteTransaction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ConcurrentDbConnectionFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/DDL/SQLiteTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/ReaderWriterLockWrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SQLiteContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SQLite/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/Chloe.SqlServer.Odbc.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DDL/SqlServerTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DbValueExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/DefaultDbConnectionFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Abs_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/NextValueForSequence_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MsSqlContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MsSqlContextExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/MsSqlContext_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/PagingMode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/PropertyDescriptorExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/SqlGenerator_OffsetFetch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer.Odbc/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/Chloe.SqlServer.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DDL/SqlServerTableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DataTypeAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DbParamCollection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DbValueExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/DefaultDbConnectionFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/EvaluableDbExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Abs_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/AddYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Average_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Compare_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Contains_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Count_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffDays_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffHours_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffMicroseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffMilliseconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffMinutes_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffMonths_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffSeconds_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/DiffYears_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Else_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/EndsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Equals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/In_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/IsNullOrEmpty_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/LongCount_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Max_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/MethodHandlerHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Min_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/NewGuid_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/NextValueForSequence_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/NotEquals_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Parse_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Replace_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/StartsWith_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Substring_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Sum_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/ToLower_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/ToString_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/ToUpper_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/TrimEnd_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/TrimStart_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MethodHandlers/Trim_Handler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MsSqlContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MsSqlContextExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/MsSqlContext_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/PagingMode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/PropertyBuilderExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/PropertyDescriptorExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator_AggregateHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator_BinaryWithMethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator_MethodHandlers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/SqlGenerator_OffsetFetch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/UtilExceptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe.SqlServer/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/AutoIncrementAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/ColumnAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/DbFunctionAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/NavigationAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/NonAutoIncrementAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/NotMappedAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/NotNullAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/SequenceAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/TableAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Annotations/UpdateIgnoreAttribute.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/CaseWhen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Chloe.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/CompareType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/DbCommandFactor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/DbCommandInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/DbSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/IAsyncEnumerable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/IAsyncEnumerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/IEntityState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/TypeKind.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/BooleanResultExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/DbExpressionEvaluableJudge.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/DbExpressionEvaluator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/DefaultExpressionParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/EvaluableDbExpressionTransformerBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/ExpressionEvaluator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/ExpressionVisitor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/ExpressionVisitorBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/ExpressionVisitor`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/InitMemberExtractor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/JoinConditionExpressionTransformer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Core/Visitors/ParameterExpressionReplacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DDL/TableCreateMode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DDL/TableGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/AdoExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/AdoSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DataReaderConstant.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DataReaderDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DataReaderExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DbCommandDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DbConnectionDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/DbTransactionDecorator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/ExternalAdoSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/IAdoSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/IDbValueReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/IQueryDataReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/InnerAdoSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/InternalAdoSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/InternalDataReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Data/OutputParameter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbContext_Helper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbAddExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbAggregateExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbAndExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbBinaryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbBitAndExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbBitOrExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbCaseWhenExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbCoalesceExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbColumn.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbColumnAccessExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbColumnSegment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbConstantExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbConvertExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbDeleteExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbDivideExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbEqualExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbExistsExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbExpressionType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbExpressionVisitor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbExpressionVisitor`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbFromTableExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbGreaterThanExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbGreaterThanOrEqualExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbInsertExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbJoinTableExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbJoinType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbLessThanExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbLessThanOrEqualExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbMainTableExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbMemberExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbMethodCallExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbModuloExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbMultiplyExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbNegateExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbNotEqualExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbNotExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbOrExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbOrderType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbOrdering.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbParameterExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbSqlQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbSubQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbSubtractExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbTableExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbTableSegment.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbExpressions/DbUpdateExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbParam.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/DbParamList.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/CollectionPropertyDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/ComplexPropertyDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/ConstructorDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/PrimitivePropertyDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/PropertyDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/PropertyDescriptorExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Descriptors/TypeDescriptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/CollectionProperty.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/CollectionPropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/CollectionPropertyDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/ComplexProperty.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/ComplexPropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/ComplexPropertyDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/EntityType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/EntityTypeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/ICollectionPropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/IComplexPropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/IEntityTypeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/IPrimitivePropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/InternalEntityTypeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PrimitiveProperty.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PrimitivePropertyBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PrimitivePropertyDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PropertyBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PropertyDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/PropertyNameExtractor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Entity/TypeDefinition.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Exceptions/ChloeException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Exceptions/OptimisticConcurrencyException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Exceptions/UnbelievableException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Extensions/DbExpressionExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Extensions/DbSessionExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Extensions/DictionaryExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Extensions/ExpressionExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Extensions/TaskExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/GlobalUsings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IDbSession.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IGroupingQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IIncludableQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IJoinQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IOrderedQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/IQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/ITransientTransaction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/DbConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/EntityTypeContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/IDatabaseProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/IDbConnectionFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/IDbExpressionTranslator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/IDbParameterAssembler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/IDbValueConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/Interception/DbCommandInterceptionContext`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/Interception/DbInterception.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/Interception/IDbCommandInterceptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/MappingType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/MappingTypeBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Infrastructure/MappingTypeSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/JoinType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/LockType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Activators/CollectionObjectActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Activators/ComplexObjectActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Activators/ObjectActivatorBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Activators/PrimitiveObjectActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Activators/RootEntityActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Binders/CollectionMemberBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Binders/ComplexMemberBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Binders/MemberBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/Binders/PrimitiveMemberBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/IEntityKey.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/IFitter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/IMRM.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/IMemberBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/IObjectActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/ObjectConstructor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Mapper/ObjectMemberMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/ParamDirection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/DbExpressionEqualityComparer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/GroupingQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/IncludableQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/DapperRow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/DapperRowMetaObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/DapperRowObjectActivator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/DapperTable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/DataReaderEnumerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/InternalQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/InternalSqlQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Internals/QueryEnumerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/JoinQueryInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/JoinQueryParameterExpressionReplacer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/JoinQueryResult.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/JoinQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/JoinResult.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Mapping/CollectionObjectActivatorCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Mapping/ComplexObjectActivatorCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Mapping/IObjectActivatorCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Mapping/MappingData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Mapping/PrimitiveObjectActivatorCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/CollectionObjectModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/ComplexObjectModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/IObjectModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/ObjectModelBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/PrimitiveObjectModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Model/QueryModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/OrderedQuery`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Query.Async.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/AggregateQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/DistinctExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/GroupingQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/IgnoreAllFiltersExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/IncludeExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/JoinQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/OrderExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/QueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/QueryExpressionType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/QueryExpressionVisitor`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/RootQueryExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/SelectExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/SkipExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/TakeExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryExpressions/WhereExpression.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/AggregateQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/DistinctQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/GeneralQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/GroupingQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/IQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/LimitQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/QueryStateBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/RootQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/SkipQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/SubQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/QueryState/TakeQueryState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Query`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/ScopeParameterDictionary.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/FilterPredicateParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/GeneralExpressionParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/GroupKeySelectorParser.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/JoinQueryExpressionResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/QueryExpressionResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Visitors/SelectorResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/RDBMS/IMethodHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/RDBMS/ISqlBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/RDBMS/SqlGeneratorBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/DelegateFactory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/Emit/ClassGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/Emit/DelegateGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/Emit/EmitHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/InstanceCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/InstanceCreatorContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberGetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberGetterContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberMapperContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberSetter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MemberSetterContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MethodInvoker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/MethodInvokerContainer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Reflection/ReflectionExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Sql.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/ConstantWrapper`.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/KeyValuePairList.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/PairList.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/PrimaryKeyHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/PublicConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/PublicHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/StringSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/UtilConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Utility/Utils.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/lib/MySql.Data.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/lib/Oracle.ManagedDataAccess.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/lib/System.Data.SQLite.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/ChloeSqlExtension/lib/System.Data.SQLite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContextBases/ChloeDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/ChloeDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContextBases/DbContextBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/DbContextBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContextBases/JIUDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/JIUDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContextBases/SqlKataDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/SqlKataDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContextBases/SqlSugarDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/SqlSugarDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerApplication/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Abstract/IViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/Common/IViewModelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Abstract/ViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/Common/ViewModelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Counter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/Counter.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Injector/ApplicationInjector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Injector/ClientApplication.Injector.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Service/ClientApplication.Service.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Service/Injectors/ServiceDependencyInjector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Service/Services/LoginCheckService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Service/Services/WeatherForecastService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.Service/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.ViewModel/ClientApplication.ViewModel.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/ClientApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.ViewModel/CounterStateViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/CounterStateViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication.ViewModel/ViewModelDependencyInjector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -765,7 +92,6 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionPolicyProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionRequirement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ClientApplication.Service/Services/WeatherForecastService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/98d5154249ed485caac629a7519b3e6e12680/7/MemoryCacheServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoApplication/TodoApplicationInjector.cs" root0="FORCE_HIGHLIGHTING" />
@@ -1220,6 +546,7 @@
       <workItem from="1640500300562" duration="1036000" />
       <workItem from="1641011873995" duration="6315000" />
       <workItem from="1641096285014" duration="5016000" />
+      <workItem from="1641623270504" duration="1374000" />
     </task>
     <task id="LOCAL-00001" summary="first upload">
       <created>1634894026433</created>
@@ -1557,7 +884,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640501309771</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="update">
+      <created>1641623214205</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1641623214205</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1623,11 +957,11 @@
     <MESSAGE value="update readme.md" />
     <MESSAGE value="update JUIControls&#10;no more update next year..." />
     <MESSAGE value="update document" />
-    <MESSAGE value="update" />
     <MESSAGE value="update cache" />
     <MESSAGE value="update cache readme.md" />
     <MESSAGE value="update WorkerApplication.csproj&#10;change DbContext position to Application.csproj" />
-    <option name="LAST_COMMIT_MESSAGE" value="update WorkerApplication.csproj&#10;change DbContext position to Application.csproj" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1693,67 +1027,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs</url>
-          <line>34</line>
+          <line>33</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\DatabaseSeeder.cs" initialLine="32" containingFunctionPresentation="method 'Initialize'">
             <startOffsets>
-              <option value="825" />
+              <option value="812" />
             </startOffsets>
             <endOffsets>
-              <option value="1008" />
+              <option value="995" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs</url>
-          <line>156</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\DatabaseSeeder.cs" initialLine="156" containingFunctionPresentation="constructor 'DatabaseSeederUseChloe'">
-            <startOffsets>
-              <option value="5401" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5424" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Context/DbContexts/ChloeDbContext.cs</url>
-          <line>24</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\DbContexts\ChloeDbContext.cs" initialLine="27" containingFunctionPresentation="constructor 'ChloeDbContext'">
-            <startOffsets>
-              <option value="712" />
-            </startOffsets>
-            <endOffsets>
-              <option value="762" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs</url>
-          <line>161</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\DatabaseSeeder.cs" initialLine="161" containingFunctionPresentation="method 'Initialize'">
-            <startOffsets>
-              <option value="5499" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5663" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Context/ChloeSqlExtension/Chloe/Query/Query`.cs</url>
           <line>287</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\ChloeSqlExtension\Chloe\Query\Query`.cs" initialLine="287" containingFunctionPresentation="method 'FirstOrDefault'">
-            <startOffsets>
-              <option value="12813" />
-            </startOffsets>
-            <endOffsets>
-              <option value="12860" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Context\ChloeSqlExtension\Chloe\Query\Query`.cs" initialLine="287" containingFunctionPresentation="method 'FirstOrDefault'" />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>

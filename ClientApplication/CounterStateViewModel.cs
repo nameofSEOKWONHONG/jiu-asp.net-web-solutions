@@ -1,4 +1,4 @@
-﻿using Application.Abstract;
+﻿using ClientApplication.ViewModel.Abstract;
 
 namespace ClientApplication.ViewModel
 {

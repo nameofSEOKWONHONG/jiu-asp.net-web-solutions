@@ -1,23 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OAuth;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 using MudBlazor.Services;
 
 using BlazorServerApplication.Services;
-using ClientApplication.Injector;
-using ClientApplication.Service;
-using ClientApplication.ViewModel;
-using Application.Abstract;
+using ClientApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +17,10 @@ builder.Services.AddMudServices();
 #endregion
 
 #region [Add application injection]
-builder.Services.AddInjector();
+
+builder.Services.AddScoped<LoginCheckService>();
+builder.Services.AddScoped<WeatherForecastService>();
+
 #endregion
 
 #region [add http services to the container.]

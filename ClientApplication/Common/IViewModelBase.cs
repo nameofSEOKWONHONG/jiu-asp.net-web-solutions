@@ -1,4 +1,4 @@
-﻿namespace Application.Abstract
+﻿namespace ClientApplication.ViewModel.Abstract
 {
     public class IViewModelBase
     {
