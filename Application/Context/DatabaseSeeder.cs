@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Transactions;
 using System.Linq;
 using Domain.Entities;
+using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +31,7 @@ namespace Application.Context
         {
             #region [migration setting]
 
-            var migrationExists = _context.Migrations.Where(m => m.MIGRATION_YN == true)
+            var migrationExists = _context.Migrations.Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false)
                 .OrderByDescending(m => m.ID)
                 .FirstOrDefault();
 
@@ -146,4 +147,29 @@ namespace Application.Context
             #endregion
         }
     }
+
+    #region [chloe sample]
+    public class DatabaseSeederUseChloe : IDatabaseSeeder
+    {
+        private readonly ChloeDbContext _dbContext;
+        public DatabaseSeederUseChloe(ChloeDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+        
+        public void Initialize()
+        {
+            var migrationExists = _dbContext.GetDbContext().Query<TB_MIGRAION>()
+                .Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false).FirstOrDefault();
+            migrationExists.xIfNotEmpty(() =>
+            {
+                migrationExists.UPDATE_DT = DateTime.UtcNow;
+                migrationExists.UPDATE_ID = "SYSTEM";
+                migrationExists.COMPLETE_YN = true;
+                _dbContext.GetDbContext().Update(migrationExists);
+            });
+        }
+    }
+    #endregion
+    
 }

@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Application;
-using Application.Context;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
@@ -12,7 +11,6 @@ using Hangfire;
 using HelloWorldApplication;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -222,7 +220,7 @@ namespace WebApiApplication.Extensions
         private static void AddHangfire(IServiceCollection services, IConfiguration configuration)
         {
             #region [add hangfire]
-            services.AddHangfire(x => x.UseSqlServerStorage(configuration.GetConnectionString("SqlServer")));
+            services.AddHangfire(x => x.UseSqlServerStorage(configuration.GetConnectionString("MSSQL")));
             services.AddHangfireServer();
             #endregion
         }

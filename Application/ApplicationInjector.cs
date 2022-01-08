@@ -3,6 +3,7 @@ using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 
 namespace Application;
 
@@ -12,17 +13,21 @@ public class ApplicationInjector : IDependencyInjectorBase
     {
         services.AddSingleton<DbL4Provider>()
             .AddSingleton<DbL4Interceptor>();
+
+        services.AddSingleton<ChloeDbContext>();
         
         services.AddDbContext<JIUDbContext>((sp, options) =>
         {
-            options.UseSqlServer(configuration.GetConnectionString("SqlServer"), builder =>
+            options.UseSqlServer(configuration.GetConnectionString("MSSQL"), builder =>
                 {
                     builder.MigrationsAssembly("Application");
                     //builder.EnableRetryOnFailure();
                     builder.CommandTimeout(5);
                 })
                 .AddInterceptors(sp.GetRequiredService<DbL4Interceptor>());
-        }).AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+        });
+        //services.AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+        services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
     }
 }
 
