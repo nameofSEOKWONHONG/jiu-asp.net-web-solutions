@@ -13,8 +13,8 @@
 3. write DbContext and Entity class, refer to AccountDbContext.cs
 
 4. dotnet ef migrations add [script name]  
-   or dotnet ef migrations add [script name] --project "[project path]"
-
+   or dotnet ef migrations add [script name] --project "[project path]"  
+   or dotnet ef migrations add [script name] --context "[contextName]" --project "[project path]"
 5. dotnet ef database update
 
 [ef core code first migration existing database step]

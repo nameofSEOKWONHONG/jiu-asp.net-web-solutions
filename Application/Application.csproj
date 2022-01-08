@@ -19,11 +19,15 @@
         <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
         
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-        <PackageReference Include="Npgsql" Version="6.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
+
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.2" />
+
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
+        
         <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.0" />
         <PackageReference Include="NetTopologySuite" Version="2.4.0" />
         <PackageReference Include="NetTopologySuite.IO.SqlServerBytes" Version="2.0.0" />
@@ -34,6 +38,7 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.FASTER.Server" Version="1.9.9" />
         <PackageReference Include="MimeKit" Version="2.15.1" />
+        
         <PackageReference Include="RestSharp" Version="106.13.0" />
         <PackageReference Include="SqlKata" Version="2.3.7" />
         <PackageReference Include="SqlKata.Execution" Version="2.3.7" />
@@ -51,6 +56,8 @@
     <ItemGroup>
       <Compile Remove="Migrations\20220108053011_20220108_01.cs" />
       <Compile Remove="Migrations\20220108053011_20220108_01.Designer.cs" />
+      <Compile Remove="Migrations\20220108151548_20220108_01.cs" />
+      <Compile Remove="Migrations\20220108151548_20220108_01.Designer.cs" />
     </ItemGroup>
 
 </Project>

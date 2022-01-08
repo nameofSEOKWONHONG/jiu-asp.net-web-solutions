@@ -151,22 +151,22 @@ namespace Application.Context
     #region [chloe sample]
     public class DatabaseSeederUseChloe : IDatabaseSeeder
     {
-        private readonly ChloeDbContext _dbContext;
-        public DatabaseSeederUseChloe(ChloeDbContext dbContext)
+        private readonly JIUDbContext _dbContext;
+        public DatabaseSeederUseChloe(JIUDbContext dbContext)
         {
             _dbContext = dbContext;
         }
         
         public void Initialize()
         {
-            var migrationExists = _dbContext.GetDbContext().Query<TB_MIGRAION>()
+            var migrationExists = _dbContext.UseChloeDbContext().Query<TB_MIGRAION>()
                 .Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false).FirstOrDefault();
             migrationExists.xIfNotEmpty(() =>
             {
                 migrationExists.UPDATE_DT = DateTime.UtcNow;
                 migrationExists.UPDATE_ID = "SYSTEM";
                 migrationExists.COMPLETE_YN = true;
-                _dbContext.GetDbContext().Update(migrationExists);
+                _dbContext.UseChloeDbContext().Update(migrationExists);
             });
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -13,43 +14,17 @@ using SqlSugar;
 
 namespace Application.Context
 {
-    
     public sealed class JIUDbContext : DbContextBase
-    {
-        private readonly DbConnection connection;
-        
+    {   
         /// <summary>
         /// init appsettings connection
+        /// 수동 설정 부분은 제거함.
+        /// OnConfiguring 삭제함. 기본 설정 방법으로만 사용함.
         /// </summary>
         /// <param name="options"></param>
         public JIUDbContext(DbContextOptions options) : base(options)
         {
 
-        }
-
-        /// <summary>
-        /// init manual connection
-        /// </summary>
-        /// <param name="connection"></param>
-        public JIUDbContext(DbConnection connection) : base(connection)
-        {
-            
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //base.OnConfiguring(optionsBuilder);
-            if (this.connection != null)
-            {
-                optionsBuilder.UseSqlServer(this.connection, options =>
-                {
-                    options.EnableRetryOnFailure();
-                    // options.ExecutionStrategy(dependencies =>
-                    // {
-                    //     dependencies.
-                    // })
-                });
-            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
