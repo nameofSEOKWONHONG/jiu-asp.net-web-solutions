@@ -22,8 +22,7 @@ public class DbContextBase : DbContext
 {
     protected readonly IDbConnection DbConnection;
     protected readonly ENUM_DATABASE_TYPE DbType;
-
-    private readonly string _connectionString;
+    
     public DbContextBase(DbContextOptions options) : base(options)
     {
         if(this.Database.ProviderName.ToUpper().Contains("SQLSERVER")) this.DbType = ENUM_DATABASE_TYPE.MSSQL;
@@ -32,11 +31,6 @@ public class DbContextBase : DbContext
         //not tested
         else if(this.Database.ProviderName.ToUpper().Contains("PGSQL")) this.DbType = ENUM_DATABASE_TYPE.POSTGRES;
         else throw new NotImplementedException();
-    }
-    
-    public DbContextBase(IDbConnection connection)
-    {
-        this.DbConnection = connection;
     }
 
     public IDbContext UseChloeDbContext()

@@ -5,7 +5,7 @@ namespace WorkerApplication;
 public abstract class WorkerServiceBase : BackgroundService
 {
     protected readonly ILogger _logger;
-    protected readonly IConfiguration _configuration;
+    protected readonly IConfiguration _configuration = null!;
 
     protected WorkerServiceBase(ILogger logger)
     {
@@ -37,6 +37,6 @@ public abstract class WorkerServiceBase : BackgroundService
 
     public override void Dispose()
     {
-        base.Dispose();
+        GC.SuppressFinalize(this);
     }
 }

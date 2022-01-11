@@ -56,9 +56,8 @@ namespace Application.Infrastructure.Message
             var client = new RestClient(url);
             client.AddDefaultHeader("Authorization", $"Bearer {convertedRequest.accessToken}");
             var clientRequest = new RestRequest();
-            clientRequest.Method = Method.POST;
+            clientRequest.Method = Method.Post;
             clientRequest.AddHeader("Accept", "application/json");
-            clientRequest.Parameters.Clear();
             clientRequest.AddParameter("application/json", convertedRequest.kakaoTalkSendInfo.xToJson(),
                 ParameterType.RequestBody);
             var response = await client.ExecuteAsync(clientRequest);

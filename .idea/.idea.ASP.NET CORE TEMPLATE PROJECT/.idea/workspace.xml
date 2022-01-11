@@ -16,20 +16,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Migrations/20220108151548_20220108_01.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Migrations/20220108151548_20220108_01.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Migrations/JIUDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/PostgreSql/PostgreSqlAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/PostgreSql/PostgreSqlAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/DbContextBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/DbContextBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/JIUDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/JIUDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/SqlKataDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Context/DbContexts/SqlKataDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientApplication/ClientApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/ClientApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication/Common/ViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/Common/ViewModelBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControls/JUIControls.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControls/JUIControls.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TodoApplication/TodoApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TodoApplication/TodoApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastApplication/WeatherForecastApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastApplication/WeatherForecastApplication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkerApplication/WorkerServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerApplication/WorkerServiceBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +56,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="139215aa-a533-48a9-86ac-687630c46ed3" />
-  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Identity/UserService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Identity/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -76,7 +76,9 @@
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/EntityBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d8f2b0d44a57e65705c5b848bd55649a67dd33fe15b8885d05c236164a42e/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IRolePermissionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f940097558e4486b3fe85c12432b1ed11c00/e9/f7a20f38/MsSqlContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastApplication/WeatherForecastInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_ROLE_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Forms/Sale/WidgetTest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -99,7 +101,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/94d413b2eb741b2144562e1941f67795032c6f0fbbe5ee67d9927d33425add/IConfigurationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/JUIControls/Enums/ENUM_FORM_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/ApplicationInjector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Application/Context/DbContexts/JIUDbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Abstract/DependencyInjectorBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Constants/Permission/ApplicationClaimTypes.cs" root0="FORCE_HIGHLIGHTING" />
@@ -144,7 +145,6 @@
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XForEachExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8b2cc2c715804f60b9f526e9d078312415de00/62/d3630c33/SqlServerQueryable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/MSFasterCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -519,13 +519,8 @@
       <workItem from="1641011873995" duration="6315000" />
       <workItem from="1641096285014" duration="5016000" />
       <workItem from="1641623270504" duration="1374000" />
-    </task>
-    <task id="LOCAL-00001" summary="first upload">
-      <created>1634894026433</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1634894026433</updated>
+      <workItem from="1641657967614" duration="15000" />
+      <workItem from="1641911021308" duration="1595000" />
     </task>
     <task id="LOCAL-00002" summary="add l4provider (read copyed table)">
       <created>1635135963086</created>
@@ -863,7 +858,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641623214205</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="dbcontext 통합함. 분리하는 방법은 아닌듯.">
+      <created>1641657430194</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1641657430194</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -908,7 +910,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add l4provider (read copyed table)" />
     <MESSAGE value="add factory pattern use injection" />
     <MESSAGE value="change cs name" />
     <MESSAGE value="adf" />
@@ -933,7 +934,8 @@
     <MESSAGE value="update cache readme.md" />
     <MESSAGE value="update WorkerApplication.csproj&#10;change DbContext position to Application.csproj" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="dbcontext 통합함. 분리하는 방법은 아닌듯." />
+    <option name="LAST_COMMIT_MESSAGE" value="dbcontext 통합함. 분리하는 방법은 아닌듯." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -986,13 +988,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs</url>
-          <line>14</line>
+          <line>15</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\HelloWorldApplication\HelloWorldInjector.cs" initialLine="14" containingFunctionPresentation="method 'Inject'">
             <startOffsets>
-              <option value="450" />
+              <option value="472" />
             </startOffsets>
             <endOffsets>
-              <option value="492" />
+              <option value="523" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="107" />

@@ -14,7 +14,7 @@ public class WeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
     /// </summary>
-    public async Task<WeatherForecast[]?> GetForecastAsync()
+    public async Task<WeatherForecast[]> GetForecastAsync()
     {
         using (var client = new HttpClient())
         {
@@ -32,7 +32,7 @@ public class WeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use by the http client factory.
     /// </summary>
-    public async Task<WeatherForecast[]?> GetForecastUseByHttpClientFactoryAsync()
+    public async Task<WeatherForecast[]> GetForecastUseByHttpClientFactoryAsync()
     {
         var response = await _httpClient.GetAsync("api/v1/WeatherForecast");
         return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();

@@ -13,9 +13,7 @@
     <ItemGroup>
         <PackageReference Include="AspNet.Security.OAuth.GitHub" Version="6.0.2" />
         <PackageReference Include="AspNet.Security.OAuth.KakaoTalk" Version="6.0.2" />
-        <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
         <PackageReference Include="Hangfire" Version="1.7.28" />
-        <PackageReference Include="LiteDB" Version="5.0.11" />
         <PackageReference Include="Mapster" Version="7.2.0" />
         <PackageReference Include="McMaster.NETCore.Plugins" Version="1.4.0" />
         <PackageReference Include="McMaster.NETCore.Plugins.Mvc" Version="1.4.0" />
