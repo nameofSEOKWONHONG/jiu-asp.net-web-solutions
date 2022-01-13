@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="CS-Script" Version="4.2.0" />
+      <PackageReference Include="Microsoft.ClearScript" Version="7.2.1" />
     </ItemGroup>
 
     <ItemGroup>

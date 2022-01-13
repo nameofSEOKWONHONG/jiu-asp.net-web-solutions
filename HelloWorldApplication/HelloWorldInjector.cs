@@ -27,6 +27,7 @@ namespace HelloWorldApplication
             {
                 new HelloWorldInjector()
             }, services, null);
+            diCore.Inject();
         }
     }
 }
