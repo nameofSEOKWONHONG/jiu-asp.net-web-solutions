@@ -121,7 +121,7 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
     * Hangfire
 * Mapper
     * Mapster
-* Mediator
+* CQRS
     * MediatR
 * Email
     * MimeKit
