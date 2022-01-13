@@ -93,16 +93,17 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
     * Chloe
 * Database & NoSql
     * SQL-Server
-    * LiteDB
+    * MYSQL
     * Postgres
+    * LiteDB    
     * Redis (KV Store)
     * Microsoft Faster(KV Store) 
-* Log
+* Logging
     * Serilog
     * ELK
 * IOC
     * ASP.NET CORE Dependency Injection
-* MSMQ
+* MessageQueue
     * Confluent.Kafka
 * Authorize
     * JWT
@@ -114,7 +115,7 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
     * RestSharp (사용하지 않을 수 있습니다.)
 * Documataion
     * SwaggerUI
-* Encript
+* Encrypt
     * BCrypt.Net-Next
 * Scheduler
     * Hangfire
