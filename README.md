@@ -86,25 +86,45 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
 
 ## 이 프로젝트에 포함된 내역
-* SwaggerUI
-* Entity Framework Core
-* BCrypt.Net-Next
-* Hangfire
-* LiteDB
-* Mapster
-* McMaster.NETCore.Plugins (사용하지 않을 수 있습니다.)
-* MediatR
-* ASP.NET CORE Dependency Injection
-* Serilog
-* CS-Script (사용하지 않을 수 있습니다.)
-* Confluent.Kafka
-* Npgsql
-* JWT
-* MimeKit
-* RestSharp (사용하지 않을 수 있습니다.)
-* SqlKata
-* SqlSugar
-* ELK
+* ORM
+    * Entity Framework Core
+    * SqlKata
+    * SqlSugar
+    * Chloe
+* Database & NoSql
+    * SQL-Server
+    * LiteDB
+    * Postgres
+    * Redis (KV Store)
+    * Microsoft Faster(KV Store) 
+* Log
+    * Serilog
+    * ELK
+* IOC
+    * ASP.NET CORE Dependency Injection
+* MSMQ
+    * Confluent.Kafka
+* Authorize
+    * JWT
+* Script
+    * CS-Script (사용하지 않을 수 있습니다.)
+* Plugin
+    * McMaster.NETCore.Plugins (사용하지 않을 수 있습니다.)
+* Http
+    * RestSharp (사용하지 않을 수 있습니다.)
+* Documataion
+    * SwaggerUI
+* Encript
+    * BCrypt.Net-Next
+* Scheduler
+    * Hangfire
+* Mapper
+    * Mapster
+* Mediator
+    * MediatR
+* Email
+    * MimeKit
+    * MailKit
 
 ## 프로젝트 규칙
 * 상수형 자료형은 대문자 표기
