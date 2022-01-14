@@ -16,18 +16,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CsScriptApplication/CsScriptSample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CsScriptApplication/TB_TODO_VIEW.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CsScriptApplication/CsScriptApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CsScriptApplication/CsScriptApplication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CsScriptApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsScriptApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldApplication/HelloWorldInjector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -620,14 +625,8 @@
       <workItem from="1641911021308" duration="1595000" />
       <workItem from="1641969578583" duration="1420000" />
       <workItem from="1642055172877" duration="749000" />
-      <workItem from="1642062089866" duration="1807000" />
-    </task>
-    <task id="LOCAL-00002" summary="add l4provider (read copyed table)">
-      <created>1635135963086</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1635135963086</updated>
+      <workItem from="1642062089866" duration="1845000" />
+      <workItem from="1642126076737" duration="1715000" />
     </task>
     <task id="LOCAL-00003" summary="add factory pattern use injection">
       <created>1635141302350</created>
@@ -965,7 +964,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641657430194</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="script update">
+      <created>1642064203871</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1642064203871</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1010,7 +1016,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add factory pattern use injection" />
     <MESSAGE value="change cs name" />
     <MESSAGE value="adf" />
     <MESSAGE value="update httpclient and httpclient factory" />
@@ -1035,7 +1040,8 @@
     <MESSAGE value="update WorkerApplication.csproj&#10;change DbContext position to Application.csproj" />
     <MESSAGE value="update" />
     <MESSAGE value="dbcontext 통합함. 분리하는 방법은 아닌듯." />
-    <option name="LAST_COMMIT_MESSAGE" value="dbcontext 통합함. 분리하는 방법은 아닌듯." />
+    <MESSAGE value="script update" />
+    <option name="LAST_COMMIT_MESSAGE" value="script update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1130,6 +1136,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs</url>
+          <line>91</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\ClearScriptSample.cs" initialLine="91" containingFunctionPresentation="method 'SqlRun'">
+            <startOffsets>
+              <option value="2604" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2648" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

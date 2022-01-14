@@ -17,7 +17,7 @@ namespace CsScriptApplication
             // sample.Run();
 
             var sample = new ClearScriptSample();
-            sample.Run();
+            sample.SqlRun();
         }
     }
 }

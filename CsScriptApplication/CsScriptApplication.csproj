@@ -16,4 +16,10 @@
       <ProjectReference Include="..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="TB_TODO_VIEW.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
