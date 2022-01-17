@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using Chloe;
 using Chloe.Infrastructure;
@@ -7,6 +8,7 @@ using Chloe.PostgreSQL;
 using Chloe.SqlServer;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using MySql.Data.MySqlClient;
 using Npgsql;
 using SqlKata.Compilers;
@@ -22,7 +24,23 @@ public class DbContextBase : DbContext
 {
     protected readonly IDbConnection DbConnection;
     protected readonly ENUM_DATABASE_TYPE DbType;
-    
+
+    private readonly Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>> _chloeDbState =
+        new Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>>()
+        {
+            {ENUM_DATABASE_TYPE.MSSQL, (db) => new MsSqlContext(() => db.GetDbConnection()) },
+            {ENUM_DATABASE_TYPE.MYSQL, (db) => new MySqlContext(new MySqlConnectionFactory(db.GetDbConnection())) },
+            {ENUM_DATABASE_TYPE.POSTGRES, (db) => new PostgreSQLContext(new PostgreSQLConnectionFactory(db.GetConnectionString()) ) },
+        };
+
+    private readonly Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>> _sqlKataDbState =
+        new Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>>()
+        {
+            { ENUM_DATABASE_TYPE.MSSQL, (con) => new QueryFactory(con, new SqlServerCompiler()) },
+            { ENUM_DATABASE_TYPE.MYSQL, (con) => new QueryFactory(con, new MySqlCompiler()) },
+            { ENUM_DATABASE_TYPE.POSTGRES, (con) => new QueryFactory(con, new PostgresCompiler()) },
+        };
+
     public DbContextBase(DbContextOptions options) : base(options)
     {
         if(this.Database.ProviderName.ToUpper().Contains("SQLSERVER")) this.DbType = ENUM_DATABASE_TYPE.MSSQL;
@@ -35,27 +53,18 @@ public class DbContextBase : DbContext
 
     public IDbContext UseChloeDbContext()
     {
-        if (DbType == ENUM_DATABASE_TYPE.MSSQL) 
-            return new MsSqlContext(() => this.Database.GetDbConnection());
-        else if (DbType == ENUM_DATABASE_TYPE.MYSQL)
-            return new MySqlContext(new MySqlConnectionFactory(this.Database.GetDbConnection()));
-        else if (DbType == ENUM_DATABASE_TYPE.POSTGRES)
-            return new PostgreSQLContext(new PostgreSQLConnectionFactory(this.Database.GetDbConnection()));
-        else throw new NotImplementedException();
+        var func = this._chloeDbState[DbType];
+        if (func.xIsEmpty()) throw new NotImplementedException($"dbtype {this.DbType.ToString()} not implemented.");
+        return func(this.Database);
     }
 
-    public (IDbConnection connection, QueryFactory queryFactory) UseSqlKata()
+    public QueryFactory UseSqlKata()
     {
         Compiler compiler = null;
         IDbConnection connection = this.Database.GetDbConnection();
-        var connectionString = this.Database.GetConnectionString();
-        
-        if(DbType == ENUM_DATABASE_TYPE.MSSQL) compiler = new SqlServerCompiler();
-        else if (DbType == ENUM_DATABASE_TYPE.MYSQL) compiler = new MySqlCompiler();
-        else if (DbType == ENUM_DATABASE_TYPE.POSTGRES) compiler = new PostgresCompiler();
-        else throw new NotImplementedException();
-        
-        return new (connection, new QueryFactory(connection, compiler));
+        var func = _sqlKataDbState[this.DbType];
+        if (func.xIsEmpty()) throw new NotImplementedException($"key {this.DbType.ToString()} not implemented");
+        return func(connection);
     }
     
     internal sealed class MySqlConnectionFactory : IDbConnectionFactory
