@@ -6,6 +6,7 @@ using Infrastructure.Abstract;
 using LibreHardwareMonitor.Hardware;
 using LibreHardwareMonitor.Hardware.CPU;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services.Abstract;
@@ -17,17 +18,16 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
     private const int WARNING_VALUE = 90;
     private const int WARNING_CNT = 10;
     
-    private readonly ILogger _logger;
     private readonly Computer _computer;
     private readonly int _interval = (1000 * 30);
-    private readonly JIUDbContext _dbContext;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
     
     public HardwareMonitorBackgroundService(ILogger<HardwareMonitorBackgroundService> logger,
         MessageProviderResolver messageProviderResolver,
-        JIUDbContext dbContext) : base(logger, messageProviderResolver)
+        IServiceScopeFactory serviceScopeFactory) : base(logger, messageProviderResolver)
     {
         this._notifyMessageProvider = messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
-        this._dbContext = dbContext;
+        this._serviceScopeFactory = serviceScopeFactory;
         _computer = new Computer()
         {
             IsCpuEnabled = true,
@@ -42,57 +42,61 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
         var warningCnt = 0;
         while (!stoppingToken.IsCancellationRequested)
         {
-            _computer.Open();
-            _computer.Accept(new UpdateVisitor());
-            
-            _logger.LogInformation($"{nameof(HardwareMonitorBackgroundService)} start");
-            foreach (IHardware hardware in this._computer.Hardware)
+            using (var scope = _serviceScopeFactory.CreateScope())
             {
-                _logger.LogInformation("Hardware: {0}", hardware.Name);
-        
-                foreach (IHardware subhardware in hardware.SubHardware)
-                {
-                    _logger.LogInformation("\tSubhardware: {0}", subhardware.Name);
-            
-                    foreach (ISensor sensor in subhardware.Sensors)
-                    {
-                        _logger.LogInformation("\t\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);                        
-                    }
-                }
+                var service = scope.ServiceProvider.GetRequiredService<IUserService>();
 
-                foreach (ISensor sensor in hardware.Sensors)
-                {
-                    _logger.LogInformation("\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
-                }
+                var users = await service.FindAllUserByRoleAsync(ENUM_ROLE_TYPE.ADMIN);
 
-                var cpuSencer = hardware.Sensors.FirstOrDefault(m => m.Name == "CPU Total");
-                if (cpuSencer.xIsNotEmpty())
+                _computer.Open();
+                _computer.Accept(new UpdateVisitor());
+
+                _logger.LogInformation($"{nameof(HardwareMonitorBackgroundService)} start");
+                foreach (IHardware hardware in this._computer.Hardware)
                 {
-                    if (cpuSencer.Value > WARNING_VALUE)
+                    _logger.LogInformation("Hardware: {0}", hardware.Name);
+
+                    foreach (IHardware subhardware in hardware.SubHardware)
                     {
-                        warningCnt += 1;
-                        if (warningCnt > WARNING_CNT)
+                        _logger.LogInformation("\tSubhardware: {0}", subhardware.Name);
+
+                        foreach (ISensor sensor in subhardware.Sensors)
                         {
-                            var adminUsers = await this._dbContext.Users.Include(m => m.ROLE)
-                                .Where(m => m.ROLE.ROLE_TYPE == ENUM_ROLE_TYPE.ADMIN)
-                                .ToListAsync();
-                            
-                            await _notifyMessageProvider.SendMessageAsync(
-                                new EmailNotifyMessageRequest(
-                                    adminUsers.Select(m => m.EMAIL).ToArray(),
-                                    "waning cpu usage rate", 
-                                    "waning cpu usage rate. monitoring necessary.", 
-                                    null));
+                            _logger.LogInformation("\t\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
+                        }
+                    }
 
-                            warningCnt = 0;
+                    foreach (ISensor sensor in hardware.Sensors)
+                    {
+                        _logger.LogInformation("\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
+                    }
+
+                    var cpuSencer = hardware.Sensors.FirstOrDefault(m => m.Name == "CPU Total");
+                    if (cpuSencer.xIsNotEmpty())
+                    {
+                        if (cpuSencer.Value > WARNING_VALUE)
+                        {
+                            warningCnt += 1;
+                            if (warningCnt > WARNING_CNT)
+                            {
+                                await _notifyMessageProvider.SendMessageAsync(
+                                    new EmailNotifyMessageRequest(
+                                        users.Select(m => m.EMAIL).ToArray(),
+                                        "waning cpu usage rate",
+                                        "waning cpu usage rate. monitoring necessary.",
+                                        null));
+
+                                warningCnt = 0;
+                            }
                         }
                     }
                 }
+
+                _logger.LogInformation($"{nameof(HardwareMonitorBackgroundService)} end");
+                await Task.Delay(_interval, stoppingToken);
+
+                _computer.Close();
             }
-            _logger.LogInformation($"{nameof(HardwareMonitorBackgroundService)} end");
-            await Task.Delay(_interval, stoppingToken);
-            
-            _computer.Close();
         }
     }
 }
