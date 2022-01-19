@@ -39,6 +39,13 @@ namespace Infrastructure.Services.Identity
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE roleType)
+        {
+            return await dbContext.Users.Include(m => m.ROLE)
+                .Where(m => m.ROLE.ROLE_TYPE == ENUM_ROLE_TYPE.ADMIN)
+                .ToListAsync();
+        }
+
         public async Task<TB_USER> FindUserByIdAsync(Guid userId)
         {
             return await dbContext.Users
