@@ -5,7 +5,7 @@ using Application.Response;
 using eXtensionSharp;
 using MediatR;
 
-namespace WeatherForecastApplication.Features.Command
+namespace WeatherForecastService.Features.Command
 {
     public class CreateWeatherForecastBaseDataCommand : IRequest<Result<int>>
     {

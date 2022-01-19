@@ -8,7 +8,7 @@ using Application.Response;
 using Domain.Entities;
 using MediatR;
 
-namespace TodoApplication.Features.Query
+namespace TodoService.Features.Query
 {
     public record GetTodoBySelectedDateQuery(Guid userId, DateTime selectedDate) : IRequest<Result<IEnumerable<TB_TODO>>>;
     public class GetTodoBySelectedDataQueryHandler : IRequestHandler<GetTodoBySelectedDateQuery, Result<IEnumerable<TB_TODO>>>

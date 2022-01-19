@@ -3,7 +3,7 @@ using System.Data;
 using System.Linq;
 using eXtensionSharp;
 
-namespace JUIControls.Widget;
+namespace JUIControlService.Widget;
 
 /// <summary>
 /// 위젯 그룹

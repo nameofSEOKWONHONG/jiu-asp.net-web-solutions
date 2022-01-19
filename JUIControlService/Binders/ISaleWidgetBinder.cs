@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using Application.Interfaces.Todo;
-using JUIControls.Widget;
+using JUIControlService.Widget;
 
-namespace JUIControls.Binders;
+namespace JUIControlService.Binders;
 
 /// <summary>
 /// dummy interface

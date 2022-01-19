@@ -7,7 +7,7 @@ using Application.Response;
 using Domain.Entities;
 using MediatR;
 
-namespace TodoApplication.Features.Query
+namespace TodoService.Features.Query
 {
     public record GetAllTodoQuery(Guid userId) : IRequest<Result<IEnumerable<TB_TODO>>>;
     

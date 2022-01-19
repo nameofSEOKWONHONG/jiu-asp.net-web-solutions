@@ -1,6 +1,6 @@
 ﻿using eXtensionSharp;
 
-namespace JUIControls;
+namespace JUIControlService;
 
 /// <summary>
 /// 버튼의 종류

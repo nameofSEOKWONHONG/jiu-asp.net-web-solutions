@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JUIControls.Widget;
+namespace JUIControlService.Widget;
 
 /// <summary>
 /// Widget Binder Interface

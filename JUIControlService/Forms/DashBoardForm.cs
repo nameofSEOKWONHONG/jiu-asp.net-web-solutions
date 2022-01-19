@@ -5,14 +5,14 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Application.Abstract;
 using eXtensionSharp;
-using JUIControls.Binders;
-using JUIControls.Forms.Sale;
-using JUIControls.Widget;
+using JUIControlService.Binders;
+using JUIControlService.Forms.Sale;
+using JUIControlService.Widget;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace JUIControls.Forms;
+namespace JUIControlService.Forms;
 
 /// <summary>
 /// Jennifersoft User Interface Framework Form Controller

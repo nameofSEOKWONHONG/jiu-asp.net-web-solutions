@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using JUIControls.Binders;
-using JUIControls.Widget;
+using JUIControlService.Binders;
+using JUIControlService.Widget;
 
-namespace JUIControls.Forms.Sale;
+namespace JUIControlService.Forms.Sale;
 
 /// <summary>
 /// 판매 select box 구현

@@ -1,10 +1,10 @@
 ﻿using System;
 using Application.Abstract;
-using JUIControls.Forms;
+using JUIControlService.Forms;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JUIControls;
+namespace JUIControlService;
 
 public delegate IFormMaker FormProviderResolver(string manuCode);
 

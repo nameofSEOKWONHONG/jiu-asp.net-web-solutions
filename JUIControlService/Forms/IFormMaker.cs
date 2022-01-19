@@ -1,6 +1,6 @@
-﻿using JUIControls.Widget;
+﻿using JUIControlService.Widget;
 
-namespace JUIControls.Forms;
+namespace JUIControlService.Forms;
 
 public interface IFormMaker
 {

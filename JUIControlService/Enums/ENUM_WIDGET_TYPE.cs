@@ -1,6 +1,6 @@
 ﻿using eXtensionSharp;
 
-namespace JUIControls;
+namespace JUIControlService;
 
 /// <summary>
 /// 위젯 개별 구성 요소

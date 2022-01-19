@@ -4,15 +4,15 @@ using Application.Interfaces.Todo;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TodoApplication.Services;
+using TodoService.Services;
 
-namespace TodoApplication
+namespace TodoService
 {
     internal class TodoInjector : IDependencyInjectorBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<ITodoService, TodoService>()
+            services.AddTransient<ITodoService, Services.TodoService>()
                 .AddMediatR(Assembly.Load(this.GetType().Namespace));
         }
     }

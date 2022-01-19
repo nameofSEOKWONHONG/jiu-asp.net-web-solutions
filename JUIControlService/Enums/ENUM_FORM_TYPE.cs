@@ -1,6 +1,6 @@
 ﻿using eXtensionSharp;
 
-namespace JUIControls;
+namespace JUIControlService;
 
 public sealed class ENUM_FORM_TYPE : XEnumBase<ENUM_FORM_TYPE>
 {

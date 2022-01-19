@@ -11,7 +11,7 @@ using SqlKata.Compilers;
 using SqlKata.Execution;
 using SqlSugar;
 
-namespace TodoApplication.Services
+namespace TodoService.Services
 {
     public class TodoService : ITodoService
     {

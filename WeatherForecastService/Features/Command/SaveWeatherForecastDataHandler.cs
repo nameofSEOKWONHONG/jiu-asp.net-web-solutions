@@ -5,7 +5,7 @@ using Application.Response;
 using Domain.Entities;
 using MediatR;
 
-namespace WeatherForecastApplication.Features.Command
+namespace WeatherForecastService.Features.Command
 {
     public record SaveWeatherForecastCommand(WeatherForecast weatherForecast) : IRequest<Result<int>>;
     

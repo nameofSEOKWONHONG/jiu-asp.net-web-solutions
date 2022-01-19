@@ -4,7 +4,7 @@ using HelloWorldService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WeatherForecastApplication;
+using WeatherForecastService;
 
 var builder = WebApplication.CreateBuilder(args);
 

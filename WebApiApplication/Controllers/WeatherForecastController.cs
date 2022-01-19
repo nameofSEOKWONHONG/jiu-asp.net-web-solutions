@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Hangfire;
 using Infrastructure.Abstract;
-using WeatherForecastApplication.Features.Command;
-using WeatherForecastApplication.Features.Queries;
+using WeatherForecastService.Features.Command;
+using WeatherForecastService.Features.Queries;
 
 namespace WebApiApplication.Controllers {
     public class WeatherForecastController : ApiControllerBase<WeatherForecastController> {

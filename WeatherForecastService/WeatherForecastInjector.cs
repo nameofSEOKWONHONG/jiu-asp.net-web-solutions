@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Reflection;
 using Application.Abstract;
 using Application.Interfaces.WeahterForecast;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WeatherForecastApplication.Services;
+using WeatherForecastService.Services;
 
-namespace WeatherForecastApplication
+namespace WeatherForecastService
 {
     internal class WeatherForecastInjector : IDependencyInjectorBase
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JUIControls.Forms.Sale;
+namespace JUIControlService.Forms.Sale;
 
 /// <summary>
 /// 예제

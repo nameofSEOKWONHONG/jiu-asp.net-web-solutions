@@ -5,7 +5,7 @@ using Application.Response;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace TodoApplication.Features.Command
+namespace TodoService.Features.Command
 {
     public record RemoveTodoCommand(int id) : IRequest<Result<bool>>;
     public class RemoveTodoCommandHandler : IRequestHandler<RemoveTodoCommand, Result<bool>>

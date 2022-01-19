@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using eXtensionSharp;
-using JUIControls.Widget;
+using JUIControlService.Widget;
 
-namespace JUIControls.Forms.Sale;
+namespace JUIControlService.Forms.Sale;
 
 /// <summary>
 /// sale select box 만들기
 /// </summary>
-public class SaleSelectBoxWidget : JUIControls.Widget.WidgetBase
+public class SaleSelectBoxWidget : WidgetBase
 {
     public SaleSelectBoxWidget(IWidgetBinder widgetBinder, Dictionary<string, string> options)
     {

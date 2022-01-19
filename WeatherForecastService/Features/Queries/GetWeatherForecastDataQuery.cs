@@ -5,7 +5,7 @@ using MediatR;
 using Domain.Entities;
 using Application.Response;
 
-namespace WeatherForecastApplication.Features.Queries
+namespace WeatherForecastService.Features.Queries
 {
     public record GetWeatherForecastDataQuery(string Summary) : IRequest<Result<WeatherForecast>>;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace JUIControls.Widget;
+namespace JUIControlService.Widget;
 
 public class WidgetSection
 {

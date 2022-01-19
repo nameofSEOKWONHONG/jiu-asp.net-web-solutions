@@ -7,7 +7,7 @@ using Application.Infrastructure.Cache;
 using Application.Interfaces.WeahterForecast;
 using eXtensionSharp;
 
-namespace WeatherForecastApplication.Services
+namespace WeatherForecastService.Services
 {
     /// <summary>
     /// Litedb example

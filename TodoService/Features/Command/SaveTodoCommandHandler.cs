@@ -5,7 +5,7 @@ using Application.Response;
 using Domain.Entities;
 using MediatR;
 
-namespace TodoApplication.Features.Command
+namespace TodoService.Features.Command
 {
     public record SaveTodoCommand(TB_TODO TbTodo) : IRequest<Result<TB_TODO>>;
     public class SaveTodoCommandHandler : IRequestHandler<SaveTodoCommand, Result<TB_TODO>>

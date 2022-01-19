@@ -8,7 +8,7 @@ using Dapper;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
 
-namespace JUIControls.Binders;
+namespace JUIControlService.Binders;
 
 /// <summary>
 /// sample code, not working

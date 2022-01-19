@@ -9,8 +9,8 @@ using Hangfire;
 using Infrastructure.Abstract;
 using Infrastructure.Notifies;
 using Microsoft.AspNetCore.Mvc;
-using TodoApplication.Features.Command;
-using TodoApplication.Features.Query;
+using TodoService.Features.Command;
+using TodoService.Features.Query;
 
 namespace WebApiApplication.Controllers
 {
