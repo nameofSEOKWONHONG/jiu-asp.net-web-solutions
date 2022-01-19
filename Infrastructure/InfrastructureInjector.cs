@@ -18,6 +18,8 @@ namespace Infrastructure.Services
                 .AddScoped<IRoleService, RoleService>()
                 .AddScoped<IRolePermissionService, RolePermissionService>()
                 .AddScoped<ISessionContextService, SessionContextService>()
+                .AddHostedService<CacheResetBackgroundService>()
+                .AddHostedService<HardwareMonitorBackgroundService>()
                 .AddMediatR(Assembly.Load("Infrastructure"));
         }
     }

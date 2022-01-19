@@ -229,7 +229,6 @@ namespace WebApiApplication.Extensions
         {
             
             #region [add background service]
-            services.AddHostedService<CacheResetBackgroundService>();
             #endregion
         }
 
