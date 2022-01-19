@@ -8,22 +8,22 @@ using TodoApplication.Services;
 
 namespace TodoApplication
 {
-    internal class TodoApplicationInjector : IDependencyInjectorBase
+    internal class TodoInjector : IDependencyInjectorBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<ITodoService, TodoService>()
-                .AddMediatR(Assembly.Load("TodoApplication"));
+                .AddMediatR(Assembly.Load(this.GetType().Namespace));
         }
     }
     
-    public static class TodoApplicationInjectorExtension
+    public static class TodoInjectorExtension
     {
-        public static void AddTodoApplicationInjector(this IServiceCollection services)
+        public static void AddTodoInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectorImpl(new[]
+            var diCore = new DependencyInjector(new[]
             {
-                new TodoApplicationInjector()
+                new TodoInjector()
             }, services, null);
             diCore.Inject();
         }

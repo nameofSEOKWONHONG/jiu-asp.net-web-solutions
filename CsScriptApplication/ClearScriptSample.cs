@@ -86,26 +86,4 @@ var result = toString(id, name);
             this.Name = name;
         }
     }
-
-    public void SqlRun()
-    {
-        var maps = new Dictionary<string, string>();
-        maps.Add("v_date", "20211231");
-        maps.Add("v_id", null);
-        
-        var query = "TB_TODO_VIEW.js".xFileReadAllText();
-        var sb = new StringBuilder();
-        maps.xForEach(item =>
-        {
-            sb.AppendLine($"var {item.Key} = '{item.Value}';");            
-        });
-
-        var prefix = sb.ToString();
-        var result = $"{prefix} {query}";
-        
-        using var runtime = new V8Runtime();
-        var engine = runtime.CreateScriptEngine();
-        engine.Execute(result);
-        Console.WriteLine(engine.Script.mainSql);
-    }
 }

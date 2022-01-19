@@ -8,8 +8,8 @@ using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Domain.Configuration;
 using Hangfire;
-using HelloWorldApplication;
-using Infrastructure.Services;
+using HelloWorldService;
+using Infrastructure.Services; 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -55,7 +55,7 @@ namespace WebApiApplication.Extensions
             AddResponseCache(services);
             AddHangfire(services, configuration);
             AddBackgroundService(services);
-            AddEmailSetting(services, configuration);
+            AddConfigurationSetting(services, configuration);
             
             services.AddRazorPages();
             
@@ -87,7 +87,7 @@ namespace WebApiApplication.Extensions
             // 각 Injector 구현체 등록
             services.AddWeatherForecastInjector();
             services.AddInfrastructureInjector();
-            services.AddTodoApplicationInjector();
+            services.AddTodoInjector();
             services.AddHelloWorldInjector();
         }
 
@@ -144,7 +144,7 @@ namespace WebApiApplication.Extensions
         private static void AddDatabase(IServiceCollection services, IConfiguration configuration)
         {
             #region [add database]
-            services.AddApplicationInjector(configuration);
+            services.AddDatabaseInjector(configuration);
             #endregion
         }
 
@@ -232,7 +232,7 @@ namespace WebApiApplication.Extensions
             #endregion
         }
 
-        private static void AddEmailSetting(IServiceCollection services, IConfiguration configuration)
+        private static void AddConfigurationSetting(IServiceCollection services, IConfiguration configuration)
         {
             #region [add config]
             services.Configure<EMailSettings>(configuration.GetSection("EMailSettings"));

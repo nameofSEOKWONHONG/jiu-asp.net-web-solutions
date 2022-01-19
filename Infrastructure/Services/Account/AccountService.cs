@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Services.Identity
+namespace Infrastructure.Services.Account
 {
     public class AccountService : IAccountService
     {

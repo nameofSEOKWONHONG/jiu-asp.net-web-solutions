@@ -58,7 +58,7 @@ namespace Application.Infrastructure.Cache
     {
         public static void AddCacheProviderInjector(this IServiceCollection services, IConfiguration configuration)
         {
-            var diCore = new DependencyInjectorImpl(new[]
+            var diCore = new DependencyInjector(new[]
             {
                 new CacheProviderInjector()
             }, services, configuration);

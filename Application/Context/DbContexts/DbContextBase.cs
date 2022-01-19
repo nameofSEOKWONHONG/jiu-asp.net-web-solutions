@@ -26,7 +26,7 @@ public class DbContextBase : DbContext
     protected readonly ENUM_DATABASE_TYPE DbType;
 
     private readonly Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>> _chloeDbState =
-        new Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>>()
+        new()
         {
             {ENUM_DATABASE_TYPE.MSSQL, (db) => new MsSqlContext(() => db.GetDbConnection()) },
             {ENUM_DATABASE_TYPE.MYSQL, (db) => new MySqlContext(new MySqlConnectionFactory(db.GetDbConnection())) },
@@ -34,7 +34,7 @@ public class DbContextBase : DbContext
         };
 
     private readonly Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>> _sqlKataDbState =
-        new Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>>()
+        new()
         {
             { ENUM_DATABASE_TYPE.MSSQL, (con) => new QueryFactory(con, new SqlServerCompiler()) },
             { ENUM_DATABASE_TYPE.MYSQL, (con) => new QueryFactory(con, new MySqlCompiler()) },
@@ -60,7 +60,6 @@ public class DbContextBase : DbContext
 
     public QueryFactory UseSqlKata()
     {
-        Compiler compiler = null;
         IDbConnection connection = this.Database.GetDbConnection();
         var func = _sqlKataDbState[this.DbType];
         if (func.xIsEmpty()) throw new NotImplementedException($"key {this.DbType.ToString()} not implemented");

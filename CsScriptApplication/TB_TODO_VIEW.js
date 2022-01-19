@@ -1,13 +1,17 @@
-var mainSql = `
-    SELECT *
-    FROM TB_TODO WITH(NOLOCK)
-    WHERE USERID = @USERID
-`;
+var sql = '';
 
-if(v_date != null) {
-    mainSql = mainSql + ` AND WRITE_DT = @V_DATE `;
+// begin sql text
+var select = 'SELECT * FROM TB_TODO WITH(NOLOCK)';
+var where = 'WHERE USERID = @USERID ';
+
+if(V_DATE != null) {
+    where += 'AND WRITE_DT = @V_DATE ';
 }
 
-if(v_id > 0) {
-    mainSql += ` AND ID = @V_ID `;
+if(V_ID > 0) {
+    where += 'AND ID = @V_ID ';
 }
+// end sql text
+
+// sql result
+sql = `${select} ${where}`;

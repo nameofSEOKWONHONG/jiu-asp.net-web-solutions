@@ -4,7 +4,7 @@ using Application.Interfaces.HelloWorld;
 using Application.Response;
 using MediatR;
 
-namespace HelloWorldApplication.Features.Queries
+namespace HelloWorldService.Features.Queries
 {
     public record GetHelloWorldDataQuery() : IRequest<Result<string>>;
     public class GetHelloWorldDataHandler : IRequestHandler<GetHelloWorldDataQuery, Result<string>>

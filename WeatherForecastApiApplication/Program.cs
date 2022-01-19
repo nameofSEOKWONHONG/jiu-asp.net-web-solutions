@@ -1,6 +1,6 @@
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
-using HelloWorldApplication;
+using HelloWorldService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

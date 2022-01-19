@@ -71,9 +71,9 @@ public class ApplicationInjector : IDependencyInjectorBase
 
 public static class ApplicationInjectorExtension
 {
-    public static void AddApplicationInjector(this IServiceCollection services, IConfiguration configuration)
+    public static void AddDatabaseInjector(this IServiceCollection services, IConfiguration configuration)
     {
-        var injectorImpl = new DependencyInjectorImpl(new[]
+        var injectorImpl = new DependencyInjector(new[]
         {
             new ApplicationInjector()
         }, services, configuration);

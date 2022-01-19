@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Application.Infrastructure.Message;
+﻿using Application.Infrastructure.Message;
 using Domain.Enums;
 using MediatR;
 

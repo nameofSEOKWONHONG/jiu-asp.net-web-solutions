@@ -42,7 +42,7 @@ namespace Application.Infrastructure.Message
     {
         public static void AddMessageProviderInjector(this IServiceCollection services)
         {
-            var impl = new DependencyInjectorImpl(new[]
+            var impl = new DependencyInjector(new[]
             {
                 new NotifyMessageProviderInjector()
             }, services, null);

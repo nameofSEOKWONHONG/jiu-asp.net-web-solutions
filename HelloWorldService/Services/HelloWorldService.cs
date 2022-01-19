@@ -1,6 +1,6 @@
 ﻿using Application.Interfaces.HelloWorld;
 
-namespace HelloWorldApplication.Services
+namespace HelloWorldService.Services
 {
     public class HelloWorldService : IHelloWorldService
     {

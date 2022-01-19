@@ -1,4 +1,4 @@
-﻿using HelloWorldApplication.Features.Queries;
+﻿using HelloWorldService.Features.Queries;
 using Infrastructure.Abstract;
 using Microsoft.AspNetCore.Mvc;
 

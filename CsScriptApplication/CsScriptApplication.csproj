@@ -10,6 +10,7 @@
     <ItemGroup>
       <PackageReference Include="CS-Script" Version="4.2.0" />
       <PackageReference Include="Microsoft.ClearScript" Version="7.2.1" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.4" />
     </ItemGroup>
 
     <ItemGroup>

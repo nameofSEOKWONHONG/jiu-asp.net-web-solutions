@@ -14,8 +14,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddApplicationInjector(hostContext.Configuration);
-        services.AddTodoApplicationInjector();
+        services.AddDatabaseInjector(hostContext.Configuration);
+        services.AddTodoInjector();
         services.Configure<HostOptions>(option =>
         {
             option.ShutdownTimeout = TimeSpan.Parse(hostContext.Configuration["Options:ShutdownTimeout"])

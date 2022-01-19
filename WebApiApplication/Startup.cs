@@ -28,11 +28,11 @@ namespace WebApiApplication
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider, JIUDbContext db)
         {
-            db.Database.EnsureCreated();
-            if (db.Database.GetPendingMigrations().Count() > 0)
-            {
-                db.Database.Migrate();
-            }
+            // db.Database.EnsureCreated();
+            // if (db.Database.GetPendingMigrations().Count() > 0)
+            // {
+            //     db.Database.Migrate();
+            // }
             app.UseConfigures(env, provider, Configuration);
         }
     }

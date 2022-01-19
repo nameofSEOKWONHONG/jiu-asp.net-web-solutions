@@ -25,7 +25,7 @@ public static class FormProviderInjectorExtension
 {
     public static void AddSectionProviderInjector(this IServiceCollection services)
     {
-        var impl = new DependencyInjectorImpl(new[]
+        var impl = new DependencyInjector(new[]
         {
             new FormProviderInjector()
         }, services, null);

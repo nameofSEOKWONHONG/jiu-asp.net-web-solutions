@@ -11,12 +11,12 @@ namespace Application.Abstract
         void Inject(IServiceCollection services, IConfiguration configuration);
     }
 
-    public sealed class DependencyInjectorImpl
+    public sealed class DependencyInjector
     {
         private readonly IDependencyInjectorBase[] _dependencyInjectorBases;
         private readonly IServiceCollection _services;
         private readonly IConfiguration _configuration;
-        public DependencyInjectorImpl(IDependencyInjectorBase[] dependencyInjectorBases,
+        public DependencyInjector(IDependencyInjectorBase[] dependencyInjectorBases,
             IServiceCollection services,
             IConfiguration configuration)
         {

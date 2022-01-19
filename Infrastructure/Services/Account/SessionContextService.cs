@@ -11,7 +11,7 @@ using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Services.Identity
+namespace Infrastructure.Services.Account
 {
     public class SessionContext : ISessionContext
     {

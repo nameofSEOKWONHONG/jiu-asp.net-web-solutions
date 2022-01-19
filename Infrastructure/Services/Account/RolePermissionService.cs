@@ -4,7 +4,7 @@ using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Services.Identity
+namespace Infrastructure.Services.Account
 {
     public class RolePermissionService : IRolePermissionService
     {

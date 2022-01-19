@@ -9,7 +9,7 @@ namespace WebApiApplication.Services.Abstract
     public interface IUserService
     {
         Task<IEnumerable<TB_USER>> FindAllUserAsync(string searchCol = "", string searchVal = "", int pageIndex = 1, int pageSize = 10);
-        Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE roleType);
+        Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE[] roleTypes);
         Task<TB_USER> FindUserByIdAsync(Guid userId);
         Task<TB_USER> FindUserByEmailAsync(string email);
         Task<bool> ExistsSuperUserAsync();

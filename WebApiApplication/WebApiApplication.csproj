@@ -50,10 +50,10 @@
       <ProjectReference Include="..\BlazorWasmApplication\BlazorWasmApplication.csproj" />
       <ProjectReference Include="..\Application\Application.csproj" />
       <ProjectReference Include="..\Domain\Domain.csproj" />
-      <ProjectReference Include="..\HelloWorldApplication\HelloWorldApplication.csproj" />
+      <ProjectReference Include="..\HelloWorldService\HelloWorldService.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
-      <ProjectReference Include="..\TodoApplication\TodoApplication.csproj" />
-      <ProjectReference Include="..\WeatherForecastApplication\WeatherForecastApplication.csproj" />
+      <ProjectReference Include="..\TodoService\TodoService.csproj" />
+      <ProjectReference Include="..\WeatherForecastService\WeatherForecastService.csproj" />
     </ItemGroup>
 
     <ItemGroup>

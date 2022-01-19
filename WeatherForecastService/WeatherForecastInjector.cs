@@ -21,7 +21,7 @@ namespace WeatherForecastApplication
             /// DDD에서 문자 그대로 Search와 그 이외의 기능으로 분리하는 것으로 DB까지 확장해 보면 
             /// Command는 RDBMS, Query는 NOSql로 구성하는 방식까지 확장 할 수 있겠다. (만드는 사람 맘이지만...)
             /// <see cref="https://github.com/jbogard/MediatR"/>
-            services.AddMediatR(Assembly.Load("WeatherForecastApplication"));
+            services.AddMediatR(Assembly.Load("WeatherForecastService"));
         }
     }
 
@@ -29,7 +29,7 @@ namespace WeatherForecastApplication
     {
         public static void AddWeatherForecastInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectorImpl(new[]
+            var diCore = new DependencyInjector(new[]
             {
                 new WeatherForecastInjector()
             }, services, null);

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Application.Abstract;
-using Infrastructure.Services.Identity;
+using Infrastructure.Services.Account;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +28,7 @@ namespace Infrastructure.Services
     {
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
-            var injectorImpl = new DependencyInjectorImpl(new[]
+            var injectorImpl = new DependencyInjector(new[]
             {
                 new InfrastructureInjector()
             }, services, null);

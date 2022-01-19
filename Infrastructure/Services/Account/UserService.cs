@@ -6,7 +6,7 @@ using Domain.Enums;
 using eXtensionSharp;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Services.Identity
+namespace Infrastructure.Services.Account
 {
     public class UserService : IUserService
     {
@@ -39,10 +39,10 @@ namespace Infrastructure.Services.Identity
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE roleType)
+        public async Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE[] roleTypes)
         {
             return await dbContext.Users.Include(m => m.ROLE)
-                .Where(m => m.ROLE.ROLE_TYPE == ENUM_ROLE_TYPE.ADMIN)
+                .Where(m => roleTypes.Contains(m.ROLE.ROLE_TYPE))
                 .ToListAsync();
         }
 
