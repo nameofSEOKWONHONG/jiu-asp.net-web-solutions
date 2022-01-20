@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Application.Context;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Application.Script.ClearScript;
 using Application.Script.CsScript;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -33,18 +35,51 @@ namespace WebApiApplication.Controllers
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
         public async Task<IActionResult> Index()
         {
+            #region [script execute sample]
+
             var scriptResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
                 .Execute<JIUDbContext, string, string>(
                     _dbContext,
                     "Run as CsScript",
                     new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
                 );
-            
+
+            #region [scope sample]
+
             var scriptResult2 = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs").Execute<JIUDbContext, string, string>(
                 _dbContext,
                 "Run as CsScript",
                 new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
-            );
+            );            
+
+            #endregion
+
+
+            #endregion
+
+            #region [native execute sample]
+
+            // var scriptResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+            //     .Execute<HelloWorldScript, JIUDbContext, string, string>(
+            //         _dbContext,
+            //         "Run as CsScript",
+            //         new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
+            //     );
+
+            #endregion
+
+            #region [clear script sample]
+
+            var path = Path.Combine(AppContext.BaseDirectory, "CsScriptFiles\\js\\modules");
+            var jScriptor = new JScriptor("./CsScriptFiles/js/main.js", path);
+            //var jsResult = string.Empty;
+            jScriptor.Execute<string>("test", engine =>
+            {
+                //jsResult = (string)engine.Script.result;
+            });
+
+            #endregion
+            
             var key = "IndexMessage";
             var result = _cacheProvider.GetCache<string>(key);
             if (result.xIsEmpty())

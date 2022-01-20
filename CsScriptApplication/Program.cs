@@ -17,14 +17,14 @@ namespace CsScriptApplication
             // var sample = new CsScriptSample();
             // sample.Run();
 
-            // var sample = new ClearScriptSample();
-            // sample.SqlRun();
+            var sample = new ClearScriptSample();
+            sample.Run();
 
-            var parameters = new List<SqlParameter>();
-            parameters.Add(new SqlParameter("V_DATE", "20220101"));
-            parameters.Add(new SqlParameter("V_ID", "10"));
-            var sql = JSqlBuilder.Instance.Build("PROC_TB_TODO_VIEW.js", parameters.ToArray());
-            Console.WriteLine(sql);
+            // var parameters = new List<SqlParameter>();
+            // parameters.Add(new SqlParameter("V_DATE", "20220101"));
+            // parameters.Add(new SqlParameter("V_ID", "10"));
+            // var sql = JSqlBuilder.Instance.Build("PROC_TB_TODO_VIEW.js", parameters.ToArray());
+            // Console.WriteLine(sql);
         }
     }
 }

@@ -18,19 +18,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Script/CsScript.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/CsScriptLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/CsScriptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/HelloWorldScript.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JScriptor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/modules/a.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/modules/b.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/CsScriptChain.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/CsScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/CsScriptor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsScriptApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsScriptApplication/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +76,7 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WorkerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/UPLOAD_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,6 +84,7 @@
     <setting file="file://$PROJECT_DIR$/Domain/Entities/EntityBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cb7424fd293afbd058d95c82aaf7b12b3cf57037576ecc8fd333ccfad7ad/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IRolePermissionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_ROLE_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
@@ -117,6 +118,7 @@
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/TodoInjector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,6 +140,7 @@
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionPolicyProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1a332c8b843c4409a80c7637c873c7e067378/bb/3aaa923a/ScriptEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -150,15 +153,20 @@
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XForEachExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelloWorldService/HelloWorldInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/MSFasterCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/obj/Debug/net6.0/WebApiApplication.MvcApplicationPartsAssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/VersionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/AuthorizedController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -528,14 +536,8 @@
       <workItem from="1642062089866" duration="1845000" />
       <workItem from="1642126076737" duration="1715000" />
       <workItem from="1642569653828" duration="4077000" />
-      <workItem from="1642682560989" duration="4288000" />
-    </task>
-    <task id="LOCAL-00006" summary="update httpclient and httpclient factory">
-      <created>1635997741634</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1635997741634</updated>
+      <workItem from="1642682560989" duration="4861000" />
+      <workItem from="1642692270715" duration="7431000" />
     </task>
     <task id="LOCAL-00007" summary="test">
       <created>1636006108686</created>
@@ -873,7 +875,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642605386640</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update CsScriptLoader">
+      <created>1642687457214</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1642687457215</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -918,7 +927,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="update httpclient and httpclient factory" />
     <MESSAGE value="test" />
     <MESSAGE value="111" />
     <MESSAGE value="asd" />
@@ -943,7 +951,8 @@
     <MESSAGE value="update sop" />
     <MESSAGE value="update" />
     <MESSAGE value="rename namespace" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename namespace" />
+    <MESSAGE value="update CsScriptLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="update CsScriptLoader" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -988,40 +997,14 @@
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CsScriptApplication/Program.cs</url>
-          <line>18</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\Program.cs" initialLine="18" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="377" />
-            </startOffsets>
-            <endOffsets>
-              <option value="414" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs</url>
-          <line>91</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\ClearScriptSample.cs" initialLine="91" containingFunctionPresentation="method 'SqlRun'">
-            <startOffsets>
-              <option value="-1" />
-            </startOffsets>
-            <endOffsets>
-              <option value="-1" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApiApplication/CsScriptFiles/HelloWorldScript.cs</url>
           <line>26</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\CsScriptFiles\HelloWorldScript.cs" initialLine="26" containingFunctionPresentation="method 'Validate'">
             <startOffsets>
-              <option value="552" />
+              <option value="561" />
             </startOffsets>
             <endOffsets>
-              <option value="569" />
+              <option value="578" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="124" />
@@ -1031,26 +1014,104 @@
           <line>20</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\CsScriptFiles\HelloWorldScript.cs" initialLine="20" containingFunctionPresentation="method 'Execute'">
             <startOffsets>
-              <option value="361" />
+              <option value="370" />
             </startOffsets>
             <endOffsets>
-              <option value="408" />
+              <option value="417" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>35</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="35" containingFunctionPresentation="method 'Index'">
+          <line>72</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="72" containingFunctionPresentation="method 'Index'">
             <startOffsets>
-              <option value="1207" />
+              <option value="2561" />
             </startOffsets>
             <endOffsets>
-              <option value="1517" />
+              <option value="2641" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="128" />
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CsScriptApplication/ClearScriptSample.cs</url>
+          <line>60</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\CsScriptApplication\ClearScriptSample.cs" initialLine="58" containingFunctionPresentation="method 'Run'">
+            <startOffsets>
+              <option value="1876" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1924" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>77</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="77" containingFunctionPresentation="lambda expression inside method 'Index'">
+            <startOffsets>
+              <option value="2852" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2892" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
+          <line>82</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="82" containingFunctionPresentation="method 'Index'">
+            <startOffsets>
+              <option value="2958" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2983" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="133" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Script/ClearScript/JScriptor.cs</url>
+          <line>23</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Script\ClearScript\JScriptor.cs" initialLine="23" containingFunctionPresentation="method 'Execute'">
+            <startOffsets>
+              <option value="703" />
+            </startOffsets>
+            <endOffsets>
+              <option value="739" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="134" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Script/ClearScript/JScriptor.cs</url>
+          <line>36</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Script\ClearScript\JScriptor.cs" initialLine="34" containingFunctionPresentation="lambda expression inside method 'Execute'">
+            <startOffsets>
+              <option value="1249" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1287" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Script/ClearScript/JScriptor.cs</url>
+          <line>37</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Script\ClearScript\JScriptor.cs" initialLine="37" containingFunctionPresentation="lambda expression inside method 'Execute'">
+            <startOffsets>
+              <option value="1310" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1440" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="139" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1062,14 +1123,11 @@
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="engine.Script" language="C#" />
+      </configuration>
       <configuration name="LaunchSettings">
-        <watch expression="_httpContextAccessor.HttpContext" language="C#" />
-        <watch expression="_httpContextAccessor.HttpContext.GetRouteData()" language="C#" />
-        <watch expression="_context.Todos.Where(m =&gt; m.WriteId == userId).ToList()" language="C#" />
-        <watch expression="User" language="C#" />
-        <watch expression="assignedUser.User" language="C#" />
-        <watch expression="dbContext.Users                 .Include(m =&gt; m.Role)                 .Include(m =&gt; m.Role.RolePermission)                 .Skip((pageIndex - 1) * pageSize)                 .Take(pageSize).ToList()" language="C#" />
-        <watch expression="reader.GetString()" language="C#" />
+        <watch expression="engine.Script" language="C#" />
       </configuration>
     </watches-manager>
   </component>

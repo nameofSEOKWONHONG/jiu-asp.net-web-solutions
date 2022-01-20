@@ -39,7 +39,5 @@ internal class CsScriptor
 
         executor.Execute();
         return executor.Result;
-
-        return default;
     }
 }

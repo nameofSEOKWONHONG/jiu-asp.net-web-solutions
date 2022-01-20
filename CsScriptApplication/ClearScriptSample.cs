@@ -6,6 +6,8 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using eXtensionSharp;
+using Microsoft.ClearScript;
+using Microsoft.ClearScript.JavaScript;
 using Microsoft.ClearScript.V8;
 
 namespace CsScriptApplication;
@@ -58,17 +60,16 @@ public class ClearScriptSample
 
         using var engine = runtime.CreateScriptEngine();
         engine.AddHostTypes(new[] {typeof(Sample)});
-        
         engine.Execute(@"
-var sample = new Sample(10, `test`);
-var id = sample.Id;
-var name = sample.Name;
+let sample = new Sample(10, `test`);
+let id = sample.Id;
+let name = sample.Name;
 
-var toString = function(id, name) {
+let toString = function(id, name) {
     return id + ', ' + name;
 }
 
-var result = toString(id, name);
+let result = toString(id, name);
 ");
         Console.WriteLine($"var id = {engine.Script.id}");
         Console.WriteLine($"var name = {engine.Script.name}");

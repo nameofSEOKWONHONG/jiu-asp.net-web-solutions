@@ -19,6 +19,9 @@
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.ClearScript.Core" Version="7.2.1" />
+        <PackageReference Include="Microsoft.ClearScript.V8" Version="7.2.1" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.2.1" />
         
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.1" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.1" />
@@ -59,10 +62,6 @@
       <Compile Remove="Migrations\20220108053011_20220108_01.Designer.cs" />
       <Compile Remove="Migrations\20220108151548_20220108_01.cs" />
       <Compile Remove="Migrations\20220108151548_20220108_01.Designer.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Script\ClearScript" />
     </ItemGroup>
 
 </Project>
