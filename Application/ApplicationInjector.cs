@@ -1,6 +1,7 @@
 ﻿using System;
 using Application.Abstract;
 using Application.Context;
+using Application.Script.CsScript;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ public class ApplicationInjector : IDependencyInjectorBase
 {
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
+        services.AddScoped<CsScriptLoader>();
         services.AddSingleton<DbL4Provider>()
             .AddSingleton<DbL4Interceptor>();
         

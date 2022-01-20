@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Context;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Application.Script.CsScript;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
+using FASTER.core;
 using Infrastructure.Abstract;
 using WebApiApplication.Services;
 
@@ -17,15 +20,31 @@ namespace WebApiApplication.Controllers
     public class IndexController : ApiControllerBase<IndexController>
     {
         private readonly ICacheProvider _cacheProvider;
-        public IndexController(CacheProviderResolver resolver)
+        private readonly CsScriptLoader _csScriptLoader;
+        private readonly JIUDbContext _dbContext;
+        public IndexController(CacheProviderResolver resolver, CsScriptLoader csScriptLoader, JIUDbContext dbContext)
         {
             _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
+            _csScriptLoader = csScriptLoader;
+            _dbContext = dbContext;
         }
         
         [HttpGet("index")]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = true)]
         public async Task<IActionResult> Index()
         {
+            var scriptResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+                .Execute<JIUDbContext, string, string>(
+                    _dbContext,
+                    "Run as CsScript",
+                    new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
+                );
+            
+            var scriptResult2 = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs").Execute<JIUDbContext, string, string>(
+                _dbContext,
+                "Run as CsScript",
+                new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
+            );
             var key = "IndexMessage";
             var result = _cacheProvider.GetCache<string>(key);
             if (result.xIsEmpty())
@@ -38,7 +57,8 @@ namespace WebApiApplication.Controllers
                     sb.AppendLine("git clone [project site] [your project name]");
                     sb.AppendLine("cd [your project name]");
                     sb.AppendLine("dotnet restore");
-                    sb.AppendLine("dotnet run or dotnet watch run");
+                    sb.AppendLine("dotnet run or dotnet watch run"); 
+                    sb.AppendLine($"{scriptResult}");
                     sb.Release(out string str);
                     return str;
                 });

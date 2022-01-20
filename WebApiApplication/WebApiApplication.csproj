@@ -60,6 +60,12 @@
       <Folder Include="Files" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="CsScriptFiles\HelloWorldScript.cs">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Compile>
+    </ItemGroup>
+
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
         <ItemGroup>
             <DocFile Include="bin\*\*\*.xml" />

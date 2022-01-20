@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using Mapster;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +22,8 @@ namespace WebApiApplication
             
             try
             {
+                TypeAdapterConfig.GlobalSettings.Default.NameMatchingStrategy(NameMatchingStrategy.Flexible);
+
                 CreateHostBuilder(args).Build().Run();
             }
             catch (System.Exception ex)

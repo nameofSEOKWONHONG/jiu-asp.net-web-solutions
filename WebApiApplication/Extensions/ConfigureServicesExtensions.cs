@@ -6,6 +6,7 @@ using Application;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Application.Script.CsScript;
 using Domain.Configuration;
 using Hangfire;
 using HelloWorldService;
@@ -236,6 +237,8 @@ namespace WebApiApplication.Extensions
         {
             #region [add config]
             services.Configure<EMailSettings>(configuration.GetSection("EMailSettings"));
+            services.Configure<CsScriptConfig>(configuration.GetSection("CsScriptConfig"));
+
             #endregion
         }
 
