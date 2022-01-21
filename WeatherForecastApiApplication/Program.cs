@@ -1,3 +1,4 @@
+using Application;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using HelloWorldService;
@@ -9,8 +10,7 @@ using WeatherForecastService;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddCacheProviderInjector(null);
-builder.Services.AddMessageProviderInjector();
+builder.Services.AddApplicationInjector(null);
 builder.Services.AddWeatherForecastInjector();
 builder.Services.AddHelloWorldInjector();
 

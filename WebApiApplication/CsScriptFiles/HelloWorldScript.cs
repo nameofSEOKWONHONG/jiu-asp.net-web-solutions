@@ -9,7 +9,7 @@ using eXtensionSharp;
 /// 캐시 후 : 0.1~2초
 /// 비스크립트 : 0.1초내
 /// </summary>
-public class HelloWorldScript : CsScriptBase<JIUDbContext, string, string>
+public class HelloWorldScript : SharpScriptBase<JIUDbContext, string, string>
 {
     public HelloWorldScript()
     {
@@ -19,7 +19,7 @@ public class HelloWorldScript : CsScriptBase<JIUDbContext, string, string>
     public override void Execute()
     {
         var user = this.Options.Users.FirstOrDefault();
-        this.Result = $"Hello World : {this.Request} {user.EMAIL}";
+        this.Result = $"Hello World, Request : {this.Request}, dbContext : {user.EMAIL}";
     }
 
     public override bool Validate(out string message)

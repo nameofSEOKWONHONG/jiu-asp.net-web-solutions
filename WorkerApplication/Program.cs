@@ -14,7 +14,7 @@ IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddDatabaseInjector(hostContext.Configuration);
+        services.AddApplicationInjector(hostContext.Configuration);
         services.AddTodoInjector();
         services.Configure<HostOptions>(option =>
         {

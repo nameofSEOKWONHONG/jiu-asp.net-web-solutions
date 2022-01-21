@@ -17,6 +17,15 @@ public abstract class BackgroundServiceBase : BackgroundService
     {
         this._logger = logger;
     }
+
+    protected abstract Task Execute(CancellationToken stopingToken);
+
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    {
+        this._logger.LogInformation("start");
+        this.Execute(stoppingToken);
+        return Task.CompletedTask;
+    }
 }
 
 /// <summary>

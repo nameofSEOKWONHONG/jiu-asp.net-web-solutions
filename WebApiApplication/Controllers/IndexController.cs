@@ -22,13 +22,19 @@ namespace WebApiApplication.Controllers
     public class IndexController : ApiControllerBase<IndexController>
     {
         private readonly ICacheProvider _cacheProvider;
-        private readonly CsScriptLoader _csScriptLoader;
         private readonly JIUDbContext _dbContext;
-        public IndexController(CacheProviderResolver resolver, CsScriptLoader csScriptLoader, JIUDbContext dbContext)
+        private readonly SharpScriptLoader _sharpScriptLoader;
+        private readonly JsScriptLoader _jsScriptLoader;
+        
+        public IndexController(CacheProviderResolver resolver, 
+            JIUDbContext dbContext, 
+            SharpScriptLoader sharpScriptLoader,
+            JsScriptLoader jsScriptLoader)
         {
             _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
-            _csScriptLoader = csScriptLoader;
             _dbContext = dbContext;
+            _sharpScriptLoader = sharpScriptLoader;
+            _jsScriptLoader = jsScriptLoader;
         }
         
         [HttpGet("index")]
@@ -37,20 +43,15 @@ namespace WebApiApplication.Controllers
         {
             #region [script execute sample]
 
-            var scriptResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
-                .Execute<JIUDbContext, string, string>(
-                    _dbContext,
-                    "Run as CsScript",
-                    new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
-                );
+            var scriptResult = _sharpScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+                .Execute<JIUDbContext, string, string>(_dbContext, "Run as CsScript",
+                    new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
             #region [scope sample]
 
-            var scriptResult2 = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs").Execute<JIUDbContext, string, string>(
-                _dbContext,
-                "Run as CsScript",
-                new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
-            );            
+            var scriptResult2 = _sharpScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+                .Execute<JIUDbContext, string, string>(_dbContext, "Run as CsScript",
+                    new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
             #endregion
 
@@ -59,25 +60,21 @@ namespace WebApiApplication.Controllers
 
             #region [native execute sample]
 
-            // var scriptResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
-            //     .Execute<HelloWorldScript, JIUDbContext, string, string>(
-            //         _dbContext,
-            //         "Run as CsScript",
-            //         new[]{"System.Linq", "Application.Context", "Application.Script", "eXtensionSharp"}
-            //     );
+            // var nativeResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+            //     .Execute<HelloWorldScript, JIUDbContext, string, string>(_dbContext, "Run as CsScript",
+            //         new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
             #endregion
 
             #region [clear script sample]
-
-            var path = Path.Combine(AppContext.BaseDirectory, "CsScriptFiles\\js\\modules");
-            var jScriptor = new JScriptor("./CsScriptFiles/js/main.js", path);
-            //var jsResult = string.Empty;
-            jScriptor.Execute<string>("test", engine =>
-            {
-                //jsResult = (string)engine.Script.result;
-            });
-
+            var modulePath = Path.Combine(AppContext.BaseDirectory, "CsScriptFiles\\js\\modules");
+            var mainJsPath = "./CsScriptFiles/js/main.js";
+            var jsResult = string.Empty;
+            _jsScriptLoader.Create(mainJsPath, modulePath)
+                .Execute<string>("test", o =>
+                {
+                    jsResult = o.xValue<string>();
+                });
             #endregion
             
             var key = "IndexMessage";
@@ -93,7 +90,8 @@ namespace WebApiApplication.Controllers
                     sb.AppendLine("cd [your project name]");
                     sb.AppendLine("dotnet restore");
                     sb.AppendLine("dotnet run or dotnet watch run"); 
-                    sb.AppendLine($"{scriptResult}");
+                    sb.AppendLine($"cs-script : {scriptResult}");
+                    sb.AppendLine($"clear-script : {jsResult}");
                     sb.Release(out string str);
                     return str;
                 });

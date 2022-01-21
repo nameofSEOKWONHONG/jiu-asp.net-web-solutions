@@ -5,17 +5,26 @@ using eXtensionSharp;
 
 namespace Application.Script.CsScript;
 
-internal class CsScriptor
+public interface ISharpScriptor
 {
-    private readonly CsScriptItem _csCsScriptItem;
-    public CsScriptor(string fileName)
+    TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
+        string[] assemblies = null) where TInstance : SharpScriptBase<TOptions, TRequest, TResult>, new();
+
+    TResult Execute<TOptions, TRequest, TResult>(TOptions options,
+        TRequest request, string[] assemblies = null);
+}
+
+internal class SharpScriptor : ISharpScriptor
+{
+    private readonly SharpScriptItem _sharpSharpScriptItem;
+    public SharpScriptor(string fileName)
     {
         var code = fileName.xFileReadAllText();
-        _csCsScriptItem = new CsScriptItem(fileName, code, code.xToHash());
+        _sharpSharpScriptItem = new SharpScriptItem(fileName, code, code.xToHash());
     }
 
     public TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
-        string[] assemblies = null) where TInstance : CsScriptBase<TOptions, TRequest, TResult>, new()
+        string[] assemblies = null) where TInstance : SharpScriptBase<TOptions, TRequest, TResult>, new()
     {
         var instance = new TInstance();
         instance.Options = options;
@@ -31,7 +40,7 @@ internal class CsScriptor
         var evaluator = CSScript.Evaluator.With(eval => eval.IsCachingEnabled = true);
         assemblies.xForEach(item => { evaluator.ReferenceAssemblyOf(item); });
         evaluator.ReferenceDomainAssemblies();
-        var executor = evaluator.LoadCode<CsScriptBase<TOptions, TRequest, TResult>>(_csCsScriptItem.Code);
+        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpSharpScriptItem.Code);
         executor.Options = options;
         executor.Request = request;
 

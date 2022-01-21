@@ -6,6 +6,7 @@ using Chloe.Infrastructure;
 using Chloe.MySql;
 using Chloe.PostgreSQL;
 using Chloe.SqlServer;
+using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -111,11 +112,5 @@ public class DbContextBase : DbContext
             return conn;
         }
     }
-    
-    public class ENUM_DATABASE_TYPE : XEnumBase<ENUM_DATABASE_TYPE>
-    {
-        public static readonly ENUM_DATABASE_TYPE MSSQL = Define("MSSQL");
-        public static readonly ENUM_DATABASE_TYPE MYSQL = Define("MYSQL");
-        public static readonly ENUM_DATABASE_TYPE POSTGRES = Define("POSTGRES");
-    }
 }
+

@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Application.Abstract;
+using Infrastructure.BackgroundServices;
 using Infrastructure.Services.Account;
 using MediatR;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,7 @@ namespace Infrastructure.Services
                 .AddScoped<ISessionContextService, SessionContextService>()
                 .AddHostedService<CacheResetBackgroundService>()
                 .AddHostedService<HardwareMonitorBackgroundService>()
+                .AddHostedService<ConfigReloadBackgroundService>()
                 .AddMediatR(Assembly.Load("Infrastructure"));
         }
     }

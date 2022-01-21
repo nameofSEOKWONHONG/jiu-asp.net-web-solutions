@@ -1,6 +1,6 @@
 ﻿namespace Application.Script.CsScript;
 
-public abstract class CsScriptBase<TOptions, TRequest, TResult>
+public abstract class SharpScriptBase<TOptions, TRequest, TResult>
 {
     public TOptions Options { get; set; }
     public TRequest Request { get; set; }

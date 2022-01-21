@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Services;
+namespace Infrastructure.BackgroundServices;
 
 public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBase
 {
@@ -32,8 +32,8 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
             IsStorageEnabled = true
         };
     }
-    
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+
+    protected override async Task Execute(CancellationToken stoppingToken)
     {
         var warningCnt = 0;
         using var scope = _serviceScopeFactory.CreateScope();

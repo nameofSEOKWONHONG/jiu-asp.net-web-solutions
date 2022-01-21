@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
 using Application;
+using Application.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
+using Application.Script;
 using Application.Script.CsScript;
 using Domain.Configuration;
 using Hangfire;
@@ -48,15 +51,15 @@ namespace WebApiApplication.Extensions
             services.AddAuthentication();
             #endregion
             
+            services.AddApplicationInjector(configuration);
+            
             AddInjectors(services, configuration);
             AddSwagger(services);
-            AddDatabase(services, configuration);
             AddJwt(services, configuration);
             AddCors(services);
             AddResponseCache(services);
             AddHangfire(services, configuration);
             AddBackgroundService(services);
-            AddConfigurationSetting(services, configuration);
             
             services.AddRazorPages();
             
@@ -78,13 +81,6 @@ namespace WebApiApplication.Extensions
         /// <param name="configuration"></param>
         private static void AddInjectors(IServiceCollection services, IConfiguration configuration)
         {
-            #region [factory correct pattern]
-            // 메세지 제공자 설정
-            services.AddMessageProviderInjector();
-            // 캐시 제공자 설정
-            services.AddCacheProviderInjector(configuration);
-            #endregion
-            
             // 각 Injector 구현체 등록
             services.AddWeatherForecastInjector();
             services.AddInfrastructureInjector();
@@ -139,13 +135,6 @@ namespace WebApiApplication.Extensions
                     }
                 });                
             });            
-            #endregion
-        }
-
-        private static void AddDatabase(IServiceCollection services, IConfiguration configuration)
-        {
-            #region [add database]
-            services.AddDatabaseInjector(configuration);
             #endregion
         }
 
@@ -230,15 +219,6 @@ namespace WebApiApplication.Extensions
         {
             
             #region [add background service]
-            #endregion
-        }
-
-        private static void AddConfigurationSetting(IServiceCollection services, IConfiguration configuration)
-        {
-            #region [add config]
-            services.Configure<EMailSettings>(configuration.GetSection("EMailSettings"));
-            services.Configure<CsScriptConfig>(configuration.GetSection("CsScriptConfig"));
-
             #endregion
         }
 

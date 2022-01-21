@@ -37,16 +37,4 @@ namespace Application.Infrastructure.Message
                 });
         }
     }
-
-    public static class NotifyMessageProviderInjectorExtension
-    {
-        public static void AddMessageProviderInjector(this IServiceCollection services)
-        {
-            var impl = new DependencyInjector(new[]
-            {
-                new NotifyMessageProviderInjector()
-            }, services, null);
-            impl.Inject();
-        }
-    }
 }

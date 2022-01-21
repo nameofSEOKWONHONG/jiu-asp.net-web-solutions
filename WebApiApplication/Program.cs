@@ -44,7 +44,7 @@ namespace WebApiApplication
                     configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                     configuration.AddJsonFile(
                         $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
-                        optional: true, true);
+                        optional: true, reloadOnChange: true);
                 })
                 .UseSerilog();
 

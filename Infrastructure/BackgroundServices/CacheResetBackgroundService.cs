@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Services
+namespace Infrastructure.BackgroundServices
 {
     public class CacheResetBackgroundService : BackgroundServiceBase
     {
@@ -19,8 +19,8 @@ namespace Infrastructure.Services
         {
             _cacheProvider = cacheProviderResolver(ENUM_CACHE_TYPE.MEMORY);
         }
-        
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+
+        protected override async Task Execute(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
