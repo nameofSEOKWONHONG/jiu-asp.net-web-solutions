@@ -2,23 +2,22 @@
 using System.Linq;
 using eXtensionSharp;
 
-namespace Application.Script.ClearScript;
+namespace Application.Script.PyScript;
 
-public class JsScriptLoader
+public class PyScriptLoader
 {
-    private readonly ConcurrentDictionary<string, JsScriptor> _scriptors = new ConcurrentDictionary<string, JsScriptor>();
-    
-    public JsScriptLoader()
+    private readonly ConcurrentDictionary<string, PyScriptor> _scriptors = new ConcurrentDictionary<string, PyScriptor>();
+    public PyScriptLoader()
     {
         
     }
-
-    public IJsScriptor Create(string fileName, string modulePath = null)
+    
+    public IPyScriptor Create(string fileName, string[] modulePath = null)
     {
         var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
         if (exists.Key.xIsEmpty())
         {
-            var newCScriptor = new JsScriptor(fileName, modulePath);
+            var newCScriptor = new PyScriptor(fileName, modulePath);
             if (_scriptors.TryAdd(fileName, newCScriptor))
             {
                 return newCScriptor;    
@@ -33,11 +32,11 @@ public class JsScriptLoader
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {
-            if (!_scriptors.TryRemove(fileName, out JsScriptor scriptor))
+            if (!_scriptors.TryRemove(fileName, out PyScriptor scriptor))
             {
                 return false;
             }
         }
         return true;
-    }    
+    }   
 }

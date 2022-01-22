@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Application.Script.CsScript;
 using eXtensionSharp;
 using Microsoft.ClearScript;
 using Microsoft.ClearScript.JavaScript;
@@ -8,19 +7,14 @@ using Microsoft.ClearScript.V8;
 
 namespace Application.Script.ClearScript;
 
-public interface IJsScriptor
-{
-    void Execute<TRequest>(TRequest request, Action<object> action);
-}
-
 internal class JsScriptor : IJsScriptor
 {
-    private readonly SharpScriptItem _mainJsItem;
+    private readonly ScriptorItem _mainJsItem;
     private readonly string _modulePath;
     public JsScriptor(string mainJs, string modulePath = null)
     {
         var mainJsCode = mainJs.xFileReadAllText();
-        _mainJsItem = new SharpScriptItem(mainJs, mainJsCode, mainJsCode.xToHash());
+        _mainJsItem = new ScriptorItem(mainJs, mainJsCode, mainJsCode.xToHash());
         _modulePath = modulePath;
     }
 

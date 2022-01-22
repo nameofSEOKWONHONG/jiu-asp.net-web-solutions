@@ -7,6 +7,7 @@ using Application.Infrastructure.Message;
 using Application.Script;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.PyScript;
 using Domain.Configuration;
 using Domain.Enums;
 using Microsoft.EntityFrameworkCore;
@@ -71,10 +72,20 @@ public class ApplicationInjector : IDependencyInjectorBase
     
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
-        services.AddSingleton<DbL4Provider>()
+        services
+            #region [db l4 provider - table name replace template name]
+            .AddSingleton<DbL4Provider>()
             .AddSingleton<DbL4Interceptor>()
+            #endregion
+
+            #region [define script loader (cs, js, python)]
+
             .AddSingleton<SharpScriptLoader>()
             .AddSingleton<JsScriptLoader>()
+            .AddSingleton<PyScriptLoader>()       
+
+            #endregion
+            
             .AddDbContext<JIUDbContext>((sp, options) =>
             {
                 //사용할 database 설정
@@ -89,7 +100,12 @@ public class ApplicationInjector : IDependencyInjectorBase
                 var action = _useDatabaseState[databaseType];
                 action(connectionString, sp, options);
             })
+            #region [database init and seeding]
+
             .AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+
+            #endregion
+            
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
         services.Configure<ScriptLoaderConfig>(configuration.GetSection(nameof(ScriptLoaderConfig)));
         services.Configure<EMailSettings>(configuration.GetSection(nameof(EMailSettings)));

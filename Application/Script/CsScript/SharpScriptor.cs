@@ -5,22 +5,13 @@ using eXtensionSharp;
 
 namespace Application.Script.CsScript;
 
-public interface ISharpScriptor
-{
-    TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
-        string[] assemblies = null) where TInstance : SharpScriptBase<TOptions, TRequest, TResult>, new();
-
-    TResult Execute<TOptions, TRequest, TResult>(TOptions options,
-        TRequest request, string[] assemblies = null);
-}
-
 internal class SharpScriptor : ISharpScriptor
 {
-    private readonly SharpScriptItem _sharpSharpScriptItem;
+    private readonly ScriptorItem _sharpScriptorItem;
     public SharpScriptor(string fileName)
     {
         var code = fileName.xFileReadAllText();
-        _sharpSharpScriptItem = new SharpScriptItem(fileName, code, code.xToHash());
+        _sharpScriptorItem = new ScriptorItem(fileName, code, code.xToHash());
     }
 
     public TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
@@ -40,7 +31,7 @@ internal class SharpScriptor : ISharpScriptor
         var evaluator = CSScript.Evaluator.With(eval => eval.IsCachingEnabled = true);
         assemblies.xForEach(item => { evaluator.ReferenceAssemblyOf(item); });
         evaluator.ReferenceDomainAssemblies();
-        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpSharpScriptItem.Code);
+        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpScriptorItem.Code);
         executor.Options = options;
         executor.Request = request;
 

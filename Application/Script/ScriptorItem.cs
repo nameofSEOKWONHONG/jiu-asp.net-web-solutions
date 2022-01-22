@@ -1,12 +1,12 @@
-﻿namespace Application.Script.CsScript;
+﻿namespace Application.Script;
 
-internal class SharpScriptItem
+internal record ScriptorItem
 {
     public string FileName { get; }
     public string Code { get; }
     public string Hash { get; }
 
-    public SharpScriptItem(string fileName, string code, string hash)
+    public ScriptorItem(string fileName, string code, string hash)
     {
         this.FileName = fileName;
         this.Code = code;

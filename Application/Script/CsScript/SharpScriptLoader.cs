@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Linq;
-using Application.Script.ClearScript;
+﻿using System.Collections.Concurrent;
 using eXtensionSharp;
-using Microsoft.Extensions.Options;
 
 namespace Application.Script.CsScript;
 

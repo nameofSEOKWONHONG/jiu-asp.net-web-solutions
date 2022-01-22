@@ -7,6 +7,7 @@ using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.PyScript;
 using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,16 +26,19 @@ namespace WebApiApplication.Controllers
         private readonly JIUDbContext _dbContext;
         private readonly SharpScriptLoader _sharpScriptLoader;
         private readonly JsScriptLoader _jsScriptLoader;
+        private readonly PyScriptLoader _pyScriptLoader;
         
         public IndexController(CacheProviderResolver resolver, 
             JIUDbContext dbContext, 
             SharpScriptLoader sharpScriptLoader,
-            JsScriptLoader jsScriptLoader)
+            JsScriptLoader jsScriptLoader,
+            PyScriptLoader pyScriptLoader)
         {
             _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
             _dbContext = dbContext;
             _sharpScriptLoader = sharpScriptLoader;
             _jsScriptLoader = jsScriptLoader;
+            _pyScriptLoader = pyScriptLoader;
         }
         
         [HttpGet("index")]
@@ -43,13 +47,13 @@ namespace WebApiApplication.Controllers
         {
             #region [script execute sample]
 
-            var scriptResult = _sharpScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+            var csResult = _sharpScriptLoader.Create("./ScriptFiles/cs/HelloWorldScript.cs")
                 .Execute<JIUDbContext, string, string>(_dbContext, "Run as CsScript",
                     new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
             #region [scope sample]
 
-            var scriptResult2 = _sharpScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+            var scriptResult2 = _sharpScriptLoader.Create("./ScriptFiles/cs/HelloWorldScript.cs")
                 .Execute<JIUDbContext, string, string>(_dbContext, "Run as CsScript",
                     new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
@@ -58,23 +62,45 @@ namespace WebApiApplication.Controllers
 
             #endregion
 
-            #region [native execute sample]
+            #region [cs-script native execute sample]
 
-            // var nativeResult = _csScriptLoader.Create("./CsScriptFiles/HelloWorldScript.cs")
+            // var nativeResult = _csScriptLoader.Create("./ScriptFiles/cs/HelloWorldScript.cs")
             //     .Execute<HelloWorldScript, JIUDbContext, string, string>(_dbContext, "Run as CsScript",
             //         new[] { "System.Linq", "Application.Context", "Application.Script", "eXtensionSharp" });
 
             #endregion
 
             #region [clear script sample]
-            var modulePath = Path.Combine(AppContext.BaseDirectory, "CsScriptFiles\\js\\modules");
-            var mainJsPath = "./CsScriptFiles/js/main.js";
+            var modulePath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\modules");
+            var mainJsPath = "./ScriptFiles/js/main.js";
             var jsResult = string.Empty;
             _jsScriptLoader.Create(mainJsPath, modulePath)
                 .Execute<string>("test", o =>
                 {
                     jsResult = o.xValue<string>();
                 });
+            #endregion
+
+            #region [ironpython sample]
+
+            var pyResult = string.Empty;
+            var pypath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\py\\sample.py");
+            _pyScriptLoader.Create(pypath).Execute(set =>
+            {
+                set.SetVariable("test", "hello world!");
+            }, get =>
+            {
+                if (get.TryGetVariable<float>("sum", out float result))
+                {
+                    pyResult = result.ToString("F6");
+                }
+
+                if (get.TryGetVariable<string>("test", out string str))
+                {
+                    pyResult = $"{pyResult} and {str}";
+                }
+            });
+
             #endregion
             
             var key = "IndexMessage";
@@ -90,8 +116,9 @@ namespace WebApiApplication.Controllers
                     sb.AppendLine("cd [your project name]");
                     sb.AppendLine("dotnet restore");
                     sb.AppendLine("dotnet run or dotnet watch run"); 
-                    sb.AppendLine($"cs-script : {scriptResult}");
-                    sb.AppendLine($"clear-script : {jsResult}");
+                    sb.AppendLine($"cs-script : {csResult}");
+                    sb.AppendLine($"js-script : {jsResult}");
+                    sb.AppendLine($"py-script : {pyResult}");
                     sb.Release(out string str);
                     return str;
                 });
