@@ -18,17 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update ironpython scriptor">
-      <change afterPath="$PROJECT_DIR$/Application/Script/IScriptLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/ScriptInitializer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/ENUM_SCRIPT_TYPE.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Script/ScriptLoaderConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ScriptLoaderConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +56,7 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Account/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Application/Script/ScriptInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Middlewares/AntiXssMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Middlewares/RequestCultureMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/BackgroundServices/RedisBackgroundService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -75,7 +69,6 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WorkerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/UPLOAD_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" root0="FORCE_HIGHLIGHTING" />
@@ -83,6 +76,7 @@
     <setting file="file://$PROJECT_DIR$/Domain/Entities/EntityBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7cb7424fd293afbd058d95c82aaf7b12b3cf57037576ecc8fd333ccfad7ad/Encoding.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IRolePermissionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Application/Script/IScriptLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_ROLE_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
@@ -113,19 +107,23 @@
     <setting file="file://$PROJECT_DIR$/Application/Constants/Localization/LocalizationConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Constants/Localization/LanguageCode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5246e3851ae0b6b3412dcca1819551c519172078dada937ca0952a3e027d6/OptionsMonitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Application/Script/CsScript/SharpScriptLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/TodoInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ad2a4b807aefd7738e919aa358fa13721e9a4848eb142d8849c2546109d81e1/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/43935a45a6bc1b5cd78094a5ae580ad49acbea96dfbb9e4cf4d1b9a1f89e/ReflectTypeDescriptionProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/94835095d122d0f0bb232546bcf4a5a0c46cef26e89dfb287cbf1b69808d8d/ReflectTypeDescriptionProvider.ReflectedTypeData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d5f25f16140a8c3c32feff9ffd314923223dc62a5525f05133cf99f924fb97/ConfigurationSection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XValue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0095e902412d4de89d23a7edc17474716a80/8/IDistributedCache.cs" root0="SKIP_HIGHLIGHTING" />
@@ -136,7 +134,9 @@
     <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7061593d8380a8ff34a8be311352d34fd41a80602dd4abdf79ef3678933b2d/RuntimeCustomAttributeData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/42794acf9c224fece37166245d579235973727b16c1931c5ccd329df39ad78/ConfigurationBinder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionPolicyProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1a332c8b843c4409a80c7637c873c7e067378/bb/3aaa923a/ScriptEngine.cs" root0="SKIP_HIGHLIGHTING" />
@@ -152,6 +152,7 @@
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XForEachExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/Application/Script/ScriptInitializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/HelloWorldService/HelloWorldInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/MSFasterCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -910,7 +911,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -997,14 +998,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs</url>
           <line>20</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\CsScriptFiles\HelloWorldScript.cs" initialLine="20" containingFunctionPresentation="method 'Execute'">
-            <startOffsets>
-              <option value="373" />
-            </startOffsets>
-            <endOffsets>
-              <option value="420" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\CsScriptFiles\HelloWorldScript.cs" initialLine="20" containingFunctionPresentation="method 'Execute'" />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
@@ -1022,13 +1016,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs</url>
-          <line>61</line>
+          <line>62</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="47" containingFunctionPresentation="method 'Execute'">
             <startOffsets>
-              <option value="2422" />
+              <option value="2442" />
             </startOffsets>
             <endOffsets>
-              <option value="2512" />
+              <option value="2532" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="165" />
@@ -1038,26 +1032,13 @@
           <line>69</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'Execute'">
             <startOffsets>
-              <option value="2881" />
+              <option value="2818" />
             </startOffsets>
             <endOffsets>
-              <option value="2923" />
+              <option value="2872" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs</url>
-          <line>68</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'Execute'">
-            <startOffsets>
-              <option value="2798" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2852" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Application/Script/ScriptInitializer.cs</url>
@@ -1071,6 +1052,45 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../eXtensionSharp/src/XEnumBase.cs</url>
+          <line>158</line>
+          <properties documentPath="D:\workspace\eXtensionSharp\src\XEnumBase.cs" initialLine="130" containingFunctionPresentation="method 'Read'">
+            <startOffsets>
+              <option value="6062" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6089" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../eXtensionSharp/src/XEnumBase.cs</url>
+          <line>164</line>
+          <properties documentPath="D:\workspace\eXtensionSharp\src\XEnumBase.cs" initialLine="136" containingFunctionPresentation="method 'Write'">
+            <startOffsets>
+              <option value="6263" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6305" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/../eXtensionSharp/src/XEnumBase.cs</url>
+          <line>149</line>
+          <properties documentPath="D:\workspace\eXtensionSharp\src\XEnumBase.cs" initialLine="149" containingFunctionPresentation="method 'ConvertTo'">
+            <startOffsets>
+              <option value="5678" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5716" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="186" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,6 +3,7 @@ using Application.Script.ClearScript;
 using Application.Script.CsScript;
 using Application.Script.PyScript;
 using Community.CsharpSqlite;
+using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Abstract;
 using Microsoft.CodeAnalysis;
@@ -66,8 +67,7 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
                     {
                         resetConfig.CurrentValue.ResetFileConfigs.xForEach(config =>
                         {
-                            var @enum = ENUM_SCRIPT_TYPE.Parse(config.ScriptType);
-                            var getScriptLoader = _resetStates[@enum];
+                            var getScriptLoader = _resetStates[config.ScriptType];
                             var scriptLoader = getScriptLoader(scope);
                             scriptInitializer.Reset(scriptLoader, resetConfig.CurrentValue.Version, config.ResetFiles);  
                         });
