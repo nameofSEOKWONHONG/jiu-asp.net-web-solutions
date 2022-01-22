@@ -1,16 +1,18 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
 using eXtensionSharp;
+using Microsoft.Extensions.Options;
 
 namespace Application.Script.ClearScript;
 
-public class JsScriptLoader
+public class JsScriptLoader : IScriptLoader
 {
+    public double Version { get; set; }
     private readonly ConcurrentDictionary<string, JsScriptor> _scriptors = new ConcurrentDictionary<string, JsScriptor>();
     
-    public JsScriptLoader()
+    public JsScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
     {
-        
+        this.Version = options.CurrentValue.Version;
     }
 
     public IJsScriptor Create(string fileName, string modulePath = null)
@@ -30,6 +32,8 @@ public class JsScriptLoader
     
     public bool Reset(string fileName = null)
     {
+        if (this._scriptors.xIsEmpty()) return true;
+        
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {

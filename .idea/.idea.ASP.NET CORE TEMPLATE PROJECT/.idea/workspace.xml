@@ -17,23 +17,18 @@
     <projectFile profileName="IIS Express">DynamicHostApplicationProject/DynamicHostApplicationProject.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/py/sample.py" afterDir="false" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="update ironpython scriptor">
+      <change afterPath="$PROJECT_DIR$/Application/Script/IScriptLoader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Script/ScriptInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/ScriptorItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/HelloWorldScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/modules/a.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/modules/a.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/CsScriptFiles/js/modules/b.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/modules/b.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptLoaderConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ScriptLoaderConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/Application/Constants/Localization/LanguageCode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5246e3851ae0b6b3412dcca1819551c519172078dada937ca0952a3e027d6/OptionsMonitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TodoService/TodoInjector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -223,6 +219,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="1zr6hgYoMJCaezBA3WFPKJU9cAM" />
   <component name="ProjectLevelVcsManager">
@@ -537,13 +536,6 @@
       <workItem from="1642569653828" duration="4077000" />
       <workItem from="1642682560989" duration="4861000" />
       <workItem from="1642692270715" duration="7431000" />
-    </task>
-    <task id="LOCAL-00007" summary="test">
-      <created>1636006108686</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1636006108686</updated>
     </task>
     <task id="LOCAL-00008" summary="111">
       <created>1636101940350</created>
@@ -881,7 +873,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642687457215</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="update ironpython scriptor">
+      <created>1642843526421</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1642843526421</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -926,7 +925,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="test" />
     <MESSAGE value="111" />
     <MESSAGE value="asd" />
     <MESSAGE value="add viewmodel, abstract, service dll" />
@@ -951,7 +949,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="rename namespace" />
     <MESSAGE value="update CsScriptLoader" />
-    <option name="LAST_COMMIT_MESSAGE" value="update CsScriptLoader" />
+    <MESSAGE value="update ironpython scriptor" />
+    <option name="LAST_COMMIT_MESSAGE" value="update ironpython scriptor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1022,17 +1021,56 @@
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>85</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="85" containingFunctionPresentation="method 'Index'">
+          <url>file://$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs</url>
+          <line>61</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="47" containingFunctionPresentation="method 'Execute'">
             <startOffsets>
-              <option value="3256" />
+              <option value="2422" />
             </startOffsets>
             <endOffsets>
-              <option value="3284" />
+              <option value="2512" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="159" />
+          <option name="timeStamp" value="165" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs</url>
+          <line>69</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'Execute'">
+            <startOffsets>
+              <option value="2881" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2923" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="173" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs</url>
+          <line>68</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Infrastructure\BackgroundServices\ConfigReloadBackgroundService.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'Execute'">
+            <startOffsets>
+              <option value="2798" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2852" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Script/ScriptInitializer.cs</url>
+          <line>25</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Script\ScriptInitializer.cs" initialLine="25" containingFunctionPresentation="lambda expression inside method 'Reset'">
+            <startOffsets>
+              <option value="606" />
+            </startOffsets>
+            <endOffsets>
+              <option value="626" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="175" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

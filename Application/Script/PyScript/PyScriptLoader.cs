@@ -1,15 +1,17 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
 using eXtensionSharp;
+using Microsoft.Extensions.Options;
 
 namespace Application.Script.PyScript;
 
-public class PyScriptLoader
+public class PyScriptLoader : IScriptLoader
 {
+    public double Version { get; set; }
     private readonly ConcurrentDictionary<string, PyScriptor> _scriptors = new ConcurrentDictionary<string, PyScriptor>();
-    public PyScriptLoader()
+    public PyScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
     {
-        
+        this.Version = options.CurrentValue.Version;
     }
     
     public IPyScriptor Create(string fileName, string[] modulePath = null)
@@ -29,6 +31,8 @@ public class PyScriptLoader
     
     public bool Reset(string fileName = null)
     {
+        if (this._scriptors.xIsEmpty()) return true;
+        
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {

@@ -21,18 +21,17 @@ public class ApplicationInjector : IDependencyInjectorBase
     private readonly Dictionary<ENUM_DATABASE_TYPE,
             Action<string, IServiceProvider, DbContextOptionsBuilder>>
         _useDatabaseState
-            = new Dictionary<ENUM_DATABASE_TYPE,
-                Action<string, IServiceProvider, DbContextOptionsBuilder>>()
+            = new()
             {
                 {
                     ENUM_DATABASE_TYPE.MSSQL, (connectionString, provider, builder) =>
                     {
                         //MSSQL 
-                        builder.UseSqlServer(connectionString, builder =>
+                        builder.UseSqlServer(connectionString, options =>
                             {
-                                builder.MigrationsAssembly("Application");
+                                options.MigrationsAssembly("Application");
                                 //builder.EnableRetryOnFailure();
-                                builder.CommandTimeout(5);
+                                options.CommandTimeout(5);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -43,11 +42,11 @@ public class ApplicationInjector : IDependencyInjectorBase
                     ENUM_DATABASE_TYPE.MYSQL, (connectionString, provider, builder) =>
                     {
                         var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
-                        builder.UseMySql(connectionString, serverVersion, builder =>
+                        builder.UseMySql(connectionString, serverVersion, options =>
                             {
-                                builder.MigrationsAssembly("Application");
+                                options.MigrationsAssembly("Application");
                                 //builder.EnableRetryOnFailure();
-                                builder.CommandTimeout(5);
+                                options.CommandTimeout(5);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -57,11 +56,11 @@ public class ApplicationInjector : IDependencyInjectorBase
                 {
                     ENUM_DATABASE_TYPE.POSTGRES, (connectionString, provider, builder) =>
                     {
-                        builder.UseNpgsql(connectionString, builder =>
+                        builder.UseNpgsql(connectionString, options =>
                             {
-                                builder.MigrationsAssembly("Application");
+                                options.MigrationsAssembly("Application");
                                 //builder.EnableRetryOnFailure();
-                                builder.CommandTimeout(5);
+                                options.CommandTimeout(5);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -80,6 +79,7 @@ public class ApplicationInjector : IDependencyInjectorBase
 
             #region [define script loader (cs, js, python)]
 
+            .AddSingleton<ScriptInitializer>()
             .AddSingleton<SharpScriptLoader>()
             .AddSingleton<JsScriptLoader>()
             .AddSingleton<PyScriptLoader>()       

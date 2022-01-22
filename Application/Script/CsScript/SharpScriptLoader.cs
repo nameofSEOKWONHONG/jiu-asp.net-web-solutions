@@ -1,15 +1,17 @@
 ﻿using System.Collections.Concurrent;
 using eXtensionSharp;
+using Microsoft.Extensions.Options;
 
 namespace Application.Script.CsScript;
 
-public class SharpScriptLoader
+public class SharpScriptLoader : IScriptLoader
 {
+    public double Version { get; set; }
     private readonly ConcurrentDictionary<string, SharpScriptor> _scriptors = new ConcurrentDictionary<string, SharpScriptor>();
     
-    public SharpScriptLoader()
+    public SharpScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
     {
-        
+        this.Version = options.CurrentValue.Version;
     }
 
     public ISharpScriptor Create(string fileName)
@@ -30,6 +32,8 @@ public class SharpScriptLoader
 
     public bool Reset(string fileName = null)
     {
+        if (this._scriptors.xIsEmpty()) return true;
+        
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {
