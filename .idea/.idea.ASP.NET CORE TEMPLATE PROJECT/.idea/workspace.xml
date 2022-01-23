@@ -17,18 +17,7 @@
     <projectFile profileName="IIS Express">DynamicHostApplicationProject/DynamicHostApplicationProject.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/Sample1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/IJsScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/IJsScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/ISharpScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/ISharpScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-    </list>
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -541,14 +530,7 @@
       <workItem from="1642682560989" duration="4861000" />
       <workItem from="1642692270715" duration="7431000" />
       <workItem from="1642869320826" duration="3396000" />
-      <workItem from="1642924818285" duration="2810000" />
-    </task>
-    <task id="LOCAL-00009" summary="asd">
-      <created>1636357643190</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1636357643190</updated>
+      <workItem from="1642924818285" duration="3445000" />
     </task>
     <task id="LOCAL-00010" summary="update">
       <created>1636622499456</created>
@@ -886,7 +868,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642864071550</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update">
+      <created>1642941950686</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1642941950686</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
