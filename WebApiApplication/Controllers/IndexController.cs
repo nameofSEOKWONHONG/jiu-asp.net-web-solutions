@@ -1,21 +1,17 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using Application.Context;
 using Application.Infrastructure.Cache;
-using Application.Infrastructure.Message;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
 using Application.Script.PyScript;
-using Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
-using FASTER.core;
 using Infrastructure.Abstract;
-using WebApiApplication.Services;
+using Microsoft.ClearScript;
 
 namespace WebApiApplication.Controllers
 {
@@ -75,10 +71,19 @@ namespace WebApiApplication.Controllers
             var mainJsPath = "./ScriptFiles/js/main.js";
             var jsResult = string.Empty;
             _jsScriptLoader.Create(mainJsPath, modulePath)
-                .Execute<string>("test", o =>
-                {
-                    jsResult = o.xValue<string>();
-                });
+                .Execute<string>("test",
+                    engine =>
+                    {
+                        engine.AddHostType("Console", typeof(Console));
+                        var typeCollection = new HostTypeCollection("mscorlib", "System", "System.Core");
+                        // typeCollection.AddAssembly(typeof(MyType1).Assembly);
+                        // typeCollection.AddAssembly(typeof(MyType2).Assembly);
+                        engine.AddHostObject("clr", typeCollection);
+                    },
+                    result =>
+                    {
+                        jsResult = result.xValue<string>();
+                    });
             #endregion
 
             #region [ironpython sample]
@@ -103,8 +108,9 @@ namespace WebApiApplication.Controllers
 
             #endregion
             
-            var key = "IndexMessage";
-            var result = _cacheProvider.GetCache<string>(key);
+            //var key = "IndexMessage";
+            //var result = _cacheProvider.GetCache<string>(key);
+            var result = string.Empty;
             if (result.xIsEmpty())
             {
                 result = await Task.Factory.StartNew(() =>
@@ -122,7 +128,7 @@ namespace WebApiApplication.Controllers
                     sb.Release(out string str);
                     return str;
                 });
-                _cacheProvider.SetCache<string>(key, result);
+                //_cacheProvider.SetCache<string>(key, result);
             }
             
             return Ok(result);

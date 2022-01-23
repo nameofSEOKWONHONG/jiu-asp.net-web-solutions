@@ -1,4 +1,7 @@
-﻿namespace Application.Script.CsScript;
+﻿using System;
+using CSScriptLib;
+
+namespace Application.Script.CsScript;
 
 public interface ISharpScriptor
 {
@@ -6,5 +9,5 @@ public interface ISharpScriptor
         string[] assemblies = null) where TInstance : SharpScriptBase<TOptions, TRequest, TResult>, new();
 
     TResult Execute<TOptions, TRequest, TResult>(TOptions options,
-        TRequest request, string[] assemblies = null);
+        TRequest request, string[] assemblies = null, Action<IEvaluator> assemblyTypeof = null);
 }

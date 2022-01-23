@@ -18,7 +18,7 @@ internal class JsScriptor : IJsScriptor
         _modulePath = modulePath;
     }
 
-    public void Execute<TRequest>(TRequest request, Action<object> action)
+    public void Execute<TRequest>(TRequest request, Action<V8ScriptEngine> pre, Action<object> executed)
     {
         using (var engine = new V8ScriptEngine(V8ScriptEngineFlags.EnableDynamicModuleImports))
         {
@@ -29,16 +29,17 @@ internal class JsScriptor : IJsScriptor
                 engine.DocumentSettings.AccessFlags =
                     DocumentAccessFlags.EnableFileLoading;
             }
-            engine.AddHostType(typeof(Console));
-            engine.DocumentSettings.ContextCallback = doc =>
-            {
-                if (doc.Name == "Logging.js")
-                {
-                    return new Dictionary<string, object> { { "Console", typeof(Console).ToHostType() } };
-                }
-
-                return null;
-            };
+            // engine.AddHostType(typeof(Console));
+            // engine.DocumentSettings.ContextCallback = doc =>
+            // {
+            //     if (doc.Name == "Logging.js")
+            //     {
+            //         return new Dictionary<string, object> { { "Console", typeof(Console).ToHostType() } };
+            //     }
+            //
+            //     return null;
+            // };
+            pre(engine);
             
             //마지막 결과만 반환한다.
             var result = engine.Evaluate(
@@ -47,7 +48,7 @@ internal class JsScriptor : IJsScriptor
 
             if (result.xIsNotEmpty())
             {
-                action(result);
+                executed(result);
             }
         }
     }

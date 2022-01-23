@@ -26,7 +26,7 @@ internal class SharpScriptor : ISharpScriptor
     }
     
     public TResult Execute<TOptions, TRequest, TResult>(TOptions options,
-        TRequest request, string[] assemblies = null)
+        TRequest request, string[] assemblies = null, Action<IEvaluator> assemblyTypeof = null)
     {
         var evaluator = CSScript.Evaluator.With(eval => eval.IsCachingEnabled = true);
         assemblies.xForEach(item => { evaluator.ReferenceAssemblyOf(item); });
