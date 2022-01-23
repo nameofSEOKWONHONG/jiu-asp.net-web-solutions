@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Linq;
+using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
 

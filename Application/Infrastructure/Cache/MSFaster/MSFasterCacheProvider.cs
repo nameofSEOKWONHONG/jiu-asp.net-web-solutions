@@ -165,5 +165,11 @@ namespace Application.Infrastructure.Cache.MSFaster
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            if(this._fasterKV.xIsNotEmpty())
+                this._fasterKV.Dispose();
+        }
     }
 }

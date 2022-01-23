@@ -22,8 +22,8 @@ namespace Application.Infrastructure.Message
     
     public class EmailNotifyMessageProvider : NotifyMessageProviderBase
     {
-        private readonly IOptions<EMailSettings> _options;
-        public EmailNotifyMessageProvider(IOptions<EMailSettings> options)
+        private readonly IOptions<MailSetting> _options;
+        public EmailNotifyMessageProvider(IOptions<MailSetting> options)
         {
             _options = options;
         }

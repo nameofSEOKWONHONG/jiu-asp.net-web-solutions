@@ -1,6 +1,6 @@
 ﻿namespace Domain.Configuration
 {
-    public class EMailSettings
+    public class MailSetting
     {
         public string FromMail { get; set; }
         public string DisplayName { get; set; }

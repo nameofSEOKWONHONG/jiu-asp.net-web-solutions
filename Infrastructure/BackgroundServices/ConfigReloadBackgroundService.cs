@@ -2,11 +2,10 @@
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
 using Application.Script.PyScript;
-using Community.CsharpSqlite;
+using Domain.Configuration;
 using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Abstract;
-using Microsoft.CodeAnalysis;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -19,16 +18,11 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
     /// interval (default : 5sec)
     /// </summary>
     private readonly int _interval = 1000 * 5;
-    /// <summary>
-    /// background service에서 IOC 컨테이너 의존석 주입이 자동으로 지원하지 않으므로 Scope로 생성하도록 아래와 같이 함.
-    /// 만약 background service가 오직 asp.net core에서 호스팅 된다면 IServiceProvider또는 의존성 주입 객체를 바로 사용해도 되겠지만
-    /// Console Application용도로는 IServiceScopeFactory를 사용해야 한다.
-    /// </summary>
-    private readonly IServiceScopeFactory _serviceScopeFactory;
+
     private static object _syncObj = new object();
     
     public ConfigReloadBackgroundService(ILogger<ConfigReloadBackgroundService> logger,
-        IServiceScopeFactory serviceScopeFactory) : base(logger)
+        IServiceScopeFactory serviceScopeFactory) : base(logger, serviceScopeFactory)
     {
         this._serviceScopeFactory = serviceScopeFactory;
     }

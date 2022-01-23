@@ -16,11 +16,10 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
     
     private readonly Computer _computer;
     private readonly int _interval = (1000 * 30);
-    private readonly IServiceScopeFactory _serviceScopeFactory;
     
     public HardwareMonitorBackgroundService(ILogger<HardwareMonitorBackgroundService> logger,
         MessageProviderResolver messageProviderResolver,
-        IServiceScopeFactory serviceScopeFactory) : base(logger, messageProviderResolver)
+        IServiceScopeFactory serviceScopeFactory) : base(logger, serviceScopeFactory, messageProviderResolver)
     {
         this._notifyMessageProvider = messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
         this._serviceScopeFactory = serviceScopeFactory;

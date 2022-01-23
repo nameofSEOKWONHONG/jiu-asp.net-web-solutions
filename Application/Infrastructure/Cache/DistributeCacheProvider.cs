@@ -121,5 +121,10 @@ namespace Application.Infrastructure.Cache
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            //do nothing...
+        }
     }
 }

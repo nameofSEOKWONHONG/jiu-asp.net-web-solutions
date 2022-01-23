@@ -108,7 +108,8 @@ public class ApplicationInjector : IDependencyInjectorBase
             
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
         services.Configure<ScriptLoaderConfig>(configuration.GetSection(nameof(ScriptLoaderConfig)));
-        services.Configure<EMailSettings>(configuration.GetSection(nameof(EMailSettings)));
+        services.Configure<MailSetting>(configuration.GetSection(nameof(MailSetting)));
+        services.Configure<CacheConfig>(configuration.GetSection(nameof(CacheConfig)));
     }
 }
 

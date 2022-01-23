@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
 

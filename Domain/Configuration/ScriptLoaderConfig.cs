@@ -1,7 +1,6 @@
 ﻿using Domain.Enums;
-using eXtensionSharp;
 
-namespace Application.Script;
+namespace Domain.Configuration;
 
 public class ScriptLoaderConfig
 {

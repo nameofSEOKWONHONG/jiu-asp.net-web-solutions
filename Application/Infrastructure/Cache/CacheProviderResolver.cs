@@ -3,33 +3,27 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Caching.Memory;
 using Application.Abstract;
 using Application.Infrastructure.Cache.MSFaster;
+using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Infrastructure.Cache
-{
-    public enum ENUM_CACHE_TYPE
-    {
-        MEMORY,
-        REDIS,
-        LITEDB,
-        FASTER
-    }
-    
+{   
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
     internal class CacheProviderInjector : IDependencyInjectorBase
     {
         /// <summary>
         /// SOP (State Oriented Programing Sample)
         /// </summary>
-        private readonly Dictionary<ENUM_CACHE_TYPE, Func<IServiceProvider, ICacheProvider>> _cacheState =
-            new Dictionary<ENUM_CACHE_TYPE, Func<IServiceProvider, ICacheProvider>>()
+        private readonly Dictionary<ENUM_CACHE_TYPE, Func<IServiceProvider, ICacheProvider>> _cacheStates =
+            new()
             {
                 { ENUM_CACHE_TYPE.MEMORY, (s) => s.GetService<MemoryCacheProvider>() },
                 { ENUM_CACHE_TYPE.REDIS, (s) => s.GetService<DistributeCacheProvider>() },
                 { ENUM_CACHE_TYPE.LITEDB, (s) => s.GetService<LiteDbCacheProvider>() },
                 { ENUM_CACHE_TYPE.FASTER, (s) => s.GetService<MSFasterCacheProvider>() },
+                { ENUM_CACHE_TYPE.ROCKS, (s) => s.GetService<RocksDbCacheProvider>()}
             };
         
         public void Inject(IServiceCollection services, IConfiguration configuration)
@@ -45,9 +39,10 @@ namespace Application.Infrastructure.Cache
                 .AddSingleton<DistributeCacheProvider>()
                 .AddSingleton<LiteDbCacheProvider>()
                 .AddSingleton<MSFasterCacheProvider>()
+                .AddSingleton<RocksDbCacheProvider>()
                 .AddSingleton<CacheProviderResolver>(provider => key =>
                 {
-                    var func = _cacheState[key];
+                    var func = _cacheStates[key];
                     if (func.xIsEmpty()) throw new NotImplementedException($"key{key.ToString()} not implemented");
                     return func(provider);
                 });

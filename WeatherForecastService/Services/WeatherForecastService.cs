@@ -5,6 +5,7 @@ using LiteDB;
 using Domain.Entities;
 using Application.Infrastructure.Cache;
 using Application.Interfaces.WeahterForecast;
+using Domain.Enums;
 using eXtensionSharp;
 
 namespace WeatherForecastService.Services

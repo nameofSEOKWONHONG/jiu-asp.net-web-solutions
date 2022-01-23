@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using eXtensionSharp;
 using Microsoft.Extensions.Caching.Memory;
-using Application.Abstract;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Primitives;
 
 namespace Application.Infrastructure.Cache
@@ -115,7 +111,7 @@ namespace Application.Infrastructure.Cache
             throw new NotImplementedException();
         }
 
-    private void ResetImpl()
+        private void ResetImpl()
         {
             if (_resetCacheToken != null && !_resetCacheToken.IsCancellationRequested && _resetCacheToken.Token.CanBeCanceled)
             {
@@ -124,6 +120,12 @@ namespace Application.Infrastructure.Cache
             }
 
             _resetCacheToken = new CancellationTokenSource();            
+        }
+
+        public void Dispose()
+        {
+            if(_cache.xIsNotEmpty())
+                _cache.Dispose();
         }
     }
 }

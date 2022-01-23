@@ -17,7 +17,28 @@
     <projectFile profileName="IIS Express">DynamicHostApplicationProject/DynamicHostApplicationProject.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="" />
+    <list default="true" id="7903c187-ce4a-4a32-8188-92c69b820b98" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/RocksDbCacheProvider.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Configuration/CacheConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Configuration/ScriptLoaderConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Enums/ENUM_CACHE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ClearScript/JsScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptLoaderConfig.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Configuration/EMailSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Configuration/MailSetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Abstract/BackgroundServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Abstract/BackgroundServiceBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/CacheResetBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/CacheResetBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -531,20 +552,7 @@
       <workItem from="1642692270715" duration="7431000" />
       <workItem from="1642869320826" duration="3396000" />
       <workItem from="1642924818285" duration="3445000" />
-    </task>
-    <task id="LOCAL-00010" summary="update">
-      <created>1636622499456</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1636622499456</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add viewmodel, abstract, service dll">
-      <created>1636697013755</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1636697013755</updated>
+      <workItem from="1642947506598" duration="2637000" />
     </task>
     <task id="LOCAL-00012" summary="add viewmodel, abstract, service dll">
       <created>1636697158320</created>
@@ -875,7 +883,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642941950686</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="update">
+      <created>1642947761464</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1642947761465</updated>
+    </task>
+    <task id="LOCAL-00060" summary="update reference package">
+      <created>1642948376353</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1642948376353</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -920,7 +942,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="111" />
     <MESSAGE value="asd" />
     <MESSAGE value="add viewmodel, abstract, service dll" />
     <MESSAGE value="remove factory anti pattern" />
@@ -945,7 +966,8 @@
     <MESSAGE value="update CsScriptLoader" />
     <MESSAGE value="update ironpython scriptor" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update reference package" />
+    <option name="LAST_COMMIT_MESSAGE" value="update reference package" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

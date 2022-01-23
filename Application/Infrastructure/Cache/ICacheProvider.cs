@@ -6,7 +6,7 @@ namespace Application.Infrastructure.Cache
     /// <summary>
     /// 캐시 제공자 인터페이스
     /// </summary>
-    public interface ICacheProvider
+    public interface ICacheProvider : IDisposable
     {
         /// <summary>
         /// 캐시 카운트 조회 (Support. MemoryCacheProvider)

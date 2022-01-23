@@ -1,4 +1,5 @@
 ﻿using System;
+using eXtensionSharp;
 using LiteDB;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -83,6 +84,12 @@ namespace Application.Infrastructure.Cache
         {
             var collection = _liteDatabase.GetCollection<T>();
             collection.DeleteAll();
+        }
+
+        public void Dispose()
+        {
+            if(this._liteDatabase.xIsNotEmpty())
+                this._liteDatabase.Dispose();
         }
     }
 }
