@@ -107,9 +107,14 @@ public class ApplicationInjector : IDependencyInjectorBase
             #endregion
             
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
+
+        #region [config 설정]
+
         services.Configure<ScriptLoaderConfig>(configuration.GetSection(nameof(ScriptLoaderConfig)));
         services.Configure<MailSetting>(configuration.GetSection(nameof(MailSetting)));
         services.Configure<CacheConfig>(configuration.GetSection(nameof(CacheConfig)));
+
+        #endregion
     }
 }
 
@@ -117,7 +122,7 @@ public static class ApplicationInjectorExtension
 {
     public static void AddApplicationInjector(this IServiceCollection services, IConfiguration configuration)
     {
-        var injectorImpl = new DependencyInjector(new IDependencyInjectorBase[]
+        var injectorImpl = new DependencyInjectionLoader(new IDependencyInjectorBase[]
         {
             new ApplicationInjector(),
             new NotifyMessageProviderInjector(),

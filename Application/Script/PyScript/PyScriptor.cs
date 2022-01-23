@@ -7,13 +7,13 @@ namespace Application.Script.PyScript;
 
 internal class PyScriptor : IPyScriptor
 {
-    private readonly ScriptorItem _scriptorItem;
+    private readonly ScriptItem _scriptItem;
     private readonly string[] _modulePaths;
     
     public PyScriptor(string fileName, string[] modulePaths = null)
     {
         var code = fileName.xFileReadAllText();
-        _scriptorItem = new ScriptorItem(fileName, code, code.xToHash());
+        _scriptItem = new ScriptItem(fileName, code, code.xToHash());
         _modulePaths = modulePaths;
     }
 
@@ -32,7 +32,7 @@ internal class PyScriptor : IPyScriptor
         }
 
         setAction(scope);
-        engine.ExecuteFile(_scriptorItem.FileName, scope);
+        engine.ExecuteFile(_scriptItem.FileName, scope);
         getAction(scope);
     }   
 }

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script.PyScript;
 
-public class PyScriptLoader : IScriptLoader
+public class PyScriptLoader : IScriptReset
 {
     public double Version { get; set; }
     private readonly ConcurrentDictionary<string, PyScriptor> _scriptors = new ConcurrentDictionary<string, PyScriptor>();

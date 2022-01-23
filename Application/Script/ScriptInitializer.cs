@@ -1,39 +1,41 @@
 ﻿using System;
 using System.IO;
-using Application.Script.CsScript;
 using eXtensionSharp;
 
 namespace Application.Script;
 
+/// <summary>
+/// 스크립트 초기화 Reset
+/// </summary>
 public class ScriptInitializer
 {
     public ScriptInitializer()
     {
     }
 
-    public bool Reset(IScriptLoader scriptLoader, double version, string[] resetFiles = null)
+    public bool Reset(IScriptReset scriptReset, double version, string[] resetFiles = null)
     {
         var isReset = true;
         
-        if (!version.xIsEquals(scriptLoader.Version))
+        if (!version.xIsEquals(scriptReset.Version))
         {
-            isReset = scriptLoader.Reset(null);    
+            isReset = scriptReset.Reset(null);    
         }        
-        else if (version.xIsEquals(scriptLoader.Version))
+        else if (version.xIsEquals(scriptReset.Version))
         {
             resetFiles.xForEach(file =>
             {
                 if (file.xIsEmpty()) return false;
                 var fileNamePath = Path.Combine(AppContext.BaseDirectory, file);
-                isReset = scriptLoader.Reset(fileNamePath);
+                isReset = scriptReset.Reset(fileNamePath);
                 if (isReset.xIsFalse())
-                    throw new Exception($"{nameof(ScriptInitializer)} : init is failed. version is {version}, script version : {scriptLoader.Version}, filename is {file}");
+                    throw new Exception($"{nameof(ScriptInitializer)} : init is failed. version is {version}, script version : {scriptReset.Version}, filename is {file}");
 
                 return true;
             });
         }
 
-        scriptLoader.Version = version;
+        scriptReset.Version = version;
 
         return isReset;
     }

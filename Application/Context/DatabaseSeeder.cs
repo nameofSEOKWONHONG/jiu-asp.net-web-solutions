@@ -16,6 +16,9 @@ namespace Application.Context
         void Initialize();
     }
     
+    /// <summary>
+    /// database seeder
+    /// </summary>
     public class DatabaseSeeder : IDatabaseSeeder
     {
         private readonly ILogger _logger;

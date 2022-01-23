@@ -27,8 +27,8 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
         this._serviceScopeFactory = serviceScopeFactory;
     }
 
-    private readonly Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptLoader>> _resetStates =
-        new Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptLoader>>()
+    private readonly Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptReset>> _resetStates =
+        new Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptReset>>()
         {
             {
                 ENUM_SCRIPT_TYPE.CSHARP, scope => scope.ServiceProvider.GetService<SharpScriptLoader>()

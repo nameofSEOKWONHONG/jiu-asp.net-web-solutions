@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script.ClearScript;
 
-public class JsScriptLoader : IScriptLoader
+public class JsScriptLoader : IScriptReset
 {
     public double Version { get; set; }
     private readonly ConcurrentDictionary<string, JsScriptor> _scriptors = new ConcurrentDictionary<string, JsScriptor>();

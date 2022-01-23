@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Application.Context
 {
+    /// <summary>
+    /// 임시 테이블 매칭
+    /// </summary>
     public class DbL4Provider
     {
         private readonly Dictionary<string, string> _tableAttributeKeyValues;

@@ -1,22 +1,26 @@
-﻿using System.Collections.Generic;
-using System.Reflection;
-using eXtensionSharp;
+﻿using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Abstract
 {
+    /// <summary>
+    /// di 공통화 interface
+    /// </summary>
     public interface IDependencyInjectorBase
     {
         void Inject(IServiceCollection services, IConfiguration configuration);
     }
 
-    public sealed class DependencyInjector
+    /// <summary>
+    /// DI Loader 
+    /// </summary>
+    public sealed class DependencyInjectionLoader
     {
         private readonly IDependencyInjectorBase[] _dependencyInjectorBases;
         private readonly IServiceCollection _services;
         private readonly IConfiguration _configuration;
-        public DependencyInjector(IDependencyInjectorBase[] dependencyInjectorBases,
+        public DependencyInjectionLoader(IDependencyInjectorBase[] dependencyInjectorBases,
             IServiceCollection services,
             IConfiguration configuration)
         {

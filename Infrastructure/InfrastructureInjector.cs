@@ -30,7 +30,7 @@ namespace Infrastructure.Services
     {
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
-            var injectorImpl = new DependencyInjector(new[]
+            var injectorImpl = new DependencyInjectionLoader(new[]
             {
                 new InfrastructureInjector()
             }, services, null);

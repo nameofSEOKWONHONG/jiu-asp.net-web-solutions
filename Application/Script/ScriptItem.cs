@@ -1,12 +1,15 @@
 ﻿namespace Application.Script;
 
-internal record ScriptorItem
+/// <summary>
+/// 스크립트 생성 기본
+/// </summary>
+internal record ScriptItem
 {
     public string FileName { get; }
     public string Code { get; }
     public string Hash { get; }
 
-    public ScriptorItem(string fileName, string code, string hash)
+    public ScriptItem(string fileName, string code, string hash)
     {
         this.FileName = fileName;
         this.Code = code;

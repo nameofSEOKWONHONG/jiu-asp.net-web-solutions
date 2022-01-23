@@ -21,7 +21,7 @@ namespace TodoService
     {
         public static void AddTodoInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjector(new[]
+            var diCore = new DependencyInjectionLoader(new[]
             {
                 new TodoInjector()
             }, services, null);

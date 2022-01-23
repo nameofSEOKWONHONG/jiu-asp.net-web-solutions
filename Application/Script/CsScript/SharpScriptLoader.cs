@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script.CsScript;
 
-public class SharpScriptLoader : IScriptLoader
+public class SharpScriptLoader : IScriptReset
 {
     public double Version { get; set; }
     private readonly ConcurrentDictionary<string, SharpScriptor> _scriptors = new ConcurrentDictionary<string, SharpScriptor>();

@@ -2,6 +2,9 @@
 
 namespace Application.Abstract
 {
+    /// <summary>
+    /// 응답 공통화
+    /// </summary>
     public class ResponseResultBase
     {
         private bool _success;

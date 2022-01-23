@@ -7,11 +7,11 @@ namespace Application.Script.CsScript;
 
 internal class SharpScriptor : ISharpScriptor
 {
-    private readonly ScriptorItem _sharpScriptorItem;
+    private readonly ScriptItem _sharpScriptItem;
     public SharpScriptor(string fileName)
     {
         var code = fileName.xFileReadAllText();
-        _sharpScriptorItem = new ScriptorItem(fileName, code, code.xToHash());
+        _sharpScriptItem = new ScriptItem(fileName, code, code.xToHash());
     }
 
     public TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
@@ -31,7 +31,7 @@ internal class SharpScriptor : ISharpScriptor
         var evaluator = CSScript.Evaluator.With(eval => eval.IsCachingEnabled = true);
         assemblies.xForEach(item => { evaluator.ReferenceAssemblyOf(item); });
         evaluator.ReferenceDomainAssemblies();
-        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpScriptorItem.Code);
+        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpScriptItem.Code);
         executor.Options = options;
         executor.Request = request;
 

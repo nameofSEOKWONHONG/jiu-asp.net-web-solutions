@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Application.Context
 {
+    /// <summary>
+    /// dbcommand intercepter
+    /// </summary>
     public class DbL4Interceptor : DbCommandInterceptor
     {
         private readonly DbL4Provider _dbL4Provider;

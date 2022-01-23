@@ -22,7 +22,7 @@ namespace HelloWorldService
     {
         public static void AddHelloWorldInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjector(new IDependencyInjectorBase[]
+            var diCore = new DependencyInjectionLoader(new IDependencyInjectorBase[]
             {
                 new HelloWorldInjector()
             }, services, null);

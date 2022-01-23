@@ -3,6 +3,9 @@ using System.Globalization;
 
 namespace Application.Exceptions
 {
+    /// <summary>
+    /// 응답 공통화
+    /// </summary>
     public class ApiException : Exception
     {
         public int? Status { get; private set; } = 500;

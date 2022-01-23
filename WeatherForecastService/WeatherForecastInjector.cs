@@ -28,7 +28,7 @@ namespace WeatherForecastService
     {
         public static void AddWeatherForecastInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjector(new[]
+            var diCore = new DependencyInjectionLoader(new[]
             {
                 new WeatherForecastInjector()
             }, services, null);
