@@ -5,10 +5,10 @@ using eXtensionSharp;
 
 namespace Application.Script.CsScript;
 
-internal class SharpScriptor : ISharpScriptor
+internal class SharpScripter : ISharpScripter
 {
     private readonly ScriptItem _sharpScriptItem;
-    public SharpScriptor(string fileName)
+    public SharpScripter(string fileName)
     {
         var code = fileName.xFileReadAllText();
         _sharpScriptItem = new ScriptItem(fileName, code, code.xToHash());

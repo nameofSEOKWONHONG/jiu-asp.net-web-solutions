@@ -8,21 +8,21 @@ namespace Application.Script.CsScript;
 public class SharpScriptLoader : IScriptReset
 {
     public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, SharpScriptor> _scriptors = new ConcurrentDictionary<string, SharpScriptor>();
+    private readonly ConcurrentDictionary<string, SharpScripter> _scriptors = new ConcurrentDictionary<string, SharpScripter>();
     
     public SharpScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
     {
         this.Version = options.CurrentValue.Version;
     }
 
-    public ISharpScriptor Create(string fileName)
+    public ISharpScripter Create(string fileName)
     {
-        if (_scriptors.TryGetValue(fileName, out SharpScriptor scriptor))
+        if (_scriptors.TryGetValue(fileName, out SharpScripter scriptor))
         {
             return scriptor;
         }
         
-        var newScript = new SharpScriptor(fileName);
+        var newScript = new SharpScripter(fileName);
         if (_scriptors.TryAdd(fileName, newScript))
         {
             return newScript;
@@ -38,7 +38,7 @@ public class SharpScriptLoader : IScriptReset
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {
-            if (!this._scriptors.TryRemove(fileName, out SharpScriptor csScriptor))
+            if (!this._scriptors.TryRemove(fileName, out SharpScripter csScriptor))
             {
                 return false;
             }

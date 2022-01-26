@@ -5,12 +5,12 @@ using Microsoft.Scripting.Hosting;
 
 namespace Application.Script.PyScript;
 
-internal class PyScriptor : IPyScriptor
+internal class PyScripter : IPyScripter
 {
     private readonly ScriptItem _scriptItem;
     private readonly string[] _modulePaths;
     
-    public PyScriptor(string fileName, string[] modulePaths = null)
+    public PyScripter(string fileName, string[] modulePaths = null)
     {
         var code = fileName.xFileReadAllText();
         _scriptItem = new ScriptItem(fileName, code, code.xToHash());

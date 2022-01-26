@@ -9,18 +9,18 @@ namespace Application.Script.PyScript;
 public class PyScriptLoader : IScriptReset
 {
     public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, PyScriptor> _scriptors = new ConcurrentDictionary<string, PyScriptor>();
+    private readonly ConcurrentDictionary<string, PyScripter> _scriptors = new ConcurrentDictionary<string, PyScripter>();
     public PyScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
     {
         this.Version = options.CurrentValue.Version;
     }
     
-    public IPyScriptor Create(string fileName, string[] modulePath = null)
+    public IPyScripter Create(string fileName, string[] modulePath = null)
     {
         var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
         if (exists.Key.xIsEmpty())
         {
-            var newCScriptor = new PyScriptor(fileName, modulePath);
+            var newCScriptor = new PyScripter(fileName, modulePath);
             if (_scriptors.TryAdd(fileName, newCScriptor))
             {
                 return newCScriptor;    
@@ -37,7 +37,7 @@ public class PyScriptLoader : IScriptReset
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {
-            if (!_scriptors.TryRemove(fileName, out PyScriptor scriptor))
+            if (!_scriptors.TryRemove(fileName, out PyScripter scriptor))
             {
                 return false;
             }

@@ -7,11 +7,11 @@ using Microsoft.ClearScript.V8;
 
 namespace Application.Script.ClearScript;
 
-internal class JsScriptor : IJsScriptor
+internal class JsScripter : IJsScripter
 {
     private readonly ScriptItem _mainJsItem;
     private readonly string _modulePath;
-    public JsScriptor(string mainJs, string modulePath = null)
+    public JsScripter(string mainJs, string modulePath = null)
     {
         var mainJsCode = mainJs.xFileReadAllText();
         _mainJsItem = new ScriptItem(mainJs, mainJsCode, mainJsCode.xToHash());

@@ -9,19 +9,19 @@ namespace Application.Script.ClearScript;
 public class JsScriptLoader : IScriptReset
 {
     public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, JsScriptor> _scriptors = new ConcurrentDictionary<string, JsScriptor>();
+    private readonly ConcurrentDictionary<string, JsScripter> _scriptors = new ConcurrentDictionary<string, JsScripter>();
     
-    public JsScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
+    public JsScriptLoader(IOptions<ScriptLoaderConfig> options)
     {
-        this.Version = options.CurrentValue.Version;
+        this.Version = options.Value.Version;
     }
 
-    public IJsScriptor Create(string fileName, string modulePath = null)
+    public IJsScripter Create(string fileName, string modulePath = null)
     {
         var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
         if (exists.Key.xIsEmpty())
         {
-            var newCScriptor = new JsScriptor(fileName, modulePath);
+            var newCScriptor = new JsScripter(fileName, modulePath);
             if (_scriptors.TryAdd(fileName, newCScriptor))
             {
                 return newCScriptor;    
@@ -38,11 +38,11 @@ public class JsScriptLoader : IScriptReset
         if(fileName.xIsEmpty()) this._scriptors.Clear();
         else
         {
-            if (!_scriptors.TryRemove(fileName, out JsScriptor scriptor))
+            if (!_scriptors.TryRemove(fileName, out JsScripter scriptor))
             {
                 return false;
             }
         }
         return true;
-    }    
+    }   
 }

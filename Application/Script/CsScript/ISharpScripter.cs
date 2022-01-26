@@ -3,7 +3,7 @@ using CSScriptLib;
 
 namespace Application.Script.CsScript;
 
-public interface ISharpScriptor
+public interface ISharpScripter
 {
     TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,
         string[] assemblies = null) where TInstance : SharpScriptBase<TOptions, TRequest, TResult>, new();
