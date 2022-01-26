@@ -1,79 +1,49 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using Application.Script.ClearScript;
-using CSScripting;
+﻿using System.Collections.Concurrent;
+using System.Linq;
+using Domain.Configuration;
 using eXtensionSharp;
-using Jint;
-using Jint.CommonJS;
-using Jint.Native;
-using Microsoft.ClearScript.V8;
-using JintEngine = Jint.Engine;
+using Microsoft.Extensions.Options;
 
 namespace Application.Script.JintScript;
 
-public interface IJIntScripter
-{
-    void Execute<TRequest>(TRequest request, Action<JintEngine> pre, Action<JintEngine> executed);
-    void ExecuteModule<TRequest>(TRequest request, Action<JintEngine> pre, Action<JsValue> executed);
-}
-
-public class JIntScripter : IJIntScripter
-{
-    private readonly ScriptItem _scriptItem;
-    private readonly CultureInfo _currentCulture;
-    private readonly string _modulePath; 
-    public JIntScripter(string mainJs, string modulePath = null, string cultureTxt = "ko-KR")
-    {
-        var code = mainJs.xFileReadAllText();
-        this._scriptItem = new ScriptItem(mainJs, code, code.xToHash());
-        this._modulePath = modulePath;
-        this._currentCulture = CultureInfo.GetCultureInfo(cultureTxt);
-    }
-    
-    public void Execute<TRequest>(TRequest request, Action<JintEngine> pre, Action<JintEngine> executed)
-    {
-        var engine = new JintEngine(cfg => cfg.Culture = this._currentCulture);
-        // List<Jint.Native.JsValue> jsValues = new List<Jint.Native.JsValue>();
-        // _modulePaths.xForEach(path =>
-        // {
-        //     jsValues.Add(engine.CommonJS().RunMain(path));
-        // });
-        pre(engine);
-        engine.Execute(this._scriptItem.Code);
-        executed(engine);
-    }
-
-    public void ExecuteModule<TRequest>(TRequest request, Action<JintEngine> pre, Action<JsValue> executed)
-    {
-        Directory.SetCurrentDirectory(Path.GetTempPath());
-        var engine = new JintEngine(cfg => cfg.Culture = this._currentCulture);
-        pre(engine);
-        var code = _modulePath.xFileReadAllText();
-        var fileName = _modulePath.GetFileName();
-        File.WriteAllText(fileName, code);
-        var jsValue = engine.CommonJS().RunMain(Path.Combine("./", fileName.GetFileNameWithoutExtension()));
-        executed(jsValue);
-    }
-}
-
-public interface IJIntScriptLoader
-{
-    
-}
-public class JIntScriptLoader
+public class JIntScriptLoader : IScriptReset
 {
     public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, JsScripter> _scriptors = new ConcurrentDictionary<string, JsScripter>();
+
+    private readonly ConcurrentDictionary<string, JIntScripter> _scriptors = new();
     
-    public JIntScriptLoader()
+    public JIntScriptLoader(IOptions<ScriptLoaderConfig> options)
     {
-        
+        this.Version = options.Value.Version;
     }
-    public void Execute<TRequest>(TRequest request, Action<V8ScriptEngine> pre, Action<object> executed)
+    
+    public IJIntScripter Create(string fileName, string modulePath = null)
     {
-        throw new NotImplementedException();
+        var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
+        if (exists.Key.xIsEmpty())
+        {
+            var newCScriptor = new JIntScripter(fileName, modulePath);
+            if (_scriptors.TryAdd(fileName, newCScriptor))
+            {
+                return newCScriptor;    
+            }
+        }
+
+        return exists.Value;
+    }
+
+    public bool Reset(string fileName = null)
+    {
+        if (this._scriptors.xIsEmpty()) return true;
+        
+        if(fileName.xIsEmpty()) this._scriptors.Clear();
+        else
+        {
+            if (!_scriptors.TryRemove(fileName, out JIntScripter scriptor))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

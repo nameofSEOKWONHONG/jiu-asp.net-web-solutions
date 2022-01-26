@@ -16,7 +16,7 @@ internal class JsScripter : IJsScripter
         var mainJsCode = mainJs.xFileReadAllText();
         _mainJsItem = new ScriptItem(mainJs, mainJsCode, mainJsCode.xToHash());
         _modulePath = modulePath;
-    }
+    } 
 
     public void Execute<TRequest>(TRequest request, Action<V8ScriptEngine> pre, Action<object> executed)
     {

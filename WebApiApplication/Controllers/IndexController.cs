@@ -5,12 +5,14 @@ using Application.Context;
 using Application.Infrastructure.Cache;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Abstract;
+using Jint;
 using Microsoft.ClearScript;
 
 namespace WebApiApplication.Controllers
@@ -23,18 +25,21 @@ namespace WebApiApplication.Controllers
         private readonly SharpScriptLoader _sharpScriptLoader;
         private readonly JsScriptLoader _jsScriptLoader;
         private readonly PyScriptLoader _pyScriptLoader;
+        private readonly JIntScriptLoader _jIntScriptLoader;
         
         public IndexController(CacheProviderResolver resolver, 
             JIUDbContext dbContext, 
             SharpScriptLoader sharpScriptLoader,
             JsScriptLoader jsScriptLoader,
-            PyScriptLoader pyScriptLoader)
+            PyScriptLoader pyScriptLoader,
+            JIntScriptLoader jIntScriptLoader)
         {
             _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
             _dbContext = dbContext;
             _sharpScriptLoader = sharpScriptLoader;
             _jsScriptLoader = jsScriptLoader;
             _pyScriptLoader = pyScriptLoader;
+            _jIntScriptLoader = jIntScriptLoader;
         }
         
         [HttpGet("index")]
@@ -67,8 +72,8 @@ namespace WebApiApplication.Controllers
             #endregion
 
             #region [clear script sample]
-            var modulePath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\modules");
-            var mainJsPath = "./ScriptFiles/js/main.js";
+            var modulePath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\csscript\\modules");
+            var mainJsPath = "ScriptFiles\\js\\csscript\\main.js";
             var jsResult = string.Empty;
             _jsScriptLoader.Create(mainJsPath, modulePath)
                 .Execute<string>("test",
@@ -107,6 +112,31 @@ namespace WebApiApplication.Controllers
             });
 
             #endregion
+
+            #region [JintScript sample]
+
+            var jintResult = string.Empty;
+            _jIntScriptLoader.Create("ScriptFiles/js/jint/sample.js").Execute(
+                engine =>
+                {
+                    engine.SetValue("requestTxt", "I'm JInt");
+                }, engine =>
+                {
+                    jintResult = engine.GetValue("result").AsString();
+                });
+
+            var tsResult = string.Empty;
+            _jIntScriptLoader.Create(Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\jint\\sample1.ts")).Execute(
+                engine =>
+                {
+                    
+                },
+                engine =>
+                {
+                    tsResult = engine.GetValue("message").AsString();
+                });
+
+            #endregion
             
             //var key = "IndexMessage";
             //var result = _cacheProvider.GetCache<string>(key);
@@ -125,6 +155,8 @@ namespace WebApiApplication.Controllers
                     sb.AppendLine($"cs-script : {csResult}");
                     sb.AppendLine($"js-script : {jsResult}");
                     sb.AppendLine($"py-script : {pyResult}");
+                    sb.AppendLine($"jint-script : {jintResult}");
+                    sb.AppendLine($"ts-script : {tsResult}");
                     sb.Release(out string str);
                     return str;
                 });

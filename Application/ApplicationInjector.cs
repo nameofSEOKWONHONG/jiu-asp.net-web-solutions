@@ -7,6 +7,7 @@ using Application.Infrastructure.Message;
 using Application.Script;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Domain.Configuration;
 using Domain.Enums;
@@ -82,7 +83,8 @@ public class ApplicationInjector : IDependencyInjectorBase
             .AddSingleton<ScriptInitializer>()
             .AddSingleton<SharpScriptLoader>()
             .AddSingleton<JsScriptLoader>()
-            .AddSingleton<PyScriptLoader>()       
+            .AddSingleton<PyScriptLoader>()
+            .AddSingleton<JIntScriptLoader>()
 
             #endregion
             
