@@ -114,9 +114,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <TypeScriptCompile Include="ScriptFiles\js\jint\sample1.ts">
+      <None Include="ScriptFiles\js\jint\sample1.ts">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </TypeScriptCompile>
+      </None>
     </ItemGroup>
 
     <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">

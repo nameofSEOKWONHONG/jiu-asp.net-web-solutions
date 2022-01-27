@@ -37,7 +37,7 @@ namespace WebApiApplication.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetTodoFromTo/{from}/{to}")]
+        [HttpGet("GetTodo/{from}/{to}")]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new [] {"from", "to"})]
         public async Task<IActionResult> GetTodo(DateTime from, DateTime to)
         {

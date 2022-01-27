@@ -126,15 +126,14 @@ namespace WebApiApplication.Controllers
                 });
 
             var tsResult = string.Empty;
-            _jIntScriptLoader.Create(Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\jint\\sample1.ts")).Execute(
-                engine =>
-                {
-                    
-                },
-                engine =>
-                {
-                    tsResult = engine.GetValue("message").AsString();
-                });
+            _jIntScriptLoader.Create("ScriptFiles\\js\\jint\\sample1.ts")
+                .Execute(engine =>
+                    {
+                        
+                    }, engine =>
+                    {
+                        tsResult = engine.GetValue("result").AsString();
+                    });
 
             #endregion
             

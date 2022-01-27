@@ -13,7 +13,7 @@ internal class PyScripter : IPyScripter
     public PyScripter(string fileName, string[] modulePaths = null)
     {
         var code = fileName.xFileReadAllText();
-        _scriptItem = new ScriptItem(fileName, code, code.xToHash());
+        _scriptItem = new ScriptItem(fileName, code.xToHash(), code);
         _modulePaths = modulePaths;
     }
 

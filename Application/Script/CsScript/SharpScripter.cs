@@ -11,7 +11,7 @@ internal class SharpScripter : ISharpScripter
     public SharpScripter(string fileName)
     {
         var code = fileName.xFileReadAllText();
-        _sharpScriptItem = new ScriptItem(fileName, code, code.xToHash());
+        _sharpScriptItem = new ScriptItem(fileName, code.xToHash(), code);
     }
 
     public TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,

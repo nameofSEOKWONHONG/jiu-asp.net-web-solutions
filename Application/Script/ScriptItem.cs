@@ -7,12 +7,12 @@ internal record ScriptItem
 {
     public string FileName { get; }
     public string Code { get; }
-    public string Hash { get; }
+    public string HashSrcCode { get; }
 
-    public ScriptItem(string fileName, string code, string hash)
+    public ScriptItem(string fileName, string hashSrcCode, string code)
     {
         this.FileName = fileName;
+        this.HashSrcCode = hashSrcCode;
         this.Code = code;
-        this.Hash = hash;
     }
 }
