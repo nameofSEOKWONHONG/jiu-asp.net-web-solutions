@@ -1,23 +1,22 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Abstract;
 using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Infrastructure.BackgroundServices
 {
-    public class KafakaConsumerBackgroundService : BackgroundService
+    public class KafakaConsumerBackgroundService : BackgroundServiceBase
     {
-        private readonly ILogger _logger;
-        private readonly IConfiguration _configuration;
         private readonly ConsumerConfig _consumerConfig;
-        public KafakaConsumerBackgroundService(ILogger<KafakaConsumerBackgroundService> logger, 
-            IConfiguration configuration)
+        public KafakaConsumerBackgroundService(ILogger<KafakaConsumerBackgroundService> logger,
+            IConfiguration configuration,
+            IServiceScopeFactory serviceScopeFactory) : base(logger, configuration, serviceScopeFactory)
         {
-            _logger = logger;
-            _configuration = configuration;
             _consumerConfig = new ConsumerConfig
             { 
                 GroupId = "test-consumer-group",
@@ -30,7 +29,8 @@ namespace Infrastructure.BackgroundServices
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };            
         }
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        
+        protected override async Task ExecuteCore(CancellationToken stoppingToken)
         {
             using (var c = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
             {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Abstract;
 using Application.Infrastructure.Cache;
 using Domain.Configuration;
 using Domain.Enums;
@@ -17,7 +18,6 @@ namespace Infrastructure.BackgroundServices
     public class CacheResetBackgroundService : BackgroundServiceBase
     {
         private readonly CacheProviderResolver _cacheProviderResolver;
-        private readonly int _interval = (1000 * 60) * 60;
         private readonly CacheConfig _cacheOption;
 
         private readonly Dictionary<ENUM_CACHE_TYPE, Func<CacheProviderResolver, ICacheProvider>> _cacheStates =
@@ -31,31 +31,26 @@ namespace Infrastructure.BackgroundServices
             };
 
         public CacheResetBackgroundService(ILogger<CacheResetBackgroundService> logger,
+            IConfiguration configuration,
             IServiceScopeFactory serviceScopeFactory,
-            CacheProviderResolver cacheProviderResolver) : base(logger, serviceScopeFactory)
+            CacheProviderResolver cacheProviderResolver) : base(logger, configuration, serviceScopeFactory)
         {
             _cacheProviderResolver = cacheProviderResolver;
         }
 
-        protected override async Task Execute(CancellationToken stoppingToken)
+        protected override async Task ExecuteCore(CancellationToken stoppingToken)
         {
-            while (!stoppingToken.IsCancellationRequested)
+            using (var scope = this._serviceScopeFactory.CreateScope())
             {
-                _logger.LogInformation($"{nameof(CacheResetBackgroundService)} start");
-                using (var scope = this._serviceScopeFactory.CreateScope())
+                var config = scope.ServiceProvider.GetService<IOptionsMonitor<CacheConfig>>()?.CurrentValue;
+                if (config.IsCacheReset)
                 {
-                    var config = scope.ServiceProvider.GetService<IOptionsMonitor<CacheConfig>>()?.CurrentValue;
-                    if (config.IsCacheReset)
+                    _logger.LogInformation($"{nameof(CacheResetBackgroundService)} running");
+                    config.ResetCacheTypes.xForEach(type =>
                     {
-                        _logger.LogInformation($"{nameof(CacheResetBackgroundService)} running");
-                        config.ResetCacheTypes.xForEach(type =>
-                        {
-                            _cacheStates[type](_cacheProviderResolver).Reset();
-                        });
-                    }
+                        _cacheStates[type](_cacheProviderResolver).Reset();
+                    });
                 }
-                _logger.LogInformation($"{nameof(CacheResetBackgroundService)} end");
-                await Task.Delay(_interval, stoppingToken);
             }
         }
     }

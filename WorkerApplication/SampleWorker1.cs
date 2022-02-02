@@ -1,41 +1,30 @@
-﻿using Application.Interfaces.Todo;
+﻿using Application.Abstract;
+using Application.Interfaces.Todo;
 using eXtensionSharp;
 
 namespace WorkerApplication;
 
-public class SampleWorker1 : WorkerServiceBase
+public class SampleWorker1 : BackgroundServiceBase
 {
-    private readonly IServiceScopeFactory _serviceScopeFactory;
-    private readonly int _interval = 0;
-    
-    public SampleWorker1(ILogger<SampleWorker1> logger,
+   public SampleWorker1(ILogger<SampleWorker1> logger,
         IConfiguration configuration,
-        IServiceScopeFactory serviceScopeFactory) : base(logger, configuration)
+        IServiceScopeFactory serviceScopeFactory) : base(logger, configuration, serviceScopeFactory)
     {
-        _serviceScopeFactory = serviceScopeFactory;
         _interval = int.Parse(configuration["SampleWorer1Options:Interval"]) * 1000;
     }
 
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteCore(CancellationToken stopingToken)
     {
-        while (!stoppingToken.IsCancellationRequested)
+        using (var scope = _serviceScopeFactory.CreateScope())
         {
-            _logger.LogInformation("executeasync sampleworker1");
+            var service = scope.ServiceProvider.GetRequiredService<ITodoService>();
 
-            using (var scope = _serviceScopeFactory.CreateScope())
+            var todos = await service.GetAllTodoByDateAsync(DateTime.Now);
+            
+            todos.xForEach(todo =>
             {
-                var service = scope.ServiceProvider.GetRequiredService<ITodoService>();
-
-                var todos = await service.GetAllTodoByDateAsync(DateTime.Now);
-            
-                todos.xForEach(todo =>
-                {
-                    Console.WriteLine(todo.xToJson());
-                });
-            }
-            
-            await Task.Delay(_interval, stoppingToken);
+                Console.WriteLine(todo.xToJson());
+            });
         }
-        await base.ExecuteAsync(stoppingToken);
     }
 }

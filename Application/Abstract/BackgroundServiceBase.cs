@@ -1,11 +1,13 @@
-﻿using Application.Infrastructure.Message;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using Application.Infrastructure.Message;
 using Domain.Enums;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Renci.SshNet.Messages;
 
-namespace Infrastructure.Abstract;
+namespace Application.Abstract;
 
 /// <summary>
 /// backgroundservice 기본
@@ -13,6 +15,7 @@ namespace Infrastructure.Abstract;
 public abstract class BackgroundServiceBase : BackgroundService
 {
     protected ILogger _logger;
+    protected IConfiguration _configuration;
     /// <summary>
     /// background service에서 IOC 컨테이너 의존석 주입이 자동으로 지원하지 않으므로 Scope로 생성하도록 아래와 같이 함.
     /// 만약 background service가 오직 asp.net core에서 호스팅 된다면 IServiceProvider또는 의존성 주입 객체를 바로 사용해도 되겠지만
@@ -20,19 +23,33 @@ public abstract class BackgroundServiceBase : BackgroundService
     /// </summary>
     protected IServiceScopeFactory _serviceScopeFactory;
 
-    protected BackgroundServiceBase(ILogger logger, IServiceScopeFactory serviceScopeFactory)
+    protected int _interval = 1000;
+
+    /// <summary>
+    /// ctor
+    /// </summary>
+    /// <param name="logger"></param>
+    /// <param name="serviceScopeFactory"></param>
+    /// <param name="interval">second</param>
+    protected BackgroundServiceBase(ILogger logger, IConfiguration configuration, IServiceScopeFactory serviceScopeFactory, int interval = 60)
     {
         this._logger = logger;
+        this._configuration = configuration;
         this._serviceScopeFactory = serviceScopeFactory;
+        this._interval = 1000 * interval;
     }
 
-    protected abstract Task Execute(CancellationToken stopingToken);
+    protected abstract Task ExecuteCore(CancellationToken stopingToken);
 
-    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        this._logger.LogInformation("start");
-        this.Execute(stoppingToken);
-        return Task.CompletedTask;
+        while (!stoppingToken.IsCancellationRequested)
+        {
+            this._logger.LogInformation($"start");
+            await this.ExecuteCore(stoppingToken);
+            this._logger.LogInformation($"end");
+            await Task.Delay(_interval);
+        }
     }
 }
 
@@ -45,8 +62,9 @@ public abstract class MessageNotifyBackgroundServiceBase : BackgroundServiceBase
     protected INotifyMessageProvider _notifyMessageProvider;
     
     protected MessageNotifyBackgroundServiceBase(ILogger logger, 
-        IServiceScopeFactory serviceScopeFactory, 
-        MessageProviderResolver messageProviderResolver) : base(logger, serviceScopeFactory)
+        IConfiguration configuration,
+        IServiceScopeFactory serviceScopeFactory,
+        MessageProviderResolver messageProviderResolver) : base(logger, configuration, serviceScopeFactory)
     {
         this._messageProviderResolver = messageProviderResolver;
         //default
@@ -61,8 +79,9 @@ public abstract class ParallelBackgroundServiceBase : BackgroundServiceBase
 {
     protected readonly ParallelOptions _parallelOptions;
     protected ParallelBackgroundServiceBase(ILogger logger, 
+        IConfiguration configuration,
         IServiceScopeFactory serviceScopeFactory, 
-        int maxDegreeOfParallelism = 1) : base(logger, serviceScopeFactory)
+        int maxDegreeOfParallelism = 1) : base(logger, configuration, serviceScopeFactory)
     {
         this._parallelOptions = new ParallelOptions()
         {
