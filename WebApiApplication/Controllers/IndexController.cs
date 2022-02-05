@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Application.Context;
 using Application.Infrastructure.Cache;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.JavaScriptEngines.NodeJS;
 using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Microsoft.AspNetCore.Authorization;
@@ -12,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
 using Infrastructure.Abstract;
+using Jering.Javascript.NodeJS;
 using Jint;
 using Microsoft.ClearScript;
 
@@ -26,13 +29,17 @@ namespace WebApiApplication.Controllers
         private readonly JsScriptLoader _jsScriptLoader;
         private readonly PyScriptLoader _pyScriptLoader;
         private readonly JIntScriptLoader _jIntScriptLoader;
+        private readonly NodeJSScriptLoader _nodeJsScriptLoader;
+        private readonly INodeJSService _nodeJsService;
         
         public IndexController(CacheProviderResolver resolver, 
             JIUDbContext dbContext, 
             SharpScriptLoader sharpScriptLoader,
             JsScriptLoader jsScriptLoader,
             PyScriptLoader pyScriptLoader,
-            JIntScriptLoader jIntScriptLoader)
+            JIntScriptLoader jIntScriptLoader,
+            NodeJSScriptLoader nodeJsScriptLoader,
+            INodeJSService nodeJsService)
         {
             _cacheProvider = resolver(ENUM_CACHE_TYPE.FASTER);
             _dbContext = dbContext;
@@ -40,6 +47,9 @@ namespace WebApiApplication.Controllers
             _jsScriptLoader = jsScriptLoader;
             _pyScriptLoader = pyScriptLoader;
             _jIntScriptLoader = jIntScriptLoader;
+
+            _nodeJsScriptLoader = nodeJsScriptLoader;
+            _nodeJsService = nodeJsService;
         }
         
         [HttpGet("index")]
@@ -163,6 +173,29 @@ namespace WebApiApplication.Controllers
             }
             
             return Ok(result);
+        }
+
+        [HttpGet("NodeJSServiecSample")]
+        public async Task<IActionResult> NodeJSServiecSample()
+        {
+            var result = string.Empty;
+            _nodeJsScriptLoader.Create("ScriptFiles\\node\\index.js").Execute<string>(
+                () =>
+                {
+                    var objs = new List<object>();
+                    objs.Add(new NodeDataStructureSample(){A = "Hello", B = "World", C = "NodeJS"});
+                    objs.Add(new NodeDataStructureSample(){A = "It's Working??", B = "Working???", C = "Ye, It's Worked."});
+                    return objs.ToArray();
+                },
+                s => { result = s; });
+            return Ok(result);
+        }
+        
+        public class NodeDataStructureSample
+        {
+            public string A { get; set; }
+            public string B { get; set; }
+            public string C { get; set; }
         }
 
         [HttpPost("sample")]

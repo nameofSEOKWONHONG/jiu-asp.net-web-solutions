@@ -10,8 +10,7 @@ internal class SharpScripter : ISharpScripter
     private readonly ScriptItem _sharpScriptItem;
     public SharpScripter(string fileName)
     {
-        var code = fileName.xFileReadAllText();
-        _sharpScriptItem = new ScriptItem(fileName, code.xToHash(), code);
+        _sharpScriptItem = new ScriptItem(fileName);
     }
 
     public TResult Execute<TInstance, TOptions, TRequest, TResult>(TOptions options, TRequest request,

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using Application.Abstract;
 using Application.Context;
 using Application.Infrastructure.Cache;
@@ -7,10 +8,12 @@ using Application.Infrastructure.Message;
 using Application.Script;
 using Application.Script.ClearScript;
 using Application.Script.CsScript;
+using Application.Script.JavaScriptEngines.NodeJS;
 using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Domain.Configuration;
 using Domain.Enums;
+using Jering.Javascript.NodeJS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -72,6 +75,13 @@ public class ApplicationInjector : IDependencyInjectorBase
     
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
+        services.AddNodeJS()
+#if NODE_DEBUG
+            .Configure<NodeJSProcessOptions>(options => options.NodeAndV8Options = "--inspect-brk")
+            .Configure<OutOfProcessNodeJSServiceOptions>(options => options.TimeoutMS = -1)
+            .Configure<HttpNodeJSServiceOptions>(options => options.Version = HttpVersion.Version20)
+#endif
+            ;
         services
             #region [db l4 provider - table name replace template name]
             .AddSingleton<DbL4Provider>()
@@ -85,6 +95,7 @@ public class ApplicationInjector : IDependencyInjectorBase
             .AddSingleton<JsScriptLoader>()
             .AddSingleton<PyScriptLoader>()
             .AddSingleton<JIntScriptLoader>()
+            .AddSingleton<NodeJSScriptLoader>()
 
             #endregion
             

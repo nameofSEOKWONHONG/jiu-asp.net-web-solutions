@@ -11,10 +11,9 @@ internal class JsScripter : IJsScripter
 {
     private readonly ScriptItem _mainJsItem;
     private readonly string _modulePath;
-    public JsScripter(string mainJs, string modulePath = null)
+    public JsScripter(string fileName, string modulePath = null)
     {
-        var mainJsCode = mainJs.xFileReadAllText();
-        _mainJsItem = new ScriptItem(mainJs, mainJsCode.xToHash(), mainJsCode);
+        _mainJsItem = new ScriptItem(fileName);
         _modulePath = modulePath;
     } 
 

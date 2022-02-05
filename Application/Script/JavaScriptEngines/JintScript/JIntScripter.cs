@@ -18,11 +18,11 @@ public class JIntScripter : IJIntScripter
     private readonly CultureInfo _currentCulture;
     private readonly string _modulePath;
     
-    public JIntScripter(string mainJs, string modulePath = null, string cultureTxt = "ko-KR")
+    public JIntScripter(string fileName, string modulePath = null, string cultureTxt = "ko-KR")
     {
-        if (mainJs.xContains(new[]{".ts"}))
+        if (fileName.xContains(new[]{".ts"}))
         {
-            var fromTsPath = Path.Combine(AppContext.BaseDirectory, mainJs);
+            var fromTsPath = Path.Combine(AppContext.BaseDirectory, fileName);
             //JINT는 import 구문을 지원하지 않으므로 Typescript의 모듈화를 적용할 수 없다.
             //대신 다중파일을 프리로드하여 진행할 수는 있으나 구문자체를 지원하지 않으므로 구조적 형태로 작성할 수 없다.
             //즉, ECMA SCRIPT규약 구문을 모두 지원해야만 사용 할 수 있다. 그 이전에는 부분적 유틸성 코드 작성만 가능한 것으로 함.
@@ -31,16 +31,13 @@ public class JIntScripter : IJIntScripter
             //언제 될지 모르겠고...
             //CsScript로 넘어간다. 자바스크립트는 포기함.
             TypeScriptCompiler.Compile(fromTsPath);
-            var tsCode = fromTsPath.xFileReadAllText();
-            var jsCode = $"{fromTsPath.Replace(".ts", ".js")}".xFileReadAllText();
-            this._scriptItem = new ScriptItem(mainJs, tsCode.xToHash(), jsCode);
+            this._scriptItem = new ScriptItem(fileName);
             this._modulePath = modulePath;
             this._currentCulture = CultureInfo.GetCultureInfo(cultureTxt);            
         }
         else
         {
-            var code = mainJs.xFileReadAllText();
-            this._scriptItem = new ScriptItem(mainJs, code.xToHash(), code);
+            this._scriptItem = new ScriptItem(fileName);
             this._modulePath = modulePath;
             this._currentCulture = CultureInfo.GetCultureInfo(cultureTxt);            
         }
