@@ -105,6 +105,9 @@
       <None Update="ScriptFiles\node\index.js">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="ScriptFiles\node\module1.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

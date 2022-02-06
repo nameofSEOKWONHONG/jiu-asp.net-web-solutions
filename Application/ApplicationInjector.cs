@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
+using System.IO;
 using Application.Abstract;
 using Application.Context;
 using Application.Infrastructure.Cache;
@@ -76,6 +76,15 @@ public class ApplicationInjector : IDependencyInjectorBase
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
         services.AddNodeJS()
+            .Configure<NodeJSProcessOptions>(options =>
+            {
+                //현재 실행되는 코드 또는 파일의 프로젝트 패스를 설정한다.
+                //module호출을 위해 설정하게 됨.
+                options.ProjectPath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\node");
+
+                //node 실행경로 설정, 기본 경로가 아닌 경로에서 실행할 경우 아래의 경로를 설정한다.
+                //options.ExecutablePath = Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\node\\bin");
+            })
 #if NODE_DEBUG
             .Configure<NodeJSProcessOptions>(options => options.NodeAndV8Options = "--inspect-brk")
             .Configure<OutOfProcessNodeJSServiceOptions>(options => options.TimeoutMS = -1)
@@ -83,12 +92,12 @@ public class ApplicationInjector : IDependencyInjectorBase
 #endif
             ;
         services
-            #region [db l4 provider - table name replace template name]
+            #region [db l4 provider - table name replace to template table name]
             .AddSingleton<DbL4Provider>()
             .AddSingleton<DbL4Interceptor>()
             #endregion
 
-            #region [define script loader (cs, js, python)]
+            #region [define script loader (cs, js, python, node)]
 
             .AddSingleton<ScriptInitializer>()
             .AddSingleton<SharpScriptLoader>()

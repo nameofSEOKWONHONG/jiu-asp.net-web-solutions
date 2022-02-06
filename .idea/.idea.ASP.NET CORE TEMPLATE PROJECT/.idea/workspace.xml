@@ -23,20 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="284e34e4-ba62-409e-9ac1-958580265972" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/INodeJSScripter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScripter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Script/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/module1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ScriptItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +49,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/ICacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -326,7 +318,8 @@
       <updated>1643256775137</updated>
       <workItem from="1643256780306" duration="263000" />
       <workItem from="1643258836870" duration="1722000" />
-      <workItem from="1644037737276" duration="5494000" />
+      <workItem from="1644037737276" duration="5965000" />
+      <workItem from="1644122161424" duration="5536000" />
     </task>
     <task id="LOCAL-00001" summary="update BackgroundServiceBase">
       <created>1643784358750</created>
@@ -335,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643784358750</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1644043719389</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1644043719389</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +375,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="update BackgroundServiceBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="update BackgroundServiceBase" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
