@@ -13,6 +13,8 @@ using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Domain.Configuration;
 using Domain.Enums;
+using Hangfire;
+using Hangfire.PostgreSql;
 using Jering.Javascript.NodeJS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -24,7 +26,7 @@ public class ApplicationInjector : IDependencyInjectorBase
 {
     private readonly Dictionary<ENUM_DATABASE_TYPE,
             Action<string, IServiceProvider, DbContextOptionsBuilder>>
-        _useDatabaseState
+        _useDatabaseStates
             = new()
             {
                 {
@@ -33,9 +35,9 @@ public class ApplicationInjector : IDependencyInjectorBase
                         //MSSQL 
                         builder.UseSqlServer(connectionString, options =>
                             {
-                                options.MigrationsAssembly("Application");
+                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
                                 //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(5);
+                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -48,9 +50,9 @@ public class ApplicationInjector : IDependencyInjectorBase
                         var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
                         builder.UseMySql(connectionString, serverVersion, options =>
                             {
-                                options.MigrationsAssembly("Application");
+                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
                                 //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(5);
+                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -62,9 +64,9 @@ public class ApplicationInjector : IDependencyInjectorBase
                     {
                         builder.UseNpgsql(connectionString, options =>
                             {
-                                options.MigrationsAssembly("Application");
+                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
                                 //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(5);
+                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
                             })
                             .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
                             .EnableSensitiveDataLogging()
@@ -75,6 +77,30 @@ public class ApplicationInjector : IDependencyInjectorBase
     
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
+        //사용할 database 설정
+        var useDatabase = configuration.GetConnectionString("USE_DATABASE");
+        //enum 으로 변환
+        var databaseType = ENUM_DATABASE_TYPE.Parse(useDatabase);
+        //연결 문자열 확인 (TODO:연결 문자열 암복호화 되어 있어야 함)
+        var connectionString = configuration.GetConnectionString(databaseType.ToString());
+
+        if (databaseType == ENUM_DATABASE_TYPE.MSSQL)
+        {
+            services.AddHangfire(x => x.UseSqlServerStorage(connectionString));    
+        }
+        else if (databaseType == ENUM_DATABASE_TYPE.POSTGRES)
+        {
+            services.AddHangfire(config => config.UsePostgreSqlStorage(connectionString));    
+        }
+        else if (databaseType == ENUM_DATABASE_TYPE.MYSQL)
+        {
+            throw new NotSupportedException("mysql hangfire not implemented. don't use mysql");
+        }
+        
+        services.AddHangfireServer();
+
+        #region [javascript.nodejs]
+
         services.AddNodeJS()
             .Configure<NodeJSProcessOptions>(options =>
             {
@@ -90,7 +116,10 @@ public class ApplicationInjector : IDependencyInjectorBase
             .Configure<OutOfProcessNodeJSServiceOptions>(options => options.TimeoutMS = -1)
             .Configure<HttpNodeJSServiceOptions>(options => options.Version = HttpVersion.Version20)
 #endif
-            ;
+            ;        
+
+        #endregion
+
         services
             #region [db l4 provider - table name replace to template table name]
             .AddSingleton<DbL4Provider>()
@@ -110,18 +139,10 @@ public class ApplicationInjector : IDependencyInjectorBase
             
             .AddDbContext<JIUDbContext>((sp, options) =>
             {
-                //사용할 database 설정
-                var useDatabase = configuration.GetConnectionString("USE_DATABASE");
-
-                //enum 으로 변환
-                var databaseType = ENUM_DATABASE_TYPE.Parse(useDatabase);
-
-                //연결 문자열 확인 (TODO:연결 문자열 암복호화 되어 있어야 함)
-                var connectionString = configuration.GetConnectionString(databaseType.ToString());
-
-                var action = _useDatabaseState[databaseType];
+                var action = _useDatabaseStates[databaseType];
                 action(connectionString, sp, options);
             })
+            
             #region [database init and seeding]
 
             .AddTransient<IDatabaseSeeder, DatabaseSeeder>();

@@ -13,10 +13,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
+using Hangfire;
 using Infrastructure.Abstract;
 using Jering.Javascript.NodeJS;
 using Jint;
 using Microsoft.ClearScript;
+using Microsoft.Extensions.Logging;
 
 namespace WebApiApplication.Controllers
 {
@@ -214,6 +216,14 @@ namespace WebApiApplication.Controllers
         public IActionResult Sample2([FromBody]ENUM_ROLE_TYPE str)
         {
             return Ok(str);
+        }
+
+        [HttpGet("HangFireSample")]
+        public IActionResult HangFireSample()
+        {
+            var id = BackgroundJob.Enqueue(() => Console.WriteLine("I'm working at hangfire."));
+            BackgroundJob.ContinueJobWith(id, () => Console.WriteLine("And I'm working continue."));
+            return Ok(id);
         }
     }
 

@@ -27,7 +27,7 @@ namespace Application.Infrastructure.Message
         {
             _options = options;
         }
-        public override async Task<IResult> SendMessageAsync(INotifyMessageRequest request)
+        public override async Task<Application.Response.IResult> SendMessageAsync(INotifyMessageRequest request)
         {
             var emailSettings = _options.Value;
             var mailRequest = request as EmailNotifyMessageRequest;
