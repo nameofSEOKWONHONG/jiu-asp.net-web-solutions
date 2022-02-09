@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Interfaces.WeahterForecast;
 using Application.Response;
 using eXtensionSharp;
 using MediatR;
+using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Command
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Application.Interfaces.Todo
+namespace TodoService.Services
 {
     public interface ITodoService
     {

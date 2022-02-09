@@ -13,6 +13,7 @@ using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Domain.Configuration;
 using Domain.Enums;
+using eXtensionSharp;
 using Hangfire;
 using Hangfire.PostgreSql;
 using Jering.Javascript.NodeJS;
@@ -120,6 +121,8 @@ public class ApplicationInjector : IDependencyInjectorBase
 
         #endregion
 
+        services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));
+
         services
             #region [db l4 provider - table name replace to template table name]
             .AddSingleton<DbL4Provider>()
@@ -156,7 +159,11 @@ public class ApplicationInjector : IDependencyInjectorBase
         services.Configure<ScriptLoaderConfig>(configuration.GetSection(nameof(ScriptLoaderConfig)));
         services.Configure<MailSetting>(configuration.GetSection(nameof(MailSetting)));
         services.Configure<CacheConfig>(configuration.GetSection(nameof(CacheConfig)));
-
+        
+        #region [mongodb 설정]
+        services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));
+        #endregion
+        
         #endregion
     }
 }

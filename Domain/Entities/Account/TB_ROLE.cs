@@ -9,11 +9,8 @@ using eXtensionSharp;
 namespace Domain.Entities
 {
     [Table("TB_ROLE")]
-    public class TB_ROLE : EntityBase
+    public class TB_ROLE : AutoIncEntityBase
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        
         [Required, MaxLength(10)]
         public ENUM_ROLE_TYPE ROLE_TYPE { get; set; }
         

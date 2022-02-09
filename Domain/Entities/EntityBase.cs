@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
@@ -18,5 +19,17 @@ namespace Domain.Entities
         public string UPDATE_ID { get; set; }
         
         public DateTime? UPDATE_DT { get; set; }
+    }
+
+    public class AutoIncEntityBase : EntityBase
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
+    }
+
+    public class GuidEntityBase : EntityBase
+    {
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
     }
 }

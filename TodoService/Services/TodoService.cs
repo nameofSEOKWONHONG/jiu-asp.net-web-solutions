@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Context;
-using Application.Interfaces.Todo;
 using Domain.Entities;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;

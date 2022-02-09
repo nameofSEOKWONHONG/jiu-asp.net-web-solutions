@@ -7,11 +7,8 @@ namespace Domain.Entities
 {
     [Table(nameof(TB_TODO))]
     [Index(nameof(CONTENTS), IsUnique = false)]
-    public class TB_TODO : EntityBase
+    public class TB_TODO : AutoIncEntityBase
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-        
         [Required]
         public string CONTENTS { get; set; }
         

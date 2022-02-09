@@ -1,13 +1,14 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Interfaces.WeahterForecast;
 using Application.Response;
 using Domain.Entities;
+using Domain.Entities.WeatherForecast;
 using MediatR;
+using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Command
 {
-    public record SaveWeatherForecastCommand(WeatherForecast weatherForecast) : IRequest<Result<int>>;
+    public record SaveWeatherForecastCommand(TB_WEATHERFORECAST TbWeatherforecast) : IRequest<Result<int>>;
     
     public class SaveWeatherForecastDataHandler : IRequestHandler<SaveWeatherForecastCommand, Result<int>>
     {
@@ -18,7 +19,7 @@ namespace WeatherForecastService.Features.Command
         }
         public Task<Result<int>> Handle(SaveWeatherForecastCommand request, CancellationToken cancellationToken)
         {
-            _weatherForcastService.SaveWeatherForecast(request.weatherForecast);
+            _weatherForcastService.SaveWeatherForecast(request.TbWeatherforecast);
             return Result<int>.SuccessAsync(1);
         }
     }

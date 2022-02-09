@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Domain.Entities.System.Config;
 
 [Table(nameof(TB_MIGRAION))]
-public class TB_MIGRAION : EntityBase
+public class TB_MIGRAION : AutoIncEntityBase
 {
-    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int ID { get; set; }
     public bool MIGRATION_YN { get; set; }
     public bool COMPLETE_YN { get; set; }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using LiteDB;
 using Domain.Entities;
 using Application.Infrastructure.Cache;
-using Application.Interfaces.WeahterForecast;
+using Domain.Entities.WeatherForecast;
 using Domain.Enums;
 using eXtensionSharp;
 
@@ -19,17 +19,17 @@ namespace WeatherForecastService.Services
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly IEnumerable<WeatherForecast> _weatherForcasts;
+        private readonly IEnumerable<TB_WEATHERFORECAST> _weatherForcasts;
 
         private readonly ILiteDatabase _database;
-        private readonly ILiteCollection<WeatherForecast> _weatherForecastCollection;
+        private readonly ILiteCollection<TB_WEATHERFORECAST> _weatherForecastCollection;
         private readonly ICacheProvider _cacheProvider;
         public WeatherForcastService(CacheProviderResolver cacheProviderResolver)
         {
             _cacheProvider = cacheProviderResolver(ENUM_CACHE_TYPE.MEMORY);
             
             DateTime startDate = DateTime.Now;
-            _weatherForcasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            _weatherForcasts = Enumerable.Range(1, 5).Select(index => new TB_WEATHERFORECAST
             {
                 Date = startDate.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
@@ -42,18 +42,18 @@ namespace WeatherForecastService.Services
                 Connection = ConnectionType.Shared
                 //Connection = ConnectionType.Direct
             });
-            _weatherForecastCollection = _database.GetCollection<WeatherForecast>();
+            _weatherForecastCollection = _database.GetCollection<TB_WEATHERFORECAST>();
         }
 
-        public IEnumerable<WeatherForecast> GetAllWeatherForecast()
+        public IEnumerable<TB_WEATHERFORECAST> GetAllWeatherForecast()
         {
-            var result = _cacheProvider.GetCache<IEnumerable<WeatherForecast>>();
+            var result = _cacheProvider.GetCache<IEnumerable<TB_WEATHERFORECAST>>();
             if (result.xIsEmpty())
             {
                 result =_weatherForecastCollection.FindAll();
                 if (result.xIsNotEmpty())
                 {
-                    _cacheProvider.SetCache<IEnumerable<WeatherForecast>>(result);
+                    _cacheProvider.SetCache<IEnumerable<TB_WEATHERFORECAST>>(result);
                 }
             }
 
@@ -66,24 +66,24 @@ namespace WeatherForecastService.Services
             _weatherForecastCollection.InsertBulk(_weatherForcasts);
         }
 
-        public WeatherForecast GetWeatherForecast(string summary)
+        public TB_WEATHERFORECAST GetWeatherForecast(string summary)
         {
-            var result = _cacheProvider.GetCache<WeatherForecast>();
+            var result = _cacheProvider.GetCache<TB_WEATHERFORECAST>();
             if (result == null)
             {
                 result = _weatherForecastCollection.FindOne(m => m.Summary == summary);
                 if (result != null)
                 {
-                    _cacheProvider.SetCache<WeatherForecast>(result);
+                    _cacheProvider.SetCache<TB_WEATHERFORECAST>(result);
                 }
             }
 
             return result;
         }
 
-        public void SaveWeatherForecast(WeatherForecast weatherForecast)
+        public void SaveWeatherForecast(TB_WEATHERFORECAST tbWeatherforecast)
         {
-            _weatherForecastCollection.Insert(weatherForecast);
+            _weatherForecastCollection.Insert(tbWeatherforecast);
         }
     }
 }

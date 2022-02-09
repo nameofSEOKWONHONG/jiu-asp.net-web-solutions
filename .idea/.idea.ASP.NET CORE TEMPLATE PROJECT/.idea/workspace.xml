@@ -23,15 +23,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="284e34e4-ba62-409e-9ac1-958580265972" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/ApplicationConst.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Context/EF/EFExtension.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Context/MongoDb/MongoDbContextBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Configuration/MongoDbOption.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/Book/Books.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Domain/Entities/NoSqlEntityBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/HelloWorld/IHelloWorldService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldService/Services/IHelloWorldService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Todo/ITodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Services/ITodoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/WeatherForecast/IWeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Services/IWeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/RefreshToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_REFRESH_TOKEN.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE_PERMISSION.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE_PERMISSION.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_USER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_USER.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/UserGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_GROUP.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Contract/Contract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Contract/TB_CONTRACT.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/System/Config/TB_MIGRAION.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/System/Config/TB_MIGRAION.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/WeatherForecast/WeatherForcast.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/ISaleWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/Binders/ISaleWidgetBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/SaleWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/Binders/SaleWidgetBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JUIControlService/JUIControlService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/JUIControlService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/RemoveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Command/RemoveTodoCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/Services/TodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Services/TodoService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TodoService/TodoInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/TodoInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkerApplication/SampleWorker1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerApplication/SampleWorker1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +131,7 @@
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionRequirement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eb539fc2a7575e1bf2eeeade611e3ad8f95e823422e8d4ada22546b4668aa/MemoryCacheOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/UPLOAD_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/VersionController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -312,6 +348,8 @@
       <workItem from="1643258836870" duration="1722000" />
       <workItem from="1644037737276" duration="5965000" />
       <workItem from="1644122161424" duration="5536000" />
+      <workItem from="1644367504282" duration="5849000" />
+      <workItem from="1644397396555" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="update BackgroundServiceBase">
       <created>1643784358750</created>
@@ -327,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644043719389</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="UPDATE">
+      <created>1644223050134</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1644223050134</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +413,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="update BackgroundServiceBase" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="UPDATE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

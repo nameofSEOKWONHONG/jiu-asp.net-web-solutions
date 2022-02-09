@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Interfaces.WeahterForecast;
 using Application.Response;
 using Domain.Entities;
+using Domain.Entities.WeatherForecast;
 using MediatR;
+using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Queries
 {
-    public record GetAllWeatherForecastDataQuery() : IRequest<Result<IEnumerable<WeatherForecast>>>;
-    public class GetAllWeatherForecastDataHandler : IRequestHandler<GetAllWeatherForecastDataQuery, Result<IEnumerable<WeatherForecast>>>
+    public record GetAllWeatherForecastDataQuery() : IRequest<Result<IEnumerable<TB_WEATHERFORECAST>>>;
+    public class GetAllWeatherForecastDataHandler : IRequestHandler<GetAllWeatherForecastDataQuery, Result<IEnumerable<TB_WEATHERFORECAST>>>
     {
         private readonly IWeatherForcastService _weatherForcastService;
 
@@ -17,11 +18,11 @@ namespace WeatherForecastService.Features.Queries
         {
             this._weatherForcastService = weatherForcastService;
         }
-        public Task<Result<IEnumerable<WeatherForecast>>> Handle(GetAllWeatherForecastDataQuery request, CancellationToken cancellationToken)
+        public Task<Result<IEnumerable<TB_WEATHERFORECAST>>> Handle(GetAllWeatherForecastDataQuery request, CancellationToken cancellationToken)
         {
             var response = this._weatherForcastService.GetAllWeatherForecast();
 
-            return Result<IEnumerable<WeatherForecast>>.SuccessAsync(response);
+            return Result<IEnumerable<TB_WEATHERFORECAST>>.SuccessAsync(response);
         }
     }
 }

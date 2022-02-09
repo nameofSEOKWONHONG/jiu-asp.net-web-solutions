@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
+using Domain.Entities.WeatherForecast;
 using Hangfire;
 using Infrastructure.Abstract;
 using WeatherForecastService.Features.Command;
@@ -33,9 +34,9 @@ namespace WebApiApplication.Controllers {
         }
         
         [HttpPost]
-        public async Task<IActionResult> Save(WeatherForecast weatherForecast)
+        public async Task<IActionResult> Save(TB_WEATHERFORECAST tbWeatherforecast)
         {
-            var result = await this._mediator.Send(new SaveWeatherForecastCommand(weatherForecast));
+            var result = await this._mediator.Send(new SaveWeatherForecastCommand(tbWeatherforecast));
             return Ok(result);
         }
     }

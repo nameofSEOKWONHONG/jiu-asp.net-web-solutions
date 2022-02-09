@@ -9,8 +9,8 @@ namespace Domain.Entities
     /// ref : https://jasonwatmore.com/post/2020/05/25/aspnet-core-3-api-jwt-authentication-with-refresh-tokens+&cd=4&hl=ko&ct=clnk&gl=kr
     /// </summary>
     // TODO : 토큰 재발행을 위한 로직 추가해야 함.
-    [Table("RefreshToken")]
-    public class RefreshToken
+    [Table("TB_REFRESH_TOKEN")]
+    public class TB_REFRESH_TOKEN
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [JsonIgnore]

@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Interfaces.Todo;
 using Application.Response;
 using Domain.Entities;
 using MediatR;
+using TodoService.Services;
 
 namespace TodoService.Features.Query
 {

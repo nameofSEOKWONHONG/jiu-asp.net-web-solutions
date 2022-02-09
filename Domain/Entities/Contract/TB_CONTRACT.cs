@@ -14,8 +14,8 @@ namespace Domain.Entities.Contract
         /// <summary>
         /// 원 계약 (원 계약과 상위 계약이 같을 경우 원본 계약이다)
         /// </summary>
-        [Key, ForeignKey(nameof(Contract))]
-        public Contract SrcContract { get; set; }
+        [Key, ForeignKey(nameof(TB_CONTRACT))]
+        public TB_CONTRACT SrcTbContract { get; set; }
         
         /// <summary>
         /// 계약차수, 만약 한번에 계약한다면 1, 이후라면 계속 증가
@@ -25,12 +25,12 @@ namespace Domain.Entities.Contract
         /// <summary>
         /// 상위 계약 (원 계약과 상위 계약이 같을 경우 원본 계약이다) 
         /// </summary>
-        public Contract ParentContract { get; set; }
+        public TB_CONTRACT ParentTbContract { get; set; }
         
         /// <summary>
         /// 하위 계약
         /// </summary>
-        public Contract ChildContract { get; set; }
+        public TB_CONTRACT ChildTbContract { get; set; }
     }
     
     
@@ -40,7 +40,7 @@ namespace Domain.Entities.Contract
     /// 각 계약은 계약 기록 테이블에 남겨져야 한다.
     /// </summary>
     [Table("TB_CONTRACT")]
-    public class Contract : EntityBase
+    public class TB_CONTRACT : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ContractId { get; set; }
@@ -65,14 +65,14 @@ namespace Domain.Entities.Contract
         /// <summary>
         /// 계약서
         /// </summary>
-        public ContractDoc ContractDoc { get; set; }
+        public TB_CONTRACT_DOC TbContractDoc { get; set; }
     }
 
     /// <summary>
     /// 계약 문서 테이블
     /// </summary>
     [Table("TB_CONTRACT_DOC")]
-    public class ContractDoc : EntityBase
+    public class TB_CONTRACT_DOC : EntityBase
     {
         /// <summary>
         /// 문서번호
@@ -88,14 +88,14 @@ namespace Domain.Entities.Contract
         /// 계약서 필드 아이템
         /// </summary>
         [Required]
-        public List<ContractDocItem> ContractDocItems { get; set; }
+        public List<TB_CONTRACT_DOC_ITEM> ContractDocItems { get; set; }
     }
 
     /// <summary>
     /// 계약 문서 아이템 테이블
     /// </summary>
     [Table("TB_CONTRACT_DOC_ITEM")]
-    public class ContractDocItem : EntityBase
+    public class TB_CONTRACT_DOC_ITEM : EntityBase
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

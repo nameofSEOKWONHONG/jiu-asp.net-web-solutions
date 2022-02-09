@@ -1,8 +1,9 @@
 using System.Collections.Generic;
-using Application.Interfaces.WeahterForecast;
 using Domain.Entities;
+using Domain.Entities.WeatherForecast;
 using Infrastructure.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using WeatherForecastService.Services;
 
 namespace WeatherForecastApiApplication.Controllers
 {
@@ -15,7 +16,7 @@ namespace WeatherForecastApiApplication.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<TB_WEATHERFORECAST> Get()
         {
             return _weatherForecastService.GetAllWeatherForecast();
         }

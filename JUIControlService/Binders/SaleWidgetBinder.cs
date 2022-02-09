@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using Application.Interfaces.Todo;
 using Dapper;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
+using TodoService.Services;
 
 namespace JUIControlService.Binders;
 

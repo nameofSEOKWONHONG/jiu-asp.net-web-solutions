@@ -1,6 +1,7 @@
 ﻿@page "/fetchdata"
 @using Domain.Entities
 @using ClientApplication.Services
+@using Domain.Entities.WeatherForecast
 @inject WeatherForecastService _weatherForecastService
 
 <PageTitle>Weather forecast</PageTitle>
@@ -39,7 +40,7 @@ else
 }
 
 @code {
-    private WeatherForecast[] forecasts;
+    private TB_WEATHERFORECAST[] forecasts;
 
     protected override async Task OnInitializedAsync()
     {

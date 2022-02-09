@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using Application.Abstract;
-using Application.Interfaces.WeahterForecast;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

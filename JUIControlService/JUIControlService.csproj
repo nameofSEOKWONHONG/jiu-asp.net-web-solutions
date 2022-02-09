@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\TodoService\TodoService.csproj" />
     </ItemGroup>
 
     <ItemGroup>

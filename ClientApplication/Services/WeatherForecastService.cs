@@ -1,5 +1,6 @@
 ﻿using System.Net.Http.Json;
 using Domain.Entities;
+using Domain.Entities.WeatherForecast;
 
 namespace ClientApplication.Services;
 
@@ -14,7 +15,7 @@ public class WeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
     /// </summary>
-    public async Task<WeatherForecast[]> GetForecastAsync()
+    public async Task<TB_WEATHERFORECAST[]> GetForecastAsync()
     {
         using (var client = new HttpClient())
         {
@@ -22,7 +23,7 @@ public class WeatherForecastService
             var response = await client.GetAsync("api/v1/WeatherForecast");
             if (response.IsSuccessStatusCode)
             {
-                return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+                return await response.Content.ReadFromJsonAsync<TB_WEATHERFORECAST[]>();
             }
         }
 
@@ -32,9 +33,9 @@ public class WeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use by the http client factory.
     /// </summary>
-    public async Task<WeatherForecast[]> GetForecastUseByHttpClientFactoryAsync()
+    public async Task<TB_WEATHERFORECAST[]> GetForecastUseByHttpClientFactoryAsync()
     {
         var response = await _httpClient.GetAsync("api/v1/WeatherForecast");
-        return await response.Content.ReadFromJsonAsync<WeatherForecast[]>();
+        return await response.Content.ReadFromJsonAsync<TB_WEATHERFORECAST[]>();
     }
 }
