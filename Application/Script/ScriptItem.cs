@@ -15,6 +15,6 @@ internal record ScriptItem
     {
         this.FileName = fileName;
         this.Code = this.FileName.xFileReadAllText();
-        this.HashSrcCode = this.Code.xToHash();
+        this.HashSrcCode = this.Code.xGetHashCode();
     }
 }

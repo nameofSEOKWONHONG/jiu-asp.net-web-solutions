@@ -24,8 +24,8 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
     {
     }
 
-    private readonly Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptReset>> _resetStates =
-        new Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptReset>>()
+    private readonly Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptLoaderBase>> _resetStates =
+        new Dictionary<ENUM_SCRIPT_TYPE, Func<IServiceScope, IScriptLoaderBase>>()
         {
             {
                 ENUM_SCRIPT_TYPE.CSHARP, scope => scope.ServiceProvider.GetService<SharpScriptLoader>()
@@ -47,16 +47,16 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
                 //IOptions<>는 AutoReload를 지원하지 않는다.
                 //config AutoReload를 사용하려면 IOptionsMonitor를 사용해야 함.
                 //또한 config AutoReload는 Program.cs > CreateHostBuilder 부분을 확인하면 된다. 
-                var resetConfig = scope.ServiceProvider.GetService<IOptionsMonitor<ScriptLoaderConfig>>();
+                var scriptLoaderConfig = scope.ServiceProvider.GetService<IOptionsMonitor<ScriptLoaderConfig>>();
                 var scriptInitializer = scope.ServiceProvider.GetService<ScriptInitializer>();
 
                 try
                 {
-                    resetConfig.CurrentValue.ResetFileConfigs.xForEach(config =>
+                    scriptLoaderConfig.CurrentValue.ResetFileConfigs.xForEach(config =>
                     {
                         var getScriptLoader = _resetStates[config.ScriptType];
                         var scriptLoader = getScriptLoader(scope);
-                        scriptInitializer.Reset(scriptLoader, resetConfig.CurrentValue.Version, config.ResetFiles);  
+                        scriptInitializer.Reset(scriptLoader, scriptLoaderConfig.CurrentValue.Version, config.ResetFiles);  
                     });
                 }
                 catch (Exception e)

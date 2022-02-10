@@ -5,6 +5,7 @@ namespace Domain.Configuration;
 public class ScriptLoaderConfig
 {
     public double Version { get; set; }
+    public string BasePath { get; set; }
     public ScriptResetFileConfig[] ResetFileConfigs { get; set; }
 }
 

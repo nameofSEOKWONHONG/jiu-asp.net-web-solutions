@@ -10,7 +10,7 @@ namespace Application.Script.JavaScriptEngines.NodeJS;
 /// 아래 사이트 참조 (Javascript.NodeJS)
 /// <see href="https://github.com/JeringTech/Javascript.NodeJS#debugging-javascript">
 /// </summary>
-public class NodeJSScripter : INodeJSScripter
+internal class NodeJSScripter : INodeJSScripter
 {
     private readonly ScriptItem _scriptItem;
     private readonly INodeJSService _nodeJsService;

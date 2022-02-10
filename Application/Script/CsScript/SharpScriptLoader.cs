@@ -1,49 +1,33 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
+using System.IO;
 using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
 
 namespace Application.Script.CsScript;
 
-public class SharpScriptLoader : IScriptReset
+
+public class SharpScriptLoader : ScriptLoaderBase<ISharpScripter>
 {
-    public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, SharpScripter> _scriptors = new ConcurrentDictionary<string, SharpScripter>();
-    
-    public SharpScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
+    public SharpScriptLoader(IOptions<ScriptLoaderConfig> options) : base(options)
     {
-        this.Version = options.CurrentValue.Version;
     }
 
     public ISharpScripter Create(string fileName)
     {
-        if (_scriptors.TryGetValue(fileName, out SharpScripter scriptor))
+        var fullPathName = Path.Combine(_basePath, fileName);
+        if (_scriptors.TryGetValue(fullPathName, out ISharpScripter scriptor))
         {
             return scriptor;
         }
         
-        var newScript = new SharpScripter(fileName);
-        if (_scriptors.TryAdd(fileName, newScript))
+        var newScript = new SharpScripter(fullPathName);
+        if (_scriptors.TryAdd(fullPathName, newScript))
         {
             return newScript;
         }
 
         return null;
-    }
-
-    public bool Reset(string fileName = null)
-    {
-        if (this._scriptors.xIsEmpty()) return true;
-        
-        if(fileName.xIsEmpty()) this._scriptors.Clear();
-        else
-        {
-            if (!this._scriptors.TryRemove(fileName, out SharpScripter csScriptor))
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 }

@@ -13,29 +13,29 @@ public class ScriptInitializer
     {
     }
 
-    public bool Reset(IScriptReset scriptReset, double version, string[] resetFiles = null)
+    public bool Reset(IScriptLoaderBase scriptLoaderBase, double version, string[] resetFiles = null)
     {
         var isReset = true;
         
-        if (!version.xIsEquals(scriptReset.Version))
+        if (!version.xIsEquals(scriptLoaderBase.Version))
         {
-            isReset = scriptReset.Reset(null);    
+            isReset = scriptLoaderBase.Reset(null);    
         }        
-        else if (version.xIsEquals(scriptReset.Version))
+        else if (version.xIsEquals(scriptLoaderBase.Version))
         {
             resetFiles.xForEach(file =>
             {
                 if (file.xIsEmpty()) return false;
-                var fileNamePath = Path.Combine(AppContext.BaseDirectory, file);
-                isReset = scriptReset.Reset(fileNamePath);
+                var fullPath = file.xGetFileNameWithBaseDir();
+                isReset = scriptLoaderBase.Reset(fullPath);
                 if (isReset.xIsFalse())
-                    throw new Exception($"{nameof(ScriptInitializer)} : init is failed. version is {version}, script version : {scriptReset.Version}, filename is {file}");
+                    throw new Exception($"{nameof(ScriptInitializer)} : init is failed. version is {version}, script version : {scriptLoaderBase.Version}, filename is {file}");
 
                 return true;
             });
         }
 
-        scriptReset.Version = version;
+        scriptLoaderBase.Version = version;
 
         return isReset;
     }

@@ -44,7 +44,7 @@ namespace Application.Infrastructure.Cache
             var sum = options.Keys.Select(m => m.Length).Sum();
             var sb = new StringBuilder(sum);
             options.Keys.xForEach(item => { sb.Append(item); });
-            var hashedKey = sb.ToString().xToHash();
+            var hashedKey = sb.ToString().xGetHashCode();
             return GetCache<T>(hashedKey);
         }
 

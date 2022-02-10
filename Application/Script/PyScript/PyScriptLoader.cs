@@ -1,27 +1,32 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using Application.Script.ClearScript;
+using Application.Script.CsScript;
+using Application.Script.JavaScriptEngines.NodeJS;
+using Application.Script.JintScript;
 using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
 
 namespace Application.Script.PyScript;
 
-public class PyScriptLoader : IScriptReset
+public class PyScriptLoader : ScriptLoaderBase<IPyScripter>
 {
-    public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, PyScripter> _scriptors = new ConcurrentDictionary<string, PyScripter>();
-    public PyScriptLoader(IOptionsMonitor<ScriptLoaderConfig> options)
+    public PyScriptLoader(IOptions<ScriptLoaderConfig> options) : base(options)
     {
-        this.Version = options.CurrentValue.Version;
     }
     
     public IPyScripter Create(string fileName, string[] modulePath = null)
     {
-        var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
+        var fullPathName = Path.Combine(_basePath, fileName);
+        var exists = this._scriptors.FirstOrDefault(m => m.Key == fullPathName);
         if (exists.Key.xIsEmpty())
         {
-            var newCScriptor = new PyScripter(fileName, modulePath);
-            if (_scriptors.TryAdd(fileName, newCScriptor))
+            var newCScriptor = new PyScripter(fullPathName, modulePath);
+            if (_scriptors.TryAdd(fullPathName, newCScriptor))
             {
                 return newCScriptor;    
             }
@@ -29,19 +34,4 @@ public class PyScriptLoader : IScriptReset
 
         return exists.Value;
     }
-    
-    public bool Reset(string fileName = null)
-    {
-        if (this._scriptors.xIsEmpty()) return true;
-        
-        if(fileName.xIsEmpty()) this._scriptors.Clear();
-        else
-        {
-            if (!_scriptors.TryRemove(fileName, out PyScripter scriptor))
-            {
-                return false;
-            }
-        }
-        return true;
-    }   
 }

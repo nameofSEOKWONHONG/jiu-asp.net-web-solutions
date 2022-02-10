@@ -12,7 +12,7 @@ using JintEngine = Jint.Engine;
 
 namespace Application.Script.JintScript;
 
-public class JIntScripter : IJIntScripter
+internal class JIntScripter : IJIntScripter
 {
     private readonly ScriptItem _scriptItem;
     private readonly CultureInfo _currentCulture;

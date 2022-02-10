@@ -23,50 +23,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="284e34e4-ba62-409e-9ac1-958580265972" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Context/EF/EFExtension.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Context/MongoDb/MongoDbContextBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Configuration/MongoDbOption.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Book/Books.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/NoSqlEntityBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Script/IScriptLoaderBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/Script/ScriptLoaderBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/HelloWorld/IHelloWorldService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorldService/Services/IHelloWorldService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Todo/ITodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Services/ITodoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/WeatherForecast/IWeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Services/IWeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/RefreshToken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_REFRESH_TOKEN.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE_PERMISSION.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE_PERMISSION.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_USER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_USER.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/UserGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Account/TB_GROUP.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Contract/Contract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Contract/TB_CONTRACT.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/System/Config/TB_MIGRAION.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/System/Config/TB_MIGRAION.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/WeatherForcast.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/WeatherForecast/WeatherForcast.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/ISaleWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/Binders/ISaleWidgetBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/SaleWidgetBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/Binders/SaleWidgetBinder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/JUIControlService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/JUIControlService/JUIControlService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/RemoveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Command/RemoveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Services/TodoService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/Services/TodoService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/TodoInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TodoService/TodoInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/DistributeCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/DistributeCacheProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/CsScript/SharpScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/IScriptReset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScripter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScripter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ScriptInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Script/ScriptItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Configuration/ScriptLoaderConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Configuration/ScriptLoaderConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/SampleWorker1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WorkerApplication/SampleWorker1.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +72,16 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d4f4ac7db6d2c5d183ab2d92602280ed4349fd6e6a1b6313546b3d01fdab5/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/obj/Debug/net6.0/WebApiApplication.MvcApplicationPartsAssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Request/MessageRequestDto.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/2b/feba8931/AsyncVoidMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Abstract/DependencyInjectorBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/82/b4b7f20a/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Constants/Permission/ApplicationClaimTypes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Constants/Localization/LocalizationConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/EntityBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/MSFasterCacheProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Constants/Localization/LanguageCode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/68/d8867fab/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -122,14 +103,19 @@
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XForEachExtension.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XValue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/703f796f9ba44274a4dcffca4a55ef81b3e80/9b/d25494ab/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1f6f390bc246f43f64a19835b0d7e69c2d8f7cd17815f5fcbb145b665bab8/IActionResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../eXtensionSharp/src/XObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/appsettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c7155a2ad5b4273408c55145d0a47dff826a7f8483c5ec69e58b4b86466/ActionFilterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorServerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f5297661c332adde375e682e974228832372ef64d6fd9c55e716bce7f72c655/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionRequirement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eb539fc2a7575e1bf2eeeade611e3ad8f95e823422e8d4ada22546b4668aa/MemoryCacheOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/UPLOAD_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,16 +124,19 @@
     <setting file="file://$PROJECT_DIR$/WorkerApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Permission/PermissionPolicyProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/c3/bb9b788d/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Pages/Index.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/AuthorizedController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c9ca552eea9bb8fababbf1cd3f981cf68849ccc365dcca5627376f98e505c74/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -349,7 +338,8 @@
       <workItem from="1644037737276" duration="5965000" />
       <workItem from="1644122161424" duration="5536000" />
       <workItem from="1644367504282" duration="5849000" />
-      <workItem from="1644397396555" duration="373000" />
+      <workItem from="1644397396555" duration="1274000" />
+      <workItem from="1644452973673" duration="14553000" />
     </task>
     <task id="LOCAL-00001" summary="update BackgroundServiceBase">
       <created>1643784358750</created>
@@ -372,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644223050134</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1644399161038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1644399161038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -412,9 +409,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="update BackgroundServiceBase" />
-    <MESSAGE value="update" />
     <MESSAGE value="UPDATE" />
-    <option name="LAST_COMMIT_MESSAGE" value="UPDATE" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -433,30 +430,69 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>224</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="224" containingFunctionPresentation="lambda expression inside method 'HangFireSample'">
+          <url>file://$PROJECT_DIR$/Application/Response/Result.cs</url>
+          <line>17</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Response\Result.cs" initialLine="17" containingFunctionPresentation="method 'Fail'">
             <startOffsets>
-              <option value="8806" />
+              <option value="361" />
             </startOffsets>
             <endOffsets>
-              <option value="8852" />
+              <option value="401" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs</url>
-          <line>223</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\WebApiApplication\Controllers\IndexController.cs" initialLine="223" containingFunctionPresentation="method 'HangFireSample'">
+          <url>file://$PROJECT_DIR$/Application/Response/Result.cs</url>
+          <line>22</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Response\Result.cs" initialLine="22" containingFunctionPresentation="method 'Fail'">
             <startOffsets>
-              <option value="8669" />
+              <option value="486" />
             </startOffsets>
             <endOffsets>
-              <option value="8753" />
+              <option value="567" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="12" />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Response/Result.cs</url>
+          <line>27</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Response\Result.cs" initialLine="27" containingFunctionPresentation="method 'Fail'">
+            <startOffsets>
+              <option value="659" />
+            </startOffsets>
+            <endOffsets>
+              <option value="720" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Response/IResult.cs</url>
+          <line>6</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Response\IResult.cs" initialLine="6" containingFunctionPresentation="property 'Messages'">
+            <startOffsets>
+              <option value="140" />
+            </startOffsets>
+            <endOffsets>
+              <option value="144" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Response/IResult.cs</url>
+          <line>8</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\Application\Response\IResult.cs" initialLine="8" containingFunctionPresentation="property 'Succeeded'">
+            <startOffsets>
+              <option value="178" />
+            </startOffsets>
+            <endOffsets>
+              <option value="182" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -467,5 +503,10 @@
         <PinnedItemInfo parentTag="Type#System.Security.Claims.Claim" memberName="CustomSerializationData" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="LaunchSettings">
+        <watch expression="response.EnsureSuccessStatusCode()" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

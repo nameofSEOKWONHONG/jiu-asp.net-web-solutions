@@ -1,5 +1,4 @@
-﻿using Application.Interfaces;
-using eXtensionSharp;
+﻿using eXtensionSharp;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

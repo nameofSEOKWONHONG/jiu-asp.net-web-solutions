@@ -6,14 +6,10 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script.ClearScript;
 
-public class JsScriptLoader : IScriptReset
+public class JsScriptLoader : ScriptLoaderBase<IJsScripter>
 {
-    public double Version { get; set; }
-    private readonly ConcurrentDictionary<string, JsScripter> _scriptors = new ConcurrentDictionary<string, JsScripter>();
-    
-    public JsScriptLoader(IOptions<ScriptLoaderConfig> options)
+    public JsScriptLoader(IOptions<ScriptLoaderConfig> options) : base(options)
     {
-        this.Version = options.Value.Version;
     }
 
     public IJsScripter Create(string fileName, string modulePath = null)
@@ -30,19 +26,4 @@ public class JsScriptLoader : IScriptReset
 
         return exists.Value;
     }
-    
-    public bool Reset(string fileName = null)
-    {
-        if (this._scriptors.xIsEmpty()) return true;
-        
-        if(fileName.xIsEmpty()) this._scriptors.Clear();
-        else
-        {
-            if (!_scriptors.TryRemove(fileName, out JsScripter scriptor))
-            {
-                return false;
-            }
-        }
-        return true;
-    }   
 }

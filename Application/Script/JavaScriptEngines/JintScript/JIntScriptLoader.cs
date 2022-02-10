@@ -6,15 +6,10 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script.JintScript;
 
-public class JIntScriptLoader : IScriptReset
-{
-    public double Version { get; set; }
-
-    private readonly ConcurrentDictionary<string, JIntScripter> _scriptors = new();
-    
-    public JIntScriptLoader(IOptions<ScriptLoaderConfig> options)
+public class JIntScriptLoader : ScriptLoaderBase<IJIntScripter>
+{   
+    public JIntScriptLoader(IOptions<ScriptLoaderConfig> options) : base(options)
     {
-        this.Version = options.Value.Version;
     }
     
     public IJIntScripter Create(string fileName, string modulePath = null)
@@ -30,20 +25,5 @@ public class JIntScriptLoader : IScriptReset
         }
 
         return exists.Value;
-    }
-
-    public bool Reset(string fileName = null)
-    {
-        if (this._scriptors.xIsEmpty()) return true;
-        
-        if(fileName.xIsEmpty()) this._scriptors.Clear();
-        else
-        {
-            if (!_scriptors.TryRemove(fileName, out JIntScripter scriptor))
-            {
-                return false;
-            }
-        }
-        return true;
     }
 }

@@ -48,7 +48,7 @@ namespace Application.Infrastructure.Cache
         {
             var hashedKey = string.Empty;
             key.xIfEmpty(() => hashedKey = this.CreateCacheKey());
-            key.xIfNotEmpty(() => hashedKey = key.xToHash());
+            key.xIfNotEmpty(() => hashedKey = key.xGetHashCode());
             var value = _distributedCache.GetString(hashedKey);
             if(value.xIsNotEmpty())
                 return JsonSerializer.Deserialize<T>(value);
@@ -81,7 +81,7 @@ namespace Application.Infrastructure.Cache
             {
                 var additionalKey = string.Join("|", options.AdditionalKeys);
                 var key = string.Join("", options.Keys);
-                var resultKey = $"{additionalKey}|{key.xToHash()}";
+                var resultKey = $"{additionalKey}|{key.xGetHashCode()}";
                 _distributedCache.Set(resultKey, options.Data.xToBytes(), new DistributedCacheEntryOptions()
                 {
                     AbsoluteExpirationRelativeToNow = options.Options.ExpireTimeout.HasValue ? TimeSpan.FromSeconds(options.Options.ExpireTimeout.Value) : null

@@ -24,7 +24,7 @@ namespace Application.Infrastructure.Cache
                 sb.Append($"{item.Key}:{item.Value}");
             });
             sb.Release(out string key);
-            return key.xToHash();
+            return key.xGetHashCode();
         }
 
         protected string CreateCacheKey(string key)
@@ -40,7 +40,7 @@ namespace Application.Infrastructure.Cache
                 sb.Append(item);
             });
             sb.Release(out string combinedKey);
-            return combinedKey.xToHash();
+            return combinedKey.xGetHashCode();
         }
     }
 }
