@@ -12,8 +12,8 @@ public class SaleSelectBoxWidget : WidgetBase
 {
     public SaleSelectBoxWidget(IWidgetBinder widgetBinder, Dictionary<string, string> options)
     {
-        widgetBinder.xIfEmptyThrow(() => "widgetbinder is null");
-        options.xIfEmptyThorw(() => new NullReferenceException("options is null"));
+        widgetBinder.xIfEmpty(() => throw new Exception("widgetbinder is null"));
+        options.xIfEmpty(() => new NullReferenceException("options is null"));
         
         var valueAndOptions = widgetBinder.Bind(options);
         this.Value = valueAndOptions.value;

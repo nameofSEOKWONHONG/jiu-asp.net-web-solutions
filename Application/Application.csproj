@@ -54,6 +54,11 @@
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
         <PackageReference Include="Microsoft.FASTER.Server" Version="1.9.10" />
         <PackageReference Include="MimeKit" Version="3.1.0" />
+        <PackageReference Include="Quartz" Version="3.3.3" />
+        <PackageReference Include="Quartz.AspNetCore" Version="3.3.3" />
+        <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.3.3" />
+        <PackageReference Include="Quartz.Extensions.Hosting" Version="3.3.3" />
+        <PackageReference Include="Quartz.Serialization.Json" Version="3.3.3" />
         
         <PackageReference Include="RestSharp" Version="107.1.2" />
         

@@ -52,6 +52,7 @@
       <ProjectReference Include="..\Domain\Domain.csproj" />
       <ProjectReference Include="..\HelloWorldService\HelloWorldService.csproj" />
       <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+      <ProjectReference Include="..\QutarzScheduleService\QutarzScheduleService.csproj" />
       <ProjectReference Include="..\TodoService\TodoService.csproj" />
       <ProjectReference Include="..\WeatherForecastService\WeatherForecastService.csproj" />
     </ItemGroup>

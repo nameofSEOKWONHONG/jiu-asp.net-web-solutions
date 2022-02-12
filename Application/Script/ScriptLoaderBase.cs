@@ -21,11 +21,11 @@ public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : c
 
     private Dictionary<Type, Func<string>> _scriptTypeStates = new Dictionary<Type, Func<string>>()
     {
-        { typeof(PyScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\py") },
-        { typeof(SharpScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\cs") },
-        { typeof(JsScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\csscript") },
-        { typeof(JIntScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\jint") },
-        { typeof(NodeJSScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\node") }
+        { typeof(IPyScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\py") },
+        { typeof(ISharpScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\cs") },
+        { typeof(IJsScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\csscript") },
+        { typeof(IJIntScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\jint") },
+        { typeof(INodeJSScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\node") }
     };
 
     public ScriptLoaderBase(IOptions<ScriptLoaderConfig> options)

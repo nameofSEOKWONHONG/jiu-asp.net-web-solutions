@@ -19,6 +19,7 @@ using Jering.Javascript.NodeJS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Quartz;
 
 namespace Application;
 
@@ -163,6 +164,67 @@ public class ApplicationInjector : IDependencyInjectorBase
         services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));
         #endregion
         
+        #endregion
+
+        #region [quartz 설정]
+
+        services.Configure<QuartzOptions>(configuration.GetSection("Quartz"));
+        //or
+        // if you are using persistent job store, you might want to alter some options
+        // services.Configure<QuartzOptions>(options =>
+        // {
+        //     options.Scheduling.IgnoreDuplicates = true; // default: false
+        //     options.Scheduling.OverWriteExistingData = true; // default: true
+        // });
+        
+        //setting reference : https://www.quartz-scheduler.net/documentation/quartz-3.x/packages/microsoft-di-integration.html#di-aware-job-factories
+        services.AddQuartz(config =>
+        {
+            // handy when part of cluster or you want to otherwise identify multiple schedulers
+            config.SchedulerId = "Scheduler-Core";
+        
+            // we take this from appsettings.json, just show it's possible
+            // q.SchedulerName = "Quartz ASP.NET Core Sample Scheduler";
+        
+            // as of 3.3.2 this also injects scoped services (like EF DbContext) without problems
+            config.UseMicrosoftDependencyInjectionJobFactory();
+            
+            //default
+            // config.UseSimpleTypeLoader();
+            // config.UseInMemoryStore();
+            config.UseDefaultThreadPool(m => m.MaxConcurrency = 10);
+            // this is the default 
+            // config.WithMisfireThreshold(TimeSpan.FromSeconds(60)
+            config.UsePersistentStore(x =>
+            {
+                // force job data map values to be considered as strings
+                // prevents nasty surprises if object is accidentally serialized and then 
+                // serialization format breaks, defaults to false
+                x.UseProperties = true;
+                x.UseClustering();
+                // there are other SQL providers supported too 
+                x.UseSqlServer(connectionString);
+                // this requires Quartz.Serialization.Json NuGet package
+                x.UseJsonSerializer();
+            });
+            // // job initialization plugin handles our xml reading, without it defaults are used
+            // // requires Quartz.Plugins NuGet package
+            // config.UseXmlSchedulingConfiguration(x =>
+            // {
+            //     x.Files = new[] { "~/quartz_jobs.xml" };
+            //     // this is the default
+            //     x.FailOnFileNotFound = true;
+            //     // this is not the default
+            //     x.FailOnSchedulingError = true;
+            // })
+            // .BuildScheduler();
+        });
+
+        services.AddQuartzServer(config =>
+        {
+            config.WaitForJobsToComplete = true;
+        });
+
         #endregion
     }
 }
