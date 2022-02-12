@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Application.Script.CsScript;
+using Application.Script.SharpScript;
 
 public class Sample1 : SharpScriptBase<bool, string, Dictionary<string, string>>
 {

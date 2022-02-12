@@ -1,4 +1,4 @@
-﻿namespace Application.Script.CsScript;
+﻿namespace Application.Script.SharpScript;
 
 public abstract class SharpScriptBase<TOptions, TRequest, TResult>
 {

@@ -5,7 +5,7 @@ using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
 
-namespace Application.Script.CsScript;
+namespace Application.Script.SharpScript;
 
 
 public class SharpScriptLoader : ScriptLoaderBase<ISharpScripter>

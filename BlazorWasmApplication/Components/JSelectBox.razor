@@ -1,0 +1,27 @@
+﻿
+<select class="form-control" @bind="SelectedValue">
+    <option value=""></option>
+    @foreach(var kv in Items)
+    {
+        <option value="@kv.Key">@kv.Value</option>
+    }
+</select>
+<p>@SelectedValue</p>
+@code {
+
+    [Parameter]
+    public Dictionary<string, string> Items { get; set; }
+    
+    [Parameter]
+    public string SelectedValue { get; set; }
+
+    protected override void OnInitialized()
+    {   
+        base.OnInitialized();
+    }
+
+    private void OnChange(ChangeEventArgs args)
+    {
+        Console.WriteLine(SelectedValue);
+    }
+}

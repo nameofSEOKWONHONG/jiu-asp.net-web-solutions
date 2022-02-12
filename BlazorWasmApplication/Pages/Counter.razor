@@ -1,5 +1,6 @@
 ﻿@page "/counter"
 @using ClientApplication.ViewModel
+@using BlazorWasmApplication.Components
 @inject CounterStateViewModel _counterStateViewModel
 
 <PageTitle>Counter</PageTitle>
@@ -8,4 +9,19 @@
 
 <p role="status">Current count: @_counterStateViewModel.Count</p>
 
-<button class="btn btn-primary" @onclick="(() => _counterStateViewModel.Count++)">Click me</button>
+<button class="btn btn-primary" @onclick="(() => _counterStateViewModel.Count++)">Click me</button>\
+ 
+<JSelectBox Items="@_levels"/>
+
+@code
+{
+    private Dictionary<string, string> _levels = new Dictionary<string, string>();
+
+    protected override void OnInitialized()
+    {
+        _levels.Add("H", "High");
+        _levels.Add("M", "Medium");
+        _levels.Add("L", "Low");
+        base.OnInitialized();
+    }
+}

@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;
 using Application.Script;
-using Application.Script.CsScript;
+using Application.Script.SharpScript;
 using Domain.Configuration;
 using Hangfire;
 using HelloWorldService;

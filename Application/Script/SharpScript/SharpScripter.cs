@@ -3,7 +3,7 @@ using CSScripting;
 using CSScriptLib;
 using eXtensionSharp;
 
-namespace Application.Script.CsScript;
+namespace Application.Script.SharpScript;
 
 internal class SharpScripter : ISharpScripter
 {

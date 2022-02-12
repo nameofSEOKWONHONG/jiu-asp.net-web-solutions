@@ -30,6 +30,15 @@ internal class JIntScripter : IJIntScripter
             //Edge.js -> EdgeJs로 메인테너 변경되었고 아직 .net5/6 지원하지 않음.
             //언제 될지 모르겠고...
             //CsScript로 넘어간다. 자바스크립트는 포기함.
+            
+            //https://github.com/JeringTech/Javascript.NodeJS
+            //위 프로젝트는 nodejs 프로세스를 .net host process에서 child process로 띄워서 사용할 수 있는 프로젝트이다.
+            //따라서 nodejs 프로세스를 사용하므로 모든 기능이 사용가능한 것으로 보임.
+            //마지막 도전은 위에 프로젝트로 진행함.
+            //이전에 .net core 3에서 Microsoft.AspNetCore.NodeServices을 사용할 수 있었는데, .net 5에서 obsolete됨.
+            //이후에 asp.net core에서 react 서버 랜더링을 지원하기 위해 Microsoft.AspNetCore.SpaServices.Extensions만 남은 것으로 보임.
+            //위 프로젝트가 Microsoft.AspNetCore.NodeServices에서 포크되어 나온 것으로 확인됨.
+            //nodejs가 설치되어 있어야 함.
             TypeScriptCompiler.Compile(fromTsPath);
             this._scriptItem = new ScriptItem(fileName);
             this._modulePath = modulePath;

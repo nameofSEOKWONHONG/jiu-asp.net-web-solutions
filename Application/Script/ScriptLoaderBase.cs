@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using Application.Script.ClearScript;
-using Application.Script.CsScript;
 using Application.Script.JavaScriptEngines.NodeJS;
 using Application.Script.JintScript;
 using Application.Script.PyScript;
+using Application.Script.SharpScript;
 using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
@@ -17,7 +17,7 @@ public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : c
 {
     public double Version { get; set; }
     protected readonly string _basePath = string.Empty;
-    protected readonly ConcurrentDictionary<string, TScripter> _scriptors = new ConcurrentDictionary<string, TScripter>();
+    protected readonly ConcurrentDictionary<string, TScripter> _scriptors = new();
 
     private Dictionary<Type, Func<string>> _scriptTypeStates = new Dictionary<Type, Func<string>>()
     {
@@ -39,17 +39,20 @@ public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : c
     
     public bool Reset(string fileName = null)
     {
+        var ret = true;
         if (this._scriptors.xIsEmpty()) return true;
         
-        var fullPathName = Path.Combine(_basePath, fileName);   
-        if(fullPathName.xIsEmpty()) this._scriptors.Clear();
-        else
-        {
-            if (!_scriptors.TryRemove(fullPathName, out TScripter scriptor))
-            {
-                return false;
-            }
-        }
-        return true;
+        fileName.xIfEmpty(
+            () => this._scriptors.Clear(), 
+            () => {
+                var fullPathName = Path.Combine(_basePath, fileName);   
+                if(fullPathName.xIsEmpty()) this._scriptors.Clear();
+                else
+                {
+                    ret = _scriptors.TryRemove(fullPathName, out _);
+                }
+            });
+
+        return ret;
     }
 }

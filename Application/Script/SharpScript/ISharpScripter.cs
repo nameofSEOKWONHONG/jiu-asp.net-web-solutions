@@ -1,7 +1,7 @@
 ﻿using System;
 using CSScriptLib;
 
-namespace Application.Script.CsScript;
+namespace Application.Script.SharpScript;
 
 public interface ISharpScripter
 {

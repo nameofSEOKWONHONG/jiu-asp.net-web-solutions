@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using Application.Script.ClearScript;
-using Application.Script.CsScript;
-using Application.Script.JavaScriptEngines.NodeJS;
-using Application.Script.JintScript;
 using Domain.Configuration;
 using eXtensionSharp;
 using Microsoft.Extensions.Options;
