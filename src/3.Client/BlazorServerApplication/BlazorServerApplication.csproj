@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>0169;8019;1591</NoWarn>
+    <TypeScriptESModuleInterop>True</TypeScriptESModuleInterop>
+    <TypeScriptAllowSyntheticDefaultImports>True</TypeScriptAllowSyntheticDefaultImports>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.KakaoTalk" Version="6.0.3" />
+    <PackageReference Include="MudBlazor" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Index.razor.js">
+      <DependentUpon>Index.razor</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Pages\DynamicView.razor.js">
+      <DependentUpon>DynamicView.razor</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
+    <ProjectReference Include="..\..\1.Share\Application\Application.csproj" />
+    <ProjectReference Include="..\..\1.Share\Domain\Domain.csproj" />
+    <ProjectReference Include="..\1.Share\ClientApplication\ClientApplication.csproj" />
+  </ItemGroup>
+
+</Project>

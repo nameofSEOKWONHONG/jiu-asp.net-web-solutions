@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
+        <ProjectReference Include="..\..\..\1.Share\Application\Application.csproj" />
+        <ProjectReference Include="..\TodoService\TodoService.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.123" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Doc" />
+    </ItemGroup>
+
+</Project>

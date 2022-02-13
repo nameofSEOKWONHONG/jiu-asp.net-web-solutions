@@ -89,8 +89,8 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
 * ORM
     * Entity Framework Core
     * SqlKata
-    * SqlSugar
-    * Chloe
+    * ~~SqlSugar~~
+    * ~~Chloe~~
 * Database & NoSql
     * SQL-Server
     * MYSQL
@@ -108,7 +108,11 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
 * Authorize
     * JWT
 * Script
-    * CS-Script (사용하지 않을 수 있습니다.)
+    * CS-Script
+    * JINT
+    * ClearScript
+    * IronPython
+    * Javascript.Node
 * Plugin
     * McMaster.NETCore.Plugins (사용하지 않을 수 있습니다.)
 * Http
@@ -119,6 +123,7 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
     * BCrypt.Net-Next
 * Scheduler
     * Hangfire
+    * Qutarz.Net (워커 어플리케이션에서만 사용)
 * Mapper
     * Mapster
 * CQRS
