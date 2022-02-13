@@ -14,371 +14,7 @@
     <projectFile profileName="WorkerApplication">src/4.BackgroundApp/WorkerApplication/WorkerApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Abstract/BackgroundServiceBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Abstract/DependencyInjectorBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Abstract/ResponseResultBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationConst.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/ApplicationInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Constants/Localization/LanguageCode.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Constants/Localization/LocalizationConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Constants/Permission/ApplicationClaimTypes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/ActivitySources.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/BatchUpdateCreateBodyData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/BatchUtil.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/BulkConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/DbContextBulkExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/DbContextBulkTransaction.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/DbContextBulkTransactionGraphUtil.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/DbContextUnderlyingExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/FastProperty.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/GraphUtil.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/Helpers/GenericsHelpers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/IQueryableBatchExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/IQueryableExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/InvalidBulkConfigException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/OwnedTypeUtil.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/ISqlDialect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/ISqlOperationsAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/PostgreSql/PostgreSqlAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/PostgreSql/PostgreSqlDialect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/PostgreSql/SqlQueryBuilderPostgreSql.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/ProgressHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SQLServer/SqlServerAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SQLServer/SqlServerDialect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SQLite/SqLiteAdapter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SQLite/SqLiteDialect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SQLite/SqlQueryBuilderSqlite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SQLAdapters/SqlAdaptersMapping.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SqlBulkOperation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/SqlQueryBuilder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/BulkExtensions/TableInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DatabaseSeeder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/DbContextBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/JIUDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbContexts/SqlSugarDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbL4Interceptor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/DbL4Provider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/EF/EFExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Context/MongoDb/MongoDbContextBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Exceptions/ApiException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheOptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/CacheProviderResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/DistributeCacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/ICacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/LiteDbCacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/CacheContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/CacheFunctions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/FasterCacheKey.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/FasterCacheKeySerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/FasterCacheValue.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/FasterCacheValueSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MSFaster/MSFasterCacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/MemoryCacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/RocksDbCacheProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Cache/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/INotifyMessageProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/MessageProviderResolver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/IAccountService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/IRolePermissionService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/IRoleService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/ISessionContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/ISessionContextService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/Account/IUserService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Migrations/20220119053912_20220118_1.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Migrations/20220119053912_20220118_1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Migrations/JIUDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Migrations/migration_command.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Migrations/sqllocaldb.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/ChangePasswordRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/ForgotPasswordRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/PermissionRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/RefreshTokenRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/RegisterRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/ResetPasswordRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/RoleClaimRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/RoleRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/ToggleUserStatusRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/TokenRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/UpdateProfilePictureRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/UpdateProfileRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/Identity/UpdateUserRolesRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/MessageRequestDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/PagedRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Request/UploadRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Response/IResult.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Response/Result.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/IScriptLoaderBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/IJsScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/ClearScript/JsScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/IJIntScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/JintScript/JIntScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/INodeJSScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/JavaScriptEngines/NodeJS/NodeJSScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/IPyScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/PyScript/PyScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptInitializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/ScriptLoaderBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/SharpScript/ISharpScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/SharpScript/SharpScriptBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/SharpScript/SharpScriptLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/SharpScript/SharpScripter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/TypeScriptCompiler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Script/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/App.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/BlazorServerApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Counter.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/DynamicView.razor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Error.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Index.razor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Login.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Login.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Logout.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/Logout.cshtml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/_Host.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Pages/_Layout.cshtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Services/KakaoOAuthEventService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/AcessControl.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/MainLayout.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/NavMenu.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/Shared/SurveyPrompt.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/_Imports.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/bootstrap/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/bootstrap/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/FONT-LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/ICON-LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/css/site.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorServerApplication/wwwroot/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/App.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/BlazorWasmApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Components/JSelectBox.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Components/JTextBox.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Pages/Counter.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Pages/FetchData.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Pages/Index.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/MainLayout.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/NavMenu.razor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/Shared/SurveyPrompt.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/_Imports.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/bootstrap/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/bootstrap/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/FONT-LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/ICON-LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/css/open-iconic/font/fonts/open-iconic.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/icon-192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlazorWasmApplication/wwwroot/sample-data/weather.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/ClientApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Common/IViewModelBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Common/ViewModelBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/CounterStateViewModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Services/LoginCheckService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Services/ServiceRunner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Configuration/CacheConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Configuration/MailSetting.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Configuration/MongoDbOption.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Configuration/ScriptLoaderConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Domain.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Dtos/KakaoAuthInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Dtos/OAuthInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Dtos/UserRoleModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_GROUP.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_REFRESH_TOKEN.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_ROLE_PERMISSION.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_TODO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Account/TB_USER.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Book/Books.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Contract/TB_CONTRACT.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/EntityBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/NoSqlEntityBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/System/Config/TB_MIGRAION.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/WeatherForecast/WeatherForcast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_CACHE_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_DATABASE_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_RESULT_CODE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_ROLE_PERMISSION_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_ROLE_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/ENUM_SCRIPT_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Enums/UPLOAD_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldService/Features/Queries/GetHelloWorldDataHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldService/HelloWorldInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldService/HelloWorldService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldService/Services/HelloWorldService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HelloWorldService/Services/IHelloWorldService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Abstract/ApiControllerBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Abstract/AuthorizedController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Abstract/VersionController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/CacheResetBackgroundService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/BackgroundServices/RedisBackgroundService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/InfrastructureInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Middlewares/AntiXssMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Middlewares/RequestCultureMiddleware.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/EmailNotifyHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/KakaoNotifyHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/LineNotifyHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/NotifyMessage.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Notifies/SmsNotifyHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Account/AccountService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Account/RolePermissionService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Account/RoleService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Account/SessionContextService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Account/UserService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Services/Kafka/ProducerService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/ISaleWidgetBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Binders/SaleWidgetBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Doc/JUIControls.Widget_Description.pptx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Enums/ENUM_FORM_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Enums/ENUM_WIDGET_BUTTON_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Enums/ENUM_WIDGET_TYPE.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/FormProviderInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Forms/DashBoardForm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Forms/IFormMaker.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Forms/Sale/SaleSelectBoxWidget.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Forms/Sale/SaleSelectBoxWidgetBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Forms/Sale/WidgetTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/JUIControlService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/Form.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/IWidgetBinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/WidgetBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/WidgetGroup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/WidgetSection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JUIControlService/Widget/WidgetSectionGroup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QutarzScheduleService/EmailPrintJob.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QutarzScheduleService/QutarzScheduleService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/RemoveTodoCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Command/SaveTodoCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetAllTodoQueryHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Features/Query/GetTodoQueryHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Services/ITodoService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/Services/TodoService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/TodoInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TodoService/TodoService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/HelloWorldController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastApiApplication/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Services/IWeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/Services/WeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastInjector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherForecastService/WeatherForecastService.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/.template.config/template.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Configuration/ConfigureSwaggerOptions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Configuration/SwaggerDefaultValues.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Configuration/SwaggerRemoveSchemasFilter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Configuration/VersionConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/AccountController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/GenerateViewController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/ScheduleController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/TodoController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/UsersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Extensions/PluginExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Filters/HangfireAuthorizationFilter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Filters/RoleAuthorize.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Permission/PermissionAuthorizationHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Permission/PermissionPolicyProvider.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Permission/PermissionRequirement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/cs/Sample1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/csscript/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/csscript/modules/a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/csscript/modules/b.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/jint/sample.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/jint/sample1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/js/jint/sample1.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/node/module1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/ScriptFiles/py/sample.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/Startup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/WebApiApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApiApplication/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/SampleWorker1.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/SampleWorker2.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/WorkerApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkerApplication/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarpWebApplication/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarpWebApplication/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarpWebApplication/YarpWebApplication.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarpWebApplication/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/YarpWebApplication/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/global.json" beforeDir="false" afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
-    </list>
+    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -580,8 +216,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1644729522183</updated>
-      <workItem from="1644729528345" duration="417000" />
+      <workItem from="1644729528345" duration="717000" />
     </task>
+    <task id="LOCAL-00001" summary="change folder structure">
+      <created>1644730175212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644730175212</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new folder structure">
+      <created>1644730196159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1644730196159</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +246,33 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="change folder structure" />
+    <MESSAGE value="new folder structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="new folder structure" />
   </component>
 </project>
