@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
-using SqlKata.Compilers;
-using SqlKata.Execution;
-using SqlSugar;
 
 namespace Application.Context
 {
-    public sealed class JIUDbContext : DbContextBase
+    public sealed class ApplicationDbContext : DbContextBase
     {   
         /// <summary>
         /// init appsettings connection
@@ -22,7 +16,7 @@ namespace Application.Context
         /// OnConfiguring 삭제함. 기본 설정 방법으로만 사용함.
         /// </summary>
         /// <param name="options"></param>
-        public JIUDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
         }

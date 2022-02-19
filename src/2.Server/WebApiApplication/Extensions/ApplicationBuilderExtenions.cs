@@ -35,6 +35,18 @@ namespace WebApiApplication.Extensions
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
                 RequestPath = new PathString("/Files")
             });
+
+            #region [http logging]
+
+            app.UseHttpLogging();
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers["ApplicationResponseHeader"] =
+                    new string[] {"Application Response Header Value"};
+                await next();
+            });
+
+            #endregion
             
             app.UseResponseCache();
             app.UseHttpsRedirection();

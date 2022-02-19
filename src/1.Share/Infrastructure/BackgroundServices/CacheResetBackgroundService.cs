@@ -18,7 +18,6 @@ namespace Infrastructure.BackgroundServices
     public class CacheResetBackgroundService : BackgroundServiceBase
     {
         private readonly CacheProviderResolver _cacheProviderResolver;
-        private readonly CacheConfig _cacheOption;
 
         private readonly Dictionary<ENUM_CACHE_TYPE, Func<CacheProviderResolver, ICacheProvider>> _cacheStates =
             new Dictionary<ENUM_CACHE_TYPE, Func<CacheProviderResolver, ICacheProvider>>()

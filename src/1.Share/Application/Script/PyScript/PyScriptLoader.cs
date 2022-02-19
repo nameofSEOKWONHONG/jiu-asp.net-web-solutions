@@ -15,16 +15,17 @@ public class PyScriptLoader : ScriptLoaderBase<IPyScripter>
     public IPyScripter Create(string fileName, string[] modulePath = null)
     {
         var fullPathName = Path.Combine(_basePath, fileName);
-        var exists = this._scriptors.FirstOrDefault(m => m.Key == fullPathName);
-        if (exists.Key.xIsEmpty())
+        if (_scriptors.TryGetValue(fileName, out IPyScripter scriptor))
         {
-            var newCScriptor = new PyScripter(fullPathName, modulePath);
-            if (_scriptors.TryAdd(fullPathName, newCScriptor))
-            {
-                return newCScriptor;    
-            }
+            return scriptor;
+        }
+        
+        var newScriptor = new PyScripter(fullPathName, modulePath);
+        if (_scriptors.TryAdd(fileName, newScriptor))
+        {
+            return newScriptor;    
         }
 
-        return exists.Value;
+        return null;
     }
 }

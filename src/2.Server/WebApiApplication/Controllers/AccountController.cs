@@ -17,8 +17,7 @@ namespace WebApiApplication.Controllers
         private readonly IAccountService _accountService;
         
         public AccountController(IUserService userService,
-            IAccountService accountService
-            )
+            IAccountService accountService)
         {
             this._userService = userService;
             this._accountService = accountService;

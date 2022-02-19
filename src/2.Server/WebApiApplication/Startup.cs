@@ -2,6 +2,7 @@ using System.Linq;
 using Application.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,10 +24,26 @@ namespace WebApiApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddConfigureServices(Configuration);
+
+            #region [custom json config]
+
+            services.Configure<FilterOption>(Configuration.GetSection("FilterOption"));
+
+            #endregion
+
+            #region [disable model validation]
+
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });            
+
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider, JIUDbContext db)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider, ApplicationDbContext db)
         {
             // db.Database.EnsureCreated();
             // if (db.Database.GetPendingMigrations().Count() > 0)

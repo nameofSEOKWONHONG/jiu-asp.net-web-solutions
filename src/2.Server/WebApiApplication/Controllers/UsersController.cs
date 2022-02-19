@@ -10,7 +10,7 @@ using WebApiApplication.Services.Abstract;
 namespace WebApiApplication.Controllers
 {
     [RoleAuthorize(RoleType = "SUPER,ADMIN", PermissionType = "VIEW,CREATE,UPDATE,DELETE")]
-    public class UsersController : AuthorizedController<UsersController>
+    public class UsersController : SessionController<UsersController>
     {
         private readonly IUserService userService;
 
@@ -22,10 +22,6 @@ namespace WebApiApplication.Controllers
         [HttpGet("GetAll/{pageIndex}/{pageSize}")]
         public async Task<IActionResult> GetAll(string searchCol = "", string searchValue = "", int pageIndex = 1, int pageSize = 10)
         {
-            var user = this.SessionContext.TbUser;
-            var user2 = this.SessionContext.TbUser;
-            var user3 = this.SessionContext.TbUser;
-            _logger.LogInformation("test");
             var result = await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize); 
             return Ok(result);
         }

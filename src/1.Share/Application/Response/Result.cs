@@ -86,10 +86,21 @@ namespace Application.Response
         {
             return new Result<T> { Succeeded = false, Messages = messages };
         }
+        
+        public static Result<T> Fail(T data)
+        {
+            return new Result<T> { Succeeded = false, Data = data };
+        }
 
         public new static Task<Result<T>> FailAsync()
         {
             return Task.FromResult(Fail());
+        }
+
+        
+        public new static Task<Result<T>> FailAsync(T data)
+        {
+            return Task.FromResult(Fail(data));
         }
 
         public new static Task<Result<T>> FailAsync(string message)

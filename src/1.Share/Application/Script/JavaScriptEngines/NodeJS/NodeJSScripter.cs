@@ -24,7 +24,8 @@ internal class NodeJSScripter : INodeJSScripter
     {
         object[] arguments = null;
         if (args.xIsNotEmpty()) arguments = args();
-        var result = _nodeJsService.InvokeFromStringAsync<TResult>(_scriptItem.Code, args:arguments).GetAwaiter().GetResult();
+        var result = _nodeJsService.InvokeFromStringAsync<TResult>(_scriptItem.Code, args: arguments).GetAwaiter()
+            .GetResult();
         executed(result);
     }
 }

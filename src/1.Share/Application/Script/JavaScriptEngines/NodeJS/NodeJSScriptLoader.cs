@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.IO;
 using System.Linq;
 using Domain.Configuration;
 using eXtensionSharp;
@@ -21,16 +22,17 @@ public class NodeJSScriptLoader : ScriptLoaderBase<INodeJSScripter>
     
     public INodeJSScripter Create(string fileName)
     {
-        var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
-        if (exists.Key.xIsEmpty())
+        var fullFileName = Path.Combine(_basePath, fileName);
+        if (_scriptors.TryGetValue(fileName, out INodeJSScripter scriptor))
         {
-            var newCScriptor = new NodeJSScripter(fileName, _nodeJsService);
-            if (_scriptors.TryAdd(fileName, newCScriptor))
-            {
-                return newCScriptor;    
-            }
+            return scriptor;
+        }
+        var newScriptor = new NodeJSScripter(fullFileName, _nodeJsService);
+        if (_scriptors.TryAdd(fileName, newScriptor))
+        {
+            return newScriptor;    
         }
 
-        return exists.Value;
+        return null;
     }
 }

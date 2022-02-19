@@ -1,6 +1,15 @@
-﻿using eXtensionSharp;
+﻿using System.Text;
+using Application.Response;
+using Domain.Entities;
+using eXtensionSharp;
+using FluentValidation;
+using FluentValidation.Results;
+using Infrastructure.Middleware;
+using IronPython.Modules;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.ClearScript.JavaScript;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -28,14 +37,67 @@ namespace Infrastructure.Abstract
         /// </summary>
         protected IMediator _mediator => _mediatorInstance ??= HttpContext.RequestServices.GetRequiredService<IMediator>();
 
-        protected bool TryValidate<TEntity>(TEntity model, out ActionResult result) where TEntity : class
+        /// <summary>
+        /// 수동 model validation (model validation 비활성화하여 사용할 경우 사용)
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <returns></returns>
+        protected bool TryValidate<TEntity>(TEntity entity, out ActionResult result) 
+            where TEntity : class
         {
-            if (!this.TryValidateModel(model))
+            if (!this.TryValidateModel(entity))
             {
-                result = ValidationProblem(ModelState);
+                var errors = new List<string>();
+                ModelState.Values.xForEach(m =>
+                {
+                    m.Errors.xForEach(m =>
+                    {
+                        errors.Add(m.ErrorMessage);
+                    });
+                });
+                result = new BadRequestObjectResult(Result.Fail(errors)); 
                 return false;
             }
 
+            result = null;
+            return true;
+        }
+
+        /// <summary>
+        /// Fluent Validator (Entity, Dto에 생성자에 정의한 Validator를 사용한다.)
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="TValidator"></typeparam>
+        /// <returns></returns>
+        protected bool TryValidate<TEntity, TValidator>(TEntity entity, out ActionResult result)
+            where TEntity : class
+            where TValidator : AbstractValidator<TEntity>, new()
+        {
+            var validator = new TValidator();
+            ValidationResult results = validator.Validate(entity);
+            
+            if (!results.IsValid)
+            {
+                var errors = new Dictionary<string, List<string>>();
+                results.Errors.xForEach(m =>
+                {
+                    var exists = errors.xFirst(e => e.Key == m.PropertyName);
+                    if (exists.Key.xIsNotEmpty())
+                    {
+                        exists.Value.Add(m.ErrorMessage);
+                    }
+                    else
+                    {
+                        errors.Add(m.PropertyName, new List<string>(){m.ErrorMessage});    
+                    }
+                });
+                result = new BadRequestObjectResult(Result<Dictionary<string, List<string>>>.Fail(errors));
+                return false;
+            }
             result = null;
             return true;
         }

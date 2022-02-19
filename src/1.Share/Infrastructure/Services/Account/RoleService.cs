@@ -8,8 +8,8 @@ namespace Infrastructure.Services.Account
 {    
     public class RoleService : IRoleService
     {
-        private readonly JIUDbContext _dbContext;
-        public RoleService(JIUDbContext context)
+        private readonly ApplicationDbContext _dbContext;
+        public RoleService(ApplicationDbContext context)
         {
             _dbContext = context;
         }

@@ -9,16 +9,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiApplication.Controllers;
 
-public class ScheduleController : ApiControllerBase<ScheduleController>
+public class HangfireSampleController : ApiControllerBase<HangfireSampleController>
 {
-    private readonly JIUDbContext _dbContext;
-    public ScheduleController(JIUDbContext dbContext)
+    private readonly ApplicationDbContext _dbContext;
+    public HangfireSampleController(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    [HttpPost("ScheduleRegistration")]
-    public async Task<IActionResult> ScheduleRegistration()
+    [HttpPost("AsyncBackgroundJob")]
+    public IActionResult AsyncBackgroundJob()
     {
         var worker = new Worker(this._dbContext);
         //비순차실행
@@ -34,8 +34,8 @@ public class ScheduleController : ApiControllerBase<ScheduleController>
         return Ok();
     }
     
-    [HttpPost("ScheduleRegistrationContiune")]
-    public async Task<IActionResult> ScheduleRegistrationContiune()
+    [HttpPost("SyncBackgroundJob")]
+    public IActionResult SyncBackgroundJob()
     {
         var worker = new Worker(this._dbContext);
         //순차실행 보장
@@ -50,8 +50,8 @@ public class ScheduleController : ApiControllerBase<ScheduleController>
         return Ok(id);
     }
 
-    [HttpPost("SchduleDelayedRegistration")]
-    public async Task<IActionResult> SchduleDelayedRegistration()
+    [HttpPost("DelayBackgroundJob")]
+    public IActionResult DelayBackgroundJob()
     {
         var worker = new Worker(this._dbContext);
         var jobId = BackgroundJob.Schedule(() => worker.Work(99),TimeSpan.FromMinutes(1));
@@ -61,8 +61,8 @@ public class ScheduleController : ApiControllerBase<ScheduleController>
 
 public class Worker
 {
-    private readonly JIUDbContext _dbContext;
-    public Worker(JIUDbContext dbContext)
+    private readonly ApplicationDbContext _dbContext;
+    public Worker(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }

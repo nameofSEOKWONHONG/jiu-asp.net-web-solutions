@@ -1,0 +1,15 @@
+﻿{
+  "FilterOption": {
+    "Filters": [
+      {
+        "Name": "A",
+        "Rules": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      }  
+    ]
+  }
+    
+}

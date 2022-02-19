@@ -10,9 +10,9 @@ namespace Infrastructure.Services.Account
 {
     public class UserService : IUserService
     {
-        private readonly JIUDbContext dbContext;
+        private readonly ApplicationDbContext dbContext;
         
-        public UserService(JIUDbContext dbContext)
+        public UserService(ApplicationDbContext dbContext)
         {
             this.dbContext = dbContext;
         }

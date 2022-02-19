@@ -14,7 +14,7 @@ using TodoService.Features.Query;
 
 namespace WebApiApplication.Controllers
 {
-    public class TodoController : AuthorizedController<TodoController>
+    public class TodoController : SessionController<TodoController>
     {
         [HttpGet("GetAll")]
         [ResponseCache(Duration = 10, Location = ResponseCacheLocation.Any, NoStore = false)]

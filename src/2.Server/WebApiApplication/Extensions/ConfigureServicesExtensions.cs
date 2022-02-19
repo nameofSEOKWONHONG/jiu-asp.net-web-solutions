@@ -15,6 +15,7 @@ using Hangfire;
 using HelloWorldService;
 using Infrastructure.Services; 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -64,6 +65,20 @@ namespace WebApiApplication.Extensions
             services.AddRazorPages();
             
             services.AddPluginFiles(configuration);
+
+            #region [http logging]
+
+            services.AddHttpLogging(logging =>
+            {
+                logging.LoggingFields = HttpLoggingFields.All;
+                logging.RequestHeaders.Add("sec-ch-ua");
+                logging.ResponseHeaders.Add("ApplicationResponseHeader");
+                logging.MediaTypeOptions.AddText("application/javascript");
+                logging.RequestBodyLogLimit = 4096;
+                logging.ResponseBodyLogLimit = 4096;
+            });
+
+            #endregion
         }
 
         /// <summary>

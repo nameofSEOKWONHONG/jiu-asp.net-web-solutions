@@ -12,7 +12,7 @@ using eXtensionSharp;
 /// 캐시 후 : 0.1~2초
 /// 비스크립트 : 0.1초내
 /// </summary>
-public class HelloWorldScript : SharpScriptBase<JIUDbContext, string, string>
+public class HelloWorldScript : SharpScriptBase<ApplicationDbContext, string, string>
 {
     private readonly Sample1 _sample1;
     public HelloWorldScript()

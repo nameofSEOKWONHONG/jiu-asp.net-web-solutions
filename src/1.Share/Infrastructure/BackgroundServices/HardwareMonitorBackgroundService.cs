@@ -37,31 +37,27 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
     protected override async Task ExecuteCore(CancellationToken stoppingToken)
     {
         var warningCnt = 0;
-        using var scope = _serviceScopeFactory.CreateScope();
-        var service = scope.ServiceProvider.GetRequiredService<IUserService>();
-        var users = await service.FindAllUserByRoleAsync(new[]{ENUM_ROLE_TYPE.ADMIN, ENUM_ROLE_TYPE.SUPER});
-
+        
         _computer.Open();
         _computer.Accept(new UpdateVisitor());
 
         foreach (IHardware hardware in this._computer.Hardware)
         {
-            _logger.LogInformation("Hardware: {0}", hardware.Name);
-
-            foreach (IHardware subhardware in hardware.SubHardware)
-            {
-                _logger.LogInformation("\tSubhardware: {0}", subhardware.Name);
-
-                foreach (ISensor sensor in subhardware.Sensors)
-                {
-                    _logger.LogInformation("\t\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
-                }
-            }
-
-            foreach (ISensor sensor in hardware.Sensors)
-            {
-                _logger.LogInformation("\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
-            }
+            // _logger.LogInformation("Hardware: {0}", hardware.Name);
+            // foreach (IHardware subhardware in hardware.SubHardware)
+            // {
+            //     _logger.LogInformation("\tSubhardware: {0}", subhardware.Name);
+            //
+            //     foreach (ISensor sensor in subhardware.Sensors)
+            //     {
+            //         _logger.LogInformation("\t\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
+            //     }
+            // }
+            //
+            // foreach (ISensor sensor in hardware.Sensors)
+            // {
+            //     _logger.LogInformation("\tSensor: {0}, value: {1}", sensor.Name, sensor.Value);
+            // }
 
             var cpuSencer = hardware.Sensors.FirstOrDefault(m => m.Name == "CPU Total");
             if (cpuSencer.xIsNotEmpty())
@@ -71,6 +67,10 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
                     warningCnt += 1;
                     if (warningCnt > WARNING_CNT)
                     {
+                        using var scope = _serviceScopeFactory.CreateScope();
+                        var service = scope.ServiceProvider.GetRequiredService<IUserService>();
+                        var users = await service.FindAllUserByRoleAsync(new[]{ENUM_ROLE_TYPE.ADMIN, ENUM_ROLE_TYPE.SUPER});
+                        
                         await _notifyMessageProvider.SendMessageAsync(
                             new EmailNotifyMessageRequest(
                                 users.Select(m => m.EMAIL).ToArray(),

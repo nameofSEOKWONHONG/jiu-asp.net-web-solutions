@@ -45,6 +45,12 @@ namespace WebApiApplication
                     configuration.AddJsonFile(
                         $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
                         optional: true, reloadOnChange: true);
+
+                    #region #region [custom json config]
+
+                    configuration.AddJsonFile("filtersettings.json", true, true);
+
+                    #endregion
                 })
                 .UseSerilog();
 
@@ -59,6 +65,7 @@ namespace WebApiApplication
                 .AddJsonFile(
                     $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
                     optional: true)
+                .AddJsonFile("filtersettings.json", true, true)
                 .Build();
 
             Log.Logger = new LoggerConfiguration()
@@ -66,7 +73,7 @@ namespace WebApiApplication
                 .Enrich.WithMachineName()
                 .WriteTo.Debug()
                 .WriteTo.Console()
-#if Release
+#if RELEASE
                 .WriteTo.Elasticsearch(ConfigureElasticSink(configuration, environment))
 #endif
                 .Enrich.WithProperty("Environment", environment)

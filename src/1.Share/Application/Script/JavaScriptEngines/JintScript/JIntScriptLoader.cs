@@ -1,4 +1,5 @@
 ﻿using System.Collections.Concurrent;
+using System.IO;
 using System.Linq;
 using Domain.Configuration;
 using eXtensionSharp;
@@ -14,16 +15,17 @@ public class JIntScriptLoader : ScriptLoaderBase<IJIntScripter>
     
     public IJIntScripter Create(string fileName, string modulePath = null)
     {
-        var exists = this._scriptors.FirstOrDefault(m => m.Key == fileName);
-        if (exists.Key.xIsEmpty())
+        var fullFileName = Path.Combine(_basePath, fileName);
+        if (_scriptors.TryGetValue(fileName, out IJIntScripter scriptor))
         {
-            var newCScriptor = new JIntScripter(fileName, modulePath);
-            if (_scriptors.TryAdd(fileName, newCScriptor))
-            {
-                return newCScriptor;    
-            }
+            return scriptor;
+        }
+        var newScriptor = new JIntScripter(fullFileName, modulePath);
+        if (_scriptors.TryAdd(fileName, newScriptor))
+        {
+            return newScriptor;    
         }
 
-        return exists.Value;
+        return null;
     }
 }

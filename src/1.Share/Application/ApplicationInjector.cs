@@ -124,9 +124,12 @@ public class ApplicationInjector : IDependencyInjectorBase
         services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));
 
         services
+
             #region [db l4 provider - table name replace to template table name]
+
             .AddSingleton<DbL4Provider>()
             .AddSingleton<DbL4Interceptor>()
+
             #endregion
 
             #region [define script loader (cs, js, python, node)]
@@ -139,18 +142,19 @@ public class ApplicationInjector : IDependencyInjectorBase
             .AddSingleton<NodeJSScriptLoader>()
 
             #endregion
-            
-            .AddDbContext<JIUDbContext>((sp, options) =>
+
+            .AddDbContext<ApplicationDbContext>((sp, options) =>
             {
                 var action = _useDatabaseStates[databaseType];
                 action(connectionString, sp, options);
             })
-            
+
             #region [database init and seeding]
 
-            .AddTransient<IDatabaseSeeder, DatabaseSeeder>();
+            .AddScoped<IDatabaseSeeder, DatabaseSeeder>()
+            .AddScoped<DatabaseMigration>();
 
-            #endregion
+        #endregion
             
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
 

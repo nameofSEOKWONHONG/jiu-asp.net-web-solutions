@@ -13,10 +13,12 @@
         <PackageReference Include="Chloe.SqlServer" Version="4.19.0" />
         <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
         <PackageReference Include="CS-Script" Version="4.3.0" />
+        <PackageReference Include="FluentValidation" Version="10.3.6" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
         <PackageReference Include="Hangfire.PostgreSql" Version="1.9.5" />
         <PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
         <PackageReference Include="IronPython" Version="3.4.0-alpha1" />
+        <PackageReference Include="IronPython.StdLib" Version="3.4.0-alpha1" />
         <PackageReference Include="Jering.Javascript.NodeJS" Version="6.3.0" />
         <PackageReference Include="Jint" Version="3.0.0-beta-2037" />
         <PackageReference Include="Jint.CommonJS" Version="1.0.14" />
@@ -83,6 +85,7 @@
       <Compile Remove="Migrations\20220108151548_20220108_01.Designer.cs" />
       <Compile Remove="Migrations\20220119053912_20220118_1.cs" />
       <Compile Remove="Migrations\20220119053912_20220118_1.Designer.cs" />
+      <Compile Remove="Migrations\JIUDbContextModelSnapshot.cs" />
     </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using WebApiApplication.Services.Abstract;
 namespace Infrastructure.Abstract
 {
     [Authorize]
-    public abstract class AuthorizedController<TController> : VersionController<TController>
+    public abstract class SessionController<TController> : VersionController<TController>
     {
         private ISessionContext _sessionContextInstance;
         protected ISessionContext SessionContext => _sessionContextInstance ??=

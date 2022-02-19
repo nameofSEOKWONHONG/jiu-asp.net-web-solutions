@@ -6,7 +6,6 @@ using Domain.Entities;
 using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace Application.Context
@@ -22,38 +21,28 @@ namespace Application.Context
     public class DatabaseSeeder : IDatabaseSeeder
     {
         private readonly ILogger _logger;
-        private readonly JIUDbContext _context;
+        private readonly DatabaseMigration _migration;
+        private readonly ApplicationDbContext _dbContext;
         public DatabaseSeeder(ILogger<DatabaseSeeder> logger,
-            JIUDbContext context)
+            DatabaseMigration migration,
+            ApplicationDbContext dbContext)
         {
             _logger = logger;
-            _context = context;
+            _migration = migration;
+            _dbContext = dbContext;
         }
         
         public void Initialize()
         {
             #region [migration setting]
 
-            var migrationExists = _context.Migrations.Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false)
-                .OrderByDescending(m => m.ID)
-                .FirstOrDefault();
-
-            if (migrationExists.xIsNotEmpty())
-            {
-                _context.Database.Migrate();
-                migrationExists.MIGRATION_YN = true;
-                migrationExists.COMPLETE_YN = true;
-                migrationExists.UPDATE_DT = DateTime.UtcNow;
-                migrationExists.UPDATE_ID = "SYSTEM";
-                _context.Migrations.Update(migrationExists);
-                _context.SaveChanges();
-            }
-
+            _migration.Migration().GetAwaiter().GetResult();
+            
             #endregion
 
             #region [init data]
 
-            var superUserExists = _context.Users.FirstOrDefault(m => m.EMAIL == "test@example.com");
+            var superUserExists = _dbContext.Users.FirstOrDefault(m => m.EMAIL == "test@example.com");
             if(superUserExists.xIsNotEmpty()) return;
             
             using (var scope = new TransactionScope(TransactionScopeOption.Required))
@@ -87,9 +76,9 @@ namespace Application.Context
             
                 roleClames.xForEach(item =>
                 {
-                    _context.RolePermissions.Add(item);
+                    _dbContext.RolePermissions.Add(item);
                 });
-                _context.SaveChanges();
+                _dbContext.SaveChanges();
                 
                 var superRole = new TB_ROLE()
                 {
@@ -98,8 +87,8 @@ namespace Application.Context
                     WRITE_DT = DateTime.Now,
                     WRITE_ID = "system"
                 };
-                _context.Roles.Add(superRole);
-                _context.SaveChanges();
+                _dbContext.Roles.Add(superRole);
+                _dbContext.SaveChanges();
                 
                 var adminRole = new TB_ROLE()
                 {
@@ -108,8 +97,8 @@ namespace Application.Context
                     WRITE_DT = DateTime.Now,
                     WRITE_ID = "system"
                 };
-                _context.Roles.Add(adminRole);
-                _context.SaveChanges();
+                _dbContext.Roles.Add(adminRole);
+                _dbContext.SaveChanges();
 
                 var userRole = new TB_ROLE()
                 {
@@ -118,8 +107,8 @@ namespace Application.Context
                     WRITE_DT = DateTime.Now,
                     WRITE_ID = "system"
                 };
-                _context.Roles.Add(userRole);
-                _context.SaveChanges();
+                _dbContext.Roles.Add(userRole);
+                _dbContext.SaveChanges();
 
                 var guestRole = new TB_ROLE()
                 {
@@ -128,8 +117,8 @@ namespace Application.Context
                     WRITE_DT = DateTime.Now,
                     WRITE_ID = "system"
                 };
-                _context.Roles.Add(guestRole);
-                _context.SaveChanges();
+                _dbContext.Roles.Add(guestRole);
+                _dbContext.SaveChanges();
             
                 var superUser = new TB_USER()
                 {
@@ -141,8 +130,8 @@ namespace Application.Context
                     ROLE = superRole
                 };
                 superUser.PASSWORD = BCrypt.Net.BCrypt.HashPassword(superUser.PASSWORD);
-                _context.Users.Add(superUser);
-                _context.SaveChanges();
+                _dbContext.Users.Add(superUser);
+                _dbContext.SaveChanges();
 
                 scope.Complete();
             }            
@@ -154,8 +143,8 @@ namespace Application.Context
     #region [chloe sample]
     public class DatabaseSeederUseChloe : IDatabaseSeeder
     {
-        private readonly JIUDbContext _dbContext;
-        public DatabaseSeederUseChloe(JIUDbContext dbContext)
+        private readonly ApplicationDbContext _dbContext;
+        public DatabaseSeederUseChloe(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
