@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using eXtensionSharp;
 using FluentValidation;
 using Spectre.Console;
@@ -8,10 +9,20 @@ using ValidationResult = Spectre.Console.ValidationResult;
 
 namespace SpectreConsoleSample;
 
+/// <summary>
+/// Cli sample
+/// </summary>
 internal class FileSizeCommand : Command<FileSizeCommand.Settings>
 {
     public class Settings : CommandSettings
     {
+        public Settings(string? searchPath, string? searchPattern, bool includeHidden)
+        {
+            SearchPath = searchPath;
+            SearchPattern = searchPattern;
+            IncludeHidden = includeHidden;
+        }
+
         [Required]
         [Description("찾을 경로입니다. 기본 경로는 현재 경로입니다.")]
         [CommandArgument(0, "[searchPath]")]
@@ -32,7 +43,7 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
         }
     }
 
-    public override int Execute(CommandContext context, Settings settings)
+    public override int Execute([NotNull]CommandContext context, [NotNull]Settings settings)
     {
         var searchOptions = new EnumerationOptions
         {
@@ -51,13 +62,13 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
         return 0;
     }
 
-    public override ValidationResult Validate(CommandContext context, Settings settings)
+    public override ValidationResult Validate([NotNull]CommandContext context, [NotNull]Settings settings)
     {
         Settings.Validator validator = new Settings.Validator();
         var result = validator.Validate(settings);
         if (result.IsValid.xIsFalse())
         {
-            result.Errors.ToDictionary(failure => failure.PropertyName, failure => failure.ErrorMessage);
+            var dictionary = result.Errors.ToDictionary(failure => failure.PropertyName, failure => failure.ErrorMessage);
             return ValidationResult.Error(result.Errors.xFirst().ErrorMessage);
         }
         // if (settings.SearchPath.xIsEmpty())

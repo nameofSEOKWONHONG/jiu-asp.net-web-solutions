@@ -2,7 +2,7 @@
 
 namespace SpectreConsoleSample;
 
-public class WidgetSample
+public class WidgetSample : ISample
 {
     public WidgetSample()
     {
@@ -35,7 +35,6 @@ public class WidgetSample
         table.Border(TableBorder.Rounded);
         table.UpdateCell(0, 2, "TableBorder Rounded");
         AnsiConsole.Write(table);
-
         
         table.Expand();
         table.UpdateCell(0, 2, "Table Expand");
@@ -44,7 +43,5 @@ public class WidgetSample
         table.Collapse();
         table.UpdateCell(0, 2, "Table Collapse");
         AnsiConsole.Write(table);
-
-        
     }
 }

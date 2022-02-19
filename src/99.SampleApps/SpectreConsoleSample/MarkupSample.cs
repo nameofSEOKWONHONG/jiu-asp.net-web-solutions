@@ -3,14 +3,14 @@ using Spectre.Console;
 
 namespace SpectreConsoleSample;
 
-public class SpectreConsoleStatementSample
+public class MarkupSample : ISample
 {
-    public SpectreConsoleStatementSample()
+    public MarkupSample()
     {
         
     }
 
-    public async Task RunAsync()
+    public void Run()
     {
         Console.WriteLine("Hello, World!");
         AnsiConsole.MarkupLine("[red]Hello World[/]");
@@ -71,7 +71,7 @@ public class SpectreConsoleStatementSample
                 });
             });
 
-        await AnsiConsole.Live(table)
+        AnsiConsole.Live(table)
             .AutoClear(true)
             .Overflow(VerticalOverflow.Ellipsis)
             .Cropping(VerticalOverflowCropping.Top)
@@ -90,7 +90,7 @@ public class SpectreConsoleStatementSample
                     ctx.Refresh();
                     await Task.Delay(100);
                 });
-            });
+            }).GetAwaiter().GetResult();
 
 
         #endregion
