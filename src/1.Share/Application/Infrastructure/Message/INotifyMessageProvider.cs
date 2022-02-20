@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Application.Request;
-using Application.Response;
+using Domain.Response;
 
 namespace Application.Infrastructure.Message
 {

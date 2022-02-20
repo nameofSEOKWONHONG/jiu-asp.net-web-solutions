@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Response;
 using Domain.Entities;
+using Domain.Response;
 using MediatR;
 using TodoService.Services;
 

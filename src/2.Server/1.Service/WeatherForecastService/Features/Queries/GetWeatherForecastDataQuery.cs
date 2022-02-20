@@ -1,9 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using Domain.Entities;
-using Application.Response;
 using Domain.Entities.WeatherForecast;
+using Domain.Response;
 using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Queries

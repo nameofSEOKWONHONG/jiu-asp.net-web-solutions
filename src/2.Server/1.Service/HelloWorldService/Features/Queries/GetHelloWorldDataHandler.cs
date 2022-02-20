@@ -1,7 +1,5 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using Application.Interfaces.HelloWorld;
-using Application.Response;
+﻿using Application.Interfaces.HelloWorld;
+using Domain.Response;
 using MediatR;
 
 namespace HelloWorldService.Features.Queries

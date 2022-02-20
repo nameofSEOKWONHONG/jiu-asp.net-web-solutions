@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Application.Request;
-using Application.Response;
+using Domain.Response;
 using eXtensionSharp;
 using RestSharp;
 

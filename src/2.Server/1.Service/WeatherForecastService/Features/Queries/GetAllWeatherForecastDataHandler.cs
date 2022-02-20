@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Response;
-using Domain.Entities;
 using Domain.Entities.WeatherForecast;
+using Domain.Response;
 using MediatR;
 using WeatherForecastService.Services;
 

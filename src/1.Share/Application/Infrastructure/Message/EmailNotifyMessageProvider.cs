@@ -5,13 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Request;
-using Application.Response;
 using Domain.Configuration;
+using Domain.Response;
 using eXtensionSharp;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using MimeKit;
 
@@ -27,7 +26,7 @@ namespace Application.Infrastructure.Message
         {
             _options = options;
         }
-        public override async Task<Application.Response.IResult> SendMessageAsync(INotifyMessageRequest request)
+        public override async Task<Domain.Response.IResult> SendMessageAsync(INotifyMessageRequest request)
         {
             var emailSettings = _options.Value;
             var mailRequest = request as EmailNotifyMessageRequest;

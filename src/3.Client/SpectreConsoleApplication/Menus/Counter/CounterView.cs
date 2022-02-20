@@ -1,10 +1,13 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Xml.Serialization;
+using Microsoft.Extensions.Logging;
 using Spectre.Console;
+using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.Counter;
 
-public sealed class CounterView : MenuViewBaseBase
+public sealed class CounterView : MenuViewBase
 {
+    private int _count;
     public CounterView(ILogger<CounterView> logger) : base(logger)
     {
         
@@ -12,12 +15,11 @@ public sealed class CounterView : MenuViewBaseBase
     
     public override void Show()
     {
-        int count = 0;
         while (true)
         {
             var input = AnsiConsole.Ask<int>("try enter counter number (if enter 0 number, is exist) : ");
             if(input <= 0) return;
-            AnsiConsole.MarkupLine($"[blue]{count += input}[/]");
+            AnsiConsole.MarkupLine($"[blue]{_count += input}[/]");
         }
     }
 }

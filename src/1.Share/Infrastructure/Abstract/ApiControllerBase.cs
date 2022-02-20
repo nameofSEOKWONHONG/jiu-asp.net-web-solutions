@@ -1,15 +1,9 @@
-﻿using System.Text;
-using Application.Response;
-using Domain.Entities;
+﻿using Domain.Response;
 using eXtensionSharp;
 using FluentValidation;
 using FluentValidation.Results;
-using Infrastructure.Middleware;
-using IronPython.Modules;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.ClearScript.JavaScript;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Application.Response
+namespace Domain.Response
 {
     public interface IResult
     {

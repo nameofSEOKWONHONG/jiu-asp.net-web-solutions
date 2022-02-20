@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Response;
+using Domain.Response;
 using eXtensionSharp;
 using MediatR;
 using WeatherForecastService.Services;

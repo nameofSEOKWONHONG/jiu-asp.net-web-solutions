@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Threading.Tasks;
 using Application.Context;
-using Application.Response;
 using Application.Script.ClearScript;
 using Application.Script.JavaScriptEngines.NodeJS;
 using Application.Script.JintScript;
 using Application.Script.PyScript;
 using Application.Script.SharpScript;
+using Domain.Response;
 using eXtensionSharp;
 using Infrastructure.Abstract;
 using Jering.Javascript.NodeJS;

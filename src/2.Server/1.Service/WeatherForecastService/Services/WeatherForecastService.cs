@@ -50,7 +50,7 @@ namespace WeatherForecastService.Services
             var result = _cacheProvider.GetCache<IEnumerable<TB_WEATHERFORECAST>>();
             if (result.xIsEmpty())
             {
-                result =_weatherForecastCollection.FindAll();
+                result = _weatherForecastCollection.FindAll().ToList();
                 if (result.xIsNotEmpty())
                 {
                     _cacheProvider.SetCache<IEnumerable<TB_WEATHERFORECAST>>(result);

@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Spectre.Console;
@@ -23,7 +24,7 @@ var builder = new HostBuilder()
         #region [add view]
 
         services.AddSingleton<LoginView>();
-        services.AddSingleton<MenuView>();
+        services.AddSingleton<MainView>();
         services.AddSingleton<CounterView>();
         services.AddSingleton<WeatherForecastView>();
 
@@ -31,22 +32,21 @@ var builder = new HostBuilder()
     }).UseConsoleLifetime();
  
 var host = builder.Build();
-using (var serviceScope = host.Services.CreateScope())
-{
-    var services = serviceScope.ServiceProvider;
+using var serviceScope = host.Services.CreateScope();
+var services = serviceScope.ServiceProvider;
  
-    try
+try
+{
+    var loginView = services.GetRequiredService<LoginView>();
+    loginView.Show();
+    if(loginView.AccessToken.xIsNotEmpty())
     {
-        var loginView = services.GetRequiredService<LoginView>();
-        if (loginView.Login(out string token))
-        {
-            AppConst.AccessToken = token;
-            var menuView = services.GetRequiredService<MenuView>();
-            menuView.Run();
-        }
+        AppConst.AccessToken = loginView.AccessToken;
+        var menuView = services.GetRequiredService<MainView>();
+        menuView.Run();
     }
-    catch (Exception ex)
-    {
-        AnsiConsole.WriteException(ex);
-    }
+}
+catch (Exception ex)
+{
+    AnsiConsole.WriteException(ex);
 }

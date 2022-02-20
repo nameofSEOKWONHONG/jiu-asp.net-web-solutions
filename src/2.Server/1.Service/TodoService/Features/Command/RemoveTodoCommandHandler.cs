@@ -1,8 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Application.Response;
+using Domain.Response;
 using MediatR;
-using Microsoft.Extensions.DependencyInjection;
 using TodoService.Services;
 
 namespace TodoService.Features.Command
