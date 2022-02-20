@@ -177,6 +177,8 @@ namespace WebApiApplication.Extensions
             app.UseRequestLocalizationByCulture();
             // XSS 방어 설정
             app.UseAntiXssMiddleware();
+            // custom header middleware
+            app.UseMiddleware<CustomHeaderMiddleware>();
             return app;
         }
 

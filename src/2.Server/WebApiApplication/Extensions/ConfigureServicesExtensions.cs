@@ -200,6 +200,9 @@ namespace WebApiApplication.Extensions
                 //    });
                 options.AddPolicy("CorsPolicy",
                     builder => builder.AllowAnyOrigin()
+                        #region [custom header]
+                        .WithExposedHeaders("x-my-custom-header")
+                        #endregion
                         .AllowAnyMethod()
                         .AllowAnyHeader());
             });            

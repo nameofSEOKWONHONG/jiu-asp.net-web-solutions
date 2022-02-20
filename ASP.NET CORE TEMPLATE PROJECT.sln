@@ -57,6 +57,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerApplication", "src\4.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectreConsoleSample", "src\99.SampleApps\SpectreConsoleSample\SpectreConsoleSample.csproj", "{08857612-91BB-4860-91C1-E920FDE42CC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectreConsoleApplication", "src\3.Client\SpectreConsoleApplication\SpectreConsoleApplication.csproj", "{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,10 @@ Global
 		{08857612-91BB-4860-91C1-E920FDE42CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08857612-91BB-4860-91C1-E920FDE42CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08857612-91BB-4860-91C1-E920FDE42CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{965ADEE6-1909-4F2B-84C9-E13A2F5B5901} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
@@ -153,5 +159,6 @@ Global
 		{E796AC5E-0D62-416E-87F3-2E1B78A934F5} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
 		{E9C8ABBD-9862-488B-B4F8-6661CB5017C6} = {FD5FCD18-1210-4C08-AFE0-E69AD9D47D6F}
 		{08857612-91BB-4860-91C1-E920FDE42CC9} = {A323044B-00C6-42CE-A4A6-B208A0E09C9C}
+		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
 	EndGlobalSection
 EndGlobal
