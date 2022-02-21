@@ -2,10 +2,10 @@
 
 namespace SpectreConsoleApplication.Menus.Abstract;
 
-public abstract class MenuViewBase : IMenuViewBase
+public abstract class ViewBase : IViewBase
 {
     protected ILogger _logger;
-    public MenuViewBase(ILogger logger)
+    public ViewBase(ILogger logger)
     {
         _logger = logger;
     }

@@ -7,17 +7,22 @@ using Spectre.Console;
 using SpectreConsoleApplication;
 using SpectreConsoleApplication.Menus;
 using SpectreConsoleApplication.Menus.Counter;
+using SpectreConsoleApplication.Menus.Member;
 using SpectreConsoleApplication.Menus.WeatherForecast;
 
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddHttpClient();
+        services.AddHttpClient(AppConst.HTTP_NAME,config =>
+        {
+            config.BaseAddress = new Uri(AppConst.HTTP_URL);
+        });
 
         #region [add action]
 
         services.AddScoped<LoginAction>();
         services.AddScoped<WeatherForecastAction>();
+        services.AddScoped<MemberAction>();
 
         #endregion
 
@@ -27,6 +32,7 @@ var builder = new HostBuilder()
         services.AddSingleton<MainView>();
         services.AddSingleton<CounterView>();
         services.AddSingleton<WeatherForecastView>();
+        services.AddSingleton<MemberView>();
 
         #endregion
     }).UseConsoleLifetime();
@@ -39,12 +45,13 @@ try
 {
     var loginView = services.GetRequiredService<LoginView>();
     loginView.Show();
-    if(loginView.AccessToken.xIsNotEmpty())
-    {
-        AppConst.AccessToken = loginView.AccessToken;
-        var menuView = services.GetRequiredService<MainView>();
-        menuView.Run();
-    }
+    
+    if (loginView.AccessToken.xIsEmpty())
+        throw new UnauthorizedAccessException("login failed.");
+    
+    AppConst.ACESS_TOKEN = loginView.AccessToken;
+    var menuView = services.GetRequiredService<MainView>();
+    menuView.Run();
 }
 catch (Exception ex)
 {

@@ -1,10 +1,14 @@
-﻿using eXtensionSharp;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
+using eXtensionSharp;
 
 namespace Domain.Enums;
 
 /// <summary>
 /// 캐시 DB 타입
 /// </summary>
+[TypeConverter(typeof (XEnumBaseTypeConverter<ENUM_CACHE_TYPE>))]
+[JsonConverter(typeof(XEnumBaseJsonConverter<ENUM_CACHE_TYPE>))]
 public class ENUM_CACHE_TYPE : XEnumBase<ENUM_CACHE_TYPE>
 {
     /// <summary>

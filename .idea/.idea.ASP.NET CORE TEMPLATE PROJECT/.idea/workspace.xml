@@ -18,43 +18,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/weather_forecast.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IMenuViewBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/MenuViewBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/INotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/INotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Response/IResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/IResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Response/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/Result.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/Features/Queries/GetHelloWorldDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/Features/Queries/GetHelloWorldDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/RemoveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/RemoveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/SaveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/SaveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetAllTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetAllTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ScriptEngineSampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ScriptEngineSampleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/LoginAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_CACHE_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_CACHE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_DATABASE_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_DATABASE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_NOTIFY_MESSAGE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_RESULT_CODE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_RESULT_CODE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_ROLE_PERMISSION_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_ROLE_PERMISSION_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_ROLE_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_ROLE_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_SCRIPT_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_SCRIPT_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Enums/UPLOAD_TYPE.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_UPLOAD_TYPE.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ConfigureServicesExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IMenuViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/MenuViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/IMenuViewBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +59,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf4738d59bccc7df9289a82dc9ea3d4fe2fe2b32e215d63bbb19238824efa94a/LightExceptions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,7 +68,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d77c4680ed9457393ace56767da2743b443a47727beda6a2b5304cc4abee506e/Activator.RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,10 +79,15 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acdcb2d5e5a875937e43fc8f8bc4e366d563e824c567ec716bb37f7966ce43/SqlServerExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e5a78beee0f4abd8ed7ef3636048cf1a20268/4c/db281812/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -358,6 +347,11 @@
       <workItem from="1645191474067" duration="8253000" />
       <workItem from="1645266122292" duration="5060000" />
       <workItem from="1645283385395" duration="1872000" />
+      <workItem from="1645372081702" duration="954000" />
+      <workItem from="1645406515846" duration="3338000" />
+      <workItem from="1645414799726" duration="2642000" />
+      <workItem from="1645418718922" duration="4382000" />
+      <workItem from="1645427642895" duration="1876000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -380,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645270928994</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="change domain and impl console app">
+      <created>1645365354307</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645365354307</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +424,8 @@
     <MESSAGE value="change folder structure" />
     <MESSAGE value="new folder structure" />
     <MESSAGE value="massive change" />
-    <option name="LAST_COMMIT_MESSAGE" value="massive change" />
+    <MESSAGE value="change domain and impl console app" />
+    <option name="LAST_COMMIT_MESSAGE" value="change domain and impl console app" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,6 +539,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs</url>
+          <line>65</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\Member\MemberView.cs" initialLine="29" containingFunctionPresentation="lambda expression inside method 'Show'">
+            <startOffsets>
+              <option value="2555" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2585" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

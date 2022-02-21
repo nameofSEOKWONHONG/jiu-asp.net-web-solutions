@@ -1,8 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 using eXtensionSharp;
 
 namespace Domain.Enums
 {
+    [TypeConverter(typeof (XEnumBaseTypeConverter<ENUM_ROLE_TYPE>))]
     [JsonConverter(typeof(XEnumBaseJsonConverter<ENUM_ROLE_TYPE>))]
     public class ENUM_ROLE_TYPE : XEnumBase<ENUM_ROLE_TYPE>
     {

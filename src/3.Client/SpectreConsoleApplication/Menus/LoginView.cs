@@ -4,12 +4,13 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus;
 
-public class LoginView : MenuViewBase
+public class LoginView : ViewBase
 {
     public string AccessToken { get; private set; }
 
     private readonly LoginAction _action;
-    public LoginView(ILogger<LoginView> logger, LoginAction action) : base(logger)
+    public LoginView(ILogger<LoginView> logger, 
+        LoginAction action) : base(logger)
     {
         _action = action;
     }
@@ -22,7 +23,7 @@ public class LoginView : MenuViewBase
             return;
         }
 
-        var email = AnsiConsole.Ask<string>("What's your [green]email[/]?");
+        var email = AnsiConsole.Ask<string>("Enter your [green]email[/]:");
         AnsiConsole.WriteLine($"email is {email}");
 
         var password =  AnsiConsole.Prompt(

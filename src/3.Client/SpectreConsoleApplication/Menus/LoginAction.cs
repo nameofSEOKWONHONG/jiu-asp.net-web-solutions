@@ -22,10 +22,10 @@ public class LoginAction : ActionBase
         };
         
         var request = new HttpRequestMessage(HttpMethod.Post,
-            "https://localhost:5001/api/v1/Account/SignIn");
+            "api/v1/Account/SignIn");
         request.Content = new StringContent(dic.xToJson(), Encoding.UTF8, "application/json");
         
-        using var client = _clientFactory.CreateClient();
+        using var client = _clientFactory.CreateClient(AppConst.HTTP_NAME);
         var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();
         var token = await response.Content.ReadAsStringAsync();

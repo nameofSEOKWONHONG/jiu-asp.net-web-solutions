@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
 using SpectreConsoleApplication.Menus.Counter;
+using SpectreConsoleApplication.Menus.Member;
 using SpectreConsoleApplication.Menus.WeatherForecast;
 
 namespace SpectreConsoleApplication.Menus;
@@ -13,10 +14,11 @@ public class MainView
     private readonly ILogger _logger;
     private readonly IServiceProvider _services;
 
-    private readonly Dictionary<string, Func<IServiceProvider, IMenuViewBase>> _menuStates = new() 
+    private readonly Dictionary<string, Func<IServiceProvider, IViewBase>> _menuViewStates = new() 
     {
         {"Counter", (s) => s.GetRequiredService<CounterView>()},
         {"WeatherForecast", (s) => s.GetRequiredService<WeatherForecastView>()},
+        {"Member", (s) => s.GetRequiredService<MemberView>()}
     };
     
     public MainView(ILogger<MainView> logger, IServiceProvider services)
@@ -27,7 +29,7 @@ public class MainView
     
     public void Run()
     {
-        INIT:
+        CONTINUE:
         var menus = AnsiConsole.Prompt(
             new MultiSelectionPrompt<string>()
                 .PageSize(10)
@@ -41,16 +43,16 @@ public class MainView
                 // })
                 .AddChoices(new[]
                 {
-                    "Counter", "WeatherForecast"
+                    "Counter", "WeatherForecast", "Member", "Exit"
                 }));
         var menu = menus.Count == 1 ? menus.First() : null;
-        if (menu.xIsEmpty()) goto INIT;
-
-        var impl = _menuStates[menu];
-        if (impl.xIsEmpty()) AnsiConsole.WriteLine("select try again...");
-        var menuImpl = impl(_services);
-        menuImpl.Show();
-        goto INIT;
+        if(menu.xIsEquals("Exit")) return;
+        
+        var menuViewState = _menuViewStates[menu];
+        if (menuViewState.xIsEmpty()) AnsiConsole.WriteLine("select try again...");
+        var menuView = menuViewState(_services);
+        menuView.Show();
+        goto CONTINUE;
     }
 }
 

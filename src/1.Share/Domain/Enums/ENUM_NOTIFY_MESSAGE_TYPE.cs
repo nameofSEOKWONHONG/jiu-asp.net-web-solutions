@@ -1,8 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 using eXtensionSharp;
 
 namespace Domain.Enums
 {
+    [TypeConverter(typeof (XEnumBaseTypeConverter<ENUM_NOTIFY_MESSAGE_TYPE>))]
     [JsonConverter(typeof(XEnumBaseJsonConverter<ENUM_NOTIFY_MESSAGE_TYPE>))]
     public sealed class ENUM_NOTIFY_MESSAGE_TYPE : XEnumBase<ENUM_NOTIFY_MESSAGE_TYPE>
     {

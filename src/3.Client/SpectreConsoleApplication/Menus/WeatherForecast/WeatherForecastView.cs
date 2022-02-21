@@ -1,11 +1,12 @@
-﻿using eXtensionSharp;
+﻿using Domain.Entities.WeatherForecast;
+using eXtensionSharp;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.WeatherForecast;
 
-public sealed class WeatherForecastView : MenuViewBase
+public sealed class WeatherForecastView : ViewBase
 {
     private readonly WeatherForecastAction _action;
     
@@ -24,20 +25,26 @@ public sealed class WeatherForecastView : MenuViewBase
             .AutoClear(false)
             .Overflow(VerticalOverflow.Ellipsis)
             .Cropping(VerticalOverflowCropping.Top)
-            .Start(context =>
+            .Start(ctx =>
             {
+                var columns = new List<string>();
+                typeof(TB_WEATHERFORECAST).GetProperties().xForEach(prop =>
+                {
+                    columns.Add(prop.Name);
+                });
+                table.AddColumns(columns.ToArray());
+                ctx.Refresh();
+                
                 items.xForEach((item, i) =>
                 {
-                    var kv = item.xToDictionary();
-                    if (i == 0) 
+                    var map = item.xToDictionary();
+                    var row = new List<string>();
+                    columns.xForEach(column =>
                     {
-                        table.AddColumns(kv.Keys.ToArray());
-                        context.Refresh();
-                        Thread.Sleep(100);                        
-                    }
-
-                    table.AddRow(kv.Values.ToArray());
-                    context.Refresh();
+                        row.Add(map[column].xValue<string>());
+                    });
+                    table.AddRow(row.ToArray());
+                    ctx.Refresh();
                 });
             });
 

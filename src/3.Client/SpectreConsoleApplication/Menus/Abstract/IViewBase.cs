@@ -2,7 +2,7 @@
 
 namespace SpectreConsoleApplication.Menus.Abstract;
 
-public interface IMenuViewBase
+public interface IViewBase
 {
     void Show();
 }

@@ -5,7 +5,7 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.Counter;
 
-public sealed class CounterView : MenuViewBase
+public sealed class CounterView : ViewBase
 {
     private int _count;
     public CounterView(ILogger<CounterView> logger) : base(logger)
@@ -15,11 +15,12 @@ public sealed class CounterView : MenuViewBase
     
     public override void Show()
     {
-        while (true)
+        CONTINUE:
+        var input = AnsiConsole.Ask<int>("try enter counter number (if enter 0 number, is exist) : ");
+        if (input > 0)
         {
-            var input = AnsiConsole.Ask<int>("try enter counter number (if enter 0 number, is exist) : ");
-            if(input <= 0) return;
             AnsiConsole.MarkupLine($"[blue]{_count += input}[/]");
+            goto CONTINUE;
         }
     }
 }

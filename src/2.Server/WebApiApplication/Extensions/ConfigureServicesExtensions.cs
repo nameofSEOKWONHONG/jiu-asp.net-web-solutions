@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using Application;
 using Application.Abstract;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,7 +38,11 @@ namespace WebApiApplication.Extensions
         internal static void AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
             #region [add controllers]
-            services.AddControllers();
+
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            });
             #endregion
             
             #region [add httpcontext accessor to the container.]

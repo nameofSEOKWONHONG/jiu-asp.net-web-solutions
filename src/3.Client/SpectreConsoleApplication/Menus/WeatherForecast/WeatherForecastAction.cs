@@ -15,10 +15,10 @@ public sealed class WeatherForecastAction : ActionBase
 
     public IEnumerable<TB_WEATHERFORECAST> GetWeatherForecastList()
     {
-        using var client = _clientFactory.CreateClient();
+        using var client = _clientFactory.CreateClient(AppConst.HTTP_NAME);
         var request =
-            new HttpRequestMessage(HttpMethod.Get, "https://localhost:5001/api/WeatherForecast?api-version=1");
-        request.Headers.Add("Bearer",  AppConst.AccessToken);
+            new HttpRequestMessage(HttpMethod.Get, "api/WeatherForecast?api-version=1");
+        request.Headers.Add("Bearer",  AppConst.ACESS_TOKEN);
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();
         var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
