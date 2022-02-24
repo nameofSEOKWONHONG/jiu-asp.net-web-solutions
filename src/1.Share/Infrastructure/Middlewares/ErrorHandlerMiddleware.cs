@@ -26,7 +26,7 @@ namespace Infrastructure.Middlewares
             {
                 var response = context.Response;
                 response.ContentType = "application/json";
-                var responseModel = await Result<string>.FailAsync(error.Message);
+                var responseModel = await ResultBase<string>.FailAsync(error.Message);
 
                 switch (error)
                 {

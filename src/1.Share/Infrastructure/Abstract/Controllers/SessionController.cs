@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using WebApiApplication.Services.Abstract;
 
-namespace Infrastructure.Abstract
+namespace Infrastructure.Abstract.Controllers
 {
     [Authorize]
     public abstract class SessionController<TController> : VersionController<TController>

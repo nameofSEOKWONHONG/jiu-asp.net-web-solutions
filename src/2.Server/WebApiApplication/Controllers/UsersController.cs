@@ -2,8 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
-using Infrastructure.Abstract;
-using Microsoft.Extensions.Logging;
+using Infrastructure.Abstract.Controllers;
 using WebApiApplication.Filters;
 using WebApiApplication.Services.Abstract;
 

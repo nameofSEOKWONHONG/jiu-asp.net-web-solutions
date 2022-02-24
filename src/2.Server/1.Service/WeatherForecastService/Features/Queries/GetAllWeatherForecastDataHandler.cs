@@ -8,8 +8,8 @@ using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Queries
 {
-    public record GetAllWeatherForecastDataQuery() : IRequest<Result<IEnumerable<TB_WEATHERFORECAST>>>;
-    public class GetAllWeatherForecastDataHandler : IRequestHandler<GetAllWeatherForecastDataQuery, Result<IEnumerable<TB_WEATHERFORECAST>>>
+    public record GetAllWeatherForecastDataQuery() : IRequest<ResultBase<IEnumerable<TB_WEATHERFORECAST>>>;
+    public class GetAllWeatherForecastDataHandler : IRequestHandler<GetAllWeatherForecastDataQuery, ResultBase<IEnumerable<TB_WEATHERFORECAST>>>
     {
         private readonly IWeatherForcastService _weatherForcastService;
 
@@ -17,11 +17,11 @@ namespace WeatherForecastService.Features.Queries
         {
             this._weatherForcastService = weatherForcastService;
         }
-        public Task<Result<IEnumerable<TB_WEATHERFORECAST>>> Handle(GetAllWeatherForecastDataQuery request, CancellationToken cancellationToken)
+        public Task<ResultBase<IEnumerable<TB_WEATHERFORECAST>>> Handle(GetAllWeatherForecastDataQuery request, CancellationToken cancellationToken)
         {
             var response = this._weatherForcastService.GetAllWeatherForecast();
 
-            return Result<IEnumerable<TB_WEATHERFORECAST>>.SuccessAsync(response);
+            return ResultBase<IEnumerable<TB_WEATHERFORECAST>>.SuccessAsync(response);
         }
     }
 }

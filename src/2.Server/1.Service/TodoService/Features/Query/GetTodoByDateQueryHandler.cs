@@ -10,8 +10,8 @@ using TodoService.Services;
 namespace TodoService.Features.Query
 {
     
-    public record GetTodoByDateQuery(Guid userId, DateTime @from, DateTime @to) : IRequest<Result<IEnumerable<TB_TODO>>>;
-    public class GetTodoByDateQueryHandler : IRequestHandler<GetTodoByDateQuery, Result<IEnumerable<TB_TODO>>>
+    public record GetTodoByDateQuery(Guid userId, DateTime @from, DateTime @to) : IRequest<ResultBase<IEnumerable<TB_TODO>>>;
+    public class GetTodoByDateQueryHandler : IRequestHandler<GetTodoByDateQuery, ResultBase<IEnumerable<TB_TODO>>>
     {
         private readonly ITodoService _todoService;
         public GetTodoByDateQueryHandler(ITodoService todoService)
@@ -19,9 +19,9 @@ namespace TodoService.Features.Query
             _todoService = todoService;
         }
         
-        public async Task<Result<IEnumerable<TB_TODO>>> Handle(GetTodoByDateQuery request, CancellationToken cancellationToken)
+        public async Task<ResultBase<IEnumerable<TB_TODO>>> Handle(GetTodoByDateQuery request, CancellationToken cancellationToken)
         {
-            return await Result<IEnumerable<TB_TODO>>.SuccessAsync(
+            return await ResultBase<IEnumerable<TB_TODO>>.SuccessAsync(
                 await _todoService.GetTodoByDateAsync(request.userId, request.from, request.to));
         }
     }

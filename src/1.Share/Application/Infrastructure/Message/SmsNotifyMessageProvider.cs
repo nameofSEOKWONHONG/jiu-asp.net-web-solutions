@@ -7,7 +7,7 @@ namespace Application.Infrastructure.Message
 {
     public class SmsNotifyMessageProvider : NotifyMessageProviderBase
     {
-        public override Task<IResult> SendMessageAsync(INotifyMessageRequest request)
+        public override Task<IResultBase> SendMessageAsync(INotifyMessageRequest request)
         {
             throw new NotImplementedException();
         }

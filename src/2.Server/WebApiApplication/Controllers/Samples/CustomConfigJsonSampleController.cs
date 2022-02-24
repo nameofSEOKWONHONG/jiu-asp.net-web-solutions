@@ -1,5 +1,5 @@
 ﻿using eXtensionSharp;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 

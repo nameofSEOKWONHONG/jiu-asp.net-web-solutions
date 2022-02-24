@@ -37,14 +37,14 @@ public class HelloWorldScript : SharpScriptBase<ApplicationDbContext, string, st
     {
         var valid = true;
         message = string.Empty;
-        
+
         valid = this.Options.xIsNotEmpty();
         if (valid.xIsFalse())
         {
             message = $"valid : {valid}, options is null";
             return valid;
         }
-        
+
         valid = this.Request.xIsNotEmpty();
         if (valid.xIsFalse())
         {

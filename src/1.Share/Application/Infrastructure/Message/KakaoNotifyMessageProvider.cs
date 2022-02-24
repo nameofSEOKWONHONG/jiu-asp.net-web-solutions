@@ -46,7 +46,7 @@ namespace Application.Infrastructure.Message
             
         }
         
-        public override async Task<IResult> SendMessageAsync(INotifyMessageRequest request)
+        public override async Task<IResultBase> SendMessageAsync(INotifyMessageRequest request)
         {
             var convertedRequest = request as KakaoTalkNotifyMessageRequest;
 
@@ -85,7 +85,7 @@ namespace Application.Infrastructure.Message
             #endregion
             
             //your result code ...
-            return Result.Success(nameof(EmailNotifyMessageProvider));
+            return ResultBase.Success(nameof(EmailNotifyMessageProvider));
         }
 
         public override object ConvertRequest(INotifyMessageRequest request)

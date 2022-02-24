@@ -7,24 +7,24 @@ using WeatherForecastService.Services;
 
 namespace WeatherForecastService.Features.Command
 {
-    public class CreateWeatherForecastBaseDataCommand : IRequest<Result<int>>
+    public class CreateWeatherForecastBaseDataCommand : IRequest<ResultBase<int>>
     {
         
     }
     
-    public class CreateWeatherForecastBaseDataCommandHandler : IRequestHandler<CreateWeatherForecastBaseDataCommand, Result<int>>
+    public class CreateWeatherForecastBaseDataCommandHandler : IRequestHandler<CreateWeatherForecastBaseDataCommand, ResultBase<int>>
     {
         private readonly IWeatherForcastService _weatherForcastService;
         public CreateWeatherForecastBaseDataCommandHandler(IWeatherForcastService weatherForcastService)
         {
             this._weatherForcastService = weatherForcastService;
         }
-        public Task<Result<int>> Handle(CreateWeatherForecastBaseDataCommand request, CancellationToken cancellationToken)
+        public Task<ResultBase<int>> Handle(CreateWeatherForecastBaseDataCommand request, CancellationToken cancellationToken)
         {
             var data = this._weatherForcastService.GetAllWeatherForecast();
-            if (data.xIsNotEmpty()) return Result<int>.FailAsync("data exists");
+            if (data.xIsNotEmpty()) return ResultBase<int>.FailAsync("data exists");
             this._weatherForcastService.CreateBaseData();
-            return Result<int>.SuccessAsync(5);
+            return ResultBase<int>.SuccessAsync(5);
         }
     }
 }

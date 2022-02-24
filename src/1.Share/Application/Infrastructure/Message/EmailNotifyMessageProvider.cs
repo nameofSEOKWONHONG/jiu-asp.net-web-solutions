@@ -26,7 +26,7 @@ namespace Application.Infrastructure.Message
         {
             _options = options;
         }
-        public override async Task<Domain.Response.IResult> SendMessageAsync(INotifyMessageRequest request)
+        public override async Task<Domain.Response.IResultBase> SendMessageAsync(INotifyMessageRequest request)
         {
             var emailSettings = _options.Value;
             var mailRequest = request as EmailNotifyMessageRequest;
@@ -75,7 +75,7 @@ namespace Application.Infrastructure.Message
 
             #endregion
             
-            return await Result.SuccessAsync($"send message done : {string.Join(",", email.To.Select(m => m.Name))}");
+            return await ResultBase.SuccessAsync($"send message done : {string.Join(",", email.To.Select(m => m.Name))}");
         }
 
         public override object ConvertRequest(INotifyMessageRequest request)

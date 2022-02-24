@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using Domain.Entities;
 using Domain.Entities.WeatherForecast;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using WeatherForecastService.Services;
 

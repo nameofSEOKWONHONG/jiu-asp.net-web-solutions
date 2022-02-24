@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Domain.Entities;
 using Domain.Entities.WeatherForecast;
-using Hangfire;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using WeatherForecastService.Features.Command;
 using WeatherForecastService.Features.Queries;
 

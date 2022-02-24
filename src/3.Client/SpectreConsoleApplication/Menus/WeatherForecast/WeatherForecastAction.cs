@@ -22,7 +22,7 @@ public sealed class WeatherForecastAction : ActionBase
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();
         var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        var items = JsonConvert.DeserializeObject<Result<TB_WEATHERFORECAST[]>>(result);
+        var items = JsonConvert.DeserializeObject<ResultBase<TB_WEATHERFORECAST[]>>(result);
         return items.Data;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using HelloWorldService.Features.Queries;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WeatherForecastApiApplication.Controllers

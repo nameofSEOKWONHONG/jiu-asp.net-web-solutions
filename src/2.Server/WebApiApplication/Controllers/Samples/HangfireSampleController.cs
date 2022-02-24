@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using Application.Context;
 using Hangfire;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiApplication.Controllers;

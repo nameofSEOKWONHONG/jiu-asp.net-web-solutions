@@ -1,5 +1,6 @@
 using System.Linq;
 using Application.Context;
+using Infrastructure.Abstract;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApiApplication.Controllers;
 using WebApiApplication.Extensions;
 
 namespace WebApiApplication
@@ -39,6 +41,8 @@ namespace WebApiApplication
             });            
 
             #endregion
+
+            services.AddScoped<ISampleService, SampleService>();
 
         }
 

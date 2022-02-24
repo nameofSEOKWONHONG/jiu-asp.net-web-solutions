@@ -2,14 +2,14 @@
 
 namespace Domain.Response
 {
-    public interface IResult
+    public interface IResultBase
     {
         List<string> Messages { get; set; }
 
         bool Succeeded { get; set; }
     }
 
-    public interface IResult<out T> : IResult
+    public interface IResultBase<out T> : IResultBase
     {
         T Data { get; }
     }

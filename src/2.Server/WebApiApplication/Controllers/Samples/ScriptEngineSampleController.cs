@@ -10,7 +10,7 @@ using Application.Script.PyScript;
 using Application.Script.SharpScript;
 using Domain.Response;
 using eXtensionSharp;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using Jering.Javascript.NodeJS;
 using Jint;
 using Microsoft.AspNetCore.Mvc;
@@ -207,7 +207,7 @@ public class ScriptEngineSampleController : ApiControllerBase<ScriptEngineSample
             list.Add(scope.GetVariable<string>("text"));
         });
 
-        return Ok(Result<List<string>>.Success(list));
+        return Ok(ResultBase<List<string>>.Success(list));
     } 
 }
 

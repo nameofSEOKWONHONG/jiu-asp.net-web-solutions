@@ -2,12 +2,14 @@
 using eXtensionSharp;
 using FluentValidation;
 using FluentValidation.Results;
+using IronPython.Modules;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using MySqlX.XDevAPI.Common;
 
-namespace Infrastructure.Abstract
+namespace Infrastructure.Abstract.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -51,7 +53,7 @@ namespace Infrastructure.Abstract
                         errors.Add(m.ErrorMessage);
                     });
                 });
-                result = new BadRequestObjectResult(Result.Fail(errors)); 
+                result = new BadRequestObjectResult(ResultBase.Fail(errors)); 
                 return false;
             }
 
@@ -67,33 +69,64 @@ namespace Infrastructure.Abstract
         /// <typeparam name="TEntity"></typeparam>
         /// <typeparam name="TValidator"></typeparam>
         /// <returns></returns>
-        protected bool TryValidate<TEntity, TValidator>(TEntity entity, out ActionResult result)
+        protected (bool IsValid, DynamicDictionary<List<string>> result) TryValidate<TEntity, TValidator>(TEntity entity)
             where TEntity : class
             where TValidator : AbstractValidator<TEntity>, new()
         {
             var validator = new TValidator();
-            ValidationResult results = validator.Validate(entity);
-            
-            if (!results.IsValid)
+            var result = validator.Validate(entity);
+            var map = new DynamicDictionary<List<string>>();
+            if (result.IsValid.xIsFalse())
             {
-                var errors = new Dictionary<string, List<string>>();
-                results.Errors.xForEach(m =>
+                result.Errors.xForEach(m =>
                 {
-                    var exists = errors.xFirst(e => e.Key == m.PropertyName);
-                    if (exists.Key.xIsNotEmpty())
+                    var exists = map.FirstOrDefault(item => item.Key == m.PropertyName);
+                    if (exists.xIsNotEmpty())
                     {
                         exists.Value.Add(m.ErrorMessage);
                     }
                     else
                     {
-                        errors.Add(m.PropertyName, new List<string>(){m.ErrorMessage});    
+                        map.Add(m.PropertyName, new List<string>() {m.ErrorMessage});    
                     }
                 });
-                result = new BadRequestObjectResult(Result<Dictionary<string, List<string>>>.Fail(errors));
-                return false;
             }
-            result = null;
-            return true;
+
+            return new ValueTuple<bool, DynamicDictionary<List<string>>>(result.IsValid, map);
         }
+
+        protected async Task<(bool IsValid, DynamicDictionary<List<string>> result)> TryValidateAsync<TEntity, TValidator>(TEntity entity)
+            where TEntity : class
+            where TValidator : AbstractValidator<TEntity>, new()        
+        {
+            var validator = new TValidator();
+            var result = await validator.ValidateAsync(entity);
+            var map = new DynamicDictionary<List<string>>();
+            if (result.IsValid.xIsFalse())
+            {
+                result.Errors.xForEach(m =>
+                {
+                    var exists = map.FirstOrDefault(item => item.Key == m.PropertyName);
+                    if (exists.xIsNotEmpty())
+                    {
+                        exists.Value.Add(m.ErrorMessage);
+                    }
+                    else
+                    {
+                        map.Add(m.PropertyName, new List<string>() {m.ErrorMessage});    
+                    }
+                });
+            }
+
+            return new ValueTuple<bool, DynamicDictionary<List<string>>>(result.IsValid, map);
+        }
+
+        protected IActionResult ResultOk<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Success(entity));
+
+        protected IActionResult ResultFail<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Fail(entity));
+        
+        protected async Task<IActionResult> ResultOkAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.SuccessAsync(entity));
+
+        protected async Task<IActionResult> ResultFailAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.FailAsync(entity));
     }
 }

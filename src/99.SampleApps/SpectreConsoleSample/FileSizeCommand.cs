@@ -16,7 +16,7 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
 {
     public class Settings : CommandSettings
     {
-        public Settings(string? searchPath, string? searchPattern, bool includeHidden)
+        public Settings(string searchPath, string searchPattern, bool includeHidden)
         {
             SearchPath = searchPath;
             SearchPattern = searchPattern;
@@ -26,10 +26,10 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
         [Required]
         [Description("찾을 경로입니다. 기본 경로는 현재 경로입니다.")]
         [CommandArgument(0, "[searchPath]")]
-        public string? SearchPath { get; init; }
+        public string SearchPath { get; init; }
         
         [CommandOption("-p|--pattern")]
-        public string? SearchPattern { get; init; }
+        public string SearchPattern { get; init; }
         [CommandOption("--hidden")]
         [DefaultValue(true)]
         public bool IncludeHidden { get; init; }
@@ -66,15 +66,10 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
     {
         Settings.Validator validator = new Settings.Validator();
         var result = validator.Validate(settings);
-        if (result.IsValid.xIsFalse())
+        return result.IsValid.xIfTrue<ValidationResult>(() =>
         {
             var dictionary = result.Errors.ToDictionary(failure => failure.PropertyName, failure => failure.ErrorMessage);
-            return ValidationResult.Error(result.Errors.xFirst().ErrorMessage);
-        }
-        // if (settings.SearchPath.xIsEmpty())
-        // {
-        //     return ValidationResult.Error($"Path is empty");
-        // }
-        return base.Validate(context, settings);
+            return ValidationResult.Error(result.Errors.xFirst().ErrorMessage);            
+        }, () => base.Validate(context, settings));
     }
 }

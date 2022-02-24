@@ -6,13 +6,13 @@ namespace Application.Infrastructure.Message
 {
     public abstract class NotifyMessageProviderBase : INotifyMessageProvider
     {
-        public abstract Task<IResult> SendMessageAsync(INotifyMessageRequest request);
+        public abstract Task<IResultBase> SendMessageAsync(INotifyMessageRequest request);
 
         public abstract object ConvertRequest(INotifyMessageRequest request);
     }
 
     public interface INotifyMessageProvider
     {
-        Task<IResult> SendMessageAsync(INotifyMessageRequest request);
+        Task<IResultBase> SendMessageAsync(INotifyMessageRequest request);
     }
 }

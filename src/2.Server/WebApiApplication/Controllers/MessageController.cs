@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Application.Infrastructure.Message;
 using Domain.Enums;
 using Application.Request;
-using Domain.Entities;
-using Infrastructure.Abstract;
-using WebApiApplication.Filters;
+using Infrastructure.Abstract.Controllers;
 
 namespace WebApiApplication.Controllers
 {

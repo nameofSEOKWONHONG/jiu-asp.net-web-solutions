@@ -4,17 +4,17 @@ using MediatR;
 
 namespace HelloWorldService.Features.Queries
 {
-    public record GetHelloWorldDataQuery() : IRequest<Result<string>>;
-    public class GetHelloWorldDataHandler : IRequestHandler<GetHelloWorldDataQuery, Result<string>>
+    public record GetHelloWorldDataQuery() : IRequest<ResultBase<string>>;
+    public class GetHelloWorldDataHandler : IRequestHandler<GetHelloWorldDataQuery, ResultBase<string>>
     {
         private readonly IHelloWorldService _helloWorldService;
         public GetHelloWorldDataHandler(IHelloWorldService helloWorldService)
         {
             _helloWorldService = helloWorldService;
         }
-        public Task<Result<string>> Handle(GetHelloWorldDataQuery request, CancellationToken cancellationToken)
+        public Task<ResultBase<string>> Handle(GetHelloWorldDataQuery request, CancellationToken cancellationToken)
         {
-            return Result<string>.SuccessAsync(data:_helloWorldService.HelloWorld());
+            return ResultBase<string>.SuccessAsync(data:_helloWorldService.HelloWorld());
         }
     }
 }

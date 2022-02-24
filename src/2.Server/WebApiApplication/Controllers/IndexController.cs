@@ -1,27 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Application.Context;
 using Application.Infrastructure.Cache;
-using Application.Script.ClearScript;
-using Application.Script.SharpScript;
-using Application.Script.JavaScriptEngines.NodeJS;
-using Application.Script.JintScript;
-using Application.Script.PyScript;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Enums;
 using eXtensionSharp;
 using FluentValidation;
-using Hangfire;
-using Infrastructure.Abstract;
-using Jering.Javascript.NodeJS;
-using Jint;
-using Microsoft.ClearScript;
+using Infrastructure.Abstract.Controllers;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace WebApiApplication.Controllers
 {
@@ -89,16 +78,8 @@ namespace WebApiApplication.Controllers
         [HttpPost("sample")]
         public IActionResult Sample(SampleDto dto)
         {
-            if (!this.TryValidate<SampleDto>(dto, out ActionResult resultA))
-            {
-                return resultA;
-            }
-            
-            if (!this.TryValidate<SampleDto, SampleDto.Validator>(dto, out ActionResult resultB))
-            {
-                return resultB;
-            }
-            return Ok(dto);
+            var (isValid, result) = this.TryValidate<SampleDto, SampleDto.Validator>(dto);
+            return isValid.xIsFalse() ? this.ResultOk(result) : this.ResultOk(dto);
         } 
         
         /// <summary>

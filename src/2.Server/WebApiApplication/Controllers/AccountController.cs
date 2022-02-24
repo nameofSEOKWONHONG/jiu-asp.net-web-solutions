@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Application.Request;
-using Infrastructure.Abstract;
+using Infrastructure.Abstract.Controllers;
 using WebApiApplication.Services.Abstract;
 
 namespace WebApiApplication.Controllers
