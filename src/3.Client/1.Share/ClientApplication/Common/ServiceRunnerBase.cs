@@ -1,12 +1,11 @@
-﻿using eXtensionSharp;
-
+﻿
 namespace ClientApplication.Common.Services;
 
-public abstract class RestServiceRunnerBase : IRestServiceRunnerBase
+public abstract class ServiceRunnerBase : IServiceRunnerBase
 {
     public IRunnerOptions Options { get; set; }
-    public IRestServiceRunnerBase Next { get; private set; }
-    protected RestServiceRunnerBase(IRestServiceRunnerBase next)
+    public IServiceRunnerBase Next { get; private set; }
+    protected ServiceRunnerBase(IServiceRunnerBase next = null)
     {
         if (next is null) return;
         this.Next = next;

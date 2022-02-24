@@ -2,10 +2,10 @@
 
 namespace ClientApplication.Common.Services;
 
-public interface IRestServiceRunnerBase : IDisposable
+public interface IServiceRunnerBase : IDisposable
 {
     IRunnerOptions Options { get; set; }
-    IRestServiceRunnerBase Next { get; }
+    IServiceRunnerBase Next { get; }
     Task<bool> OnExecuteAsync();
     Task OnErrorAsync();
 }

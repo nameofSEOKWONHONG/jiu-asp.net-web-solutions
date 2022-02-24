@@ -94,13 +94,13 @@ namespace Domain.Response
                 Messages = data.xIsEmpty() ? new List<string>{"data not exists or other problem"} : null };
         }
 
-        public new static Task<ResultBase<T>> FailAsync()
+        public static Task<ResultBase<T>> FailAsync()
         {
             return Task.FromResult(Fail());
         }
 
         
-        public new static Task<ResultBase<T>> FailAsync(T data)
+        public static Task<ResultBase<T>> FailAsync(T data)
         {
             return Task.FromResult(Fail(data));
         }

@@ -19,65 +19,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/IServiceBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Request/RequestBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/IModelBaseController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ModelSessionController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ModelVersionController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ModelVersionSampleController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IRestServiceRunnerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerCore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Utils/TableUtil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/ServiceRunnerSampleApp.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IRunnerOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RunnerOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/HttpSampleRunner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/SimpleRunner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/DistributeCacheProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/DistributeCacheProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/EmailNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/INotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/INotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/KakaoNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/LineNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/SmsNotifyMessageProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Response/IResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/IResultBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Response/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/ResultBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/SessionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/SessionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/VersionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/VersionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/Features/Queries/GetHelloWorldDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/Features/Queries/GetHelloWorldDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/RemoveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/RemoveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/SaveTodoCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Command/SaveTodoCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetAllTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetAllTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoByDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoBySelectedDateQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/Features/Query/GetTodoQueryHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/CreateWeatherForecastBaseDataCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Command/SaveWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetAllWeatherForecastDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/Features/Queries/GetWeatherForecastDataQuery.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/2.Project/WeatherForecastApiApplication/Controllers/HelloWorldController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/2.Project/WeatherForecastApiApplication/Controllers/HelloWorldController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/2.Project/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/2.Project/WeatherForecastApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/AccountController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/IndexController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/IndexController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/CustomConfigJsonSampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/CustomConfigJsonSampleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/HangfireSampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/HangfireSampleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ScriptEngineSampleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ScriptEngineSampleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/TodoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/TodoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IViewModelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ViewModelBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ViewModelBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/CounterStateViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/CounterStateViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/ServiceRunner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/FileSizeCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/FileSizeCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/SpectreConsoleSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/SpectreConsoleSample.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Response/ResultBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/ResultBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IRestServiceRunnerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IServiceRunnerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,11 +54,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf4738d59bccc7df9289a82dc9ea3d4fe2fe2b32e215d63bbb19238824efa94a/LightExceptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff4a377ddd8b8376a34e93b525519e26e3989a7f57783aa958abc10f5ec87/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Domain/Response/ResultBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d77c4680ed9457393ace56767da2743b443a47727beda6a2b5304cc4abee506e/Activator.RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
@@ -130,6 +83,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f5ba0bdc621188cd1e1d8baf2af936513bd6191585af6be27a3f92639e08/Parallel.ForEachAsync.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -416,7 +370,8 @@
       <workItem from="1645454891424" duration="1613000" />
       <workItem from="1645489482633" duration="6078000" />
       <workItem from="1645597879229" duration="14040000" />
-      <workItem from="1645678592125" duration="10570000" />
+      <workItem from="1645678592125" duration="10679000" />
+      <workItem from="1645709438028" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -453,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645437982773</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update and impl service runner">
+      <created>1645704184677</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645704184677</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -498,7 +460,8 @@
     <MESSAGE value="massive change" />
     <MESSAGE value="change domain and impl console app" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update and impl service runner" />
+    <option name="LAST_COMMIT_MESSAGE" value="update and impl service runner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -601,55 +564,55 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs</url>
-          <line>33</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="22" containingFunctionPresentation="method 'OnSuccessedAsync'">
+          <line>20</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="20" containingFunctionPresentation="">
             <startOffsets>
-              <option value="859" />
+              <option value="442" />
             </startOffsets>
             <endOffsets>
-              <option value="882" />
+              <option value="968" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs</url>
-          <line>59</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="45" containingFunctionPresentation="method 'OnSuccessedAsync'">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/SimpleRunner.cs</url>
+          <line>15</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\SimpleRunner.cs" initialLine="15" containingFunctionPresentation="method 'OnExecuteAsync'">
             <startOffsets>
-              <option value="1431" />
+              <option value="441" />
             </startOffsets>
             <endOffsets>
-              <option value="1454" />
+              <option value="480" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="36" />
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs</url>
-          <line>71</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="57" containingFunctionPresentation="method 'OnFailedAsync'">
+          <url>file://$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs</url>
+          <line>68</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\1.Share\ClientApplication\Common\ServiceRunnerCore.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'RunAsync'">
             <startOffsets>
-              <option value="1747" />
+              <option value="2253" />
             </startOffsets>
             <endOffsets>
-              <option value="1777" />
+              <option value="2309" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs</url>
-          <line>41</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="30" containingFunctionPresentation="method 'OnFailedAsync'">
+          <url>file://$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs</url>
+          <line>70</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\1.Share\ClientApplication\Common\ServiceRunnerCore.cs" initialLine="70" containingFunctionPresentation="lambda expression inside method 'RunAsync'">
             <startOffsets>
-              <option value="1078" />
+              <option value="2377" />
             </startOffsets>
             <endOffsets>
-              <option value="1108" />
+              <option value="2432" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="38" />
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
