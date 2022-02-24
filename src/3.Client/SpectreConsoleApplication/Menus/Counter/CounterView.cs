@@ -16,7 +16,7 @@ public sealed class CounterView : ViewBase
     public override void Show()
     {
         CONTINUE:
-        var input = AnsiConsole.Ask<int>("try enter counter number (if enter 0 number, is exist) : ");
+        var input = AnsiConsole.Ask<int>("try enter counter number (if enter 0 number, is exit) : ");
         if (input > 0)
         {
             AnsiConsole.MarkupLine($"[blue]{_count += input}[/]");
