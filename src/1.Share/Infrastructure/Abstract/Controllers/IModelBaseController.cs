@@ -7,6 +7,7 @@ namespace Infrastructure.Abstract.Controllers;
 /// <summary>
 /// model base interface
 /// </summary>
+/// <typeparam name="T"></typeparam>
 /// <typeparam name="TRequest"></typeparam>
 public interface IModelBaseController<T, TRequest>
     where TRequest : class

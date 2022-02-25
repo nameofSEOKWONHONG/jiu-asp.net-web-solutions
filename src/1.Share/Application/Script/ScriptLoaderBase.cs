@@ -13,13 +13,9 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Script;
 
-public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : class
+public class ScriptLoaderState
 {
-    public double Version { get; set; }
-    protected readonly string _basePath = string.Empty;
-    protected readonly ConcurrentDictionary<string, TScripter> _scriptors = new();
-
-    private Dictionary<Type, Func<string>> _scriptTypeStates = new Dictionary<Type, Func<string>>()
+    public static readonly Dictionary<Type, Func<string>> ScriptTypeStates = new()
     {
         { typeof(IPyScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\py") },
         { typeof(ISharpScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\cs") },
@@ -27,29 +23,33 @@ public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : c
         { typeof(IJIntScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\js\\jint") },
         { typeof(INodeJSScripter), () => Path.Combine(AppContext.BaseDirectory, "ScriptFiles\\node") }
     };
+}
 
-    public ScriptLoaderBase(IOptions<ScriptLoaderConfig> options)
+public class ScriptLoaderBase<TScripter> : IScriptLoaderBase where TScripter : class
+{
+    public double Version { get; set; }
+    protected readonly string BasePath = string.Empty;
+    protected readonly ConcurrentDictionary<string, TScripter> Scriptors = new();
+
+    protected ScriptLoaderBase(IOptions<ScriptLoaderConfig> options)
     {
         this.Version = options.Value.Version;
-        this._basePath = options.Value.BasePath.xIfEmpty(() =>
-        {
-            return _scriptTypeStates[typeof(TScripter)]();
-        });
+        this.BasePath = options.Value.BasePath.xIfEmpty(() => ScriptLoaderState.ScriptTypeStates[typeof(TScripter)]());
     }
     
     public bool Reset(string fileName = null)
     {
         var ret = true;
-        if (this._scriptors.xIsEmpty()) return true;
+        if (this.Scriptors.xIsEmpty()) return true;
         
         fileName.xIfEmpty(
-            () => this._scriptors.Clear(), 
+            () => this.Scriptors.Clear(), 
             () => {
-                var fullPathName = Path.Combine(_basePath, fileName);   
-                if(fullPathName.xIsEmpty()) this._scriptors.Clear();
+                var fullPathName = Path.Combine(BasePath, fileName);   
+                if(fullPathName.xIsEmpty()) this.Scriptors.Clear();
                 else
                 {
-                    ret = _scriptors.TryRemove(fullPathName, out _);
+                    ret = Scriptors.TryRemove(fullPathName, out _);
                 }
             });
 

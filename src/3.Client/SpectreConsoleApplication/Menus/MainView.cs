@@ -29,30 +29,44 @@ public class MainView
     
     public void Run()
     {
-        CONTINUE:
-        var menus = AnsiConsole.Prompt(
-            new MultiSelectionPrompt<string>()
-                .PageSize(10)
-                .Title("[green]select menu[/]?")
-                // .MoreChoicesText("[grey](Move up and down to reveal more menu)[/]")
-                // .InstructionsText("[grey](Press [blue][/] to toggle a menu, [green][/] to accept)[/]")
-                // .AddChoiceGroup("Conuter", new[]
-                // {
-                //     "Blackcurrant", "Blueberry", "Cloudberry",
-                //     "Elderberry", "Honeyberry", "Mulberry"
-                // })
-                .AddChoices(new[]
+        while (true)
+        {
+            var menus = AnsiConsole.Prompt(
+                new MultiSelectionPrompt<string>()
+                    .PageSize(10)
+                    .Title("[green]select menu[/]?")
+                    // .MoreChoicesText("[grey](Move up and down to reveal more menu)[/]")
+                    // .InstructionsText("[grey](Press [blue][/] to toggle a menu, [green][/] to accept)[/]")
+                    // .AddChoiceGroup("Conuter", new[]
+                    // {
+                    //     "Blackcurrant", "Blueberry", "Cloudberry",
+                    //     "Elderberry", "Honeyberry", "Mulberry"
+                    // })
+                    .AddChoices(new[]
+                    {
+                        "Counter", "WeatherForecast", "Member", "Exit"
+                    }));
+            var menu = menus.Count == 1 ? menus.First() : null;
+            if(menu.xIsEquals("Exit")) return;
+
+            try
+            {
+                var menuViewState = _menuViewStates[menu];
+                if (menuViewState.xIsNotEmpty())
                 {
-                    "Counter", "WeatherForecast", "Member", "Exit"
-                }));
-        var menu = menus.Count == 1 ? menus.First() : null;
-        if(menu.xIsEquals("Exit")) return;
-        
-        var menuViewState = _menuViewStates[menu];
-        if (menuViewState.xIsEmpty()) AnsiConsole.WriteLine("select try again...");
-        var menuView = menuViewState(_services);
-        menuView.Show();
-        goto CONTINUE;
+                    var menuView = menuViewState(_services);
+                    menuView.Show();
+                }
+                else
+                {
+                    AnsiConsole.WriteLine("select try again...");
+                }
+            }
+            catch (Exception e)
+            {
+                AnsiConsole.WriteException(e, ExceptionFormats.Default);
+            }
+        }
     }
 }
 

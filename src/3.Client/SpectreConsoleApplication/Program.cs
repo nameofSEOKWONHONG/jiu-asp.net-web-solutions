@@ -40,6 +40,10 @@ var builder = new HostBuilder()
 var host = builder.Build();
 using var serviceScope = host.Services.CreateScope();
 var services = serviceScope.ServiceProvider;
+
+AnsiConsole.Write(
+    new Panel("2022-02-25 14:16:00 [yellow]PRAY FOR[/] [blue]UKRAINE[/]")
+        .RoundedBorder());
  
 try
 {

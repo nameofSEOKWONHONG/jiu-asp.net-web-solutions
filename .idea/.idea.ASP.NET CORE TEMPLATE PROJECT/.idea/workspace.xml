@@ -19,15 +19,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IRunnerOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RunnerOptions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/HttpSampleRunner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/SimpleRunner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Configuration/FileSetting.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Validation/ValidatorCore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Configuration/FileFilterOptions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Response/ResultBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Response/ResultBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IRestServiceRunnerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/IServiceRunnerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/RestServiceRunnerCore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationConst.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Interfaces/Account/ISessionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Interfaces/Account/ISessionContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptLoaderBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptLoaderBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/IModelBaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/IModelBaseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/SessionContextService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/SessionContextService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,10 +77,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Domain/Response/ResultBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d77c4680ed9457393ace56767da2743b443a47727beda6a2b5304cc4abee506e/Activator.RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77bef6aaaf3a4400838f8fe5f498d38a21200/21/aba6310d/ErrorSink.cs" root0="SKIP_HIGHLIGHTING" />
@@ -371,7 +388,11 @@
       <workItem from="1645489482633" duration="6078000" />
       <workItem from="1645597879229" duration="14040000" />
       <workItem from="1645678592125" duration="10679000" />
-      <workItem from="1645709438028" duration="3036000" />
+      <workItem from="1645709438028" duration="3466000" />
+      <workItem from="1645761534896" duration="10060000" />
+      <workItem from="1645787356702" duration="1646000" />
+      <workItem from="1645793322748" duration="37000" />
+      <workItem from="1645796792982" duration="1837000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -415,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645704184677</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update">
+      <created>1645712801160</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645712801160</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +468,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -459,25 +487,13 @@
     <MESSAGE value="new folder structure" />
     <MESSAGE value="massive change" />
     <MESSAGE value="change domain and impl console app" />
-    <MESSAGE value="update" />
     <MESSAGE value="update and impl service runner" />
-    <option name="LAST_COMMIT_MESSAGE" value="update and impl service runner" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs</url>
-          <line>91</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\Abstract\ApiControllerBase.cs" initialLine="88" containingFunctionPresentation="method 'TryValidate'" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs</url>
-          <line>81</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\Abstract\ApiControllerBase.cs" initialLine="87" containingFunctionPresentation="lambda expression inside method 'TryValidate'" />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/Samples/ScriptEngineSampleController.cs</url>
           <line>205</line>
@@ -564,55 +580,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs</url>
-          <line>20</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="20" containingFunctionPresentation="">
+          <line>23</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\Program.cs" initialLine="21" containingFunctionPresentation="">
             <startOffsets>
-              <option value="442" />
+              <option value="450" />
             </startOffsets>
             <endOffsets>
-              <option value="968" />
+              <option value="503" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/SimpleRunner.cs</url>
-          <line>15</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ServiceRunnerSampleApp\SimpleRunner.cs" initialLine="15" containingFunctionPresentation="method 'OnExecuteAsync'">
-            <startOffsets>
-              <option value="441" />
-            </startOffsets>
-            <endOffsets>
-              <option value="480" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs</url>
-          <line>68</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\1.Share\ClientApplication\Common\ServiceRunnerCore.cs" initialLine="68" containingFunctionPresentation="lambda expression inside method 'RunAsync'">
-            <startOffsets>
-              <option value="2253" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2309" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Common/ServiceRunnerCore.cs</url>
-          <line>70</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\1.Share\ClientApplication\Common\ServiceRunnerCore.cs" initialLine="70" containingFunctionPresentation="lambda expression inside method 'RunAsync'">
-            <startOffsets>
-              <option value="2377" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2432" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -15,13 +15,13 @@ public class JsScriptLoader : ScriptLoaderBase<IJsScripter>
 
     public IJsScripter Create(string fileName, string modulePath = null)
     {
-        var fullFileName = Path.Combine(_basePath, fileName);
-        if (_scriptors.TryGetValue(fileName, out IJsScripter scriptor))
+        var fullFileName = Path.Combine(BasePath, fileName);
+        if (Scriptors.TryGetValue(fileName, out IJsScripter scriptor))
         {
             return scriptor;
         }
         var newScriptor = new JsScripter(fullFileName, modulePath);
-        if (_scriptors.TryAdd(fileName, newScriptor))
+        if (Scriptors.TryAdd(fileName, newScriptor))
         {
             return newScriptor;    
         }

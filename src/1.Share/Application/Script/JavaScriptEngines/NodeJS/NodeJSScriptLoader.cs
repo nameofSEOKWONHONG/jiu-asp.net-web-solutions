@@ -22,13 +22,13 @@ public class NodeJSScriptLoader : ScriptLoaderBase<INodeJSScripter>
     
     public INodeJSScripter Create(string fileName)
     {
-        var fullFileName = Path.Combine(_basePath, fileName);
-        if (_scriptors.TryGetValue(fileName, out INodeJSScripter scriptor))
+        var fullFileName = Path.Combine(BasePath, fileName);
+        if (Scriptors.TryGetValue(fileName, out INodeJSScripter scriptor))
         {
             return scriptor;
         }
         var newScriptor = new NodeJSScripter(fullFileName, _nodeJsService);
-        if (_scriptors.TryAdd(fileName, newScriptor))
+        if (Scriptors.TryAdd(fileName, newScriptor))
         {
             return newScriptor;    
         }

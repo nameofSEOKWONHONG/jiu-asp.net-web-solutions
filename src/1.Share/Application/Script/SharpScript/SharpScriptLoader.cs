@@ -16,14 +16,14 @@ public class SharpScriptLoader : ScriptLoaderBase<ISharpScripter>
 
     public ISharpScripter Create(string fileName)
     {
-        var fullPathName = Path.Combine(_basePath, fileName);
-        if (_scriptors.TryGetValue(fileName, out ISharpScripter scriptor))
+        var fullPathName = Path.Combine(BasePath, fileName);
+        if (Scriptors.TryGetValue(fileName, out ISharpScripter scriptor))
         {
             return scriptor;
         }
         
         var newScript = new SharpScripter(fullPathName);
-        if (_scriptors.TryAdd(fileName, newScript))
+        if (Scriptors.TryAdd(fileName, newScript))
         {
             return newScript;
         }

@@ -10,7 +10,7 @@ namespace Domain.Entities
 {   
     [Table("TB_USER")]
     [Index(nameof(EMAIL), nameof(ACTIVE_USER_YN), nameof(AUTO_CONFIRM_EMAIL_YN), IsUnique = false)]
-    public class TB_USER : GuidEntityBase
+    public partial class TB_USER : GuidEntityBase
     {
         [Required, EmailAddress, MaxLength(200), NotNull]
         public string EMAIL { get; set; }

@@ -7,8 +7,6 @@ using Infrastructure.Abstract.Controllers;
 
 namespace WebApiApplication.Controllers
 {
-    [ApiVersion("1")]
-    [ApiExplorerSettings(GroupName = "v1")]
     public class MessageController : SessionController<MessageController>
     {
         private readonly MessageProviderResolver _messageProviderResolver;

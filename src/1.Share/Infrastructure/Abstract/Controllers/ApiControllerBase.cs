@@ -1,13 +1,11 @@
-﻿using Domain.Response;
+﻿using Application.Infrastructure.Validation;
+using Domain.Response;
 using eXtensionSharp;
 using FluentValidation;
-using FluentValidation.Results;
-using IronPython.Modules;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using MySqlX.XDevAPI.Common;
 
 namespace Infrastructure.Abstract.Controllers
 {
@@ -73,52 +71,14 @@ namespace Infrastructure.Abstract.Controllers
             where TEntity : class
             where TValidator : AbstractValidator<TEntity>, new()
         {
-            var validator = new TValidator();
-            var result = validator.Validate(entity);
-            var map = new DynamicDictionary<List<string>>();
-            if (result.IsValid.xIsFalse())
-            {
-                result.Errors.xForEach(m =>
-                {
-                    var exists = map.FirstOrDefault(item => item.Key == m.PropertyName);
-                    if (exists.xIsNotEmpty())
-                    {
-                        exists.Value.Add(m.ErrorMessage);
-                    }
-                    else
-                    {
-                        map.Add(m.PropertyName, new List<string>() {m.ErrorMessage});    
-                    }
-                });
-            }
-
-            return new ValueTuple<bool, DynamicDictionary<List<string>>>(result.IsValid, map);
+            return ValidatorCore.TryValidate<TEntity, TValidator>(entity);
         }
 
         protected async Task<(bool IsValid, DynamicDictionary<List<string>> result)> TryValidateAsync<TEntity, TValidator>(TEntity entity)
             where TEntity : class
-            where TValidator : AbstractValidator<TEntity>, new()        
+            where TValidator : AbstractValidator<TEntity>, new()
         {
-            var validator = new TValidator();
-            var result = await validator.ValidateAsync(entity);
-            var map = new DynamicDictionary<List<string>>();
-            if (result.IsValid.xIsFalse())
-            {
-                result.Errors.xForEach(m =>
-                {
-                    var exists = map.FirstOrDefault(item => item.Key == m.PropertyName);
-                    if (exists.xIsNotEmpty())
-                    {
-                        exists.Value.Add(m.ErrorMessage);
-                    }
-                    else
-                    {
-                        map.Add(m.PropertyName, new List<string>() {m.ErrorMessage});    
-                    }
-                });
-            }
-
-            return new ValueTuple<bool, DynamicDictionary<List<string>>>(result.IsValid, map);
+            return await ValidatorCore.TryValidateAsync<TEntity, TValidator>(entity);
         }
 
         protected IActionResult ResultOk<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Success(entity));

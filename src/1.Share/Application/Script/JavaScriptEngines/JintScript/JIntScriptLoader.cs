@@ -15,13 +15,13 @@ public class JIntScriptLoader : ScriptLoaderBase<IJIntScripter>
     
     public IJIntScripter Create(string fileName, string modulePath = null)
     {
-        var fullFileName = Path.Combine(_basePath, fileName);
-        if (_scriptors.TryGetValue(fileName, out IJIntScripter scriptor))
+        var fullFileName = Path.Combine(BasePath, fileName);
+        if (Scriptors.TryGetValue(fileName, out IJIntScripter scriptor))
         {
             return scriptor;
         }
         var newScriptor = new JIntScripter(fullFileName, modulePath);
-        if (_scriptors.TryAdd(fileName, newScriptor))
+        if (Scriptors.TryAdd(fileName, newScriptor))
         {
             return newScriptor;    
         }

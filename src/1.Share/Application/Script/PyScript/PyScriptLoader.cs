@@ -14,14 +14,14 @@ public class PyScriptLoader : ScriptLoaderBase<IPyScripter>
     
     public IPyScripter Create(string fileName, string[] modulePath = null)
     {
-        var fullPathName = Path.Combine(_basePath, fileName);
-        if (_scriptors.TryGetValue(fileName, out IPyScripter scriptor))
+        var fullPathName = Path.Combine(BasePath, fileName);
+        if (Scriptors.TryGetValue(fileName, out IPyScripter scriptor))
         {
             return scriptor;
         }
         
         var newScriptor = new PyScripter(fullPathName, modulePath);
-        if (_scriptors.TryAdd(fileName, newScriptor))
+        if (Scriptors.TryAdd(fileName, newScriptor))
         {
             return newScriptor;    
         }

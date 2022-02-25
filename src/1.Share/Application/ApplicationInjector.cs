@@ -4,6 +4,7 @@ using System.IO;
 using Application.Abstract;
 using Application.Context;
 using Application.Infrastructure.Cache;
+using Application.Infrastructure.Configuration;
 using Application.Infrastructure.Message;
 using Application.Script;
 using Application.Script.ClearScript;
@@ -159,10 +160,13 @@ public class ApplicationInjector : IDependencyInjectorBase
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
 
         #region [config 설정]
-
+        
         services.Configure<ScriptLoaderConfig>(configuration.GetSection(nameof(ScriptLoaderConfig)));
         services.Configure<MailSetting>(configuration.GetSection(nameof(MailSetting)));
         services.Configure<CacheConfig>(configuration.GetSection(nameof(CacheConfig)));
+        services.Configure<FileFilterOptions>(configuration.GetSection(nameof(FileFilterOptions)));
+
+        services.AddScoped<FileSetting>();
         
         #region [mongodb 설정]
         services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));
