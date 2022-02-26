@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace SpectreConsoleApplication.Menus.Abstract;
 
-public abstract class ActionBase
+public abstract class ActionBase : IDisposable
 {
     protected readonly ILogger _logger;
     protected readonly IHttpClientFactory _clientFactory;
@@ -21,5 +21,10 @@ public abstract class ActionBase
         where TValidator : AbstractValidator<TEntity>, new()
     {
         return ValidatorCore.TryValidate<TEntity, TValidator>(entity);
+    }
+
+    public virtual void Dispose()
+    {
+        Console.WriteLine("action dispose");
     }
 }

@@ -18,7 +18,16 @@
     <projectFile profileName="WorkerApplication">src/4.BackgroundApp/WorkerApplication/WorkerApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="" />
+    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +47,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ec2c283df8a4c8a866379380222ca5c21270/77/26ebc2d6/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
@@ -55,7 +65,6 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77bef6aaaf3a4400838f8fe5f498d38a21200/21/aba6310d/ErrorSink.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
@@ -67,11 +76,13 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e5a78beee0f4abd8ed7ef3636048cf1a20268/4c/db281812/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57407b0d38be4d44ac7bf05b4f9663a211b78/49/9f7121f6/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f5ba0bdc621188cd1e1d8baf2af936513bd6191585af6be27a3f92639e08/Parallel.ForEachAsync.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
@@ -97,7 +108,7 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.ServiceRunnerSampleApp">
+  <component name="RunManager" selected=".NET Project.SpectreConsoleApplication">
     <configuration name="ServiceRunnerSampleApp" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -367,6 +378,8 @@
       <workItem from="1645793322748" duration="37000" />
       <workItem from="1645796792982" duration="1837000" />
       <workItem from="1645802264679" duration="37000" />
+      <workItem from="1645866879581" duration="69000" />
+      <workItem from="1645868164436" duration="3263000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -424,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645802289238</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1645866913838</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1645866913838</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,9 +489,9 @@
     <MESSAGE value="massive change" />
     <MESSAGE value="change domain and impl console app" />
     <MESSAGE value="update and impl service runner" />
-    <MESSAGE value="update" />
     <MESSAGE value="pray for ukraine" />
-    <option name="LAST_COMMIT_MESSAGE" value="pray for ukraine" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -572,6 +592,58 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs</url>
+          <line>29</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\WeatherForecast\WeatherForecastAction.cs" initialLine="30" containingFunctionPresentation="property 'Weatherforecasts'">
+            <startOffsets>
+              <option value="1204" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1229" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs</url>
+          <line>18</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\WeatherForecast\WeatherForecastAction.cs" initialLine="19" containingFunctionPresentation="lambda expression inside property 'Weatherforecasts'">
+            <startOffsets>
+              <option value="535" />
+            </startOffsets>
+            <endOffsets>
+              <option value="602" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs</url>
+          <line>22</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\WeatherForecast\WeatherForecastView.cs" initialLine="22" containingFunctionPresentation="method 'Show'">
+            <startOffsets>
+              <option value="602" />
+            </startOffsets>
+            <endOffsets>
+              <option value="639" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs</url>
+          <line>39</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\WeatherForecast\WeatherForecastAction.cs" initialLine="39" containingFunctionPresentation="method 'Dispose'">
+            <startOffsets>
+              <option value="1452" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1514" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -10,4 +10,9 @@ public abstract class ViewBase : IViewBase
         _logger = logger;
     }
     public abstract void Show();
+
+    public virtual void Dispose()
+    {
+        Console.WriteLine("view dispose");
+    }
 }

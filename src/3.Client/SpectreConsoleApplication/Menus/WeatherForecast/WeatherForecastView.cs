@@ -20,7 +20,8 @@ public sealed class WeatherForecastView : ViewBase
     public override void Show()
     {
         CONTINUE:
-        var items = _action.GetWeatherForecastList();
+        var items = _action.Weatherforecasts;
+        items = _action.Weatherforecasts;
         if (items.xIsEmpty())
         {
             AnsiConsole.Ask<string>("data is empty, exit", "Y");
@@ -29,5 +30,10 @@ public sealed class WeatherForecastView : ViewBase
         TableUtil.TableDraw<TB_WEATHERFORECAST>(items);
         var result = AnsiConsole.Ask<bool>("exit : ", true);
         if (!result) goto CONTINUE;
+    }
+
+    public override void Dispose()
+    {
+        Console.WriteLine($"{nameof(WeatherForecastView)} dispose");
     }
 }

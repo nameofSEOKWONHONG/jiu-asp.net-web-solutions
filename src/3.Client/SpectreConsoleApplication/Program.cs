@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics.Metrics;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +14,7 @@ using SpectreConsoleApplication.Menus.WeatherForecast;
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
     {
-        services.AddHttpClient(AppConst.HTTP_NAME,config =>
+        services.AddHttpClient(AppConst.HTTP_NAME, config =>
         {
             config.BaseAddress = new Uri(AppConst.HTTP_URL);
         });
@@ -28,36 +29,51 @@ var builder = new HostBuilder()
 
         #region [add view]
 
-        services.AddSingleton<LoginView>();
-        services.AddSingleton<MainView>();
-        services.AddSingleton<CounterView>();
-        services.AddSingleton<WeatherForecastView>();
-        services.AddSingleton<MemberView>();
+        services.AddTransient<LoginView>();
+        services.AddTransient<MainView>();
+        services.AddTransient<CounterView>();
+        services.AddTransient<WeatherForecastView>();
+        services.AddTransient<MemberView>();
 
         #endregion
-    }).UseConsoleLifetime();
+    });
  
 var host = builder.Build();
-using var serviceScope = host.Services.CreateScope();
-var services = serviceScope.ServiceProvider;
 
 AnsiConsole.Write(
     new Panel("2022-02-25 14:16:00 [blue]PRAY FOR[/] [yellow]UKRAINE[/]")
         .RoundedBorder());
- 
+
 try
 {
-    var loginView = services.GetRequiredService<LoginView>();
-    loginView.Show();
-    
-    if (loginView.AccessToken.xIsEmpty())
-        throw new UnauthorizedAccessException("login failed.");
-    
-    AppConst.ACESS_TOKEN = loginView.AccessToken;
-    var menuView = services.GetRequiredService<MainView>();
-    menuView.Run();
+    using (var serviceScope = host.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+        if (AppConst.ACESS_TOKEN.xIsEmpty())
+        {
+            var loginView = services.GetRequiredService<LoginView>();
+            loginView.Show();
+
+            if (loginView.AccessToken.xIsEmpty())
+                throw new UnauthorizedAccessException("login failed.");
+            
+            AppConst.ACESS_TOKEN = loginView.AccessToken;
+        }
+    }
+
+    CONTINUE:
+    using (var serviceScope = host.Services.CreateScope())
+    {
+        var services = serviceScope.ServiceProvider;
+        var menuView = services.GetRequiredService<MainView>();
+        var isContinue = menuView.Show();
+        if (isContinue.xIsFalse()) goto CONTINUE;
+        else return; //exit;
+    }
 }
 catch (Exception ex)
 {
     AnsiConsole.WriteException(ex);
 }
+
+await host.RunAsync();
