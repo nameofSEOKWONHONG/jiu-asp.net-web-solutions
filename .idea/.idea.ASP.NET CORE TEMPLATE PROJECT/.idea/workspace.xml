@@ -18,35 +18,7 @@
     <projectFile profileName="WorkerApplication">src/4.BackgroundApp/WorkerApplication/WorkerApplication.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Configuration/FileSetting.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Validation/ValidatorCore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Configuration/FileFilterOptions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Interfaces/Account/ISessionContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Interfaces/Account/ISessionContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/ClearScript/JsScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/JintScript/JIntScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/JavaScriptEngines/NodeJS/NodeJSScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/PyScript/PyScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/PyScript/PyScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptLoaderBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/ScriptLoaderBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/IModelBaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/IModelBaseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/SessionContextService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/SessionContextService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/MessageController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,6 +55,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77bef6aaaf3a4400838f8fe5f498d38a21200/21/aba6310d/ErrorSink.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
@@ -393,6 +366,7 @@
       <workItem from="1645787356702" duration="1646000" />
       <workItem from="1645793322748" duration="37000" />
       <workItem from="1645796792982" duration="1837000" />
+      <workItem from="1645802264679" duration="37000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -443,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645712801160</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="pray for ukraine">
+      <created>1645802289238</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645802289238</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +470,8 @@
     <MESSAGE value="change domain and impl console app" />
     <MESSAGE value="update and impl service runner" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="pray for ukraine" />
+    <option name="LAST_COMMIT_MESSAGE" value="pray for ukraine" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

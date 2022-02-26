@@ -42,7 +42,7 @@ using var serviceScope = host.Services.CreateScope();
 var services = serviceScope.ServiceProvider;
 
 AnsiConsole.Write(
-    new Panel("2022-02-25 14:16:00 [yellow]PRAY FOR[/] [blue]UKRAINE[/]")
+    new Panel("2022-02-25 14:16:00 [blue]PRAY FOR[/] [yellow]UKRAINE[/]")
         .RoundedBorder());
  
 try
