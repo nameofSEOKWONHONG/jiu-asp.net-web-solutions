@@ -36,7 +36,7 @@ var builder = new HostBuilder()
         services.AddTransient<MemberView>();
 
         #endregion
-    });
+    }).UseConsoleLifetime();
  
 var host = builder.Build();
 
@@ -75,5 +75,3 @@ catch (Exception ex)
 {
     AnsiConsole.WriteException(ex);
 }
-
-await host.RunAsync();
