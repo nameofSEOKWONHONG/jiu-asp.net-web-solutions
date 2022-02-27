@@ -20,8 +20,8 @@ public sealed class WeatherForecastView : ViewBase
     public override void Show()
     {
         CONTINUE:
-        var items = _action.Weatherforecasts;
-        items = _action.Weatherforecasts;
+        var items = _action.Items;
+        items = _action.Items;
         if (items.xIsEmpty())
         {
             AnsiConsole.Ask<string>("data is empty, exit", "Y");

@@ -37,6 +37,7 @@ namespace WebApiApplication
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    //webBuilder.UseKestrel(options => options.ListenAnyIP(5001));
                     webBuilder.UseStartup<Startup>();
                 })
                 .ConfigureAppConfiguration(configuration =>

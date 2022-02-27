@@ -45,7 +45,7 @@ public class MainView
                     "Counter", "WeatherForecast", "Member", "Exit"
                 }));
         var menu = menus.Count == 1 ? menus.First() : null;
-        if(menu.xIsEquals("Exit")) return true;
+        if(menu.xIsEquals("Exit")) return false;
 
         try
         {
@@ -65,7 +65,7 @@ public class MainView
             AnsiConsole.WriteException(e, ExceptionFormats.Default);
         }
 
-        return false;
+        return true;
     }
 }
 

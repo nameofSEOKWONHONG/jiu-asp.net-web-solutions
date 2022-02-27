@@ -9,12 +9,12 @@ namespace SpectreConsoleApplication.Menus.WeatherForecast;
 
 public sealed class WeatherForecastAction : ActionBase
 {
-    private IEnumerable<TB_WEATHERFORECAST> _weatherforecasts;
-    public IEnumerable<TB_WEATHERFORECAST> Weatherforecasts
+    private IEnumerable<TB_WEATHERFORECAST> _items;
+    public IEnumerable<TB_WEATHERFORECAST> Items
     {
         get
         {
-            _weatherforecasts.xIfEmpty(() =>
+            _items.xIfEmpty(() =>
             {
                 using var client = _clientFactory.CreateClient(AppConst.HTTP_NAME);
                 var request =
@@ -24,15 +24,26 @@ public sealed class WeatherForecastAction : ActionBase
                 response.EnsureSuccessStatusCode();
                 var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                 var items = JsonConvert.DeserializeObject<ResultBase<TB_WEATHERFORECAST[]>>(result);
-                _weatherforecasts = items.Data;
+                _items = items.Data;
             });
 
-            return _weatherforecasts;
+            return _items;
         }
     }
+    
+    public TB_WEATHERFORECAST SelectedItem { get; set; }
+    
     public WeatherForecastAction(ILogger<WeatherForecastAction> logger,
         IHttpClientFactory clientFactory) : base(logger, clientFactory)
     {
+    }
+
+    public bool Save()
+    {
+        if (SelectedItem.xIsEmpty()) throw new Exception("selected item is null");
+        //insert or update
+        SelectedItem = null;
+        return true;
     }
 
     public override void Dispose()

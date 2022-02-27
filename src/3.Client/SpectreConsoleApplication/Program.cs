@@ -31,7 +31,7 @@ var builder = new HostBuilder()
 
         services.AddTransient<LoginView>();
         services.AddTransient<MainView>();
-        services.AddTransient<CounterView>();
+        services.AddSingleton<CounterView>();
         services.AddTransient<WeatherForecastView>();
         services.AddTransient<MemberView>();
 
@@ -62,14 +62,15 @@ try
     }
 
     CONTINUE:
+    var isContinue = false;
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
         var menuView = services.GetRequiredService<MainView>();
-        var isContinue = menuView.Show();
-        if (isContinue.xIsFalse()) goto CONTINUE;
-        else return; //exit;
+        isContinue = menuView.Show();
     }
+    if (isContinue) goto CONTINUE;
+    else return; //exit;
 }
 catch (Exception ex)
 {
