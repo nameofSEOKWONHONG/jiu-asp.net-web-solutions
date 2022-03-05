@@ -1,4 +1,5 @@
-﻿using Domain.Entities.WeatherForecast;
+﻿using Application.Infrastructure.Injection;
+using Domain.Entities.WeatherForecast;
 using eXtensionSharp;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -7,20 +8,19 @@ using SpectreConsoleApplication.Utils;
 
 namespace SpectreConsoleApplication.Menus.WeatherForecast;
 
+[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
 public sealed class WeatherForecastView : ViewBase
 {
-    private readonly WeatherForecastAction _action;
+    private readonly IWeatherForecastAction _action;
     
     public WeatherForecastView(ILogger<WeatherForecastView> logger,
-        ISession session,
-        WeatherForecastAction action) : base(logger, session)
+        IWeatherForecastAction action) : base(logger)
     {
         _action = action;
     }
 
     public override void Show()
     {
-        CONTINUE:
         var items = _action.Items;
         items = _action.Items;
         if (items.xIsEmpty())
@@ -29,8 +29,6 @@ public sealed class WeatherForecastView : ViewBase
             return;
         }
         TableUtil.TableDraw<TB_WEATHERFORECAST>(items);
-        var result = AnsiConsole.Ask<bool>("exit : ", true);
-        if (!result) goto CONTINUE;
     }
 
     public override void Dispose()

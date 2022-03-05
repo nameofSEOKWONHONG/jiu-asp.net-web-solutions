@@ -1,43 +1,48 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Diagnostics.Metrics;
+using System.Reflection;
+using System.Xml;
+using Application.Infrastructure.Injection;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Scripting.Utils;
 using Spectre.Console;
 using SpectreConsoleApplication;
 using SpectreConsoleApplication.Menus;
+using SpectreConsoleApplication.Menus.Abstract;
 using SpectreConsoleApplication.Menus.Counter;
-using SpectreConsoleApplication.Menus.Login;
 using SpectreConsoleApplication.Menus.Member;
 using SpectreConsoleApplication.Menus.WeatherForecast;
 
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
-    {
+    {   
         services.AddHttpClient(AppConst.HTTP_NAME, config =>
         {
             config.BaseAddress = new Uri(AppConst.HTTP_URL);
         });
+        
+        services.AddLifeTime();
 
-        services.AddSingleton<ISession, Session>();
-
-        #region [add action]
-
-        services.AddScoped<LoginAction>();
-        services.AddScoped<WeatherForecastAction>();
-        services.AddScoped<MemberAction>();
-
-        #endregion
-
-        #region [add view]
-
-        services.AddTransient<LoginView>();
-        services.AddTransient<MainView>();
-        services.AddSingleton<CounterView>();
-        services.AddTransient<WeatherForecastView>();
-        services.AddTransient<MemberView>();
-
-        #endregion
+        // #region [add action]
+        //
+        // services.AddScoped<LoginAction>();
+        // services.AddScoped<WeatherForecastAction>();
+        // services.AddScoped<MemberAction>();
+        //
+        // #endregion
+        //
+        // #region [add view]
+        //
+        // services.AddTransient<LoginView>();
+        // services.AddTransient<MainView>();
+        // services.AddSingleton<CounterView>();
+        // services.AddTransient<WeatherForecastView>();
+        // services.AddTransient<MemberView>();
+        //
+        // #endregion
     }).UseConsoleLifetime();
  
 var host = builder.Build();
@@ -55,28 +60,28 @@ try
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        var session = services.GetRequiredService<ISession>();
-        using (var loginView = services.GetRequiredService<LoginView>())
+        if (AppConst.ACESS_TOKEN.xIsEmpty())
         {
+            var loginView = services.GetRequiredService<LoginView>();
             loginView.Show();
-            if (loginView.ViewResult.xIsTrue())
-            {
-                session.ACCESS_TOKEN = loginView.AccessToken;
-            }
+
+            if (loginView.AccessToken.xIsEmpty())
+                throw new UnauthorizedAccessException("login failed.");
+            
+            AppConst.ACESS_TOKEN = loginView.AccessToken;
         }
     }
 
     CONTINUE:
+    var isContinue = false;
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        using (var menuView = services.GetRequiredService<MainView>())
-        {
-            menuView.Show();
-            if(menuView.ViewResult.xIsTrue()) goto CONTINUE;
-            return; //exit
-        } 
+        var menuView = services.GetRequiredService<MainView>();
+        isContinue = menuView.Show();
     }
+    if (isContinue) goto CONTINUE;
+    else return; //exit;
 }
 catch (Exception ex)
 {

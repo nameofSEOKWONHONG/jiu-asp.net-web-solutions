@@ -1,17 +1,18 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Application.Infrastructure.Injection;
+using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
 
-namespace SpectreConsoleApplication.Menus.Login;
+namespace SpectreConsoleApplication.Menus;
 
+[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
 public class LoginView : ViewBase
 {
     public string AccessToken { get; private set; }
 
-    private readonly LoginAction _action;
+    private readonly ILoginAction _action;
     public LoginView(ILogger<LoginView> logger, 
-        ISession session,
-        LoginAction action) : base(logger, session)
+        ILoginAction action) : base(logger)
     {
         _action = action;
     }
@@ -21,7 +22,6 @@ public class LoginView : ViewBase
         if (!AnsiConsole.Confirm("Hello, Are you ready?"))
         {
             AnsiConsole.MarkupLine("Ok... :(");
-            this.ViewResult = false;
             return;
         }
 

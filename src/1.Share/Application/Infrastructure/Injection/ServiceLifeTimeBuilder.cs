@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using eXtensionSharp;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Application.Infrastructure.Injection;
+
+public static class ServiceLifeTimeBuilder
+{
+    private static Dictionary<ENUM_LIFE_TYPE, Action<IServiceCollection, ServiceLifeTimeAttribute, Type>>
+        _serviceLifeTimeStates =
+            new()
+            {
+                {
+                    ENUM_LIFE_TYPE.Scope, (s, attr, impl) =>
+                    {
+                        attr.TypeofInterface.xIfNotEmpty(() =>
+                        {
+                            s.AddScoped(attr.TypeofInterface, impl);
+                        }, () =>
+                        {
+                            s.AddScoped(impl);
+                        });
+                    }
+                },
+                {
+                    ENUM_LIFE_TYPE.Transient, (s, attr, impl) =>
+                    {
+                        attr.TypeofInterface.xIfNotEmpty(() =>
+                        {
+                            s.AddTransient(attr.TypeofInterface, impl);
+                        }, () =>
+                        {
+                            s.AddTransient(impl);
+                        });
+                    }
+                },
+                {
+                    ENUM_LIFE_TYPE.Singleton, (s, attr, impl) =>
+                    {
+                        attr.TypeofInterface.xIfNotEmpty(() =>
+                        {
+                            s.AddSingleton(attr.TypeofInterface, impl);
+                        }, () =>
+                        {
+                            s.AddSingleton(impl);
+                        });
+                    }
+                }
+            };
+                
+    
+    /// <summary>
+    /// ioc container에 의존성 주입 작업을 수행합니다.
+    /// ServiceLifeTimeAttribute를 사용한 클래스를 자동으로 의존성 주입을 수행합니다.
+    /// </summary>
+    /// <param name="services"></param>
+    public static void AddLifeTime(this IServiceCollection services)
+    {
+        var types = AppDomain.CurrentDomain.GetAssemblies()
+                .Select(x => Assembly.Load(x.FullName))
+                .SelectMany(x => x.GetExportedTypes())
+                .ToList()
+                .Where(x => x.GetCustomAttribute(typeof(ServiceLifeTimeAttribute)) != null);
+        
+        types.xForEach(type =>
+        {
+            var attr = type.GetCustomAttribute(typeof(ServiceLifeTimeAttribute), true);
+            if (attr is ServiceLifeTimeAttribute serviceLifeTimeAttribute)
+            {
+                _serviceLifeTimeStates[serviceLifeTimeAttribute.LifeType](services, serviceLifeTimeAttribute, type);
+            }
+        });
+    }
+}

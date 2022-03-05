@@ -1,4 +1,5 @@
-﻿using eXtensionSharp;
+﻿using Application.Infrastructure.Injection;
+using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -9,8 +10,10 @@ using SpectreConsoleApplication.Menus.WeatherForecast;
 
 namespace SpectreConsoleApplication.Menus;
 
-public class MainView : ViewBase
+[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+public class MainView
 {
+    private readonly ILogger _logger;
     private readonly IServiceProvider _services;
 
     private readonly Dictionary<string, Func<IServiceProvider, IViewBase>> _menuViewStates = new() 
@@ -20,12 +23,13 @@ public class MainView : ViewBase
         {"Member", (s) => s.GetRequiredService<MemberView>()}
     };
     
-    public MainView(ILogger<MainView> logger, ISession session, IServiceProvider services) : base(logger, session)
+    public MainView(ILogger<MainView> logger, IServiceProvider services)
     {
+        _logger = logger;
         _services = services;
     }
     
-    public override void Show()
+    public bool Show()
     {
         var menus = AnsiConsole.Prompt(
             new MultiSelectionPrompt<string>()
@@ -43,11 +47,7 @@ public class MainView : ViewBase
                     "Counter", "WeatherForecast", "Member", "Exit"
                 }));
         var menu = menus.Count == 1 ? menus.First() : null;
-        if (menu.xIsEquals("Exit"))
-        {
-            this.ViewResult = false;
-            return;
-        }
+        if(menu.xIsEquals("Exit")) return false;
 
         try
         {
@@ -55,7 +55,8 @@ public class MainView : ViewBase
             if (menuViewState.xIsNotEmpty())
             {
                 var menuView = menuViewState(_services);
-                menuView.Show();
+                ViewBaseCore core = new ViewBaseCore(menuView);
+                core.RunLifeTime();
             }
             else
             {
@@ -66,6 +67,8 @@ public class MainView : ViewBase
         {
             AnsiConsole.WriteException(e, ExceptionFormats.Default);
         }
+
+        return true;
     }
 }
 

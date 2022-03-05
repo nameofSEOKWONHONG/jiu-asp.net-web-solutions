@@ -1,4 +1,5 @@
-﻿using Domain.Entities.WeatherForecast;
+﻿using Application.Infrastructure.Injection;
+using Domain.Entities.WeatherForecast;
 using Domain.Response;
 using eXtensionSharp;
 using Microsoft.Extensions.Logging;
@@ -7,7 +8,15 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.WeatherForecast;
 
-public sealed class WeatherForecastAction : ActionBase
+public interface IWeatherForecastAction
+{
+    TB_WEATHERFORECAST SelectedItem { get; set; }
+    IEnumerable<TB_WEATHERFORECAST> Items { get; }
+    bool Save();
+}
+
+[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(IWeatherForecastAction))]
+public sealed class WeatherForecastAction : ActionBase, IWeatherForecastAction
 {
     private IEnumerable<TB_WEATHERFORECAST> _items;
     public IEnumerable<TB_WEATHERFORECAST> Items

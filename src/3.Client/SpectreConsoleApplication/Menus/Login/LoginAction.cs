@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Application.Infrastructure.Injection;
 using eXtensionSharp;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
@@ -6,7 +7,13 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.Login;
 
-public class LoginAction : ActionBase
+public interface ILoginAction
+{
+    Task<string> LoginAsync(string email, string password);
+}
+
+[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(ILoginAction))]
+public class LoginAction : ActionBase, ILoginAction
 {
     public LoginAction(ILogger<LoginAction> logger, 
         ISession session,

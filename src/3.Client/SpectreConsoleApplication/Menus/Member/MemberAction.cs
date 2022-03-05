@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using Application.Infrastructure.Injection;
 using Domain.Entities;
 using LiteDB;
 using Microsoft.Extensions.Logging;
@@ -7,7 +8,13 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.Member;
 
-public class MemberAction : ActionBase
+public interface IMemberAction
+{
+    IEnumerable<TB_USER> GetMembers();
+}
+
+[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(IMemberAction))]
+public class MemberAction : ActionBase, IMemberAction
 {
     public MemberAction(ILogger<MemberAction> logger, ISession session, IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
     {

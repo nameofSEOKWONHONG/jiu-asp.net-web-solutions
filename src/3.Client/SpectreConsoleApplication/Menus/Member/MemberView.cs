@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.Infrastructure.Injection;
+using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.Extensions.Logging;
@@ -8,19 +9,18 @@ using SpectreConsoleApplication.Utils;
 
 namespace SpectreConsoleApplication.Menus.Member;
 
+[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
 public class MemberView : ViewBase
 {
-    private readonly MemberAction _action;
+    private readonly IMemberAction _action;
     public MemberView(ILogger<MemberView> logger,
-        ISession session,
-        MemberAction action) : base(logger, session)
+        IMemberAction action) : base(logger)
     {
         _action = action;
     }
 
     public override void Show()
     {
-        CONTINUE:
         var members = _action.GetMembers();
         if (members.xIsEmpty())
         {
@@ -34,7 +34,7 @@ public class MemberView : ViewBase
             {
                 user.EMAIL.xValue(string.Empty), 
                 user.PASSWORD.xValue(string.Empty), 
-                user.MOBILE.xValue<string>(string.Empty),
+                user.PHONE_NUM.xValue<string>(string.Empty),
                 user.ACTIVE_USER_YN.xValue<string>(string.Empty), 
                 user.AUTO_CONFIRM_EMAIL_YN.xValue<string>(string.Empty),
                 user.ROLE.ROLE_TYPE.xValue(ENUM_ROLE_TYPE.GUEST), 
@@ -45,8 +45,5 @@ public class MemberView : ViewBase
                 user.UPDATE_DT?.xValue(ENUM_DATE_FORMAT.YYYY_MM_DD_HH_MM_SS) ?? string.Empty
             });
         });
-
-        var result = AnsiConsole.Ask<bool>("exit : ", true);
-        if (!result) goto CONTINUE;
     }
 }
