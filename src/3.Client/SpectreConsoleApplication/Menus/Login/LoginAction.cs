@@ -4,12 +4,13 @@ using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
 
-namespace SpectreConsoleApplication.Menus;
+namespace SpectreConsoleApplication.Menus.Login;
 
 public class LoginAction : ActionBase
 {
     public LoginAction(ILogger<LoginAction> logger, 
-        IHttpClientFactory clientFactory) : base(logger, clientFactory)
+        ISession session,
+        IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
     {
     }
 

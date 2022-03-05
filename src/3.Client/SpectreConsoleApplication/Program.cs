@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Diagnostics.Metrics;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +7,7 @@ using Spectre.Console;
 using SpectreConsoleApplication;
 using SpectreConsoleApplication.Menus;
 using SpectreConsoleApplication.Menus.Counter;
+using SpectreConsoleApplication.Menus.Login;
 using SpectreConsoleApplication.Menus.Member;
 using SpectreConsoleApplication.Menus.WeatherForecast;
 
@@ -18,6 +18,8 @@ var builder = new HostBuilder()
         {
             config.BaseAddress = new Uri(AppConst.HTTP_URL);
         });
+
+        services.AddSingleton<ISession, Session>();
 
         #region [add action]
 
@@ -53,28 +55,28 @@ try
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        if (AppConst.ACESS_TOKEN.xIsEmpty())
+        var session = services.GetRequiredService<ISession>();
+        using (var loginView = services.GetRequiredService<LoginView>())
         {
-            var loginView = services.GetRequiredService<LoginView>();
             loginView.Show();
-
-            if (loginView.AccessToken.xIsEmpty())
-                throw new UnauthorizedAccessException("login failed.");
-            
-            AppConst.ACESS_TOKEN = loginView.AccessToken;
+            if (loginView.ViewResult.xIsTrue())
+            {
+                session.ACCESS_TOKEN = loginView.AccessToken;
+            }
         }
     }
 
     CONTINUE:
-    var isContinue = false;
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        var menuView = services.GetRequiredService<MainView>();
-        isContinue = menuView.Show();
+        using (var menuView = services.GetRequiredService<MainView>())
+        {
+            menuView.Show();
+            if(menuView.ViewResult.xIsTrue()) goto CONTINUE;
+            return; //exit
+        } 
     }
-    if (isContinue) goto CONTINUE;
-    else return; //exit;
 }
 catch (Exception ex)
 {

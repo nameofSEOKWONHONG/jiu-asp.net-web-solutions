@@ -5,6 +5,7 @@
     <projectFile>src/3.Client/BlazorWasmApplication/SpectreConsoleApplication/SpectreConsoleApplication.csproj</projectFile>
     <projectFile>src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj</projectFile>
     <projectFile>src/99.SampleApps/ServiceRunnerSampleApp/ServiceRunnerSampleApp.csproj</projectFile>
+    <projectFile>TryBackgroundApp/TryBackgroundApp.csproj</projectFile>
     <projectFile profileName="WeatherForecastApiApplication">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="YarpWebApplication">src/2.Server/3.Proxy/YarpWebApplication/YarpWebApplication.csproj</projectFile>
@@ -16,12 +17,55 @@
     <projectFile profileName="BlazorWasmApplication">src/3.Client/BlazorWasmApplication/BlazorWasmApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/3.Client/BlazorWasmApplication/BlazorWasmApplication.csproj</projectFile>
     <projectFile profileName="WorkerApplication">src/4.BackgroundApp/WorkerApplication/WorkerApplication.csproj</projectFile>
+    <projectFile profileName="TrayBackgroundWeb">TrayBackgroundWeb/TrayBackgroundWeb.csproj</projectFile>
+    <projectFile profileName="IIS Express">TrayBackgroundWeb/TrayBackgroundWeb.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/App.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/App.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Icons/Bulb.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Icons/Computers.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Icons/Error.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Icons/Inactive.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Icons/NetDrives.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Info.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Preferences.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/Images/Remove.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/MainWindow.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/MainWindow.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundApp/TrayBackgroundApp.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/Controllers/WeatherForecastController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/MessageHub.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/TrayBackgroundWeb.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/WeatherForecast.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrayBackgroundWeb/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_MOBILE.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Enums/ENUM_MOBILE_NATION_TYPE.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Entities/Account/TB_USER.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Entities/EntityBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Entities/EntityBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/LoginView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
@@ -44,8 +88,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1da7b6c7c71a954fe3eb2531c6476711b3e6d93a8d76795386d326bb9dbc/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6b6a76f3e1e1fe75a6fa9113ed5d746f8474b721b4ceadc24885043dc693c/StartupLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86f0d19339dd4ef28fa36caec9bf6e31d6f200/7e/93b63c44/PhoneNumber.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
@@ -67,10 +114,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="RiderCSharpLiveTemplatesSettingsId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SpectreConsoleApplication">
+  <component name="RunManager" selected=".NET Project.TryBackgroundApp">
     <configuration name="ServiceRunnerSampleApp" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -125,6 +172,24 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="TryBackgroundApp" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/TrayBackgroundApp/TrayBackgroundApp.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="BlazorServerApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/BlazorServerApplication.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -172,6 +237,36 @@
     </configuration>
     <configuration name="BlazorWasmApplication: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/BlazorWasmApplication.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="TrayBackgroundWeb" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/TrayBackgroundWeb/TrayBackgroundWeb.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="TrayBackgroundWeb" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="TrayBackgroundWeb: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/TrayBackgroundWeb/TrayBackgroundWeb.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
       <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
@@ -305,6 +400,9 @@
       <item itemvalue=".NET Project.SpectreConsoleApplication" />
       <item itemvalue=".NET Project.SpectreConsoleSample" />
       <item itemvalue=".NET Project.ServiceRunnerSampleApp" />
+      <item itemvalue=".NET Project.TryBackgroundApp" />
+      <item itemvalue=".NET Launch Settings Profile.TrayBackgroundWeb" />
+      <item itemvalue=".NET Launch Settings Profile.TrayBackgroundWeb: IIS Express" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -342,6 +440,8 @@
       <workItem from="1645802264679" duration="37000" />
       <workItem from="1645866879581" duration="69000" />
       <workItem from="1645868164436" duration="3263000" />
+      <workItem from="1646111943409" duration="8955000" />
+      <workItem from="1646456098265" duration="8544000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -406,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645866913838</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update">
+      <created>1645949023056</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1645949023056</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,5 +678,9 @@
         <watch expression="results.Errors" language="C#" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

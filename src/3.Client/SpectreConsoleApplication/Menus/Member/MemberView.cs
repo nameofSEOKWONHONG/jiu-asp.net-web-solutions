@@ -12,7 +12,8 @@ public class MemberView : ViewBase
 {
     private readonly MemberAction _action;
     public MemberView(ILogger<MemberView> logger,
-        MemberAction action) : base(logger)
+        ISession session,
+        MemberAction action) : base(logger, session)
     {
         _action = action;
     }
@@ -33,7 +34,7 @@ public class MemberView : ViewBase
             {
                 user.EMAIL.xValue(string.Empty), 
                 user.PASSWORD.xValue(string.Empty), 
-                user.PHONE_NUM.xValue<string>(string.Empty),
+                user.MOBILE.xValue<string>(string.Empty),
                 user.ACTIVE_USER_YN.xValue<string>(string.Empty), 
                 user.AUTO_CONFIRM_EMAIL_YN.xValue<string>(string.Empty),
                 user.ROLE.ROLE_TYPE.xValue(ENUM_ROLE_TYPE.GUEST), 

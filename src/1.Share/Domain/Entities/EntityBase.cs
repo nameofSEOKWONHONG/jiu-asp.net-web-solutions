@@ -23,7 +23,7 @@ namespace Domain.Entities
 
     public class AutoIncEntityBase : EntityBase
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
     }
 

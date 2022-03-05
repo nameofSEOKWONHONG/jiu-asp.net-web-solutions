@@ -9,9 +9,8 @@ using SpectreConsoleApplication.Menus.WeatherForecast;
 
 namespace SpectreConsoleApplication.Menus;
 
-public class MainView
+public class MainView : ViewBase
 {
-    private readonly ILogger _logger;
     private readonly IServiceProvider _services;
 
     private readonly Dictionary<string, Func<IServiceProvider, IViewBase>> _menuViewStates = new() 
@@ -21,13 +20,12 @@ public class MainView
         {"Member", (s) => s.GetRequiredService<MemberView>()}
     };
     
-    public MainView(ILogger<MainView> logger, IServiceProvider services)
+    public MainView(ILogger<MainView> logger, ISession session, IServiceProvider services) : base(logger, session)
     {
-        _logger = logger;
         _services = services;
     }
     
-    public bool Show()
+    public override void Show()
     {
         var menus = AnsiConsole.Prompt(
             new MultiSelectionPrompt<string>()
@@ -45,7 +43,11 @@ public class MainView
                     "Counter", "WeatherForecast", "Member", "Exit"
                 }));
         var menu = menus.Count == 1 ? menus.First() : null;
-        if(menu.xIsEquals("Exit")) return false;
+        if (menu.xIsEquals("Exit"))
+        {
+            this.ViewResult = false;
+            return;
+        }
 
         try
         {
@@ -64,8 +66,6 @@ public class MainView
         {
             AnsiConsole.WriteException(e, ExceptionFormats.Default);
         }
-
-        return true;
     }
 }
 

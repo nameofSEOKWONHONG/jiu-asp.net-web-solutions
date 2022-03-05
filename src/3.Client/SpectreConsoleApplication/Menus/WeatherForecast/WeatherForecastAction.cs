@@ -19,7 +19,7 @@ public sealed class WeatherForecastAction : ActionBase
                 using var client = _clientFactory.CreateClient(AppConst.HTTP_NAME);
                 var request =
                     new HttpRequestMessage(HttpMethod.Get, "api/WeatherForecast?api-version=1");
-                request.Headers.Add("Bearer", AppConst.ACESS_TOKEN);
+                request.Headers.Add("Bearer", _session.ACCESS_TOKEN);
                 var response = client.SendAsync(request).GetAwaiter().GetResult();
                 response.EnsureSuccessStatusCode();
                 var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
@@ -34,7 +34,8 @@ public sealed class WeatherForecastAction : ActionBase
     public TB_WEATHERFORECAST SelectedItem { get; set; }
     
     public WeatherForecastAction(ILogger<WeatherForecastAction> logger,
-        IHttpClientFactory clientFactory) : base(logger, clientFactory)
+        ISession session,
+        IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
     {
     }
 

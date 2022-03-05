@@ -2,7 +2,7 @@
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
 
-namespace SpectreConsoleApplication.Menus;
+namespace SpectreConsoleApplication.Menus.Login;
 
 public class LoginView : ViewBase
 {
@@ -10,7 +10,8 @@ public class LoginView : ViewBase
 
     private readonly LoginAction _action;
     public LoginView(ILogger<LoginView> logger, 
-        LoginAction action) : base(logger)
+        ISession session,
+        LoginAction action) : base(logger, session)
     {
         _action = action;
     }
@@ -20,6 +21,7 @@ public class LoginView : ViewBase
         if (!AnsiConsole.Confirm("Hello, Are you ready?"))
         {
             AnsiConsole.MarkupLine("Ok... :(");
+            this.ViewResult = false;
             return;
         }
 

@@ -152,11 +152,11 @@ namespace WebApiApplication.Extensions
         /// <returns></returns>
         private static IApplicationBuilder UseConfigureEndPoints(this IApplicationBuilder app) => app.UseEndpoints(endpoints =>
         {
-            app.UseEndpoints(endpoints =>
+            app.UseEndpoints(endpointRouteBuilder =>
             {
-                endpoints.MapRazorPages();
-                endpoints.MapDefaultControllerRoute();
-                endpoints.MapFallbackToFile("index.html");
+                endpointRouteBuilder.MapRazorPages();
+                endpointRouteBuilder.MapDefaultControllerRoute();
+                endpointRouteBuilder.MapFallbackToFile("index.html");
                 //endpoints.MapControllers();
             });
         });

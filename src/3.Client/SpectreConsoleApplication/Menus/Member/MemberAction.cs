@@ -9,7 +9,7 @@ namespace SpectreConsoleApplication.Menus.Member;
 
 public class MemberAction : ActionBase
 {
-    public MemberAction(ILogger<MemberAction> logger, IHttpClientFactory clientFactory) : base(logger, clientFactory)
+    public MemberAction(ILogger<MemberAction> logger, ISession session, IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
     {
     }
 
@@ -19,7 +19,7 @@ public class MemberAction : ActionBase
         var request =
             new HttpRequestMessage(HttpMethod.Get, "api/v1/Users/GetAll/1/10");
         request.Headers.Authorization =
-            new AuthenticationHeaderValue("Bearer", AppConst.ACESS_TOKEN);        
+            new AuthenticationHeaderValue("Bearer", _session.ACCESS_TOKEN);        
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();
         var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
