@@ -10,7 +10,8 @@ namespace SpectreConsoleApplication.Menus.Counter;
 public sealed class CounterView : ViewBase
 {
     private int _count;
-    public CounterView(ILogger<CounterView> logger) : base(logger)
+    public CounterView(ILogger<CounterView> logger,
+        ISession session) : base(logger, session)
     {
         
     }

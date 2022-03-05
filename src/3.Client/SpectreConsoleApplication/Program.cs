@@ -60,17 +60,17 @@ try
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        if (AppConst.ACESS_TOKEN.xIsEmpty())
+        var session = services.GetRequiredService<ISession>();
+        using (var loginView = services.GetRequiredService<LoginView>())
         {
-            var loginView = services.GetRequiredService<LoginView>();
             loginView.Show();
-
-            if (loginView.AccessToken.xIsEmpty())
-                throw new UnauthorizedAccessException("login failed.");
-            
-            AppConst.ACESS_TOKEN = loginView.AccessToken;
+            if (loginView.ViewResult.xIsTrue())
+            {
+                session.ACCESS_TOKEN = loginView.AccessToken;
+            }
         }
     }
+
 
     CONTINUE:
     var isContinue = false;

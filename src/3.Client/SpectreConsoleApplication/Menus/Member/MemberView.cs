@@ -14,7 +14,8 @@ public class MemberView : ViewBase
 {
     private readonly IMemberAction _action;
     public MemberView(ILogger<MemberView> logger,
-        IMemberAction action) : base(logger)
+        ISession session,
+        IMemberAction action) : base(logger, session)
     {
         _action = action;
     }

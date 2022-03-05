@@ -1,4 +1,6 @@
-﻿namespace SpectreConsoleApplication;
+﻿using Application.Infrastructure.Injection;
+
+namespace SpectreConsoleApplication;
 
 public class AppConst
 {
@@ -11,6 +13,7 @@ public interface ISession
     string ACCESS_TOKEN { get; set; }
 }
 
+[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton, typeof(ISession))]
 public class Session : ISession
 {
     private string _accessToken;
