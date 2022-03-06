@@ -1,7 +1,6 @@
 ﻿using System.Net.Http.Headers;
 using Application.Infrastructure.Injection;
 using Domain.Entities;
-using LiteDB;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SpectreConsoleApplication.Menus.Abstract;

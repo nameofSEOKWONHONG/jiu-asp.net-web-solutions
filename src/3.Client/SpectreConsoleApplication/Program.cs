@@ -1,20 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Xml;
 using Application.Infrastructure.Injection;
 using eXtensionSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Scripting.Utils;
 using Spectre.Console;
 using SpectreConsoleApplication;
 using SpectreConsoleApplication.Menus;
-using SpectreConsoleApplication.Menus.Abstract;
-using SpectreConsoleApplication.Menus.Counter;
-using SpectreConsoleApplication.Menus.Member;
-using SpectreConsoleApplication.Menus.WeatherForecast;
 
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>

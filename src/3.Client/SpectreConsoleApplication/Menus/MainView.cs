@@ -1,12 +1,7 @@
 ﻿using Application.Infrastructure.Injection;
 using eXtensionSharp;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
-using SpectreConsoleApplication.Menus.Abstract;
-using SpectreConsoleApplication.Menus.Counter;
-using SpectreConsoleApplication.Menus.Member;
-using SpectreConsoleApplication.Menus.WeatherForecast;
 
 namespace SpectreConsoleApplication.Menus;
 
@@ -15,18 +10,13 @@ public class MainView
 {
     private readonly ILogger _logger;
     private readonly IServiceProvider _services;
+    private readonly IMainAction _mainAction;
 
-    private readonly Dictionary<string, Func<IServiceProvider, IViewBase>> _menuViewStates = new() 
-    {
-        {"Counter", (s) => s.GetRequiredService<CounterView>()},
-        {"WeatherForecast", (s) => s.GetRequiredService<WeatherForecastView>()},
-        {"Member", (s) => s.GetRequiredService<MemberView>()}
-    };
-    
-    public MainView(ILogger<MainView> logger, IServiceProvider services)
+    public MainView(ILogger<MainView> logger, IServiceProvider services, IMainAction action)
     {
         _logger = logger;
         _services = services;
+        _mainAction = action;
     }
     
     public bool Show()
@@ -42,21 +32,16 @@ public class MainView
                 //     "Blackcurrant", "Blueberry", "Cloudberry",
                 //     "Elderberry", "Honeyberry", "Mulberry"
                 // })
-                .AddChoices(new[]
-                {
-                    "Counter", "WeatherForecast", "Member", "Exit"
-                }));
-        var menu = menus.Count == 1 ? menus.First() : null;
-        if(menu.xIsEquals("Exit")) return false;
+                .AddChoices(_mainAction.GetMenuNames()));
+        var selectedMenu = menus.Count == 1 ? menus.First() : null;
+        if(selectedMenu.xIsEquals("Exit")) return false;
 
         try
         {
-            var menuViewState = _menuViewStates[menu];
-            if (menuViewState.xIsNotEmpty())
+            var selectedView = _mainAction.GetView(selectedMenu, _services);
+            if (selectedView.xIsNotEmpty())
             {
-                var menuView = menuViewState(_services);
-                ViewBaseCore core = new ViewBaseCore(menuView);
-                core.RunLifeTime();
+                selectedView.RunLifeTime();
             }
             else
             {

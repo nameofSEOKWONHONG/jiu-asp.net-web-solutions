@@ -1,5 +1,4 @@
-﻿using System.Xml.Serialization;
-using Application.Infrastructure.Injection;
+﻿using Application.Infrastructure.Injection;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
