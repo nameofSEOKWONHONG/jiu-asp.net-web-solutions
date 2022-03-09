@@ -45,52 +45,13 @@ public abstract class BackgroundServiceBase : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            this._logger.LogInformation($"start");
+            this._logger.LogInformation($"service start");
             await this.ExecuteCore(stoppingToken);
-            this._logger.LogInformation($"end");
+            this._logger.LogInformation($"service end");
             await Task.Delay(_interval);
         }
     }
 }
 
-/// <summary>
-/// 메세지 전송 backgroundservice
-/// </summary>
-public abstract class MessageNotifyBackgroundServiceBase : BackgroundServiceBase
-{
-    protected MessageProviderResolver _messageProviderResolver;
-    protected INotifyMessageProvider _notifyMessageProvider;
-    
-    protected MessageNotifyBackgroundServiceBase(ILogger logger, 
-        IConfiguration configuration,
-        IServiceScopeFactory serviceScopeFactory,
-        MessageProviderResolver messageProviderResolver) : base(logger, configuration, serviceScopeFactory)
-    {
-        this._messageProviderResolver = messageProviderResolver;
-        //default
-        this._notifyMessageProvider = this._messageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE.EMAIL);
-    }
-}
 
-/// <summary>
-/// 병렬 실행 backgroundservice
-/// </summary>
-public abstract class ParallelBackgroundServiceBase : BackgroundServiceBase
-{
-    protected readonly ParallelOptions _parallelOptions;
-    protected ParallelBackgroundServiceBase(ILogger logger, 
-        IConfiguration configuration,
-        IServiceScopeFactory serviceScopeFactory, 
-        int maxDegreeOfParallelism = 1) : base(logger, configuration, serviceScopeFactory)
-    {
-        this._parallelOptions = new ParallelOptions()
-        {
-            MaxDegreeOfParallelism = maxDegreeOfParallelism
-        };
-    }
 
-    protected void ExecuteParallel()
-    {
-        
-    }
-}

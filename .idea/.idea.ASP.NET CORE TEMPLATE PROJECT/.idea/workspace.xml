@@ -27,74 +27,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Domain/Base/ClientSession.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/InjectionExtension.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/ClientConst.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/MemberService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/AvaloniaCrossPlatformApp.NetCore.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/App.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/App.razor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/AvaloniaCrossPlatformApp.Web.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/Pages/Index.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/Shared/MainLayout.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/Shared/MainLayout.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/_Imports.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/wwwroot/Logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/wwwroot/css/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/wwwroot/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/wwwroot/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/wwwroot/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/App.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/App.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Assets/avalonia-logo.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Bootstrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Utils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/ViewLocator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/ViewModels/MainViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/ViewModels/ViewModelBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/LoginView.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/LoginView.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/MainView.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/MainView.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/MainWindow.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/Views/MainWindow.axaml.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Sample.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/MessageNotifyBackgroundServiceBase.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/ParallelBackgroundService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Injection/ServiceLifeTimeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Injection/ServiceLifeTimeAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Injection/ServiceLifeTimeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Injection/ServiceLifeTimeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Domain.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/ClientApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/ClientApplication.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginCheckService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Counter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/Counter.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorWasmApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ActionBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Session.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Abstract/BackgroundServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/BackgroundServiceBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Abstract/DependencyInjectorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/DependencyInjectorBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/InjectionExtension.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/InjectionExtension.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp/App.axaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +63,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2a7bd2c3c4443b59303006c88fdcdd23e200/5a/df7aa740/ConsumerBuilder`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
@@ -134,6 +77,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/4.BackgroundApp/WorkerApplication/SampleWorker2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57407b0d38be4d44ac7bf05b4f9663a211b78/49/9f7121f6/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -147,6 +91,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
@@ -158,11 +103,14 @@
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Application/ApplicationInjector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Domain/Configuration/ScriptLoaderConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/656dc7c44e4e9988a66b1d2274cd2285fa395a65be6721d27c171d6d74c56182/SymmetricAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30bc83da1437441ca54c10a7795a986d842e98/da/f8e599a8/TraceRoutedEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e5a78beee0f4abd8ed7ef3636048cf1a20268/4c/db281812/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30bc83da1437441ca54c10a7795a986d842e98/4f/0bd6161d/EventRoute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/workspace/jiu-asp.net-web-solutions/src/4.BackgroundApp/WorkerApplication/SampleWorker1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
@@ -752,6 +700,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs</url>
+          <line>14</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\InjectionExtension\ServiceLifeTimeBuilder.cs" initialLine="14" containingFunctionPresentation="lambda expression inside '_serviceLifeTimeStates' declaration">
+            <startOffsets>
+              <option value="442" />
+            </startOffsets>
+            <endOffsets>
+              <option value="443" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

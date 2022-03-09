@@ -20,7 +20,6 @@ using Jering.Javascript.NodeJS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Quartz;
 
 namespace Application;
 
