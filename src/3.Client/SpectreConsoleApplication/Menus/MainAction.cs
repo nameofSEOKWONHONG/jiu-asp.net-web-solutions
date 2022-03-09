@@ -1,4 +1,5 @@
-﻿using Application.Infrastructure.Injection;
+﻿using Domain.Base;
+using InjectionExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SpectreConsoleApplication.Menus.Abstract;
@@ -25,7 +26,7 @@ public class MainAction : ActionBase, IMainAction
         {"Exit", (s) => null}
     };
     
-    public MainAction(ILogger<MainView> logger, ISession session, IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
+    public MainAction(ILogger<MainView> logger, IClientSession clientSession, IHttpClientFactory clientFactory) : base(logger, clientSession, clientFactory)
     {
     }
 

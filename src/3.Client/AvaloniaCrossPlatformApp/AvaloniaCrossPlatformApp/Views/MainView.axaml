@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:AvaloniaCrossPlatformApp.Views"
+             xmlns:viewModels="clr-namespace:AvaloniaCrossPlatformApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="*" d:DesignHeight="*"
+             x:Class="AvaloniaCrossPlatformApp.Views.MainView"
+             Foreground="White"
+             Background="#171C2C">
+    <Design.DataContext>
+        <viewModels:MainViewModel/>
+    </Design.DataContext>    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <views:LoginView Grid.Row="0" IsVisible="True" DataContext="{Binding LoginViewModel}"/>
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Greeting}" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   IsVisible="True"/>
+    </Grid>
+</UserControl>

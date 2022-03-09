@@ -1,6 +1,7 @@
-﻿using Application.Infrastructure.Injection;
+﻿using Domain.Base;
 using Domain.Entities.WeatherForecast;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
@@ -14,8 +15,8 @@ public sealed class WeatherForecastView : ViewBase
     private readonly IWeatherForecastAction _action;
     
     public WeatherForecastView(ILogger<WeatherForecastView> logger,
-        ISession session,
-        IWeatherForecastAction action) : base(logger, session)
+        IClientSession clientSession,
+        IWeatherForecastAction action) : base(logger, clientSession)
     {
         _action = action;
     }

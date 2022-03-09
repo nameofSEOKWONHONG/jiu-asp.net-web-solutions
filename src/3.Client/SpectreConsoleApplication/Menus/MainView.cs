@@ -1,5 +1,5 @@
-﻿using Application.Infrastructure.Injection;
-using eXtensionSharp;
+﻿using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 
@@ -34,8 +34,6 @@ public class MainView
                 // })
                 .AddChoices(_mainAction.GetMenuNames()));
         var selectedMenu = menus.Count == 1 ? menus.First() : null;
-        if(selectedMenu.xIsEquals("Exit")) return false;
-
         try
         {
             var selectedView = _mainAction.GetView(selectedMenu, _services);
@@ -45,7 +43,7 @@ public class MainView
             }
             else
             {
-                AnsiConsole.WriteLine("select try again...");
+                return false;
             }
         }
         catch (Exception e)

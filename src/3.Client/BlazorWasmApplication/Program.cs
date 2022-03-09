@@ -13,7 +13,7 @@ builder.RootComponents.Add<App>("#app");
 #region [Add application injection]
 
 builder.Services.AddScoped<CounterStateViewModel>();
-builder.Services.AddScoped<LoginCheckService>();
+builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<WeatherForecastService>();
 #endregion
 

@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
+      <ProjectReference Include="..\InjectionExtension\InjectionExtension.csproj" />
     </ItemGroup>
 
     <ItemGroup>

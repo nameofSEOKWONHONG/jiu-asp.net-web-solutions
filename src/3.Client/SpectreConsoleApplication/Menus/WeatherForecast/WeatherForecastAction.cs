@@ -1,9 +1,9 @@
-﻿using Application.Infrastructure.Injection;
+﻿using ClientApplication.Services;
+using Domain.Base;
 using Domain.Entities.WeatherForecast;
-using Domain.Response;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.WeatherForecast;
@@ -25,15 +25,7 @@ public sealed class WeatherForecastAction : ActionBase, IWeatherForecastAction
         {
             _items.xIfEmpty(() =>
             {
-                using var client = _clientFactory.CreateClient(AppConst.HTTP_NAME);
-                var request =
-                    new HttpRequestMessage(HttpMethod.Get, "api/WeatherForecast?api-version=1");
-                request.Headers.Add("Bearer", _session.ACCESS_TOKEN);
-                var response = client.SendAsync(request).GetAwaiter().GetResult();
-                response.EnsureSuccessStatusCode();
-                var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                var items = JsonConvert.DeserializeObject<ResultBase<TB_WEATHERFORECAST[]>>(result);
-                _items = items.Data;
+                _items = _weatherForecastService.GetsForecastAsync().GetAwaiter().GetResult();
             });
 
             return _items;
@@ -41,11 +33,14 @@ public sealed class WeatherForecastAction : ActionBase, IWeatherForecastAction
     }
     
     public TB_WEATHERFORECAST SelectedItem { get; set; }
-    
+
+    private readonly IWeatherForecastService _weatherForecastService;
     public WeatherForecastAction(ILogger<WeatherForecastAction> logger,
-        ISession session,
-        IHttpClientFactory clientFactory) : base(logger, session, clientFactory)
+        IClientSession clientSession,
+        IHttpClientFactory clientFactory,
+        IWeatherForecastService service) : base(logger, clientSession, clientFactory)
     {
+        _weatherForecastService = service;
     }
 
     public bool Save()

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Domain.Base;
+using Microsoft.Extensions.Logging;
 using Spectre.Console;
 
 namespace SpectreConsoleApplication.Menus.Abstract;
@@ -6,12 +7,12 @@ namespace SpectreConsoleApplication.Menus.Abstract;
 public abstract class ViewBase : IViewBase
 {
     public bool ViewResult { get; protected set; } = true;
-    protected ISession _session;
+    protected IClientSession ClientSession;
     protected ILogger _logger;
-    public ViewBase(ILogger logger, ISession session)
+    public ViewBase(ILogger logger, IClientSession clientSession)
     {
         _logger = logger;
-        _session = session;
+        ClientSession = clientSession;
     }
 
     public abstract void Show();

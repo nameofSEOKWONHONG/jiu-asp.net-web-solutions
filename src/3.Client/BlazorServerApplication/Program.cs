@@ -18,7 +18,7 @@ builder.Services.AddMudServices();
 
 #region [Add application injection]
 
-builder.Services.AddScoped<LoginCheckService>();
+builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<WeatherForecastService>();
 
 #endregion

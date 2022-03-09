@@ -44,7 +44,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await _weatherForecastService.GetForecastAsync();
+        forecasts = await _weatherForecastService.GetsForecastAsync();
         //forecasts = await ForecastService.GetForecastUseByHttpClientFactoryAsync();
     }
 }

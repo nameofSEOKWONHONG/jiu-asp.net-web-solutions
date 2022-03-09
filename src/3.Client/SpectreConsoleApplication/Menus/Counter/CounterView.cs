@@ -1,4 +1,5 @@
-﻿using Application.Infrastructure.Injection;
+﻿using Domain.Base;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
@@ -10,7 +11,7 @@ public sealed class CounterView : ViewBase
 {
     private int _count;
     public CounterView(ILogger<CounterView> logger,
-        ISession session) : base(logger, session)
+        IClientSession clientSession) : base(logger, clientSession)
     {
         
     }

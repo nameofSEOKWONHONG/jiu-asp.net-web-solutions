@@ -1,4 +1,5 @@
-﻿using Application.Infrastructure.Injection;
+﻿using Domain.Base;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
@@ -14,8 +15,8 @@ public class LoginView : ViewBase
 
     private readonly ILoginAction _action;
     public LoginView(ILogger<LoginView> logger,
-        ISession session,
-        ILoginAction action) : base(logger, session)
+        IClientSession clientSession,
+        ILoginAction action) : base(logger, clientSession)
     {
         _action = action;
     }

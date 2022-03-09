@@ -1,4 +1,5 @@
 ﻿using Application.Infrastructure.Validation;
+using Domain.Base;
 using eXtensionSharp;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
@@ -9,12 +10,12 @@ public abstract class ActionBase : IDisposable
 {
     protected readonly ILogger _logger;
     protected readonly IHttpClientFactory _clientFactory;
-    protected readonly ISession _session;
+    protected readonly IClientSession ClientSession;
 
-    protected ActionBase(ILogger logger, ISession session, IHttpClientFactory clientFactory)
+    protected ActionBase(ILogger logger, IClientSession clientSession, IHttpClientFactory clientFactory)
     {
         _logger = logger;
-        _session = session;
+        ClientSession = clientSession;
         _clientFactory = clientFactory;
     }
     

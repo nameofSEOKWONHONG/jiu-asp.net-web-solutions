@@ -1,0 +1,36 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AvaloniaCrossPlatformApp.ViewModels"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+             mc:Ignorable="d" d:DesignWidth="*" d:DesignHeight="*"
+             x:Class="AvaloniaCrossPlatformApp.Views.LoginView">
+    <Design.DataContext>
+        <viewModels:LoginViewModel />
+    </Design.DataContext>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Row="0" Name="InputId" Watermark="ID" Margin="10" Text="{Binding LoginID}"/>
+        <TextBox Grid.Row="1" Name="InputPw" Watermark="Password" Margin="10" Text="{Binding LoginPW}"/>
+        <Button Grid.Row="2" Click="LoginClick" HorizontalAlignment="Right" Margin="10">LOGIN</Button>
+        
+        <ui:InfoBar Grid.Row="3" Margin="10" 
+                    Name="Bar1"
+                    Title="Title"
+                    Message="{Binding LoginResultMessage}"
+                    IsOpen="{Binding IsLogin}"
+                    IsVisible="{Binding IsLogin}"
+                    Severity="{Binding InfoBarSeverity}"/>        
+    </Grid>
+
+
+</UserControl>

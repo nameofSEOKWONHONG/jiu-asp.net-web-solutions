@@ -1,7 +1,8 @@
-﻿using Application.Infrastructure.Injection;
+﻿using Domain.Base;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus.Abstract;
@@ -14,8 +15,8 @@ public class MemberView : ViewBase
 {
     private readonly IMemberAction _action;
     public MemberView(ILogger<MemberView> logger,
-        ISession session,
-        IMemberAction action) : base(logger, session)
+        IClientSession clientSession,
+        IMemberAction action) : base(logger, clientSession)
     {
         _action = action;
     }

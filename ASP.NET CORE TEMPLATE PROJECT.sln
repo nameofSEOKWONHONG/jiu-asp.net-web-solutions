@@ -61,6 +61,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectreConsoleApplication",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceRunnerSampleApp", "src\99.SampleApps\ServiceRunnerSampleApp\ServiceRunnerSampleApp.csproj", "{1BE25D88-2616-4A21-949E-70A8EC3D6871}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaCrossPlatformApp", "src\3.Client\AvaloniaCrossPlatformApp\AvaloniaCrossPlatformApp\AvaloniaCrossPlatformApp.csproj", "{5F47EDF0-E443-405C-8A79-169A0AB34B89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaCrossPlatformApp.NetCore", "src\3.Client\AvaloniaCrossPlatformApp\AvaloniaCrossPlatformApp.NetCore\AvaloniaCrossPlatformApp.NetCore.csproj", "{603E1F73-FBFC-49A4-8B7D-56EF16BA014F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaCrossPlatformApp.Web", "src\3.Client\AvaloniaCrossPlatformApp\AvaloniaCrossPlatformApp.Web\AvaloniaCrossPlatformApp.Web.csproj", "{8ADE0097-9ECA-48E9-8467-4F220207501E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectionExtension", "src\1.Share\InjectionExtension\InjectionExtension.csproj", "{2DA854B4-7101-4167-A34F-9442EA697FFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +147,22 @@ Global
 		{1BE25D88-2616-4A21-949E-70A8EC3D6871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BE25D88-2616-4A21-949E-70A8EC3D6871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BE25D88-2616-4A21-949E-70A8EC3D6871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F47EDF0-E443-405C-8A79-169A0AB34B89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F47EDF0-E443-405C-8A79-169A0AB34B89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F47EDF0-E443-405C-8A79-169A0AB34B89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F47EDF0-E443-405C-8A79-169A0AB34B89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{603E1F73-FBFC-49A4-8B7D-56EF16BA014F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{603E1F73-FBFC-49A4-8B7D-56EF16BA014F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{603E1F73-FBFC-49A4-8B7D-56EF16BA014F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{603E1F73-FBFC-49A4-8B7D-56EF16BA014F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ADE0097-9ECA-48E9-8467-4F220207501E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ADE0097-9ECA-48E9-8467-4F220207501E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ADE0097-9ECA-48E9-8467-4F220207501E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ADE0097-9ECA-48E9-8467-4F220207501E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA854B4-7101-4167-A34F-9442EA697FFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA854B4-7101-4167-A34F-9442EA697FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA854B4-7101-4167-A34F-9442EA697FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA854B4-7101-4167-A34F-9442EA697FFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{965ADEE6-1909-4F2B-84C9-E13A2F5B5901} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
@@ -167,5 +191,9 @@ Global
 		{08857612-91BB-4860-91C1-E920FDE42CC9} = {A323044B-00C6-42CE-A4A6-B208A0E09C9C}
 		{E73EC0BD-B7DB-4AEA-AE1A-35E1850D952A} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
 		{1BE25D88-2616-4A21-949E-70A8EC3D6871} = {A323044B-00C6-42CE-A4A6-B208A0E09C9C}
+		{5F47EDF0-E443-405C-8A79-169A0AB34B89} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
+		{603E1F73-FBFC-49A4-8B7D-56EF16BA014F} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
+		{8ADE0097-9ECA-48E9-8467-4F220207501E} = {0FF66333-6687-4EAE-BA9C-AD1BC26436D1}
+		{2DA854B4-7101-4167-A34F-9442EA697FFB} = {BA31D8EA-D0C8-4B75-A027-D94D7C0BCCC6}
 	EndGlobalSection
 EndGlobal

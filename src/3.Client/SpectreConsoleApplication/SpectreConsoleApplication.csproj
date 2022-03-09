@@ -4,7 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,5 +21,7 @@
       <ProjectReference Include="..\..\..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\..\1.Share\Application\Application.csproj" />
       <ProjectReference Include="..\..\1.Share\Domain\Domain.csproj" />
+      <ProjectReference Include="..\..\1.Share\InjectionExtension\InjectionExtension.csproj" />
+      <ProjectReference Include="..\1.Share\ClientApplication\ClientApplication.csproj" />
     </ItemGroup>
 </Project>

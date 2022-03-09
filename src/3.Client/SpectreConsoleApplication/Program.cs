@@ -1,7 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Application.Infrastructure.Injection;
+using ClientApplication.Services;
+using ClientApplication.ViewModel;
+using Domain.Base;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Spectre.Console;
@@ -11,12 +14,16 @@ using SpectreConsoleApplication.Menus;
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
     {   
-        services.AddHttpClient(AppConst.HTTP_NAME, config =>
+        services.AddHttpClient(ClientConst.CLIENT_NAME, config =>
         {
-            config.BaseAddress = new Uri(AppConst.HTTP_URL);
+            config.BaseAddress = new Uri(ClientConst.BASE_URL);
         });
         
         services.AddLifeTime();
+
+        #region [manual injection - not use]
+
+        services.AddScoped<ILoginService, LoginService>();
 
         // #region [add action]
         //
@@ -35,6 +42,9 @@ var builder = new HostBuilder()
         // services.AddTransient<MemberView>();
         //
         // #endregion
+
+        #endregion
+
     }).UseConsoleLifetime();
  
 var host = builder.Build();
@@ -52,13 +62,13 @@ try
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        var session = services.GetRequiredService<ISession>();
+        var session = services.GetRequiredService<IClientSession>();
         using (var loginView = services.GetRequiredService<LoginView>())
         {
             loginView.Show();
             if (loginView.ViewResult.xIsTrue())
             {
-                session.ACCESS_TOKEN = loginView.AccessToken;
+                session.AccessToken = loginView.AccessToken;
             }
         }
     }
