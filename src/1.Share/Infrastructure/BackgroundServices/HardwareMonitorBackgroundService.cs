@@ -34,7 +34,7 @@ public class HardwareMonitorBackgroundService : MessageNotifyBackgroundServiceBa
         };
     }
 
-    protected override async Task ExecuteCore(CancellationToken stoppingToken)
+    protected override async Task OnRunAsync(CancellationToken stoppingToken)
     {
         var warningCnt = 0;
         

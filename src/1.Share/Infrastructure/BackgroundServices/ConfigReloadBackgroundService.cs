@@ -38,7 +38,7 @@ public class ConfigReloadBackgroundService : BackgroundServiceBase
             }
         };
 
-    protected override async Task ExecuteCore(CancellationToken stoppingToken)
+    protected override async Task OnRunAsync(CancellationToken stoppingToken)
     {
         lock (_syncObj)
         {

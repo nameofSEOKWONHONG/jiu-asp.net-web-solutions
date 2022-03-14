@@ -30,7 +30,7 @@ namespace Infrastructure.BackgroundServices
             };            
         }
         
-        protected override async Task ExecuteCore(CancellationToken stoppingToken)
+        protected override async Task OnRunAsync(CancellationToken stoppingToken)
         {
             using (var c = new ConsumerBuilder<Ignore, string>(_consumerConfig).Build())
             {

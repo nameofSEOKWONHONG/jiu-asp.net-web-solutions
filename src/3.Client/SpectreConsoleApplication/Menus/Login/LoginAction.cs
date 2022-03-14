@@ -11,7 +11,7 @@ public interface ILoginAction
     Task<string> LoginAsync(string email, string password);
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(ILoginAction))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(ILoginAction))]
 public class LoginAction : ActionBase, ILoginAction
 {
     private readonly ILoginService _loginService;

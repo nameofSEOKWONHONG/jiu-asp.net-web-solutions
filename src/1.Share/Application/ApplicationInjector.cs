@@ -23,7 +23,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Application;
 
-public class ApplicationInjector : IDependencyInjectorBase
+public class ApplicationInjector : IServiceInjectionBase
 {
     private readonly Dictionary<ENUM_DATABASE_TYPE,
             Action<string, IServiceProvider, DbContextOptionsBuilder>>
@@ -240,7 +240,7 @@ public static class ApplicationInjectorExtension
 {
     public static void AddApplicationInjector(this IServiceCollection services, IConfiguration configuration)
     {
-        var injectorImpl = new DependencyInjectionLoader(new IDependencyInjectorBase[]
+        var injectorImpl = new ServiceLoader(new IServiceInjectionBase[]
         {
             new ApplicationInjector(),
             new NotifyMessageProviderInjector(),

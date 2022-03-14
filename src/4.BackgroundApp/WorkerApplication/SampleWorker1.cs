@@ -13,7 +13,7 @@ public class SampleWorker1 : BackgroundServiceBase
         _interval = int.Parse(configuration["SampleWorer1Options:Interval"]) * 1000;
     }
 
-    protected override async Task ExecuteCore(CancellationToken stopingToken)
+    protected override async Task OnRunAsync(CancellationToken stopingToken)
     {
         using (var scope = _serviceScopeFactory.CreateScope())
         {

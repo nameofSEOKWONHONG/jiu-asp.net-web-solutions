@@ -39,14 +39,19 @@ public abstract class BackgroundServiceBase : BackgroundService
         this._interval = 1000 * interval;
     }
 
-    protected abstract Task ExecuteCore(CancellationToken stopingToken);
+    /// <summary>
+    /// single 구조로 실행할 경우
+    /// </summary>
+    /// <param name="stopingToken"></param>
+    /// <returns></returns>
+    protected abstract Task OnRunAsync(CancellationToken stopingToken);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
         {
             this._logger.LogInformation($"service start");
-            await this.ExecuteCore(stoppingToken);
+            await this.OnRunAsync(stoppingToken);
             this._logger.LogInformation($"service end");
             await Task.Delay(_interval);
         }

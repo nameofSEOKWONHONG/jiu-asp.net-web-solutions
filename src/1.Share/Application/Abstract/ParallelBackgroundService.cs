@@ -25,7 +25,7 @@ public abstract class ParallelBackgroundService<TProducer> : BackgroundServiceBa
     /// </summary>
     /// <param name="stopingToken"></param>
     /// <returns></returns>
-    protected abstract Task<IEnumerable<TProducer>> ExecuteProducerAsync(CancellationToken stopingToken);
+    protected abstract Task<IEnumerable<TProducer>> OnProducerAsync(CancellationToken stopingToken);
     
     /// <summary>
     /// 조회된 데이터를 기반으로 동작할 코드를 작성한다.
@@ -33,7 +33,7 @@ public abstract class ParallelBackgroundService<TProducer> : BackgroundServiceBa
     /// <param name="producer"></param>
     /// <param name="stopingToken"></param>
     /// <returns></returns>
-    protected abstract Task ExecuteConsumerAsync(TProducer producer, CancellationToken stopingToken);
+    protected abstract Task OnConsumerAsync(TProducer producer, CancellationToken stopingToken);
 
     /// <summary>
     /// 메인 실행 프로세스
@@ -44,14 +44,14 @@ public abstract class ParallelBackgroundService<TProducer> : BackgroundServiceBa
         while (!stoppingToken.IsCancellationRequested)
         {
             this._logger.LogInformation($"ExecuteProducerAsync start");
-            var producers = await this.ExecuteProducerAsync(stoppingToken);
+            var producers = await this.OnProducerAsync(stoppingToken);
             this._logger.LogInformation($"ExecuteProducerAsync end");
             
             this._logger.LogInformation($"Parallel.ForEachAsync start");
             await Parallel.ForEachAsync(producers, new ParallelOptions(){ MaxDegreeOfParallelism = _maxDegreeOfParallelism}, async (producer, token) =>
             {
                 this._logger.LogInformation($"ExecuteConsumerAsync start");
-                await this.ExecuteConsumerAsync(producer, token);
+                await this.OnConsumerAsync(producer, token);
                 this._logger.LogInformation($"ExecuteConsumerAsync end");
             });
             this._logger.LogInformation($"Parallel.ForEachAsync end");

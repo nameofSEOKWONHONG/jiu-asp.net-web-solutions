@@ -9,7 +9,7 @@ using SpectreConsoleApplication.Utils;
 
 namespace SpectreConsoleApplication.Menus.WeatherForecast;
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton)]
 public sealed class WeatherForecastView : ViewBase
 {
     private readonly IWeatherForecastAction _action;

@@ -7,7 +7,7 @@ using TodoService.Services;
 
 namespace TodoService
 {
-    internal class TodoInjector : IDependencyInjectorBase
+    internal class TodoInjector : IServiceInjectionBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
@@ -20,7 +20,7 @@ namespace TodoService
     {
         public static void AddTodoInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectionLoader(new[]
+            var diCore = new ServiceLoader(new[]
             {
                 new TodoInjector()
             }, services, null);

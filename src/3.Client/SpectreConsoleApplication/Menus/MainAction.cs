@@ -11,11 +11,11 @@ namespace SpectreConsoleApplication.Menus;
 
 public interface IMainAction
 {
-    IEnumerable<string> GetMenuNames();
+    IEnumerable<string> GetViewNames();
     ViewBaseCore GetView(string menuName, IServiceProvider serviceProvider);
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton, typeof(IMainAction))]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton, typeof(IMainAction))]
 public class MainAction : ActionBase, IMainAction
 {
     private readonly Dictionary<string, Func<IServiceProvider, ViewBaseCore>> _menuViewStates = new() 
@@ -30,7 +30,7 @@ public class MainAction : ActionBase, IMainAction
     {
     }
 
-    public IEnumerable<string> GetMenuNames()
+    public IEnumerable<string> GetViewNames()
     {
         return _menuViewStates.Keys;
     }

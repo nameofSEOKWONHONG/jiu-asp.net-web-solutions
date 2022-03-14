@@ -13,7 +13,7 @@ namespace Application.Infrastructure.Message
     /// </summary>
     public delegate INotifyMessageProvider MessageProviderResolver(ENUM_NOTIFY_MESSAGE_TYPE type);
     
-    internal class NotifyMessageProviderInjector : IDependencyInjectorBase
+    internal class NotifyMessageProviderInjector : IServiceInjectionBase
     {
         private readonly Dictionary<ENUM_NOTIFY_MESSAGE_TYPE, Func<IServiceProvider, INotifyMessageProvider>>
             _notifyState =

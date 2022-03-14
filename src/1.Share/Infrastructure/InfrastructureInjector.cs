@@ -9,7 +9,7 @@ using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services
 {
-    public class InfrastructureInjector : IDependencyInjectorBase
+    public class InfrastructureInjector : IServiceInjectionBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
@@ -30,7 +30,7 @@ namespace Infrastructure.Services
     {
         public static void AddInfrastructureInjector(this IServiceCollection services)
         {
-            var injectorImpl = new DependencyInjectionLoader(new[]
+            var injectorImpl = new ServiceLoader(new[]
             {
                 new InfrastructureInjector()
             }, services, null);

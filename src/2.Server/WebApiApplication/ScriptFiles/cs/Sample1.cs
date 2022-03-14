@@ -1,8 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Application.Script.SharpScript;
 
 public class Sample1 : SharpScriptBase<bool, string, Dictionary<string, string>>
 {
+    public override Task ExecuteAsync()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void Execute()
     {
         this.Result = new Dictionary<string, string>()
@@ -12,11 +18,5 @@ public class Sample1 : SharpScriptBase<bool, string, Dictionary<string, string>>
             {"C", "3"},
             {"D", "4"},
         };
-    }
-
-    public override bool Validate(out string message)
-    {
-        message = string.Empty;
-        return true;
     }
 }

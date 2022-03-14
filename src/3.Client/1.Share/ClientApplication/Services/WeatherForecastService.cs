@@ -14,7 +14,7 @@ public interface IWeatherForecastService
     Task<TB_WEATHERFORECAST[]> GetsForecastAsync();
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeOfInterface:typeof(IWeatherForecastService))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeOfInterface:typeof(IWeatherForecastService))]
 public class WeatherForecastService : IWeatherForecastService
 {
     private readonly IHttpClientFactory _clientFactory;

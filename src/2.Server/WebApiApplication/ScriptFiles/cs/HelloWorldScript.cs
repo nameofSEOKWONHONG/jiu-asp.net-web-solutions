@@ -3,6 +3,7 @@
 //css_import ScriptFiles/cs/Sample1.cs, preserve_main;
 
 using System.Linq;
+using System.Threading.Tasks;
 using Application.Context;
 using Application.Script.SharpScript;
 using eXtensionSharp;
@@ -21,7 +22,12 @@ public class HelloWorldScript : SharpScriptBase<ApplicationDbContext, string, st
         _sample1.Options = false;
         _sample1.Request = string.Empty;
     }
-    
+
+    public override Task ExecuteAsync()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public override void Execute()
     {
         var user = this.Options.Users.FirstOrDefault();
@@ -31,28 +37,6 @@ public class HelloWorldScript : SharpScriptBase<ApplicationDbContext, string, st
         _sample1.Execute();
         this.Result =
             $"result : {result}, sample1 result keys : {string.Join("|", _sample1.Result.Keys)}, sample1 result values : {string.Join("|", _sample1.Result.Values)}";
-    }
-
-    public override bool Validate(out string message)
-    {
-        var valid = true;
-        message = string.Empty;
-
-        valid = this.Options.xIsNotEmpty();
-        if (valid.xIsFalse())
-        {
-            message = $"valid : {valid}, options is null";
-            return valid;
-        }
-
-        valid = this.Request.xIsNotEmpty();
-        if (valid.xIsFalse())
-        {
-            message = $"valid : {valid}, request is null";
-            return valid;
-        }
-        
-        return valid;
     }
 }
 

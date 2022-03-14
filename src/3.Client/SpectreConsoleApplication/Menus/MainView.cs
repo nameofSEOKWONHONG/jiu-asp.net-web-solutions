@@ -5,7 +5,7 @@ using Spectre.Console;
 
 namespace SpectreConsoleApplication.Menus;
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton)]
 public class MainView
 {
     private readonly ILogger _logger;
@@ -32,19 +32,13 @@ public class MainView
                 //     "Blackcurrant", "Blueberry", "Cloudberry",
                 //     "Elderberry", "Honeyberry", "Mulberry"
                 // })
-                .AddChoices(_mainAction.GetMenuNames()));
+                .AddChoices(_mainAction.GetViewNames()));
         var selectedMenu = menus.Count == 1 ? menus.First() : null;
         try
         {
             var selectedView = _mainAction.GetView(selectedMenu, _services);
-            if (selectedView.xIsNotEmpty())
-            {
-                selectedView.RunLifeTime();
-            }
-            else
-            {
-                return false;
-            }
+            if (selectedView.xIsEmpty()) return false;
+            selectedView.RunLifeTime();
         }
         catch (Exception e)
         {

@@ -19,7 +19,6 @@ internal class SharpScripter : ISharpScripter
         var instance = new TInstance();
         instance.Options = options;
         instance.Request = request;
-        if (!instance.Validate(out string message)) throw new Exception(message);
         instance.Execute();
         return instance.Result;
     }
@@ -33,10 +32,19 @@ internal class SharpScripter : ISharpScripter
         var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest, TResult>>(_sharpScriptItem.Code);
         executor.Options = options;
         executor.Request = request;
-
-        if (!executor.Validate(out string message)) throw new Exception(message);
-
         executor.Execute();
         return executor.Result;
+    }
+    
+    public ISharpScriptBase AddExecutor<TOptions, TRequest>(TOptions options, TRequest request,
+        string[] assemblies = null, Action<IEvaluator> assemblyTypeof = null)
+    {
+        var evaluator = CSScript.Evaluator.With(eval => eval.IsCachingEnabled = true);
+        assemblies.xForEach(item => { evaluator.ReferenceAssemblyOf(item); });
+        evaluator.ReferenceDomainAssemblies();
+        var executor = evaluator.LoadCode<SharpScriptBase<TOptions, TRequest>>(_sharpScriptItem.Code);
+        executor.Options = options;
+        executor.Request = request;
+        return executor;
     }
 }

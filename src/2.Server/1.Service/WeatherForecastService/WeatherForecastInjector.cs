@@ -7,7 +7,7 @@ using WeatherForecastService.Services;
 
 namespace WeatherForecastService
 {
-    internal class WeatherForecastInjector : IDependencyInjectorBase
+    internal class WeatherForecastInjector : IServiceInjectionBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
@@ -27,7 +27,7 @@ namespace WeatherForecastService
     {
         public static void AddWeatherForecastInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectionLoader(new[]
+            var diCore = new ServiceLoader(new[]
             {
                 new WeatherForecastInjector()
             }, services, null);

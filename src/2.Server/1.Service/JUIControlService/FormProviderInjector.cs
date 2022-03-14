@@ -8,7 +8,7 @@ namespace JUIControlService;
 
 public delegate IFormMaker FormProviderResolver(string manuCode);
 
-internal class FormProviderInjector : IDependencyInjectorBase
+internal class FormProviderInjector : IServiceInjectionBase
 {
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
@@ -25,7 +25,7 @@ public static class FormProviderInjectorExtension
 {
     public static void AddSectionProviderInjector(this IServiceCollection services)
     {
-        var impl = new DependencyInjectionLoader(new[]
+        var impl = new ServiceLoader(new[]
         {
             new FormProviderInjector()
         }, services, null);

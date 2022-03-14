@@ -37,7 +37,7 @@ namespace Infrastructure.BackgroundServices
             _cacheProviderResolver = cacheProviderResolver;
         }
 
-        protected override async Task ExecuteCore(CancellationToken stoppingToken)
+        protected override async Task OnRunAsync(CancellationToken stoppingToken)
         {
             using (var scope = this._serviceScopeFactory.CreateScope())
             {

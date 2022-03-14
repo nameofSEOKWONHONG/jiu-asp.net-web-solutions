@@ -3,19 +3,22 @@ using System.Text;
 
 namespace InjectionExtension;
 
+/// <summary>
+/// reflection을 이용한 서비스 주입
+/// </summary>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = true)]
-public class ServiceLifeTimeAttribute : Attribute
+public class AddServiceAttribute : Attribute
 {
-    public readonly ENUM_LIFE_TYPE LifeType;
+    public readonly ENUM_LIFE_TIME_TYPE LifeTimeType;
     public readonly Type TypeOfInterface;
-    public ServiceLifeTimeAttribute(ENUM_LIFE_TYPE lifeType, Type typeOfInterface = null)
+    public AddServiceAttribute(ENUM_LIFE_TIME_TYPE lifeTimeType, Type typeOfInterface = null)
     {
-        LifeType = lifeType;
+        LifeTimeType = lifeTimeType;
         TypeOfInterface = typeOfInterface;
     }
 }
 
-public enum ENUM_LIFE_TYPE
+public enum ENUM_LIFE_TIME_TYPE
 {
     Singleton,
     Transient,

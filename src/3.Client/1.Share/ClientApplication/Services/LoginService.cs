@@ -10,7 +10,7 @@ public interface ILoginService
     Task<string> LoginAsync(string email, string password);
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeOfInterface:typeof(ILoginService))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeOfInterface:typeof(ILoginService))]
 public class LoginService : ILoginService
 {
     private readonly IHttpClientFactory _clientFactory;

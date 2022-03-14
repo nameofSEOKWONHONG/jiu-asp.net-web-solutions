@@ -15,7 +15,7 @@ namespace Infrastructure.BackgroundServices
             
         }
 
-        protected override Task ExecuteCore(CancellationToken stopingToken)
+        protected override Task OnRunAsync(CancellationToken stopingToken)
         {
             throw new NotImplementedException();
         }

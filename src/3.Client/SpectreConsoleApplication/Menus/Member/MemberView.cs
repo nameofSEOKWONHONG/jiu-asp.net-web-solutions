@@ -10,7 +10,7 @@ using SpectreConsoleApplication.Utils;
 
 namespace SpectreConsoleApplication.Menus.Member;
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton)]
 public class MemberView : ViewBase
 {
     private readonly IMemberAction _action;

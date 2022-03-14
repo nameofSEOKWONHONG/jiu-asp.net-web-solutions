@@ -6,12 +6,12 @@ namespace InjectionExtension;
 
 public static class ServiceLifeTimeBuilder
 {
-    private static Dictionary<ENUM_LIFE_TYPE, Action<IServiceCollection, ServiceLifeTimeAttribute, Type>>
+    private static Dictionary<ENUM_LIFE_TIME_TYPE, Action<IServiceCollection, AddServiceAttribute, Type>>
         _serviceLifeTimeStates =
             new()
             {
                 {
-                    ENUM_LIFE_TYPE.Scope, (s, attr, impl) =>
+                    ENUM_LIFE_TIME_TYPE.Scope, (s, attr, impl) =>
                     {
                         attr.TypeOfInterface.xIfNotEmpty(() =>
                         {
@@ -23,7 +23,7 @@ public static class ServiceLifeTimeBuilder
                     }
                 },
                 {
-                    ENUM_LIFE_TYPE.Transient, (s, attr, impl) =>
+                    ENUM_LIFE_TIME_TYPE.Transient, (s, attr, impl) =>
                     {
                         attr.TypeOfInterface.xIfNotEmpty(() =>
                         {
@@ -35,7 +35,7 @@ public static class ServiceLifeTimeBuilder
                     }
                 },
                 {
-                    ENUM_LIFE_TYPE.Singleton, (s, attr, impl) =>
+                    ENUM_LIFE_TIME_TYPE.Singleton, (s, attr, impl) =>
                     {
                         attr.TypeOfInterface.xIfNotEmpty(() =>
                         {
@@ -60,14 +60,14 @@ public static class ServiceLifeTimeBuilder
                 .Select(x => Assembly.Load(x.FullName))
                 .SelectMany(x => x.GetExportedTypes())
                 .ToList()
-                .Where(x => x.GetCustomAttribute(typeof(ServiceLifeTimeAttribute)) != null);
+                .Where(x => x.GetCustomAttribute(typeof(AddServiceAttribute)) != null);
         
         serviceLifeTimeTypes.xForEach(type =>
         {
-            var attr = type.GetCustomAttribute(typeof(ServiceLifeTimeAttribute), true);
-            if (attr is ServiceLifeTimeAttribute serviceLifeTimeAttribute)
+            var attr = type.GetCustomAttribute(typeof(AddServiceAttribute), true);
+            if (attr is AddServiceAttribute serviceLifeTimeAttribute)
             {
-                _serviceLifeTimeStates[serviceLifeTimeAttribute.LifeType](services, serviceLifeTimeAttribute, type);
+                _serviceLifeTimeStates[serviceLifeTimeAttribute.LifeTimeType](services, serviceLifeTimeAttribute, type);
             }
         });
     }

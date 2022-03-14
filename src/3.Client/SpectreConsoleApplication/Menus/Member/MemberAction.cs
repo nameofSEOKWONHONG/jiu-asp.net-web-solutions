@@ -14,7 +14,7 @@ public interface IMemberAction
     IEnumerable<TB_USER> GetMembers();
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(IMemberAction))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(IMemberAction))]
 public class MemberAction : ActionBase, IMemberAction
 {
     private readonly IMemberService _memberService;

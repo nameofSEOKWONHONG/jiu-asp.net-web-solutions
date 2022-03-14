@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Application.Infrastructure.Cache
 {   
     public delegate ICacheProvider CacheProviderResolver(ENUM_CACHE_TYPE type);
-    internal class CacheProviderInjector : IDependencyInjectorBase
+    internal class CacheProviderInjector : IServiceInjectionBase
     {
         /// <summary>
         /// SOP (State Oriented Programing Sample)

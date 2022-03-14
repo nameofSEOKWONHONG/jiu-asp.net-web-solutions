@@ -8,7 +8,7 @@ using SpectreConsoleApplication.Menus.Login;
 namespace SpectreConsoleApplication.Menus;
 
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton)]
 public class LoginView : ViewBase
 {
     public string AccessToken { get; private set; }

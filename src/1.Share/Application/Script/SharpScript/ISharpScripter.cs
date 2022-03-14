@@ -10,4 +10,7 @@ public interface ISharpScripter
 
     TResult Execute<TOptions, TRequest, TResult>(TOptions options,
         TRequest request, string[] assemblies = null, Action<IEvaluator> assemblyTypeof = null);
+
+    ISharpScriptBase AddExecutor<TOptions, TRequest>(TOptions options, TRequest request, string[] assemblies = null,
+        Action<IEvaluator> assemblyTypeof = null);
 }

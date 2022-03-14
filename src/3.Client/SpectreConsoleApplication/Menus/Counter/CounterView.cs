@@ -6,7 +6,7 @@ using SpectreConsoleApplication.Menus.Abstract;
 
 namespace SpectreConsoleApplication.Menus.Counter;
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Singleton)]
+[AddService(ENUM_LIFE_TIME_TYPE.Singleton)]
 public sealed class CounterView : ViewBase
 {
     private int _count;

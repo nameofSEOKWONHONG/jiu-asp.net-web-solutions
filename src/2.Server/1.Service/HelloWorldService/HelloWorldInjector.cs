@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HelloWorldService
 {
-    internal class HelloWorldInjector : IDependencyInjectorBase
+    internal class HelloWorldInjector : IServiceInjectionBase
     {
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
@@ -22,7 +22,7 @@ namespace HelloWorldService
     {
         public static void AddHelloWorldInjector(this IServiceCollection services)
         {
-            var diCore = new DependencyInjectionLoader(new IDependencyInjectorBase[]
+            var diCore = new ServiceLoader(new IServiceInjectionBase[]
             {
                 new HelloWorldInjector()
             }, services, null);

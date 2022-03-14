@@ -8,7 +8,7 @@ public class SampleWorker2 : BackgroundServiceBase
     {
     }
 
-    protected override Task ExecuteCore(CancellationToken stopingToken)
+    protected override Task OnRunAsync(CancellationToken stopingToken)
     {
         _logger.LogInformation("run executecore");
         return Task.CompletedTask;

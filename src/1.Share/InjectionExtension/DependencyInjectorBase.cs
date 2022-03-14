@@ -5,22 +5,22 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Application.Abstract
 {
     /// <summary>
-    /// di 공통화 interface
+    /// service dependancy injection interface
     /// </summary>
-    public interface IDependencyInjectorBase
+    public interface IServiceInjectionBase
     {
         void Inject(IServiceCollection services, IConfiguration configuration);
     }
 
     /// <summary>
-    /// DI Loader 
+    /// 서비스 로더, 매뉴얼 서비스 등록을 지원함.
     /// </summary>
-    public sealed class DependencyInjectionLoader
+    public sealed class ServiceLoader
     {
-        private readonly IDependencyInjectorBase[] _dependencyInjectorBases;
+        private readonly IServiceInjectionBase[] _dependencyInjectorBases;
         private readonly IServiceCollection _services;
         private readonly IConfiguration _configuration;
-        public DependencyInjectionLoader(IDependencyInjectorBase[] dependencyInjectorBases,
+        public ServiceLoader(IServiceInjectionBase[] dependencyInjectorBases,
             IServiceCollection services,
             IConfiguration configuration)
         {

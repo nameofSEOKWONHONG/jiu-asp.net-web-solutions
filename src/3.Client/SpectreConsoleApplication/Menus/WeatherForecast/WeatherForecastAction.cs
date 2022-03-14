@@ -15,7 +15,7 @@ public interface IWeatherForecastAction
     bool Save();
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(IWeatherForecastAction))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(IWeatherForecastAction))]
 public sealed class WeatherForecastAction : ActionBase, IWeatherForecastAction
 {
     private IEnumerable<TB_WEATHERFORECAST> _items;

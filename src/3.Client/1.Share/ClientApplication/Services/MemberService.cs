@@ -12,7 +12,7 @@ public interface IMemberService
     Task<IEnumerable<TB_USER>> GetMembersAsync();
 }
 
-[ServiceLifeTime(ENUM_LIFE_TYPE.Scope, typeof(IMemberService))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(IMemberService))]
 public class MemberService : IMemberService
 {
     private readonly IHttpClientFactory _clientFactory;
