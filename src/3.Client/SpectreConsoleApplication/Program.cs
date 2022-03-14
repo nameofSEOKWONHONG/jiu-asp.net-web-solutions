@@ -1,14 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using ClientApplication.Services;
-using ClientApplication.ViewModel;
+﻿using ClientApplication.ViewModel;
 using Domain.Base;
 using eXtensionSharp;
 using InjectionExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Spectre.Console;
-using SpectreConsoleApplication;
 using SpectreConsoleApplication.Menus;
 
 var builder = new HostBuilder()
@@ -22,9 +18,7 @@ var builder = new HostBuilder()
         services.AddLifeTime();
 
         #region [manual injection - not use]
-
-        services.AddScoped<ILoginService, LoginService>();
-
+        
         // #region [add action]
         //
         // services.AddScoped<LoginAction>();
