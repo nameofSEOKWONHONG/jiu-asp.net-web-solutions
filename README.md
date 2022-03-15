@@ -48,6 +48,8 @@
         - <b>해당 프로젝트에 사용되는 `1.Share>Core>Application`은 제거될 예정입니다.</b>
     - BlazorServerApplication : Blazor Server Application 입니다.
     - BlazorWasmApplication : Blazor Wasm Application 입니다.
+    - AvaloniaCrossPlatformApp : Avalonia Application 입니다. 데스크탑 및 웹 프론트 크로스 플랫폼 프로젝트 입니다.
+    - SpectreConsoleApplication : SpectreConsole을 사용한 Console Applcation 프로젝트 입니다. 크로스 플랫폼을 지원합니다.
 
 ## 프로젝트 설정
 1. 외부 프로젝트 clone
@@ -131,6 +133,10 @@ WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 
 * Email
     * MimeKit
     * MailKit
+* Console
+    * SpectreConsole
+* Desktop Cross Platform
+    * Avalonia
 
 ## 프로젝트 규칙
 * 상수형 자료형은 대문자 표기
