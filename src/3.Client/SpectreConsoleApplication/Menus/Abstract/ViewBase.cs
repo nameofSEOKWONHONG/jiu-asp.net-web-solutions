@@ -32,12 +32,11 @@ public sealed class ViewBaseCore
         _viewBase = view;
     }
 
-    public void RunLifeTime()
+    public void Show()
     {
         CONTINUE:
         _viewBase.Show();
         var yn = AnsiConsole.Ask<string>("continue(Y/N) :", "Y");
         if (yn.ToUpper() == "Y") goto CONTINUE;
-        else return;
     }
 }

@@ -38,7 +38,7 @@ public class MainView
         {
             var selectedView = _mainAction.GetView(selectedMenu, _services);
             if (selectedView.xIsEmpty()) return false;
-            selectedView.RunLifeTime();
+            selectedView.Show();
         }
         catch (Exception e)
         {

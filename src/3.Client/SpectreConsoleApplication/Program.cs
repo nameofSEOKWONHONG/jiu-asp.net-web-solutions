@@ -77,7 +77,6 @@ try
         isContinue = menuView.Show();
     }
     if (isContinue) goto CONTINUE;
-    else return; //exit;
 }
 catch (Exception ex)
 {
