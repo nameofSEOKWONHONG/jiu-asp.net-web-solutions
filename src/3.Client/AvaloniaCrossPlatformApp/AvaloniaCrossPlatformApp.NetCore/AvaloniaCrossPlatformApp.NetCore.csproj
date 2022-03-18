@@ -13,7 +13,6 @@
         <PackageReference Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
     </ItemGroup>
     <ItemGroup>
-        <ProjectReference Include="..\..\..\..\..\FluentAvalonia\FluentAvalonia\FluentAvalonia.csproj" />
         <ProjectReference Include="..\AvaloniaCrossPlatformApp\AvaloniaCrossPlatformApp.csproj" />
     </ItemGroup>
 </Project>

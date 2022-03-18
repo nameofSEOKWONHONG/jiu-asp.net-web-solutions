@@ -5,6 +5,7 @@ using Infrastructure.Services.Account;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services
@@ -22,7 +23,9 @@ namespace Infrastructure.Services
                 .AddHostedService<CacheResetBackgroundService>()
                 .AddHostedService<HardwareMonitorBackgroundService>()
                 .AddHostedService<ConfigReloadBackgroundService>()
-                .AddMediatR(Assembly.Load("Infrastructure"));
+                .AddMediatR(Assembly.Load(nameof(Infrastructure)));
+
+            services.Configure<HostOptions>(opts => opts.ShutdownTimeout = TimeSpan.FromSeconds(10));
         }
     }
 

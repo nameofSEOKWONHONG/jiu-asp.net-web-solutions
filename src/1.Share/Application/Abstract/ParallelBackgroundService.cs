@@ -56,7 +56,7 @@ public abstract class ParallelBackgroundService<TProducer> : BackgroundServiceBa
             });
             this._logger.LogInformation($"Parallel.ForEachAsync end");
             
-            await Task.Delay(_interval);
+            await Task.Delay(_interval, stoppingToken);
         }
     }
 

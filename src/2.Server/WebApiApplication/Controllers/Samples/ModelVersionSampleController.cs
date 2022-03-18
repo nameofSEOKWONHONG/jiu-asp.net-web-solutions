@@ -89,6 +89,11 @@ public class SampleService : ISampleService
         return ResultBase<SampleDto>.Success(item);
     }
 
+    public ResultBase<IEnumerable<SampleDto>> CreateBulk(IEnumerable<SampleDto> items)
+    {
+        throw new NotImplementedException();
+    }
+
     public ResultBase<SampleDto> Update(SampleDto item)
     {
         var exists = _items.FirstOrDefault(m => m.Id == item.Id);
@@ -100,6 +105,11 @@ public class SampleService : ISampleService
         }, () => ResultBase<SampleDto>.Fail(exists));
     }
 
+    public ResultBase<IEnumerable<SampleDto>> UpdateBulk(IEnumerable<SampleDto> items)
+    {
+        throw new NotImplementedException();
+    }
+
     public ResultBase<SampleDto> Delete(SampleDto item)
     {
         var exists = _items.FirstOrDefault(m => m.Id == item.Id);
@@ -107,6 +117,11 @@ public class SampleService : ISampleService
             () => _items.Remove(exists) ? ResultBase<SampleDto>.Success(exists) : ResultBase<SampleDto>.Fail(), ResultBase<SampleDto>.Fail);
 
         return result;
+    }
+
+    public ResultBase<IEnumerable<SampleDto>> DeleteBulk(IEnumerable<SampleDto> items)
+    {
+        throw new NotImplementedException();
     }
 
     public ResultBase<SampleDto> Select(SampleDto item)

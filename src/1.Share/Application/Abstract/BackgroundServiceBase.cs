@@ -53,7 +53,7 @@ public abstract class BackgroundServiceBase : BackgroundService
             this._logger.LogInformation($"service start");
             await this.OnRunAsync(stoppingToken);
             this._logger.LogInformation($"service end");
-            await Task.Delay(_interval);
+            await Task.Delay(_interval, stoppingToken);
         }
     }
 }
