@@ -1,7 +1,13 @@
-﻿using System.Reflection;
-using System.Text;
+﻿using System.Transactions;
 
 namespace InjectionExtension;
+
+public enum ENUM_LIFE_TIME_TYPE
+{
+    Singleton,
+    Transient,
+    Scope,
+}
 
 /// <summary>
 /// reflection을 이용한 서비스 주입
@@ -18,9 +24,4 @@ public class AddServiceAttribute : Attribute
     }
 }
 
-public enum ENUM_LIFE_TIME_TYPE
-{
-    Singleton,
-    Transient,
-    Scope,
-}
+

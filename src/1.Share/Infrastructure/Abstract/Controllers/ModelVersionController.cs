@@ -17,11 +17,11 @@ public abstract class
     where TRequest : RequestBase<T>
     where TResponse : ResultBase<T>
 {
-    public IServiceBase<T> Service { get; }
+    public IRepositoryBase<T> Repository { get; }
 
-    protected ModelVersionController(IServiceBase<T> service)
+    protected ModelVersionController(IRepositoryBase<T> repository)
     {
-        this.Service = service;
+        this.Repository = repository;
     }
 
     [HttpPost("Get")]

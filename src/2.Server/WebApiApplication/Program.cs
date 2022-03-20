@@ -49,7 +49,7 @@ namespace WebApiApplication
 
                     #region #region [custom json config]
 
-                    configuration.AddJsonFile("filtersettings.json", true, true);
+                    configuration.AddJsonFile("./ConfigFiles/filtersettings.json", true, true);
 
                     #endregion
                 })
@@ -64,9 +64,7 @@ namespace WebApiApplication
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile(
-                    $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",
-                    optional: true)
-                .AddJsonFile("filtersettings.json", true, true)
+                    $"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json",optional: true)
                 .Build();
 
             Log.Logger = new LoggerConfiguration()

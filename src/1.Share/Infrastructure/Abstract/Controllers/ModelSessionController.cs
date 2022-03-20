@@ -14,11 +14,11 @@ public abstract class ModelSessionController<T, TRequest, TResponse> : SessionCo
     where TRequest : class
     where TResponse : class
 {
-    public IServiceBase<T> Service { get; }
+    public IRepositoryBase<T> Repository { get; }
     
-    protected ModelSessionController(IServiceBase<T> service)
+    protected ModelSessionController(IRepositoryBase<T> repository)
     {
-        this.Service = service;
+        this.Repository = repository;
     }
     
     public abstract Task<IActionResult> Get(TRequest request, int currentPage = 1, int pageSize = 50);

@@ -1,0 +1,121 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+using EFCore.BulkExtensions;
+using Microsoft.EntityFrameworkCore;
+
+namespace Application.Abstract;
+
+public interface IRepositoryBase<T>
+{
+     /// <summary>
+     /// 단건 생성
+     /// </summary>
+     /// <param name="item"></param>
+     /// <returns></returns>
+     public T Create(T item);
+     
+     /// <summary>
+     /// 다건 생성
+     /// </summary>
+     /// <param name="items"></param>
+     /// <returns></returns>
+     public void CreateBulk(IEnumerable<T> items);
+     
+     /// <summary>
+     /// 단건 수정
+     /// </summary>
+     /// <param name="item"></param>
+     /// <returns></returns>
+     public T Update(T item);
+     
+     /// <summary>
+     /// 다건 수정
+     /// </summary>
+     /// <param name="items"></param>
+     /// <returns></returns>
+     public void UpdateBulk(IEnumerable<T> items);
+     
+     /// <summary>
+     /// 단건 삭제
+     /// </summary>
+     /// <param name="item"></param>
+     /// <returns></returns>
+     public T Delete(T item);
+     
+     /// <summary>
+     /// 다건 삭제
+     /// </summary>
+     /// <param name="items"></param>
+     /// <returns></returns>
+     public void DeleteBulk(IEnumerable<T> items);
+     
+     /// <summary>
+     /// 단건 조회
+     /// </summary>
+     /// <param name="item"></param>
+     /// <returns></returns>
+     public T Fetch(T item);
+     
+     /// <summary>
+     /// 다건 조회
+     /// </summary>
+     /// <param name="request"></param>
+     /// <param name="currentPage"></param>
+     /// <param name="pageSize"></param>
+     /// <returns></returns>
+     public IEnumerable<T> Query(T request, int currentPage = 1, int pageSize = 50);
+}
+
+public abstract class RepositoryBase<TDbContext, TEntity> : IRepositoryBase<TEntity>
+     where TDbContext : DbContext
+     where TEntity : class
+{
+     protected readonly TDbContext _dbContext;
+     public RepositoryBase(TDbContext dbContext)
+     {
+          _dbContext = dbContext;
+     }
+     
+     public TEntity Create(TEntity item)
+     {
+          var result = _dbContext.Add(item);
+          _dbContext.SaveChanges();
+          return result.Entity;
+     }
+
+     public void CreateBulk(IEnumerable<TEntity> items)
+     {
+          _dbContext.BulkInsert<TEntity>(items.ToList());
+          _dbContext.SaveChanges();
+     }
+
+     public TEntity Update(TEntity item)
+     {
+          var result = _dbContext.Update(item);
+          _dbContext.SaveChanges();
+          return result.Entity;
+     }
+
+     public void UpdateBulk(IEnumerable<TEntity> items)
+     {
+          _dbContext.BulkUpdate(items.ToList());
+          _dbContext.SaveChanges();
+     }
+
+     public TEntity Delete(TEntity item)
+     {
+          var result = _dbContext.Remove(item);
+          _dbContext.SaveChanges();
+          return result.Entity;
+     }
+
+     public void DeleteBulk(IEnumerable<TEntity> items)
+     {
+          _dbContext.BulkDelete(items.ToList());
+          _dbContext.SaveChanges();
+     }
+
+     public abstract TEntity Fetch(TEntity item);
+
+     public abstract IEnumerable<TEntity> Query(TEntity request, int currentPage = 1, int pageSize = 50);
+}

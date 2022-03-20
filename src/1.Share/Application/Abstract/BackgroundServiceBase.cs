@@ -1,7 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
-using Application.Infrastructure.Message;
-using Domain.Enums;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -51,7 +50,14 @@ public abstract class BackgroundServiceBase : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             this._logger.LogInformation($"service start");
-            await this.OnRunAsync(stoppingToken);
+            try
+            {
+                await this.OnRunAsync(stoppingToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+            }
             this._logger.LogInformation($"service end");
             await Task.Delay(_interval, stoppingToken);
         }

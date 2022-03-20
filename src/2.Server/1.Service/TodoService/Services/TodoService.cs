@@ -6,9 +6,6 @@ using Application.Context;
 using Domain.Entities;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
-using SqlKata.Compilers;
-using SqlKata.Execution;
-using SqlSugar;
 
 namespace TodoService.Services
 {

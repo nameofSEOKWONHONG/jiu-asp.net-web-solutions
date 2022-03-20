@@ -1,11 +1,15 @@
-﻿using Application.Infrastructure.Validation;
+﻿using System.Transactions;
+using Application.Abstract;
+using Application.Infrastructure.Validation;
 using Domain.Response;
 using eXtensionSharp;
 using FluentValidation;
+using InjectionExtension;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Abstract.Controllers
 {
@@ -88,5 +92,75 @@ namespace Infrastructure.Abstract.Controllers
         protected async Task<IActionResult> ResultOkAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.SuccessAsync(entity));
 
         protected async Task<IActionResult> ResultFailAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.FailAsync(entity));
+
+        protected async Task<IActionResult> ExecuteAsync<TRequest, TResult>(IServiceBase<TRequest, TResult> serviceBase, TRequest request)
+        {
+            var executeCore = new ServiceCore<TRequest, TResult>(serviceBase);
+            return Ok(serviceBase.ExecuteCore());
+        }
+    }
+
+    public class Register
+    {
+        public void Registry(IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<ISampleService, SampleService>();
+        }
+    }
+
+    public interface ISampleService : IServiceBase<string, string>
+    {
+        
+    }
+
+    public class SampleService : ServiceBase<string, string>, ISampleService
+    {
+        public SampleService(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext)
+        {
+        }
+
+        protected override (bool isContinue, string message) OnPreExecute(ISessionContext sessionContext, string request)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override ResultBase<string> OnExecute(ISessionContext sessionContext, string Request)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class SampleDto
+    {
+        public string Name { get; set; }
+        public class Validator : AbstractValidator<SampleDto>
+        {
+            public Validator()
+            {
+                RuleFor(m => m.Name).NotNull();
+            }
+        }
+    }
+
+    public interface ISample2Service : IServiceBase<SampleDto, string>
+    {
+    }
+
+    [AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(ISample2Service))]
+    public class Sample2Service : ServiceBase<SampleDto, string, SampleDto.Validator>
+    {
+        public Sample2Service(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext)
+        {
+        }
+
+        protected override (bool isContinue, string message) OnPreExecute(ISessionContext sessionContext, SampleDto request)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override ResultBase<string> OnExecute(ISessionContext sessionContext, SampleDto Request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

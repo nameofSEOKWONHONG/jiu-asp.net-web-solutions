@@ -12,7 +12,7 @@ namespace Infrastructure.Abstract.Controllers;
 public interface IModelBaseController<T, TRequest>
     where TRequest : class
 {
-    IServiceBase<T> Service { get; }
+    IRepositoryBase<T> Repository { get; }
     
     Task<IActionResult> Get(TRequest request, int currentPage = 1, int pageSize = 50);
     

@@ -57,10 +57,6 @@
         <ProjectReference Include="..\1.Service\WeatherForecastService\WeatherForecastService.csproj" />
 
     </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="Files" />
-    </ItemGroup>
 
     <ItemGroup>
       <None Update="CsScriptFiles\js\modules\a.js">
@@ -110,6 +106,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="ScriptFiles\py\version_sample.py">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Files\dummy.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

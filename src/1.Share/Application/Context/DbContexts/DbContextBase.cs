@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using Chloe;
-using Chloe.Infrastructure;
-using Chloe.MySql;
-using Chloe.PostgreSQL;
-using Chloe.SqlServer;
 using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using MySql.Data.MySqlClient;
 using Npgsql;
 using SqlKata.Compilers;
 using SqlKata.Execution;
@@ -26,13 +20,14 @@ public class DbContextBase : DbContext
     protected readonly IDbConnection DbConnection;
     protected readonly ENUM_DATABASE_TYPE DbType;
 
-    private readonly Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>> _chloeDbState =
-        new()
-        {
-            {ENUM_DATABASE_TYPE.MSSQL, (db) => new MsSqlContext(() => db.GetDbConnection()) },
-            {ENUM_DATABASE_TYPE.MYSQL, (db) => new MySqlContext(new MySqlConnectionFactory(db.GetDbConnection())) },
-            {ENUM_DATABASE_TYPE.POSTGRES, (db) => new PostgreSQLContext(new PostgreSQLConnectionFactory(db.GetConnectionString()) ) },
-        };
+    // [Obsolete("no use", true)]
+    // private readonly Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>> _chloeDbState =
+    //     new()
+    //     {
+    //         {ENUM_DATABASE_TYPE.MSSQL, (db) => new MsSqlContext(() => db.GetDbConnection()) },
+    //         {ENUM_DATABASE_TYPE.MYSQL, (db) => new MySqlContext(new MySqlConnectionFactory(db.GetDbConnection())) },
+    //         {ENUM_DATABASE_TYPE.POSTGRES, (db) => new PostgreSQLContext(new PostgreSQLConnectionFactory(db.GetConnectionString()) ) },
+    //     };
 
     private readonly Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>> _sqlKataDbState =
         new()
@@ -52,12 +47,13 @@ public class DbContextBase : DbContext
         else throw new NotImplementedException();
     }
 
-    public IDbContext UseChloeDbContext()
-    {
-        var func = this._chloeDbState[DbType];
-        if (func.xIsEmpty()) throw new NotImplementedException($"dbtype {this.DbType.ToString()} not implemented.");
-        return func(this.Database);
-    }
+    // [Obsolete("no use", true)]
+    // public IDbContext UseChloeDbContext()
+    // {
+    //     var func = this._chloeDbState[DbType];
+    //     if (func.xIsEmpty()) throw new NotImplementedException($"dbtype {this.DbType.ToString()} not implemented.");
+    //     return func(this.Database);
+    // }
 
     public QueryFactory UseSqlKata()
     {
@@ -67,50 +63,52 @@ public class DbContextBase : DbContext
         return func(connection);
     }
     
-    internal sealed class MySqlConnectionFactory : IDbConnectionFactory
-    {
-        private string _connString = null;
-        private IDbConnection _connection;
-        public MySqlConnectionFactory(string connString)
-        {
-            this._connString = connString;
-        }
-
-        public MySqlConnectionFactory(IDbConnection connection)
-        {
-            this._connection = connection;
-        }
-        
-        public IDbConnection CreateConnection()
-        {
-            if (this._connection.xIsNotEmpty()) return this._connection;
-            
-            IDbConnection conn = new MySqlConnection(this._connString);
-            return conn;
-        }
-    }
-
-    internal sealed class PostgreSQLConnectionFactory : IDbConnectionFactory
-    {
-        private string _connString = null;
-        private IDbConnection _connection;
-        public PostgreSQLConnectionFactory(string connString)
-        {
-            this._connString = connString;
-        }
-
-        public PostgreSQLConnectionFactory(IDbConnection connection)
-        {
-            this._connection = connection;
-        }
-        
-        public IDbConnection CreateConnection()
-        {
-            if (this._connection.xIsNotEmpty()) return this._connection;
-            
-            NpgsqlConnection conn = new NpgsqlConnection(this._connString);
-            return conn;
-        }
-    }
+    // [Obsolete("no use", true)]
+    // internal sealed class MySqlConnectionFactory : IDbConnectionFactory
+    // {
+    //     private string _connString = null;
+    //     private IDbConnection _connection;
+    //     public MySqlConnectionFactory(string connString)
+    //     {
+    //         this._connString = connString;
+    //     }
+    //
+    //     public MySqlConnectionFactory(IDbConnection connection)
+    //     {
+    //         this._connection = connection;
+    //     }
+    //     
+    //     public IDbConnection CreateConnection()
+    //     {
+    //         if (this._connection.xIsNotEmpty()) return this._connection;
+    //         
+    //         IDbConnection conn = new MySqlConnection(this._connString);
+    //         return conn;
+    //     }
+    // }
+    //
+    // [Obsolete("no use", true)]
+    // internal sealed class PostgreSQLConnectionFactory : IDbConnectionFactory
+    // {
+    //     private string _connString = null;
+    //     private IDbConnection _connection;
+    //     public PostgreSQLConnectionFactory(string connString)
+    //     {
+    //         this._connString = connString;
+    //     }
+    //
+    //     public PostgreSQLConnectionFactory(IDbConnection connection)
+    //     {
+    //         this._connection = connection;
+    //     }
+    //     
+    //     public IDbConnection CreateConnection()
+    //     {
+    //         if (this._connection.xIsNotEmpty()) return this._connection;
+    //         
+    //         NpgsqlConnection conn = new NpgsqlConnection(this._connString);
+    //         return conn;
+    //     }
+    // }
 }
 

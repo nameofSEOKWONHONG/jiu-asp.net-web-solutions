@@ -42,7 +42,7 @@ namespace WebApiApplication
 
             #endregion
 
-            services.AddScoped<ISampleService, SampleService>();
+            //services.AddScoped<ISampleRepository, SampleRepository>();
 
         }
 

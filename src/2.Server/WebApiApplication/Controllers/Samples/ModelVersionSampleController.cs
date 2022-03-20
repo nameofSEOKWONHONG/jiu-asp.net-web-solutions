@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Abstract;
+using Application.Context;
+using CSScripting;
+using Domain.Entities;
 using Domain.Request;
 using Domain.Response;
 using eXtensionSharp;
 using Infrastructure.Abstract.Controllers;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApiApplication.Controllers;
 
 public class ModelVersionSampleController : ModelVersionController<SampleDto, RequestBase<SampleDto>, ResultBase<SampleDto>>
 {
-    public ModelVersionSampleController(ISampleService service) : base(service)
+    public ModelVersionSampleController(ISampleRepository repository) : base(repository)
     {
         
     }
     
     public override Task<IActionResult> Get(RequestBase<SampleDto> request, int currentPage = 1, int pageSize = 50)
     {
-        var result = Service.SelectAll(request.Data, currentPage, pageSize);
+        var result = Repository.Query(request.Data, currentPage, pageSize);
         return Task.FromResult<IActionResult>(Ok(result));
     }
 
     public override Task<IActionResult> GetByKey(int key)
     {
-        var result = Service.Select(new SampleDto() {Id = key});
+        var result = Repository.Fetch(new SampleDto() {Id = key});
         return Task.FromResult<IActionResult>(Ok(result));
     }
 
@@ -38,13 +42,13 @@ public class ModelVersionSampleController : ModelVersionController<SampleDto, Re
 
     public override Task<IActionResult> Create(RequestBase<SampleDto> request)
     {
-        var result = Service.Create(request.Data);
+        var result = Repository.Create(request.Data);
         return Task.FromResult<IActionResult>(Ok(result));
     }
 
     public override Task<IActionResult> Update(RequestBase<SampleDto> request)
     {
-        var result = Service.Update(request.Data);
+        var result = Repository.Update(request.Data);
         return Task.FromResult<IActionResult>(Ok(result));
     }
 
@@ -60,7 +64,7 @@ public class ModelVersionSampleController : ModelVersionController<SampleDto, Re
 
     public override Task<IActionResult> DeleteByKey(int key)
     {
-        var result = Service.Delete(new SampleDto() {Id = key});
+        var result = Repository.Delete(new SampleDto() {Id = key});
         return Task.FromResult<IActionResult>(Ok(result));
     }
 
@@ -70,70 +74,27 @@ public class ModelVersionSampleController : ModelVersionController<SampleDto, Re
     }
 }
 
-public interface ISampleService : IServiceBase<SampleDto>
+public interface ISampleRepository : IRepositoryBase<SampleDto>
 {
     
 }
 
-public class SampleService : ISampleService
+public class SampleRepository : RepositoryBase<ApplicationDbContext, TB_USER>
 {
-    public SampleService()
+    public SampleRepository(ApplicationDbContext dbContext) : base(dbContext)
     {
     }
-    
-    private readonly List<SampleDto> _items = new List<SampleDto>();
-    
-    public ResultBase<SampleDto> Create(SampleDto item)
+
+    public override TB_USER Fetch(TB_USER item)
     {
-        _items.Add(item);
-        return ResultBase<SampleDto>.Success(item);
+        return _dbContext.Users.First(m => m.ID == item.ID);
     }
 
-    public ResultBase<IEnumerable<SampleDto>> CreateBulk(IEnumerable<SampleDto> items)
+    public override IEnumerable<TB_USER> Query(TB_USER requst, int currentPage = 1, int pageSize = 50)
     {
-        throw new NotImplementedException();
-    }
-
-    public ResultBase<SampleDto> Update(SampleDto item)
-    {
-        var exists = _items.FirstOrDefault(m => m.Id == item.Id);
-        return exists.xIfNotEmpty<SampleDto, ResultBase<SampleDto>>(() =>
-        {
-            exists.Name = item.Name;
-            exists.RoleType = item.RoleType;
-            return ResultBase<SampleDto>.Success(exists);
-        }, () => ResultBase<SampleDto>.Fail(exists));
-    }
-
-    public ResultBase<IEnumerable<SampleDto>> UpdateBulk(IEnumerable<SampleDto> items)
-    {
-        throw new NotImplementedException();
-    }
-
-    public ResultBase<SampleDto> Delete(SampleDto item)
-    {
-        var exists = _items.FirstOrDefault(m => m.Id == item.Id);
-        var result = exists.xIfNotEmpty<SampleDto, ResultBase<SampleDto>>(
-            () => _items.Remove(exists) ? ResultBase<SampleDto>.Success(exists) : ResultBase<SampleDto>.Fail(), ResultBase<SampleDto>.Fail);
-
-        return result;
-    }
-
-    public ResultBase<IEnumerable<SampleDto>> DeleteBulk(IEnumerable<SampleDto> items)
-    {
-        throw new NotImplementedException();
-    }
-
-    public ResultBase<SampleDto> Select(SampleDto item)
-    {
-        var result = _items.FirstOrDefault(m => m.Id == item.Id);
-        return ResultBase<SampleDto>.Success(result);
-
-    }
-
-    public ResultBase<IEnumerable<SampleDto>> SelectAll(SampleDto request, int currentPage = 1, int pageSize = 50)
-    {
-        var result = _items.Where(m => m.Name.Contains(request.Name));
-        return ResultBase<IEnumerable<SampleDto>>.Success(result);
+        return _dbContext.Users.Where(m => m.EMAIL.Contains(requst.EMAIL))
+            .Skip((currentPage - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
     }
 }

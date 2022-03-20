@@ -141,27 +141,28 @@ namespace Application.Context
     }
 
     #region [chloe sample]
-    public class DatabaseSeederUseChloe : IDatabaseSeeder
-    {
-        private readonly ApplicationDbContext _dbContext;
-        public DatabaseSeederUseChloe(ApplicationDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-        
-        public void Initialize()
-        {
-            var migrationExists = _dbContext.UseChloeDbContext().Query<TB_MIGRAION>()
-                .Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false).FirstOrDefault();
-            migrationExists.xIfNotEmpty(() =>
-            {
-                migrationExists.UPDATE_DT = DateTime.UtcNow;
-                migrationExists.UPDATE_ID = "SYSTEM";
-                migrationExists.COMPLETE_YN = true;
-                _dbContext.UseChloeDbContext().Update(migrationExists);
-            });
-        }
-    }
+    // [Obsolete("no use", true)]
+    // public class DatabaseSeederUseChloe : IDatabaseSeeder
+    // {
+    //     private readonly ApplicationDbContext _dbContext;
+    //     public DatabaseSeederUseChloe(ApplicationDbContext dbContext)
+    //     {
+    //         _dbContext = dbContext;
+    //     }
+    //     
+    //     public void Initialize()
+    //     {
+    //         var migrationExists = _dbContext.UseChloeDbContext().Query<TB_MIGRAION>()
+    //             .Where(m => m.MIGRATION_YN == true && m.COMPLETE_YN == false).FirstOrDefault();
+    //         migrationExists.xIfNotEmpty(() =>
+    //         {
+    //             migrationExists.UPDATE_DT = DateTime.UtcNow;
+    //             migrationExists.UPDATE_ID = "SYSTEM";
+    //             migrationExists.COMPLETE_YN = true;
+    //             _dbContext.UseChloeDbContext().Update(migrationExists);
+    //         });
+    //     }
+    // }
     #endregion
     
 }
