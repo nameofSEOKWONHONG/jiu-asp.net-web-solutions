@@ -57,10 +57,10 @@ public static class ServiceLifeTimeBuilder
     public static void AddLifeTime(this IServiceCollection services)
     {
         var serviceLifeTimeTypes = AppDomain.CurrentDomain.GetAssemblies()
-                .Select(x => Assembly.Load(x.FullName))
-                .SelectMany(x => x.GetExportedTypes())
-                .ToList()
-                .Where(x => x.GetCustomAttribute(typeof(AddServiceAttribute)) != null);
+            .Select(x => Assembly.Load(x.FullName))
+            .SelectMany(x => x.GetExportedTypes())
+            .ToList()
+            .Where(x => x.GetCustomAttribute<AddServiceAttribute>(true) != null);
         
         serviceLifeTimeTypes.xForEach(type =>
         {
