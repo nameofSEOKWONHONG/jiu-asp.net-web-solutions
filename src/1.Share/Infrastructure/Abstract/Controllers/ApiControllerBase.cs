@@ -124,7 +124,12 @@ namespace Infrastructure.Abstract.Controllers
             throw new NotImplementedException();
         }
 
-        protected override ResultBase<string> OnExecute(ISessionContext sessionContext, string Request)
+        protected override string OnExecute(ISessionContext sessionContext, string Request)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void OnPostExecute(ISessionContext sessionContext, string result)
         {
             throw new NotImplementedException();
         }
@@ -147,18 +152,14 @@ namespace Infrastructure.Abstract.Controllers
     }
 
     [AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(ISample2Service))]
+    [Transaction(TransactionScopeOption.Suppress)]
     public class Sample2Service : ServiceBase<SampleDto, string, SampleDto.Validator>
     {
         public Sample2Service(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext)
         {
         }
 
-        protected override (bool isContinue, string message) OnPreExecute(ISessionContext sessionContext, SampleDto request)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override ResultBase<string> OnExecute(ISessionContext sessionContext, SampleDto Request)
+        protected override string OnExecute(ISessionContext sessionContext, SampleDto Request)
         {
             throw new NotImplementedException();
         }
