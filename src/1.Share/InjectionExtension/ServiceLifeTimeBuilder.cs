@@ -60,11 +60,11 @@ public static class ServiceLifeTimeBuilder
             .Select(x => Assembly.Load(x.FullName))
             .SelectMany(x => x.GetExportedTypes())
             .ToList()
-            .Where(x => x.GetCustomAttribute<AddServiceAttribute>(true) != null);
+            .Where(x => x.GetCustomAttribute<AddServiceAttribute>(false) != null);
         
         serviceLifeTimeTypes.xForEach(type =>
         {
-            var attr = type.GetCustomAttribute(typeof(AddServiceAttribute), true);
+            var attr = type.GetCustomAttribute<AddServiceAttribute>(false);
             if (attr is AddServiceAttribute serviceLifeTimeAttribute)
             {
                 _serviceLifeTimeStates[serviceLifeTimeAttribute.LifeTimeType](services, serviceLifeTimeAttribute, type);

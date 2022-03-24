@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Application.Abstract
 {
     /// <summary>
-    /// service dependancy injection interface
+    /// service dependency injection interface
     /// </summary>
     public interface IServiceInjectionBase
     {

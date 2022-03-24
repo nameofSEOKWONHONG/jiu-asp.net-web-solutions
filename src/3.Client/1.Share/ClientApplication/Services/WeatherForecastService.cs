@@ -33,7 +33,7 @@ public class WeatherForecastService : IWeatherForecastService
     {
         using var client = _clientFactory.CreateClient(ClientConst.CLIENT_NAME);
         var request =
-            new HttpRequestMessage(HttpMethod.Get, ClientConst.GETWEATHERFORECAST);
+            new HttpRequestMessage(HttpMethod.Get, ClientConst.GET_WEATHERFORECAST);
         request.Headers.Add("Bearer", _clientSession.AccessToken);
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();

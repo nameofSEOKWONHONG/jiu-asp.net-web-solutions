@@ -27,7 +27,7 @@ public class LoginService : ILoginService
             { nameof(password), password }
         };
         
-        var request = new HttpRequestMessage(HttpMethod.Post, ClientConst.LOGINASYNC);
+        var request = new HttpRequestMessage(HttpMethod.Post, ClientConst.LOGIN);
         request.Content = new StringContent(dic.xToJson(), Encoding.UTF8, ClientConst.MEDIA_TYPE_JSON);
         
         using var client = _clientFactory.CreateClient(ClientConst.CLIENT_NAME);

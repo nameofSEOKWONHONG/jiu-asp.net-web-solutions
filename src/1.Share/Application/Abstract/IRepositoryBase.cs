@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using EFCore.BulkExtensions;
+using Humanizer;
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Abstract;
@@ -12,49 +13,49 @@ public interface IRepositoryBase<T>
      /// </summary>
      /// <param name="item"></param>
      /// <returns></returns>
-     public T Create(T item);
+     T Create(T item);
      
      /// <summary>
      /// 다건 생성
      /// </summary>
      /// <param name="items"></param>
      /// <returns></returns>
-     public void CreateBulk(IEnumerable<T> items);
+     void CreateBulk(IEnumerable<T> items);
      
      /// <summary>
      /// 단건 수정
      /// </summary>
      /// <param name="item"></param>
      /// <returns></returns>
-     public T Update(T item);
+     T Update(T item);
      
      /// <summary>
      /// 다건 수정
      /// </summary>
      /// <param name="items"></param>
      /// <returns></returns>
-     public void UpdateBulk(IEnumerable<T> items);
+     void UpdateBulk(IEnumerable<T> items);
      
      /// <summary>
      /// 단건 삭제
      /// </summary>
      /// <param name="item"></param>
      /// <returns></returns>
-     public T Delete(T item);
+     T Delete(T item);
      
      /// <summary>
      /// 다건 삭제
      /// </summary>
      /// <param name="items"></param>
      /// <returns></returns>
-     public void DeleteBulk(IEnumerable<T> items);
+     void DeleteBulk(IEnumerable<T> items);
      
      /// <summary>
      /// 단건 조회
      /// </summary>
      /// <param name="item"></param>
      /// <returns></returns>
-     public T Fetch(T item);
+     T Fetch(T item);
      
      /// <summary>
      /// 다건 조회
@@ -63,7 +64,10 @@ public interface IRepositoryBase<T>
      /// <param name="currentPage"></param>
      /// <param name="pageSize"></param>
      /// <returns></returns>
-     public IEnumerable<T> Query(T request, int currentPage = 1, int pageSize = 50);
+     IEnumerable<T> Query(T request, int currentPage = 1, int pageSize = 50);
+
+     bool ComplexNonQuery(T entity);
+     IEnumerable<TView> ComplexQuery<TView>(T entity) => default;     
 }
 
 public abstract class RepositoryBase<TDbContext, TEntity> : IRepositoryBase<TEntity>
@@ -115,7 +119,11 @@ public abstract class RepositoryBase<TDbContext, TEntity> : IRepositoryBase<TEnt
           _dbContext.SaveChanges();
      }
 
-     public abstract TEntity Fetch(TEntity item);
+     public virtual bool ComplexNonQuery(TEntity entity) => default;
+     
+     public virtual IEnumerable<TView> ComplexQuery<TView>(TEntity entity) => default;
 
-     public abstract IEnumerable<TEntity> Query(TEntity request, int currentPage = 1, int pageSize = 50);
+     public virtual TEntity Fetch(TEntity item) => null;
+
+     public virtual IEnumerable<TEntity> Query(TEntity request, int currentPage = 1, int pageSize = 50) => null;
 }

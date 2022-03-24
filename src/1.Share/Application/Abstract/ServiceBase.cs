@@ -37,7 +37,7 @@ public abstract class ServiceBase<TRequest, TResult> : IServiceBase<TRequest, TR
         return new (true, string.Empty);
     }
 
-    protected abstract TResult OnExecute(ISessionContext sessionContext, TRequest Request);
+    protected abstract TResult OnExecute(ISessionContext sessionContext, TRequest request);
 
     protected virtual void OnPostExecute(ISessionContext sessionContext, TResult result)
     {
@@ -55,7 +55,7 @@ public abstract class ServiceBase<TRequest, TResult> : IServiceBase<TRequest, TR
 }
 
 public abstract class ServiceBase<TRequest, TResult, TValidator> : ServiceBase<TRequest, TResult>, IServiceBase<TRequest, TResult, TValidator>
-    where TValidator : AbstractValidator<TRequest>, new()
+    where TValidator : IValidator<TRequest>, new()
 {
     public ServiceBase(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext) 
     {
@@ -120,6 +120,10 @@ public sealed class ServiceCore<TRequest, TResult, TValidator> : ServiceCore<TRe
     }
 }
 
+/// <summary>
+/// TransactionScope Attribute
+/// <caution>dotnet core and higher version not support multi database transaction.</caution> 
+/// </summary>
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface, AllowMultiple = false, Inherited = true)]
 public class TransactionAttribute : Attribute
 {
