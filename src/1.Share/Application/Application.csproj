@@ -27,6 +27,7 @@
         <PackageReference Include="Microsoft.ClearScript.Core" Version="7.2.3" />
         <PackageReference Include="Microsoft.ClearScript.V8" Version="7.2.3" />
         <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.2.3" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
 
         <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />

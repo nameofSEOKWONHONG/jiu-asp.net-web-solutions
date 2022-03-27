@@ -21,7 +21,7 @@ namespace Infrastructure.Services.Account
         {
             if(searchCol.xIsNotEmpty())
             {
-                var filter = ExpressionUtils.BuildPredicate<TB_USER>(searchCol, "Contains", searchVal);
+                var filter = XExpressionUtils.BuildPredicate<TB_USER>(searchCol, "Contains", searchVal);
                 return await dbContext.Users
                     .Where(filter)
                     .Include(m => m.ROLE)
