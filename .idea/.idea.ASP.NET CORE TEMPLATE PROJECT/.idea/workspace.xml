@@ -9,6 +9,7 @@
     <projectFile>TrayApp/TrayApp.csproj</projectFile>
     <projectFile>GenerateCodeSample/GenerateCodeSample.csproj</projectFile>
     <projectFile>src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/AvaloniaCrossPlatformApp.NetCore.csproj</projectFile>
+    <projectFile>src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj</projectFile>
     <projectFile profileName="WeatherForecastApiApplication">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="YarpWebApplication">src/2.Server/3.Proxy/YarpWebApplication/YarpWebApplication.csproj</projectFile>
@@ -29,48 +30,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryExpression.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryPoco.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SampleEntity/TB_USER.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPoco.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoClause.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoJoin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Abstract/BackgroundServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/BackgroundServiceBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Abstract/ParallelBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Abstract/ParallelBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Abstract/ResponseResultBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/CacheProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/CacheProviderResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/MessageProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/MessageProviderResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/ISharpScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/ISharpScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScriptBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScripter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Script/SharpScript/SharpScripter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Base/ClientSession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Base/ClientSession.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/CacheResetBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/CacheResetBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/ConfigReloadBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/KafakaConsumerBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/RedisBackgroundService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/RedisBackgroundService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/InfrastructureInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/InfrastructureInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/DependencyInjectorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/DependencyInjectorBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/InjectionExtension.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/InjectionExtension.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/AddServiceAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/HelloWorldInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/HelloWorldInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/JUIControlService/FormProviderInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/JUIControlService/FormProviderInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/TodoInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/TodoInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/WeatherForecastInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/WeatherForecastInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/HelloWorldScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/Sample1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/cs/Sample1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/MemberService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/MemberService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/MainView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/4.BackgroundApp/WorkerApplication/SampleWorker1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/4.BackgroundApp/WorkerApplication/SampleWorker1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/4.BackgroundApp/WorkerApplication/SampleWorker2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/4.BackgroundApp/WorkerApplication/SampleWorker2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,16 +64,18 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff6e15065aca4366778dbe1a1b71b9164dea3534b71e1795c33fd6f159f52/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf4738d59bccc7df9289a82dc9ea3d4fe2fe2b32e215d63bbb19238824efa94a/LightExceptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff4a377ddd8b8376a34e93b525519e26e3989a7f57783aa958abc10f5ec87/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8fe5b9fa0d07425ba30fafd53baa5a7ea23880/06/e73ab3ff/ConfiguredTaskAwaitable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d91921f1921869d264c6f3f6e3870a127baa8b9364a7a39ffea392ac933d38/HostingAbstractionsHostExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c8/754b3734/Query.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2a7bd2c3c4443b59303006c88fdcdd23e200/5a/df7aa740/ConsumerBuilder`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
@@ -109,33 +85,39 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4bea9bed74d914e7435fff05d8a42fdc36c63d3645e88532abcfb1ad760fbee/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0a25b67411194658a5f1f8a977443fab3adc80/0/ExpressionType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/74d3bbc147764920b856fdb5242da7b3f85c98/c6/34addb1f/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4ae8601fa2e0de9edb66fcdad537cb69f8a4caa8c5c9ab8f22461e75c4fd30de/ConfiguredCancelableAsyncEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c3172a3c4ec02c9b6e980f04f74b9bf955a8484dcd864d97215bf91363455e/UpdateDelegates.Generated.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c6/e5534683/Join.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acdcb2d5e5a875937e43fc8f8bc4e366d563e824c567ec716bb37f7966ce43/SqlServerExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de1dc94e26de2eb8cdb9b19e9451c6a0738025b875978dc863de7ba87ee78c4/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d9d9faea5e6ed6438a777ef8c6eed41261f81d8e86488ed923ad92564f54e/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57407b0d38be4d44ac7bf05b4f9663a211b78/49/9f7121f6/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f940097558e4486b3fe85c12432b1ed11c00/e9/f7a20f38/MsSqlContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginLoader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginReloadedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ec2c283df8a4c8a866379380222ca5c21270/77/26ebc2d6/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0b5567882521e02aa3d40a7bce81b7235ccac4db588866e3498e614c3bc/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -156,8 +138,8 @@
     <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Internal/RuntimeOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92babe8112867ada958d7443496d6510f9173f428dbe621a94a6d174937/IHttpClientFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f5ba0bdc621188cd1e1d8baf2af936513bd6191585af6be27a3f92639e08/Parallel.ForEachAsync.cs" root0="SKIP_HIGHLIGHTING" />
@@ -178,11 +160,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.JWorker">
+  <component name="RunManager" selected=".NET Project.SqlQuerySampleApp">
     <configuration name="AvaloniaCrossPlatformApp.NetCore" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/bin/Debug/net6.0/AvaloniaCrossPlatformApp.NetCore.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -251,6 +234,24 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="net6.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="SqlQuerySampleApp" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -500,6 +501,7 @@
       <item itemvalue=".NET Project.SpectreConsoleSample" />
       <item itemvalue=".NET Project.ServiceRunnerSampleApp" />
       <item itemvalue=".NET Project.AvaloniaCrossPlatformApp.NetCore" />
+      <item itemvalue=".NET Project.SqlQuerySampleApp" />
     </list>
     <recent_temporary>
       <list>
@@ -547,7 +549,20 @@
       <workItem from="1646652592441" duration="8212000" />
       <workItem from="1646738911119" duration="4430000" />
       <workItem from="1646801037766" duration="4289000" />
-      <workItem from="1647262681460" duration="361000" />
+      <workItem from="1647262681460" duration="611000" />
+      <workItem from="1647269185682" duration="1108000" />
+      <workItem from="1647351527604" duration="240000" />
+      <workItem from="1647526656994" duration="122000" />
+      <workItem from="1647609012271" duration="12000" />
+      <workItem from="1647614933593" duration="897000" />
+      <workItem from="1647657754484" duration="5119000" />
+      <workItem from="1647688575667" duration="9385000" />
+      <workItem from="1647706421037" duration="1000" />
+      <workItem from="1647757270436" duration="7011000" />
+      <workItem from="1648041452728" duration="778000" />
+      <workItem from="1648046346204" duration="1694000" />
+      <workItem from="1648209337860" duration="12965000" />
+      <workItem from="1648362650202" duration="5463000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -619,7 +634,49 @@
       <option name="project" value="LOCAL" />
       <updated>1646484172757</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="renames&#10;add jworker">
+      <created>1647263273278</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647263273278</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update">
+      <created>1647270774416</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647270774416</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update">
+      <created>1647526742944</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647526742944</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update">
+      <created>1647776243001</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1647776243001</updated>
+    </task>
+    <task id="LOCAL-00015" summary="simple update">
+      <created>1648042226931</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1648042226931</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update servicebase, repository, servicecore">
+      <created>1648048044669</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1648048044669</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,9 +722,12 @@
     <MESSAGE value="change domain and impl console app" />
     <MESSAGE value="update and impl service runner" />
     <MESSAGE value="pray for ukraine" />
-    <MESSAGE value="update" />
     <MESSAGE value="impl attribute injection" />
-    <option name="LAST_COMMIT_MESSAGE" value="impl attribute injection" />
+    <MESSAGE value="renames&#10;add jworker" />
+    <MESSAGE value="update" />
+    <MESSAGE value="simple update" />
+    <MESSAGE value="update servicebase, repository, servicecore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update servicebase, repository, servicecore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -770,43 +830,82 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastAction.cs</url>
-          <line>27</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\SpectreConsoleApplication\Menus\WeatherForecast\WeatherForecastAction.cs" initialLine="27" containingFunctionPresentation="lambda expression inside property 'Items'">
+          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs</url>
+          <line>64</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="64" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="794" />
+              <option value="2418" />
             </startOffsets>
             <endOffsets>
-              <option value="872" />
+              <option value="2454" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs</url>
-          <line>22</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\4.BackgroundApp\JWorker\MainWorker.cs" initialLine="22" containingFunctionPresentation="constructor 'MainWorker'">
+          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs</url>
+          <line>66</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="66" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="842" />
+              <option value="2493" />
             </startOffsets>
             <endOffsets>
-              <option value="1139" />
+              <option value="2509" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="44" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs</url>
-          <line>26</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\4.BackgroundApp\JWorker\MainWorker.cs" initialLine="26" containingFunctionPresentation="constructor 'MainWorker'">
+          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs</url>
+          <line>67</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="67" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="1148" />
+              <option value="2530" />
             </startOffsets>
             <endOffsets>
-              <option value="1444" />
+              <option value="2559" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="45" />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs</url>
+          <line>23</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="21" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="955" />
+            </startOffsets>
+            <endOffsets>
+              <option value="990" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs</url>
+          <line>25</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="23" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="992" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1031" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs</url>
+          <line>21</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="21" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="903" />
+            </startOffsets>
+            <endOffsets>
+              <option value="949" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -818,7 +917,8 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="DotNetProject">
-        <watch expression="tests.GetType()" language="C#" />
+        <watch expression="body" language="C#" />
+        <watch expression="(body.Right.Member as FieldInfo).GetValue(body.Right.Expression.Value)" language="C#" />
       </configuration>
       <configuration name="LaunchSettings">
         <watch expression="ModelState.Values" language="C#" />
