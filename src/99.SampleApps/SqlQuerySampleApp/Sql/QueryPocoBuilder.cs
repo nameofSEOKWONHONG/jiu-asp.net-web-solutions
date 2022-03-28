@@ -42,11 +42,11 @@ public class QueryPocoBuilder
             {
                 join = join.AsRight();
             }
-            join = join.On(item.First, item.Second, item.Op);
-            item.OnItems.xForEach(onItem =>
-            {
-                join = join.On(onItem.First, onItem.Second.xValue<string>(), onItem.Op);
-            });
+            // join = join.On(item.First, item.Second, item.Op);
+            // item.OnItems.xForEach(onItem =>
+            // {
+            //     join = join.On(onItem.First, onItem.Second.xValue<string>(), onItem.Op);
+            // });
             self.Join(item.JoinTableName, j => join);
         });
 

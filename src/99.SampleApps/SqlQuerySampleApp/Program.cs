@@ -11,11 +11,11 @@ var q = new QueryPoco();
 var id = 2;
 var name = "test";
 var queryPoco = q.From<TB_USER>()
-    .Join<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID)
-        .On<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID)
-        .On<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID)
+    .Join<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID && TB_USER.NAME == TB_PHONE.NUMER)
+        // .On<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID)
+        // .On<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID)
     .Join<TB_USER, TB_GRADE>((TB_USER, TB_GRADE) => TB_USER.ID == TB_GRADE.USER_ID)
-        .On<TB_USER, TB_GRADE>((TB_USER, TB_GRADE) => TB_USER.ID == TB_GRADE.USER_ID)
+        // .On<TB_USER, TB_GRADE>((TB_USER, TB_GRADE) => TB_USER.ID == TB_GRADE.USER_ID)
     //.Where<TB_USER>((TB_USER, o) => TB_USER.ID == 1)
     .Where<TB_USER>((TB_USER) => TB_USER.ID == id)
     .And<TB_USER>((TB_USER) => TB_USER.NAME == name);
