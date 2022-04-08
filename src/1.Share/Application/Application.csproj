@@ -8,6 +8,8 @@
     <ItemGroup>        
         <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
         <PackageReference Include="CS-Script" Version="4.4.1" />
+        <PackageReference Include="DinkToPdf" Version="1.0.8" />
+        <PackageReference Include="DocumentFormat.OpenXml" Version="2.16.0" />
         <PackageReference Include="FluentValidation" Version="10.4.0" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
         <PackageReference Include="Hangfire.PostgreSql" Version="1.9.7" />
@@ -43,6 +45,8 @@
         <PackageReference Include="MongoDB.Driver" Version="2.15.0" />
 
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
+
+        <PackageReference Include="OpenXmlPowerTools-NetStandard" Version="4.4.21" />
 
         <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />        
         
