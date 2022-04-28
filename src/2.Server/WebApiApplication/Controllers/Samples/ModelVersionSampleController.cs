@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Application.Abstract;
+using Application.Base;
 using Application.Context;
 using CSScripting;
 using Domain.Entities;

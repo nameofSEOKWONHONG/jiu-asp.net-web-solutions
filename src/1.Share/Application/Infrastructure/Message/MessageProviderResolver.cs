@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.DependencyInjection;
-using Application.Abstract;
+using Application.Base;
 using Domain.Enums;
 using eXtensionSharp;
 using Microsoft.Extensions.Configuration;

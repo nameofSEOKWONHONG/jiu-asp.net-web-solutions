@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Abstract;
+namespace Application.Base;
 
 /// <summary>
 /// backgroundservice 기본

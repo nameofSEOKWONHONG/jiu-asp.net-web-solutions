@@ -4,7 +4,7 @@ using EFCore.BulkExtensions;
 using Humanizer;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Abstract;
+namespace Application.Base;
 
 public interface IRepositoryBase<T>
 {

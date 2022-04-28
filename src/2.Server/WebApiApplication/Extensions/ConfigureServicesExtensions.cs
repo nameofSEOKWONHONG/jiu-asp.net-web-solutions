@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using Application;
-using Application.Abstract;
+using Application.Base;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Message;

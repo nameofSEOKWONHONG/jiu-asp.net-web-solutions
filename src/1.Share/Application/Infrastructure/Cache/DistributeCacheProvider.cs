@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.Json;
-using Application.Abstract;
+using Application.Base;
 using eXtensionSharp;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Distributed;

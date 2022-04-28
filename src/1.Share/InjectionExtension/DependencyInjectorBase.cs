@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Application.Abstract
+namespace Application.Base
 {
     /// <summary>
     /// service dependency injection interface

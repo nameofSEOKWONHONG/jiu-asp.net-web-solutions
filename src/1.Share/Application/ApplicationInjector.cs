@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Application.Abstract;
+using Application.Base;
 using Application.Context;
 using Application.Infrastructure.Cache;
 using Application.Infrastructure.Configuration;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Application.Abstract;
+using Application.Base;
 using eXtensionSharp;
 using JUIControlService.Binders;
 using JUIControlService.Forms.Sale;

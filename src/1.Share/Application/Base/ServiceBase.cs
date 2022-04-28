@@ -8,7 +8,7 @@ using FluentValidation;
 using Microsoft.Extensions.Logging;
 using WebApiApplication.Services.Abstract;
 
-namespace Application.Abstract;
+namespace Application.Base;
 
 public interface IServiceBase<TRequest, TResult>
 {

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Abstract;
+namespace Application.Base;
 
 /// <summary>
 /// 메세지 전송 backgroundservice, BackgroundServiceBase기반으로 MessageProviderResolver/INotifyMessageProvider를 기본으로 제공한다.

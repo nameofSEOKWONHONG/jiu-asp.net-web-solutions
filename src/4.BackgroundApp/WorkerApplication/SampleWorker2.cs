@@ -1,4 +1,4 @@
-﻿using Application.Abstract;
+﻿using Application.Base;
 
 namespace WorkerApplication;
 

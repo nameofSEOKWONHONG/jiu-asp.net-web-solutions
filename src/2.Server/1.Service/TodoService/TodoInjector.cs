@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Application.Abstract;
+using Application.Base;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

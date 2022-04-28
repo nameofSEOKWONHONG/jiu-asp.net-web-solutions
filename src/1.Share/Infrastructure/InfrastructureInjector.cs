@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Application.Abstract;
+using Application.Base;
 using Infrastructure.BackgroundServices;
 using Infrastructure.Services.Account;
 using MediatR;

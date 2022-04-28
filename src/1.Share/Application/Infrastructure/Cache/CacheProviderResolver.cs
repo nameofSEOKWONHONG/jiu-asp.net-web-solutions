@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Extensions.Caching.Memory;
-using Application.Abstract;
+using Application.Base;
 using Application.Infrastructure.Cache.MSFaster;
 using Domain.Enums;
 using eXtensionSharp;

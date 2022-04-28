@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Application.Abstract;
+using Application.Base;
 using Application.Infrastructure.Cache;
 using Domain.Configuration;
 using Domain.Enums;

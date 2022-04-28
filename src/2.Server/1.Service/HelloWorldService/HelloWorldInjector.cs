@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using Application.Abstract;
+using Application.Base;
 using Application.Interfaces.HelloWorld;
 using eXtensionSharp;
 using MediatR;

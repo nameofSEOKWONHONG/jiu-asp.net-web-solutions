@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 using System.Transactions;
-using Application.Abstract;
+using Application.Base;
 using Application.Context;
 using Domain.Dtos;
 using Domain.Entities;

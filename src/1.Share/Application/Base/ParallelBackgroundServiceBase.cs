@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Application.Abstract;
+namespace Application.Base;
 
 public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundServiceBase
     where TEntity : class
