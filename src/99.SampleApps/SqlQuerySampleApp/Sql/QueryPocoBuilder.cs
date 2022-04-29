@@ -24,9 +24,21 @@ public class QueryPocoBuilder
         _queryPoco = queryPoco;
     }
 
-    public string Build()
+    public (string sql, List<object> bindingItems) Build()
     {
-        var self = _query.From(_queryPoco.FromTable);
+        var query = this.GenerateQuery();
+        var compiled = _compiler.Compile(query);
+        return (compiled.Sql, compiled.Bindings);
+    }
+
+    public Query Query => this.GenerateQuery();
+    
+    private Query GenerateQuery()
+    {
+        var query = _query.From(_queryPoco.FromTable);
+        
+        query.Select(_queryPoco.Selectors.ToArray());
+        
         _queryPoco.QueryPocoJoins.xForEach(item =>
         {
             var join = new Join().From(item.JoinTableName);
@@ -47,15 +59,20 @@ public class QueryPocoBuilder
             // {
             //     join = join.On(onItem.First, onItem.Second.xValue<string>(), onItem.Op);
             // });
-            self.Join(item.JoinTableName, j => join);
+            
+            item.JoinWhereItems.xForEach(joinItem =>
+            {
+                join = join.On(joinItem.First, joinItem.Second, joinItem.Op);
+            });
+            
+            query.Join(item.JoinTableName, j => join);
         });
 
         _queryPoco.QueryPocoClauses.xForEach(item =>
         {
-            self.Where(item.First, item.Op, item.Second);
+            query.Where(item.First, item.Op, item.SecondValue);
         });
 
-        var compiled = _compiler.Compile(self);
-        return compiled.ToString();
+        return query;
     }
 }

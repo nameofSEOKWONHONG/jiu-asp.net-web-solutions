@@ -8,16 +8,27 @@ namespace SqlQuerySample.Sql;
 
 public class QueryPoco
 {
+    public List<string> Selectors { get; private set; } = new List<string>();
     public string FromTable { get; private set; }
     public List<QueryPocoJoinClause> QueryPocoJoins { get; private set; } = new List<QueryPocoJoinClause>();
     public List<QueryPocoWhereClause> QueryPocoClauses { get; private set; } = new List<QueryPocoWhereClause>();
+
     public QueryPoco()
     {
     }
 
-    public QueryPoco From<TTable>()
+    public QueryPoco From<TEntity>(Expression<Func<TEntity, dynamic>> selector)
     {
-        FromTable = typeof(TTable).Name;
+        if (selector.Body.NodeType == ExpressionType.New)
+        {
+            var members = (selector.Body as NewExpression).Members;
+            members.xForEach(member =>
+            {
+                Selectors.Add($"{typeof(TEntity).Name}.{member.Name}");
+            });
+        }
+        
+        FromTable = typeof(TEntity).Name;
         return this;
     }
 
@@ -26,13 +37,13 @@ public class QueryPoco
     /// inner join
     /// </summary>
     /// <param name="expression"></param>
-    /// <typeparam name="TTableA"></typeparam>
-    /// <typeparam name="TTableB"></typeparam>
+    /// <typeparam name="FromEntity"></typeparam>
+    /// <typeparam name="ToEntity"></typeparam>
     /// <returns></returns>
-    public QueryPoco Join<TTableA, TTableB>(Expression<Func<TTableA, TTableB, bool>> expression, string joinType = "inner join")
+    public QueryPoco Join<FromEntity, ToEntity>(Expression<Func<FromEntity, ToEntity, bool>> expression, string joinType = "inner join")
     {
-        dynamic body = expression.Body;
-        var expressionText = (string) body.ToString();
+        var body = expression.Body as BinaryExpression;
+        var expressionText = body.ToString();
         var items = expressionText.xSplit(' ').ToList();
         var joinWhereClauseItems = new List<QueryPocoWhereClause>();
         for (var i = 0; i < items.Count; i++)
@@ -40,7 +51,7 @@ public class QueryPoco
             var joinWhereClauseItem = new QueryPocoWhereClause();
             joinWhereClauseItem.First = items[i].Replace("(", "").Replace(")", "");
             i += 1;
-            joinWhereClauseItem.Op = items[i].Replace("(", "").Replace(")", "");
+            joinWhereClauseItem.Op = GetOp(items[i].Replace("(", "").Replace(")", ""));
             i += 1;
             joinWhereClauseItem.Second = items[i].Replace("(", "").Replace(")", "");
             i += 1;
@@ -53,12 +64,13 @@ public class QueryPoco
                 break;
             }
             joinWhereClauseItem.NextOp = items[i].Replace("(", "").Replace(")", "");
-            joinWhereClauseItem.Key = $"{joinWhereClauseItem.First},{joinWhereClauseItem.Op},{joinWhereClauseItem.Second},{joinWhereClauseItem.NextOp}"
+            joinWhereClauseItem.Key = 
+                $"{joinWhereClauseItem.First},{joinWhereClauseItem.Op},{joinWhereClauseItem.Second},{joinWhereClauseItem.NextOp}"
                 .xGetHashCode();
             joinWhereClauseItems.Add(joinWhereClauseItem);
         }
 
-        var joinKey = $"{joinType},{typeof(TTableB).Name}".xGetHashCode();
+        var joinKey = $"{joinType},{typeof(ToEntity).Name}".xGetHashCode();
         var exists = QueryPocoJoins.FirstOrDefault(m => m.Key == joinKey);
         if (exists.xIsNotEmpty()) throw new Exception("join sql exists");
         _dummyKey = joinKey;
@@ -67,7 +79,7 @@ public class QueryPoco
         {
             Key = joinKey,
             JoinType = joinType,
-            JoinTableName = typeof(TTableB).Name,
+            JoinTableName = typeof(ToEntity).Name,
             JoinWhereItems = joinWhereClauseItems
         });
         return this;
@@ -113,20 +125,20 @@ public class QueryPoco
         return this;
     }
 
-    public QueryPoco Where<TTable>(Expression<Func<TTable, bool>> expression)
+    public QueryPoco Where<Entity>(Expression<Func<Entity, bool>> expression)
     {
         dynamic body = expression.Body;
         var first = $"{body.Left.Expression.Name}.{body.Left.Member.Name}";
-        var second = GetExpressionValue(body.Right.NodeType, body);
+        var secondValue = GetExpressionValue(body.Right.NodeType, body);
         var op = GetOp(body.NodeType);
-        var generateKey = $"{first},{second},{op}".xGetHashCode();
+        var generateKey = $"{first},{secondValue},{op}".xGetHashCode();
         var exists = QueryPocoClauses.FirstOrDefault(m => m.Key == generateKey);
         if (exists.xIsEmpty())
         {
             QueryPocoClauses.Add(new QueryPocoWhereClause()
             {
                 First = first,
-                Second = second,
+                SecondValue = secondValue,
                 Op = op
             });             
         }
@@ -134,7 +146,7 @@ public class QueryPoco
         return this;
     }
 
-    public QueryPoco And<TTable>(Expression<Func<TTable, bool>> expression)
+    public QueryPoco And<Entity>(Expression<Func<Entity, bool>> expression)
     {
         this.Where(expression);
         return this;

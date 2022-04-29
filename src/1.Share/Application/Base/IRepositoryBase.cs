@@ -64,10 +64,7 @@ public interface IRepositoryBase<T>
      /// <param name="currentPage"></param>
      /// <param name="pageSize"></param>
      /// <returns></returns>
-     IEnumerable<T> Query(T request, int currentPage = 1, int pageSize = 50);
-
-     bool ComplexNonQuery(T entity);
-     IEnumerable<TView> ComplexQuery<TView>(T entity) => default;     
+     IEnumerable<T> Query(T request, int currentPage = 1, int pageSize = 50);     
 }
 
 public abstract class RepositoryBase<TDbContext, TEntity> : IRepositoryBase<TEntity>
@@ -118,10 +115,6 @@ public abstract class RepositoryBase<TDbContext, TEntity> : IRepositoryBase<TEnt
           _dbContext.BulkDelete(items.ToList());
           _dbContext.SaveChanges();
      }
-
-     public virtual bool ComplexNonQuery(TEntity entity) => default;
-     
-     public virtual IEnumerable<TView> ComplexQuery<TView>(TEntity entity) => default;
 
      public virtual TEntity Fetch(TEntity item) => null;
 
