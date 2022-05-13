@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Application.Context;
 using Application.Script.SharpScript;
 using eXtensionSharp;
+using Infrastructure.Persistence;
 
 /// <summary>
 /// 캐시 전 : 0.2~3초

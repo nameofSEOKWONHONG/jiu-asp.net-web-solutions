@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
 
-namespace Application.Context
+namespace Infrastructure.Persistence
 {
     public sealed class ApplicationDbContext : DbContextBase
     {   
@@ -18,7 +19,15 @@ namespace Application.Context
         /// <param name="options"></param>
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
+            if (this.Database != null)
+            {
+                
+            }
+        }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

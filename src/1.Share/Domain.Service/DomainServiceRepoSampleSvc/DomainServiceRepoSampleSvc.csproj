@@ -10,6 +10,7 @@
       <ProjectReference Include="..\..\..\..\..\eXtensionSharp\src\eXtensionSharp.csproj" />
       <ProjectReference Include="..\..\Application\Application.csproj" />
       <ProjectReference Include="..\..\Domain\Domain.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />
       <ProjectReference Include="..\..\InjectionExtension\InjectionExtension.csproj" />
     </ItemGroup>
 

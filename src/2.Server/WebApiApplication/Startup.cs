@@ -1,6 +1,7 @@
 using System.Linq;
 using Application.Context;
 using Infrastructure.Abstract;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

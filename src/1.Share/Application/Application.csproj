@@ -7,10 +7,10 @@
 
     <ItemGroup>        
         <PackageReference Include="Confluent.Kafka" Version="1.8.2" />
-        <PackageReference Include="CS-Script" Version="4.4.1" />
+        <PackageReference Include="CS-Script" Version="4.4.2" />
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
         <PackageReference Include="DocumentFormat.OpenXml" Version="2.16.0" />
-        <PackageReference Include="FluentValidation" Version="10.4.0" />
+        <PackageReference Include="FluentValidation" Version="11.0.0" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
         <PackageReference Include="Hangfire.PostgreSql" Version="1.9.7" />
         <PackageReference Include="Hangfire.SqlServer" Version="1.7.28" />
@@ -26,9 +26,9 @@
         
         <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.ClearScript.Core" Version="7.2.3" />
-        <PackageReference Include="Microsoft.ClearScript.V8" Version="7.2.3" />
-        <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.2.3" />
+        <PackageReference Include="Microsoft.ClearScript.Core" Version="7.2.5" />
+        <PackageReference Include="Microsoft.ClearScript.V8" Version="7.2.5" />
+        <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.2.5" />
         <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
 
         <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.3" />
@@ -58,10 +58,10 @@
         <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.3" />
         <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
         
-        <PackageReference Include="Microsoft.FASTER.Server" Version="1.9.16" />
+        <PackageReference Include="Microsoft.FASTER.Server" Version="2.0.3" />
         
-        <PackageReference Include="MailKit" Version="3.1.1" />
-        <PackageReference Include="MimeKit" Version="3.1.1" />
+        <PackageReference Include="MailKit" Version="3.2.0" />
+        <PackageReference Include="MimeKit" Version="3.2.0" />
         <PackageReference Include="Quartz" Version="3.3.3" />
         <PackageReference Include="Quartz.AspNetCore" Version="3.3.3" />
         <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.3.3" />

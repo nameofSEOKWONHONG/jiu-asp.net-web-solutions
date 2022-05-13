@@ -14,6 +14,7 @@ using Application.Script.SharpScript;
 using Domain.Configuration;
 using Hangfire;
 using HelloWorldService;
+using Infrastructure;
 using Infrastructure.Services; 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpLogging;

@@ -10,6 +10,7 @@ using Domain.Enums;
 using eXtensionSharp;
 using FluentValidation;
 using Infrastructure.Abstract.Controllers;
+using Infrastructure.Persistence;
 using Microsoft.Extensions.Logging;
 
 namespace WebApiApplication.Controllers

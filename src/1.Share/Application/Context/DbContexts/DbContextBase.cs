@@ -19,16 +19,7 @@ public class DbContextBase : DbContext
 {
     protected readonly IDbConnection DbConnection;
     protected readonly ENUM_DATABASE_TYPE DbType;
-
-    // [Obsolete("no use", true)]
-    // private readonly Dictionary<ENUM_DATABASE_TYPE, Func<DatabaseFacade, IDbContext>> _chloeDbState =
-    //     new()
-    //     {
-    //         {ENUM_DATABASE_TYPE.MSSQL, (db) => new MsSqlContext(() => db.GetDbConnection()) },
-    //         {ENUM_DATABASE_TYPE.MYSQL, (db) => new MySqlContext(new MySqlConnectionFactory(db.GetDbConnection())) },
-    //         {ENUM_DATABASE_TYPE.POSTGRES, (db) => new PostgreSQLContext(new PostgreSQLConnectionFactory(db.GetConnectionString()) ) },
-    //     };
-
+    private readonly string _connection;
     private readonly Dictionary<ENUM_DATABASE_TYPE, Func<IDbConnection, QueryFactory>> _sqlKataDbState =
         new()
         {
@@ -36,7 +27,7 @@ public class DbContextBase : DbContext
             { ENUM_DATABASE_TYPE.MYSQL, (con) => new QueryFactory(con, new MySqlCompiler()) },
             { ENUM_DATABASE_TYPE.POSTGRES, (con) => new QueryFactory(con, new PostgresCompiler()) },
         };
-
+    
     public DbContextBase(DbContextOptions options) : base(options)
     {
         if(this.Database.ProviderName.ToUpper().Contains("SQLSERVER")) this.DbType = ENUM_DATABASE_TYPE.MSSQL;
@@ -46,14 +37,20 @@ public class DbContextBase : DbContext
         else if(this.Database.ProviderName.ToUpper().Contains("PGSQL")) this.DbType = ENUM_DATABASE_TYPE.POSTGRES;
         else throw new NotImplementedException();
     }
+    
+    public DbContextBase(string connection)
+    {
+        _connection = connection;
+    }
 
-    // [Obsolete("no use", true)]
-    // public IDbContext UseChloeDbContext()
-    // {
-    //     var func = this._chloeDbState[DbType];
-    //     if (func.xIsEmpty()) throw new NotImplementedException($"dbtype {this.DbType.ToString()} not implemented.");
-    //     return func(this.Database);
-    // }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        //base.OnConfiguring(optionsBuilder);
+        if (!optionsBuilder.IsConfigured)
+        {
+            //optionsBuilder.UseSqlServer(_connection);
+        }
+    }
 
     public QueryFactory UseSqlKata()
     {
@@ -62,53 +59,5 @@ public class DbContextBase : DbContext
         if (func.xIsEmpty()) throw new NotImplementedException($"key {this.DbType.ToString()} not implemented");
         return func(connection);
     }
-    
-    // [Obsolete("no use", true)]
-    // internal sealed class MySqlConnectionFactory : IDbConnectionFactory
-    // {
-    //     private string _connString = null;
-    //     private IDbConnection _connection;
-    //     public MySqlConnectionFactory(string connString)
-    //     {
-    //         this._connString = connString;
-    //     }
-    //
-    //     public MySqlConnectionFactory(IDbConnection connection)
-    //     {
-    //         this._connection = connection;
-    //     }
-    //     
-    //     public IDbConnection CreateConnection()
-    //     {
-    //         if (this._connection.xIsNotEmpty()) return this._connection;
-    //         
-    //         IDbConnection conn = new MySqlConnection(this._connString);
-    //         return conn;
-    //     }
-    // }
-    //
-    // [Obsolete("no use", true)]
-    // internal sealed class PostgreSQLConnectionFactory : IDbConnectionFactory
-    // {
-    //     private string _connString = null;
-    //     private IDbConnection _connection;
-    //     public PostgreSQLConnectionFactory(string connString)
-    //     {
-    //         this._connString = connString;
-    //     }
-    //
-    //     public PostgreSQLConnectionFactory(IDbConnection connection)
-    //     {
-    //         this._connection = connection;
-    //     }
-    //     
-    //     public IDbConnection CreateConnection()
-    //     {
-    //         if (this._connection.xIsNotEmpty()) return this._connection;
-    //         
-    //         NpgsqlConnection conn = new NpgsqlConnection(this._connString);
-    //         return conn;
-    //     }
-    // }
 }
 

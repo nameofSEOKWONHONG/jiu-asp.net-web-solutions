@@ -25,79 +25,8 @@ namespace Application;
 
 public class ApplicationInjector : IServiceInjectionBase
 {
-    private readonly Dictionary<ENUM_DATABASE_TYPE,
-            Action<string, IServiceProvider, DbContextOptionsBuilder>>
-        _useDatabaseStates
-            = new()
-            {
-                {
-                    ENUM_DATABASE_TYPE.MSSQL, (connectionString, provider, builder) =>
-                    {
-                        //MSSQL 
-                        builder.UseSqlServer(connectionString, options =>
-                            {
-                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
-                                //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
-                            })
-                            .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
-                            .EnableSensitiveDataLogging()
-                            .EnableDetailedErrors();
-                    }
-                },
-                {
-                    ENUM_DATABASE_TYPE.MYSQL, (connectionString, provider, builder) =>
-                    {
-                        var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
-                        builder.UseMySql(connectionString, serverVersion, options =>
-                            {
-                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
-                                //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
-                            })
-                            .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
-                            .EnableSensitiveDataLogging()
-                            .EnableDetailedErrors();
-                    }
-                },
-                {
-                    ENUM_DATABASE_TYPE.POSTGRES, (connectionString, provider, builder) =>
-                    {
-                        builder.UseNpgsql(connectionString, options =>
-                            {
-                                options.MigrationsAssembly(ApplicationConst.MIGRATION_ASSEMPLY_NAME);
-                                //builder.EnableRetryOnFailure();
-                                options.CommandTimeout(ApplicationConst.DATABASE_TIMEOUT);
-                            })
-                            .AddInterceptors(provider.GetRequiredService<DbL4Interceptor>())
-                            .EnableSensitiveDataLogging()
-                            .EnableDetailedErrors();                        
-                    }
-                }
-            };
-    
     public void Inject(IServiceCollection services, IConfiguration configuration)
     {
-        //사용할 database 설정
-        var useDatabase = configuration.GetConnectionString("USE_DATABASE");
-        //enum 으로 변환
-        var databaseType = ENUM_DATABASE_TYPE.Parse(useDatabase);
-        //연결 문자열 확인 (TODO:연결 문자열 암복호화 되어 있어야 함)
-        var connectionString = configuration.GetConnectionString(databaseType.ToString());
-
-        if (databaseType == ENUM_DATABASE_TYPE.MSSQL)
-        {
-            services.AddHangfire(x => x.UseSqlServerStorage(connectionString));    
-        }
-        else if (databaseType == ENUM_DATABASE_TYPE.POSTGRES)
-        {
-            services.AddHangfire(config => config.UsePostgreSqlStorage(connectionString));    
-        }
-        else if (databaseType == ENUM_DATABASE_TYPE.MYSQL)
-        {
-            throw new NotSupportedException("mysql hangfire not implemented. don't use mysql");
-        }
-        
         services.AddHangfireServer();
 
         #region [javascript.nodejs]
@@ -139,22 +68,9 @@ public class ApplicationInjector : IServiceInjectionBase
             .AddSingleton<JsScriptLoader>()
             .AddSingleton<PyScriptLoader>()
             .AddSingleton<JIntScriptLoader>()
-            .AddSingleton<NodeJSScriptLoader>()
+            .AddSingleton<NodeJSScriptLoader>();
 
             #endregion
-
-            .AddDbContext<ApplicationDbContext>((sp, options) =>
-            {
-                var action = _useDatabaseStates[databaseType];
-                action(connectionString, sp, options);
-            })
-
-            #region [database init and seeding]
-
-            .AddScoped<IDatabaseSeeder, DatabaseSeeder>()
-            .AddScoped<DatabaseMigration>();
-
-        #endregion
             
         //services.AddTransient<IDatabaseSeeder, DatabaseSeederUseChloe>();
 

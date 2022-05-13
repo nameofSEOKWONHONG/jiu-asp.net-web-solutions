@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Context;
 using Domain.Entities;
 using eXtensionSharp;
+using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace TodoService.Services

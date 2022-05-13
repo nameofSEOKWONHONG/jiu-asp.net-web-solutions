@@ -4,6 +4,7 @@ using System.Threading;
 using Application.Context;
 using Hangfire;
 using Infrastructure.Abstract.Controllers;
+using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApiApplication.Controllers;

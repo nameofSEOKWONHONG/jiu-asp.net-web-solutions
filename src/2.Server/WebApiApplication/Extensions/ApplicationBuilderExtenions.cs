@@ -5,6 +5,7 @@ using Application.Context;
 using Hangfire;
 using Infrastructure.Middleware;
 using Infrastructure.Middlewares;
+using Infrastructure.Persistence;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

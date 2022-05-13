@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Enums;
 using eXtensionSharp;
+using Infrastructure.Persistence;
 using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure.Services.Account

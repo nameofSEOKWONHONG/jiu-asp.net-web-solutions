@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ILogger = Microsoft.Extensions.Logging.ILogger;
 
-namespace Application.Context;
+namespace Infrastructure.Persistence;
 
 public class DatabaseMigration
 {
