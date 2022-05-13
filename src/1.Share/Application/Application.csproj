@@ -10,6 +10,7 @@
         <PackageReference Include="CS-Script" Version="4.4.2" />
         <PackageReference Include="DinkToPdf" Version="1.0.8" />
         <PackageReference Include="DocumentFormat.OpenXml" Version="2.16.0" />
+        <PackageReference Include="Elsa" Version="2.7.0" />
         <PackageReference Include="FluentValidation" Version="11.0.0" />
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.28" />
         <PackageReference Include="Hangfire.PostgreSql" Version="1.9.7" />

@@ -118,12 +118,12 @@ namespace Infrastructure
 
     public static class InfrastructureInjectorExtensions
     {
-        public static void AddInfrastructureInjector(this IServiceCollection services)
+        public static void AddInfrastructureInjector(this IServiceCollection services, IConfiguration configuration)
         {
             var injectorImpl = new ServiceLoader(new[]
             {
                 new InfrastructureInjector()
-            }, services, null);
+            }, services, configuration);
             injectorImpl.Inject();
         }
     }

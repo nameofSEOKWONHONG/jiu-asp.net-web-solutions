@@ -104,7 +104,7 @@ namespace WebApiApplication.Extensions
         {
             // 각 Injector 구현체 등록
             services.AddWeatherForecastInjector();
-            services.AddInfrastructureInjector();
+            services.AddInfrastructureInjector(configuration);
             services.AddTodoInjector();
             services.AddHelloWorldInjector();
         }

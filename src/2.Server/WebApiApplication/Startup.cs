@@ -43,6 +43,17 @@ namespace WebApiApplication
 
             #endregion
 
+            #region [use elsa]
+
+            services.AddElsa(config =>
+            {
+                config.AddActivity<HelloActivity>()
+                    .AddActivity<WorldActivity>()
+                    .AddWorkflow<HelloWorldWorlflow>();
+            });
+
+            #endregion
+
             //services.AddScoped<ISampleRepository, SampleRepository>();
 
         }
@@ -55,7 +66,10 @@ namespace WebApiApplication
             // {
             //     db.Database.Migrate();
             // }
+
             app.UseConfigures(env, provider, Configuration);
+            
+            
         }
     }
 }
