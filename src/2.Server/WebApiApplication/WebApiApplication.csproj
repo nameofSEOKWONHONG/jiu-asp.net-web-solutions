@@ -99,6 +99,9 @@
       <None Update="Files\dummy.txt">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
+      <None Update="ScriptFiles\js\jint\LoopSampleScript.js">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
@@ -106,6 +109,9 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Compile>
       <Compile Update="ScriptFiles\cs\HelloWorldScript.cs">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Compile>
+      <Compile Update="ScriptFiles\cs\LoopSampleScript.cs">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Compile>
     </ItemGroup>

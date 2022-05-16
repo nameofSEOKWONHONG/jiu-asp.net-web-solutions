@@ -210,5 +210,38 @@ public class ScriptEngineSampleController : ApiControllerBase<ScriptEngineSample
 
         return Ok(ResultBase<List<string>>.Success(list));
     } 
+    
+    [HttpGet("ScriptEnginesPerformanceDiff")]
+    public IActionResult ScriptEnginesPerformanceDiff()
+    {
+        ResultBase<Dictionary<string, string>> result = new ResultBase<Dictionary<string, string>>();
+        result.Data = new Dictionary<string, string>();
+
+        var csResult = _sharpScriptLoader.Create("LoopSampleScript.cs")
+            .Execute<bool, bool, string>(true, true, new[]
+            {
+                "System",
+                "System.Diagnostics",
+                "System.Threading.Tasks",
+                "Application.Script.SharpScript",
+                "Infrastructure.Persistence",
+            });
+        result.Data.Add("SharpScript", csResult.ToString());
+
+
+        var jintResult = string.Empty;
+        _jIntScriptLoader.Create("LoopSampleScript.js").Execute(
+            engine =>
+            {
+                
+            }, engine =>
+            {
+                jintResult = engine.GetValue("result").AsString();
+            });
+        
+        result.Data.Add("JINTResult", jintResult);
+        
+        return Ok(result);
+    }
 }
 

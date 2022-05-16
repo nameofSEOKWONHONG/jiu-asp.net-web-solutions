@@ -11,7 +11,7 @@ namespace ClientApplication.Services;
 
 public interface IWeatherForecastService
 {
-    Task<TB_WEATHERFORECAST[]> GetsForecastAsync();
+    Task<List<TB_WEATHERFORECAST>> GetsForecastAsync();
 }
 
 [AddService(ENUM_LIFE_TIME_TYPE.Scope, typeOfInterface:typeof(IWeatherForecastService))]
@@ -29,7 +29,7 @@ public class WeatherForecastService : IWeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
     /// </summary>
-    public async Task<TB_WEATHERFORECAST[]> GetsForecastAsync()
+    public async Task<List<TB_WEATHERFORECAST>> GetsForecastAsync()
     {
         using var client = _clientFactory.CreateClient(ClientConst.CLIENT_NAME);
         var request =
@@ -38,7 +38,7 @@ public class WeatherForecastService : IWeatherForecastService
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();
         var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-        var items = JsonConvert.DeserializeObject<ResultBase<TB_WEATHERFORECAST[]>>(result);
+        var items = JsonConvert.DeserializeObject<ResultBase<List<TB_WEATHERFORECAST>>>(result);
 
         return items.Data;
     }
