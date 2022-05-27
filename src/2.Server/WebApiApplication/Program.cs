@@ -38,6 +38,15 @@ namespace WebApiApplication
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     //webBuilder.UseKestrel(options => options.ListenAnyIP(5001));
+                    webBuilder.UseKestrel(opts =>
+                    {
+                        var a = 100_000_000;
+                        opts.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(5);
+                        opts.Limits.MaxConcurrentConnections = 100;
+                        opts.Limits.MaxConcurrentUpgradedConnections = 100;
+                        opts.Limits.MaxRequestBodySize = 100_000_000;
+                        opts.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(1);
+                    });
                     webBuilder.UseStartup<Startup>();
                 })
                 .ConfigureAppConfiguration(configuration =>

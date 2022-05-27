@@ -1,0 +1,14 @@
+﻿{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    },
+    "MyConfig": {
+        "Version": "1.0",
+        "Name": "test",
+        "Enable": true
+    }
+}
