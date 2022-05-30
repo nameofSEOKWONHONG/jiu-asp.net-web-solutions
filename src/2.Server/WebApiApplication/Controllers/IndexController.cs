@@ -62,15 +62,8 @@ namespace WebApiApplication.Controllers
             {
                 client.BaseAddress = new Uri("https://localhost:5001/");
                 var response = await client.GetAsync("api/index/JavascriptSample?api-version=1");
-                await response.xThenAsync(async self =>
-                {
-                    self.EnsureSuccessStatusCode();
-                    result = await self.Content.ReadAsStringAsync();
-                }, e =>
-                {
-                    _logger.LogInformation(e, e.Message);
-                    throw e;
-                });
+                response.EnsureSuccessStatusCode();
+                result = await response.Content.ReadAsStringAsync();
             }
 
             return Ok(result);

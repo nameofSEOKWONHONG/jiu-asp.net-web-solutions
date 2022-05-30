@@ -168,9 +168,7 @@ public class ScriptEngineSampleController : ApiControllerBase<ScriptEngineSample
     {
         var result = string.Empty;
 
-        _nodeJsScriptLoader.xThen(self =>
-        {
-            self.Create("index.js").Execute<string>(
+        _nodeJsScriptLoader.Create("index.js").Execute<string>(
                 () =>
                 {
                     var objs = new List<object>();
@@ -180,7 +178,6 @@ public class ScriptEngineSampleController : ApiControllerBase<ScriptEngineSample
                     return objs.ToArray();
                 },
                 s => { result = s; });
-        }, e => _logger.LogError(e, e.Message));
             
         return Ok(result);
     }
