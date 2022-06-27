@@ -10,6 +10,9 @@
     <projectFile>GenerateCodeSample/GenerateCodeSample.csproj</projectFile>
     <projectFile>src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/AvaloniaCrossPlatformApp.NetCore.csproj</projectFile>
     <projectFile>src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj</projectFile>
+    <projectFile>src/99.SampleApps/ChainSample/ChainSample.csproj</projectFile>
+    <projectFile>src/99.SampleApps/CustomOptionSample/CustomOptionSample.csproj</projectFile>
+    <projectFile>src/99.SampleApps/CompositionSample/CompositionSample.csproj</projectFile>
     <projectFile profileName="WeatherForecastApiApplication">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="YarpWebApplication">src/2.Server/3.Proxy/YarpWebApplication/YarpWebApplication.csproj</projectFile>
@@ -27,24 +30,18 @@
     <projectFile profileName="AvaloniaBlazorSample">src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.Web/AvaloniaCrossPlatformApp.Web.csproj</projectFile>
     <projectFile profileName="JWorker">src/4.BackgroundApp/JWorker/JWorker.csproj</projectFile>
     <projectFile profileName="JWorkerV2">src/4.BackgroundApp/JWorkerV2/JWorkerV2.csproj</projectFile>
+    <projectFile profileName="AgileConfigServer">src/98.AgileConfigProject/AgileConfigServer/AgileConfigServer.csproj</projectFile>
+    <projectFile profileName="IIS Express">src/98.AgileConfigProject/AgileConfigServer/AgileConfigServer.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryExpression.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Sql/QueryPoco.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SampleEntity/TB_USER.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPoco.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoBuilder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoClause.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoJoin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/WorkFlow/IWorker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/WebApiApplication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/WebApiApplication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Base/BackgroundServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Base/BackgroundServiceBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Base/ServiceBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Base/ServiceBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Request/PagedRequest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Domain/Request/RequestBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Domain/Request/RequestBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/Abstract/Controllers/ApiControllerBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,85 +61,88 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff6e15065aca4366778dbe1a1b71b9164dea3534b71e1795c33fd6f159f52/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf4738d59bccc7df9289a82dc9ea3d4fe2fe2b32e215d63bbb19238824efa94a/LightExceptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff4a377ddd8b8376a34e93b525519e26e3989a7f57783aa958abc10f5ec87/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8fe5b9fa0d07425ba30fafd53baa5a7ea23880/06/e73ab3ff/ConfiguredTaskAwaitable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d91921f1921869d264c6f3f6e3870a127baa8b9364a7a39ffea392ac933d38/HostingAbstractionsHostExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c8/754b3734/Query.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2a7bd2c3c4443b59303006c88fdcdd23e200/5a/df7aa740/ConsumerBuilder`2.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6f95382468b317a172feb667db83ae826247df59838f7f780cef897689bd83/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77bef6aaaf3a4400838f8fe5f498d38a21200/21/aba6310d/ErrorSink.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4bea9bed74d914e7435fff05d8a42fdc36c63d3645e88532abcfb1ad760fbee/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0a25b67411194658a5f1f8a977443fab3adc80/0/ExpressionType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/74d3bbc147764920b856fdb5242da7b3f85c98/c6/34addb1f/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4ae8601fa2e0de9edb66fcdad537cb69f8a4caa8c5c9ab8f22461e75c4fd30de/ConfiguredCancelableAsyncEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c3172a3c4ec02c9b6e980f04f74b9bf955a8484dcd864d97215bf91363455e/UpdateDelegates.Generated.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c6/e5534683/Join.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acdcb2d5e5a875937e43fc8f8bc4e366d563e824c567ec716bb37f7966ce43/SqlServerExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de1dc94e26de2eb8cdb9b19e9451c6a0738025b875978dc863de7ba87ee78c4/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d9d9faea5e6ed6438a777ef8c6eed41261f81d8e86488ed923ad92564f54e/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57407b0d38be4d44ac7bf05b4f9663a211b78/49/9f7121f6/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f940097558e4486b3fe85c12432b1ed11c00/e9/f7a20f38/MsSqlContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginLoader.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginReloadedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ec2c283df8a4c8a866379380222ca5c21270/77/26ebc2d6/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0b5567882521e02aa3d40a7bce81b7235ccac4db588866e3498e614c3bc/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d77c4680ed9457393ace56767da2743b443a47727beda6a2b5304cc4abee506e/Activator.RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Loader/RuntimeConfigExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/656dc7c44e4e9988a66b1d2274cd2285fa395a65be6721d27c171d6d74c56182/SymmetricAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30bc83da1437441ca54c10a7795a986d842e98/da/f8e599a8/TraceRoutedEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e5a78beee0f4abd8ed7ef3636048cf1a20268/4c/db281812/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30bc83da1437441ca54c10a7795a986d842e98/4f/0bd6161d/EventRoute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/30bc83da1437441ca54c10a7795a986d842e98/da/f8e599a8/TraceRoutedEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3496ce932bb64631bc59bde49b3ec663c3e00/87/83a2a786/AnsiConsoleExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467dc7b1aa9a4db7b83fd8b4f4504553ca800/0c/edc82a0d/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57407b0d38be4d44ac7bf05b4f9663a211b78/49/9f7121f6/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ec2c283df8a4c8a866379380222ca5c21270/77/26ebc2d6/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5f940097558e4486b3fe85c12432b1ed11c00/e9/f7a20f38/MsSqlContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/0d/86e59373/BaseQuery`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c6/e5534683/Join.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/c8/754b3734/Query.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/74d3bbc147764920b856fdb5242da7b3f85c98/c6/34addb1f/XamlReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/77bef6aaaf3a4400838f8fe5f498d38a21200/21/aba6310d/ErrorSink.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8fe5b9fa0d07425ba30fafd53baa5a7ea23880/06/e73ab3ff/ConfiguredTaskAwaitable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b2a7bd2c3c4443b59303006c88fdcdd23e200/5a/df7aa740/ConsumerBuilder`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f20afb29c4f04491a19753d3c6e143c216b988/a4/c999654a/RelationalCommandDiagnosticsLogger.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0a25b67411194658a5f1f8a977443fab3adc80/0/ExpressionType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0a25b67411194658a5f1f8a977443fab3adc80/_f21b4/ExpressionType.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0b5567882521e02aa3d40a7bce81b7235ccac4db588866e3498e614c3bc/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/17a25bf4cd58852e31b6bc798fef1d6289441360eea1912bf89a9b4fd337a3/SingleQueryingEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e8feaadf5c3fa14d36ea2a638c432a2e1a47b7837d8b83d88303c5d9c15cf/AsyncValueTaskMethodBuilderT.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f5ba0bdc621188cd1e1d8baf2af936513bd6191585af6be27a3f92639e08/Parallel.ForEachAsync.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4191c5707325499829b8863568d520af37b25e7f51eb8f26be3f12d19b2499/ValidatorOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4ae8601fa2e0de9edb66fcdad537cb69f8a4caa8c5c9ab8f22461e75c4fd30de/ConfiguredCancelableAsyncEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b95b9936aceaca7b7986abdecd044bd5135c35a492a08b2c3bb2f907882/HostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5715e14a452483d8413a69ac6fa7b940234d5f65ae9bf998f356116338ec0/ReadBufferState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/656dc7c44e4e9988a66b1d2274cd2285fa395a65be6721d27c171d6d74c56182/SymmetricAlgorithm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d91921f1921869d264c6f3f6e3870a127baa8b9364a7a39ffea392ac933d38/HostingAbstractionsHostExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/73ffe226ca516698d1e28a7fe1cac5a27b5b81ccdcdc89f189e51b14c9d4c/AbstractValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/8c66affdde8a177746566bc799ef4610728dc98f31aecc74296b7165aeb/LiveDisplay.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92babe8112867ada958d7443496d6510f9173f428dbe621a94a6d174937/IHttpClientFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/97af33e538b92416d330d2761cc7286a751e61b8a8b11f567c646267804c9843/Utf8JsonReader.TryGet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff4a377ddd8b8376a34e93b525519e26e3989a7f57783aa958abc10f5ec87/AsyncValueTaskMethodBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9ff6e15065aca4366778dbe1a1b71b9164dea3534b71e1795c33fd6f159f52/RuntimeType.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a2ee656fbddc12a868b756d2326603c5d064be64ac4463aae6c3defcdb47c/GenericWebHostBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a4ed796081acfa4cefed1c41947519a48feaf6375183bfb6abe1618b88241/SqlServerDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/acdcb2d5e5a875937e43fc8f8bc4e366d563e824c567ec716bb37f7966ce43/SqlServerExecutionStrategy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b4bea9bed74d914e7435fff05d8a42fdc36c63d3645e88532abcfb1ad760fbee/EntityFrameworkQueryableExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c3172a3c4ec02c9b6e980f04f74b9bf955a8484dcd864d97215bf91363455e/UpdateDelegates.Generated.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6ad457575d35dcbff26c9a5e3fb1d92f1d3c55f25ef6ebf475367b5d8/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c95dcc58313213285a3bb76c2a3cedab84d293d1b4f5693c7b33d0f2648e5/Convert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cb6382f4a8e77dd1746bf414c637369d286012c29f4c3064a4b0209fbad490/Interpreter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf4738d59bccc7df9289a82dc9ea3d4fe2fe2b32e215d63bbb19238824efa94a/LightExceptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d2b60674f3b5ef49d23f8128ac988fd6c59e49f0c19b383143182268f392/Queryable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d6f95382468b317a172feb667db83ae826247df59838f7f780cef897689bd83/TaskAwaiter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d77c4680ed9457393ace56767da2743b443a47727beda6a2b5304cc4abee506e/Activator.RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d9d9faea5e6ed6438a777ef8c6eed41261f81d8e86488ed923ad92564f54e/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/de1dc94e26de2eb8cdb9b19e9451c6a0738025b875978dc863de7ba87ee78c4/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ece16248ac91cc6883d0c45ae91fd0fa81557c6c7f72c5dedf3377969cc4a5/DefaultExclusivityMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/efd3e9c4749621d4a53b45d7117d2a581e02a265c444a040f1387a155db/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f1752212265689ff87dcef45f5fa31bf0aa61823f41418cd7410c649eee27/MarkupParser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f29fc41318147d739a637c782d8794e328fd8cbc7c548af05534af17324543b/PropertyChain.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Internal/RuntimeConfig.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Internal/RuntimeOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Loader/RuntimeConfigExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginReloadedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/b8/45a42f52/HttpContent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/92babe8112867ada958d7443496d6510f9173f428dbe621a94a6d174937/IHttpClientFactory.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fdebaed95044a64b4a0ede88e81c9de1b7270/a5/13c70cd8/HttpResponseMessage.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cde0291933299f1e732d9436b8558e21577bcdf64c6d8ac7c6a0abeac6c6d/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cac8f9263912455f6ce74dea29b29e66c1d1080e7a7676fadab7a14fb7f8f1/Timeout.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3f5ba0bdc621188cd1e1d8baf2af936513bd6191585af6be27a3f92639e08/Parallel.ForEachAsync.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -155,16 +155,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RunManager" selected=".NET Project.SqlQuerySampleApp">
     <configuration name="AvaloniaCrossPlatformApp.NetCore" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/bin/Debug/net6.0/AvaloniaCrossPlatformApp.NetCore.exe" />
@@ -180,6 +180,60 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="net6.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="ChainSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/ChainSample/ChainSample.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="CompositionSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/CompositionSample/CompositionSample.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="CustomOptionSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/CustomOptionSample/CustomOptionSample.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -252,6 +306,36 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="AgileConfigServer" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/98.AgileConfigProject/AgileConfigServer/AgileConfigServer.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="AgileConfigServer" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="AgileConfigServer: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/98.AgileConfigProject/AgileConfigServer/AgileConfigServer.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -482,6 +566,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue=".NET Launch Settings Profile.AgileConfigServer" />
+      <item itemvalue=".NET Launch Settings Profile.AgileConfigServer: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.BlazorServerApplication" />
       <item itemvalue=".NET Launch Settings Profile.BlazorServerApplication: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.BlazorWasmApplication" />
@@ -497,6 +583,9 @@
       <item itemvalue=".NET Launch Settings Profile.AvaloniaCrossPlatformApp.Web: AvaloniaBlazorSample" />
       <item itemvalue=".NET Launch Settings Profile.JWorkerV2" />
       <item itemvalue=".NET Launch Settings Profile.JWorker" />
+      <item itemvalue=".NET Project.CompositionSample" />
+      <item itemvalue=".NET Project.CustomOptionSample" />
+      <item itemvalue=".NET Project.ChainSample" />
       <item itemvalue=".NET Project.SpectreConsoleApplication" />
       <item itemvalue=".NET Project.SpectreConsoleSample" />
       <item itemvalue=".NET Project.ServiceRunnerSampleApp" />
@@ -562,7 +651,28 @@
       <workItem from="1648041452728" duration="778000" />
       <workItem from="1648046346204" duration="1694000" />
       <workItem from="1648209337860" duration="12965000" />
-      <workItem from="1648362650202" duration="5463000" />
+      <workItem from="1648362650202" duration="5789000" />
+      <workItem from="1648473827983" duration="2463000" />
+      <workItem from="1648637035690" duration="1192000" />
+      <workItem from="1648888754192" duration="1030000" />
+      <workItem from="1649080254777" duration="488000" />
+      <workItem from="1649167362391" duration="595000" />
+      <workItem from="1649250084302" duration="674000" />
+      <workItem from="1649580979976" duration="41000" />
+      <workItem from="1650634865337" duration="545000" />
+      <workItem from="1650635451093" duration="109000" />
+      <workItem from="1650787753624" duration="1043000" />
+      <workItem from="1650805244532" duration="916000" />
+      <workItem from="1651146778313" duration="673000" />
+      <workItem from="1651148157015" duration="144000" />
+      <workItem from="1651997502781" duration="215000" />
+      <workItem from="1651997763046" duration="1531000" />
+      <workItem from="1652101173570" duration="93000" />
+      <workItem from="1652437683827" duration="2003000" />
+      <workItem from="1655205968881" duration="637000" />
+      <workItem from="1656317728630" duration="3243000" />
+      <workItem from="1656323307213" duration="423000" />
+      <workItem from="1656329334967" duration="411000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -676,7 +786,28 @@
       <option name="project" value="LOCAL" />
       <updated>1648048044669</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update sqlkata.query.poco">
+      <created>1648368466843</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648368466843</updated>
+    </task>
+    <task id="LOCAL-00018" summary="update">
+      <created>1648368481941</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1648368481941</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update poco">
+      <created>1648477116829</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1648477116829</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,6 +841,36 @@
             </State>
           </value>
         </entry>
+        <entry key="ab24130d-2b37-445d-bb3a-4a12019c8594">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:D:/workspace/jiu-asp.net-web-solutions/src/1.Share/Application" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="ab24130d-2b37-445d-bb3a-4a12019c8594" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
@@ -724,10 +885,12 @@
     <MESSAGE value="pray for ukraine" />
     <MESSAGE value="impl attribute injection" />
     <MESSAGE value="renames&#10;add jworker" />
-    <MESSAGE value="update" />
     <MESSAGE value="simple update" />
     <MESSAGE value="update servicebase, repository, servicecore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update servicebase, repository, servicecore" />
+    <MESSAGE value="update sqlkata.query.poco" />
+    <MESSAGE value="update" />
+    <MESSAGE value="update poco" />
+    <option name="LAST_COMMIT_MESSAGE" value="update poco" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -737,10 +900,10 @@
           <line>205</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\2.Server\WebApiApplication\Controllers\Samples\ScriptEngineSampleController.cs" initialLine="206" containingFunctionPresentation="lambda expression inside method 'PyVersionSample'">
             <startOffsets>
-              <option value="7211" />
+              <option value="7245" />
             </startOffsets>
             <endOffsets>
-              <option value="7284" />
+              <option value="7318" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
@@ -834,10 +997,10 @@
           <line>64</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="64" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="2418" />
+              <option value="2414" />
             </startOffsets>
             <endOffsets>
-              <option value="2454" />
+              <option value="2450" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="48" />
@@ -847,10 +1010,10 @@
           <line>66</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="66" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="2493" />
+              <option value="2489" />
             </startOffsets>
             <endOffsets>
-              <option value="2509" />
+              <option value="2505" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="49" />
@@ -860,10 +1023,10 @@
           <line>67</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\BackgroundServices\HardwareMonitorBackgroundService.cs" initialLine="67" containingFunctionPresentation="method 'OnRunAsync'">
             <startOffsets>
-              <option value="2530" />
+              <option value="2526" />
             </startOffsets>
             <endOffsets>
-              <option value="2559" />
+              <option value="2555" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="50" />
@@ -873,10 +1036,10 @@
           <line>23</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="21" containingFunctionPresentation="">
             <startOffsets>
-              <option value="955" />
+              <option value="998" />
             </startOffsets>
             <endOffsets>
-              <option value="990" />
+              <option value="1033" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="65" />
@@ -886,10 +1049,10 @@
           <line>25</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="23" containingFunctionPresentation="">
             <startOffsets>
-              <option value="992" />
+              <option value="1035" />
             </startOffsets>
             <endOffsets>
-              <option value="1031" />
+              <option value="1074" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="66" />
@@ -899,10 +1062,10 @@
           <line>21</line>
           <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\SqlQuerySampleApp\Program.cs" initialLine="21" containingFunctionPresentation="">
             <startOffsets>
-              <option value="903" />
+              <option value="946" />
             </startOffsets>
             <endOffsets>
-              <option value="949" />
+              <option value="992" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="74" />
@@ -919,11 +1082,16 @@
       <configuration name="DotNetProject">
         <watch expression="body" language="C#" />
         <watch expression="(body.Right.Member as FieldInfo).GetValue(body.Right.Expression.Value)" language="C#" />
+        <watch expression="Expression.Lambda&lt;Func&lt;bool&gt;&gt;(body);" language="C#" />
       </configuration>
       <configuration name="LaunchSettings">
         <watch expression="ModelState.Values" language="C#" />
         <watch expression="results.Errors" language="C#" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

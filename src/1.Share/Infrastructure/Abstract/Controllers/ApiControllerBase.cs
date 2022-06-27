@@ -96,7 +96,8 @@ namespace Infrastructure.Abstract.Controllers
         protected async Task<IActionResult> ExecuteAsync<TRequest, TResult>(IServiceBase<TRequest, TResult> serviceBase, TRequest request)
         {
             var executeCore = new ServiceCore<TRequest, TResult>(serviceBase);
-            return Ok(serviceBase.ExecuteCore());
+            serviceBase.ExecuteCore();
+            return Ok(serviceBase.Result);
         }
     }
 

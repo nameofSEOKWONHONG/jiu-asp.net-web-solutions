@@ -4,21 +4,30 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Application.Base;
 
-public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundServiceBase
+public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundService
     where TEntity : class
 {
+    protected ILogger _logger;
+    protected IConfiguration _configuration;
+    protected IServiceScopeFactory _serviceScopeFactory;
+    private int _interval;
     private int _maxDegreeOfParallelism;
     
     protected ParallelBackgroundServiceBase(ILogger logger,
         IConfiguration configuration,
         IServiceScopeFactory serviceScopeFactory,
         int interval = 60, 
-        int maxDegreeOfParallelism = 20) : base(logger, configuration, serviceScopeFactory, interval)
+        int maxDegreeOfParallelism = 20)
     {
+        this._logger = logger;
+        this._configuration = configuration;
+        this._serviceScopeFactory = serviceScopeFactory;
+        this._interval = interval;
         this._maxDegreeOfParallelism = maxDegreeOfParallelism;
     }
     
@@ -80,15 +89,5 @@ public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundService
 
             await Task.Delay(_interval, stoppingToken);
         }
-    }
-
-    public override Task StartAsync(CancellationToken cancellationToken)
-    {
-        return base.StartAsync(cancellationToken);
-    }
-
-    public override Task StopAsync(CancellationToken cancellationToken)
-    {
-        return base.StopAsync(cancellationToken);
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Reflection;
 using System.Transactions;
 using Domain.Response;
@@ -10,10 +9,15 @@ using WebApiApplication.Services.Abstract;
 
 namespace Application.Base;
 
-public interface IServiceBase<TRequest, TResult>
+public interface IServiceBase
+{
+    void ExecuteCore();
+}
+
+public interface IServiceBase<TRequest, TResult> : IServiceBase
 {
     TRequest Request { get; set; }
-    ResultBase<TResult> ExecuteCore();
+    TResult Result { get; }
 }
 
 public interface IServiceBase<TRequest, TResult, TValidator> : IServiceBase<TRequest, TResult>
@@ -26,6 +30,7 @@ public abstract class ServiceBase<TRequest, TResult> : IServiceBase<TRequest, TR
     protected readonly ILogger _logger;
     protected readonly ISessionContext _sessionContext;
     public TRequest Request { get; set; }
+    public TResult Result { get; private set; }
     public ServiceBase(ILogger logger, ISessionContext sessionContext)
     {
         _logger = logger;
@@ -44,13 +49,12 @@ public abstract class ServiceBase<TRequest, TResult> : IServiceBase<TRequest, TR
         
     }
     
-    public virtual ResultBase<TResult> ExecuteCore()
+    public virtual void ExecuteCore()
     {
-        var preExecutResult = OnPreExecute(_sessionContext, Request); 
-        if (!preExecutResult.isContinue) return ResultBase<TResult>.Fail(preExecutResult.message);
-        var result = OnExecute(_sessionContext, Request);
-        OnPostExecute(_sessionContext, result);
-        return ResultBase<TResult>.Success(result);
+        var preExecutResult = OnPreExecute(_sessionContext, Request);
+        if (!preExecutResult.isContinue) return;
+        this.Result = OnExecute(_sessionContext, Request);
+        OnPostExecute(_sessionContext, this.Result);
     }
 }
 
@@ -61,12 +65,12 @@ public abstract class ServiceBase<TRequest, TResult, TValidator> : ServiceBase<T
     {
     }
 
-    public override ResultBase<TResult> ExecuteCore()
+    public override void ExecuteCore()
     {
         var validator = new TValidator();
         var result = validator.Validate(this.Request);
-        if(!result.IsValid) return ResultBase<TResult>.Fail(string.Join(", ", result.Errors.Select(m => m.ErrorMessage)));
-        return base.ExecuteCore();
+        if (!result.IsValid) return;
+        base.ExecuteCore();
     }
 }
 
@@ -91,12 +95,13 @@ public class ServiceCore<TRequest, TResult>
         if (this._transactionAttribute.xIsNotEmpty())
         {
             using var tran = new TransactionScope(this._transactionAttribute.TransactionScopeOption);
-            result = _serviceBase.ExecuteCore();
+            _serviceBase.ExecuteCore();
+            result = ResultBase<TResult>.Success(_serviceBase.Result);
             tran.Complete();
         }
         else
         {
-            result = _serviceBase.ExecuteCore();
+            result = ResultBase<TResult>.Success(_serviceBase.Result);
         }
         
         return result;
