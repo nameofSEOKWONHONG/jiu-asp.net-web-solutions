@@ -26,7 +26,7 @@ public class MainAction : ActionBase, IMainAction
         {"Exit", (s) => null}
     };
     
-    public MainAction(ILogger<MainView> logger, IClientSession clientSession, IHttpClientFactory clientFactory) : base(logger, clientSession, clientFactory)
+    public MainAction(ILogger<MainView> logger, IContextBase contextBase, IHttpClientFactory clientFactory) : base(logger, contextBase, clientFactory)
     {
     }
 

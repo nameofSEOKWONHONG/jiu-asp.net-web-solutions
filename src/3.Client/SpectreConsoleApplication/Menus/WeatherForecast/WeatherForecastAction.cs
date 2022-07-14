@@ -36,9 +36,9 @@ public sealed class WeatherForecastAction : ActionBase, IWeatherForecastAction
 
     private readonly IWeatherForecastService _weatherForecastService;
     public WeatherForecastAction(ILogger<WeatherForecastAction> logger,
-        IClientSession clientSession,
+        IContextBase contextBase,
         IHttpClientFactory clientFactory,
-        IWeatherForecastService service) : base(logger, clientSession, clientFactory)
+        IWeatherForecastService service) : base(logger, contextBase, clientFactory)
     {
         _weatherForecastService = service;
     }

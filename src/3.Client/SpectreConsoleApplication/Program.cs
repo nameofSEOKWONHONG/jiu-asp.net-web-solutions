@@ -56,13 +56,13 @@ try
     using (var serviceScope = host.Services.CreateScope())
     {
         var services = serviceScope.ServiceProvider;
-        var session = services.GetRequiredService<IClientSession>();
+        var session = services.GetRequiredService<IContextBase>();
         using (var loginView = services.GetRequiredService<LoginView>())
         {
             loginView.Show();
             if (loginView.ViewResult.xIsTrue())
             {
-                session.AccessToken = loginView.AccessToken;
+                session.AuthorizeInfo.AccessToken = loginView.AccessToken;
             }
         }
     }

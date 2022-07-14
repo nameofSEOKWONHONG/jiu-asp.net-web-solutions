@@ -16,9 +16,9 @@ public class LoginAction : ActionBase, ILoginAction
 {
     private readonly ILoginService _loginService;
     public LoginAction(ILogger<LoginAction> logger, 
-        IClientSession clientSession,
+        IContextBase contextBase,
         IHttpClientFactory clientFactory,
-        ILoginService service) : base(logger, clientSession, clientFactory)
+        ILoginService service) : base(logger, contextBase, clientFactory)
     {
         _loginService = service;
     }

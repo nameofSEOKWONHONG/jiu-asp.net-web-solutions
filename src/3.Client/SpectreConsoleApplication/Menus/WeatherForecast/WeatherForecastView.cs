@@ -15,8 +15,8 @@ public sealed class WeatherForecastView : ViewBase
     private readonly IWeatherForecastAction _action;
     
     public WeatherForecastView(ILogger<WeatherForecastView> logger,
-        IClientSession clientSession,
-        IWeatherForecastAction action) : base(logger, clientSession)
+        IContextBase contextBase,
+        IWeatherForecastAction action) : base(logger, contextBase)
     {
         _action = action;
     }

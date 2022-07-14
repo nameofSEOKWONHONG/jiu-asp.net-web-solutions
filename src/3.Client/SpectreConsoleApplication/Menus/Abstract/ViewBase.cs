@@ -7,12 +7,12 @@ namespace SpectreConsoleApplication.Menus.Abstract;
 public abstract class ViewBase : IViewBase
 {
     public bool ViewResult { get; protected set; } = true;
-    protected IClientSession ClientSession;
+    protected IContextBase ContextBase;
     protected ILogger _logger;
-    public ViewBase(ILogger logger, IClientSession clientSession)
+    public ViewBase(ILogger logger, IContextBase contextBase)
     {
         _logger = logger;
-        ClientSession = clientSession;
+        ContextBase = contextBase;
     }
 
     public abstract void Show();

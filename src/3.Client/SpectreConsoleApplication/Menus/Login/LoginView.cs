@@ -15,8 +15,8 @@ public class LoginView : ViewBase
 
     private readonly ILoginAction _action;
     public LoginView(ILogger<LoginView> logger,
-        IClientSession clientSession,
-        ILoginAction action) : base(logger, clientSession)
+        IContextBase contextBase,
+        ILoginAction action) : base(logger, contextBase)
     {
         _action = action;
     }

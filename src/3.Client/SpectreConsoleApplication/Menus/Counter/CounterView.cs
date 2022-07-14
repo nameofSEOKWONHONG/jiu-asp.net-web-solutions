@@ -11,7 +11,7 @@ public sealed class CounterView : ViewBase
 {
     private int _count;
     public CounterView(ILogger<CounterView> logger,
-        IClientSession clientSession) : base(logger, clientSession)
+        IContextBase contextBase) : base(logger, contextBase)
     {
         
     }

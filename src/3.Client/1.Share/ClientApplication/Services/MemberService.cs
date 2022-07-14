@@ -16,11 +16,11 @@ public interface IMemberService
 public class MemberService : IMemberService
 {
     private readonly IHttpClientFactory _clientFactory;
-    private readonly IClientSession _clientSession;
-    public MemberService(IHttpClientFactory clientFactory, IClientSession clientSession)
+    private readonly IContextBase _contextBase;
+    public MemberService(IHttpClientFactory clientFactory, IContextBase contextBase)
     {
         this._clientFactory = clientFactory;
-        this._clientSession = clientSession;
+        this._contextBase = contextBase;
     }
     
     public async Task<IEnumerable<TB_USER>> GetMembersAsync()
@@ -29,7 +29,7 @@ public class MemberService : IMemberService
         var request =
             new HttpRequestMessage(HttpMethod.Get, "api/v1/Users/GetAll/1/10");
         request.Headers.Authorization =
-            new AuthenticationHeaderValue("Bearer", _clientSession.AccessToken);
+            new AuthenticationHeaderValue("Bearer", _contextBase.AuthorizeInfo.AccessToken);
         var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();
         var result = await response.Content.ReadAsStringAsync();

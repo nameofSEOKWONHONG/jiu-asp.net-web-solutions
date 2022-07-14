@@ -18,12 +18,12 @@ public interface IWeatherForecastService
 public class WeatherForecastService : IWeatherForecastService
 {
     private readonly IHttpClientFactory _clientFactory;
-    private readonly IClientSession _clientSession;
+    private readonly IContextBase _contextBase;
     public WeatherForecastService(IHttpClientFactory clientFactory,
-        IClientSession clientSession)
+        IContextBase contextBase)
     {
         this._clientFactory = clientFactory;
-        this._clientSession = clientSession;
+        this._contextBase = contextBase;
     }
     
     /// <summary>
@@ -34,7 +34,7 @@ public class WeatherForecastService : IWeatherForecastService
         using var client = _clientFactory.CreateClient(ClientConst.CLIENT_NAME);
         var request =
             new HttpRequestMessage(HttpMethod.Get, ClientConst.GET_WEATHERFORECAST);
-        request.Headers.Add("Bearer", _clientSession.AccessToken);
+        request.Headers.Add("Bearer", _contextBase.AuthorizeInfo.AccessToken);
         var response = client.SendAsync(request).GetAwaiter().GetResult();
         response.EnsureSuccessStatusCode();
         var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();

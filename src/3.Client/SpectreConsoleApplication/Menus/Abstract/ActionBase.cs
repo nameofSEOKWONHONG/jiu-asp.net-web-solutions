@@ -10,12 +10,12 @@ public abstract class ActionBase : IDisposable
 {
     protected readonly ILogger _logger;
     protected readonly IHttpClientFactory _clientFactory;
-    protected readonly IClientSession ClientSession;
+    protected readonly IContextBase ContextBase;
 
-    protected ActionBase(ILogger logger, IClientSession clientSession, IHttpClientFactory clientFactory)
+    protected ActionBase(ILogger logger, IContextBase contextBase, IHttpClientFactory clientFactory)
     {
         _logger = logger;
-        ClientSession = clientSession;
+        ContextBase = contextBase;
         _clientFactory = clientFactory;
     }
     

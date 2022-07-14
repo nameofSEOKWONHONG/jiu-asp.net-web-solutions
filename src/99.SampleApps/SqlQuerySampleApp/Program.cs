@@ -1,8 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using FluentValidation;
 using Microsoft.Data.SqlClient;
+using SqlKata;
+using SqlKata.Compilers;
+using SqlKata.Execution;
 using SqlQuerySample.Sql;
 using SqlQuerySampleApp.SampleEntity;
 using ValidationResult = FluentValidation.Results.ValidationResult;
@@ -54,5 +58,24 @@ using ValidationResult = FluentValidation.Results.ValidationResult;
 //     }
 // }
 
-var sample = new QueryPocoSample();
-sample.Run();
+// var sample = new QueryPocoSample();
+// sample.Run();
+
+var connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=JiuDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+var compiler = new SqlServerCompiler();
+var db = new QueryFactory(connection, compiler);
+db.Logger += result => Console.WriteLine(result.ToString()); 
+
+var id = "34E98B0E-620B-4280-81F3-08D9D2BAFA73";
+var query = db.Query("TB_USER")
+    .Where("ID", "=", id)
+    .Limit(1);
+
+//compile sql
+SqlResult result = compiler.Compile(query);
+//write sql parameterize
+Console.WriteLine(result.Sql);
+//result
+IEnumerable<dynamic> dataResult = query.Get();
+var selected = dataResult.First();
+Console.WriteLine(selected.ID);

@@ -18,7 +18,7 @@ public interface IMemberAction
 public class MemberAction : ActionBase, IMemberAction
 {
     private readonly IMemberService _memberService;
-    public MemberAction(ILogger<MemberAction> logger, IClientSession clientSession, IHttpClientFactory clientFactory, IMemberService memberService) : base(logger, clientSession, clientFactory)
+    public MemberAction(ILogger<MemberAction> logger, IContextBase contextBase, IHttpClientFactory clientFactory, IMemberService memberService) : base(logger, contextBase, clientFactory)
     {
         _memberService = memberService;
     }
