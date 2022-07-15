@@ -10,11 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<BookService>();
+builder.Services.AddSingleton<BookService>();
 builder.Services.AddInMemorySubscriptions();
 //if use redis subscription
-//or dotnet add package HotChocolate.Subscriptions.Redis
-//or builder.Services.AddRedisSubscriptions((sp) => ConnectionMultiplexer.Connect("host:port"));
+//dotnet add package HotChocolate.Subscriptions.Redis
+//builder.Services.AddRedisSubscriptions((sp) => ConnectionMultiplexer.Connect("host:port"));
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()

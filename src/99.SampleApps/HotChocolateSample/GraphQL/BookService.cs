@@ -1,4 +1,5 @@
-﻿using HotChocolateSample.Entity;
+﻿using eXtensionSharp;
+using HotChocolateSample.Entity;
 
 namespace HotChocolateSample.GraphQL;
 
@@ -41,5 +42,13 @@ public class BookService
         if (exists is null) return false;
         _books.Remove(exists);
         return true;
+    }
+
+    public Book UpdateBook(Book book)
+    {
+        var exists = this.GetBookByTitle(book.Title);
+        if (exists.xIsEmpty()) return null;
+        exists.Author.Name = book.Author.Name;
+        return exists;
     }
 }

@@ -78,10 +78,31 @@ mutation {
         return await Task.Factory.StartNew(() => _service.AddBook(book));
     }
 
+    /*
+mutation {
+  removeBook(title:"test2")
+}
+     */
     public async Task<bool> RemoveBook(string title, [Service] ITopicEventSender sender)
     {
         await sender.SendAsync("OnRemoveBook", title);
         return _service.RemoveBook(title);
+    }
+
+    /*
+subscription {
+  onUpdateBook {
+    title
+    author {
+      name
+    }
+  }
+}
+     */
+    public async Task<Book> UpdateBook(Book book, [Service] ITopicEventSender sender)
+    {
+        await sender.SendAsync("OnUpdateBook", book);
+        return _service.UpdateBook(book);
     }
 }
 
@@ -104,10 +125,29 @@ subscription {
         return book;
     }
     
+    /*
+subscription {
+  onRemoveBook
+}
+     */
     [Subscribe]
     [Topic("OnRemoveBook")]
     public string OnRemoveBook([EventMessage] string title)
     {
         return title;
     }    
+    
+    /*
+subscription {
+  onUpdateBook {
+    title
+  }
+}
+     */
+    [Subscribe]
+    [Topic("OnUpdateBook")]
+    public Book OnUpdateBook([EventMessage] Book book)
+    {
+        return book;
+    }        
 }
