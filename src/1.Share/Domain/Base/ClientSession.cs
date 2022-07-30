@@ -1,4 +1,5 @@
-﻿using InjectionExtension;
+﻿using System;
+using InjectionExtension;
 
 namespace Domain.Base;
 
@@ -51,7 +52,7 @@ public class RoleInfo : IRoleInfo
 
 public class ApplicationInfo : IApplicationInfo
 {
-    
+    public string AppPath => AppContext.BaseDirectory;
 }
 
 public class AuthorizeInfo : IAuthorizeInfo
@@ -77,7 +78,7 @@ public interface IRoleInfo
 
 public interface IApplicationInfo
 {
-    
+    string AppPath { get; }
 }
 
 public interface IAuthorizeInfo
