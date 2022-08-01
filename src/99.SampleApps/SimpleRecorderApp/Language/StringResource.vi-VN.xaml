@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">Dừng ghi hình</system:String>
+    <system:String x:Key="RecTime">Thời gian ghi hình</system:String>
+    <system:String x:Key="RecUploadTitle">Tư vấn video (UPLOAD)</system:String>
+
+    <system:String x:Key="RecReg">Lưu(F8)</system:String>
+    <system:String x:Key="RecExit">Đóng</system:String>
+
+    <system:String x:Key="Caption">Hướng dẫn</system:String>
+    <system:String x:Key="ErrorCaption">Lỗi</system:String>
+    <system:String x:Key="CodecInstall">Đang cài đặt codec cần thiết.</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">Không thể cài đặt codec. Thoát khỏi chương trình.</system:String>
+    <system:String x:Key="SendingCaption">Đăng ký</system:String>
+    <system:String x:Key="Sending">Đang đăng ký.</system:String>
+    <system:String x:Key="SendOK">Đã đăng ký.</system:String>
+    <system:String x:Key="SendFailed">Đăng ký thất bại.</system:String>
+    <system:String x:Key="SendCancel">Đăng ký đã bị hủy.</system:String>
+
+    <system:String x:Key="AlreadyExecute">Đã chạy.</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">Thực hiện trùng lặp</system:String>
+
+    <system:String x:Key="SearchMsg">Đang tìm kiếm</system:String>
+
+    <system:String x:Key="AccessError">Truy cập bất thường.</system:String>
+
+    <system:String x:Key="MainMonitorNotice">Chỉ ghi hình màn hình chính.</system:String>
+
+    <system:String x:Key="Uploading">Đang tải lên.</system:String>
+
+    <system:String x:Key="InitCodecMsg">Tiến hành thiết lập codec.</system:String>
+</ResourceDictionary>

@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">停止錄影</system:String>
+    <system:String x:Key="RecTime">錄影時間</system:String>
+    <system:String x:Key="RecUploadTitle">影片諮詢 (UPLOAD)</system:String>
+
+    <system:String x:Key="RecReg">新增(F8)</system:String>
+    <system:String x:Key="RecExit">關閉</system:String>
+
+    <system:String x:Key="Caption">說明</system:String>
+    <system:String x:Key="ErrorCaption">錯誤</system:String>
+    <system:String x:Key="CodecInstall">正在安裝編解碼器。</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">無法安裝編解碼器。 程式將結束。</system:String>
+    <system:String x:Key="SendingCaption">新增</system:String>
+    <system:String x:Key="Sending">正在新增中。</system:String>
+    <system:String x:Key="SendOK">已完成新增。</system:String>
+    <system:String x:Key="SendFailed">新增失敗。</system:String>
+    <system:String x:Key="SendCancel">新增已被取消。</system:String>
+
+    <system:String x:Key="AlreadyExecute">正在執行中。</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">重複執行</system:String>
+
+    <system:String x:Key="SearchMsg">查詢中</system:String>
+
+    <system:String x:Key="AccessError">這不是正常連線。</system:String>
+
+    <system:String x:Key="MainMonitorNotice">只會在主畫面進行錄影。</system:String>
+
+    <system:String x:Key="Uploading">正在上傳中。</system:String>
+
+    <system:String x:Key="InitCodecMsg">正在設定編解碼器。</system:String>
+</ResourceDictionary>

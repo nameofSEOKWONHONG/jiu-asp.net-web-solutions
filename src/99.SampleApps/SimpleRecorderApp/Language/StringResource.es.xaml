@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">Para de grabar</system:String>
+    <system:String x:Key="RecTime">Tiempo de grabación</system:String>
+    <system:String x:Key="RecUploadTitle">Consulta de video (SUBIR)</system:String>
+
+    <system:String x:Key="RecReg">Guardar (F8)</system:String>
+    <system:String x:Key="RecExit">Cerrar</system:String>
+
+    <system:String x:Key="Caption">información.</system:String>
+    <system:String x:Key="ErrorCaption">Error</system:String>
+    <system:String x:Key="CodecInstall">Instalando</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">No se puede instalar el códec. Terminando el programa.</system:String>
+    <system:String x:Key="SendingCaption">Registrarse</system:String>
+    <system:String x:Key="Sending">Registro en curso.</system:String>
+    <system:String x:Key="SendOK">Registrado.</system:String>
+    <system:String x:Key="SendFailed">Fallo el registro.</system:String>
+    <system:String x:Key="SendCancel">El registro ha sido cancelado.</system:String>
+
+    <system:String x:Key="AlreadyExecute">Ya corriendo.</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">Ejecución duplicada.</system:String>
+
+    <system:String x:Key="SearchMsg">Búsqueda en curso.</system:String>
+
+    <system:String x:Key="AccessError">Acceso inesperado.</system:String>
+
+    <system:String x:Key="MainMonitorNotice">Solo se grabará el monitor principal.</system:String>
+
+    <system:String x:Key="Uploading">Subiendo.</system:String>
+
+    <system:String x:Key="InitCodecMsg">Continúe con la configuración del códec.</system:String>
+</ResourceDictionary>

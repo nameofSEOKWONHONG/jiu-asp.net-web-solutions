@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">หยุดบันทึก</system:String>
+    <system:String x:Key="RecTime">เวลาในการบันทึก</system:String>
+    <system:String x:Key="RecUploadTitle">วีดีโอสำหรับการปรึกษา (UPLOAD)</system:String>
+
+    <system:String x:Key="RecReg">บันทึก (F8)</system:String>
+    <system:String x:Key="RecExit">ปิด</system:String>
+
+    <system:String x:Key="Caption">ข้อมูล</system:String>
+    <system:String x:Key="ErrorCaption">ข้อผิดพลาด</system:String>
+    <system:String x:Key="CodecInstall">กำลังดำเนินการติดตั้ง</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">ไม่สามารถติดตั้ง codec ได้ กำลังปิดโปรแกรม</system:String>
+    <system:String x:Key="SendingCaption">ลงทะเบียน</system:String>
+    <system:String x:Key="Sending">กำลังลงทะเบียน</system:String>
+    <system:String x:Key="SendOK">ลงทะเบียนสำเร็จ</system:String>
+    <system:String x:Key="SendFailed">ลงทะเบียนไม่สำเร็จ</system:String>
+    <system:String x:Key="SendCancel">การลงทะเบียนถูกยกเลิก</system:String>
+
+    <system:String x:Key="AlreadyExecute">กำลังดำเนินการ</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">การดำเนินการซ้ำ</system:String>
+
+    <system:String x:Key="SearchMsg">กำลังค้นหา</system:String>
+
+    <system:String x:Key="AccessError">การเข้าถึงที่ผิดปกติ</system:String>
+
+    <system:String x:Key="MainMonitorNotice">จอภาพหลักจะถูกบันทึกเท่านั้น</system:String>
+
+    <system:String x:Key="Uploading">กำลังอัปโหลด</system:String>
+
+    <system:String x:Key="InitCodecMsg">กำลังดำเนินการติดตั้ง codec</system:String>
+</ResourceDictionary>

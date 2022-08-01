@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">Stop Recording</system:String>
+    <system:String x:Key="RecTime">Recording Time</system:String>
+    <system:String x:Key="RecUploadTitle">Screencast (UPLOAD)</system:String>
+
+    <system:String x:Key="RecReg">Save(F8)</system:String>
+    <system:String x:Key="RecExit">Close</system:String>
+
+    <system:String x:Key="Caption">Info.</system:String>
+    <system:String x:Key="ErrorCaption">Error</system:String>
+    <system:String x:Key="CodecInstall">Installing necessary codec.</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">Codec cannot be installed. Terminating program.</system:String>
+    <system:String x:Key="SendingCaption">Register</system:String>
+    <system:String x:Key="Sending">Registration in progress.</system:String>
+    <system:String x:Key="SendOK">Registered.</system:String>
+    <system:String x:Key="SendFail">Failed to register.</system:String>
+    <system:String x:Key="SendCancel">Registration has been canceled.</system:String>
+
+    <system:String x:Key="AlreadyExecute">Already running.</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">Duplicated execution.</system:String>
+
+    <system:String x:Key="SearchMsg">Search in progress.</system:String>
+
+    <system:String x:Key="AccessError">Unexpected access.</system:String>
+
+    <system:String x:Key="MainMonitorNotice">Main monitor only will be recorded.</system:String>
+
+    <system:String x:Key="Uploading">Uploading.</system:String>
+
+    <system:String x:Key="InitCodecMsg">Proceed codec settings.</system:String>
+</ResourceDictionary>

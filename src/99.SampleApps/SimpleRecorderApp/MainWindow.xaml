@@ -1,0 +1,77 @@
+﻿<mah:MetroWindow x:Class="SimpleRecorderWpf.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:local="clr-namespace:SimpleRecorderWpf"
+                 mc:Ignorable="d"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 WindowStyle="None"
+                 ResizeMode="NoResize"
+                 Topmost="True"
+                 Background="FloralWhite"
+                 NonActiveBorderBrush="Red"
+                 NonActiveGlowBrush="Red"
+                 ShowTitleBar="False"
+                 WindowStartupLocation="Manual"
+                 IsCloseButtonEnabled="False"
+                 EnableDWMDropShadow="True"
+                 Title="MainWindow" Height="100" Width="240">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <StackPanel.Resources>
+                <Style x:Key="AccentCircleButtonStyle"
+                           BasedOn="{StaticResource MahApps.Metro.Styles.MetroCircleButtonStyle}"
+                           TargetType="{x:Type ButtonBase}">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Resources>
+            <DockPanel>
+                <Label FontWeight="Bold" FontSize="15" Foreground="Red">SIMPLE</Label>
+                <Label FontWeight="Bold" FontSize="15">Recorder</Label>
+            </DockPanel>
+            <Button x:Name="btnStop" 
+                    Width="30"
+                    Height="30"
+                    Margin="20"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"              
+                    ToolTip="{StaticResource RecStop}"
+                    Style="{StaticResource ChromelessButtonStyle}">
+                <Rectangle Width="28"
+                            Height="28"                          
+                            Fill="Red">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Fill">
+                            <VisualBrush.Visual>
+                                <Canvas Clip="F1 M 0,0L 76,0L 76,76L 0,76L 0,0">
+                                    <Path Width="40"
+                                        Height="40"
+                                        Canvas.Left="23"
+                                        Canvas.Top="18"
+                                        Stretch="Fill"
+                                        Fill="Red"
+                                        Data="M1536 1344v-1408c0 -35 -29 -64 -64 -64h-1408c-35 0 -64 29 -64 64v1408c0 35 29 64 64 64h1408c35 0 64 -29 64 -64z" />
+                                </Canvas>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Label FontSize="10" Content="{StaticResource RecTime}"/>
+            <Label x:Name="RecordingTime" FontWeight="Bold" FontSize="15">00:00</Label>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

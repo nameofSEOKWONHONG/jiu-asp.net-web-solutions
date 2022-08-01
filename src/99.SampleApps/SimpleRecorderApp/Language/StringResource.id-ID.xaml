@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="RecStop">Berhenti Merekam</system:String>
+    <system:String x:Key="RecTime">Waktu Rekaman</system:String>
+    <system:String x:Key="RecUploadTitle">Video Konsultasi (Unggah)</system:String>
+
+    <system:String x:Key="RecReg">Simpan (F8)</system:String>
+    <system:String x:Key="RecExit">Tutup</system:String>
+
+    <system:String x:Key="Caption">Informasi</system:String>
+    <system:String x:Key="ErrorCaption">Error</system:String>
+    <system:String x:Key="CodecInstall">Menginstal</system:String>
+    <system:String x:Key="CodecErrorAfterInstall">Codec tidak dapat diinstal.Menghentikan program.</system:String>
+    <system:String x:Key="SendingCaption">Pendaftaran</system:String>
+    <system:String x:Key="Sending">Pendaftaran sedang berlangsung.</system:String>
+    <system:String x:Key="SendOK">Terdaftar.</system:String>
+    <system:String x:Key="SendFailed">Gagal mendaftar.</system:String>
+    <system:String x:Key="SendCancel">Pendaftaran telah dibatalkan.</system:String>
+
+    <system:String x:Key="AlreadyExecute">Sudah berjalan.</system:String>
+    <system:String x:Key="AlreadyExecuteCaption">Eksekusi duplikat</system:String>
+
+    <system:String x:Key="SearchMsg">Sedang mencari</system:String>
+
+    <system:String x:Key="AccessError">Akses tak terduga.</system:String>
+
+    <system:String x:Key="MainMonitorNotice">Hanya monitor utama yang akan direkam.</system:String>
+
+    <system:String x:Key="Uploading">Mengunggah.</system:String>
+
+    <system:String x:Key="InitCodecMsg">Lanjutkan pengaturan codec.</system:String>
+</ResourceDictionary>

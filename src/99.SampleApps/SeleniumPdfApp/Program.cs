@@ -11,11 +11,12 @@ using SeleniumPdfApp;
 
 var urls = new[]
 {
-    "https://www.naver.com",
+    "https://logine.ecount.com/ECERP/EGM/EGM026M?vrqa=N10KJdtXvBxuz%2BlhUbfIXEy16lq16JI5LZYvmtEdo%2FmFOMMWxxbGoK%2FjvQyH7MFtfZwt%2FQ9xCDpBddJXbTQWzA%3D%3D&vrqb=54555a4c5d4551565a415b41544d561156125c520b145a12570158115e40070559450d4353560d445640525757434044&vrqc=1",
+    //"https://www.naver.com",
     // "https://www.youtube.com/",
     // "https://www.google.com/",
     // "https://www.daum.net/",
-     "https://www.gmarket.co.kr/",
+     //"https://www.gmarket.co.kr/",
     //"https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions",
     //"https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions/blob/main/src/1.Share/Application/Script/ScriptInitializer.cs",
     //"http://www.etoland.co.kr/bbs/board.php?bo_table=etohumor05&wr_id=2064684&sca=%C1%A4%BA%B8"
