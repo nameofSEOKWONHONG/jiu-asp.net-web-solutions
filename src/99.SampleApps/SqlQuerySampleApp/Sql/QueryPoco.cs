@@ -6,6 +6,63 @@ using eXtensionSharp;
 
 namespace SqlQuerySample.Sql;
 
+public class QueryBuilder
+{
+    
+} 
+
+public class QueryPocoV2<T, T1>
+{
+    private Expression<Func<T, T1, dynamic>> _select;
+    public QueryPocoV2()
+    {
+        
+    }
+
+    public QueryPocoJoin<T, T1> Join(Expression<Func<T, T1, dynamic>> join) => new QueryPocoJoin<T, T1>().Join(join); 
+
+    public QueryPocoV2<T, T1> From(Expression<Func<T, T1, dynamic>> select)
+    {
+        _select = select;
+        return this;
+    }
+}
+
+public class QueryPocoJoin<T, T1>
+{
+    private Expression<Func<T, T1, dynamic>> _join;
+    
+    public QueryPocoJoin()
+    {
+        
+    }
+
+    public QueryPocoWhere<T, T1> Where(Expression<Func<T, T1, dynamic>> where) =>
+        new QueryPocoWhere<T, T1>().Where(where);
+    
+    public QueryPocoJoin<T, T1> Join(Expression<Func<T, T1, dynamic>> join)
+    {
+        _join = join;
+        return this;
+    }
+}
+
+public class QueryPocoWhere<T, T1>
+{
+    private Expression<Func<T, T1, dynamic>> _where;
+    
+    public QueryPocoWhere()
+    {
+        
+    }
+    
+    public QueryPocoWhere<T, T1> Where(Expression<Func<T, T1, dynamic>> where)
+    {
+        _where = where;
+        return this;
+    }    
+}
+
 public class QueryPoco
 {
     public List<string> Selectors { get; private set; } = new List<string>();

@@ -97,6 +97,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeleniumPdfApp", "src\99.Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRecorderWpf", "src\99.SampleApps\SimpleRecorderApp\SimpleRecorderWpf.csproj", "{17079F1C-47B1-4508-AAD2-F185D23C69DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100.Doc", "100.Doc", "{92383DCF-2DBD-4C97-9D70-F7E5AA29C128}"
+	ProjectSection(SolutionItems) = preProject
+		src\100.doc\dotnet-pgo.md = src\100.doc\dotnet-pgo.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

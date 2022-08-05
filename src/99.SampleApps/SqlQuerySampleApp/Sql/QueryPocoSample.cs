@@ -11,21 +11,44 @@ public class QueryPocoSample
 {
     public void Run()
     {
+        #region [impl1]
+
         var q = new QueryPoco();
-         var id = 2;
-         var name = "test";
-         var queryPoco = q.From<TB_USER>(s => new
-             {
-                 s.ID,
-                 s.NAME
-             })
-             .Join<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) => TB_USER.ID == TB_PHONE.USER_ID && TB_USER.NAME == TB_PHONE.NUMER)
-             .Join<TB_USER, TB_GRADE>((TB_USER, TB_GRADE) => TB_USER.ID == TB_GRADE.USER_ID)
-             .Where<TB_USER>((TB_USER) => TB_USER.ID == id)
-             .And<TB_USER>((TB_USER) => TB_USER.NAME == name);
-         var builder = new QueryPocoBuilder(queryPoco);
-         var buildResult = builder.Build();
-         Console.WriteLine(buildResult.sql);
+        var id = 2;
+        var name = "test";
+        var queryPoco = q.From<TB_USER>(s => new
+            {
+                s.ID,
+                s.NAME
+            })
+            .Join<TB_USER, TB_PHONE>((TB_USER, TB_PHONE) =>
+                TB_USER.ID == TB_PHONE.USER_ID && TB_USER.NAME == TB_PHONE.NUMER)
+            .Join<TB_USER, TB_GRADE>((TB_USER, TB_GRADE) => TB_USER.ID == TB_GRADE.USER_ID)
+            .Where<TB_USER>((TB_USER) => TB_USER.ID == id)
+            .And<TB_USER>((TB_USER) => TB_USER.NAME == name);
+
+        var builder = new QueryPocoBuilder(queryPoco);
+        var buildResult = builder.Build();
+        Console.WriteLine(buildResult.sql);
+
+        #endregion
+
+        #region [impl2]
+
+        var query = new QueryPocoV2<TB_USER, TB_PHONE>()
+            .From((a, b) => new
+            {
+                a.ID,
+                a.NAME,
+                b.NUMER,
+                T_ID = "TEST"
+            }).Join((a, b) => a.ID == b.USER_ID)
+            .Where((a, b) => a.ID == 10);
+            
+        
+
+        #endregion
+
 
         var compiler = new SqlServerCompiler();
         var connection = new SqlConnection("Data Source=Demo.db");
