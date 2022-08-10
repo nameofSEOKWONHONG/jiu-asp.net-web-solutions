@@ -16,11 +16,11 @@ public enum ENUM_LIFE_TIME_TYPE
 public class AddServiceAttribute : Attribute
 {
     public readonly ENUM_LIFE_TIME_TYPE LifeTimeType;
-    public readonly Type TypeOfInterface;
-    public AddServiceAttribute(ENUM_LIFE_TIME_TYPE lifeTimeType, Type typeOfInterface = null)
+    public readonly Type InterfaceType;
+    public AddServiceAttribute(ENUM_LIFE_TIME_TYPE lifeTimeType, Type interfaceType = null)
     {
         LifeTimeType = lifeTimeType;
-        TypeOfInterface = typeOfInterface;
+        InterfaceType = interfaceType;
     }
 }
 

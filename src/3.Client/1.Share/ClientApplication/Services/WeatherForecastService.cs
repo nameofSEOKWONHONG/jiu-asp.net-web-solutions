@@ -11,10 +11,10 @@ namespace ClientApplication.Services;
 
 public interface IWeatherForecastService
 {
-    Task<List<TB_WEATHERFORECAST>> GetsForecastAsync();
+    Task<IEnumerable<TB_WEATHERFORECAST>> GetsForecastAsync();
 }
 
-[AddService(ENUM_LIFE_TIME_TYPE.Scope, typeOfInterface:typeof(IWeatherForecastService))]
+[AddService(ENUM_LIFE_TIME_TYPE.Scope, interfaceType:typeof(IWeatherForecastService))]
 public class WeatherForecastService : IWeatherForecastService
 {
     private readonly IHttpClientFactory _clientFactory;
@@ -29,7 +29,7 @@ public class WeatherForecastService : IWeatherForecastService
     /// <summary>
     /// Gets the weather forecast. use the HttpClient to call the WebApiApplication.Server.
     /// </summary>
-    public async Task<List<TB_WEATHERFORECAST>> GetsForecastAsync()
+    public async Task<IEnumerable<TB_WEATHERFORECAST>> GetsForecastAsync()
     {
         using var client = _clientFactory.CreateClient(ClientConst.CLIENT_NAME);
         var request =

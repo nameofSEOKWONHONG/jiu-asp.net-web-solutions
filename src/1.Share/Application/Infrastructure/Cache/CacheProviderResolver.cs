@@ -5,6 +5,7 @@ using Application.Base;
 using Application.Infrastructure.Cache.MSFaster;
 using Domain.Enums;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

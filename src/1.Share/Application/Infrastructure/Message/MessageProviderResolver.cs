@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Base;
 using Domain.Enums;
 using eXtensionSharp;
+using InjectionExtension;
 using Microsoft.Extensions.Configuration;
 
 namespace Application.Infrastructure.Message

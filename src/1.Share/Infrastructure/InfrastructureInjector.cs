@@ -8,6 +8,7 @@ using Hangfire.PostgreSql;
 using Infrastructure.BackgroundServices;
 using Infrastructure.Persistence;
 using Infrastructure.Services.Account;
+using InjectionExtension;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

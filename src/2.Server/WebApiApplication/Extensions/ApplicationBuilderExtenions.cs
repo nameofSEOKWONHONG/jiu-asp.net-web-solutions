@@ -171,7 +171,7 @@ namespace WebApiApplication.Extensions
         {
             //만약 jwt 인증을 한다면 UseAuthentication, UseAuthorization 이전과 이후 배치에 따라 
             //HttpContext.Claims에서 확인할 수 있는 설정이 다르다.
-            //따라서 Middleware를 등록할 경우 호출 순서가 중요한다.
+            //따라서 Middleware를 등록할 경우 호출 순서가 중요하다.
             // 예외설정
             app.UseErrorHandler();
             // 문화권 설정

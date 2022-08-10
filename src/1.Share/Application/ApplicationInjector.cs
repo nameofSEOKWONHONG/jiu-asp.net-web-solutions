@@ -16,6 +16,7 @@ using Domain.Configuration;
 using Domain.Enums;
 using Hangfire;
 using Hangfire.PostgreSql;
+using InjectionExtension;
 using Jering.Javascript.NodeJS;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

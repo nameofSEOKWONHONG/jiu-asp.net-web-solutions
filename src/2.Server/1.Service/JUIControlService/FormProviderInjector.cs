@@ -1,5 +1,6 @@
 ﻿using System;
 using Application.Base;
+using InjectionExtension;
 using JUIControlService.Forms;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

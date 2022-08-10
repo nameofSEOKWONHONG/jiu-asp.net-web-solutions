@@ -2,6 +2,7 @@
 using Application.Base;
 using Application.Interfaces.HelloWorld;
 using eXtensionSharp;
+using InjectionExtension;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
