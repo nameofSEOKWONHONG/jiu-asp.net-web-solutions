@@ -86,83 +86,26 @@ namespace Infrastructure.Abstract.Controllers
         }
 
         protected IActionResult ResultOk<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Success(entity));
+        
+        protected IActionResult ResultOk(string message) => Ok(ResultBase.Success(message));
 
         protected IActionResult ResultFail<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Fail(entity));
         
+        protected IActionResult ResultFail(string message) => Ok(ResultBase.Fail(message));
+        
         protected async Task<IActionResult> ResultOkAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.SuccessAsync(entity));
+        
+        protected async Task<IActionResult> ResultOkAsync(string message) => Ok(await ResultBase.SuccessAsync(message));
 
         protected async Task<IActionResult> ResultFailAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.FailAsync(entity));
+        
+        protected async Task<IActionResult> ResultFailAsync(string message) => Ok(await ResultBase.FailAsync(message));
 
         protected async Task<IActionResult> ExecuteAsync<TRequest, TResult>(IServiceBase<TRequest, TResult> serviceBase, TRequest request)
         {
             var executeCore = new ServiceCore<TRequest, TResult>(serviceBase);
             serviceBase.ExecuteCore();
             return Ok(serviceBase.Result);
-        }
-    }
-
-    public class Register
-    {
-        public void Registry(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddScoped<ISampleService, SampleService>();
-        }
-    }
-
-    public interface ISampleService : IServiceBase<string, string>
-    {
-        
-    }
-
-    public class SampleService : ServiceBase<string, string>, ISampleService
-    {
-        public SampleService(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext)
-        {
-        }
-
-        protected override (bool isContinue, string message) OnPreExecute(ISessionContext sessionContext, string request)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override string OnExecute(ISessionContext sessionContext, string Request)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected override void OnPostExecute(ISessionContext sessionContext, string result)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class SampleDto
-    {
-        public string Name { get; set; }
-        public class Validator : AbstractValidator<SampleDto>
-        {
-            public Validator()
-            {
-                RuleFor(m => m.Name).NotNull();
-            }
-        }
-    }
-
-    public interface ISample2Service : IServiceBase<SampleDto, string>
-    {
-    }
-
-    [AddService(ENUM_LIFE_TIME_TYPE.Scope, typeof(ISample2Service))]
-    [Transaction(TransactionScopeOption.Suppress)]
-    public class Sample2Service : ServiceBase<SampleDto, string, SampleDto.Validator>
-    {
-        public Sample2Service(ILogger logger, ISessionContext sessionContext) : base(logger, sessionContext)
-        {
-        }
-
-        protected override string OnExecute(ISessionContext sessionContext, SampleDto Request)
-        {
-            throw new NotImplementedException();
         }
     }
 }

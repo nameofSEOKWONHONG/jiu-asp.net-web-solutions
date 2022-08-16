@@ -11,11 +11,11 @@ namespace Infrastructure.Services.Account
 {
     public class UserService : IUserService
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext _dbContext;
         
         public UserService(ApplicationDbContext dbContext)
         {
-            this.dbContext = dbContext;
+            this._dbContext = dbContext;
         }
         
         public async Task<IEnumerable<TB_USER>> FindAllUserAsync(string searchCol = "", string searchVal = "", int pageIndex = 1, int pageSize = 10)
@@ -23,7 +23,7 @@ namespace Infrastructure.Services.Account
             if(searchCol.xIsNotEmpty())
             {
                 var filter = XExpressionUtils.BuildPredicate<TB_USER>(searchCol, "Contains", searchVal);
-                return await dbContext.Users
+                return await _dbContext.Users
                     .Where(filter)
                     .Include(m => m.ROLE)
                     .Include(m => m.ROLE.ROLE_PERMISSION)
@@ -32,7 +32,7 @@ namespace Infrastructure.Services.Account
                     .ToListAsync();
             }
             
-            return await dbContext.Users
+            return await _dbContext.Users
                 .Include(m => m.ROLE)
                 .Include(m => m.ROLE.ROLE_PERMISSION)
                 .Skip((pageIndex - 1) * pageSize)
@@ -42,14 +42,14 @@ namespace Infrastructure.Services.Account
 
         public async Task<IEnumerable<TB_USER>> FindAllUserByRoleAsync(ENUM_ROLE_TYPE[] roleTypes)
         {
-            return await dbContext.Users.Include(m => m.ROLE)
+            return await _dbContext.Users.Include(m => m.ROLE)
                 .Where(m => roleTypes.Contains(m.ROLE.ROLE_TYPE))
                 .ToListAsync();
         }
 
         public async Task<TB_USER> FindUserByIdAsync(Guid userId)
         {
-            return await dbContext.Users
+            return await _dbContext.Users
                 .Include(m => m.ROLE)
                 .Include(m => m.ROLE.ROLE_PERMISSION)
                 .FirstOrDefaultAsync(m => m.ID == userId);
@@ -57,7 +57,7 @@ namespace Infrastructure.Services.Account
 
         public async Task<TB_USER> FindUserByEmailAsync(string email)
         {
-            return await dbContext.Users
+            return await _dbContext.Users
                 .Include(m => m.ROLE)
                 .Include(m => m.ROLE.ROLE_PERMISSION)
                 .FirstOrDefaultAsync(m => m.EMAIL == email);
@@ -65,7 +65,7 @@ namespace Infrastructure.Services.Account
 
         public async Task<bool> ExistsSuperUserAsync()
         {
-            var exists = await dbContext.Users
+            var exists = await _dbContext.Users
                 .Include(m => m.ROLE)
                 .Take(1)
                 .FirstOrDefaultAsync(m => m.ROLE.ROLE_TYPE == ENUM_ROLE_TYPE.SUPER);
@@ -98,15 +98,15 @@ namespace Infrastructure.Services.Account
             tbUser.ID = Guid.NewGuid();
             tbUser.WRITE_ID = tbUser.ID.ToString();
             tbUser.WRITE_DT = DateTime.UtcNow;
-            var result = await dbContext.Users.AddAsync(tbUser);
-            await dbContext.SaveChangesAsync();
+            var result = await _dbContext.Users.AddAsync(tbUser);
+            await _dbContext.SaveChangesAsync();
 
             return result.Entity;
         }
 
         public async Task<TB_USER> UpdateUserAsync(TB_USER tbUserData)
         {
-            var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.EMAIL == tbUserData.EMAIL);
+            var exists = await _dbContext.Users.FirstOrDefaultAsync(m => m.EMAIL == tbUserData.EMAIL);
             if (exists == null) throw new Exception("not found");
 
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword(tbUserData.PASSWORD);
@@ -115,18 +115,18 @@ namespace Infrastructure.Services.Account
                 exists.PASSWORD = hashedPassword;
             }
 
-            await dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
             return exists;
         }
 
         public async Task<TB_USER> RemoveUserAsync(Guid userId, string email)
         {
-            var exists = await dbContext.Users.FirstOrDefaultAsync(m => m.ID == userId && m.EMAIL == email);
+            var exists = await _dbContext.Users.FirstOrDefaultAsync(m => m.ID == userId && m.EMAIL == email);
             if (exists == null) throw new Exception("not found");
 
-            dbContext.Users.Remove(exists);
+            _dbContext.Users.Remove(exists);
 
-            await dbContext.SaveChangesAsync();
+            await _dbContext.SaveChangesAsync();
 
             return exists;
         }

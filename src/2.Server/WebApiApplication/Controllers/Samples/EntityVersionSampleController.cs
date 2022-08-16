@@ -17,9 +17,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace WebApiApplication.Controllers;
 
-public class ModelVersionSampleController : ModelVersionController<SampleDto, RequestBase<SampleDto>, ResultBase<SampleDto>>
+public class EntityVersionSampleController : EntityVersionController<SampleDto, RequestBase<SampleDto>, ResultBase<SampleDto>>
 {
-    public ModelVersionSampleController(ISampleRepository repository) : base(repository)
+    public EntityVersionSampleController(ISampleRepository repository) : base(repository)
     {
         
     }

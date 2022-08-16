@@ -81,6 +81,7 @@ public class ServiceCore<TRequest, TResult>
     
     public ServiceCore(IServiceBase<TRequest, TResult> serviceBase)
     {
+        _serviceBase = serviceBase;
         var transactionAttribute = _serviceBase.GetType().Assembly.GetCustomAttribute<TransactionAttribute>();
         if (transactionAttribute.xIsNotEmpty())
         {
@@ -142,6 +143,6 @@ public class TransactionAttribute : Attribute
 /*
  *  Controller > Routed and Call ServiceCore
  *      - ServiceCore : Run ServiceBase
- *          -  ServiceBase : implement Service
- *              -   Repository : implement Repository > use dbContext
+ *          -  ServiceBase : Run implement Service
+ *              -   Repository : Run implement Repository > use dbContext
  */

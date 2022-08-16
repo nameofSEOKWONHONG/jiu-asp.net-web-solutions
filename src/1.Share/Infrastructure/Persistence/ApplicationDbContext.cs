@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Domain.Entities.KeyValueStore;
 using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
@@ -74,6 +75,13 @@ namespace Infrastructure.Persistence
 
         #region [config]
         public DbSet<TB_MIGRAION> Migrations { get; set; }
+        #endregion
+
+        #region [kv store]
+
+        public DbSet<TB_KV_STORE> KvStores { get; set; }
+        public DbSet<TB_GRP_KV_STORE> GrpKvStores { get; set; }
+
         #endregion
     }
 }

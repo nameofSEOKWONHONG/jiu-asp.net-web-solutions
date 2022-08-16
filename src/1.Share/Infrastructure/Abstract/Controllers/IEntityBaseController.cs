@@ -9,7 +9,7 @@ namespace Infrastructure.Abstract.Controllers;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 /// <typeparam name="TRequest"></typeparam>
-public interface IModelBaseController<T, TRequest>
+public interface IEntityBaseController<T, TRequest>
     where TRequest : class
 {
     IRepositoryBase<T> Repository { get; }
