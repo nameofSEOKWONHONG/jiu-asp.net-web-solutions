@@ -3,7 +3,12 @@ using eXtensionSharp;
 using TodoService;
 using WorkerApplication;
 
-//<see href="https://docs.microsoft.com/ko-kr/dotnet/core/extensions/workers"/>
+/*
+ * <see href="https://docs.microsoft.com/ko-kr/dotnet/core/extensions/workers"/>
+ * linux deploy : https://dev.to/uthmanrahimi/deploy-net-core-worker-service-on-linux-1mjc
+ * windows deploy : https://docs.microsoft.com/ko-kr/dotnet/core/extensions/windows-service
+ * Microsoft.Extensions.Hosting.WindowsServices는 사용하지 않는다. sc.exe를 이용하면 dll로도 운영 가능.
+*/
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration(configuration =>
     {

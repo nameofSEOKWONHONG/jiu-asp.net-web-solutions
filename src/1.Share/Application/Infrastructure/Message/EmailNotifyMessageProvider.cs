@@ -16,7 +16,7 @@ using MimeKit;
 
 namespace Application.Infrastructure.Message
 {
-    public record EmailNotifyMessageRequest(string[] toMails, string subject, string body, IEnumerable<IFormFile> attachments)
+    public record EmailNotifyMessageRequest(string[] toMails, string subject, string body, IEnumerable<string> attachments)
         : INotifyMessageRequest;
     
     public class EmailNotifyMessageProvider : NotifyMessageProviderBase
@@ -44,18 +44,18 @@ namespace Application.Infrastructure.Message
             var builder = new BodyBuilder();
             if (mailRequest.attachments.xIsNotEmpty())
             {
-                byte[] fileBytes;
                 mailRequest.attachments.xForEach(item =>
                 {
                     if (item.Length > 0)
                     {
-                        using (var ms = new MemoryStream())
+                        var attachment = new MimePart("application", "octet-stream")
                         {
-                            item.CopyTo(ms);
-                            fileBytes = ms.ToArray();
-                        }
-
-                        builder.Attachments.Add(item.FileName, fileBytes, ContentType.Parse(item.ContentType));
+                            Content = new MimeContent(File.OpenRead(item), ContentEncoding.Default),
+                            ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
+                            ContentTransferEncoding = ContentEncoding.Base64,
+                            FileName = Path.GetFileName(item),
+                        };
+                        builder.Attachments.Add(attachment);
                     }
                 });
             }
