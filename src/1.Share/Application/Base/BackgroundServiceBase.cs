@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,21 +23,37 @@ public abstract class BackgroundServiceBase : BackgroundService
     /// Console Application용도로는 IServiceScopeFactory를 사용해야 한다.
     /// </summary>
     protected IServiceScopeFactory _serviceScopeFactory;
-
     protected int _interval = 1000;
 
+    protected readonly TimeSpan _from = TimeSpan.Zero;
+    protected readonly TimeSpan _to = TimeSpan.Zero;
+    private readonly string _dateFormat = "yyyyMMddHHmmss";
+    private readonly bool _useTimeZone = false;
     /// <summary>
     /// ctor
     /// </summary>
     /// <param name="logger"></param>
     /// <param name="serviceScopeFactory"></param>
     /// <param name="interval">second</param>
-    protected BackgroundServiceBase(ILogger logger, IConfiguration configuration, IServiceScopeFactory serviceScopeFactory, int interval = 60)
+    /// <param name="timeFrom">from time (000000)</param>
+    /// <param name="timeTo">to time (060000)</param>
+    protected BackgroundServiceBase(ILogger logger, IConfiguration configuration, IServiceScopeFactory serviceScopeFactory, 
+        int interval = 60, string timeFrom = "", string timeTo = "")
     {
         this._logger = logger;
         this._configuration = configuration;
         this._serviceScopeFactory = serviceScopeFactory;
         this._interval = 1000 * interval;
+        _useTimeZone = timeFrom.xIsNotEmpty() && timeTo.xIsNotEmpty();
+        if (_useTimeZone)
+        {
+            this._from = DateTime
+                .ParseExact($"{DateTime.Now.ToString("YYMMdd")}{timeFrom}", _dateFormat, CultureInfo.InvariantCulture)
+                .TimeOfDay;
+            this._to = DateTime
+                .ParseExact($"{DateTime.Now.ToString("YYMMdd")}{timeTo}", _dateFormat, CultureInfo.InvariantCulture)
+                .TimeOfDay;            
+        }
     }
 
     /// <summary>
@@ -52,7 +70,18 @@ public abstract class BackgroundServiceBase : BackgroundService
             this._logger.LogInformation($"service start");
             try
             {
-                await this.OnRunAsync(stoppingToken);
+                if (_useTimeZone)
+                {
+                    var nowTime = DateTime.Now.TimeOfDay;
+                    if (nowTime.xBetween(_from, _to))
+                    {
+                        await this.OnRunAsync(stoppingToken);
+                    }
+                    else
+                    {
+                        this._logger.LogTrace($"{_from.ToString()} {_to.ToString()} not execution time");
+                    }
+                }
             }
             catch (Exception ex)
             {

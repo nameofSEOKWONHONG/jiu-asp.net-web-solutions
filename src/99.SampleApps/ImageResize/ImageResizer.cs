@@ -40,7 +40,7 @@ public class ImageResizer
                         {
                             using (var output = File.OpenWrite(_outFileName))
                             {
-                                image.Encode(SKEncodedImageFormat.Jpeg, quality)
+                                image.Encode(SKEncodedImageFormat.Png, quality)
                                     .SaveTo(output);
                             }
                         }

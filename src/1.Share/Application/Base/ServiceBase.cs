@@ -141,7 +141,7 @@ public class TransactionAttribute : Attribute
 }
 
 /*
- *  Controller > Routed and Call ServiceCore
+ *  Controller > Route and Call ServiceCore
  *      - ServiceCore : Run ServiceBase
  *          -  ServiceBase : Run implement Service
  *              -   Repository : Run implement Repository > use dbContext

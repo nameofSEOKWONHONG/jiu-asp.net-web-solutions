@@ -11,4 +11,7 @@ public class TB_KV_STORE : EntityBase
     [Key]
     public string KEY { get; set; }
     public string VAL { get; set; }
+    
+    [NotMapped]
+    public string KV { get; set; }
 }

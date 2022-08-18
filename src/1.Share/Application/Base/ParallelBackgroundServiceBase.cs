@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
+using eXtensionSharp;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,17 +20,35 @@ public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundService
     private int _interval;
     private int _maxDegreeOfParallelism;
     
+    protected readonly TimeSpan _from = TimeSpan.Zero;
+    protected readonly TimeSpan _to = TimeSpan.Zero;
+    private readonly string _dateFormat = "yyyyMMddHHmmss";
+    private readonly bool _useTimeZone = false;
+    
     protected ParallelBackgroundServiceBase(ILogger logger,
         IConfiguration configuration,
         IServiceScopeFactory serviceScopeFactory,
         int interval = 60, 
-        int maxDegreeOfParallelism = 20)
+        int maxDegreeOfParallelism = 20,
+        string timeFrom = "",
+        string timeTo = "")
     {
         this._logger = logger;
         this._configuration = configuration;
         this._serviceScopeFactory = serviceScopeFactory;
         this._interval = interval;
         this._maxDegreeOfParallelism = maxDegreeOfParallelism;
+        
+        _useTimeZone = timeFrom.xIsNotEmpty() && timeTo.xIsNotEmpty();
+        if (_useTimeZone)
+        {
+            this._from = DateTime
+                .ParseExact($"{DateTime.Now.ToString("YYMMdd")}{timeFrom}", _dateFormat, CultureInfo.InvariantCulture)
+                .TimeOfDay;
+            this._to = DateTime
+                .ParseExact($"{DateTime.Now.ToString("YYMMdd")}{timeTo}", _dateFormat, CultureInfo.InvariantCulture)
+                .TimeOfDay;               
+        }
     }
     
     /// <summary>
@@ -64,23 +84,34 @@ public abstract class ParallelBackgroundServiceBase<TEntity> : BackgroundService
         {
             try
             {
-                this._logger.LogInformation($"ExecuteProducerAsync start");
-                var items = await this.OnProducerAsync(stoppingToken);
-                this._logger.LogInformation($"ExecuteProducerAsync end");
-
-                this._logger.LogInformation($"Parallel.ForEachAsync start");
-                await Parallel.ForEachAsync(items,
-                    new ParallelOptions() {MaxDegreeOfParallelism = _maxDegreeOfParallelism}, async (producer, token) =>
+                if (_useTimeZone)
+                {
+                    var nowTime = DateTime.Now.TimeOfDay;
+                    if (nowTime.xBetween(_from, _to))
                     {
-                        this._logger.LogInformation($"ExecuteConsumerAsync start");
-                        await this.OnConsumerAsync(producer, token);
-                        this._logger.LogInformation($"ExecuteConsumerAsync end");
-                    });
-                this._logger.LogInformation($"Parallel.ForEachAsync end");
+                        this._logger.LogInformation($"ExecuteProducerAsync start");
+                        var items = await this.OnProducerAsync(stoppingToken);
+                        this._logger.LogInformation($"ExecuteProducerAsync end");
 
-                this._logger.LogInformation($"OnFinishAsync start");
-                await this.OnFinishAsync(items, stoppingToken);
-                this._logger.LogInformation($"OnFinishAsync end");
+                        this._logger.LogInformation($"Parallel.ForEachAsync start");
+                        await Parallel.ForEachAsync(items,
+                            new ParallelOptions() {MaxDegreeOfParallelism = _maxDegreeOfParallelism}, async (producer, token) =>
+                            {
+                                this._logger.LogInformation($"ExecuteConsumerAsync start");
+                                await this.OnConsumerAsync(producer, token);
+                                this._logger.LogInformation($"ExecuteConsumerAsync end");
+                            });
+                        this._logger.LogInformation($"Parallel.ForEachAsync end");
+
+                        this._logger.LogInformation($"OnFinishAsync start");
+                        await this.OnFinishAsync(items, stoppingToken);
+                        this._logger.LogInformation($"OnFinishAsync end");
+                    }
+                    else
+                    {
+                        this._logger.LogTrace($"{_from.ToString()} {_to.ToString()} not execution time");
+                    }
+                }
             }
             catch (Exception e)
             {

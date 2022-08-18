@@ -82,7 +82,6 @@
 4. 현재 구조에는 Blazor Server 및 WASM에서 `1.Core>Application`을 참조하고 있습니다.  
 WASM에 포함된 `Application` 관련 코드는 제거 예정이며 WASM에서 사용될 라이브러리 프로젝트는 별도 생성 예정입니다.  4)항목은 진행되어 더 이상 WASM 프로젝트에서 `Application`프로젝트를 참조하지 않습니다.
 
-
 ## 히스토리  
 `commit history v1.0`까지는 모놀로식 개발 버전입니다.  
 이후 버전은 `MSA` 및 모놀리식 개발을 모두 지원하도록 개발되고 있습니다.
@@ -166,7 +165,35 @@ Sql 컬럼 및 프로시저는 길이 제한이 있다.
       3. 또한 발생한 오류에 대하여 세부적인 메세지를 전달해야 한다.
       4. 파일에서 발생하면 FileIOException, DB라면 DatabaseException등 세부 오류를 발생해야 한다.
 
-### Acknowledgements
+## 성능에 대한 이해
+Web Application Server - Database 에서 가장 큰 영향을 주는 부분은 Database이다.  
+
+가장 큰 자원을 소모하는 부분은 Database Connection Open/Close이고 한번 Open된 시점에 가능한한 많은 일을 수행 하는게 좋다.  
+
+과거에는 Procedure로 모든 작업을 진행했지만, 현대에는 주로 ORM을 사용하는 추세이다.
+
+과거 방식이 나쁘다기 보다는 현대에 빠른 개발을 위해서 성능을 다소 포기하는 부분일 것이고 비즈니스가 빠른 속도로 진행 되어야 하기 때문일 것이다.
+
+주로 추천되는 방법은 ORM, 또는 CodeFirst로 빠르게 개발한 뒤 성능 이슈가 발생하는 지점을 Procedure화 하는게 추천할만 하다.
+
+가끔 DBA들을 보면 무조건적인 Procedure 신봉자들이 있는데, 딱 한가지만 비판하고 싶다.
+
+개발에 대한 이해가 정말 필요하다. Procedure로 작업되는 순간 모든 Application 코드 베이스가 Database에 종속되게 된다.
+
+SI는 문제가 없겠으나 솔루션이나 서비스부분의 DBA들은 좀 더 Web Server개발에 대해 이해해야 하는 것 아닌가 한다.
+
+또, Database 테이블 생성시 꼭 Key로 모든게 조회 되도록 해야 하고 정규화를 꼭 신경써야 한다.
+
+Database를 무시하면 안된다. 백앤드 개발자는 꼭 DB에 대한 기본 소양은 있어야 한다. 
+
+## 개발툴에 대한 비교
+* Visual Studio 2022 : 대규모 프로젝트에 비추천. 솔루션 메모리 로딩 및 Intellisence 수집등의 성능이 좋지 못하고 19버전에 비해서 많이 좋아 졌지만 VS전용 프로젝트 개발이 아니라면 다른툴(jetbrains rider) 추천함.
+* VS Code : 편집 및 디버깅 이외에 의의는 없음. 웹 개발, 소규모에 추천.
+* JetBrains Rider : VS에 의존하는 프로젝트(Winform, WPF, MAUI)가 아니라면 매우 추천. 로딩 및 Intellisence 기능 매우 훌륭함.  VS와 키맵핑 호환도 가능하고 대규모 프로젝트라면 무조건 1순위 툴임.
+* Mono Develop : 쓰지말자. 
+* 결론 : 유료가 괜히 유료가 아니다. (Rider << VS2022 <<<<<< vscode)
+
+## Acknowledgements
 
 [JetBrains](https://www.jetbrains.com/?from=jiu-asp.net-web-solutions) kindly provides `jiu-asp.net-web-solutions` with a free open-source licence for their Resharper and Rider.
 - **Resharper** makes Visual Studio a much better IDE

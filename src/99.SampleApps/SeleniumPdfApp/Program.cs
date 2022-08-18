@@ -11,8 +11,7 @@ using SeleniumPdfApp;
 
 var urls = new[]
 {
-    "https://logine.ecount.com/ECERP/EGM/EGM026M?vrqa=N10KJdtXvBxuz%2BlhUbfIXEy16lq16JI5LZYvmtEdo%2FmFOMMWxxbGoK%2FjvQyH7MFtfZwt%2FQ9xCDpBddJXbTQWzA%3D%3D&vrqb=54555a4c5d4551565a415b41544d561156125c520b145a12570158115e40070559450d4353560d445640525757434044&vrqc=1",
-    //"https://www.naver.com",
+    "https://www.naver.com",
     // "https://www.youtube.com/",
     // "https://www.google.com/",
     // "https://www.daum.net/",
