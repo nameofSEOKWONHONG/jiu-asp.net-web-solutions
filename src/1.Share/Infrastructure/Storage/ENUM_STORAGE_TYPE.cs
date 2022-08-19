@@ -1,4 +1,4 @@
-﻿namespace Application.Infrastructure.Files;
+﻿namespace Infrastructure.Storage.Files;
 
 public enum ENUM_STORAGE_TYPE
 {

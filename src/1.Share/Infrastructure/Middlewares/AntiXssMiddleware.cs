@@ -6,6 +6,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using CSScripting;
 using eXtensionSharp;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -57,11 +58,13 @@ namespace Infrastructure.Middleware
             try
             {
                 var content = await ReadRequestBody(context);
-
                 if (CrossSiteScriptingValidation.IsDangerousString(content, out _)) 
                 {
+                    if (!context.Request.ContentType.Contains("multipart/form-data"))
+                    {
                         await RespondWithAnError(context).ConfigureAwait(false);
-                        return;
+                        return;                        
+                    }
                 }
                 await _next(context).ConfigureAwait(false);
             }

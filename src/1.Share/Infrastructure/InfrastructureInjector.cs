@@ -1,13 +1,17 @@
-﻿using System.Reflection;
+﻿using System.Configuration;
+using System.Reflection;
 using Application;
 using Application.Base;
 using Application.Context;
+using Domain.Configuration;
 using Domain.Enums;
+using eXtensionSharp;
 using Hangfire;
 using Hangfire.PostgreSql;
 using Infrastructure.BackgroundServices;
 using Infrastructure.Persistence;
 using Infrastructure.Services.Account;
+using Infrastructure.Storage.Files;
 using InjectionExtension;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -18,7 +22,9 @@ using WebApiApplication.Services.Abstract;
 
 namespace Infrastructure
 {
-    public class InfrastructureInjector : IServiceInjectionBase
+    public delegate IStorageProvider StorageProviderResolver(ENUM_STORAGE_TYPE type);
+    
+    internal class InfrastructureInjector : IServiceInjectionBase
     {
         private readonly Dictionary<ENUM_DATABASE_TYPE,
             Action<string, IServiceProvider, DbContextOptionsBuilder>>
@@ -71,6 +77,14 @@ namespace Infrastructure
                 }
             };
         
+        private readonly Dictionary<ENUM_STORAGE_TYPE, Func<IServiceProvider, IStorageProvider>>
+            _notifyState =
+                new ()
+                {
+                    { ENUM_STORAGE_TYPE.NCP, (s) => s.GetService<NcpStorage>() },
+                    { ENUM_STORAGE_TYPE.LOCAL, (s) => s.GetService<LocalStorage>() },
+                };
+        
         public void Inject(IServiceCollection services, IConfiguration configuration)
         {
             #region [database init and seeding]
@@ -112,7 +126,17 @@ namespace Infrastructure
                 .AddHostedService<HardwareMonitorBackgroundService>()
                 .AddHostedService<ConfigReloadBackgroundService>()
                 .AddMediatR(Assembly.Load(nameof(Infrastructure)));
-
+            
+            services.AddScoped<NcpStorage>()
+                .AddScoped<LocalStorage>()
+                .AddScoped<StorageProviderResolver>(provider => key =>
+                {
+                    var func = _notifyState[key];
+                    if (func.xIsEmpty()) throw new NotImplementedException($"key {key.ToString()} not implemented");
+                    return func(provider);
+                });
+            
+            //services.Configure<StorageConfigOption>(configuration.GetSection(nameof(StorageConfigOption)));
             services.Configure<HostOptions>(opts => opts.ShutdownTimeout = TimeSpan.FromSeconds(10));
         }
     }
@@ -121,7 +145,7 @@ namespace Infrastructure
     {
         public static void AddInfrastructureInjector(this IServiceCollection services, IConfiguration configuration)
         {
-            var injectorImpl = new ServiceLoader(new[]
+            var injectorImpl = new ServiceLoader(new IServiceInjectionBase[]
             {
                 new InfrastructureInjector()
             }, services, configuration);

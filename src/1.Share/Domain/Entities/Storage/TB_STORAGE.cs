@@ -10,11 +10,13 @@ namespace Domain.Entities.Storage;
 public class TB_STORAGE : GuidEntityBase
 {
     [Required]
+    public short CLOUD_TYPE { get; set; }
+    [Required]
     public string FILE_NAME { get; set; }
     [Required]
+    public long FILE_SIZE { get; set; }    
     public string FILE_URL { get; set; }
-    [Required]
-    public long FILE_SIZE { get; set; }
-    [Required]
-    public short CLOUD_TYPE { get; set; }
+    public string OWNER_KEY { get; set; }
+
+
 }

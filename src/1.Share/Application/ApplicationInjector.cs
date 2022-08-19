@@ -82,7 +82,7 @@ public class ApplicationInjector : IServiceInjectionBase
         services.Configure<CacheConfig>(configuration.GetSection(nameof(CacheConfig)));
         services.Configure<FileFilterOptions>(configuration.GetSection(nameof(FileFilterOptions)));
 
-        services.AddScoped<FileSetting>();
+        services.AddScoped<FileFilterSetting>();
         
         #region [mongodb 설정]
         services.Configure<MongoDbOption>(configuration.GetSection(nameof(MongoDbOption)));

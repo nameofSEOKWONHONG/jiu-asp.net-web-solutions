@@ -12,20 +12,25 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="LibreHardwareMonitorLib" Version="0.8.9" />
-      <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.1" />
-      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
-      <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.1" />
-      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
-      <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+        <PackageReference Include="LibreHardwareMonitorLib" Version="0.8.9" />
+        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="6.0.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />      
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.1" />
+        <PackageReference Include="System.Security.Claims" Version="4.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Context\BulkExtensions\Keys\EFCore.BulkExtensions_PK.txt" />
-      <None Remove="Context\BulkExtensions\Keys\EFCore.BulkExtensions.snk" />
+      <Compile Remove="Migrations\20220819074108_migration20220819_1.cs" />
+      <Compile Remove="Migrations\20220819074108_migration20220819_1.Designer.cs" />
+      <Compile Remove="Migrations\20220819065341_migration20220819.cs" />
+      <Compile Remove="Migrations\20220819065341_migration20220819.Designer.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Migrations" />
     </ItemGroup>
 
 </Project>

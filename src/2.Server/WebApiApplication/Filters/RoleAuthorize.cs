@@ -33,7 +33,7 @@ namespace WebApiApplication.Filters
             }
 
             var roleTypes = RoleType.xSplit(',');
-            var assignedUser = sessionContextService.GetSessionAsync().GetAwaiter().GetResult();
+            var assignedUser = sessionContextService.GetSession();
             var roleMatch = roleTypes.Contains(assignedUser.RoleType.ToString());
             if (!roleMatch)
             {

@@ -25,8 +25,6 @@
         <PackageReference Include="MediatR" Version="10.0.1" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
         
-        <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.2.0" />
         <PackageReference Include="Microsoft.ClearScript.Core" Version="7.2.5" />
         <PackageReference Include="Microsoft.ClearScript.V8" Version="7.2.5" />
         <PackageReference Include="Microsoft.ClearScript.V8.Native.win-x64" Version="7.2.5" />
@@ -36,7 +34,12 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.3" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="6.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.3" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.3" />
 
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />

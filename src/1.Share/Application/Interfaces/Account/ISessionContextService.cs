@@ -5,6 +5,6 @@ namespace WebApiApplication.Services.Abstract
 {
     public interface ISessionContextService
     {
-        Task<ISessionContext> GetSessionAsync();
+        ISessionContext GetSession();
     }
 }

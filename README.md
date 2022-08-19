@@ -62,8 +62,9 @@
       1. sqllocaldb start MSSQLLocalDB
       2. MSSQLLocalDB는 기본으로 설치되는 local database 입니다.
    3. 모두 설치 및 구동되고 있다면 아래의 커맨드를 실행합니다.
-      1. prompt> dotnet ef migrations add migration20211212 --project "../Application"
+      1. prompt> dotnet ef migrations add migration20220819 --project "..\..\1.Share\Infrastructure\"
       2. prompt> dotnet ef database update
+   4. 만약 WebApplication별로 설정할 경우 Infrastructure의 ApplicationDatabaseContext는 각 Application 단위로 내려와야 합니다.
 3. 솔루션을 빌드 합니다.
 4. 정상적으로 빌드 되었다면 blazor wasm 솔루션 페이지가 노출됩니다.
 5. swagger페이지는 아래와 같이 확인할 수 있습니다.

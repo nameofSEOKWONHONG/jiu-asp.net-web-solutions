@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Entities.KeyValueStore;
+using Domain.Entities.Storage;
 using Domain.Entities.System.Config;
 using Domain.Enums;
 using eXtensionSharp;
@@ -33,6 +36,27 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // get all composite keys (entity decorated by more than 1 [Key] attribute
+            foreach (var entity in modelBuilder.Model.GetEntityTypes()
+                         .Where(t => 
+                             t.ClrType.GetProperties()
+                                 .Count(p => p.CustomAttributes.Any(a => a.AttributeType == typeof(KeyAttribute))) > 1))
+            {
+                // get the keys in the appropriate order
+                var orderedKeys = entity.ClrType
+                    .GetProperties()
+                    .Where(p => p.CustomAttributes.Any(a => a.AttributeType == typeof(KeyAttribute)))
+                    .OrderBy(p => 
+                        p.CustomAttributes.Single(x => x.AttributeType == typeof(ColumnAttribute))?
+                            .NamedArguments?.Single(y => y.MemberName == nameof(ColumnAttribute.Order))
+                            .TypedValue.Value ?? 0)
+                    .Select(x => x.Name)
+                    .ToArray();
+
+                // apply the keys to the model builder
+                modelBuilder.Entity(entity.ClrType).HasKey(orderedKeys);
+            }
+            
             modelBuilder.Entity<TB_ROLE>()
                 .Property(e => e.ROLE_TYPE)
                 .HasConversion(
@@ -83,5 +107,12 @@ namespace Infrastructure.Persistence
         public DbSet<TB_GRP_KV_STORE> GrpKvStores { get; set; }
 
         #endregion
+        
+        #region [storage]
+
+        public DbSet<TB_STORAGE> Storages { get; set; }
+
+        #endregion
+
     }
 }

@@ -21,19 +21,19 @@ namespace Infrastructure.Services.Account
             Guid userId, 
             ENUM_ROLE_TYPE roleType, 
             IEnumerable<ENUM_ROLE_PERMISSION_TYPE> rolePermissionTypes,
-            FileSetting fileSetting)
+            FileFilterSetting fileFilterSetting)
         {
             UserId = userId;
             RoleType = roleType;
             RolePermissionTypes = rolePermissionTypes;
-            AllowFileSetting = fileSetting;
+            AllowFileFilterSetting = fileFilterSetting;
             _httpContextAccessor = httpContextAccessor;
         }
         
         public Guid UserId { get; }
         public ENUM_ROLE_TYPE RoleType { get; }
         public IEnumerable<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; }
-        public FileSetting AllowFileSetting { get; }
+        public FileFilterSetting AllowFileFilterSetting { get; }
 
         private TB_USER _tbUser;
         public TB_USER TbUser
@@ -54,14 +54,14 @@ namespace Infrastructure.Services.Account
     public class SessionContextService : ISessionContextService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly FileSetting _fileSetting;
-        public SessionContextService(IHttpContextAccessor httpContextAccessor, FileSetting fileSetting)
+        private readonly FileFilterSetting _fileFilterSetting;
+        public SessionContextService(IHttpContextAccessor httpContextAccessor, FileFilterSetting fileFilterSetting)
         {
             this._httpContextAccessor = httpContextAccessor;
-            this._fileSetting = fileSetting;
+            this._fileFilterSetting = fileFilterSetting;
         }
         
-        public async Task<ISessionContext> GetSessionAsync()
+        public ISessionContext GetSession()
         {
             var userId = this._httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
             var role = this._httpContextAccessor?.HttpContext?.User?.FindFirstValue(ClaimsIdentity.DefaultRoleClaimType);
@@ -72,7 +72,7 @@ namespace Infrastructure.Services.Account
                 Guid.Parse(userId), 
                 ENUM_ROLE_TYPE.Parse(role), 
                 permissions,
-                _fileSetting);
+                _fileFilterSetting);
         }
     }
 }

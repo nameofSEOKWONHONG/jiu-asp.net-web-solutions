@@ -7,10 +7,10 @@ using Microsoft.Extensions.Options;
 
 namespace Application.Infrastructure.Configuration;
 
-public class FileSetting
+public class FileFilterSetting
 {
     private FileFilterOptions _options;
-    public FileSetting(IOptionsMonitor<FileFilterOptions> options)
+    public FileFilterSetting(IOptionsMonitor<FileFilterOptions> options)
     {
         _options = options.CurrentValue;
     }
@@ -34,7 +34,7 @@ public class FileSetting
         return _options.FileFilters.First(m => m.Code == code);
     }
 
-    public IEnumerable<string> GetAllowFileExtensions()
+    public IEnumerable<string> GetAllowExtensions()
     {
         var list = new List<string>();
         _options.FileFilters.Select(m => m.Extensions).xForEach(item => list.AddRange(item));

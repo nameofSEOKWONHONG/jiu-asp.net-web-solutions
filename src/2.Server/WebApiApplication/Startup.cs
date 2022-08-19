@@ -1,5 +1,6 @@
 using System.Linq;
 using Application.Context;
+using Domain.Configuration;
 using Infrastructure.Abstract;
 using Infrastructure.Persistence;
 using Microsoft.AspNetCore.Builder;

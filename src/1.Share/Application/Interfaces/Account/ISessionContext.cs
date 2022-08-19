@@ -12,6 +12,6 @@ namespace WebApiApplication.Services.Abstract
         ENUM_ROLE_TYPE RoleType { get; }
         TB_USER TbUser { get; }
         IEnumerable<ENUM_ROLE_PERMISSION_TYPE> RolePermissionTypes { get; }
-        FileSetting AllowFileSetting { get; }
+        FileFilterSetting AllowFileFilterSetting { get; }
     }
 }
