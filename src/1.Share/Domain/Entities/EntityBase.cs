@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
@@ -23,13 +24,13 @@ namespace Domain.Entities
 
     public class AutoIncEntityBase : EntityBase
     {
-        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required, Key, Column(Order = 0), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
     }
 
     public class GuidEntityBase : EntityBase
     {
-        [Required, Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required, Key, Column(Order = 0), DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ID { get; set; }
     }
 }

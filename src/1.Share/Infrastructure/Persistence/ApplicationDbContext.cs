@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Application.Context;
 using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
+using Domain.Entities.Document;
 using Domain.Entities.KeyValueStore;
 using Domain.Entities.Storage;
 using Domain.Entities.System.Config;
@@ -113,6 +114,13 @@ namespace Infrastructure.Persistence
         public DbSet<TB_STORAGE> Storages { get; set; }
 
         #endregion
+
+        #region [doc]
+
+        public DbSet<TB_DOC_MGR> DocMgrs { get; set; }
+
+        #endregion
+        
 
     }
 }

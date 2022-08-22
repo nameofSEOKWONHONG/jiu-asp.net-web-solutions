@@ -127,13 +127,15 @@ namespace Infrastructure
                 .AddHostedService<ConfigReloadBackgroundService>()
                 .AddMediatR(Assembly.Load(nameof(Infrastructure)));
             
+            //IOptionsSnapshot은 scope로 적용되고
+            //IOptionsMonitor는 singleton으로 적용된다.
             services.AddScoped<NcpStorage>()
                 .AddScoped<LocalStorage>()
                 .AddScoped<StorageProviderResolver>(provider => key =>
                 {
-                    var func = _notifyState[key];
+                    var func = _notifyState.FirstOrDefault(m => m.Key == key);
                     if (func.xIsEmpty()) throw new NotImplementedException($"key {key.ToString()} not implemented");
-                    return func(provider);
+                    return func.Value(provider);
                 });
             
             //services.Configure<StorageConfigOption>(configuration.GetSection(nameof(StorageConfigOption)));

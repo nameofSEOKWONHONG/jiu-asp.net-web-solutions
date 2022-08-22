@@ -4,16 +4,39 @@ using eXtensionSharp;
 using InjectionExtension;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Polly;
 using Spectre.Console;
 using SpectreConsoleApplication.Menus;
 
 var builder = new HostBuilder()
     .ConfigureServices((hostContext, services) =>
-    {   
+    {
+        var timeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(
+            TimeSpan.FromSeconds(5));
+        var longTimeoutPolicy = Policy.TimeoutAsync<HttpResponseMessage>(
+            TimeSpan.FromSeconds(10));
+
+        //ref : https://docs.microsoft.com/ko-kr/aspnet/core/fundamentals/http-requests?view=aspnetcore-6.0
         services.AddHttpClient(ClientConst.CLIENT_NAME, config =>
-        {
-            config.BaseAddress = new Uri(ClientConst.BASE_URL);
-        });
+            {
+                config.BaseAddress = new Uri(ClientConst.BASE_URL);
+            }).AddTransientHttpErrorPolicy(policyBuilder =>
+                policyBuilder.WaitAndRetryAsync(3, retryNumber => TimeSpan.FromSeconds(5)))
+            .AddTransientHttpErrorPolicy(
+                policyBuilder => policyBuilder.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)))
+            .AddPolicyHandler(message => message.Method == HttpMethod.Get ? timeoutPolicy : longTimeoutPolicy)
+            //httpclientfactory는 호출마다 새로운 instance반환.
+            //아래 설정으로 수명이 만료되지 않은 호출의 경우 instance 재사용.
+            //기본 수명 2분
+            .SetHandlerLifetime(TimeSpan.FromMinutes(5))
+            // .ConfigurePrimaryHttpMessageHandler(() =>
+            //     new HttpClientHandler()
+            //     {
+            //         AllowAutoRedirect = true,
+            //         UseDefaultCredentials = true
+            //     })
+            ;
+            
         
         services.AddLifeTimeBuild();
 
@@ -43,14 +66,6 @@ var builder = new HostBuilder()
  
 var host = builder.Build();
 
-AnsiConsole.Write(
-    new Panel("2022-02-25 14:16:00 [blue]PRAY FOR[/] [yellow]UKRAINE[/]")
-        .RoundedBorder());
-
-var encText = "nQW+DbVAi08uBUNWmCIam8XOe+8lkXNyv/jq40Ft5AgDTeFe4S/o7vSN8EetcE+DVdWBflwugsJs1y2t8VXnmrU8rwZWrjw1oZqN1NtKVLr2H9hQM8evHlgkKczx6Sgnswi0I13mNdZzmG8cy1EDnY3ltLO7KlCl79hzB5EFcAAhVTDVy2N6eGi26BT6OXmoE8WJDZd2TYqL31tyPZbitjy6h3drlG36B3mAbqWfY0viJqdHbgS1P8i649V6zeJN/zxaxBRC8XcOrgTamz7gKAl9p71QoNk+Gqw3aecKCPWRQI8bshR4iNe8Wa56fLhZoDvanpozZ1L0UphwLEfkHUHflaQW208h9ZtCb7LdK8e7ccQhlqXMTv/ClXNnGfpFy0GJQOW7R6z7NatiqaC45SzEf034xGxWYyqt+moxfL0wL9Uc5O2Z0s/nB7LsxE6sjFUQ5mHBIjFsytw5XpFes17a5etPFaNi+5vOfg5ogo7K5bHcSQNOTNQM631LFROsrGLC9DP2Zi+EY8fxHlrBwvXeh7tMR35Z00YgrEWT0nOKA/dMpS3Yt0Oq2Vzaiqn+RNVJcG7jT0rV2QkKAfs9OQXaOA2Kjc0oVNh4TlA71/zTh0tNvW9F3YHdfEcB8DjmkYUwpjlMZQCI2tX9WYQcTkWx9XCNDQtSNFd1kuIHplfS1YPe4JXdhNdMfNyWvSE1warUnbGiIG42/+UIlYEW8ByvErm4lyJng5KhKk4pfVI=";
-AnsiConsole.Write(
-    new Panel(encText.xToAES256Decrypt("b14ca5898a4e4142aace2ea2143a2410"))
-        .RoundedBorder());
 try
 {
     using (var serviceScope = host.Services.CreateScope())

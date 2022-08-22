@@ -8,7 +8,6 @@ using Microsoft.Extensions.Logging;
 namespace Application.Infrastructure.Cache.MSFaster
 {
     /// <summary>
-    /// TODO : 나머지 구현해야 함.
     /// 로컬 메모리/스토리지 캐시 적용 케이스임.
     /// 전용 TCP 서버를 구축하려는 경우 다음 URL 참조
     /// https://microsoft.github.io/FASTER/docs/remote-basics/

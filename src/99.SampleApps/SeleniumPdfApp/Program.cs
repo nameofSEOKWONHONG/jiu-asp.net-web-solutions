@@ -14,24 +14,41 @@ var urls = new[]
     "https://www.naver.com",
     // "https://www.youtube.com/",
     // "https://www.google.com/",
-    // "https://www.daum.net/",
-     //"https://www.gmarket.co.kr/",
-    //"https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions",
-    //"https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions/blob/main/src/1.Share/Application/Script/ScriptInitializer.cs",
+    "https://www.daum.net/",
+    "https://www.gmarket.co.kr/",
+    "https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions",
+    "https://github.com/nameofSEOKWONHONG/jiu-asp.net-web-solutions/blob/main/src/1.Share/Application/Script/ScriptInitializer.cs",
     //"http://www.etoland.co.kr/bbs/board.php?bo_table=etohumor05&wr_id=2064684&sca=%C1%A4%BA%B8"
 };
 
-foreach (var url in urls)
+Parallel.ForEach(urls, new ParallelOptions() {MaxDegreeOfParallelism = 4},url =>
 {
     Console.WriteLine($"navigating {url}");
-    var saveProvider = new SeleniumSaveToPdfProvider(url);
-    saveProvider.SaveToPdf(new PrintOptions()
+    using (var converter = new BrowserImageConverter(url, 
+               new PrintOptions()
+               {
+                   Orientation = PrintOrientation.Portrait,
+                   OutputBackgroundImages = true,
+                   ScaleFactor = .8,
+                   ShrinkToFit = true
+               }
+           ))
     {
-        Orientation = PrintOrientation.Portrait,
-        OutputBackgroundImages = true,
-        ScaleFactor = 1.0,
-        ShrinkToFit = true
-    });
+        converter.Convert();    
+    }
     Console.WriteLine($"navigated {url}");
-}
+});
+// foreach (var url in urls)
+// {
+//     Console.WriteLine($"navigating {url}");
+        // var converter = new BrowserImageConverter(url, new PrintOptions()
+        // {
+        //     Orientation = PrintOrientation.Portrait,
+        //     OutputBackgroundImages = true,
+        //     ScaleFactor = 1.0,
+        //     ShrinkToFit = true
+        // });
+        // converter.Convert();
+//     Console.WriteLine($"navigated {url}");
+// }
  
