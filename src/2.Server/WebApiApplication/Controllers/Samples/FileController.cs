@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Application.Infrastructure.Compression;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using Domain.Entities;
 using eXtensionSharp;
@@ -53,7 +54,11 @@ public class FileController : Controller
             }
         });
 
-        var result = await list.xToArchiveAsync();
+        var result = await list.xToArchiveAsync(bytes =>
+        {
+            ZstdCompress compress = new ZstdCompress();
+            return compress.Compress(bytes);
+        });
         
         //create pdf or png
         return File(result, "application/octet-stream", $"{Guid.NewGuid()}.zip");

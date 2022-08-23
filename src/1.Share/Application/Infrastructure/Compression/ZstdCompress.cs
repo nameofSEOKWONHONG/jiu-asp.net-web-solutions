@@ -14,20 +14,28 @@ namespace Application.Infrastructure.Compression;
 /// </summary>
 public class ZstdCompress : ICompress
 {
-    public Span<byte> Compress(string file)
+    public byte[] Compress(string file)
     {
         var fastest = -7;
         var ultra = 22;
         var src = file.xFileReadAllBytes();
         using var compressor = new Compressor(ultra);
-        return compressor.Wrap(src);
+        return compressor.Wrap(src).ToArray();
     }
 
-    public Span<byte> UnCompress(Span<byte> buffer)
+    public byte[] Compress(byte[] bytes)
+    {
+        var fastest = -7;
+        var ultra = 22;
+        using var compressor = new Compressor(ultra);
+        return compressor.Wrap(bytes).ToArray();
+    }
+
+    public byte[] UnCompress(Span<byte> buffer)
     {
         var fastest = -7;
         var ultra = 22;
         using var decompressor = new Decompressor();
-        return decompressor.Unwrap(buffer);
+        return decompressor.Unwrap(buffer).ToArray();
     }
 }

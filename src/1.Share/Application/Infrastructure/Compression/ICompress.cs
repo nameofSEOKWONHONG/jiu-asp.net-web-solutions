@@ -4,6 +4,7 @@ namespace Application.Infrastructure.Compression;
 
 public interface ICompress
 {
-    Span<byte> Compress(string file);
-    Span<byte> UnCompress(Span<byte> buffer);
+    byte[] Compress(string file);
+    byte[] Compress(byte[] bytes);
+    byte[] UnCompress(Span<byte> buffer);
 }
