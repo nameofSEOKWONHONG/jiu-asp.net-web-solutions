@@ -82,7 +82,7 @@ public class BrowserImageConverter : IDisposable
         // {
         //     Bitmap bmp = new Bitmap(ms);
         //     bmp.Save($"D://{Guid.NewGuid()}.png", ImageFormat.Png);
-        // }            
+        // }
 
         #endregion
 

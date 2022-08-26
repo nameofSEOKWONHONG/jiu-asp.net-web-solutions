@@ -40,10 +40,10 @@ namespace Infrastructure.Abstract.Controllers
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="result"></param>
-        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        protected bool TryValidate<TEntity>(TEntity entity, out ActionResult result) 
-            where TEntity : class
+        protected bool TryValidate<T>(T entity, out ActionResult result) 
+            where T : class
         {
             if (!this.TryValidateModel(entity))
             {
@@ -66,38 +66,38 @@ namespace Infrastructure.Abstract.Controllers
         /// <summary>
         /// Fluent Validator (Entity, Dto에 생성자에 정의한 Validator를 사용한다.)
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="data"></param>
         /// <param name="result"></param>
-        /// <typeparam name="TEntity"></typeparam>
+        /// <typeparam name="T"></typeparam>
         /// <typeparam name="TValidator"></typeparam>
         /// <returns></returns>
-        protected (bool IsValid, DynamicDictionary<List<string>> result) TryValidate<TEntity, TValidator>(TEntity entity)
-            where TEntity : class
-            where TValidator : AbstractValidator<TEntity>, new()
+        protected (bool IsValid, DynamicDictionary<List<string>> result) TryValidate<T, TValidator>(T data)
+            where T : class
+            where TValidator : AbstractValidator<T>, new()
         {
-            return ValidatorCore.TryValidate<TEntity, TValidator>(entity);
+            return ValidatorCore.TryValidate<T, TValidator>(data);
         }
 
-        protected async Task<(bool IsValid, DynamicDictionary<List<string>> result)> TryValidateAsync<TEntity, TValidator>(TEntity entity)
-            where TEntity : class
-            where TValidator : AbstractValidator<TEntity>, new()
+        protected async Task<(bool IsValid, DynamicDictionary<List<string>> result)> TryValidateAsync<T, TValidator>(T data)
+            where T : class
+            where TValidator : AbstractValidator<T>, new()
         {
-            return await ValidatorCore.TryValidateAsync<TEntity, TValidator>(entity);
+            return await ValidatorCore.TryValidateAsync<T, TValidator>(data);
         }
 
-        protected IActionResult ResultOk<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Success(entity));
+        protected IActionResult ResultOk<T>(T data) => Ok(ResultBase<T>.Success(data));
         
         protected IActionResult ResultOk(string message) => Ok(ResultBase.Success(message));
 
-        protected IActionResult ResultFail<TEntity>(TEntity entity) => Ok(ResultBase<TEntity>.Fail(entity));
+        protected IActionResult ResultFail<T>(T data) => Ok(ResultBase<T>.Fail(data));
         
         protected IActionResult ResultFail(string message) => Ok(ResultBase.Fail(message));
         
-        protected async Task<IActionResult> ResultOkAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.SuccessAsync(entity));
+        protected async Task<IActionResult> ResultOkAsync<T>(T data) => Ok(await ResultBase<T>.SuccessAsync(data));
         
         protected async Task<IActionResult> ResultOkAsync(string message) => Ok(await ResultBase.SuccessAsync(message));
 
-        protected async Task<IActionResult> ResultFailAsync<TEntity>(TEntity entity) => Ok(await ResultBase<TEntity>.FailAsync(entity));
+        protected async Task<IActionResult> ResultFailAsync<T>(T data) => Ok(await ResultBase<T>.FailAsync(data));
         
         protected async Task<IActionResult> ResultFailAsync(string message) => Ok(await ResultBase.FailAsync(message));
 

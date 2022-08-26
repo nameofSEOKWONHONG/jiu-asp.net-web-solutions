@@ -100,6 +100,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "100.Doc", "100.Doc", "{92383DCF-2DBD-4C97-9D70-F7E5AA29C128}"
 	ProjectSection(SolutionItems) = preProject
 		src\100.doc\dotnet-pgo.md = src\100.doc\dotnet-pgo.md
+		src\100.doc\docker-deploy.md = src\100.doc\docker-deploy.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSendWorkerService", "src\4.BackgroundApp\MailSendWorkerService\MailSendWorkerService.csproj", "{30B77AEA-1A33-4912-94B9-C2BFEE8BBBD1}"
