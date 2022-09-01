@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Application.Context;
@@ -70,7 +71,7 @@ namespace WebApiApplication.Controllers
         }
         
         [HttpPost("sample")]
-        public IActionResult Sample(SampleDto dto)
+        public IActionResult Sample([FromQuery]SampleDto dto)
         {
             var (isValid, result) = this.TryValidate<SampleDto, SampleDto.Validator>(dto);
             return isValid.xIsFalse() ? this.ResultOk(result) : this.ResultOk(dto);
@@ -86,6 +87,16 @@ namespace WebApiApplication.Controllers
         public IActionResult Sample2([FromBody]ENUM_ROLE_TYPE str)
         {
             return Ok(str);
+        }
+
+        [HttpPost("sample3")]
+        public async Task<IActionResult> Sample3(SampleDto dto)
+        {
+            return await Task.Run(() =>
+            {
+                Debug.WriteLine(dto.xToJson());
+                return Ok();
+            });
         }
 
 
