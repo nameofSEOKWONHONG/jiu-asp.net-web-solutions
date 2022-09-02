@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="ClosedXML" Version="0.96.0" />
+      <PackageReference Include="FastExcel" Version="3.0.13" />
     </ItemGroup>
 
     <ItemGroup>

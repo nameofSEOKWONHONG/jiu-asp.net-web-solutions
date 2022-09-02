@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
@@ -21,7 +22,7 @@ namespace WebApiApplication.Controllers
         [HttpGet("GetAll/{pageIndex}/{pageSize}")]
         public async Task<IActionResult> GetAll(string searchCol = "", string searchValue = "", int pageIndex = 1, int pageSize = 10)
         {
-            var result = await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize); 
+            var result = await this.userService.FindAllUserAsync(searchCol, searchValue, pageIndex, pageSize);
             return Ok(result);
         }
 
