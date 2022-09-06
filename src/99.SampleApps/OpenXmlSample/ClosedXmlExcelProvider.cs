@@ -43,7 +43,7 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
                 //worksheet.RowHeight = row.Height;
                 row.Columns.xForEach((col, j) =>
                 {
-                    var rowCell = worksheet.Cell($"{col.ColName}{i + 2}");
+                    var rowCell = worksheet.Cell(i+2, j+1);
                     if(col.Cell.CellType == CellType.Text) rowCell.Value = col.Cell.Value;
                     else if (col.Cell.CellType == CellType.Formula)
                         rowCell.FormulaA1 = col.Cell.Value;
