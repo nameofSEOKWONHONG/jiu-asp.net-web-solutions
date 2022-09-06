@@ -3,36 +3,84 @@
 using System.Diagnostics;
 using eXtensionSharp;
 using OpenXmlSample;
-using Cell = OpenXmlSample.Cell;
-using CellType = OpenXmlSample.CellType;
 
 Console.WriteLine("Excel Export Test");
-
 List<IExcelProvider> excelProviders = new List<IExcelProvider>()
 {
     new ClosedXmlExcelProvider(),
-    new FastExcelProvider()
+    //new FastExcelProvider()
 };
 
-var headers = new List<string>();
-Enumerable.Range(1, 25).ToList().ForEach(i => headers.Add(i.ToString()));
-var rows = new List<OpenXmlSample.Row>();
-Enumerable.Range(1, 2500).ToList().ForEach(i =>
+// var headers = new List<Row>();
+// Enumerable.Range(1, 30).ToList().ForEach(i =>
+// {
+//     var row = new Row()
+//     {
+//         Cells = new()
+//         {
+//             new Cell() { Value = i.ToString(), Width = 100, CellType = CellType.Text }
+//         }
+//     };
+//     headers.Add(row);
+// });
+// var rows = new List<OpenXmlSample.Row>();
+// Enumerable.Range(1, 2500).ToList().ForEach(i =>
+// {
+//     var cells = new List<Cell>();
+//     Enumerable.Range(1, 30).ToList().ForEach(j =>
+//     {
+//         cells.Add(new Cell() {CellType = CellType.Text, Value = $"hello world{j}"});
+//     });
+//     rows.Add(new Row() {Cells = cells});
+// });
+
+Enumerable.Range(1, 10).ToList().ForEach(i =>
 {
-    var cells = new List<Cell>();
-    Enumerable.Range(1, 25).ToList().ForEach(j =>
+    var datum = new List<String[]>();
+    Enumerable.Range(1, 300).ToList().ForEach(i =>
     {
-        cells.Add(new Cell() {CellType = CellType.Text, Value = $"hello world{j}"});
+        var data = new List<String>();
+        Enumerable.Range(1, 25).ToList().ForEach(j =>
+        {
+            data.Add($"test{j}");
+        });
+        datum.Add(data.ToArray());
     });
-    rows.Add(new Row() {Cells = cells});
+    
+    var sw = Stopwatch.StartNew();
+    sw.Start();
+    excelProviders[0].SetHeader(Enumerable.Range(1, 25).Select(m => m.ToString()).ToArray());
+    excelProviders[0].SetContents(datum);
+    excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx");
+    sw.Stop();
+    Console.WriteLine($"============================result({i})============================");
+    Console.WriteLine(sw.Elapsed.TotalSeconds);
 });
 
-var spreedSheetDataFormat = new SpreadsheetDataFormat()
-{
-    Headers = headers,
-    Rows = rows
-};
-excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx", spreedSheetDataFormat);
+/**
+ *  result
+ *  Excel Export Test
+    ============================result(1)============================
+    0.6610683
+    ============================result(2)============================
+    0.0929961
+    ============================result(3)============================
+    0.0851467
+    ============================result(4)============================
+    0.0854137
+    ============================result(5)============================
+    0.0690752
+    ============================result(6)============================
+    0.0665898
+    ============================result(7)============================
+    0.0642861
+    ============================result(8)============================
+    0.0670824
+    ============================result(9)============================
+    0.0615653
+    ============================result(10)============================
+    0.0668502
+ */
 
 // Console.WriteLine("===============================CloseXml Excel Export===============================");
 // Enumerable.Range(1, 10).ToList().ForEach(i =>
@@ -94,6 +142,6 @@ excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx", spreed
  * 파일을 직접 생성하는 것과 읽어들인 Template파일에서 생성하는 것과 차이가 있는 것으로 생각됨.
  * DataTable, DataSet을 사용하는 것보다 직접 맵핑하는게 더 빠르다.
  * FastExcel의 치명적 문제는 서식 적용이 안됨. 원본에 서식이 적용되더라도 최종결과물에서 서식 적용이 안됨.
- * 빠른 결과 만을 원한다면 FaseExcel, 각종 서식과 Excel 지원을 필요로 한다면 CloseXml, Native에 가깝게 개발하고 싶다면 OpenXmlSdk를 사용하자.
+ * 빠른 결과 만을 원한다면 FastExcel, 각종 서식과 Excel 지원을 필요로 한다면 CloseXml, Native에 가깝게 개발하고 싶다면 OpenXmlSdk를 사용하자.
  * CloseXml은 OpenXmlSdk Wrapper이다.
 */

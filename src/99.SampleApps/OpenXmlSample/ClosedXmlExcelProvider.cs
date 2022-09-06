@@ -1,65 +1,101 @@
 ﻿using ClosedXML.Excel;
 using eXtensionSharp;
+using OpenXmlSample.Data;
 
 namespace OpenXmlSample;
 
-public class ClosedXmlExcelProvider : IExcelProvider
+public sealed class ClosedXmlExcelProvider : IExcelProvider
 {
+    private readonly SpreadsheetDataHandler _handler;
     public ClosedXmlExcelProvider()
     {
-
+        _handler = new SpreadsheetDataHandler();
     }
 
-    public void CreateExcel(string filePath, SpreadsheetDataFormat dataFormat)
+    #region [data handler]
+
+    public void SetSheetTitle(string title) => this._handler.SetSheetTitle(title);
+    public void SetHeader(IEnumerable<string> headers) => this._handler.SetHeader(headers.ToArray());
+
+    public void SetContents(List<String[]> values, List<CellType> cellTypes = null,
+        List<AlignmentType> alignmentTypes = null)
+        => this._handler.SetContents(values, cellTypes, alignmentTypes);    
+
+    #endregion
+
+    public void CreateExcel(string filePath)
     {
+        var dataFormat = _handler.Data;
+        
         using (var workbook = new XLWorkbook(XLEventTracking.Disabled))
         {
             var worksheet = workbook.Worksheets.Add("test sheet");
-            var startAlpha = 65;
-            var rowCnt = 1;
-            dataFormat.Headers.xForEach((header, i) =>
+            
+            #region [set value header and contents]
+            
+            dataFormat.Header.Columns.xForEach((col, i) =>
             {
-                worksheet.Cell($"{((char)startAlpha).ToString()}{rowCnt}").Value = header;
-                startAlpha += 1;
+                worksheet.Cell($"{col.ColName}1").Value = col.Cell.Value;
             });
+            
             dataFormat.Rows.xForEach((row, i) =>
             {
-                startAlpha = 65;
-                rowCnt += 1;
-                row.Cells.xForEach((cell, j) =>
+                //worksheet.RowHeight = row.Height;
+                row.Columns.xForEach((col, j) =>
                 {
-                    if(cell.CellType == CellType.Text) worksheet.Cell($"{((char)startAlpha).ToString()}{rowCnt}").Value = cell.Value;
-                    else if (cell.CellType == CellType.Formula)
-                        worksheet.Cell($"{((char)startAlpha).ToString()}{rowCnt}").FormulaA1 = cell.Value;
-                    startAlpha += 1;
+                    var rowCell = worksheet.Cell($"{col.ColName}{i + 2}");
+                    if(col.Cell.CellType == CellType.Text) rowCell.Value = col.Cell.Value;
+                    else if (col.Cell.CellType == CellType.Formula)
+                        rowCell.FormulaA1 = col.Cell.Value;
+                    else throw new NotImplementedException();
                 });
             });
-            // workseet.Cell("A2").FormulaA1 = "=MID(A1, 7, 5)";
+            
+            #endregion
 
-            SetWorksheetStyle(ref worksheet, ref dataFormat);
+            #region [set style header and contents]
+
+            SetHeaderStyle(ref worksheet, dataFormat);
+            SetContentsStyle(ref worksheet, dataFormat);            
+
+            #endregion
             
             workbook.SaveAs(filePath);
         }
     }
 
     /// <summary>
-    /// 완성된 Worksheet를 바탕으로 스타일을 적용한다.
+    /// header 영역에 대한 스타일링 수행
     /// </summary>
     /// <param name="worksheet"></param>
-    private void SetWorksheetStyle(ref IXLWorksheet worksheet, ref SpreadsheetDataFormat dataFormat)
+    private void SetHeaderStyle(ref IXLWorksheet worksheet, SpreadsheetData data)
     {
         var ws = worksheet;
-        var handler = new SpreadsheetDataFormatHandler(dataFormat);
-        handler.GetColumnNames().xForEach((colName, i) =>
+        data.Header.Columns.xForEach((col, i) =>
         {
             var cell = ws.Cell(1, i + 1);
-            cell.Style.Fill.BackgroundColor = XLColor.LightGray;
-            cell.Style.Border.LeftBorder = XLBorderStyleValues.Thin;
-            cell.Style.Border.TopBorder = XLBorderStyleValues.Thin;
-            cell.Style.Border.RightBorder =XLBorderStyleValues.Thin; 
-            cell.Style.Border.BottomBorder = XLBorderStyleValues.Thin;
-            //ws.Column(colName).Width = 200;
+            //cell.Style.Fill.SetBackgroundColor(XLColor.FromArgb(cellItem.CellRgba));
+            cell.Style.Fill.SetBackgroundColor(XLColor.LightGray);
+            cell.Style.Border.SetLeftBorder(XLBorderStyleValues.Thin);
+            cell.Style.Border.SetTopBorder(XLBorderStyleValues.Thin);
+            cell.Style.Border.SetRightBorder(XLBorderStyleValues.Thin);
+            cell.Style.Border.SetBottomBorder(XLBorderStyleValues.Thin);
             cell.Style.Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+        });
+    }
+
+    /// <summary>
+    /// contents 영역에 대한 스타일링 수행
+    /// </summary>
+    /// <param name="worksheet"></param>
+    /// <param name="data"></param>
+    private void SetContentsStyle(ref IXLWorksheet worksheet, SpreadsheetData data)
+    {
+        var ws = worksheet;
+        var row = data.Rows.xFirst();
+        row.Columns.xForEach(col =>
+        {
+            ws.Column(col.ColName).Width = col.Width;
         });
     }
 }

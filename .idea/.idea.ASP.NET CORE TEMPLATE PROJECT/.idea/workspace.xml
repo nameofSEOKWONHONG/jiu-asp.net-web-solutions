@@ -18,6 +18,9 @@
     <projectFile>src/99.SampleApps/SeleniumPdfApp/SeleniumPdfApp.csproj</projectFile>
     <projectFile>src/99.SampleApps/SimpleRecorderApp/ECountRecorderWpf45.csproj</projectFile>
     <projectFile>src/99.SampleApps/DynamicClient/DynamicClient.csproj</projectFile>
+    <projectFile>CSharp11Feature/CSharp11Feature.csproj</projectFile>
+    <projectFile>src/99.SampleApps/NAutoWiredSample/NAutoWiredSample.csproj</projectFile>
+    <projectFile>src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj</projectFile>
     <projectFile profileName="WeatherForecastApiApplication">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj</projectFile>
     <projectFile profileName="YarpWebApplication">src/2.Server/3.Proxy/YarpWebApplication/YarpWebApplication.csproj</projectFile>
@@ -42,30 +45,23 @@
     <projectFile profileName="IIS Express">src/98.AgileConfigProject/AgileConfigServer/AgileConfigServer.csproj</projectFile>
     <projectFile profileName="HotChocolateSample">src/99.SampleApps/HotChocolateSample/HotChocolateSample.csproj</projectFile>
     <projectFile profileName="IIS Express">src/99.SampleApps/HotChocolateSample/HotChocolateSample.csproj</projectFile>
+    <projectFile profileName="MailSenderWorkerService">src/4.BackgroundApp/MailSenderWorkerService/MailSenderWorkerService.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/AuthProvider.cs" afterDir="false" />
+    <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="impl excel export">
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/AlignmentType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/Cell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/CellType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/Col.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/Row.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Data/SpreadsheetData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/SpreadsheetDataHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/ApplicationInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/CacheProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Cache/CacheProviderResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/MessageProviderResolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Infrastructure/Message/MessageProviderResolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Infrastructure/InfrastructureInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Infrastructure/InfrastructureInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/AddServiceAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/AddServiceAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/DependencyInjectorBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/DependencyInjectorBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/InjectionExtension/ServiceLifeTimeBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/HelloWorldInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/HelloWorldService/HelloWorldInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/JUIControlService/FormProviderInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/JUIControlService/FormProviderInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/TodoInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/TodoService/TodoInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/WeatherForecastInjector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/1.Service/WeatherForecastService/WeatherForecastInjector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/3.Proxy/YarpWebApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/3.Proxy/YarpWebApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/2.Server/WebApiApplication/Extensions/ApplicationBuilderExtenions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/LoginService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/1.Share/ClientApplication/Services/WeatherForecastService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/FetchData.razor" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/BlazorServerApplication/Pages/FetchData.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ServiceRunnerSampleApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/FastExcelProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/FastExcelProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/IExcelProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/IExcelProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/SpreadsheetDataFormat.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,63 +81,106 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/1.Share/Application/OfficeConverter/IOfficeConverter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/a8/61f22455/InfrastructureExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/node/package-lock.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b8934b0fdc63400982aad57d44609f111fba98/57/3be7afd1/KestrelServerLimits.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/2a/5d3c5d70/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Loader/RuntimeConfigExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/RxtFileReader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoSample.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/a0/0afdeed6/Compiler.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/46/815dde81/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b4821805f7ce77d5b82c729d3fc9e3e7a69e94fef2a3e27646773521522fe/IValidationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/459423cb9c8bd110b268b6451c29ed34bee23fc47c9e2681e436cdac77a/ApiVersioningMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/198a6261cebc324728dcc4c178edc5f2894123f711722c80e8557cbfd27651/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b8934b0fdc63400982aad57d44609f111fba98/31/c9910a1e/HttpProtocol.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09b56765134540938431b757a10885d9a800/d3/e46e5082/ExtensionMethods.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/99.SampleApps/DynamicClient/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/80fad1abc6a0b19dbe738ff7fdc6d92da5bf128839240743dd9c1d3e274cf/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/685375de32fa2adf315b38f6d22782547cd9795e6d4d109e94522c8b6cc446c0/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/19baab1f6f574ddba3a8823bd46439ac4c00/96/43d70af9/02000007.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/951c8ce830e64b3483e2d3530d675639124a00/13/1b824109/IXLFill.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a9712f429d4842f7af231ada0efdd797a090/41/62a7a69b/HttpsRedirectionMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/19baab1f6f574ddba3a8823bd46439ac4c00/11/e3be0215/02000005.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b847bfecb377dc81b155bbff37052de67851a213632e66bc468b78f4fa/HttpLoggingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19baab1f6f574ddba3a8823bd46439ac4c00/18/6afa9750/IMemberService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/19baab1f6f574ddba3a8823bd46439ac4c00/56/0137bc13/ILoginService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a0b791036ec35b5dbf9810e1541bf6cf999ed7aaae679cab42228c79da2/XLColorKey.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3165b223bd8dc2e0e4238edd7f72d08adb2824f853158bce45ecfd46461ae9c/XLColor_Public.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/504106af5b3c4b4a8c47be7a4f27f14336e80/09/514e9789/UseExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/27998a8942264ac1b2e8d07155bec4f51cb898/cf/e1b500c0/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/46/815dde81/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6d91921f1921869d264c6f3f6e3870a127baa8b9364a7a39ffea392ac933d38/HostingAbstractionsHostExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d50a549c405a40d7aaf3e74af5a5b2f35befa8/b4/07bf7356/Row.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/37a698e7ce61c62d64e9a24aa0a7e0e3fb124a48a27044d8107fb012f191e4/ExceptionHelper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6be89087caef75954daa03f109f69149fe7d302d68154297922e36e7e2d4b6/ResponseCachingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/node/package-lock.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7069022a8ab46c5a5a356458475309142a00/ff/8beda9b6/OutcomeResult.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7069022a8ab46c5a5a356458475309142a00/e3/7746eea2/Activity.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d831f4c3197647b7b88a3eeff13bbdc75d7200/0f/fc7ce9b4/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/CustomOptionSample/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9de39156873f71316993799d71c196362cc84ef1f8a56d47e25897c6ab6e94/RequestLocalizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ca297ca33a073cd82e7d8a3775a1b6ed6ec661a607ba2f413cdf118c06d5c49/ApiBehaviorOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/fb/bf734ffa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/CustomOptionSample/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b7069022a8ab46c5a5a356458475309142a00/a3/539d21a5/IActivityExecutionResult.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/HotChocolateSample.Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/84f28e9b56c06474b877ee255eefbbee29aef25d998edfc9d4e85b33e1edf882/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/644829e036a44a0a93660e1be070cb6c5da400/ee/60c44605/PrintOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fba5ef5e2984331167299f0fce7a4151267d9b314aa8549aea3ba82ab5c628/Status.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/619b02c706a14a7dbe10434c453f9eb720e00/39/9d84db05/IEvaluator.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Internal/RuntimeConfig.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/644829e036a44a0a93660e1be070cb6c5da400/c2/44a329bf/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/1.Share/Application/OfficeConverter/IOfficeConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/619b02c706a14a7dbe10434c453f9eb720e00/6f/0959401c/EvaluatorBase`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/TodoController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/25f5e3f270815f761c1f8d27a623df5985f2c6277738d2ec6a7fb08b90bb/ServiceProviderEngineScope.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/Internal/RuntimeOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bfb18a70bc5b8494904676efcbbf19f51e8f80d61f94f85dfc1587bc97d51e5/PathExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ca6ebcc13234dd7b12e5ed6d64740add1e00/c8/ab451c85/Workflow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/Controllers/StorageController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/a8/61f22455/InfrastructureExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e0bea4e5f03899efe75dc4dcf582f230702687c5ac6269866345ce4aae5d8a36/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe9eb81c69ac4f6887d82ea16803a89c64c00/52/b41832fc/ZSTD_cParameter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b8934b0fdc63400982aad57d44609f111fba98/57/3be7afd1/KestrelServerLimits.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fe9eb81c69ac4f6887d82ea16803a89c64c00/08/af17c55d/Compressor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/ScriptFiles/cs/Sample1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/appsettings.Development.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/2a/5d3c5d70/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/JWorker/MainWorker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/b8/8db098c6/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/WeatherForecast/WeatherForecastView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/725762de6c754dcd90cc731b7473927716400/a0/0afdeed6/Compiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/RxtFileReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginAction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/ImageResizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Login/LoginView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Member/MemberView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/AppConst.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2b4821805f7ce77d5b82c729d3fc9e3e7a69e94fef2a3e27646773521522fe/IValidationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/ViewBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Abstract/IViewBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/fa/ecbf02bb/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/3.Client/SpectreConsoleApplication/Menus/Counter/CounterView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/d7/d6efe659/Int16.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/MailSendWorkerService/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/obj/Debug/MainWindow.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d831f4c3197647b7b88a3eeff13bbdc75d7200/0f/fc7ce9b4/WebDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/4.BackgroundApp/MailSendWorkerService/MailSendWorker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d635c17f45541dfb0831791bf0017d5dc00/a1/b3233756/FastExcel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3839fc8fee5ae62538a4469ed86bbba1ccd15d4e0da63bba779abe1719da3/IConfiguration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3b9684f72bc2cc435eb694f7cc86eca8c240d2d1cefa1e8697a61f1f2f27f/SafeFileHandle.Windows.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/09b56765134540938431b757a10885d9a800/2c/03ede5a3/ScreenshotMaker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d635c17f45541dfb0831791bf0017d5dc00/6e/0c238561/Worksheet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/56c665453e61b7a241e4db6c184a5c6e713678f06c873acdeffaff638f9486/CallSiteValidator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/Sql/QueryPocoSample.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d635c17f45541dfb0831791bf0017d5dc00/f0/81229de3/Cell.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5246e3851ae0b6b3412dcca1819551c519172078dada937ca0952a3e027d6/OptionsMonitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/c3/bb9b788d/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginReloadedEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/40534e71a5e4e530e9611bebcdcb40a28b8447f995ca2dc66d4179cdac86b75/ChangeToken.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d695170c4e9a944e068ce74ea2073154a9540de47d336a91795a1f261dc6012/TypeConverterAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c6354d55b4c1fdbe22621ea48185af62cdeadcf4f28d9ed0890dfdf36c6/ControllerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5956701c92ec47bc98145555cd08eafca23890/9c/7abb4548/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/99.SampleApps/HotChocolateSample.Client/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bb466e7fe07a5e8b726c98de61b5ceb3533904236bd31b8242f1111b6aea9/OptionsMonitorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f67b00a0fa6d40c283ba8e0c06a05da241490/ff/1b9a2df8/AsyncEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/de/ed980e57/DatabaseFacade.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f0bc8af897384434885c17ea9a0d050b45e1fa6b7e4e3cb7c12b9844b90d23d/IOptionsMonitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/57c2d4282221452cad4df86bbd5d6fa0a1fc70/37/ec2dbf74/ExecutionContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ca6ebcc13234dd7b12e5ed6d64740add1e00/c8/ab451c85/Workflow.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../DotNetCorePlugins/src/Plugins/PluginLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/538811d0fba15c61b743814ea8b7193d48cfbb84a1a53c5db2512b1b329330/DbSet.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -157,11 +196,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.72105265" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.SqlQuerySampleApp">
+  <component name="RunManager" selected=".NET Project.OpenXmlSample">
     <configuration name="AvaloniaCrossPlatformApp.NetCore" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/bin/Debug/net6.0/AvaloniaCrossPlatformApp.NetCore.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -176,6 +217,24 @@
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
       <option name="PROJECT_TFM" value="net6.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="CSharp11Feature" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/CSharp11Feature/CSharp11Feature.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -261,6 +320,42 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/HotChocolateSample.Client/HotChocolateSample.Client.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="NAutoWiredSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/NAutoWiredSample/NAutoWiredSample.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="OpenXmlSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -695,6 +790,9 @@
       <item itemvalue=".NET Project.SeleniumPdfApp" />
       <item itemvalue=".NET Project.SimpleRecorder" />
       <item itemvalue=".NET Project.DynamicClient" />
+      <item itemvalue=".NET Project.CSharp11Feature" />
+      <item itemvalue=".NET Project.NAutoWiredSample" />
+      <item itemvalue=".NET Project.OpenXmlSample" />
     </list>
     <recent_temporary>
       <list>
@@ -786,6 +884,18 @@
       <workItem from="1659669002368" duration="3203000" />
       <workItem from="1660010330784" duration="2880000" />
       <workItem from="1660108139738" duration="4445000" />
+      <workItem from="1661128563676" duration="24828000" />
+      <workItem from="1661159323565" duration="40000" />
+      <workItem from="1661221308219" duration="1438000" />
+      <workItem from="1661223704024" duration="987000" />
+      <workItem from="1661303786433" duration="1974000" />
+      <workItem from="1661477197791" duration="3069000" />
+      <workItem from="1661487846450" duration="6634000" />
+      <workItem from="1661745755421" duration="7278000" />
+      <workItem from="1661920815660" duration="147000" />
+      <workItem from="1662091177450" duration="11920000" />
+      <workItem from="1662339627449" duration="3926000" />
+      <workItem from="1662431668439" duration="9421000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -955,7 +1065,49 @@
       <option name="project" value="LOCAL" />
       <updated>1659691403101</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update.">
+      <created>1660900103111</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1660900103111</updated>
+    </task>
+    <task id="LOCAL-00026" summary="impl browser to pdf, png">
+      <created>1661159354226</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1661159354226</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update">
+      <created>1661222739831</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1661222739831</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update">
+      <created>1661224683605</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1661224683605</updated>
+    </task>
+    <task id="LOCAL-00029" summary="change variable name">
+      <created>1661504175086</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1661504175086</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update">
+      <created>1662106187064</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1662106187064</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -980,7 +1132,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -1039,8 +1191,12 @@
     <MESSAGE value="update poco" />
     <MESSAGE value="ypdate" />
     <MESSAGE value="add ef interceptor duration" />
+    <MESSAGE value="update." />
+    <MESSAGE value="impl browser to pdf, png" />
+    <MESSAGE value="change variable name" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="impl excel export" />
+    <option name="LAST_COMMIT_MESSAGE" value="impl excel export" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1206,6 +1362,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d635c17f45541dfb0831791bf0017d5dc00/6e/0c238561/Worksheet.cs</url>
+          <line>474</line>
+          <properties documentPath="C:\Users\19066Seokwon\AppData\Roaming\JetBrains\Rider2021.3\resharper-host\DecompilerCache\decompiler\2d635c17f45541dfb0831791bf0017d5dc00\6e\0c238561\Worksheet.cs" initialLine="474" containingFunctionPresentation="method 'ValidateNewWorksheet'">
+            <startOffsets>
+              <option value="18981" />
+            </startOffsets>
+            <endOffsets>
+              <option value="19017" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d635c17f45541dfb0831791bf0017d5dc00/a1/b3233756/FastExcel.cs</url>
+          <line>152</line>
+          <properties documentPath="C:\Users\19066Seokwon\AppData\Roaming\JetBrains\Rider2021.3\resharper-host\DecompilerCache\decompiler\2d635c17f45541dfb0831791bf0017d5dc00\a1\b3233756\FastExcel.cs" initialLine="152" containingFunctionPresentation="method 'CheckFiles'">
+            <startOffsets>
+              <option value="5750" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5830" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
