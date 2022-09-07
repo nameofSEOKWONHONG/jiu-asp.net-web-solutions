@@ -2,7 +2,6 @@
 
 public sealed class Col
 {
-    public String ColName { get; set; }
-    public Cell Cell { get; set; }   
+    public Cell Cell { get; set; } = new Cell();
     public int Width { get; set; }
 }

@@ -3,6 +3,7 @@
 using System.Diagnostics;
 using eXtensionSharp;
 using OpenXmlSample;
+using OpenXmlSample.Data;
 
 Console.WriteLine("Excel Export Test");
 List<IExcelProvider> excelProviders = new List<IExcelProvider>()
@@ -46,12 +47,17 @@ Enumerable.Range(1, 10).ToList().ForEach(i =>
         });
         datum.Add(data.ToArray());
     });
+    var idata = new List<string>();
+    datum.Add(Enumerable.Range(1, 25).Select(i => $"0.{i}").ToArray());
     
     var sw = Stopwatch.StartNew();
     sw.Start();
-    excelProviders[0].SetHeader(Enumerable.Range(1, 25).Select(m => m.ToString()).ToArray());
-    excelProviders[0].SetContents(datum);
-    excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx");
+    var handler = new SpreadsheetDataHandler();
+    handler.SetSheetTitle(() => "sheet");
+    handler.SetHeader(() => Enumerable.Range(1, 25).Select(m => m.ToString()).ToArray());
+    handler.SetContents(() => new Contents(){ Values = datum, AlignmentTypes = null, CellTypes = null});
+    var data = handler.Execute();
+    excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx", data);
     sw.Stop();
     Console.WriteLine($"============================result({i})============================");
     Console.WriteLine(sw.Elapsed.TotalSeconds);

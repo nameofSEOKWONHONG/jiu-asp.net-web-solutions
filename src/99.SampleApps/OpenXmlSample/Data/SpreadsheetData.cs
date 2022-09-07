@@ -8,3 +8,4 @@ public sealed class SpreadsheetData
     public Row Header { get; set; }
     public List<Row> Rows { get; set; }
 }
+

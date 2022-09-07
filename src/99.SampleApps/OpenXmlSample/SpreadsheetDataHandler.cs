@@ -6,24 +6,64 @@ namespace OpenXmlSample;
 public class SpreadsheetDataHandler
 {
     private readonly SpreadsheetData _spreadsheetData;
-    public SpreadsheetData Data => _spreadsheetData;
     public SpreadsheetDataHandler()
     {
         if (_spreadsheetData.xIsEmpty()) _spreadsheetData = new SpreadsheetData();
     }
 
-    public void SetSheetTitle(string title) => _spreadsheetData.SheetTitle = title;
+    private Func<String> _sheetTitleFunc = null;
+    private Func<IEnumerable<String>> _headerFunc = null;
+    private Func<Contents> _contentsFunc = null;
+    
+    public SpreadsheetData Execute()
+    {
+        if (_sheetTitleFunc.xIsNotEmpty())
+        {
+            var sheetTitle = _sheetTitleFunc();
+            this.SetSheetTitle(sheetTitle);
+        }
+        if (_headerFunc.xIsNotEmpty())
+        {
+            var headers = _headerFunc();
+            this.SetHeader(headers);
+        }
 
-    public void SetHeader(string[] headers)
+        if (_contentsFunc.xIsNotEmpty())
+        {
+            var contents = _contentsFunc();
+            this.SetContents(contents.Values, contents.CellTypes, contents.AlignmentTypes);
+        }
+
+        return _spreadsheetData;
+    }
+    
+
+    public SpreadsheetDataHandler SetSheetTitle(Func<String> func)
+    {
+        _sheetTitleFunc = func;
+        return this;
+    }
+    public SpreadsheetDataHandler SetHeader(Func<IEnumerable<String>> func)
+    {
+        _headerFunc = func;
+        return this;
+    }
+    public SpreadsheetDataHandler SetContents(Func<Contents> func)
+    {
+        _contentsFunc = func;
+        return this;
+    }
+
+    private void SetSheetTitle(string title) => _spreadsheetData.SheetTitle = title;
+    
+    private void SetHeader(IEnumerable<string> headers)
     {
         var row = new Row();
         row.Columns = new List<Col>();
-        var alphabet = 65;
         headers.xForEach(header =>
         {
             row.Columns.Add(new Col()
-            {
-                ColName = GetColName(ref alphabet),
+            {                
                 Width = 100,
                 Cell = new Cell()
                 {
@@ -42,6 +82,7 @@ public class SpreadsheetDataHandler
     /// <param name="alphabetNum"></param>
     /// <returns></returns>
     /// <exception cref="NotSupportedException"></exception>
+    [Obsolete("don't use", true)]
     private string GetColName(ref int alphabetNum)
     {
         var format = ((char)alphabetNum).ToString();
@@ -60,14 +101,12 @@ public class SpreadsheetDataHandler
         // }
 
         return format;
-    }
-
-    public void SetContents(List<String[]> values, List<CellType> cellTypes = null, List<AlignmentType> alignmentTypes = null)
+    }    
+    private void SetContents(IEnumerable<IEnumerable<String>> values, IEnumerable<CellType> cellTypes = null, IEnumerable<AlignmentType> alignmentTypes = null)
     {
-        CellType defaultCellType = CellType.Text;
-        AlignmentType defaultAlignmentType = AlignmentType.Left;
-
         _spreadsheetData.Rows = new List<Row>();
+        var arrCellTypes = cellTypes?.ToArray();
+        var arrAlignmentTypes = alignmentTypes?.ToArray();
         values.xForEach((value, i) =>
         {
             var row = new Row();
@@ -76,13 +115,12 @@ public class SpreadsheetDataHandler
             {
                 row.Columns.Add(new Col()
                 {
-                    ColName = _spreadsheetData.Header.Columns[j].ColName,
                     Width = 100,
                     Cell = new Cell()
                     {
-                        CellType = cellTypes.xIsEmpty() ? defaultCellType : cellTypes[i],
+                        CellType = arrCellTypes.xIsEmpty() ? CellType.Text : arrCellTypes[j],
                         Value = v,
-                        AlignmentType = alignmentTypes.xIsEmpty() ? defaultAlignmentType : alignmentTypes[i],                        
+                        AlignmentType = v.xIsNumber() ? AlignmentType.Right : AlignmentType.Left //arrAlignmentTypes.xIsEmpty() ? AlignmentType.Right : arrAlignmentTypes[j]                        
                     }
                 });
             });

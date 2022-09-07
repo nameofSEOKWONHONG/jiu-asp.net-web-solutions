@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Wordprocessing;
 using eXtensionSharp;
 using OpenXmlSample.Data;
 
@@ -12,41 +13,32 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
         _handler = new SpreadsheetDataHandler();
     }
 
-    #region [data handler]
-
-    public void SetSheetTitle(string title) => this._handler.SetSheetTitle(title);
-    public void SetHeader(IEnumerable<string> headers) => this._handler.SetHeader(headers.ToArray());
-
-    public void SetContents(List<String[]> values, List<CellType> cellTypes = null,
-        List<AlignmentType> alignmentTypes = null)
-        => this._handler.SetContents(values, cellTypes, alignmentTypes);    
-
-    #endregion
-
-    public void CreateExcel(string filePath)
+    public void CreateExcel(string filePath, SpreadsheetData data)
     {
-        var dataFormat = _handler.Data;
+        var dataFormat = data;
         
         using (var workbook = new XLWorkbook(XLEventTracking.Disabled))
         {
-            var worksheet = workbook.Worksheets.Add("test sheet");
+            var worksheet = workbook.Worksheets.Add(dataFormat.SheetTitle);
             
             #region [set value header and contents]
             
             dataFormat.Header.Columns.xForEach((col, i) =>
             {
-                worksheet.Cell($"{col.ColName}1").Value = col.Cell.Value;
+                var cell = worksheet.Row(1).Cell(i+1);
+                cell.Value = col.Cell.Value; 
             });
             
-            dataFormat.Rows.xForEach((row, i) =>
+            dataFormat.Rows.xForEach((dataRow, i) =>
             {
                 //worksheet.RowHeight = row.Height;
-                row.Columns.xForEach((col, j) =>
+                var row = worksheet.Row(i + 2);
+                dataRow.Columns.xForEach((dataCol, j) =>
                 {
-                    var rowCell = worksheet.Cell(i+2, j+1);
-                    if(col.Cell.CellType == CellType.Text) rowCell.Value = col.Cell.Value;
-                    else if (col.Cell.CellType == CellType.Formula)
-                        rowCell.FormulaA1 = col.Cell.Value;
+                    var cell = worksheet.Cell(i+2, j+1);
+                    if(dataCol.Cell.CellType == CellType.Text) cell.Value = dataCol.Cell.Value;
+                    else if (dataCol.Cell.CellType == CellType.Formula)
+                        cell.FormulaA1 = dataCol.Cell.Value;
                     else throw new NotImplementedException();
                 });
             });
@@ -93,9 +85,9 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
     {
         var ws = worksheet;
         var row = data.Rows.xFirst();
-        row.Columns.xForEach(col =>
+        row.Columns.xForEach((col, i) =>
         {
-            ws.Column(col.ColName).Width = col.Width;
+            ws.Column(i+1).Width = col.Width;
         });
     }
 }
