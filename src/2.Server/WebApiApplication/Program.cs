@@ -9,11 +9,6 @@ using Serilog.Sinks.Elasticsearch;
 
 namespace WebApiApplication
 {
-    /// <summary>
-    /// TODO : https://github.com/natemcmaster/DotNetCorePlugins 참고하여 Plugin System으로 확장해 보자.
-    /// TODO : 기존 구현을 참고한다. 다만, 진행하기 전까지의 작업이 Version2로 한다.
-    /// TODO : 이후 버전은 V3로 한다.
-    /// </summary>
     public class Program
     {
         public static void Main(string[] args)
@@ -23,7 +18,6 @@ namespace WebApiApplication
             try
             {
                 TypeAdapterConfig.GlobalSettings.Default.NameMatchingStrategy(NameMatchingStrategy.Flexible);
-
                 CreateHostBuilder(args).Build().Run();
             }
             catch (System.Exception ex)
@@ -40,7 +34,6 @@ namespace WebApiApplication
                     //webBuilder.UseKestrel(options => options.ListenAnyIP(5001));
                     webBuilder.UseKestrel(opts =>
                     {
-                        var a = 100_000_000;
                         opts.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(5);
                         opts.Limits.MaxConcurrentConnections = 100;
                         opts.Limits.MaxConcurrentUpgradedConnections = 100;

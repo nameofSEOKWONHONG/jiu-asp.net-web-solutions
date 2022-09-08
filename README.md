@@ -1,6 +1,10 @@
 # jiu-asp.net-web-solutions
 
-`jiu-asp.net-web-solutions`는 asp.net core 6기준으로 제작하는 서버 및 Blazor Server / WASM 프로젝트 템플릿입니다.
+`jiu-asp.net-web-solutions`는 asp.net core 6기준으로 제작하는 서버 및 Blazor Server / WASM 프로젝트 템플릿입니다.  
+`
+어느 시점에 템플릿을 벗어난 프로젝트가 되었습니다.  
+포함된 소스는 참고만 하시고 실제 프로젝트에 이런 코드를 사용할 수 있다 정도로 보시기 바랍니다.
+`
 
 이 프로젝트는  
 `https://github.com/blazorhero/CleanArchitecture`  

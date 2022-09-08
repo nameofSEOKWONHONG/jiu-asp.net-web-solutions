@@ -1,20 +1,24 @@
-﻿using eXtensionSharp;
+﻿using System.Diagnostics;
+using eXtensionSharp;
 using OpenXmlSample.Data;
 
 namespace OpenXmlSample;
 
 public class SpreadsheetDataHandler
 {
+    private Func<String> _sheetTitleFunc = null;
+    private Func<IEnumerable<String>> _valueHeaderFunc = null;
+    private Func<IEnumerable<Row>> _rowHeaderFunc = null;
+    private Func<Contents> _contentsFunc = null;
     private readonly SpreadsheetData _spreadsheetData;
+    
     public SpreadsheetDataHandler()
     {
         if (_spreadsheetData.xIsEmpty()) _spreadsheetData = new SpreadsheetData();
     }
 
-    private Func<String> _sheetTitleFunc = null;
-    private Func<IEnumerable<String>> _headerFunc = null;
-    private Func<Contents> _contentsFunc = null;
-    
+    #region [public]
+
     public SpreadsheetData Execute()
     {
         if (_sheetTitleFunc.xIsNotEmpty())
@@ -22,9 +26,15 @@ public class SpreadsheetDataHandler
             var sheetTitle = _sheetTitleFunc();
             this.SetSheetTitle(sheetTitle);
         }
-        if (_headerFunc.xIsNotEmpty())
+        if (_valueHeaderFunc.xIsNotEmpty())
         {
-            var headers = _headerFunc();
+            var headers = _valueHeaderFunc();
+            this.SetHeader(headers);
+        }
+
+        if (_rowHeaderFunc.xIsNotEmpty())
+        {
+            var headers = _rowHeaderFunc();
             this.SetHeader(headers);
         }
 
@@ -37,22 +47,33 @@ public class SpreadsheetDataHandler
         return _spreadsheetData;
     }
     
-
     public SpreadsheetDataHandler SetSheetTitle(Func<String> func)
     {
         _sheetTitleFunc = func;
         return this;
     }
+    
     public SpreadsheetDataHandler SetHeader(Func<IEnumerable<String>> func)
     {
-        _headerFunc = func;
+        _valueHeaderFunc = func;
         return this;
     }
+
+    public SpreadsheetDataHandler SetHeader(Func<IEnumerable<Row>> func)
+    {
+        _rowHeaderFunc = func;
+        return this;
+    }
+    
     public SpreadsheetDataHandler SetContents(Func<Contents> func)
     {
         _contentsFunc = func;
         return this;
     }
+
+    #endregion
+
+    #region [private]
 
     private void SetSheetTitle(string title) => _spreadsheetData.SheetTitle = title;
     
@@ -74,6 +95,11 @@ public class SpreadsheetDataHandler
             });
         });
         _spreadsheetData.Header = row;
+    }
+
+    private void SetHeader(IEnumerable<Row> headers)
+    {
+        _spreadsheetData.MultiHeader = headers;
     }
     
     /// <summary>
@@ -102,6 +128,7 @@ public class SpreadsheetDataHandler
 
         return format;
     }    
+    
     private void SetContents(IEnumerable<IEnumerable<String>> values, IEnumerable<CellType> cellTypes = null, IEnumerable<AlignmentType> alignmentTypes = null)
     {
         _spreadsheetData.Rows = new List<Row>();
@@ -118,15 +145,31 @@ public class SpreadsheetDataHandler
                     Width = 100,
                     Cell = new Cell()
                     {
-                        CellType = arrCellTypes.xIsEmpty() ? CellType.Text : arrCellTypes[j],
+                        CellType = GetCellType(v),
                         Value = v,
-                        AlignmentType = v.xIsNumber() ? AlignmentType.Right : AlignmentType.Left //arrAlignmentTypes.xIsEmpty() ? AlignmentType.Right : arrAlignmentTypes[j]                        
+                        AlignmentType = GetAlignmentType(v)                        
                     }
                 });
             });
             _spreadsheetData.Rows.Add(row);
         });
     }
+
+    private CellType GetCellType(string v)
+    {
+        if (v.xGetFirst(4).xIsEquals("http")) return CellType.HyperLink;
+        else if (v.xFirst().xIsEquals("=")) return CellType.Formula;
+        return CellType.Text;
+    }
+
+    private AlignmentType GetAlignmentType(string v)
+    {
+        if (v.xIsNumber()) return AlignmentType.Right;
+        return AlignmentType.Left;
+    }
+
+    #endregion
+    
 }
 
 
