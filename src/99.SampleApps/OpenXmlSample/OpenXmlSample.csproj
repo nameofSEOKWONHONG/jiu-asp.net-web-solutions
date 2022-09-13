@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
       <PackageReference Include="ClosedXML" Version="0.96.0" />
       <PackageReference Include="FastExcel" Version="3.0.13" />
     </ItemGroup>

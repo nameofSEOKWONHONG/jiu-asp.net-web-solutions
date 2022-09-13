@@ -12,8 +12,8 @@ public interface IExcelProvider
     /// </summary>
     /// <param name="filePath"></param>
     /// <param name="dataFormat"></param>
-    void CreateExcel(string filePath, SpreadsheetData data);
+    void CreateExcel(SpreadsheetData data);
 
-    void CreateExcel(string filePath, SpreadsheetDatum datum);
+    void CreateExcel(SpreadsheetDatum datum);
 }
 

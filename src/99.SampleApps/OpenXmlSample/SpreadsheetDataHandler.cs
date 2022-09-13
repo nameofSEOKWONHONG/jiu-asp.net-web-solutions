@@ -157,7 +157,7 @@ public class SpreadsheetDataHandler
 
     private CellType GetCellType(string v)
     {
-        if (v.xGetFirst(4).xIsEquals("http")) return CellType.HyperLink;
+        if (v.xContains("http")) return CellType.HyperLink;
         else if (v.xFirst().xIsEquals("=")) return CellType.Formula;
         return CellType.Text;
     }

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using BenchmarkDotNet.Attributes;
 using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Wordprocessing;
 using eXtensionSharp;
@@ -31,23 +32,27 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
                 }
             }
         };
-    private readonly string TemplatePath = "d://template.xlsx";
-    
-    public ClosedXmlExcelProvider()
+
+    private readonly string _templateFilePath = "d://template.xlsx";
+    private readonly string _filePath;
+    public ClosedXmlExcelProvider(string filePath)
     {
+        filePath.xIfEmpty(() => throw new Exception("file path is empty."));
+        _filePath = filePath;
+        
+        //copy src styling excel file
+        File.Copy(_templateFilePath, _filePath);
     }
 
     #region [public]
-
-    public void CreateExcel(string filePath, SpreadsheetData data)
+    public void CreateExcel(SpreadsheetData data)
     {
-        //1. 템플릿파일 복사 및 읽기 (구현결과에 따라 달라질 수 있음.)
-        //2. worksheet 작성 (템플릿에 스타일 지정이 모두 되어 있어야 함)
         var dataFormat = data;
         
-        using (var workbook = new XLWorkbook(XLEventTracking.Disabled))
+        //overwrite
+        using (var workbook = new XLWorkbook(_filePath, XLEventTracking.Disabled))
         {
-            var worksheet = workbook.Worksheets.Add(dataFormat.SheetTitle);
+            var worksheet = workbook.Worksheets.First();
             
             #region [set value header and contents]
             
@@ -73,17 +78,27 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
 
             #region [set style header and contents]
 
+            //스타일을 지정할 경우 성능이 매우 떨어지므로 미리 스타일링 되어 있는 파일을 사용한다.
+            //width 범위를 넘어서는 text는 지원하지 않는다.
             //스타일 지정을 별도로 사용하지 않는다.
             //SetHeaderStyle(ref worksheet, dataFormat);
-            //SetContentsStyle(ref worksheet, dataFormat);            
+            //SetContentsStyle(ref worksheet, dataFormat);
 
             #endregion
             
-            workbook.SaveAs(filePath);
+            // 메모리 스트림으로 성능향상은 미미함.
+            // 대량 반복 수행시에 문제될 경우 사용해보자.
+            // 단순 export라면 fastxml을 사용.
+            // using (MemoryStream memoryStream = SaveWorkbookToMemoryStream(workbook))
+            // {
+            //     File.WriteAllBytes(_filePath, memoryStream.ToArray());
+            // }
+            workbook.Save();
         }
+        GC.Collect();
     }
 
-    public void CreateExcel(string filePath, SpreadsheetDatum datum)
+    public void CreateExcel(SpreadsheetDatum datum)
     {
         throw new NotImplementedException();
     }
@@ -91,6 +106,15 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
     #endregion
 
     #region [private]
+    
+    private MemoryStream SaveWorkbookToMemoryStream(XLWorkbook workbook)
+    {
+        using (MemoryStream stream = new MemoryStream())
+        {
+            workbook.SaveAs(stream, new SaveOptions { EvaluateFormulasBeforeSaving = false, GenerateCalculationChain = false, ValidatePackage = false });
+            return stream;
+        }
+    }
     
     /// <summary>
     /// header 영역에 대한 스타일링 수행
@@ -128,20 +152,4 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
     }
     
     #endregion
-
-    /// <summary>
-    /// template 기반 excel create...
-    /// </summary>
-    /// <param name="filePath"></param>
-    /// <param name="action"></param>
-    private IXLWorksheet ReadExcel(string filePath, Action<IXLWorksheet> action)
-    {
-        IXLWorksheet worksheet = null;
-        using (var workbook = new XLWorkbook(filePath, XLEventTracking.Disabled))
-        {
-            worksheet = workbook.Worksheet(1);
-        }
-
-        return worksheet;
-    }
 }

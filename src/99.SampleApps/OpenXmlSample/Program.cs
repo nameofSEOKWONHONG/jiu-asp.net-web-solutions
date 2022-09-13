@@ -1,16 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Diagnostics;
+using BenchmarkDotNet.Running;
 using eXtensionSharp;
 using OpenXmlSample;
 using OpenXmlSample.Data;
 
 Console.WriteLine("Excel Export Test");
-List<IExcelProvider> excelProviders = new List<IExcelProvider>()
-{
-    new ClosedXmlExcelProvider(),
-    //new FastExcelProvider()
-};
+// List<IExcelProvider> excelProviders = new List<IExcelProvider>()
+// {
+//     new ClosedXmlExcelProvider(),
+//     //new FastExcelProvider()
+// };
 
 // var headers = new List<Row>();
 // Enumerable.Range(1, 30).ToList().ForEach(i =>
@@ -35,34 +36,7 @@ List<IExcelProvider> excelProviders = new List<IExcelProvider>()
 //     rows.Add(new Row() {Cells = cells});
 // });
 
-Enumerable.Range(1, 10).ToList().ForEach(i =>
-{
-    var datum = new List<String[]>();
-    Enumerable.Range(1, 300).ToList().ForEach(i =>
-    {
-        var data = new List<String>();
-        Enumerable.Range(1, 25).ToList().ForEach(j =>
-        {
-            data.Add($"test{j}");
-        });
-        datum.Add(data.ToArray());
-    });
-    var idata = new List<string>();
-    datum.Add(Enumerable.Range(1, 25).Select(i => $"0.{i}").ToArray());
-    datum.Add(Enumerable.Range(1, 25).Select(i => $"https://naver.com").ToArray());
-    
-    var sw = Stopwatch.StartNew();
-    sw.Start();
-    var handler = new SpreadsheetDataHandler();
-    handler.SetSheetTitle(() => "sheet");
-    handler.SetHeader(() => Enumerable.Range(1, 25).Select(m => m.ToString()).ToArray());
-    handler.SetContents(() => new Contents(){ Values = datum, AlignmentTypes = null, CellTypes = null});
-    var data = handler.Execute();
-    excelProviders[0].CreateExcel($"d://{Guid.NewGuid().ToString("N")}.xlsx", data);
-    sw.Stop();
-    Console.WriteLine($"============================result({i})============================");
-    Console.WriteLine(sw.Elapsed.TotalSeconds);
-});
+BenchmarkRunner.Run<ClosedXmlExcelProviderBenchmark>();
 
 #region [compare code]
 
@@ -109,5 +83,5 @@ Enumerable.Range(1, 10).ToList().ForEach(i =>
 
 #endregion
 
-Console.WriteLine("=======================================END=======================================");
-Console.ReadLine();
+// Console.WriteLine("=======================================END=======================================");
+// Console.ReadLine();
