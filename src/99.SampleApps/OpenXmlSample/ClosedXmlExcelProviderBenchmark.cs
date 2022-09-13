@@ -29,7 +29,9 @@ public class ClosedXmlExcelProviderBenchmark
         handler.SetHeader(() => Enumerable.Range(1, 25).Select(m => "909829838787"+m.ToString()).ToArray());
         handler.SetContents(() => new Contents(){ Values = datum, AlignmentTypes = null, CellTypes = null});
         var data = handler.Execute();
-        var excelProvider = new ClosedXmlExcelProvider($"d://{Guid.NewGuid().ToString("N")}.xlsx");
-        excelProvider.CreateExcel(data);
+        using (var excelProvider = new ClosedXmlExcelProvider($"d://{Guid.NewGuid().ToString("N")}.xlsx"))
+        {
+            excelProvider.CreateExcel(data);    
+        }
     }
 }

@@ -7,7 +7,7 @@ using OpenXmlSample.Data;
 
 namespace OpenXmlSample;
 
-public sealed class ClosedXmlExcelProvider : IExcelProvider
+public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
 {
     private readonly Dictionary<CellType, Action<IXLCell, Col>> _spreadsheetCellTypeSettingStates =
         new()
@@ -35,13 +35,17 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
 
     private readonly string _templateFilePath = "d://template.xlsx";
     private readonly string _filePath;
+    private bool _disposed = false;
+    private readonly XLWorkbook _workbook;
+    
     public ClosedXmlExcelProvider(string filePath)
     {
         filePath.xIfEmpty(() => throw new Exception("file path is empty."));
+
         _filePath = filePath;
-        
         //copy src styling excel file
         File.Copy(_templateFilePath, _filePath);
+        _workbook = new XLWorkbook(_filePath, XLEventTracking.Disabled);
     }
 
     #region [public]
@@ -50,9 +54,9 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
         var dataFormat = data;
         
         //overwrite
-        using (var workbook = new XLWorkbook(_filePath, XLEventTracking.Disabled))
-        {
-            var worksheet = workbook.Worksheets.First();
+        //using ()
+        //{
+            var worksheet = _workbook.Worksheets.First();
             
             #region [set value header and contents]
             
@@ -93,9 +97,8 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
             // {
             //     File.WriteAllBytes(_filePath, memoryStream.ToArray());
             // }
-            workbook.Save();
-        }
-        GC.Collect();
+            _workbook.Save();
+        //}
     }
 
     public void CreateExcel(SpreadsheetDatum datum)
@@ -152,4 +155,30 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider
     }
     
     #endregion
+
+    public void Dispose(bool disposing)
+    {
+        if (!_disposed)
+        {
+            if (disposing)
+            {
+                // OK to use any private object references
+                _workbook.Dispose();
+            }
+            //release unmanaged resources.
+            //set large fields to null.
+            _disposed = true;
+        }
+    }
+
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    ~ClosedXmlExcelProvider()
+    {
+        Dispose(false);
+    }
 }
