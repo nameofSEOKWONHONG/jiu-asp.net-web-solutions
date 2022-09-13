@@ -123,6 +123,7 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
     /// header 영역에 대한 스타일링 수행
     /// </summary>
     /// <param name="worksheet"></param>
+    [Obsolete("don't use", true)]
     private void SetHeaderStyle(ref IXLWorksheet worksheet, SpreadsheetData data)
     {
         var ws = worksheet;
@@ -144,6 +145,7 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
     /// </summary>
     /// <param name="worksheet"></param>
     /// <param name="data"></param>
+    [Obsolete("don't use", true)]
     private void SetContentsStyle(ref IXLWorksheet worksheet, SpreadsheetData data)
     {
         var ws = worksheet;
@@ -177,8 +179,13 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
         GC.SuppressFinalize(this);
     }
 
+    #region [deconstructor]
+
     ~ClosedXmlExcelProvider()
     {
         Dispose(false);
     }
+
+    #endregion
+    
 }
