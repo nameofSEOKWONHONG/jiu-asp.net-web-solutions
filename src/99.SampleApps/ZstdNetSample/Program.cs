@@ -5,7 +5,13 @@ using ZstdNetSample;
 
 Console.WriteLine("Benchmark Start");
 
-BenchmarkRunner.Run<ZstdBenchmark>();
+#if DEBUG
+var benchmark = new ZstdBenchmark();
+benchmark.Runner();
+#else
+//BenchmarkRunner.Run<ZstdBenchmark>();
+BenchmarkRunner.Run<Lz4Benchmark>();
+#endif
 
 Console.WriteLine("Benchmark End");
 /*

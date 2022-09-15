@@ -48,13 +48,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Lz4Benchmark.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +76,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/951c8ce830e64b3483e2d3530d675639124a00/1e/32b3d2d9/IXLWorksheet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fa4ae7b946c641a4bc1981d46d26a98a16a488/e4/0a5b72ce/Utf8JsonReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/41/da40e59b/CompressionOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/47/ef935216/ReturnValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/65/2133b786/DictBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/98/d0cc2951/ExternMethods.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Application/OfficeConverter/IOfficeConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
@@ -805,7 +805,8 @@
       <workItem from="1663139394470" duration="1678000" />
       <workItem from="1663250521743" duration="2952000" />
       <workItem from="1663253554553" duration="387000" />
-      <workItem from="1663255525679" duration="1549000" />
+      <workItem from="1663255525679" duration="1780000" />
+      <workItem from="1663258208047" duration="1906000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -989,7 +990,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663253934166</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add zstd benchmark">
+      <created>1663257318433</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1663257318433</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1075,7 +1083,8 @@
     <MESSAGE value="add ef interceptor duration" />
     <MESSAGE value="add java test result" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add zstd benchmark" />
+    <option name="LAST_COMMIT_MESSAGE" value="add zstd benchmark" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,6 +1276,32 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs</url>
+          <line>13</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ZstdNetSample\ZstdBenchmark.cs" initialLine="13" containingFunctionPresentation="method 'Runner'">
+            <startOffsets>
+              <option value="223" />
+            </startOffsets>
+            <endOffsets>
+              <option value="284" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs</url>
+          <line>8</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ZstdNetSample\Program.cs" initialLine="8" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="167" />
+            </startOffsets>
+            <endOffsets>
+              <option value="203" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

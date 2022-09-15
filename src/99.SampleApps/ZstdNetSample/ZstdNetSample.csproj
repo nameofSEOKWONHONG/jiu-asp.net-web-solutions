@@ -10,6 +10,8 @@
 
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+      <PackageReference Include="K4os.Compression.LZ4" Version="1.2.16" />
+      <PackageReference Include="K4os.Compression.LZ4.Streams" Version="1.2.16" />
       <PackageReference Include="ZstdNet" Version="1.4.5" />
     </ItemGroup>
 
