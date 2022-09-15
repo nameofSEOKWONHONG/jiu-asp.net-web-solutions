@@ -44,19 +44,17 @@
     <projectFile>src/99.SampleApps/SimpleRecorderApp/ECountRecorderWpf45.csproj</projectFile>
     <projectFile>src/99.SampleApps/SpectreConsoleSample/SpectreConsoleSample.csproj</projectFile>
     <projectFile>src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj</projectFile>
+    <projectFile>src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/1.Share/Application/Application.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/4.BackgroundApp/MailSendWorkerService/MailFormReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/4.BackgroundApp/MailSendWorkerService/MailFormReader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProviderBenchmark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/ClosedXmlExcelProviderBenchmark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/SpreadsheetDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/SpreadsheetDataHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/FileSizeCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/SpectreConsoleSample/FileSizeCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +77,8 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14b698a7ecdc4df7bf65a88c32317dd55c0d90/4d/c096dabf/PackageLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/951c8ce830e64b3483e2d3530d675639124a00/1e/32b3d2d9/IXLWorksheet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fa4ae7b946c641a4bc1981d46d26a98a16a488/e4/0a5b72ce/Utf8JsonReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/41/da40e59b/CompressionOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/98/d0cc2951/ExternMethods.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Application/OfficeConverter/IOfficeConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/node/package-lock.json" root0="SKIP_HIGHLIGHTING" />
@@ -122,7 +122,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.OpenXmlSample">
+  <component name="RunManager" selected=".NET Project.ZstdNetSample">
     <configuration name="AvaloniaCrossPlatformApp.NetCore" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/bin/Debug/net6.0/AvaloniaCrossPlatformApp.NetCore.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -348,6 +348,24 @@
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/SqlQuerySampleApp/SqlQuerySampleApp.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="ZstdNetSample" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
@@ -678,6 +696,7 @@
       <item itemvalue=".NET Launch Settings Profile.HotChocolateSample" />
       <item itemvalue=".NET Launch Settings Profile.HotChocolateSample: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.JWorker" />
+      <item itemvalue=".NET Project.ZstdNetSample" />
       <item itemvalue=".NET Project.OpenXmlSample" />
       <item itemvalue=".NET Project.CompositionSample" />
       <item itemvalue=".NET Project.CustomOptionSample" />
@@ -785,6 +804,8 @@
       <workItem from="1663139175935" duration="202000" />
       <workItem from="1663139394470" duration="1678000" />
       <workItem from="1663250521743" duration="2952000" />
+      <workItem from="1663253554553" duration="387000" />
+      <workItem from="1663255525679" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -961,7 +982,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662462042920</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="update">
+      <created>1663253934166</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1663253934166</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1045,9 +1073,9 @@
     <MESSAGE value="update poco" />
     <MESSAGE value="ypdate" />
     <MESSAGE value="add ef interceptor duration" />
-    <MESSAGE value="update" />
     <MESSAGE value="add java test result" />
-    <option name="LAST_COMMIT_MESSAGE" value="add java test result" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
