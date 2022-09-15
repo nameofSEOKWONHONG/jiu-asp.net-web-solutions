@@ -40,3 +40,15 @@
 | 9   |0.0615653|0.1167813|
 | 10  |0.0668502|0.1192532|
 `약 2배 성능차이, 초기 실행시간은 ClosedXml이 다소 느림.`
+
+* Benchmark 500 ROW, 25 COL     
+BenchmarkDotNet=v0.13.2, OS=Windows 11 (10.0.22000.978/21H2)  
+AMD Ryzen 7 5800H with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores  
+.NET SDK=7.0.100-rc.1.22431.12  
+[Host]     : .NET 7.0.0 (7.0.22.42610), X64 RyuJIT AVX2  
+DefaultJob : .NET 7.0.0 (7.0.22.42610), X64 RyuJIT AVX2  
+
+
+| Method |     Mean |    Error |   StdDev | Completed Work Items | Lock Contentions |      Gen0 |      Gen1 |     Gen2 | Allocated |
+|------- |---------:|---------:|---------:|---------------------:|-----------------:|----------:|----------:|---------:|----------:|
+| Runner | 76.43 ms | 1.416 ms | 2.796 ms |                    - |                - | 4500.0000 | 2333.3333 | 500.0000 |  33.94 MB |

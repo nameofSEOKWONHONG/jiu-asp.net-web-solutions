@@ -36,7 +36,13 @@ Console.WriteLine("Excel Export Test");
 //     rows.Add(new Row() {Cells = cells});
 // });
 
+#if DEBUG
+var benchmark = new ClosedXmlExcelProviderBenchmark();
+benchmark.Runner();
+#else 
 BenchmarkRunner.Run<ClosedXmlExcelProviderBenchmark>();
+#endif
+
 
 #region [compare code]
 

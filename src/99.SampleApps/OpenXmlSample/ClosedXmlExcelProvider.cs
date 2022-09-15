@@ -1,7 +1,4 @@
-﻿using System.Diagnostics;
-using BenchmarkDotNet.Attributes;
-using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Wordprocessing;
+﻿using ClosedXML.Excel;
 using eXtensionSharp;
 using OpenXmlSample.Data;
 
@@ -33,19 +30,16 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
             }
         };
 
-    private readonly string _templateFilePath = "d://template.xlsx";
-    private readonly string _filePath;
+    private const string TEMPLATE_FILE_PATH = "d://template.xlsx";
     private bool _disposed = false;
     private readonly XLWorkbook _workbook;
     
     public ClosedXmlExcelProvider(string filePath)
     {
         filePath.xIfEmpty(() => throw new Exception("file path is empty."));
-
-        _filePath = filePath;
         //copy src styling excel file
-        File.Copy(_templateFilePath, _filePath);
-        _workbook = new XLWorkbook(_filePath, XLEventTracking.Disabled);
+        File.Copy(TEMPLATE_FILE_PATH, filePath);
+        _workbook = new XLWorkbook(filePath, XLEventTracking.Disabled);
     }
 
     #region [public]
@@ -83,7 +77,7 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
             #region [set style header and contents]
 
             //스타일을 지정할 경우 성능이 매우 떨어지므로 미리 스타일링 되어 있는 파일을 사용한다.
-            //width 범위를 넘어서는 text는 지원하지 않는다.
+            //width 범위를 넘어서는 text width는 width 설정을 지원하지 않는다.
             //스타일 지정을 별도로 사용하지 않는다.
             //SetHeaderStyle(ref worksheet, dataFormat);
             //SetContentsStyle(ref worksheet, dataFormat);
@@ -112,11 +106,9 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
     
     private MemoryStream SaveWorkbookToMemoryStream(XLWorkbook workbook)
     {
-        using (MemoryStream stream = new MemoryStream())
-        {
-            workbook.SaveAs(stream, new SaveOptions { EvaluateFormulasBeforeSaving = false, GenerateCalculationChain = false, ValidatePackage = false });
-            return stream;
-        }
+        using MemoryStream stream = new MemoryStream();
+        workbook.SaveAs(stream, new SaveOptions { EvaluateFormulasBeforeSaving = false, GenerateCalculationChain = false, ValidatePackage = false });
+        return stream;
     }
     
     /// <summary>
@@ -158,7 +150,7 @@ public sealed class ClosedXmlExcelProvider : IExcelProvider, IDisposable
     
     #endregion
 
-    public void Dispose(bool disposing)
+    private void Dispose(bool disposing)
     {
         if (!_disposed)
         {

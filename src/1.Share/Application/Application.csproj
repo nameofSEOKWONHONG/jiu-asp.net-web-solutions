@@ -100,8 +100,4 @@
       <Compile Remove="Migrations\JIUDbContextModelSnapshot.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Scraping" />
-    </ItemGroup>
-
 </Project>

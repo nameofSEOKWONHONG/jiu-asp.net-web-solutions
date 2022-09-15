@@ -7,7 +7,7 @@ namespace MailSendWorkerService;
 public class MailFormReader
 {
     private readonly ILogger _logger;
-    private readonly string _mailFolderPath = "mails".xGetCurrentPath();
+    private readonly string _mailFolderPath = "mails".xCurrentPath();
     private readonly string _mailContentsFileName = "Contents.txt";
     public MailFormReader(ILogger<MailFormReader> logger)
     {

@@ -10,11 +10,10 @@ public class SpreadsheetDataHandler
     private Func<IEnumerable<String>> _valueHeaderFunc = null;
     private Func<IEnumerable<Row>> _rowHeaderFunc = null;
     private Func<Contents> _contentsFunc = null;
-    private readonly SpreadsheetData _spreadsheetData;
+    private readonly SpreadsheetData _spreadsheetData = new();
     
     public SpreadsheetDataHandler()
     {
-        if (_spreadsheetData.xIsEmpty()) _spreadsheetData = new SpreadsheetData();
     }
 
     #region [public]
@@ -145,9 +144,9 @@ public class SpreadsheetDataHandler
                     Width = 100,
                     Cell = new Cell()
                     {
-                        CellType = GetCellType(v),
+                        CellType = arrCellTypes.xIsNotEmpty() ? arrCellTypes[j] : GetCellType(v),
                         Value = v,
-                        AlignmentType = GetAlignmentType(v)                        
+                        AlignmentType = arrAlignmentTypes.xIsNotEmpty() ? arrAlignmentTypes[j] : GetAlignmentType(v)
                     }
                 });
             });
@@ -157,15 +156,14 @@ public class SpreadsheetDataHandler
 
     private CellType GetCellType(string v)
     {
-        if (v.xContains("http")) return CellType.HyperLink;
-        else if (v.xFirst().xIsEquals("=")) return CellType.Formula;
+        if (v.Contains("http")) return CellType.HyperLink;
+        else if (v.xSubstringFirst(1).xIsEquals("=")) return CellType.Formula;
         return CellType.Text;
     }
 
     private AlignmentType GetAlignmentType(string v)
     {
-        if (v.xIsNumber()) return AlignmentType.Right;
-        return AlignmentType.Left;
+        return v.xIsNumber() ? AlignmentType.Right : AlignmentType.Left;
     }
 
     #endregion

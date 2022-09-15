@@ -66,10 +66,12 @@ internal class FileSizeCommand : Command<FileSizeCommand.Settings>
     {
         Settings.Validator validator = new Settings.Validator();
         var result = validator.Validate(settings);
-        return result.IsValid.xIfTrue<ValidationResult>(() =>
+        if(result.IsValid)
         {
             var dictionary = result.Errors.ToDictionary(failure => failure.PropertyName, failure => failure.ErrorMessage);
             return ValidationResult.Error(result.Errors.xFirst().ErrorMessage);            
-        }, () => base.Validate(context, settings));
+        }
+
+        return base.Validate(context, settings);
     }
 }

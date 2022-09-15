@@ -1,4 +1,5 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Diagnostics;
+using BenchmarkDotNet.Attributes;
 using OpenXmlSample.Data;
 
 namespace OpenXmlSample;
@@ -20,7 +21,6 @@ public class ClosedXmlExcelProviderBenchmark
             });
             datum.Add(data.ToArray());
         });
-        var idata = new List<string>();
         datum.Add(Enumerable.Range(1, 25).Select(i => $"0.{i + "00909213"}").ToArray());
         datum.Add(Enumerable.Range(1, 25).Select(i => $"https://naver.com").ToArray());
         
@@ -29,7 +29,7 @@ public class ClosedXmlExcelProviderBenchmark
         handler.SetHeader(() => Enumerable.Range(1, 25).Select(m => "909829838787"+m.ToString()).ToArray());
         handler.SetContents(() => new Contents(){ Values = datum, AlignmentTypes = null, CellTypes = null});
         var data = handler.Execute();
-        using (var excelProvider = new ClosedXmlExcelProvider($"d://{Guid.NewGuid().ToString("N")}.xlsx"))
+        using (var excelProvider = new ClosedXmlExcelProvider($"d://{Guid.NewGuid():N}.xlsx"))
         {
             excelProvider.CreateExcel(data);    
         }
