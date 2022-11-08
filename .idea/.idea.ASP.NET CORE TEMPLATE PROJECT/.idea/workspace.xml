@@ -22,6 +22,8 @@
     <projectFile profileName="BlazorWasmApplication">src/3.Client/BlazorWasmApplication/BlazorWasmApplication.csproj</projectFile>
     <projectFile profileName="IIS Express">src/3.Client/BlazorWasmApplication/BlazorWasmApplication.csproj</projectFile>
     <projectFile>src/3.Client/BlazorWasmApplication/SpectreConsoleApplication/SpectreConsoleApplication.csproj</projectFile>
+    <projectFile profileName="IIS Express">src/3.Client/MudBlazorApplication/MudBlazorApplication.csproj</projectFile>
+    <projectFile profileName="Mudblazor.Template">src/3.Client/MudBlazorApplication/MudBlazorApplication.csproj</projectFile>
     <projectFile>src/3.Client/SpectreConsoleApplication/SpectreConsoleApplication.csproj</projectFile>
     <projectFile profileName="JWorker">src/4.BackgroundApp/JWorker/JWorker.csproj</projectFile>
     <projectFile profileName="JWorkerV2">src/4.BackgroundApp/JWorkerV2/JWorkerV2.csproj</projectFile>
@@ -48,11 +50,163 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8231806f-484a-4be2-b2f9-ab01935c48df" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Lz4Benchmark.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/App.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/MudBlazorApplication.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/MudBlazorApplication.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Pages/Counter.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Pages/FetchData.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Pages/Index.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Shared/MainLayout.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Shared/NavMenu.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/_Imports.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/wwwroot/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/wwwroot/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/wwwroot/sample-data/weather.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/App.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/App.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/AssemblyInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/MainWindow.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/MainWindow.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorder/SimpleRecorder.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ASP.NET CORE TEMPLATE PROJECT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdBenchmark.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ZstdNetSample/ZstdNetSample.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" beforeDir="false" afterPath="$PROJECT_DIR$/ASP.NET CORE TEMPLATE PROJECT.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/ImageResize/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/ImageResize/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/99.SampleApps/OpenXmlSample/OpenXmlSample.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/App.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/App.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Codec/CodecHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Codec/Recorder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Codec/RecorderParams.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Core/RelayCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Core/SimpleCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Core/ViewModelBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/InitWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/InitWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.en-US.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.es.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.id-ID.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.ja-JP.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.ko-KR.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.th-TH.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.vi-VN.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.zh-CN.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Language/StringResource.zh-TW.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MainWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MainWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Combination.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Hook.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/HotKeys/HotKeyArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/HotKeys/HotKeySet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/HotKeys/HotKeySetCollection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/HotKeys/HotKeySetsListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/HotKeys/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/IKeyboardEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/IKeyboardMouseEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/IMouseEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/AppEventFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/AppKeyListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/AppMouseListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/BaseListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/ButtonSet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/Callback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/Chord.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/EventFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/GlobalEventFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/GlobalKeyListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/GlobalMouseListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/KeyListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/KeyboardState.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/KeysExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/MouseListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Implementation/Subscribe.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/KeyCombinationExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/KeyDownTxtEventArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/KeyEventArgsExt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/KeyPressEventArgsExt.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/MouseEventExtArgs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/Sequence.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/SequenceBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/AppMouseStruct.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/CallbackData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookIds.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookNativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookProcedure.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookProcedureHandle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HookResult.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/HotkeysNativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/KeyboardHookStruct.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/KeyboardNativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/Messages.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/MouseNativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/MouseStruct.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/Point.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/MouseKeyHook/WinApi/ThreadNativeMethods.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/PointerWindow.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/PointerWindow.xaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/Resources.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/Resources.resx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/Settings.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/Settings.settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Properties/app.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Resources/x264vfw_full_44_2851bm_44825.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/AudioFormats.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/AviUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/BitsPerPixel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/BitmapUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/CodecInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/EncodingStreamFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/IAudioEncoder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/IVideoEncoder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/LameFacadeImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/MotionJpegVideoEncoderWpf.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/Mp3AudioEncoderLame.ILameFacade.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/Mp3AudioEncoderLame.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/Mpeg4VideoEncoderVcm.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/SingleThreadedVideoEncoderWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/UncompressedVideoEncoder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Codecs/VfwApi.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/FourCC.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Index1Entry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/IndexType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/KnownFourCCs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/MainHeaderFlags.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AsyncAudioStreamWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AsyncVideoStreamWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AudioStreamWrapperBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AviAudioStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AviStreamBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AviStreamInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AviVideoStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/AviWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/EncodingAudioStreamWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/EncodingVideoStreamWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviAudioStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviAudioStreamInternal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviStreamInternal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviStreamWriteHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviVideoStream.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/IAviVideoStreamInternal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/RiffItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/RiffWriterExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/SequentialInvoker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/Output/VideoStreamWrapperBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/SharpAvi.Fx35.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/SharpAvi.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/StandardIndexEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/StreamHeaderFlags.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SharpAvi/SuperIndexEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SimpleRecorderWpf.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/SimpleRecorderWpf.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/Utils/RecorderUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/packages.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/99.SampleApps/SimpleRecorderApp/setup.iss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +226,23 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10c70f4b686648feb4b3ad432f07871523880/2a/a66347cf/AuthenticationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/134a6267445f46b7a8730761c018e904811000/42/fdcfadb3/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14b698a7ecdc4df7bf65a88c32317dd55c0d90/4d/c096dabf/PackageLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/951c8ce830e64b3483e2d3530d675639124a00/1e/32b3d2d9/IXLWorksheet.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c12e2626fa5044938d7eb6523938671221680/3e/18b9e81a/ILogger`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e4dbb05be9a640559e34f40d1d50766a200588/6d/baaac653/DbContextOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fa4ae7b946c641a4bc1981d46d26a98a16a488/e4/0a5b72ce/Utf8JsonReader.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/41/da40e59b/CompressionOptions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/47/ef935216/ReturnValueExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/65/2133b786/DictBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fc77d5641c0e4b24a8be1b72ea893c9a7400/98/d0cc2951/ExternMethods.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/12e8815467bcf8c642d8f539939697320e338a6aa46925a46240a2deb15556/IServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4b28ecffd526ff237e76963494491cafdecf4afcdc5ed84818fd92d4269715/ApiDescriptionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5b249fbcc17b614f57149efbd7fd8c8f561bffa8c6209a4d94145cd6041df/IOperationFilter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/68337de370a35f5bcff4414c357e8dca558561b63902a48a18f9fca742bf3a/HttpServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ce5029d5d07328c7973f6e5719347c248aa264065e1f91e1f4e4aa734e523a9/IApiVersionDescriptionProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d86844615993e9b151a8dd27fb483248bfcf12be2da997d5c3152af61e3ef/OptionsConfigurationServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Application/OfficeConverter/IOfficeConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/1.Share/Infrastructure/Services/Account/UserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/2.Server/WebApiApplication/ScriptFiles/node/package-lock.json" root0="SKIP_HIGHLIGHTING" />
@@ -117,12 +281,32 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Project.ZstdNetSample">
+  <component name="RunManager" selected=".NET Launch Settings Profile.MudBlazorApplication: Mudblazor.Template">
+    <configuration name="99.SampleApps\ImageResize" type="DotNetProject" factoryName=".NET Project" temporary="true">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/src/99.SampleApps/ImageResize/bin/Debug/net6.0/ImageResize.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/99.SampleApps/ImageResize/bin/Debug/net6.0" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/src/99.SampleApps/ImageResize/ImageResize.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="net6.0" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="AvaloniaCrossPlatformApp.NetCore" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="$PROJECT_DIR$/src/3.Client/AvaloniaCrossPlatformApp/AvaloniaCrossPlatformApp.NetCore/bin/Debug/net6.0/AvaloniaCrossPlatformApp.NetCore.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -570,6 +754,36 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="MudBlazorApplication: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/MudBlazorApplication.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="MudBlazorApplication: Mudblazor.Template" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/3.Client/MudBlazorApplication/MudBlazorApplication.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="Mudblazor.Template" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
     <configuration name="WeatherForecastApiApplication" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/2.Server/2.Project/WeatherForecastApiApplication/WeatherForecastApiApplication.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net6.0" />
@@ -676,6 +890,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue=".NET Launch Settings Profile.MudBlazorApplication: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.MudBlazorApplication: Mudblazor.Template" />
       <item itemvalue=".NET Launch Settings Profile.MailSendWorkerService: MailSenderWorkerService" />
       <item itemvalue=".NET Launch Settings Profile.AgileConfigServer" />
       <item itemvalue=".NET Launch Settings Profile.AgileConfigServer: IIS Express" />
@@ -710,9 +926,11 @@
       <item itemvalue=".NET Project.SeleniumPdfApp" />
       <item itemvalue=".NET Project.SimpleRecorder" />
       <item itemvalue=".NET Project.DynamicClient" />
+      <item itemvalue=".NET Project.99.SampleApps\ImageResize" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue=".NET Project.99.SampleApps\ImageResize" />
         <item itemvalue=".NET Launch Settings Profile.JWorker" />
       </list>
     </recent_temporary>
@@ -806,7 +1024,21 @@
       <workItem from="1663250521743" duration="2952000" />
       <workItem from="1663253554553" duration="387000" />
       <workItem from="1663255525679" duration="1780000" />
-      <workItem from="1663258208047" duration="1906000" />
+      <workItem from="1663258208047" duration="2356000" />
+      <workItem from="1663339727742" duration="389000" />
+      <workItem from="1663340808402" duration="623000" />
+      <workItem from="1663395372857" duration="1754000" />
+      <workItem from="1663508212359" duration="60000" />
+      <workItem from="1663508395911" duration="1290000" />
+      <workItem from="1663871790474" duration="372000" />
+      <workItem from="1664021218078" duration="5491000" />
+      <workItem from="1664092811451" duration="2141000" />
+      <workItem from="1664168148619" duration="1229000" />
+      <workItem from="1664208786316" duration="1621000" />
+      <workItem from="1664974519747" duration="4722000" />
+      <workItem from="1665161611378" duration="615000" />
+      <workItem from="1665295584478" duration="992000" />
+      <workItem from="1667919172623" duration="1885000" />
     </task>
     <task id="LOCAL-00001" summary="change folder structure">
       <created>1644730175212</created>
@@ -997,7 +1229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663257318433</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="asd">
+      <created>1663260587653</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1663260587653</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1084,7 +1323,8 @@
     <MESSAGE value="add java test result" />
     <MESSAGE value="update" />
     <MESSAGE value="add zstd benchmark" />
-    <option name="LAST_COMMIT_MESSAGE" value="add zstd benchmark" />
+    <MESSAGE value="asd" />
+    <option name="LAST_COMMIT_MESSAGE" value="asd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1159,19 +1399,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/Middlewares/ErrorHandlerMiddleware.cs</url>
-          <line>26</line>
-          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\1.Share\Infrastructure\Middlewares\ErrorHandlerMiddleware.cs" initialLine="26" containingFunctionPresentation="method 'Invoke'">
-            <startOffsets>
-              <option value="625" />
-            </startOffsets>
-            <endOffsets>
-              <option value="657" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/src/1.Share/Infrastructure/BackgroundServices/HardwareMonitorBackgroundService.cs</url>
@@ -1302,6 +1529,33 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/99.SampleApps/ImageResize/ImageResizer.cs</url>
+          <line>11</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\99.SampleApps\ImageResize\ImageResizer.cs" initialLine="11" containingFunctionPresentation="constructor 'ImageResizer'">
+            <startOffsets>
+              <option value="231" />
+            </startOffsets>
+            <endOffsets>
+              <option value="266" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/3.Client/MudBlazorApplication/Shared/NavMenu.razor</url>
+          <line>10</line>
+          <properties documentPath="D:\workspace\jiu-asp.net-web-solutions\src\3.Client\MudBlazorApplication\Shared\NavMenu.razor" initialLine="10" isMultiMethodBreakpoint="true">
+            <option name="multiMethodBreakpoint" value="true" />
+            <startOffsets>
+              <option value="-1" />
+            </startOffsets>
+            <endOffsets>
+              <option value="-1" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

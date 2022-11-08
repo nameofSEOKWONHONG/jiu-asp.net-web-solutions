@@ -1,0 +1,55 @@
+﻿<MudNavMenu>
+    @foreach (var menu in _menus)
+    {
+        if (menu.HasSubMenu == false)
+        {
+            <MudNavLink Href=@menu.Href Match=@menu.NavLinkMatch.Value Icon=@menu.Icon>@menu.Title</MudNavLink>    
+        }
+        else
+        {
+            <MudNavGroup Title=@menu.Title Expanded="false" Icon=@menu.Icon>
+                @foreach (var subMenu in menu.SubMenus)
+                {
+                    <MudNavLink Href=@subMenu.Href Match=@subMenu.NavLinkMatch.Value Icon=@subMenu.Icon>@subMenu.Title</MudNavLink>
+                }
+            </MudNavGroup>
+        }
+    }
+    @* <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink> *@
+    @* <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink> *@
+    @* <MudNavLink Href="fetchdata" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Fetch data</MudNavLink> *@
+    @* <MudNavGroup Title="Settings" Expanded="true"> *@
+    @*     <MudNavLink Href="/users" Match="NavLinkMatch.Prefix">Users</MudNavLink> *@
+    @*     <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink> *@
+    @* </MudNavGroup> *@
+</MudNavMenu>
+
+@code
+{
+    public class Menu
+    {
+        public string Href { get; set; }
+        public string Title { get; set; }
+        public bool HasSubMenu { get; set; }
+        public NavLinkMatch? NavLinkMatch { get; set; }
+        public string Icon { get; set; }
+        public List<Menu> SubMenus { get; set; }
+    }
+
+    List<Menu> _menus = new List<Menu>()
+    {
+        new Menu() { Href = "", Title = "Home", HasSubMenu = false, SubMenus = null, NavLinkMatch = NavLinkMatch.All, Icon = Icons.Material.Filled.Home},
+        new Menu() { Href = "counter", Title = "Counter", HasSubMenu = false, SubMenus = null, NavLinkMatch = NavLinkMatch.Prefix, Icon = Icons.Material.Filled.Add},
+        new Menu() { Href = "fetchdata", Title = "Fetchdata", HasSubMenu = false, SubMenus = null, NavLinkMatch = NavLinkMatch.Prefix, Icon = Icons.Material.Filled.DataArray},
+        new Menu()
+        {
+            Href = "", Title = "Settings", HasSubMenu = true, SubMenus = new List<Menu>()
+            {
+                new Menu() { Href = "users", Title = "Users", HasSubMenu = false, SubMenus = null, NavLinkMatch = NavLinkMatch.Prefix, Icon = Icons.Material.Filled.ManageAccounts},
+                new Menu() { Href = "security", Title = "Security", HasSubMenu = false, SubMenus = null, NavLinkMatch = NavLinkMatch.Prefix, Icon = Icons.Material.Filled.Security}
+            }, NavLinkMatch = NavLinkMatch.All, Icon = Icons.Material.Filled.Settings
+        },
+    };
+}
+
+
