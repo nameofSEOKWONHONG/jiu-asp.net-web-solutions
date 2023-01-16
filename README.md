@@ -196,7 +196,7 @@ Database를 무시하면 안된다. 백앤드 개발자는 꼭 DB에 대한 기�
 * VS Code : 편집 및 디버깅 이외에 의의는 없음. 웹 개발, 소규모에 추천.
 * JetBrains Rider : VS에 의존하는 프로젝트(Winform, WPF, MAUI)가 아니라면 매우 추천. 로딩 및 Intellisence 기능 매우 훌륭함.  VS와 키맵핑 호환도 가능하고 대규모 프로젝트라면 무조건 1순위 툴임.
 * Mono Develop : 쓰지말자. 
-* 결론 : 유료가 괜히 유료가 아니다. (Rider << VS2022 <<<<<< vscode)
+* 결론 : 유료가 괜히 유료가 아니다. (Rider >> VS2022 >>>>>>> vscode)
 
 ## Acknowledgements
 
