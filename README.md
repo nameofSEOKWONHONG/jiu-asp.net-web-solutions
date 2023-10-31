@@ -204,4 +204,4 @@ Database를 무시하면 안된다. 백앤드 개발자는 꼭 DB에 대한 기�
 - **Resharper** makes Visual Studio a much better IDE
 - **Rider** is fast & powerful cross platform .NET IDE
 
-![image](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/121px-JetBrains_Logo_2016.svg.png)
+<img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png" alt="JetBrains Logo (Main) logo." style="width:200px;height:200px;">
